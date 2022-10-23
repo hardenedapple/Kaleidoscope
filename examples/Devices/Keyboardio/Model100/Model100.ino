@@ -440,6 +440,9 @@ void setup() {
   // firmware starts with LED effects off. This avoids over-taxing devices that
   // don't have a lot of power to share with USB devices
   DefaultLEDModeConfig.activateLEDModeIfUnconfigured(&LEDOff);
+
+  // Disable stickability for OneShot keys.
+  OneShot.disableStickabilityForModifiers();
 }
 
 /** loop is the second of the standard Arduino sketch functions.
