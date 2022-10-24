@@ -69,6 +69,9 @@
 // Support for editable layer names
 #include "Kaleidoscope-LayerNames.h"
 
+// Support for switching shifts (i.e. symbols and numbers).
+#include "Kaleidoscope-TopsyTurvy.h"
+
 // Support for OneShot modifiers.
 #include <Kaleidoscope-OneShot.h>
 
@@ -188,7 +191,7 @@ KEYMAPS(
                               Key_D           , Key_H          , Key_T            , Key_N , Key_S , Key_LeftBracket  ,
    Key_LeftAlt              , Key_B           , Key_M          , Key_W            , Key_V , Key_Z , Key_RightBracket ,
    Key_Enter                , OSM(RightShift) , Key_Spacebar   , Key_RightControl ,
-   ShiftToLayer(FUNCTION))    ,
+   ShiftToLayer(FUNCTION)),
 
 #else
 
@@ -197,20 +200,34 @@ KEYMAPS(
 #endif
 
   [FUNCTION] =  KEYMAP_STACKED
- (XXX                      , Key_F1   , Key_F2        , Key_F3          , Key_F4       , Key_F5         , Key_LEDEffectNext ,
-  Key_F12                  , ___      , Key_Delete    , Key_Backspace   , Key_Backtick , ___            , ___               ,
-  Key_PcApplication        , Key_Home , Key_PageUp    , Key_PageDown    , Key_End      , ___            ,
-  ___                      , ___      , Key_CapsLock  , Key_PrintScreen , Key_Insert   , ___            , ___               ,
-  ___                      , ___      , ___           , ___             ,
-  ___                      ,
+ (XXX               , Key_F1               , Key_F2        , Key_F3                  , Key_F4       , Key_F5               , Key_LEDEffectNext ,
+  Key_F12           , ___                  , Key_Delete    , Key_Backspace           , Key_Backtick , ___                  , ___               ,
+  Key_PcApplication , Key_Home             , Key_PageUp    , Key_PageDown            , Key_End      , ___                  ,
+  ___               , ___                  , Key_CapsLock  , LockLayer(SHIFTED_KEYS) , Key_Insert   , MoveToLayer(PRIMARY) , ___               ,
+  ___               , ___                  , ___           , ___                     ,
+  ___               ,
 
-  ___                      , Key_F6   , Key_F7        , Key_F8          , Key_F9       , Key_F10        , Key_F11           ,
-  ___                      , ___      , Key_Backtick  , Key_Backspace   , Key_Delete   , ___            , ___               ,
-                             ___      , Key_LeftArrow , Key_DownArrow   , Key_UpArrow  , Key_RightArrow , ___               ,
-  ___                      , ___      , Key_Insert    , Key_PrintScreen , Key_CapsLock , ___            , ___               ,
-  ___                      , ___      , ___           , ___             ,
+  ___               , Key_F6               , Key_F7        , Key_F8                  , Key_F9       , Key_F10              , Key_F11           ,
+  ___               , ___                  , Key_Backtick  , Key_Backspace           , Key_Delete   , ___                  , ___               ,
+                      ___                  , Key_LeftArrow , Key_DownArrow           , Key_UpArrow  , Key_RightArrow       , ___               ,
+  ___               , MoveToLayer(PRIMARY) , Key_Insert    , LockLayer(SHIFTED_KEYS) , Key_CapsLock , ___                  , ___               ,
+  ___               , ___                  , ___           , ___                     ,
   ___),
 
+ [SHIFTED_KEYS] = KEYMAP_STACKED
+  (___                    , TOPSY(1) , TOPSY(2) , TOPSY(3)     , TOPSY(4) , TOPSY(5) , ___ ,
+   ___                    , ___      , ___      , TOPSY(Minus) , ___      , ___      , ___ ,
+   ___                    , ___      , ___      , ___          , ___      , ___      ,
+   ___                    , ___      , ___      , ___          , ___      , ___      , ___ ,
+   ___                    , ___      , ___      , ___          ,
+   ShiftToLayer(FUNCTION) ,
+
+   ___                    , TOPSY(6) , TOPSY(7) , TOPSY(8)     , TOPSY(9) , TOPSY(0) , ___ ,
+   ___                    , ___      , ___      , ___          , ___      , ___      , ___ ,
+                            ___      , ___      , ___          , ___      , ___      , ___ ,
+   ___                    , ___      , ___      , ___          , ___      , ___      , ___ ,
+   ___                    , ___      , ___      , ___          ,
+   ShiftToLayer(FUNCTION)),
 ) // KEYMAPS(
 
 /* Re-enable astyle's indent enforcement */
@@ -420,6 +437,9 @@ KALEIDOSCOPE_INIT_PLUGINS(
   // nevertheless. Such as toggling the key report protocol between Boot (used
   // by BIOSes) and Report (NKRO).
   USBQuirks,
+
+  // TopsyTurvy plugin gives support for switching the shift layout for a key.
+  TopsyTurvy,
 
   // OneShot plugin allows giving an extra behaviour to our ShiftModifiers (at
   // least that's what I'm using it for).
