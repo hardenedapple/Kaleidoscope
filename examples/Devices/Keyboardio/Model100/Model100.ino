@@ -176,18 +176,18 @@ KEYMAPS(
 #if defined (PRIMARY_KEYMAP_CUSTOM)
   // Edit this keymap to make a custom layout
   [PRIMARY] = KEYMAP_STACKED
-  (Key_LeftGui                , Key_1               , Key_2              , Key_3            , Key_4 , Key_5     , Key_Tab          ,
-   Key_Equals                 , Key_W               , Key_L              , Key_R            , Key_B , Key_Z     , Key_Escape       ,
-   Key_Semicolon              , Key_S               , Key_H              , Key_N            , Key_T , Key_Comma ,
-   Key_Backslash              , Key_F               , Key_M              , Key_V            , Key_C , Key_Slash , Key_LeftAlt      ,
-   Key_LeftControl            , Key_Spacebar        , OSM(LeftShift)     , Key_Enter        ,
-   ShiftToLayer(FUNCTION)     ,
+  (Key_LeftGui              , Key_1           , Key_2          , Key_3            , Key_4 , Key_5 , Key_Tab          ,
+   Key_Equals               , Key_Comma       , Key_Period     , Key_Minus        , Key_P , Key_Y , Key_Escape       ,
+   Key_Semicolon            , Key_A           , Key_O          , Key_E            , Key_U , Key_I ,
+   Key_Backslash            , Key_Quote       , Key_Q          , Key_J            , Key_K , Key_X , Key_LeftAlt      ,
+   Key_LeftControl          , Key_Spacebar    , OSM(LeftShift) , Key_Enter        ,
+   ShiftToLayer(FUNCTION)   ,
 
-   Key_Tab                    , Key_6               , Key_7              , Key_8            , Key_9 , Key_0     , Key_LeftGui      ,
-   Key_Escape                 , Key_Minus           , Key_Q              , Key_U            , Key_D , Key_J     , Key_Quote        ,
-                                Key_Period          , Key_A              , Key_E            , Key_O , Key_I     , Key_LeftBracket  ,
-   Key_LeftAlt                , Key_G               , Key_P              , Key_X            , Key_K , Key_Y     , Key_RightBracket ,
-   Key_Enter                  , OSM(RightShift)     , Key_Spacebar       , Key_RightControl ,
+   Key_Tab                  , Key_6           , Key_7          , Key_8            , Key_9 , Key_0 , Key_LeftGui      ,
+   Key_Escape               , Key_F           , Key_G          , Key_C            , Key_R , Key_L , Key_Slash        ,
+                              Key_D           , Key_H          , Key_T            , Key_N , Key_S , Key_LeftBracket  ,
+   Key_LeftAlt              , Key_B           , Key_M          , Key_W            , Key_V , Key_Z , Key_RightBracket ,
+   Key_Enter                , OSM(RightShift) , Key_Spacebar   , Key_RightControl ,
    ShiftToLayer(FUNCTION))    ,
 
 #else
