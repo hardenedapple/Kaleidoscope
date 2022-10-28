@@ -72,6 +72,8 @@
 // Support for OneShot modifiers.
 #include <Kaleidoscope-OneShot.h>
 
+#include "kaleidoscope/layers.h"
+
 /** This 'enum' is a list of all the macros used by the Model 100's firmware
   * The names aren't particularly important. What is important is that each
   * is unique.
@@ -143,7 +145,7 @@ enum {
   PRIMARY,
   FUNCTION,
   SHIFTED_KEYS,
-  DVORAK,
+  MAX_LAYERS,
 };  // layers
 
 
@@ -165,6 +167,39 @@ enum {
 // #define PRIMARY_KEYMAP_COLEMAK
 #define PRIMARY_KEYMAP_CUSTOM
 
+#define TOGGLELAYER(LAYER) ::kaleidoscope::plugin::ToggleLayerKey(LAYER)
+namespace kaleidoscope {
+namespace plugin {
+
+constexpr Key ToggleLayerKey(uint16_t target_layer) {
+  return Key(kaleidoscope::ranges::SAFE_START + target_layer);
+}
+constexpr uint16_t ToggleLayerFromKey(Key seen_key) {
+  return seen_key.getRaw() - kaleidoscope::ranges::SAFE_START;
+}
+
+class ToggleLayer : public kaleidoscope::Plugin {
+  public:
+    EventHandlerResult onKeyEvent(KeyEvent &event) {
+      if (event.key >= ToggleLayerKey(PRIMARY)
+          && event.key < ToggleLayerKey(MAX_LAYERS))
+      {
+        if (keyToggledOn(event.state)) {
+          uint16_t target_layer = ToggleLayerFromKey (event.key);
+          if (kaleidoscope::Layer_::isActive (target_layer))
+            kaleidoscope::Layer_::deactivate(target_layer);
+          else
+            kaleidoscope::Layer_::activate(target_layer);
+        }
+        return EventHandlerResult::EVENT_CONSUMED;
+      }
+      return EventHandlerResult::OK;
+    }
+};
+
+}
+}
+kaleidoscope::plugin::ToggleLayer ToggleLayer;
 
 /* This comment temporarily turns off astyle's indent enforcement
  *   so we can make the keymaps actually resemble the physical key layout better
@@ -197,19 +232,19 @@ KEYMAPS(
 #endif
 
   [FUNCTION] =  KEYMAP_STACKED
- (XXX               , Key_F1               , Key_F2        , Key_F3                  , Key_F4       , Key_F5               , Key_LEDEffectNext ,
-  Key_F12           , ___                  , Key_Delete    , Key_Backspace           , Key_Backtick , ___                  , ___               ,
-  Key_PcApplication , Key_Home             , Key_PageUp    , Key_PageDown            , Key_End      , ___                  ,
-  ___               , ___                  , Key_CapsLock  , LockLayer(SHIFTED_KEYS) , Key_Insert   , MoveToLayer(PRIMARY) , ___               ,
-  ___               , ___                  , ___           , ___                     ,
-  ___               ,
+ (XXX                   , Key_F1   , Key_F2        , Key_F3                    , Key_F4       , Key_F5         , Key_LEDEffectNext ,
+  Key_F12               , ___      , Key_Delete    , Key_Backspace             , Key_Backtick , ___            , ___               ,
+  Key_PcApplication     , Key_Home , Key_PageUp    , Key_PageDown              , Key_End      , ___            ,
+  ___                   , ___      , Key_CapsLock  , TOGGLELAYER(SHIFTED_KEYS) , Key_Insert   , ___            , ___               ,
+  ___                   , ___      , ___           , ___                       ,
+  ___                   ,
 
-  ___               , Key_F6               , Key_F7        , Key_F8                  , Key_F9       , Key_F10              , Key_F11           ,
-  ___               , ___                  , Key_Backtick  , Key_Backspace           , Key_Delete   , ___                  , ___               ,
-                      ___                  , Key_LeftArrow , Key_DownArrow           , Key_UpArrow  , Key_RightArrow       , ___               ,
-  ___               , MoveToLayer(PRIMARY) , Key_Insert    , LockLayer(SHIFTED_KEYS) , Key_CapsLock , ___                  , ___               ,
-  ___               , ___                  , ___           , ___                     ,
-  ___),
+  ___                   , Key_F6   , Key_F7        , Key_F8                    , Key_F9       , Key_F10        , Key_F11           ,
+  ___                   , ___      , Key_Backtick  , Key_Backspace             , Key_Delete   , ___            , ___               ,
+                          ___      , Key_LeftArrow , Key_DownArrow             , Key_UpArrow  , Key_RightArrow , ___               ,
+  ___                   , ___      , Key_Insert    , TOGGLELAYER(SHIFTED_KEYS) , Key_CapsLock , ___            , ___               ,
+  ___                   , ___      , ___           , ___                       ,
+  ___)                  ,
 
  [SHIFTED_KEYS] = KEYMAP_STACKED
   (___                    , TOPSY(1) , TOPSY(2) , TOPSY(3)     , TOPSY(4) , TOPSY(5) , ___ ,
@@ -217,14 +252,14 @@ KEYMAPS(
    ___                    , ___      , ___      , ___          , ___      , ___      ,
    ___                    , ___      , ___      , ___          , ___      , ___      , ___ ,
    ___                    , ___      , ___      , ___          ,
-   ShiftToLayer(FUNCTION) ,
+   ___,
 
    ___                    , TOPSY(6) , TOPSY(7) , TOPSY(8)     , TOPSY(9) , TOPSY(0) , ___ ,
    ___                    , ___      , ___      , ___          , ___      , ___      , ___ ,
                             ___      , ___      , ___          , ___      , ___      , ___ ,
    ___                    , ___      , ___      , ___          , ___      , ___      , ___ ,
    ___                    , ___      , ___      , ___          ,
-   ShiftToLayer(FUNCTION)),
+   ___),
 ) // KEYMAPS(
 
 /* Re-enable astyle's indent enforcement */
@@ -384,6 +419,9 @@ KALEIDOSCOPE_INIT_PLUGINS(
   // The FirmwareVersion plugin lets Chrysalis query the version of the firmware
   // programmatically.
   FirmwareVersion,
+
+  // My plugin for toggling a particular layer.
+  ToggleLayer,
 
   // TopsyTurvy plugin gives support for switching the shift layout for a key.
   TopsyTurvy,
