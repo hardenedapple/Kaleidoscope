@@ -118,7 +118,8 @@ void Layer_::handleLayerKeyEvent(const KeyEvent &event) {
     // LockLayer()/UnlockLayer()
     target_layer = key_code;
 
-    if (stackPosition(target_layer) == active_layer_count_ - 1) {
+    if (stackPosition(target_layer) == active_layer_count_ - 1
+	|| stackPosition(target_layer) == active_layer_count_ - 2) {
       deactivate(target_layer);
     } else {
       activate(target_layer);
