@@ -23,9 +23,6 @@
 // Support for controlling the keyboard's LEDs
 #include "Kaleidoscope-LEDControl.h"
 
-// Support for "Numpad" mode, which is mostly just the Numpad specific LED mode
-#include "Kaleidoscope-NumPad.h"
-
 // Support for the "Boot greeting" effect, which pulses the 'LED' button for 10s
 // when the keyboard is connected to a computer (or that computer is powered on)
 #include "Kaleidoscope-LEDEffect-BootGreeting.h"
@@ -70,7 +67,7 @@
 #include "Kaleidoscope-TopsyTurvy.h"
 
 // Support for OneShot modifiers.
-#include <Kaleidoscope-OneShot.h>
+#include "Kaleidoscope-OneShot.h"
 
 #include "kaleidoscope/layers.h"
 
