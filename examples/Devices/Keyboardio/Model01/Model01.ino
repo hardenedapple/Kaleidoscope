@@ -614,6 +614,9 @@ void setup() {
   // If there's a default layer set in EEPROM, we should set that as the default
   // here.
   Layer.move(EEPROMSettings.default_layer());
+
+  // Disable stickability for OneShot keys.
+  OneShot.disableStickabilityForModifiers();
 }
 
 /** loop is the second of the standard Arduino sketch functions.
