@@ -528,6 +528,8 @@ void setup() {
 
   // Disable stickability for OneShot keys.
   OneShot.disableStickabilityForModifiers();
+  // Decrease timeout for OneShot.
+  OneShot.setTimeout(1000);
 }
 
 /** loop is the second of the standard Arduino sketch functions.
