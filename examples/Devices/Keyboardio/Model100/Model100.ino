@@ -72,7 +72,12 @@
 // Support for OneShot modifiers.
 #include "Kaleidoscope-OneShot.h"
 
+/* So that I can access the Layer object for ToggleLayers.  */
 #include "kaleidoscope/layers.h"
+
+/* So that I can use some Macro stuff.  */
+#include "Kaleidoscope-MacroSupport.h"
+#include "kaleidoscope/LiveKeys.h"
 
 /** This 'enum' is a list of all the macros used by the Model 100's firmware
   * The names aren't particularly important. What is important is that each
@@ -187,10 +192,10 @@ class ToggleLayer : public kaleidoscope::Plugin {
       {
         if (keyToggledOn(event.state)) {
           uint16_t target_layer = ToggleLayerFromKey (event.key);
-          if (kaleidoscope::Layer_::isActive (target_layer))
-            kaleidoscope::Layer_::deactivate(target_layer);
+          if (::Layer.isActive(target_layer))
+            ::Layer.deactivate(target_layer);
           else
-            kaleidoscope::Layer_::activate(target_layer);
+            ::Layer.activate(target_layer);
         }
         return EventHandlerResult::EVENT_CONSUMED;
       }
@@ -228,6 +233,455 @@ class SpecialShift : public kaleidoscope::Plugin {
 }
 kaleidoscope::plugin::ToggleLayer ToggleLayer;
 kaleidoscope::plugin::SpecialShift SpecialShift;
+
+#define MACROREC   ::kaleidoscope::ranges::SAFE_START + MAX_LAYERS + 1
+#define MACROPLAY  ::kaleidoscope::ranges::SAFE_START + MAX_LAYERS + 2
+#define MACRODELAY ::kaleidoscope::ranges::SAFE_START + MAX_LAYERS + 3
+/*
+ * Re-implementation of MacrosOnTheFly.
+ * Original work is here, and all credit due to Craig Disselkoen.
+ * https://github.com/cdisselkoen/Kaleidoscope-MacrosOnTheFly
+ *
+ * Re-implementing largely so that I understand what's going on with the idea
+ * that I can then make informed decisions about what should happen for my
+ * use-case.  It also means that I get to learn about writing keyboard plugins.
+ *
+ * I also think I'd like it to use the basic Macros recording mechanism, and
+ * hence to replay things in the same way.
+ */
+
+typedef enum {
+  MACRO_ACTION_END,
+
+  MACRO_ACTION_STEP_INTERVAL,
+  MACRO_ACTION_STEP_WAIT,
+
+  MACRO_ACTION_STEP_KEYDOWN,
+  MACRO_ACTION_STEP_KEYUP,
+  MACRO_ACTION_STEP_TAP,
+
+  MACRO_ACTION_STEP_KEYCODEDOWN,
+  MACRO_ACTION_STEP_KEYCODEUP,
+  MACRO_ACTION_STEP_TAPCODE,
+
+  MACRO_ACTION_STEP_EXPLICIT_REPORT,
+  MACRO_ACTION_STEP_IMPLICIT_REPORT,
+  MACRO_ACTION_STEP_SEND_REPORT,
+
+  MACRO_ACTION_STEP_TAP_SEQUENCE,
+  MACRO_ACTION_STEP_TAP_CODE_SEQUENCE,
+} MacroActionStepType;
+
+typedef uint8_t macro_t;
+namespace kaleidoscope {
+namespace plugin {
+
+class MacrosOnTheFly : public kaleidoscope::Plugin {
+  typedef struct Slot_ {
+    /* "mapped" key, not a physical key.  */
+    Key macro_name;
+    uint8_t numUsedKeystrokes;
+  } Slot;
+
+  /* TODO Want to revisit this in the future.
+   * Currently thinking that hard-coding some things will make the program
+   * easier to write and won't actually limit me in functionality (since I
+   * don't *think* I'll be using any more than this space).
+   *
+   * Currently limiting the number of macros to 10, but pre-allocating that
+   * space in 10 chunks of 50 bytes for a key.  */
+  static const uint8_t NUM_MACROS = 8;
+  static const uint8_t MACRO_SIZE = 50;
+  static Slot slotRecord[NUM_MACROS];
+  static const uint16_t STORAGE_SIZE_IN_BYTES = MACRO_SIZE*NUM_MACROS;
+  static byte macroStorage[STORAGE_SIZE_IN_BYTES];
+  static uint8_t sRecordingSlot;
+  static uint8_t sLastPlayedSlot;
+  static uint8_t delayInterval;
+
+  typedef enum State_ {
+    PICKING_SLOT_FOR_REC,
+    IDLE,
+    PICKING_SLOT_FOR_PLAY,
+    SETTING_DELAY,
+    IDLE_AND_RECORDING,
+    PICKING_SLOT_FOR_PLAY_AND_RECORDING,
+    SETTING_DELAY_AND_RECORDING,
+  } State;
+  static State currentState;
+  static bool replaying;
+  static inline bool isRecording(State s) {
+    return s == IDLE_AND_RECORDING
+      || s == PICKING_SLOT_FOR_PLAY_AND_RECORDING
+      || s == SETTING_DELAY_AND_RECORDING;
+  }
+
+  static void initialiseSlotKeys (Key names[NUM_MACROS]) {
+    /* TODO Would like to assert that we do not have anything problematic here.
+     *      Since these keys should be hard-coded in the setup code, I think we
+     *      could use some compile-time checking.  Would like to look into
+     *      that.  */
+    for (uint8_t sI = 0; sI < NUM_MACROS; sI++) {
+      slotRecord[sI].macro_name = names[sI];
+      slotRecord[sI].numUsedKeystrokes = 0;
+    }
+    for (uint16_t mI = 0; mI < STORAGE_SIZE_IN_BYTES; mI++) {
+      macroStorage[mI] = MACRO_ACTION_END;
+    }
+    sLastPlayedSlot = NUM_MACROS;
+    sRecordingSlot = NUM_MACROS;
+    currentState = IDLE;
+    replaying = false;
+    delayInterval = 0;
+  }
+
+  static uint8_t sFindSlot (const Key key) {
+    uint8_t sI;
+    for (sI = 0; sI < NUM_MACROS; sI++) {
+      if (slotRecord[sI].macro_name == key)
+	break;
+    }
+    return sI;  /* Is NUM_MACROS if did not find a key.  */
+  }
+
+  static bool prepareForRecording (const Key key) {
+    uint8_t sIndex = sFindSlot(key);
+    if (sIndex == NUM_MACROS)
+      return false;
+    slotRecord[sIndex].numUsedKeystrokes = 0;
+    sRecordingSlot = sIndex;
+    return true;
+  }
+
+  static bool recordKeystroke(KeyEvent &event) {
+    /* TODO */
+    return true;
+  }
+
+  static inline constexpr uint16_t mIndexFrom_s(uint8_t sIndex) {
+    return ((uint16_t)sIndex)*MACRO_SIZE;
+  }
+
+  /* Increments in milliseconds are not very nice as an interface.
+   * Give increments in 100 milliseconds instead.  */
+  static inline void do_delay(const uint8_t todelay) {
+    uint16_t milliseconds = (uint16_t)todelay * 100;
+    delay(milliseconds);
+  }
+
+  /// Send a key press event from a Macro
+  ///
+  /// Generates a new `KeyEvent` and calls `Runtime.handleKeyEvent()` with the
+  /// specified `key`, then stores that `key` in an array of active macro key
+  /// values. This allows the macro to press one key and keep it active when a
+  /// subsequent key event is sent as part of the same macro sequence.
+  static inline void press(Key key) {
+    ::MacroSupport.press(key);
+  }
+
+  /// Send a key release event from a Macro
+  ///
+  /// Generates a new `KeyEvent` and calls `Runtime.handleKeyEvent()` with the
+  /// specified `key`, then removes that key from the array of active macro
+  /// keys (see `Macros.press()`).
+  static inline void release(Key key) {
+    ::MacroSupport.release(key);
+  }
+
+  /// Clear all virtual keys held by Macros
+  ///
+  /// This function clears the active macro keys array, sending a release event
+  /// for each key stored there.
+  static inline void clear() {
+    ::MacroSupport.clear();
+  }
+
+  /// Send a key "tap event" from a Macro
+  ///
+  /// Generates two new `KeyEvent` objects, one each to press and release the
+  /// specified `key`, passing both in sequence to `Runtime.handleKeyEvent()`.
+  static inline void tap(Key key) {
+    ::MacroSupport.tap(key);
+  }
+
+  static bool play(const uint8_t sIndex) {
+    /* Taken from Macros.cpp but adjusted to read from a different place. */
+    replaying = true;
+    uint16_t mIndex = mIndexFrom_s(sIndex);
+    uint8_t off = 0;
+    uint8_t wait = 0;
+    macro_t macro = MACRO_ACTION_END;
+    Key key;
+    while (off < MACRO_SIZE) {
+      /* TODO Macros should be properly finished off with MACRO_ACTION_END.  If
+       * things are not properly finished off and we are in the strange state
+       * where the last entry is something like MACRO_ACTION_STEP_KEYUP then we
+       * may read some bytes of the next macro.  */
+      switch (macro = macroStorage[mIndex + off++]) {
+      // Macro code claims these are not useful.
+      case MACRO_ACTION_STEP_EXPLICIT_REPORT:
+      case MACRO_ACTION_STEP_IMPLICIT_REPORT:
+      case MACRO_ACTION_STEP_SEND_REPORT:
+        break;
+      // End legacy macro step commands
+
+      // Timing
+      /* SHOULD NEVER HAPPEN.
+       * We don't have any way to record this in the macro.  */
+      case MACRO_ACTION_STEP_INTERVAL:
+      case MACRO_ACTION_STEP_WAIT:
+	break;
+
+      case MACRO_ACTION_STEP_KEYDOWN:
+        key.setFlags(macroStorage[mIndex + off++]);
+        key.setKeyCode(macroStorage[mIndex + off++]);
+        press(key);
+        break;
+      case MACRO_ACTION_STEP_KEYUP:
+        key.setFlags(macroStorage[mIndex + off++]);
+        key.setKeyCode(macroStorage[mIndex + off++]);
+        release(key);
+        break;
+      case MACRO_ACTION_STEP_TAP:
+        key.setFlags(macroStorage[mIndex + off++]);
+        key.setKeyCode(macroStorage[mIndex + off++]);
+        tap(key);
+        break;
+
+      case MACRO_ACTION_STEP_KEYCODEDOWN:
+        key.setFlags(0);
+        key.setKeyCode(macroStorage[mIndex + off++]);
+        press(key);
+        break;
+      case MACRO_ACTION_STEP_KEYCODEUP:
+        key.setFlags(0);
+        key.setKeyCode(macroStorage[mIndex + off++]);
+        release(key);
+        break;
+      case MACRO_ACTION_STEP_TAPCODE:
+        key.setFlags(0);
+        key.setKeyCode(macroStorage[mIndex + off++]);
+        tap(key);
+        break;
+
+      case MACRO_ACTION_STEP_TAP_SEQUENCE: {
+        while (off < MACRO_SIZE) {
+          key.setFlags(macroStorage[mIndex + off++]);
+          key.setKeyCode(macroStorage[mIndex + off++]);
+          if (key == Key_NoKey)
+            break;
+          tap(key);
+          do_delay(delayInterval);
+        }
+        break;
+      }
+      case MACRO_ACTION_STEP_TAP_CODE_SEQUENCE: {
+        while (off < MACRO_SIZE) {
+          key.setFlags(0);
+          key.setKeyCode(macroStorage[mIndex + off++]);
+          if (key.getKeyCode() == 0)
+            break;
+          tap(key);
+          do_delay(delayInterval);
+        }
+        break;
+      }
+
+      case MACRO_ACTION_END:
+      default:
+	goto exit;
+      }
+      do_delay(delayInterval);
+    }
+exit:
+    replaying = false;
+  }
+
+  static inline bool isTransitionEvent (KeyEvent &event) {
+    return keyToggledOn(event.state)
+      && !event.key.isKeyboardModifier ()
+      && !event.key.isLayerShift ();
+  }
+#define RET_IF_NON_TRANSITION(EVENT)  \
+  if (!isTransitionEvent ((EVENT))) \
+    return kaleidoscope::EventHandlerResult::OK;
+
+  static inline EventHandlerResult doNewPlay(KeyEvent &event) {
+    RET_IF_NON_TRANSITION (event);
+    bool success = false;
+    if (event.key.getRaw() == MACROPLAY) {
+      success = play(sLastPlayedSlot);
+    } else {
+      uint8_t sIndex = sFindSlot (event.key);
+      success = (sIndex != NUM_MACROS) && play(sIndex);
+      if (success) sLastPlayedSlot = sIndex;
+    }
+    if (!success) LED_complain (event.addr);
+    kaleidoscope::live_keys.mask(event.addr);
+    return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
+  }
+
+  EventHandlerResult onKeyEvent(KeyEvent &event) {
+    /*
+     * 1) You can not record one macro while recording another macro.
+     * 2) You can not store a macro under the MACROREC key.
+     */
+    /*
+     * States and transitions:
+     *   PICKING_SLOT_FOR_REC
+     *     any modifier toggle on     -> PICKING_SLOT_FOR_REC
+     *     any non toggleOn           -> PICKING_SLOT_FOR_REC
+     *     valid slot toggle on       -> IDLE_AND_RECORDING
+     *     other toggle on            -> IDLE
+     *   PICKING_SLOT_FOR_PLAY
+     *     any modifier toggle on     -> PICKING_SLOT_FOR_PLAY
+     *     any non toggleOn           -> PICKING_SLOT_FOR_PLAY
+     *     other toggle on            -> (maybe play then) IDLE
+     *   SETTING_DELAY
+     *     any toggle off               -> SETTING_DELAY
+     *     any modifier toggle on       -> SETTING_DELAY
+     *     MACROREC toggle on           -> PICKING_SLOT_FOR_REC
+     *     MACROPLAY toggle on          -> PICKING_SLOT_FOR_PLAY
+     *     MACRODELAY toggle on         -> SETTING_DELAY
+     *     other toggle on              -> IDLE
+     *   IDLE
+     *     any toggle off               -> IDLE
+     *     any modifier toggle on       -> IDLE
+     *     MACROREC toggle on           -> PICKING_SLOT_FOR_REC
+     *     MACROPLAY toggle on          -> PICKING_SLOT_FOR_PLAY
+     *     MACRODELAY toggle on         -> SETTING_DELAY
+     *     other toggle on              -> IDLE
+     *   IDLE_AND_RECORDING,
+     *     MACROREC toggle on           -> IDLE
+     *     MACROPLAY toggle on          -> (record and) PICKING_SLOT_FOR_PLAY_AND_RECORDING
+     *     MACRODELAY toggle on         -> (special kind of record) SETTING_DELAY_AND_RECORDING
+     *     any other keypress           -> (record and) IDLE_AND_RECORDING
+     *   PICKING_SLOT_FOR_PLAY_AND_RECORDING,
+     *     MACROREC toggle on         -> (record and) IDLE
+     *     any modifier toggle on     -> (record and) PICKING_SLOT_FOR_PLAY_AND_RECORDING
+     *     any non toggleOn           -> (record and) PICKING_SLOT_FOR_PLAY_AND_RECORDING
+     *     other toggle on            -> (record, maybe play then) IDLE_AND_RECORDING
+     *   SETTING_DELAY_AND_RECORDING,
+     *     MACROREC toggle on           -> IDLE
+     *     any toggle off               -> (record and) SETTING_DELAY_AND_RECORDING
+     *     any modifier toggle on       -> (record and) SETTING_DELAY_AND_RECORDING
+     *     MACROPLAY toggle on          -> (record and) PICKING_SLOT_FOR_PLAY_AND_RECORDING
+     *     MACRODELAY toggle on         -> (special kind of record) SETTING_DELAY_AND_RECORDING
+     *     other toggle on              -> (record) IDLE_AND_RECORDING
+     *
+     *  When replaying, do not record.
+     *  Otherwise exactly same as above.
+     *  (Can not trigger recording since MACROREC is never recorded).
+     */
+
+    /* PICKING_SLOT_FOR_REC has two transitions available.
+     * Transitions only happen when toggling a key on.
+     * We completely ignore modifiers.
+     *
+     * If the toggle on was a valid key for recording into (i.e.
+     * prepareForRecording returns true) then we transition to
+     * IDLE_AND_RECORDING, otherwise we transition to IDLE.
+     *
+     * Either way there is nothing else to do.  */
+    if (currentState == PICKING_SLOT_FOR_REC) {
+      RET_IF_NON_TRANSITION (event);
+      bool recording = prepareForRecording (event.key);
+      if (!recording) LED_complain (event.addr);
+      currentState = recording ? IDLE_AND_RECORDING : IDLE;
+      /* Mask the current key so that its keyToggledOff event does not get
+       * reported (especially to us later).  */
+      kaleidoscope::live_keys.mask(event.addr);
+      return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
+    }
+
+    if (currentState = PICKING_SLOT_FOR_PLAY) {
+      EventHandlerResult ret = doNewPlay (event);
+      if (ret != kaleidoscope::EventHandlerResult::OK)
+	currentState = IDLE;
+      return ret;
+    }
+
+    if (currentState == SETTING_DELAY || currentState == IDLE) {
+      RET_IF_NON_TRANSITION (event);
+      if (event.key.getRaw () == MACRODELAY) {
+	if (currentState == SETTING_DELAY)
+	  delayInterval += 1;
+	else
+	  delayInterval = 0;
+	currentState = SETTING_DELAY;
+	return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
+      }
+      if (event.key.getRaw () == MACROREC) {
+	currentState = PICKING_SLOT_FOR_REC;
+	return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
+      }
+      if (event.key.getRaw() == MACROPLAY) {
+	currentState = PICKING_SLOT_FOR_PLAY;
+	return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
+      }
+      currentState = IDLE;
+      return kaleidoscope::EventHandlerResult::OK;
+    }
+
+    /* If get here then we are recording.  */
+    if (event.key.getRaw () == MACROREC) {
+      /* This will always be a toggleOn since there is no other event that
+       * we should see while recording (we masked the MACROREC on entering
+       * recording state).  */
+      if (currentState == PICKING_SLOT_FOR_PLAY_AND_RECORDING) {
+	/* MACROREC is not a valid slot for playing.
+	 * Can just have the last element in the macro be to request playing an
+	 * invalid slot.  We can faithfully do that.
+	 * When it comes to playing that back, we will be in the
+	 * PICKING_SLOT_FOR_PLAY state above and that will simply not find a
+	 * valid state and leave us IDLE.  */
+	recordKeystroke(event);
+      }
+      currentState = IDLE;
+      return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
+    }
+
+    /* Assume injected keys will get injected again based on the keys that
+     * were actually pressed and that will get replayed.  */
+    if (!keyIsInjected (event.state) && !replaying) {
+      bool have_space = recordKeystroke (event);
+      if (!have_space) {
+	currentState = IDLE;
+	LED_complain (event.addr);
+	return kaleidoscope::EventHandlerResult::OK;
+      }
+    }
+
+    if (currentState == SETTING_DELAY_AND_RECORDING
+	|| currentState == IDLE_AND_RECORDING) {
+      RET_IF_NON_TRANSITION (event);
+      if (event.key.getRaw () == MACRODELAY) {
+	/* Delay count already handled in recording above.  */
+	currentState = SETTING_DELAY_AND_RECORDING;
+	return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
+      }
+      /* MACROREC already handled.  */
+      if (event.key.getRaw() == MACROPLAY) {
+	currentState = PICKING_SLOT_FOR_PLAY_AND_RECORDING;
+	return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
+      }
+      currentState = IDLE_AND_RECORDING;
+      return kaleidoscope::EventHandlerResult::OK;
+    }
+
+    /* currentState *must* be PICKING_SLOT_FOR_PLAY_AND_RECORDING.  */
+    RET_IF_NON_TRANSITION (event);
+    doNewPlay (event);
+    currentState = IDLE_AND_RECORDING;
+    return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
+  }
+
+  static inline void LED_complain (KeyAddr addr) {}
+  static inline void LED_record_success (KeyAddr addr) {}
+};
+}
+}
+
 
 /* This comment temporarily turns off astyle's indent enforcement
  *   so we can make the keymaps actually resemble the physical key layout better
