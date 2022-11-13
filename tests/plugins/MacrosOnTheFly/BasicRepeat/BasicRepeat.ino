@@ -1,8 +1,6 @@
 #include <Kaleidoscope.h>
 #include <Kaleidoscope-MacrosOnTheFly.h>
 
-#include "./common.h"
-
 // *INDENT-OFF*
 KEYMAPS(
     [0] = KEYMAP_STACKED
