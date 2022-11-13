@@ -9,7 +9,7 @@ KEYSWITCH MACRODELAY 4 6
 
 # ==============================================================================
 # MacrosOnTheFly can record and replay something.
-NAME MacrosOnTheFly basic record and replay.
+NAME MacrosOnTheFly basic record and replay
 
 RUN 10 ms
 
