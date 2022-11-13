@@ -352,6 +352,14 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
     delayInterval = 0;
   }
 
+  static inline constexpr uint16_t mIndexFrom_s(uint8_t sIndex) {
+    return ((uint16_t)sIndex)*MACRO_SIZE;
+  }
+  static inline constexpr uint16_t mNextByteFor_s(uint8_t sIndex) {
+    return ((uint16_t)sIndex)*MACRO_SIZE
+      + slotRecord[sIndex]->numUsedKeystrokes;
+  }
+
   static uint8_t sFindSlot (const Key key) {
     uint8_t sI;
     for (sI = 0; sI < NUM_MACROS; sI++) {
@@ -371,12 +379,37 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
   }
 
   static bool recordKeystroke(KeyEvent &event) {
-    /* TODO */
-    return true;
-  }
+    /* Things we want to guarantee:
+     *    No matter what keys we see, after having put a
+     *    MACRO_ACTION_STEP_INTERVAL into our buffer the next thing we'd put
+     *    into the buffer would be an interval from the clause handling the
+     *    first key pressed after a MACRODELAY.  */
+    if (!keyToggledOn(event.state) && !keyToggledOff(event.state))
+      return true;
 
-  static inline constexpr uint16_t mIndexFrom_s(uint8_t sIndex) {
-    return ((uint16_t)sIndex)*MACRO_SIZE;
+    Slot cur = slotRecord[sRecordingSlot];
+    byte *macroBuffer = macroStorage[mIndexFrom_s(sRecordingSlot)]
+
+    /* First use of the MACRODELAY key does not get recorded.
+     * Only the last one.  */
+    if (keyToggledOn(event.state) && event.key.getRaw() == MACRODELAY) {
+      if (currentState != SETTING_DELAY_AND_RECORDING) {
+	macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_STEP_INTERVAL;
+	delayInterval = 0;
+      } else
+	delayInterval += 1;
+      return true;
+    }
+
+    /* Have seen our last MACRODELAY keypress.  */
+    if (currentState == SETTING_DELAY_AND_RECORDING
+	&& keyToggledOn(event.state) && event.key.getRaw() != MACRODELAY) {
+      /* State change will be handled by onKeyEvent, we just record the
+       * keystroke.  */
+      macroBuffer[cur->numUsedKeystrokes++] = delayInterval;
+    }
+
+    return true;
   }
 
   /* Increments in milliseconds are not very nice as an interface.
@@ -422,6 +455,8 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
   }
 
   static bool play(const uint8_t sIndex) {
+    /* Avoid recursive macro playing (macro a plays macro b plays macro a and
+     * similar).  */
     switch (sIndex) {
       case 0:
 	if (replaying0) return false;
@@ -467,11 +502,11 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
         break;
       // End legacy macro step commands
 
-      // Timing
-      /* SHOULD NEVER HAPPEN.
-       * We don't have any way to record this in the macro.  */
-      case MACRO_ACTION_STEP_INTERVAL:
+      /* Don't have any way to record this in the macro.  */
       case MACRO_ACTION_STEP_WAIT:
+	break;
+      case MACRO_ACTION_STEP_INTERVAL:
+	delayInterval = macroStorage[mIndex + off++];
 	break;
 
       case MACRO_ACTION_STEP_KEYDOWN:
@@ -675,6 +710,7 @@ exit:
     }
 
     /* If get here then we are recording.  */
+
     if (event.key.getRaw () == MACROREC) {
       /* This will always be a toggleOn since there is no other event that
        * we should see while recording (we masked the MACROREC on entering
@@ -720,7 +756,7 @@ exit:
       return kaleidoscope::EventHandlerResult::OK;
     }
 
-    /* currentState *must* be PICKING_SLOT_FOR_PLAY_AND_RECORDING.  */
+    /* currentState must be PICKING_SLOT_FOR_PLAY_AND_RECORDING.  */
     RET_IF_NON_TRANSITION (event);
     doNewPlay (event);
     currentState = IDLE_AND_RECORDING;
