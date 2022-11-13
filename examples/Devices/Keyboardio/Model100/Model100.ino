@@ -359,6 +359,19 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
     return true;
   }
 
+  static bool compressMacro(byte *macroBuffer) {
+    /* Times we want to transform things for space-saving reasons:
+       1) KEYDOWN + KEYUP  -> TAP.
+       2) TAP + TAP + TAP + TAP -> TAPSEQ <...>
+          TAP     flags code TAP   flags code TAP   flags code
+          TAPSEQ  flags code flags code  flags code nokey nokey
+       3) KEYCODEDOWN + KEYCODEUP -> TAPCODE
+       3) TAPCODE + TAPCODE + TAPCODE  -> TAPCODESEQ <...>
+          TAPCODE     code TAPCODE code  TAPCODE  code
+          TAPCODESEQ  code code    code  nokey
+      */
+  }
+
   static bool recordKeystroke(KeyEvent &event) {
     /* Things we want to guarantee:
      *    No matter what keys we see, after having put a
@@ -368,14 +381,14 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
     if (!keyToggledOn(event.state) && !keyToggledOff(event.state))
       return true;
 
-    Slot cur = slotRecord[sRecordingSlot];
+    Slot *cur = &slotRecord[sRecordingSlot];
     byte *macroBuffer = &macroStorage[mIndexFrom_s(sRecordingSlot)];
 
     /* First use of the MACRODELAY key does not get recorded.
      * Only the last one.  */
     if (keyToggledOn(event.state) && event.key.getRaw() == MACRODELAY) {
       if (currentState != SETTING_DELAY_AND_RECORDING) {
-	macroBuffer[cur.numUsedKeystrokes++] = MACRO_ACTION_STEP_INTERVAL;
+	macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_STEP_INTERVAL;
 	delayInterval = 0;
       } else
 	delayInterval += 1;
@@ -387,7 +400,45 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
 	&& keyToggledOn(event.state) && event.key.getRaw() != MACRODELAY) {
       /* State change will be handled by onKeyEvent, we just record the
        * keystroke.  */
-      macroBuffer[cur.numUsedKeystrokes++] = delayInterval;
+      macroBuffer[cur->numUsedKeystrokes++] = delayInterval;
+    }
+
+    if (event.key.getRaw () == MACROREC) {
+      // assert(keyToggledOn(event.state));
+      if (currentState == PICKING_SLOT_FOR_PLAY_AND_RECORDING) {
+	/* MACROREC is not a valid slot for playing.
+	 * We need to do *something* about this state, otherwise we may end up
+	 * leaving the user in the state PICKING_SLOT_FOR_PLAY after having run
+	 * this macro.
+	 * The nicest approach would probably be to remove the keypress which
+	 * set things up for recording, but that might be tricky to find
+	 * (imagine a bunch of KEYUP events between now and then).
+	 * Hence we record an invalid slot for replaying and let that invalid
+	 * request be rejected on replaying the macro.  */
+	macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_STEP_KEYDOWN;
+	macroBuffer[cur->numUsedKeystrokes++] = Key(MACROREC).getFlags();
+	macroBuffer[cur->numUsedKeystrokes++] = Key(MACROREC).getKeyCode();
+      }
+      macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_END;
+      return true;
+    }
+
+    if (keyToggledOn(event.state)) {
+      if (key.getFlags() == 0) {
+	macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_STEP_KEYCODEDOWN;
+      } else {
+	macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_STEP_KEYDOWN;
+	macroBuffer[cur->numUsedKeystrokes++] = key.getFlags();
+      }
+      macroBuffer[cur->numUsedKeystrokes++] = key.getKeyCode();
+    } else {
+      if (key.getFlags() == 0) {
+	macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_STEP_KEYCODEUP;
+      } else {
+	macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_STEP_KEYUP;
+	macroBuffer[cur->numUsedKeystrokes++] = key.getFlags();
+      }
+      macroBuffer[cur->numUsedKeystrokes++] = key.getKeyCode();
     }
 
     return true;
@@ -664,15 +715,14 @@ exit:
       /* This will always be a toggleOn since there is no other event that
        * we should see while recording (we masked the MACROREC on entering
        * recording state).  */
-      if (currentState == PICKING_SLOT_FOR_PLAY_AND_RECORDING) {
+      recordKeystroke(event);
+      // if (currentState == PICKING_SLOT_FOR_PLAY_AND_RECORDING)
 	/* MACROREC is not a valid slot for playing.
 	 * Can just have the last element in the macro be to request playing an
 	 * invalid slot.  We can faithfully do that.
 	 * When it comes to playing that back, we will be in the
 	 * PICKING_SLOT_FOR_PLAY state above and that will simply not find a
 	 * valid state and leave us IDLE.  */
-	recordKeystroke(event);
-      }
       currentState = IDLE;
       return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
     }
