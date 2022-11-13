@@ -338,9 +338,9 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
   static inline constexpr uint16_t mIndexFrom_s(uint8_t sIndex) {
     return ((uint16_t)sIndex)*MACRO_SIZE;
   }
-  static inline constexpr uint16_t mNextByteFor_s(uint8_t sIndex) {
+  static inline uint16_t mNextByteFor_s(uint8_t sIndex) {
     return ((uint16_t)sIndex)*MACRO_SIZE
-      + slotRecord[sIndex]->numUsedKeystrokes;
+      + slotRecord[sIndex].numUsedKeystrokes;
   }
 
   static uint8_t sFindSlot (const Key key) {
@@ -371,13 +371,13 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
       return true;
 
     Slot cur = slotRecord[sRecordingSlot];
-    byte *macroBuffer = macroStorage[mIndexFrom_s(sRecordingSlot)]
+    byte *macroBuffer = &macroStorage[mIndexFrom_s(sRecordingSlot)];
 
     /* First use of the MACRODELAY key does not get recorded.
      * Only the last one.  */
     if (keyToggledOn(event.state) && event.key.getRaw() == MACRODELAY) {
       if (currentState != SETTING_DELAY_AND_RECORDING) {
-	macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_STEP_INTERVAL;
+	macroBuffer[cur.numUsedKeystrokes++] = MACRO_ACTION_STEP_INTERVAL;
 	delayInterval = 0;
       } else
 	delayInterval += 1;
@@ -389,7 +389,7 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
 	&& keyToggledOn(event.state) && event.key.getRaw() != MACRODELAY) {
       /* State change will be handled by onKeyEvent, we just record the
        * keystroke.  */
-      macroBuffer[cur->numUsedKeystrokes++] = delayInterval;
+      macroBuffer[cur.numUsedKeystrokes++] = delayInterval;
     }
 
     return true;
