@@ -306,7 +306,17 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
     SETTING_DELAY_AND_RECORDING,
   } State;
   static State currentState;
-  static bool replaying;
+  /* Unfortunate that we have a number of variables corresponding to the
+   * NUM_MACROS size and can't change that size without changing the underlying
+   * type of this bitfield and number of variables in the bitfield.  */
+  static uint8_t replaying0 : 1;
+  static uint8_t replaying1 : 1;
+  static uint8_t replaying2 : 1;
+  static uint8_t replaying3 : 1;
+  static uint8_t replaying4 : 1;
+  static uint8_t replaying5 : 1;
+  static uint8_t replaying6 : 1;
+  static uint8_t replaying7 : 1;
   static inline bool isRecording(State s) {
     return s == IDLE_AND_RECORDING
       || s == PICKING_SLOT_FOR_PLAY_AND_RECORDING
@@ -328,7 +338,14 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
     sLastPlayedSlot = NUM_MACROS;
     sRecordingSlot = NUM_MACROS;
     currentState = IDLE;
-    replaying = false;
+    replaying0 = 0;
+    replaying1 = 0;
+    replaying2 = 0;
+    replaying3 = 0;
+    replaying4 = 0;
+    replaying5 = 0;
+    replaying6 = 0;
+    replaying7 = 0;
     delayInterval = 0;
   }
 
@@ -402,8 +419,33 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
   }
 
   static bool play(const uint8_t sIndex) {
+    switch (sIndex) {
+      case 0:
+	if (replaying0) return false;
+	replaying0 = 1;
+      case 1:
+	if (replaying1) return false;
+	replaying1 = 1;
+      case 2:
+	if (replaying2) return false;
+	replaying2 = 1;
+      case 3:
+	if (replaying3) return false;
+	replaying3 = 1;
+      case 4:
+	if (replaying4) return false;
+	replaying4 = 1;
+      case 5:
+	if (replaying5) return false;
+	replaying5 = 1;
+      case 6:
+	if (replaying6) return false;
+	replaying6 = 1;
+      case 7:
+	if (replaying7) return false;
+	replaying7 = 1;
+    }
     /* Taken from Macros.cpp but adjusted to read from a different place. */
-    replaying = true;
     uint16_t mIndex = mIndexFrom_s(sIndex);
     uint8_t off = 0;
     uint8_t wait = 0;
@@ -491,7 +533,16 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
       do_delay(delayInterval);
     }
 exit:
-    replaying = false;
+    switch (sIndex) {
+      case 0:  replaying0 = 0;
+      case 1:  replaying1 = 0;
+      case 2:  replaying2 = 0;
+      case 3:  replaying3 = 0;
+      case 4:  replaying4 = 0;
+      case 5:  replaying5 = 0;
+      case 6:  replaying6 = 0;
+      case 7:  replaying7 = 0;
+    }
   }
 
   static inline bool isTransitionEvent (KeyEvent &event) {
