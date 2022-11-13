@@ -47,12 +47,12 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
      */
     static const uint8_t NUM_MACROS = 8;
     static const uint8_t MACRO_SIZE = 50;
-    static Slot slotRecord[NUM_MACROS] = {0};
+    static Slot slotRecord[NUM_MACROS];
     static const uint16_t STORAGE_SIZE_IN_BYTES = MACRO_SIZE*NUM_MACROS;
-    static byte macroStorage[STORAGE_SIZE_IN_BYTES] = {MACRO_ACTION_END};
-    static uint8_t sRecordingSlot = NUM_MACROS;
-    static uint8_t sLastPlayedSlot = NUM_MACROS;
-    static uint8_t delayInterval = 0;
+    static byte macroStorage[STORAGE_SIZE_IN_BYTES];
+    static uint8_t sRecordingSlot;
+    static uint8_t sLastPlayedSlot;
+    static uint8_t delayInterval;
 
     typedef enum State_ {
       PICKING_SLOT_FOR_REC,
@@ -63,11 +63,11 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
       PICKING_SLOT_FOR_PLAY_AND_RECORDING,
       SETTING_DELAY_AND_RECORDING,
     } State;
-    static State currentState = IDLE;
+    static State currentState;
     /* Unfortunate that we have a number of variables corresponding to the
      * NUM_MACROS size and can't change that size without changing the underlying
      * type of this bitfield and number of variables in the bitfield.  */
-    static uint8_t replaying = 0;
+    static uint8_t replaying;
 
     static inline bool isRecording(State s) {
       return s == IDLE_AND_RECORDING
