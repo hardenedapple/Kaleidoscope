@@ -327,9 +327,7 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
     for (uint8_t sI = 0; sI < NUM_MACROS; sI++) {
       slotRecord[sI].macro_name = names[sI];
       slotRecord[sI].numUsedKeystrokes = 0;
-    }
-    for (uint16_t mI = 0; mI < STORAGE_SIZE_IN_BYTES; mI++) {
-      macroStorage[mI] = MACRO_ACTION_END;
+      macroStorage[mIndexFrom_s(sI)] = MACRO_ACTION_END;
     }
     sLastPlayedSlot = NUM_MACROS;
     sRecordingSlot = NUM_MACROS;
