@@ -399,12 +399,12 @@ exit:
     return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
   }
 
-  Slot MacrosOnTheFly::slotRecord[NUM_MACROS]   = {0};
+  MacrosOnTheFly::State MacrosOnTheFly::currentState   = IDLE;
+  MacrosOnTheFly::Slot MacrosOnTheFly::slotRecord[NUM_MACROS]   = {0};
   byte MacrosOnTheFly::macroStorage[MacrosOnTheFly::STORAGE_SIZE_IN_BYTES] = {0};
   uint8_t MacrosOnTheFly::sRecordingSlot  = 0;
   uint8_t MacrosOnTheFly::sLastPlayedSlot = 0;
   uint8_t MacrosOnTheFly::delayInterval  = 0;
-  uint8_t MacrosOnTheFly::currentState   = 0;
   uint8_t MacrosOnTheFly::replaying      = 0;
 
 }  // namespace plugin
