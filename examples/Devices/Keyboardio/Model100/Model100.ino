@@ -602,6 +602,15 @@ exit:
       success = (sIndex != NUM_MACROS) && play(sIndex);
       if (success) sLastPlayedSlot = sIndex;
     }
+    /* Need to clear keys pressed by a macro so they don't get "stuck on".
+     * Do not want to do that when in the middle of replaying.
+     * This could lead to some surprising interplays (one macro presses ctrl
+     * and does not release it, that gets replayed in the middle of one macro
+     * which was typing), but at least it's a nice clean split for description.
+     *
+     * Not clearing at all after a macro would be a cleaner description, but
+     * that would have such problematic behaviour we can't have that.  */
+    if (replaying == 0) clear();
     if (!success) LED_complain (event.addr);
     kaleidoscope::live_keys.mask(event.addr);
     return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
