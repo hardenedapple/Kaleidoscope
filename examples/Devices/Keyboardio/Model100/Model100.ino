@@ -424,21 +424,21 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
     }
 
     if (keyToggledOn(event.state)) {
-      if (key.getFlags() == 0) {
+      if (event.key.getFlags() == 0) {
 	macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_STEP_KEYCODEDOWN;
       } else {
 	macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_STEP_KEYDOWN;
-	macroBuffer[cur->numUsedKeystrokes++] = key.getFlags();
+	macroBuffer[cur->numUsedKeystrokes++] = event.key.getFlags();
       }
-      macroBuffer[cur->numUsedKeystrokes++] = key.getKeyCode();
+      macroBuffer[cur->numUsedKeystrokes++] = event.key.getKeyCode();
     } else {
-      if (key.getFlags() == 0) {
+      if (event.key.getFlags() == 0) {
 	macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_STEP_KEYCODEUP;
       } else {
 	macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_STEP_KEYUP;
-	macroBuffer[cur->numUsedKeystrokes++] = key.getFlags();
+	macroBuffer[cur->numUsedKeystrokes++] = event.key.getFlags();
       }
-      macroBuffer[cur->numUsedKeystrokes++] = key.getKeyCode();
+      macroBuffer[cur->numUsedKeystrokes++] = event.key.getKeyCode();
     }
 
     return true;
