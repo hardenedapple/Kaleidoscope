@@ -34,6 +34,8 @@ namespace plugin {
       3) TAPCODE + TAPCODE + TAPCODE  -> TAPCODESEQ <...>
 	TAPCODE     code TAPCODE code  TAPCODE  code
 	TAPCODESEQ  code code    code  nokey
+     
+     None of this is yet implemented.
     */
 
 #define numRemainingKeystrokes(SLOT) MACRO_SIZE - (SLOT)->numUsedKeystrokes
