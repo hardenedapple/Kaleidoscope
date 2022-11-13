@@ -372,6 +372,17 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
       */
   }
 
+#define numRemainingKeystrokes(SLOT) MACRO_SIZE - (SLOT)->numUsedKeystrokes
+#define CHECK_REMAINING_SPACE(SLOT, REQUIRED) \
+  do { \
+    uint8_t rem = numRemainingKeystrokes(SLOT); \
+    if (rem >= REQUIRED) break; \
+    /* Adding MACRO_ACTION_END is just for extra safety.  */ \
+    if (rem != 0) \
+      macroBuffer[SLOT->numUsedKeystrokes] = MACRO_ACTION_END; \
+    return false; \
+  } while (0)
+
   static bool recordKeystroke(KeyEvent &event) {
     /* Things we want to guarantee:
      *    No matter what keys we see, after having put a
@@ -387,6 +398,7 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
     /* First use of the MACRODELAY key does not get recorded.
      * Only the last one.  */
     if (keyToggledOn(event.state) && event.key.getRaw() == MACRODELAY) {
+      CHECK_REMAINING_SPACE(cur, 2);
       if (currentState != SETTING_DELAY_AND_RECORDING) {
 	macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_STEP_INTERVAL;
 	delayInterval = 0;
@@ -405,24 +417,13 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
 
     if (event.key.getRaw () == MACROREC) {
       // assert(keyToggledOn(event.state));
-      if (currentState == PICKING_SLOT_FOR_PLAY_AND_RECORDING) {
-	/* MACROREC is not a valid slot for playing.
-	 * We need to do *something* about this state, otherwise we may end up
-	 * leaving the user in the state PICKING_SLOT_FOR_PLAY after having run
-	 * this macro.
-	 * The nicest approach would probably be to remove the keypress which
-	 * set things up for recording, but that might be tricky to find
-	 * (imagine a bunch of KEYUP events between now and then).
-	 * Hence we record an invalid slot for replaying and let that invalid
-	 * request be rejected on replaying the macro.  */
-	macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_STEP_KEYDOWN;
-	macroBuffer[cur->numUsedKeystrokes++] = Key(MACROREC).getFlags();
-	macroBuffer[cur->numUsedKeystrokes++] = Key(MACROREC).getKeyCode();
-      }
-      macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_END;
+      /* Adding MACRO_ACTION_END just for extra safety from overrunning.  */
+      if (numRemainingKeystrokes(cur) != 0)
+	macroBuffer[cur->numUsedKeystrokes] = MACRO_ACTION_END;
       return true;
     }
 
+    CHECK_REMAINING_SPACE (cur, event.key.getFlags() == 0 ? 2 : 3);
     if (keyToggledOn(event.state)) {
       if (event.key.getFlags() == 0) {
 	macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_STEP_KEYCODEDOWN;
@@ -443,6 +444,8 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
 
     return true;
   }
+#undef CHECK_REMAINING_SPACE
+#undef numRemainingKeystrokes
 
   /* Increments in milliseconds are not very nice as an interface.
    * Give increments in 100 milliseconds instead.  */
@@ -498,7 +501,10 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
     uint8_t wait = 0;
     macro_t macro = MACRO_ACTION_END;
     Key key;
-    while (off < MACRO_SIZE) {
+    uint8_t off_max = slotRecord[sIndex].numUsedKeystrokes;
+    // assert (off_max <= MACRO_SIZE);
+    off_max = off_max > MACRO_SIZE ? MACRO_SIZE : off_max;
+    while (off < off_max) {
       /* TODO Macros should be properly finished off with MACRO_ACTION_END.  If
        * things are not properly finished off and we are in the strange state
        * where the last entry is something like MACRO_ACTION_STEP_KEYUP then we
@@ -551,7 +557,7 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
         break;
 
       case MACRO_ACTION_STEP_TAP_SEQUENCE: {
-        while (off < MACRO_SIZE) {
+        while (off < off_max) {
           key.setFlags(macroStorage[mIndex + off++]);
           key.setKeyCode(macroStorage[mIndex + off++]);
           if (key == Key_NoKey)
@@ -562,7 +568,7 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
         break;
       }
       case MACRO_ACTION_STEP_TAP_CODE_SEQUENCE: {
-        while (off < MACRO_SIZE) {
+        while (off < off_max) {
           key.setFlags(0);
           key.setKeyCode(macroStorage[mIndex + off++]);
           if (key.getKeyCode() == 0)
@@ -690,6 +696,11 @@ exit:
     }
 
     if (currentState = PICKING_SLOT_FOR_PLAY) {
+      /* N.b. if a macro *ends* with MACROPLAY, then either the macro has been
+       * truncated due to running out of space or the MACROREC button was
+       * pressed directly after MACROPLAY.
+       * Both of those cases we just want to return to IDLE, which is what we
+       * do anyway.  Hence we're just fine.  */
       EventHandlerResult ret = doNewPlay (event);
       if (ret != kaleidoscope::EventHandlerResult::OK)
 	currentState = IDLE;
@@ -721,17 +732,10 @@ exit:
     /* If get here then we are recording.  */
 
     if (event.key.getRaw () == MACROREC) {
-      /* This will always be a toggleOn since there is no other event that
-       * we should see while recording (we masked the MACROREC on entering
-       * recording state).  */
+      // MACROREC toggle off should have been masked on entering recording
+      // state via live_keys manipulation.
+      // assert(keyToggledOn(event.state));
       recordKeystroke(event);
-      // if (currentState == PICKING_SLOT_FOR_PLAY_AND_RECORDING)
-	/* MACROREC is not a valid slot for playing.
-	 * Can just have the last element in the macro be to request playing an
-	 * invalid slot.  We can faithfully do that.
-	 * When it comes to playing that back, we will be in the
-	 * PICKING_SLOT_FOR_PLAY state above and that will simply not find a
-	 * valid state and leave us IDLE.  */
       currentState = IDLE;
       return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
     }
@@ -741,6 +745,9 @@ exit:
     if (!keyIsInjected (event.state) && !replaying) {
       bool have_space = recordKeystroke (event);
       if (!have_space) {
+	/* Decision here to either clear macro entirely or to just stop the
+	 * macro where it failed.  We choose to stop the macro where it failed
+	 * so that something */
 	currentState = IDLE;
 	LED_complain (event.addr);
 	return kaleidoscope::EventHandlerResult::OK;
