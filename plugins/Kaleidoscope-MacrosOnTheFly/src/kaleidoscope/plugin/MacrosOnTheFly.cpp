@@ -399,6 +399,14 @@ exit:
     return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
   }
 
+  MacrosOnTheFly::slotRecord   = {0};
+  MacrosOnTheFly::macroStorage = {0};
+  MacrosOnTheFly::sRecordingSlot  = 0;
+  MacrosOnTheFly::sLastPlayedSlot = 0;
+  MacrosOnTheFly::delayInterval  = 0;
+  MacrosOnTheFly::currentState   = 0;
+  MacrosOnTheFly::replaying      = 0;
+
 }  // namespace plugin
 }  // namespace kaleidoscope
 
