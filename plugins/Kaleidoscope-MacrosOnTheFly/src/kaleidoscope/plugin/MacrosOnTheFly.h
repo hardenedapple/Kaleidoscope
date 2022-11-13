@@ -34,121 +34,123 @@
 
 namespace kaleidoscope {
 namespace plugin {
-class MacrosOnTheFly : public kaleidoscope::Plugin { typedef struct Slot_ {
-    /* "mapped" key, not a physical key.  */
-    Key macro_name;
-    uint8_t numUsedKeystrokes;
-  } Slot;
+class MacrosOnTheFly : public kaleidoscope::Plugin {
+  public:
+    typedef struct Slot_ {
+      /* "mapped" key, not a physical key.  */
+      Key macro_name;
+      uint8_t numUsedKeystrokes;
+    } Slot;
 
-  /* I'm happy with hard coded limits on number of macros.
-   * Less comfortable with hard coded limits on number of actions in a macro.
-   */
-  static const uint8_t NUM_MACROS = 8;
-  static const uint8_t MACRO_SIZE = 50;
-  static Slot slotRecord[NUM_MACROS];
-  static const uint16_t STORAGE_SIZE_IN_BYTES = MACRO_SIZE*NUM_MACROS;
-  static byte macroStorage[STORAGE_SIZE_IN_BYTES];
-  static uint8_t sRecordingSlot;
-  static uint8_t sLastPlayedSlot;
-  static uint8_t delayInterval;
+    /* I'm happy with hard coded limits on number of macros.
+     * Less comfortable with hard coded limits on number of actions in a macro.
+     */
+    static const uint8_t NUM_MACROS = 8;
+    static const uint8_t MACRO_SIZE = 50;
+    static Slot slotRecord[NUM_MACROS];
+    static const uint16_t STORAGE_SIZE_IN_BYTES = MACRO_SIZE*NUM_MACROS;
+    static byte macroStorage[STORAGE_SIZE_IN_BYTES];
+    static uint8_t sRecordingSlot;
+    static uint8_t sLastPlayedSlot;
+    static uint8_t delayInterval;
 
-  typedef enum State_ {
-    PICKING_SLOT_FOR_REC,
-    IDLE,
-    PICKING_SLOT_FOR_PLAY,
-    SETTING_DELAY,
-    IDLE_AND_RECORDING,
-    PICKING_SLOT_FOR_PLAY_AND_RECORDING,
-    SETTING_DELAY_AND_RECORDING,
-  } State;
-  static State currentState;
-  /* Unfortunate that we have a number of variables corresponding to the
-   * NUM_MACROS size and can't change that size without changing the underlying
-   * type of this bitfield and number of variables in the bitfield.  */
-  static uint8_t replaying;
+    typedef enum State_ {
+      PICKING_SLOT_FOR_REC,
+      IDLE,
+      PICKING_SLOT_FOR_PLAY,
+      SETTING_DELAY,
+      IDLE_AND_RECORDING,
+      PICKING_SLOT_FOR_PLAY_AND_RECORDING,
+      SETTING_DELAY_AND_RECORDING,
+    } State;
+    static State currentState;
+    /* Unfortunate that we have a number of variables corresponding to the
+     * NUM_MACROS size and can't change that size without changing the underlying
+     * type of this bitfield and number of variables in the bitfield.  */
+    static uint8_t replaying;
 
-  static inline bool isRecording(State s) {
-    return s == IDLE_AND_RECORDING
-      || s == PICKING_SLOT_FOR_PLAY_AND_RECORDING
-      || s == SETTING_DELAY_AND_RECORDING;
-  }
-
-  static inline constexpr uint16_t mIndexFrom_s(uint8_t sIndex) {
-    return ((uint16_t)sIndex)*MACRO_SIZE;
-  }
-
-  static inline uint16_t mNextByteFor_s(uint8_t sIndex) {
-    return ((uint16_t)sIndex)*MACRO_SIZE
-      + slotRecord[sIndex].numUsedKeystrokes;
-  }
-
-  static inline uint8_t sFindSlot (const Key key) {
-    uint8_t sI;
-    for (sI = 0; sI < NUM_MACROS; sI++) {
-      if (slotRecord[sI].macro_name == key)
-	break;
+    static inline bool isRecording(State s) {
+      return s == IDLE_AND_RECORDING
+	|| s == PICKING_SLOT_FOR_PLAY_AND_RECORDING
+	|| s == SETTING_DELAY_AND_RECORDING;
     }
-    return sI;  /* Is NUM_MACROS if did not find a key.  */
-  }
 
-  static inline bool prepareForRecording (const Key key) {
-    uint8_t sIndex = sFindSlot(key);
-    if (sIndex == NUM_MACROS)
-      return false;
-    slotRecord[sIndex].numUsedKeystrokes = 0;
-    sRecordingSlot = sIndex;
-    return true;
-  }
+    static inline constexpr uint16_t mIndexFrom_s(uint8_t sIndex) {
+      return ((uint16_t)sIndex)*MACRO_SIZE;
+    }
 
-  /* Increments in milliseconds are not very nice as an interface.
-   * Give increments in 100 milliseconds instead.  */
-  static inline void do_delay(const uint8_t todelay) {
-    uint16_t milliseconds = (uint16_t)todelay * 100;
-    delay(milliseconds);
-  }
+    static inline uint16_t mNextByteFor_s(uint8_t sIndex) {
+      return ((uint16_t)sIndex)*MACRO_SIZE
+	+ slotRecord[sIndex].numUsedKeystrokes;
+    }
 
-  /// Send a key press event from a Macro
-  ///
-  /// Generates a new `KeyEvent` and calls `Runtime.handleKeyEvent()` with the
-  /// specified `key`, then stores that `key` in an array of active macro key
-  /// values. This allows the macro to press one key and keep it active when a
-  /// subsequent key event is sent as part of the same macro sequence.
-  static inline void press(Key key) { ::MacroSupport.press(key); }
+    static inline uint8_t sFindSlot (const Key key) {
+      uint8_t sI;
+      for (sI = 0; sI < NUM_MACROS; sI++) {
+	if (slotRecord[sI].macro_name == key)
+	  break;
+      }
+      return sI;  /* Is NUM_MACROS if did not find a key.  */
+    }
 
-  /// Send a key release event from a Macro
-  ///
-  /// Generates a new `KeyEvent` and calls `Runtime.handleKeyEvent()` with the
-  /// specified `key`, then removes that key from the array of active macro
-  /// keys (see `Macros.press()`).
-  static inline void release(Key key) { ::MacroSupport.release(key); }
+    static inline bool prepareForRecording (const Key key) {
+      uint8_t sIndex = sFindSlot(key);
+      if (sIndex == NUM_MACROS)
+	return false;
+      slotRecord[sIndex].numUsedKeystrokes = 0;
+      sRecordingSlot = sIndex;
+      return true;
+    }
 
-  /// Clear all virtual keys held by Macros
-  ///
-  /// This function clears the active macro keys array, sending a release event
-  /// for each key stored there.
-  static inline void clear() { ::MacroSupport.clear(); }
+    /* Increments in milliseconds are not very nice as an interface.
+     * Give increments in 100 milliseconds instead.  */
+    static inline void do_delay(const uint8_t todelay) {
+      uint16_t milliseconds = (uint16_t)todelay * 100;
+      delay(milliseconds);
+    }
 
-  /// Send a key "tap event" from a Macro
-  ///
-  /// Generates two new `KeyEvent` objects, one each to press and release the
-  /// specified `key`, passing both in sequence to `Runtime.handleKeyEvent()`.
-  static inline void tap(Key key) {
-    ::MacroSupport.tap(key);
-  }
+    /// Send a key press event from a Macro
+    ///
+    /// Generates a new `KeyEvent` and calls `Runtime.handleKeyEvent()` with the
+    /// specified `key`, then stores that `key` in an array of active macro key
+    /// values. This allows the macro to press one key and keep it active when a
+    /// subsequent key event is sent as part of the same macro sequence.
+    static inline void press(Key key) { ::MacroSupport.press(key); }
 
-  static inline bool isTransitionEvent (KeyEvent &event) {
-    return keyToggledOn(event.state)
-      && !event.key.isKeyboardModifier ()
-      && !event.key.isLayerShift ();
-  }
+    /// Send a key release event from a Macro
+    ///
+    /// Generates a new `KeyEvent` and calls `Runtime.handleKeyEvent()` with the
+    /// specified `key`, then removes that key from the array of active macro
+    /// keys (see `Macros.press()`).
+    static inline void release(Key key) { ::MacroSupport.release(key); }
 
-  static void initialise(Key[NUM_MACROS]);
-  static bool recordKeystroke(KeyEvent &);
-  static bool play(const uint8_t);
-  static EventHandlerResult doNewPlay(KeyEvent &);
-  EventHandlerResult onKeyEvent(KeyEvent &);
-  static inline void LED_complain (KeyAddr addr) {}
-  static inline void LED_record_success (KeyAddr addr) {}
+    /// Clear all virtual keys held by Macros
+    ///
+    /// This function clears the active macro keys array, sending a release event
+    /// for each key stored there.
+    static inline void clear() { ::MacroSupport.clear(); }
+
+    /// Send a key "tap event" from a Macro
+    ///
+    /// Generates two new `KeyEvent` objects, one each to press and release the
+    /// specified `key`, passing both in sequence to `Runtime.handleKeyEvent()`.
+    static inline void tap(Key key) {
+      ::MacroSupport.tap(key);
+    }
+
+    static inline bool isTransitionEvent (KeyEvent &event) {
+      return keyToggledOn(event.state)
+	&& !event.key.isKeyboardModifier ()
+	&& !event.key.isLayerShift ();
+    }
+
+    static void initialise(Key[NUM_MACROS]);
+    static bool recordKeystroke(KeyEvent &);
+    static bool play(const uint8_t);
+    static EventHandlerResult doNewPlay(KeyEvent &);
+    EventHandlerResult onKeyEvent(KeyEvent &);
+    static inline void LED_complain (KeyAddr addr) {}
+    static inline void LED_record_success (KeyAddr addr) {}
 };
 }  // namespace plugin
 }  // namespace kaleidoscope
