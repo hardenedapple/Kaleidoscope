@@ -9,20 +9,19 @@ KEYMAPS(
         Key_J, ___, ___, ___, ___, ___, ___,
         ___, ___, ___, ___, ___, ___,
         ___, ___, ___, ___, ___, ___, ___,
-        ___, ___, ___, ___,
+        MACROREC, MACROPLAY, MACRODELAY, ___,
         ___,
 
         ___, ___, ___, ___, ___, ___, ___,
         ___, ___, ___, ___, ___, ___, ___,
         ___, ___, ___, ___, ___, ___,
         ___, ___, ___, ___, ___, ___, ___,
-        MACROREC, MACROPLAY, MACRODELAY, ___,
+        ___, ___, ___, ___,
         ___
     ),
 )
 // *INDENT-ON*
 
-// Use Qukeys
 KALEIDOSCOPE_INIT_PLUGINS(MacrosOnTheFly);
 
 void setup() {
@@ -36,4 +35,3 @@ void setup() {
 void loop() {
   Kaleidoscope.loop();
 }
-
