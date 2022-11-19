@@ -316,7 +316,7 @@ exit:
       return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
     }
 
-    if (currentState = PICKING_SLOT_FOR_PLAY) {
+    if (currentState == PICKING_SLOT_FOR_PLAY) {
       /* N.b. if a macro *ends* with MACROPLAY, then either the macro has been
        * truncated due to running out of space or the MACROREC button was
        * pressed directly after MACROPLAY.
