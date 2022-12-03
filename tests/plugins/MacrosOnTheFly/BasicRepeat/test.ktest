@@ -73,3 +73,20 @@ EXPECT keyboard-report empty # Report should be empty
 PRESS MACROREC
 RUN 1 cycle
 EXPECT no keyboard-report
+RELEASE MACROREC
+RUN 1 ms
+
+PRESS MACROPLAY
+RUN 1 cycle
+EXPECT no keyboard-report
+RUN 1 cycle
+RELEASE MACROPLAY
+RUN 1 cycle
+PRESS A
+RUN 1 cycle
+EXPECT keyboard-report Key_B # Should report the macro.
+EXPECT keyboard-report empty # Report should be empty
+RUN 1 cycle
+RELEASE A
+RUN 1 cycle
+EXPECT no keyboard-report
