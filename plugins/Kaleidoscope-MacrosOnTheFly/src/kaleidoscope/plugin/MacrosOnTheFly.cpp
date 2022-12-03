@@ -339,9 +339,8 @@ exit:
       if (!keyToggledOn(event.state))
           /* Do not want to choose which slot to play based on a keyUp event. */
         return kaleidoscope::EventHandlerResult::OK;
+      currentState = IDLE;
       EventHandlerResult ret = doNewPlay (event);
-      if (ret != kaleidoscope::EventHandlerResult::OK)
-	currentState = IDLE;
       return ret;
     }
 
