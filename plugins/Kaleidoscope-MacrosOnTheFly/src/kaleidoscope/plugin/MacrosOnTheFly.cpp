@@ -59,6 +59,17 @@ namespace plugin {
       return true;
 
     Slot *cur = &slotRecord[sRecordingSlot];
+    /* Never record a keyUp event as the first event in a macro.
+     * This is mostly about avoiding recording the keyUp event of the key we
+     * used to choose which macro we wanted to use.
+     * It also applies to any other keys which were pressed at the time we
+     * started recording, but that's not something I'm confident we need to
+     * avoid (somewhat happy with choosing to avoid it, wonder whether going
+     * the other way would be worth the extra complexity, not going to try and
+     * implement it for a theoretical benefit).  */
+    if (keyToggledOff(event.state) && cur->numUsedKeystrokes == 0)
+      return true;
+
     byte *macroBuffer = &macroStorage[mIndexFrom_s(sRecordingSlot)];
 
     /* First use of the MACRODELAY key does not get recorded.
@@ -322,6 +333,9 @@ exit:
        * pressed directly after MACROPLAY.
        * Both of those cases we just want to return to IDLE, which is what we
        * do anyway.  Hence we're just fine.  */
+      if (!keyToggledOn(event.state))
+          /* Do not want to choose which slot to play based on a keyUp event. */
+        return kaleidoscope::EventHandlerResult::OK;
       EventHandlerResult ret = doNewPlay (event);
       if (ret != kaleidoscope::EventHandlerResult::OK)
 	currentState = IDLE;
