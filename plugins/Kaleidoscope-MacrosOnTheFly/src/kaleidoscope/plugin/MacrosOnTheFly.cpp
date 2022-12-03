@@ -128,7 +128,7 @@ namespace plugin {
     /* Avoid recursive macro playing (macro a plays macro b plays macro a and
      * similar).  */
     if (replaying & (1 << sIndex)) return false;
-    replaying &= (1 << sIndex);
+    replaying |= (1 << sIndex);
 
     /* Taken from Macros.cpp but adjusted to read from a different place. */
     uint16_t mIndex = mIndexFrom_s(sIndex);
