@@ -250,6 +250,8 @@ exit:
      * that would have such problematic behaviour we can't have that.  */
     if (replaying == 0) clear();
     if (!success) LED_complain (event.addr);
+    /* Mask the macro play recording key so that it's event does not get
+     * reported to the computer.  Does not affect reporting to other plugins.  */
     kaleidoscope::live_keys.mask(event.addr);
     return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
   }
@@ -322,7 +324,8 @@ exit:
       if (!recording) LED_complain (event.addr);
       currentState = recording ? IDLE_AND_RECORDING : IDLE;
       /* Mask the current key so that its keyToggledOff event does not get
-       * reported (especially to us later).  */
+       * reported to the computer.  N.b. this does not change whether the event
+       * gets reported to use in the plugin.  */
       kaleidoscope::live_keys.mask(event.addr);
       return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
     }
