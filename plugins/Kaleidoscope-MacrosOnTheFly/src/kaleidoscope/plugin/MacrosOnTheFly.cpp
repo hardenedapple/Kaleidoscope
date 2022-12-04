@@ -93,7 +93,6 @@ namespace plugin {
     }
 
     if (IS_MACROREC(event)) {
-      // assert(keyToggledOn(event.state));
       /* Adding MACRO_ACTION_END just for extra safety from overrunning.  */
       if (numRemainingKeystrokes(cur) != 0)
 	macroBuffer[cur->numUsedKeystrokes] = MACRO_ACTION_END;
@@ -366,11 +365,10 @@ exit:
     /* If get here then we are recording.  */
 
     if (IS_MACROREC(event)) {
-      // MACROREC toggle off should have been masked on entering recording
-      // state via live_keys manipulation.
-      // assert(keyToggledOn(event.state));
-      recordKeystroke(event);
-      currentState = IDLE;
+      if (keyToggledOn(event.state)) {
+          recordKeystroke(event);
+          currentState = IDLE;
+      }
       return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
     }
 
