@@ -209,13 +209,13 @@ PRESS MACROPLAY
 RUN 1 cycle
 EXPECT no keyboard-report
 RUN 1 cycle
-RELEASE MACROPLAY
-RUN 1 cycle
 PRESS A
 RUN 1 cycle
 EXPECT keyboard-report Key_J # Should report the macro.
 EXPECT keyboard-report empty # Report should be empty
 RUN 1 cycle
 RELEASE A
+RUN 1 cycle
+RELEASE MACROPLAY
 RUN 1 cycle
 EXPECT no keyboard-report
