@@ -143,3 +143,79 @@ RUN 1 cycle
 RELEASE A
 RUN 1 cycle
 EXPECT no keyboard-report
+
+# .........................................................................
+# Can "zero out" a macro.
+
+PRESS MACROREC
+RUN 1 cycle
+EXPECT no keyboard-report
+RELEASE MACROREC
+RUN 1 cycle
+EXPECT no keyboard-report
+PRESS A
+RUN 1 cycle
+EXPECT no keyboard-report
+RELEASE A
+RUN 1 cycle
+EXPECT no keyboard-report
+PRESS MACROREC
+RUN 1 cycle
+RELEASE MACROREC
+RUN 1 ms
+
+PRESS MACROPLAY
+RUN 1 cycle
+EXPECT no keyboard-report
+RUN 1 cycle
+RELEASE MACROPLAY
+RUN 1 cycle
+PRESS A
+RUN 1 cycle
+EXPECT no keyboard-report
+RUN 1 cycle
+RELEASE A
+RUN 1 cycle
+EXPECT no keyboard-report
+
+# .........................................................................
+# Do not need to release MACROREC before pressing the macro recording key.
+
+PRESS MACROREC
+RUN 1 cycle
+EXPECT no keyboard-report
+PRESS A
+RUN 1 cycle
+EXPECT no keyboard-report
+RELEASE A
+RUN 1 cycle
+EXPECT no keyboard-report
+RELEASE MACROREC
+RUN 1 cycle
+EXPECT no keyboard-report
+PRESS J
+RUN 1 cycle
+EXPECT keyboard-report Key_J # Should report while recording macro.
+RELEASE J
+RUN 1 cycle
+EXPECT keyboard-report empty # Report should be empty
+PRESS MACROREC
+RUN 1 cycle
+EXPECT no keyboard-report
+RELEASE MACROREC
+RUN 1 ms
+
+PRESS MACROPLAY
+RUN 1 cycle
+EXPECT no keyboard-report
+RUN 1 cycle
+RELEASE MACROPLAY
+RUN 1 cycle
+PRESS A
+RUN 1 cycle
+EXPECT keyboard-report Key_J # Should report the macro.
+EXPECT keyboard-report empty # Report should be empty
+RUN 1 cycle
+RELEASE A
+RUN 1 cycle
+EXPECT no keyboard-report
