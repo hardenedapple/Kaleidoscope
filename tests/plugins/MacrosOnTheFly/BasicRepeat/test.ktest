@@ -222,8 +222,9 @@ RUN 1 cycle
 EXPECT no keyboard-report
 
 # .........................................................................
-# Does recording capitals work.
-# Shift
+# Does recording multiple keys at once work?
+# Starting with does recording a Shift+J work correctly and does it send the
+# same thing.
 
 PRESS MACROREC
 RUN 1 cycle
