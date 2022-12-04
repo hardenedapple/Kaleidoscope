@@ -6,6 +6,9 @@
 // plugin itself; it's just using the same macro step definitions.
 #include "kaleidoscope/plugin/Macros/MacroSteps.h"  // for MACRO_ACTION_END, MACRO_ACTION_STEP_E...
 
+/* N.b. because we use the Macros plugin we have the same limitation on number
+ * of max concurrent macro keys pressed at the same time.  */
+
 namespace kaleidoscope {
 namespace plugin {
   void MacrosOnTheFly::initialise(Key names[NUM_MACROS]) {

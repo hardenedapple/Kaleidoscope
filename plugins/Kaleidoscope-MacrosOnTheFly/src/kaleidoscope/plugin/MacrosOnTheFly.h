@@ -149,6 +149,9 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
     static bool play(const uint8_t);
     static EventHandlerResult doNewPlay(KeyEvent &);
     EventHandlerResult onKeyEvent(KeyEvent &);
+    EventHandlerResult beforeReportingState(const KeyEvent &event) {
+        return ::MacroSupport.beforeReportingState(event);
+    }
     static inline void LED_complain (KeyAddr addr) {}
     static inline void LED_record_success (KeyAddr addr) {}
 };
