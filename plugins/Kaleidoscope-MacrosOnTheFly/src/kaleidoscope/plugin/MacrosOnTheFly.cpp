@@ -224,6 +224,7 @@ namespace plugin {
     }
 exit:
     replaying &= ~(1 << sIndex);
+    return true;
   }
 
 #define RET_IF_NON_TRANSITION(EVENT)  \
@@ -233,13 +234,9 @@ exit:
   EventHandlerResult MacrosOnTheFly::doNewPlay(KeyEvent &event) {
     RET_IF_NON_TRANSITION (event);
     bool success = false;
-    if (IS_MACROPLAY(event)) {
-      success = play(sLastPlayedSlot);
-    } else {
-      uint8_t sIndex = sFindSlot (event.key);
-      success = (sIndex != NUM_MACROS) && play(sIndex);
-      if (success) sLastPlayedSlot = sIndex;
-    }
+    uint8_t sIndex = IS_MACROPLAY(event) ? sLastPlayedSlot : sFindSlot (event.key);
+    success = (sIndex != NUM_MACROS) && play(sIndex);
+    if (success) sLastPlayedSlot = sIndex;
     /* Need to clear keys pressed by a macro so they don't get "stuck on".
      * Do not want to do that when in the middle of replaying.
      * This could lead to some surprising interplays (one macro presses ctrl
