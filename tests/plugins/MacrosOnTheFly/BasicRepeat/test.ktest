@@ -3,6 +3,7 @@ VERSION 1
 KEYSWITCH A 0 0
 KEYSWITCH B 0 1
 KEYSWITCH J 1 0
+KEYSWITCH L_SHIFT 0 3
 KEYSWITCH MACROREC   0 7
 KEYSWITCH MACROPLAY  1 7
 KEYSWITCH MACRODELAY 2 7
@@ -216,6 +217,58 @@ EXPECT keyboard-report empty # Report should be empty
 RUN 1 cycle
 RELEASE A
 RUN 1 cycle
+RELEASE MACROPLAY
+RUN 1 cycle
+EXPECT no keyboard-report
+
+# .........................................................................
+# Does recording capitals work.
+# Shift
+
+PRESS MACROREC
+RUN 1 cycle
+EXPECT no keyboard-report
+PRESS A
+RUN 1 cycle
+EXPECT no keyboard-report
+RELEASE A
+RUN 1 cycle
+EXPECT no keyboard-report
+PRESS L_SHIFT
+RUN 1 cycle
+EXPECT keyboard-report Key_LeftShift # Report shift.
+PRESS J
+RUN 1 cycle
+EXPECT keyboard-report Key_LeftShift Key_J # Should report shift plus J.
+RELEASE J
+RUN 1 cycle
+EXPECT keyboard-report Key_LeftShift
+RELEASE L_SHIFT
+RUN 1 cycle
+EXPECT keyboard-report empty
+RELEASE MACROREC
+RUN 1 cycle
+EXPECT no keyboard-report
+PRESS MACROREC
+RUN 1 cycle
+EXPECT no keyboard-report
+RELEASE MACROREC
+RUN 1 ms
+
+PRESS MACROPLAY
+RUN 1 cycle
+EXPECT no keyboard-report
+RUN 1 cycle
+PRESS A
+RUN 1 cycle
+EXPECT keyboard-report Key_LeftShift # Replaying pressing Shift.
+EXPECT keyboard-report Key_LeftShift Key_J # Replaying shift+J
+EXPECT keyboard-report Key_LeftShift # Replaying removed J
+EXPECT keyboard-report empty
+RUN 1 cycle
+RELEASE A
+RUN 1 cycle
+EXPECT no keyboard-report
 RELEASE MACROPLAY
 RUN 1 cycle
 EXPECT no keyboard-report
