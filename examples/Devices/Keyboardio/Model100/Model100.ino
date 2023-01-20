@@ -165,6 +165,7 @@ enum {
 #define PRIMARY_KEYMAP_CUSTOM
 
 #define TOGGLELAYER(LAYER) ::kaleidoscope::plugin::ToggleLayerKey(LAYER)
+#define SPECIALSHIFT ::kaleidoscope::plugin::SpecialShiftKey()
 namespace kaleidoscope {
 namespace plugin {
 
@@ -194,9 +195,36 @@ class ToggleLayer : public kaleidoscope::Plugin {
     }
 };
 
+constexpr Key SpecialShiftKey() {
+  return Key(kaleidoscope::ranges::SAFE_START + MAX_LAYERS + 1);
+}
+/* Not bothering to make this general.
+ * This is just something that is annoying me and I want it fixed -- not an
+ * exercise to understand plugins ;-) */
+class SpecialShift : public kaleidoscope::Plugin {
+  uint8_t counter;
+  const uint8_t target_layer = FUNCTION + LAYER_SHIFT_OFFSET;
+  public:
+    EventHandlerResult onKeyEvent(KeyEvent &event) {
+      if (event.key != SPECIALSHIFT)
+	return EventHandlerResult::OK;
+      if (keyToggledOn(event.state)) {
+	if (counter == 0)
+	  ::Layer.activate(target_layer);
+	counter += 1;
+      } else if (keyToggledOff(event.state)) {
+	counter -= 1;
+	if (counter == 0)
+	  ::Layer.deactivate(target_layer);
+      }
+      return EventHandlerResult::EVENT_CONSUMED;
+    }
+};
+
 }
 }
 kaleidoscope::plugin::ToggleLayer ToggleLayer;
+kaleidoscope::plugin::SpecialShift SpecialShift;
 
 /* This comment temporarily turns off astyle's indent enforcement
  *   so we can make the keymaps actually resemble the physical key layout better
@@ -213,14 +241,14 @@ KEYMAPS(
    Key_Semicolon            , Key_A           , Key_O          , Key_E            , Key_U , Key_I ,
    Key_Backslash            , Key_Quote       , Key_Q          , Key_J            , Key_K , Key_X , Key_LeftAlt      ,
    Key_LeftControl          , Key_Spacebar    , OSM(LeftShift) , Key_Enter        ,
-   ShiftToLayer(FUNCTION)   ,
+   SPECIALSHIFT             ,
 
    Key_Tab                  , Key_6           , Key_7          , Key_8            , Key_9 , Key_0 , Key_LeftGui      ,
    Key_Escape               , Key_F           , Key_G          , Key_C            , Key_R , Key_L , Key_Slash        ,
                               Key_D           , Key_H          , Key_T            , Key_N , Key_S , Key_LeftBracket  ,
    Key_LeftAlt              , Key_B           , Key_M          , Key_W            , Key_V , Key_Z , Key_RightBracket ,
    Key_Enter                , OSM(RightShift) , Key_Spacebar   , Key_RightControl ,
-   ShiftToLayer(FUNCTION)),
+   SPECIALSHIFT),
 
 #else
 
@@ -419,6 +447,8 @@ KALEIDOSCOPE_INIT_PLUGINS(
 
   // My plugin for toggling a particular layer.
   ToggleLayer,
+  // My hacky "ShiftToLayer but two keys acts like shift" plugin.
+  SpecialShift,
 
   // TopsyTurvy plugin gives support for switching the shift layout for a key.
   TopsyTurvy,
