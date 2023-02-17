@@ -37,6 +37,11 @@ namespace plugin {
       3) TAPCODE + TAPCODE + TAPCODE  -> TAPCODESEQ <...>
 	TAPCODE     code TAPCODE code  TAPCODE  code
 	TAPCODESEQ  code code    code  nokey
+      5) TAPX + TAPX + TAPX + TAPX  -> REPEATTAP 4 X
+         (N.b. this is not something that MacroSupport currently handles, is
+         probably not worth the extra complexity to do that myself).
+         Similar for
+          REPEATTAP <N> X + TAPX  -> REPEATTAP <N+1> X
      
      None of this is yet implemented.
     */
@@ -46,9 +51,11 @@ namespace plugin {
   do { \
     uint8_t rem = numRemainingKeystrokes(SLOT); \
     if (rem >= REQUIRED) break; \
-    /* Adding MACRO_ACTION_END is just for extra safety.  */ \
+    /* Clear the macro if we run out of space.
+     * This means we don't end up with some surprising broken half-recorded
+     * state.  */ \
     if (rem != 0) \
-      macroBuffer[SLOT->numUsedKeystrokes] = MACRO_ACTION_END; \
+      macroBuffer[0] = MACRO_ACTION_END; \
     return false; \
   } while (0)
 
@@ -233,6 +240,16 @@ exit:
   if (!isTransitionEvent ((EVENT))) \
     return kaleidoscope::EventHandlerResult::OK;
 
+#define IDLE_AND_RET_IF_HELD_KEY(EVENT) \
+      for (Key key : live_keys.all()) { \
+          if (key != Key_Inactive && key != Key_Masked && key != event.key) { \
+             LED_complain (event.addr); \
+             currentState = IDLE; \
+             return kaleidoscope::EventHandlerResult::OK; \
+          } \
+      }
+
+
   EventHandlerResult MacrosOnTheFly::doNewPlay(KeyEvent &event) {
     RET_IF_NON_TRANSITION (event);
     bool success = false;
@@ -265,6 +282,7 @@ exit:
      *   PICKING_SLOT_FOR_REC
      *     any modifier toggle on     -> PICKING_SLOT_FOR_REC
      *     any non toggleOn           -> PICKING_SLOT_FOR_REC
+     *     MACROPLAY                  -> PICKING_SLOT_FOR_PLAY   # N.b. for a "clear state" sequence.
      *     valid slot toggle on       -> IDLE_AND_RECORDING
      *     other toggle on            -> IDLE
      *   PICKING_SLOT_FOR_PLAY
@@ -319,6 +337,22 @@ exit:
      * Either way there is nothing else to do.  */
     if (currentState == PICKING_SLOT_FOR_REC) {
       RET_IF_NON_TRANSITION (event);
+      if (IS_MACROPLAY(event)) {
+        /* Special case handling.  MACROREC MACROPLAY will always leave you in
+         * PICKING_PLAY state, hence REC PLAY REC will always leave you in
+         * IDLE state.  Handy just in case the "current state" is confusing.  */
+        currentState = PICKING_SLOT_FOR_PLAY;
+        return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
+      }
+      /* If there is an existing key pressed, disallow it.
+       * Asking what should happen when we're holding keys while entering macro
+       * state gets a bit complicated without clear answers and with more code
+       * complexity.
+       *   - should we record the keyUp if it happens in macro recording
+       *   - difference between recording with the key pressed, and replaying behaviour
+       *   - should we emit some fake keypresses to try and emulate?
+       * Way easier to disallow.  */
+      IDLE_AND_RET_IF_HELD_KEY (event);
       bool recording = prepareForRecording (event.key);
       if (!recording) LED_complain (event.addr);
       currentState = recording ? IDLE_AND_RECORDING : IDLE;
@@ -338,6 +372,7 @@ exit:
       if (!keyToggledOn(event.state))
           /* Do not want to choose which slot to play based on a keyUp event. */
         return kaleidoscope::EventHandlerResult::OK;
+      IDLE_AND_RET_IF_HELD_KEY (event);
       currentState = IDLE;
       EventHandlerResult ret = doNewPlay (event);
       return ret;
@@ -381,8 +416,8 @@ exit:
       bool have_space = recordKeystroke (event);
       if (!have_space) {
 	/* Decision here to either clear macro entirely or to just stop the
-	 * macro where it failed.  We choose to stop the macro where it failed
-	 * so that something */
+	 * macro where it failed.  We choose to clear the macro entirely to
+	 * ensure there is no "broken" macro left in memory. */
 	currentState = IDLE;
 	LED_complain (event.addr);
 	return kaleidoscope::EventHandlerResult::OK;
