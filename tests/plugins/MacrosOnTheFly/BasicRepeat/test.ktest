@@ -10,10 +10,14 @@ KEYSWITCH MACRODELAY 2 7
 
 # ==============================================================================
 # MacrosOnTheFly can record and replay something.
+# Note:  in discussions below the notation "X" means press X down and up.
+#        notation "X|" means press X down.
+#        notation "X^" means release X.
 NAME MacrosOnTheFly basic record and replay
 
 # .........................................................................
 # Should not affect standard typing (it did very early on).
+# Press of  "A B J"  emits those keypresses.
 
 RUN 10 ms
 
@@ -48,7 +52,28 @@ RUN 1 cycle
 RUN 5 ms
 
 # .........................................................................
+# Test that   "PLAY PLAY"  does not break things when run before anything
+# recorded.
+
+PRESS MACROPLAY
+RUN 1 cycle
+EXPECT no keyboard-report
+RUN 1 cycle
+RELEASE MACROPLAY
+RUN 1 cycle
+PRESS MACROPLAY
+RUN 1 cycle
+EXPECT no keyboard-report
+RUN 1 cycle
+RELEASE MACROPLAY
+RUN 1 cycle
+EXPECT no keyboard-report
+
+
+# .........................................................................
 # Record behaves as expected.
+# Pressing   "REC A J REC"   reports "J".
+# Pressing   "REC B B REC"   reports "B".
 
 PRESS MACROREC
 RUN 1 cycle
@@ -99,7 +124,30 @@ RELEASE MACROREC
 RUN 1 ms
 
 # .........................................................................
+# Test that   "PLAY PLAY"  does not break things when run before anything
+# played.
+PRESS MACROPLAY
+RUN 1 cycle
+EXPECT no keyboard-report
+RUN 1 cycle
+RELEASE MACROPLAY
+RUN 1 cycle
+PRESS MACROPLAY
+RUN 1 cycle
+EXPECT no keyboard-report
+RUN 1 cycle
+RELEASE MACROPLAY
+RUN 1 cycle
+EXPECT no keyboard-report
+
+# .........................................................................
 # Replay behaves as expected.
+# After the above recording of `J` into macro slot `A` and `B` into macro slot
+# `B`, then:
+# Pressing   "PLAY B" emits "B" (before B has been released).
+# Pressing   "PLAY PLAY" emits "B" (after having done the above play).
+# Pressing   "PLAY A" emits "J" (before A has been released).
+
 PRESS MACROPLAY
 RUN 1 cycle
 EXPECT no keyboard-report
@@ -147,6 +195,9 @@ EXPECT no keyboard-report
 
 # .........................................................................
 # Can "zero out" a macro.
+# Pressing  "REC A REC" clears a macro.
+# (More precisely this is supposed to turn a macro into an empty macro, so it's
+# still there but does not have any key presses stored in it).
 
 PRESS MACROREC
 RUN 1 cycle
@@ -181,6 +232,8 @@ EXPECT no keyboard-report
 
 # .........................................................................
 # Do not need to release MACROREC before pressing the macro recording key.
+# Pressing "REC| A| A^ REC^ J REC    PLAY| A  PLAY^"   records "J" in slot "A"
+# and then replays it.
 
 PRESS MACROREC
 RUN 1 cycle
@@ -225,6 +278,9 @@ EXPECT no keyboard-report
 # Does recording multiple keys at once work?
 # Starting with does recording a Shift+J work correctly and does it send the
 # same thing.
+# Pressing  "REC| A L_SHIFT| J L_SHIFT^ REC^ REC    PLAY| A PLAY^"
+# behaves same as "REC A L_SHIFT| J L_SHIFT^ REC    PLAY  A"
+# I.e. records a sequence of "L_SHIFT| J L_SHIFT^" then replays it.
 
 PRESS MACROREC
 RUN 1 cycle
@@ -273,3 +329,143 @@ EXPECT no keyboard-report
 RELEASE MACROPLAY
 RUN 1 cycle
 EXPECT no keyboard-report
+
+# .........................................................................
+# Key-UP as first action is not recorded but is played.
+# This has been implicitly tested above by the 'A' up above thing, but not all
+# the combinations have been attempted.
+
+# N.b. just to demonstrate that this is the standard keyboard report format for
+# holding down B and pressing a bunch of other keys.
+PRESS B
+RUN 1 cycle
+EXPECT keyboard-report Key_B
+PRESS L_SHIFT
+RUN 1 cycle
+EXPECT keyboard-report Key_LeftShift Key_B # Report shift.
+PRESS J
+RUN 1 cycle
+EXPECT keyboard-report Key_LeftShift Key_B Key_J # Should report shift plus J plus B.
+RELEASE J
+RUN 1 cycle
+EXPECT keyboard-report Key_LeftShift Key_B
+RELEASE L_SHIFT
+RUN 1 cycle
+EXPECT keyboard-report Key_B
+RELEASE B
+RUN 1 cycle
+EXPECT keyboard-report empty
+RUN 1 ms
+
+# Pressing  "B| REC| A L_SHIFT| J L_SHIFT^ REC^ REC B^" emits as usual.
+PRESS B
+RUN 1 cycle
+EXPECT keyboard-report Key_B
+PRESS MACROREC
+RUN 1 cycle
+EXPECT no keyboard-report
+PRESS A
+RUN 1 cycle
+EXPECT no keyboard-report
+RELEASE A
+RUN 1 cycle
+EXPECT no keyboard-report
+PRESS L_SHIFT
+RUN 1 cycle
+EXPECT keyboard-report Key_LeftShift Key_B # Report shift.
+PRESS J
+RUN 1 cycle
+EXPECT keyboard-report Key_LeftShift Key_B Key_J # Should report shift plus J plus B.
+RELEASE J
+RUN 1 cycle
+EXPECT keyboard-report Key_LeftShift Key_B
+RELEASE L_SHIFT
+RUN 1 cycle
+EXPECT keyboard-report Key_B
+RELEASE MACROREC
+RUN 1 cycle
+EXPECT no keyboard-report
+PRESS MACROREC
+RUN 1 cycle
+EXPECT no keyboard-report
+RELEASE MACROREC
+RUN 1 cycle
+RELEASE B
+RUN 1 cycle
+EXPECT keyboard-report empty
+RUN 1 ms
+
+PRESS MACROPLAY
+RUN 1 cycle
+EXPECT no keyboard-report
+RUN 1 cycle
+PRESS A
+RUN 1 cycle
+EXPECT keyboard-report Key_LeftShift # Replaying pressing Shift.
+EXPECT keyboard-report Key_LeftShift Key_J # Replaying shift+J
+EXPECT keyboard-report Key_LeftShift # Replaying removed J
+EXPECT keyboard-report empty
+RUN 1 cycle
+RELEASE A
+RUN 1 cycle
+EXPECT no keyboard-report
+RELEASE MACROPLAY
+RUN 1 cycle
+EXPECT no keyboard-report
+
+
+PRESS B
+RUN 1 cycle
+EXPECT keyboard-report Key_B
+PRESS MACROREC
+RUN 1 cycle
+EXPECT no keyboard-report
+PRESS A
+RUN 1 cycle
+EXPECT no keyboard-report
+RELEASE A
+RUN 1 cycle
+EXPECT no keyboard-report
+PRESS L_SHIFT
+RUN 1 cycle
+EXPECT keyboard-report Key_LeftShift Key_B # Report shift.
+PRESS J
+RUN 1 cycle
+EXPECT keyboard-report Key_LeftShift Key_B Key_J # Should report shift plus J plus B.
+RELEASE J
+RUN 1 cycle
+EXPECT keyboard-report Key_LeftShift Key_B
+RELEASE L_SHIFT
+RUN 1 cycle
+EXPECT keyboard-report Key_B
+RELEASE MACROREC
+RUN 1 cycle
+EXPECT no keyboard-report
+PRESS MACROREC
+RUN 1 cycle
+EXPECT no keyboard-report
+RELEASE MACROREC
+RUN 1 cycle
+RELEASE B
+RUN 1 cycle
+EXPECT keyboard-report empty
+RUN 1 ms
+
+PRESS MACROPLAY
+RUN 1 cycle
+EXPECT no keyboard-report
+RUN 1 cycle
+PRESS A
+RUN 1 cycle
+EXPECT keyboard-report Key_LeftShift # Replaying pressing Shift.
+EXPECT keyboard-report Key_LeftShift Key_J # Replaying shift+J
+EXPECT keyboard-report Key_LeftShift # Replaying removed J
+EXPECT keyboard-report empty
+RUN 1 cycle
+RELEASE A
+RUN 1 cycle
+EXPECT no keyboard-report
+RELEASE MACROPLAY
+RUN 1 cycle
+EXPECT no keyboard-report
+
