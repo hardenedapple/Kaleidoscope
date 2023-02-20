@@ -66,8 +66,12 @@ void MacroSupport::clear() {
   for (Key &macro_key : active_macro_keys_) {
     if (macro_key == Key_NoKey)
       continue;
-    Runtime.handleKeyEvent(KeyEvent{KeyAddr::none(), release_state, macro_key});
+    // Use a temporary to send the handleKeyEvent so that we don't end up
+    // handling keyToggledOff events when the report we're about to send for
+    // that event is going to include the key as pressed.
+    Key tmp = macro_key;
     macro_key = Key_NoKey;
+    Runtime.handleKeyEvent(KeyEvent{KeyAddr::none(), release_state, tmp});
   }
 }
 
