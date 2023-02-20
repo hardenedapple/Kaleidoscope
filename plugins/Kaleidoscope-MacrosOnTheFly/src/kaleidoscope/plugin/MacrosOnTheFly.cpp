@@ -249,6 +249,14 @@ exit:
           } \
       }
 
+#define IDLE_REC_AND_RET_IF_HELD_KEY(EVENT) \
+      for (Key key : live_keys.all()) { \
+          if (key != Key_Inactive && key != Key_Masked && key != event.key) { \
+             LED_complain (event.addr); \
+             currentState = IDLE; \
+             return kaleidoscope::EventHandlerResult::OK; \
+          } \
+      }
 
   EventHandlerResult MacrosOnTheFly::doNewPlay(KeyEvent &event) {
     RET_IF_NON_TRANSITION (event);
@@ -443,8 +451,9 @@ exit:
 
     /* currentState must be PICKING_SLOT_FOR_PLAY_AND_RECORDING.  */
     RET_IF_NON_TRANSITION (event);
-    doNewPlay (event);
+    IDLE_REC_AND_RET_IF_HELD_KEY (event);
     currentState = IDLE_AND_RECORDING;
+    doNewPlay (event);
     return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
   }
 
