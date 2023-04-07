@@ -1,7 +1,100 @@
 vshcmd: > gdb -q --args ./_build/plugins/MacrosOnTheFly/EdgeCases/bin/EdgeCases -t -q
-vshcmd: > break kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent if $_any_caller_matches(".*MacrosOnTheFlyRecursiveAvoidance", 99) && !$_any_caller_matches(".*initialiseMacros", 99)
+vshcmd: > break doNewPlay if $_any_caller_matches(".*MacrosOnTheFlyRecursiveAvoidance", 99)
 vshcmd: > run
+Reading symbols from ./_build/plugins/MacrosOnTheFly/EdgeCases/bin/EdgeCases...
+(gdb) Breakpoint 1 at 0x6e0f8: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp, line 264.
+(gdb) Starting program: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/MacrosOnTheFly/EdgeCases/bin/EdgeCases -t -q
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from ManualTests
+[ RUN      ] ManualTests.0_test
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/test/manual-testcases.cpp
+[       OK ] ManualTests.0_test (0 ms)
+[ RUN      ] ManualTests.1_MacrosOnTheFlyTestHelpers
+[       OK ] ManualTests.1_MacrosOnTheFlyTestHelpers (0 ms)
+[ RUN      ] ManualTests.2_MacrosOnTheFlyNoHeldOverPlay
+[       OK ] ManualTests.2_MacrosOnTheFlyNoHeldOverPlay (0 ms)
+[ RUN      ] ManualTests.3_MacrosOnTheFlyRecursiveReplay
+[       OK ] ManualTests.3_MacrosOnTheFlyRecursiveReplay (157 ms)
+[ RUN      ] ManualTests.4_MacrosOnTheFlyRecursiveAvoidance
 
+Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...)
+    at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:264
+264	    RET_IF_NON_TRANSITION (event);
+(gdb) 
+vshcmd: > break kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent if $_any_caller_matches(".*MacrosOnTheFlyRecursiveAvoidance", 99) && !$_any_caller_matches(".*initialiseMacros", 99)
+
+vshcmd: > print event.key
+$1 = {keyCode_ = 4 '\004', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', 
+  static system_control_mask_ = 207 '\317', 
+  static consumer_control_mask_ = 200 '\310'}
+(gdb) 
+vshcmd: > cont
+Continuing.
+
+Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...)
+    at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:264
+264	    RET_IF_NON_TRANSITION (event);
+(gdb) 
+vshcmd: > print event.key
+$2 = {keyCode_ = 5 '\005', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', 
+  static system_control_mask_ = 207 '\317', 
+  static consumer_control_mask_ = 200 '\310'}
+(gdb) 
+vshcmd: > # There are no keys in the live_keys map!
+vshcmd: > # That's why we're not skipping this.
+vshcmd: > gdb-pipe array &live_keys.key_map_.values_[0]; 64 \
+vshcmd: >       | if $cur->keyCode_ != 255 \
+vshcmd: >       | show print *$cur
+(gdb) 
+vshcmd: > info variable MacroSupport
+All variables matching regular expression "MacroSupport":
+
+File /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src/kaleidoscope/plugin/MacroSupport.cpp:
+109:	kaleidoscope::plugin::MacroSupport MacroSupport;
+(gdb) 
+vshcmd: > # N.b. need to use `::` in order to get GDB to recognise the variable
+vshcmd: > # instead of the type.
+vshcmd: > gdb-pipe array &::MacroSupport.active_macro_keys_[0]; 8 \
+vshcmd: >       | show print *$cur
+$21 = {keyCode_ = 13 '\r', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+$22 = {keyCode_ = 0 '\000', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+$23 = {keyCode_ = 0 '\000', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+$24 = {keyCode_ = 0 '\000', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+$25 = {keyCode_ = 0 '\000', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+$26 = {keyCode_ = 0 '\000', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+$27 = {keyCode_ = 0 '\000', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+$28 = {keyCode_ = 0 '\000', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+(gdb) 
+vshcmd: > cont
+vshcmd: > print event.key.keyCode_
+vshcmd: > print event.state
+Continuing.
+
+Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (
+    this=0x555555670494 <MacrosOnTheFly>, event=...)
+    at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:283
+283	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+(gdb) $16 = 5 '\005'
+(gdb) $17 = 1 '\001'
+(gdb) quit
+A debugging session is active.
+
+	Inferior 1 [process 3244895] will be killed.
+
+Quit anyway? (y or n) 
+vshcmd: > y
+Kaleidoscope [15:32:31] $ 
+vshcmd: > next
+458	  }
+(gdb) 
+vshcmd: > print currentState
+$15 = kaleidoscope::plugin::MacrosOnTheFly::IDLE_AND_RECORDING
+(gdb) 
+vshcmd: > y
+Kaleidoscope [15:24:44] $ 
 vshcmd: > break ExpectKeyboardReport if $_any_caller_matches(".*MacrosOnTheFlyRecursiveReplay", 99) && !$_any_caller_matches(".*initialiseMacros", 99)
 vshcmd: > run
 Reading symbols from ./_build/plugins/MacrosOnTheFly/EdgeCases/bin/EdgeCases...
