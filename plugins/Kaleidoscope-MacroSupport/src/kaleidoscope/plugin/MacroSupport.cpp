@@ -83,6 +83,14 @@ void MacroSupport::tap(Key key) const {
   Runtime.handleKeyEvent(KeyEvent{KeyAddr::none(), release_state, key});
 }
 
+bool MacroSupport::anyMacroKeyHeld() const {
+  for (Key macro_key : active_macro_keys_) {
+    if (macro_key != Key_NoKey)
+      return true;
+  }
+  return false;
+}
+
 // -----------------------------------------------------------------------------
 // Event handlers
 

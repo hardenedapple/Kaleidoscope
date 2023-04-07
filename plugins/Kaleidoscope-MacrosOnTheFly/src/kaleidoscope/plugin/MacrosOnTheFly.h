@@ -130,6 +130,8 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
     /// for each key stored there.
     static inline void clear() { ::MacroSupport.clear(); }
 
+    static inline bool anyMacroKeyHeld() { return ::MacroSupport.anyMacroKeyHeld(); }
+
     /// Send a key "tap event" from a Macro
     ///
     /// Generates two new `KeyEvent` objects, one each to press and release the
