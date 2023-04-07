@@ -522,9 +522,14 @@ RUN 1 ms
 # }}}
 
 # {{{ Replay macro slot A (which should contain single press of J).
-# TODO I really don't understand why this isn't working right now.
-# FWIW the `empty` report is seen after the `A` release rather than before it,
-# but I don't know why.
+# N.b. this tests without a hacked version of kaleidoscope.
+# When failing the `empty` report is seen after the `A` release rather than
+# before it.  This is because MacroSupport::clear triggers a key-release event
+# for each key that was recorded as pressed, but it includes the key we are
+# releasing in the HID report.
+# I believe that's a bug, but it's so unimportant that I haven't put in the
+# effort to report it upstream.  Will do so eventually, focussing on improving
+# this plugin for now.
 PRESS MACROPLAY
 RUN 1 cycle
 EXPECT no keyboard-report
