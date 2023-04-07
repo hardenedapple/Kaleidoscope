@@ -70,20 +70,36 @@ class ManualTests : public VirtualDeviceTest {
   protected:
   std::unordered_map<std::string, std::string> knownMacros;
 
-  void doPress(const KeyAddr addr, const ReportIds report,
-      const Key event, const std::string keyId) {
-    PressKey(addr);
-    sim_.RunCycles(1);
-    if (report == ReportIds::passed && event != Key_NoEvent)
-      ExpectKeyboardReport(AddKeycodes{event}, "autogen");
-    if (report == ReportIds::triggerMacro) {
-      auto x = knownMacros.find(keyId);
-      assert (x != knownMacros.end());
-      replayMacro(x->second);
+  void runAction(const std::string str, bool replaying = false) {
+#define checkReport(changeId)                                     \
+    if (report == ReportIds::passed && event != Key_NoEvent) {    \
+      ExpectKeyboardReport(changeId##Keycodes{event}, "autogen"); \
     }
-  }
+#define checkPressed checkReport(Add)
+#define checkRelease checkReport(Remove)
 
-  void replayMacro(const std::string str) {
+#define checkMacro                           \
+    if (report == ReportIds::triggerMacro) { \
+      auto x = knownMacros.find(keyId);      \
+      assert (x != knownMacros.end());       \
+      runAction(x->second, true);            \
+    }
+
+#define doPress          \
+    if (!replaying) {    \
+      PressKey(addr);    \
+      sim_.RunCycles(1); \
+    }                    \
+    checkPressed;        \
+    checkMacro;
+
+#define doRelease                                              \
+    if (!replaying) {                                          \
+      ReleaseKey(addr);                                        \
+      sim_.RunCycles(1);                                       \
+    }                                                          \
+    checkRelease;
+
     std::vector<std::string> action_list = split(str, " +");
     for (auto actionRepr: action_list) {
       const auto [ action, report, keyId ] = parseAction(actionRepr);
@@ -91,62 +107,25 @@ class ManualTests : public VirtualDeviceTest {
       const auto [ addr,   event ] = mapValue;
       switch (action) {
 	case KeyActions::press:
-	  if (report == ReportIds::passed && event != Key_NoEvent)
-	    ExpectKeyboardReport(AddKeycodes{event}, "autogen");
-	  if (report == ReportIds::triggerMacro) {
-	    auto x = knownMacros.find(keyId);
-	    assert (x != knownMacros.end());
-	    replayMacro(x->second);
-	  }
+	  doPress;
 	  break;
 	case KeyActions::release:
-	  if (report != ReportIds::consumed && event != Key_NoEvent)
-	    ExpectKeyboardReport(RemoveKeycodes{event}, "autogen");
+	  doRelease;
 	  break;
 	case KeyActions::tap:
-	  if (report == ReportIds::passed && event != Key_NoEvent)
-	    ExpectKeyboardReport(AddKeycodes{event}, "autogen");
-	  if (report == ReportIds::triggerMacro) {
-	    auto x = knownMacros.find(keyId);
-	    assert (x != knownMacros.end());
-	    replayMacro(x->second);
-	  }
-	  if (report != ReportIds::consumed && event != Key_NoEvent)
-	    ExpectKeyboardReport(RemoveKeycodes{event}, "autogen");
+	  doPress;
+	  doRelease;
 	  break;
 	default:
 	  __builtin_unreachable();
       }
     }
-  }
-
-  void runAction(const std::string str) {
-    std::vector<std::string> action_list = split(str, " +");
-    for (auto actionRepr: action_list) {
-      const auto [ action, report, keyId ] = parseAction(actionRepr);
-      const auto [ keyId2, mapValue ] = *keyTypes.find(keyId);
-      const auto [ addr,   event ] = mapValue;
-      switch (action) {
-	case KeyActions::press:
-	  doPress(addr, report, event, keyId);
-	  break;
-	case KeyActions::release:
-	  ReleaseKey(addr);
-	  sim_.RunCycles(1);
-	  if (report != ReportIds::consumed && event != Key_NoEvent)
-	    ExpectKeyboardReport(RemoveKeycodes{event}, "autogen");
-	  break;
-	case KeyActions::tap:
-	  doPress(addr, report, event, keyId);
-	  ReleaseKey(addr);
-	  sim_.RunCycles(1);
-	  if (report == ReportIds::passed && event != Key_NoEvent)
-	    ExpectKeyboardReport(RemoveKeycodes{event}, "autogen");
-	  break;
-	default:
-	  __builtin_unreachable();
-      }
-    }
+#undef checkReport
+#undef checkPressed
+#undef checkRelease
+#undef checkMacro
+#undef doPress
+#undef doRelease
   }
 
   void storeMacro(const std::string id, const std::string recorded) {
@@ -187,12 +166,13 @@ TEST_F(ManualTests, 2_MacrosOnTheFlyRecursiveReplay) {
   initialiseMacros();
 
   runAction("PLAY %B");
+
   // The below should record A as replaying B.
-  // runAction("REC ~A J PLAY %B J REC");
-  // storeMacro("A", "J PLAY %B J");
-  //
+  runAction("REC ~A J PLAY %B J REC");
+  storeMacro("A", "J PLAY %B J");
+
   // Then we want to replay A and check that it runs B.
-  // runAction("PLAY %A")
+  runAction("PLAY %A");
 
 
   LoadState();
@@ -206,10 +186,10 @@ TEST_F(ManualTests, 2_MacrosOnTheFlyRecursiveAvoidance) {
 
   // The below should record A but avoid replaying B
   // runAction("REC ~A J| PLAY ~B J^ REC");
-  // storeMacro("A", "J| PLAY ~%B J^");
-  //
+  // storeMacro("A", "J| PLAY ~B J^");
+
   // Then we want to replay A and check that it still avoids replaying B.
-  // runAction("PLAY %A")
+  // runAction("PLAY %A");
 
 
   LoadState();
