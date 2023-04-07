@@ -108,8 +108,8 @@ endif
 
 ${OBJ_DIR}/%.o: ${SRC_DIR}/%.cpp
 	$(QUIET) install -d "${OBJ_DIR}"
-	$(QUIET) $(COMPILER_WRAPPER) $(call _arduino_prop,compiler.cpp.cmd) -o "$@" -c -std=c++14 \
-		${shared_includes} ${include_plugins_dir} ${shared_defines} $<
+	$(QUIET) $(COMPILER_WRAPPER) $(call _arduino_prop,compiler.cpp.cmd) -o "$@" -c -std=c++17 \
+		-g3 ${shared_includes} ${include_plugins_dir} ${shared_defines} $<
 
 clean:
 	$(QUIET) rm -f -- "${SRC_DIR}/generated-testcase.cpp"
