@@ -160,7 +160,16 @@ TEST_F(ManualTests, 1_MacrosOnTheFlyTestHelpers) {
   CheckReports();
 }
 
-TEST_F(ManualTests, 2_MacrosOnTheFlyRecursiveReplay) {
+TEST_F(ManualTests, 2_MacrosOnTheFlyNoHeldOverPlay) {
+  ClearState();
+  sim_.RunForMillis(10);
+  initialiseMacros();
+  runAction("J| PLAY ~B J^");
+  LoadState();
+  CheckReports();
+}
+
+TEST_F(ManualTests, 3_MacrosOnTheFlyRecursiveReplay) {
   ClearState();
   sim_.RunForMillis(10);
   initialiseMacros();
@@ -179,14 +188,14 @@ TEST_F(ManualTests, 2_MacrosOnTheFlyRecursiveReplay) {
   CheckReports();
 }
 
-TEST_F(ManualTests, 2_MacrosOnTheFlyRecursiveAvoidance) {
+TEST_F(ManualTests, 4_MacrosOnTheFlyRecursiveAvoidance) {
   ClearState();
   sim_.RunForMillis(10);
   initialiseMacros();
 
   // The below should record A but avoid replaying B
-  // runAction("REC ~A J| PLAY ~B J^ REC");
-  // storeMacro("A", "J| PLAY ~B J^");
+  runAction("REC ~A J| PLAY ~B J^ REC");
+  storeMacro("A", "J| PLAY ~B J^");
 
   // Then we want to replay A and check that it still avoids replaying B.
   // runAction("PLAY %A");

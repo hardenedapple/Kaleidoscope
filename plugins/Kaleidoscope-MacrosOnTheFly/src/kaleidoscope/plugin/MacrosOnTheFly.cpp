@@ -241,22 +241,24 @@ exit:
     return kaleidoscope::EventHandlerResult::OK;
 
 #define IDLE_AND_RET_IF_HELD_KEY(EVENT) \
-      for (Key key : live_keys.all()) { \
-          if (key != Key_Inactive && key != Key_Masked && key != event.key) { \
-             LED_complain (event.addr); \
-             currentState = IDLE; \
-             return kaleidoscope::EventHandlerResult::OK; \
-          } \
-      }
+  currentState = IDLE; \
+  for (Key key : live_keys.all()) { \
+    if (key != Key_Inactive && key != Key_Masked && key != event.key) { \
+      LED_complain (event.addr); \
+      kaleidoscope::live_keys.mask(event.addr); \
+      return kaleidoscope::EventHandlerResult::EVENT_CONSUMED; \
+    } \
+  }
 
 #define IDLE_REC_AND_RET_IF_HELD_KEY(EVENT) \
-      for (Key key : live_keys.all()) { \
-          if (key != Key_Inactive && key != Key_Masked && key != event.key) { \
-             LED_complain (event.addr); \
-             currentState = IDLE; \
-             return kaleidoscope::EventHandlerResult::OK; \
-          } \
-      }
+  currentState = IDLE_AND_RECORDING; \
+  for (Key key : live_keys.all()) { \
+    if (key != Key_Inactive && key != Key_Masked && key != event.key) { \
+      LED_complain (event.addr); \
+      kaleidoscope::live_keys.mask(event.addr); \
+      return kaleidoscope::EventHandlerResult::EVENT_CONSUMED; \
+    } \
+  }
 
   EventHandlerResult MacrosOnTheFly::doNewPlay(KeyEvent &event) {
     RET_IF_NON_TRANSITION (event);
@@ -381,9 +383,7 @@ exit:
           /* Do not want to choose which slot to play based on a keyUp event. */
         return kaleidoscope::EventHandlerResult::OK;
       IDLE_AND_RET_IF_HELD_KEY (event);
-      currentState = IDLE;
-      EventHandlerResult ret = doNewPlay (event);
-      return ret;
+      return doNewPlay (event);
     }
 
     if (currentState == SETTING_DELAY || currentState == IDLE) {
@@ -452,9 +452,7 @@ exit:
     /* currentState must be PICKING_SLOT_FOR_PLAY_AND_RECORDING.  */
     RET_IF_NON_TRANSITION (event);
     IDLE_REC_AND_RET_IF_HELD_KEY (event);
-    currentState = IDLE_AND_RECORDING;
-    doNewPlay (event);
-    return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
+    return doNewPlay (event);
   }
 
   MacrosOnTheFly::State MacrosOnTheFly::currentState   = IDLE;
