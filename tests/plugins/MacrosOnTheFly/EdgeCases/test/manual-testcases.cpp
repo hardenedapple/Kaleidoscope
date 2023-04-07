@@ -198,7 +198,7 @@ TEST_F(ManualTests, 4_MacrosOnTheFlyRecursiveAvoidance) {
   storeMacro("A", "J| PLAY ~B J^");
 
   // Then we want to replay A and check that it still avoids replaying B.
-  // runAction("PLAY %A");
+  runAction("PLAY %A");
 
 
   LoadState();

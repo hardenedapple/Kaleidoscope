@@ -240,25 +240,28 @@ exit:
   if (!isTransitionEvent ((EVENT))) \
     return kaleidoscope::EventHandlerResult::OK;
 
-#define IDLE_AND_RET_IF_HELD_KEY(EVENT) \
-  currentState = IDLE; \
-  for (Key key : live_keys.all()) { \
-    if (key != Key_Inactive && key != Key_Masked && key != event.key) { \
+#define STATE_CHANGE_AND_RET_IF_HELD_KEY(STATE, EVENT) \
+  do { \
+    currentState = STATE; \
+    for (Key key : live_keys.all()) { \
+      if (key != Key_Inactive && key != Key_Masked && key != event.key) { \
+	LED_complain (event.addr); \
+	kaleidoscope::live_keys.mask(event.addr); \
+	return kaleidoscope::EventHandlerResult::EVENT_CONSUMED; \
+      } \
+    } \
+    if (anyMacroKeyHeld()) { \
       LED_complain (event.addr); \
       kaleidoscope::live_keys.mask(event.addr); \
       return kaleidoscope::EventHandlerResult::EVENT_CONSUMED; \
     } \
-  }
+  } while (false)
+
+#define IDLE_AND_RET_IF_HELD_KEY(EVENT) \
+    STATE_CHANGE_AND_RET_IF_HELD_KEY (IDLE, EVENT)
 
 #define IDLE_REC_AND_RET_IF_HELD_KEY(EVENT) \
-  currentState = IDLE_AND_RECORDING; \
-  for (Key key : live_keys.all()) { \
-    if (key != Key_Inactive && key != Key_Masked && key != event.key) { \
-      LED_complain (event.addr); \
-      kaleidoscope::live_keys.mask(event.addr); \
-      return kaleidoscope::EventHandlerResult::EVENT_CONSUMED; \
-    } \
-  }
+    STATE_CHANGE_AND_RET_IF_HELD_KEY (IDLE_AND_RECORDING, EVENT)
 
   EventHandlerResult MacrosOnTheFly::doNewPlay(KeyEvent &event) {
     RET_IF_NON_TRANSITION (event);

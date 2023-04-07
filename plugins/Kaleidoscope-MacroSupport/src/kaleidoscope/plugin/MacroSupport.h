@@ -62,6 +62,12 @@ class MacroSupport : public Plugin {
   /// specified `key`, passing both in sequence to `Runtime.handleKeyEvent()`.
   void tap(Key key) const;
 
+  /// Report whether any macro keys are currently held.
+  ///
+  /// Generates no `KeyEvent`, just indicates whether on the next runtime event
+  /// we will add any keys to the HID report.
+  bool anyMacroKeyHeld() const;
+
   // ---------------------------------------------------------------------------
   // Event handlers
   EventHandlerResult onNameQuery();
