@@ -70,7 +70,6 @@ class ManualTests : public VirtualDeviceTest {
   protected:
   std::unordered_map<std::string, std::string> knownMacros;
 
-  void runAction(const std::string str, bool replaying = false) {
 #define checkReport(changeId)                                     \
     if (report == ReportIds::passed && event != Key_NoEvent) {    \
       ExpectKeyboardReport(changeId##Keycodes{event}, "autogen"); \
@@ -99,7 +98,8 @@ class ManualTests : public VirtualDeviceTest {
       sim_.RunCycles(1);                                       \
     }                                                          \
     checkRelease;
-
+  void runAction(const std::string str, bool replaying = false) {
+    if (str.empty()) return;
     std::vector<std::string> action_list = split(str, " +");
     for (auto actionRepr: action_list) {
       const auto [ action, report, keyId ] = parseAction(actionRepr);
@@ -120,13 +120,13 @@ class ManualTests : public VirtualDeviceTest {
 	  __builtin_unreachable();
       }
     }
+  }
 #undef checkReport
 #undef checkPressed
 #undef checkRelease
 #undef checkMacro
 #undef doPress
 #undef doRelease
-  }
 
   void storeMacro(const std::string id, const std::string recorded) {
     knownMacros.insert_or_assign(id, recorded);
@@ -193,13 +193,34 @@ TEST_F(ManualTests, 4_MacrosOnTheFlyRecursiveAvoidance) {
   sim_.RunForMillis(10);
   initialiseMacros();
 
-  // The below should record A but avoid replaying B
-  runAction("REC ~A J| PLAY ~B J^ REC");
-  storeMacro("A", "J| PLAY ~B J^");
+  // // The below should record A but avoid replaying B
+  // runAction("REC ~A J| PLAY ~B J^ REC");
+  // storeMacro("A", "J| PLAY ~B J^");
 
-  // Then we want to replay A and check that it still avoids replaying B.
+  // // Then we want to replay A and check that it still avoids replaying B.
+  // runAction("PLAY %A");
+
+  // Recording A as playing B.
+  runAction("REC ~A J PLAY %B REC");
+
+  // When attempting to record B as playing A we should press J, reach PLAY B,
+  // then that plays the A that has been recorded so far, complain and not
+  // recursively play A.
+  storeMacro("A", "J A");
+  runAction("REC ~B A PLAY %A A REC");
+
+  // When attempting to play A we have the following behaviour:
+  //   - Presses J
+  //   - Runs B
+  //     - presses A.
+  //     - attempts to play A and fails
+  //     - presses A.
+  storeMacro("A", "J");
   runAction("PLAY %A");
 
+  // B should be empty.
+  storeMacro("B", "");
+  runAction("PLAY %B");
 
   LoadState();
   CheckReports();
