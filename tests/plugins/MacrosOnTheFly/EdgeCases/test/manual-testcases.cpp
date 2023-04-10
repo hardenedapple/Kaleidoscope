@@ -3,6 +3,10 @@
 #include <regex>
 #include <unordered_map>
 
+#define IN_TESTSUITE
+#include "Kaleidoscope-MacrosOnTheFly/src/Kaleidoscope-MacrosOnTheFly.h"
+#undef IN_TESTSUITE
+
 SETUP_GOOGLETEST();
 
 namespace kaleidoscope {
@@ -33,6 +37,7 @@ std::vector<std::string> split(const std::string str, const std::string regex_st
 const std::unordered_map<std::string, Keyval> keyTypes = {
   { "REC", { key_addr_MACROREC, Key_NoEvent }},
   { "PLAY", { key_addr_MACROPLAY, Key_NoEvent }},
+  { "DELAY", { key_addr_MACRODELAY, Key_NoEvent }},
   { "A",    { key_addr_A, Key_A }},
   { "J", { key_addr_J, Key_J }},
   { "B", { key_addr_B, Key_B }},
@@ -140,6 +145,28 @@ class ManualTests : public VirtualDeviceTest {
     storeMacro("B", "A A");
   }
 
+  template<typename Func>
+  void forEachState(Func f) {
+    std::vector<std::pair<std::string,
+			  ::kaleidoscope::plugin::MacrosOnTheFly::State_> >
+    stateEnteringCodes = {
+      { "", ::kaleidoscope::plugin::MacrosOnTheFly::State_::IDLE },
+      { "REC", ::kaleidoscope::plugin::MacrosOnTheFly::State_::PICKING_SLOT_FOR_REC },
+      { "PLAY", ::kaleidoscope::plugin::MacrosOnTheFly::State_::PICKING_SLOT_FOR_PLAY },
+      { "DELAY", ::kaleidoscope::plugin::MacrosOnTheFly::State_::SETTING_DELAY },
+      { "REC A", ::kaleidoscope::plugin::MacrosOnTheFly::State_::IDLE_AND_RECORDING },
+      { "REC A PLAY", ::kaleidoscope::plugin::MacrosOnTheFly::State_::PICKING_SLOT_FOR_PLAY_AND_RECORDING },
+      { "REC A DELAY", ::kaleidoscope::plugin::MacrosOnTheFly::State_::SETTING_DELAY_AND_RECORDING },
+    };
+    for (auto stateSequence : stateEnteringCodes) {
+      ClearState();
+      runAction(stateSequence.first);
+      /* Just to ensure this test is running as expected and actually setting
+       * the relevant state as required.  */
+      ASSERT_EQ(::MacrosOnTheFly.currentState, stateSequence.second);
+      f();
+    }
+  }
 };
 
 
@@ -224,6 +251,32 @@ TEST_F(ManualTests, 4_MacrosOnTheFlyRecursiveAvoidance) {
 
   LoadState();
   CheckReports();
+}
+
+TEST_F(ManualTests, 4_MacrosOnTheFlyAvoidKeyUp) {
+  ClearState();
+  sim_.RunForMillis(10);
+
+  // Check that keyUp does not trigger any keyboard report on record nor
+  // replay.
+  runAction("REC ~A| J ~A^ REC");
+  storeMacro("A", "J");
+  runAction("PLAY %A");
+  LoadState();
+  CheckReports();
+}
+
+TEST_F(ManualTests, 5_MacrosOnTheFlyBailOut) {
+  ClearState();
+
+  /* Get into each possible state, then run REC -> PLAY -> REC, then assert we
+   * have currentState of IDLE.  */
+  /* Manually get into state PICKING_SLOT_FOR_REC.  */
+  auto canGetIdle = [this] () {
+    this->runAction("REC PLAY REC");
+    ASSERT_EQ(::MacrosOnTheFly.currentState, ::kaleidoscope::plugin::MacrosOnTheFly::State_::IDLE);
+  };
+  forEachState(canGetIdle);
 }
 
 }
