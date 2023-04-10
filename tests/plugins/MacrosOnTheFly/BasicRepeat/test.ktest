@@ -13,7 +13,8 @@ KEYSWITCH MACRODELAY 2 7
 # Note:  in discussions below the notation "X" means press X down and up.
 #        notation "X|" means press X down.
 #        notation "X^" means release X.
-NAME MacrosOnTheFly basic record and replay
+
+NAME MacrosOnTheFly Nothing Recorded
 # .........................................................................
 # Should not affect standard typing (it did very early on). {{{
 # Press of  "A B J"  emits those keypresses.
@@ -75,6 +76,8 @@ RUN 1 cycle
 EXPECT no keyboard-report
 
 # ......................................................................... }}}
+
+NAME MacrosOnTheFly Simple Recording
 # Basic record of single characters. {{{
 # Pressing   "REC A J REC"   reports "J".
 # Pressing   "REC B B REC"   reports "B".
@@ -247,6 +250,8 @@ EXPECT no keyboard-report
 # }}}
 
 # ......................................................................... }}}
+
+NAME MacrosOnTheFly Held During REC
 # Any key held down when attempting to start the macro recording means that the {{{
 # macro recording is not started.
 # Do not need to release MACROREC before pressing the macro recording key.
@@ -258,10 +263,10 @@ RUN 1 cycle
 EXPECT no keyboard-report
 PRESS A
 RUN 1 cycle
-EXPECT keyboard-report Key_A # Should report the key since it was not consumed.
+EXPECT no keyboard-report
 RELEASE A
 RUN 1 cycle
-EXPECT keyboard-report empty # Similarly, should report the key release.
+EXPECT no keyboard-report
 RELEASE MACROREC
 RUN 1 cycle
 EXPECT no keyboard-report
@@ -289,6 +294,8 @@ EXPECT no keyboard-report
 # }}}
 
 # ......................................................................... }}}
+
+NAME MacrosOnTheFly Multi Press During Record
 # Does recording multiple keys at once work? {{{
 # Starting with does recording a Shift+J work correctly and does it send the
 # same thing.
@@ -358,10 +365,10 @@ RUN 1 cycle
 EXPECT no keyboard-report
 PRESS A
 RUN 1 cycle
-EXPECT keyboard-report Key_LeftShift Key_A
+EXPECT no keyboard-report
 RELEASE A
 RUN 1 cycle
-EXPECT keyboard-report Key_LeftShift
+EXPECT no keyboard-report
 RELEASE L_SHIFT
 RUN 1 cycle
 EXPECT keyboard-report empty
@@ -383,10 +390,10 @@ RUN 1 cycle
 EXPECT no keyboard-report
 PRESS A
 RUN 1 cycle
-EXPECT keyboard-report Key_LeftShift Key_A # LSHIFT held so recording not happening.
+EXPECT no keyboard-report
 RELEASE A
 RUN 1 cycle
-EXPECT keyboard-report Key_LeftShift
+EXPECT no keyboard-report
 PRESS J
 RUN 1 cycle
 EXPECT keyboard-report Key_LeftShift Key_J
@@ -400,6 +407,7 @@ RUN 1 ms
 # }}}
 
 # ......................................................................... }}}
+
 # Pressing  "B| REC A| B^ A^" exits and does not record. {{{
 
 # {{{ Hold down B and press some keys -- ensure "before" makes sense.
@@ -438,13 +446,13 @@ RUN 1 cycle
 EXPECT no keyboard-report
 PRESS A
 RUN 1 cycle
-EXPECT keyboard-report Key_B Key_A
+EXPECT no keyboard-report
 RELEASE B
 RUN 1 cycle
-EXPECT keyboard-report Key_A
+EXPECT keyboard-report empty
 RELEASE A
 RUN 1 cycle
-EXPECT keyboard-report empty
+EXPECT no keyboard-report
 RUN 1 ms
 # }}}
 
@@ -491,6 +499,8 @@ EXPECT no keyboard-report
 
 
 # ......................................................................... }}}
+
+NAME MacrosOnTheFly Held After Exiting
 # Holding a key down while exiting macro state does not mess up recording.  {{{
 
 # {{{ Record J into macro slot A -- keep held down when finishing the recording.
@@ -548,4 +558,5 @@ RUN 1 ms
 # }}}
 
 # ......................................................................... }}}
+
 # vim: foldmethod=marker

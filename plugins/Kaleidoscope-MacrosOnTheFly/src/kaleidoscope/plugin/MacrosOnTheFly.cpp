@@ -240,28 +240,26 @@ exit:
   if (!isTransitionEvent ((EVENT))) \
     return kaleidoscope::EventHandlerResult::OK;
 
-#define STATE_CHANGE_AND_RET_IF_HELD_KEY(STATE, EVENT) \
+#define STATE_CHANGE_AND_RET_IF_HELD_KEY(STATE, EVENT, ARE_RECORDING) \
   do { \
     currentState = STATE; \
     for (Key key : live_keys.all()) { \
-      if (key != Key_Inactive && key != Key_Masked && key != event.key) { \
-	LED_complain (event.addr); \
-	kaleidoscope::live_keys.mask(event.addr); \
-	return kaleidoscope::EventHandlerResult::EVENT_CONSUMED; \
+      if (key != Key_Inactive && key != Key_Masked && key != (EVENT).key) { \
+	LED_complain ((EVENT).addr); \
+	return maskKeyAndRet(EVENT, ARE_RECORDING); \
       } \
     } \
     if (anyMacroKeyHeld()) { \
-      LED_complain (event.addr); \
-      kaleidoscope::live_keys.mask(event.addr); \
-      return kaleidoscope::EventHandlerResult::EVENT_CONSUMED; \
+      LED_complain ((EVENT).addr); \
+      return maskKeyAndRet(EVENT, ARE_RECORDING); \
     } \
   } while (false)
 
 #define IDLE_AND_RET_IF_HELD_KEY(EVENT) \
-    STATE_CHANGE_AND_RET_IF_HELD_KEY (IDLE, EVENT)
+    STATE_CHANGE_AND_RET_IF_HELD_KEY (IDLE, EVENT, false)
 
 #define IDLE_REC_AND_RET_IF_HELD_KEY(EVENT) \
-    STATE_CHANGE_AND_RET_IF_HELD_KEY (IDLE_AND_RECORDING, EVENT)
+    STATE_CHANGE_AND_RET_IF_HELD_KEY (IDLE_AND_RECORDING, EVENT, true)
 
   EventHandlerResult MacrosOnTheFly::doNewPlay(KeyEvent &event) {
     RET_IF_NON_TRANSITION (event);
@@ -270,19 +268,12 @@ exit:
     success = (sIndex != NUM_MACROS) && play(sIndex);
     if (success) sLastPlayedSlot = sIndex;
     /* Need to clear keys pressed by a macro so they don't get "stuck on".
-     * Do not want to do that when in the middle of replaying.
-     * This could lead to some surprising interplays (one macro presses ctrl
-     * and does not release it, that gets replayed in the middle of one macro
-     * which was typing), but at least it's a nice clean split for description.
-     *
-     * Not clearing at all after a macro would be a cleaner description, but
-     * that would have such problematic behaviour we can't have that.  */
-    if (replaying == 0) clear();
+     * We disallow any keys being "held" over replay or record.  Hence there is
+     * no worry about clearing "outer" macro keys after having finished
+     * clearing "inner" macro keys.  */
+    clear();
     if (!success) LED_complain (event.addr);
-    /* Mask the macro play recording key so that it's event does not get
-     * reported to the computer.  Does not affect reporting to other plugins.  */
-    kaleidoscope::live_keys.mask(event.addr);
-    return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
+    return maskKeyAndRet (event, currentState);
   }
 
   EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
@@ -367,13 +358,9 @@ exit:
        * Way easier to disallow.  */
       IDLE_AND_RET_IF_HELD_KEY (event);
       bool recording = prepareForRecording (event.key);
-      if (!recording) LED_complain (event.addr);
       currentState = recording ? IDLE_AND_RECORDING : IDLE;
-      /* Mask the current key so that its keyToggledOff event does not get
-       * reported to the computer.  N.b. this does not change whether the event
-       * gets reported to use in the plugin.  */
-      kaleidoscope::live_keys.mask(event.addr);
-      return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
+      if (!recording) LED_complain (event.addr);
+      return maskKeyAndRet (event, false);
     }
 
     if (currentState == PICKING_SLOT_FOR_PLAY) {
@@ -415,6 +402,9 @@ exit:
 
     if (IS_MACROREC(event)) {
       if (keyToggledOn(event.state)) {
+	  /* Do not oneed space to stop recording.  Hence don't check space
+	   * flag.  */
+          // assert(recordKeystroke(event));
           recordKeystroke(event);
           currentState = IDLE;
       }
@@ -424,8 +414,7 @@ exit:
     /* Assume injected keys will get injected again based on the keys that
      * were actually pressed and that will get replayed.  */
     if (!keyIsInjected (event.state) && !replaying) {
-      bool have_space = recordKeystroke (event);
-      if (!have_space) {
+      if (!recordKeystroke (event)) {
 	/* Decision here to either clear macro entirely or to just stop the
 	 * macro where it failed.  We choose to clear the macro entirely to
 	 * ensure there is no "broken" macro left in memory. */
