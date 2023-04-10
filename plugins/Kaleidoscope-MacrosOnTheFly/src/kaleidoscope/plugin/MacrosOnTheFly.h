@@ -156,6 +156,42 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
     }
     static inline void LED_complain (KeyAddr addr) {}
     static inline void LED_record_success (KeyAddr addr) {}
+  private:
+    static inline EventHandlerResult
+      maskKeyAndRet (KeyEvent event, bool recording) {
+      /* Mask the macro play recording key so that it's event does not get
+       * reported to the computer.  To avoid Runtime_::handleKeyEvent immediately
+       * undoing this work after the event handlers have all finished we return
+       * EventHandlerResult::ABORT rather than EventHandler::EVENT_CONSUMED.
+       * Another approach while returning EventHandlerResult::EVENT_CONSUMED
+       * could be to either adjust event.addr.isValid() so that it returns
+       * `false`, or to adjust event.key to be Key_Masked.  This would mean that
+       * plugins are still run, but they would run with some misleading
+       * information.  */
+      kaleidoscope::live_keys.mask(event.addr);
+      if (recording) {
+	/* Insert an artificial "release" for this key press.
+	 * This is so that when replaying this event it looks quite similar to
+	 * what happens when recording.  When recording we use live_keys.mask
+	 * to and return ABORT to pretend this key was not pressed.  When
+	 * replaying we return ABORT to pretend this key was not pressed, but
+	 * have no real way to tell MacroSupport to not remember that this
+	 * particular key is active (in `active_macro_keys_`.  In order to fake
+	 * that we emit a release. */
+	KeyEvent alt = event;
+	// assert (keyToggledOn (event));
+	// assert (alt.state == IS_PRESSED);
+	alt.state &= ~IS_PRESSED;
+	alt.state |= WAS_PRESSED;
+	if (!recordKeystroke(alt)) {
+	  /* Failed to record a keystroke.  Drop out of "recording" state.  */
+	  currentState = IDLE;
+	  LED_complain (event.addr);
+	}
+      }
+      return kaleidoscope::EventHandlerResult::ABORT;
+  }
+
 };
 }  // namespace plugin
 }  // namespace kaleidoscope
