@@ -22,6 +22,7 @@
 #include "kaleidoscope/keyswitch_state.h"       // for keyToggledOn
 #include "kaleidoscope/plugin.h"                // for Plugin
 #include "kaleidoscope/key_defs.h"              // for Key
+#include "kaleidoscope/plugin/Macros/MacroSteps.h"  // for MACRO_ACTION_END, MACRO_ACTION_STEP_E...
 
 
 #define MACROREC   ::kaleidoscope::Key(::kaleidoscope::ranges::MACRO_REC)
@@ -100,6 +101,11 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
       slotRecord[sIndex].numUsedKeystrokes = 0;
       sRecordingSlot = sIndex;
       return true;
+    }
+
+    static inline void zeroMacro(uint8_t recordingSlot) {
+      slotRecord[recordingSlot].numUsedKeystrokes = 0;
+      macroStorage[mIndexFrom_s(recordingSlot)] = MACRO_ACTION_END;
     }
 
     /* Increments in milliseconds are not very nice as an interface.

@@ -267,13 +267,22 @@ exit:
     uint8_t sIndex = IS_MACROPLAY(event) ? sLastPlayedSlot : sFindSlot (event.key);
     success = (sIndex != NUM_MACROS) && play(sIndex);
     if (success) sLastPlayedSlot = sIndex;
+    else {
+      LED_complain (event.addr);
+      /* If we're recording at the `play` failed we zero out this macro.
+       * This means we never store any recursive macros.  */
+      if (isRecording(currentState)) {
+	currentState = IDLE;
+	zeroMacro(sRecordingSlot);
+	sRecordingSlot = NUM_MACROS;
+      }
+    }
     /* Need to clear keys pressed by a macro so they don't get "stuck on".
      * We disallow any keys being "held" over replay or record.  Hence there is
      * no worry about clearing "outer" macro keys after having finished
      * clearing "inner" macro keys.  */
     clear();
-    if (!success) LED_complain (event.addr);
-    return maskKeyAndRet (event, currentState);
+    return maskKeyAndRet (event, isRecording(currentState));
   }
 
   EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
