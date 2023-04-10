@@ -13,16 +13,18 @@
  * hence to replay things in the same way.
  */
 
+#ifndef IN_TESTSUITE
 #include <Kaleidoscope-Ranges.h> // for SAFE_START
 /* So that I can use some Macro stuff.  */
 #include "Kaleidoscope-MacroSupport.h"
+#include "kaleidoscope/plugin/Macros/MacroSteps.h"  // for MACRO_ACTION_END, MACRO_ACTION_STEP_E...
+#endif
 #include "kaleidoscope/LiveKeys.h"
 #include "kaleidoscope/KeyEvent.h"              // for KeyEvent
 #include "kaleidoscope/event_handler_result.h"  // for EventHandlerResult
 #include "kaleidoscope/keyswitch_state.h"       // for keyToggledOn
 #include "kaleidoscope/plugin.h"                // for Plugin
 #include "kaleidoscope/key_defs.h"              // for Key
-#include "kaleidoscope/plugin/Macros/MacroSteps.h"  // for MACRO_ACTION_END, MACRO_ACTION_STEP_E...
 
 
 #define MACROREC   ::kaleidoscope::Key(::kaleidoscope::ranges::MACRO_REC)
@@ -103,16 +105,17 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
       return true;
     }
 
-    static inline void zeroMacro(uint8_t recordingSlot) {
-      slotRecord[recordingSlot].numUsedKeystrokes = 0;
-      macroStorage[mIndexFrom_s(recordingSlot)] = MACRO_ACTION_END;
-    }
-
     /* Increments in milliseconds are not very nice as an interface.
      * Give increments in 100 milliseconds instead.  */
     static inline void do_delay(const uint8_t todelay) {
       uint16_t milliseconds = (uint16_t)todelay * 100;
       delay(milliseconds);
+    }
+
+#ifndef IN_TESTSUITE
+    static inline void zeroMacro(uint8_t recordingSlot) {
+      slotRecord[recordingSlot].numUsedKeystrokes = 0;
+      macroStorage[mIndexFrom_s(recordingSlot)] = MACRO_ACTION_END;
     }
 
     /// Send a key press event from a Macro
@@ -142,9 +145,8 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
     ///
     /// Generates two new `KeyEvent` objects, one each to press and release the
     /// specified `key`, passing both in sequence to `Runtime.handleKeyEvent()`.
-    static inline void tap(Key key) {
-      ::MacroSupport.tap(key);
-    }
+    static inline void tap(Key key) { ::MacroSupport.tap(key); }
+#endif
 
     static inline bool isTransitionEvent (KeyEvent &event) {
       return keyToggledOn(event.state)
@@ -157,9 +159,11 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
     static bool play(const uint8_t);
     static EventHandlerResult doNewPlay(KeyEvent &);
     EventHandlerResult onKeyEvent(KeyEvent &);
+#ifndef IN_TESTSUITE
     EventHandlerResult beforeReportingState(const KeyEvent &event) {
         return ::MacroSupport.beforeReportingState(event);
     }
+#endif
     static inline void LED_complain (KeyAddr addr) {}
     static inline void LED_record_success (KeyAddr addr) {}
   private:

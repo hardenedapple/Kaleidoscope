@@ -296,12 +296,13 @@ exit:
      *     any modifier toggle on     -> PICKING_SLOT_FOR_REC
      *     any non toggleOn           -> PICKING_SLOT_FOR_REC
      *     MACROPLAY                  -> PICKING_SLOT_FOR_PLAY   # N.b. for a "clear state" sequence.
-     *     valid slot toggle on       -> IDLE_AND_RECORDING
+     *     valid slot toggle on       -> no key held => IDLE_AND_RECORDING, otherwise IDLE
      *     other toggle on            -> IDLE
      *   PICKING_SLOT_FOR_PLAY
      *     any modifier toggle on     -> PICKING_SLOT_FOR_PLAY
      *     any non toggleOn           -> PICKING_SLOT_FOR_PLAY
-     *     other toggle on            -> (maybe play then) IDLE
+     *     valid slot toggle on       -> (play unless other key held, then) IDLE
+     *     other toggle on            -> IDLE
      *   SETTING_DELAY
      *     any toggle off               -> SETTING_DELAY
      *     any modifier toggle on       -> SETTING_DELAY
