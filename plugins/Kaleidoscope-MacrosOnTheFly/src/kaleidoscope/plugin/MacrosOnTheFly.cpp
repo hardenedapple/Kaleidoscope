@@ -116,11 +116,11 @@ namespace plugin {
     CHECK_REMAINING_SPACE (cur, event.key.getFlags() == 0 ? 2 : 3);
     if (keyToggledOn(event.state)) {
       if (event.key.getFlags() == 0) {
-	latestKeyDown = leadingTap = leadingTapSeq = 0;
+	latestKeyDown = leadingTap = leadingTapSeq = MACRO_SIZE;
 	latestKeyCodeDown = cur->numUsedKeystrokes;
 	macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_STEP_KEYCODEDOWN;
       } else {
-	latestKeyCodeDown = leadingTapCode = leadingTapCodeSeq = 0;
+	latestKeyCodeDown = leadingTapCode = leadingTapCodeSeq = MACRO_SIZE;
 	latestKeyDown = cur->numUsedKeystrokes;
 	macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_STEP_KEYDOWN;
 	macroBuffer[cur->numUsedKeystrokes++] = event.key.getFlags();
@@ -130,7 +130,7 @@ namespace plugin {
       uint8_t keyCode = event.key.getKeyCode();
       if (event.key.getFlags() == 0) {
 
-	bool createNewSequence = (leadingTapCode != 0
+	bool createNewSequence = (leadingTapCode != MACRO_SIZE
 	    && (cur->numUsedKeystrokes - leadingTapCode) >= 6);
 
 	if (latestKeyCodeDown != (cur->numUsedKeystrokes - 2)
@@ -139,7 +139,7 @@ namespace plugin {
 	  macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_STEP_KEYCODEUP;
 	  macroBuffer[cur->numUsedKeystrokes++] = keyCode;
 	  clearRecordingCompressionState();
-	} else if (leadingTapCodeSeq != 0) {
+	} else if (leadingTapCodeSeq != MACRO_SIZE) {
 	  /* In tap code sequence.  */
 	  /* One byte before the keyCodeDown must be zero (the terminating
 	   * byte of the tap code sequence.  We want to make that byte the
@@ -152,7 +152,7 @@ namespace plugin {
 	} else if (!createNewSequence) {
 	  /* Out of tap code sequence, not enough taps to make new one.  */
 	  macroBuffer[latestKeyCodeDown] = MACRO_ACTION_STEP_TAPCODE;
-	  if (leadingTapCode == 0) { leadingTapCode = latestKeyCodeDown; }
+	  if (leadingTapCode == MACRO_SIZE) { leadingTapCode = latestKeyCodeDown; }
 	  /* keyCode already set from KEYCODEDOWN.  */
 	} else /* Start new tap sequence. */ {
 	  macroBuffer[leadingTapCode] = MACRO_ACTION_STEP_TAP_CODE_SEQUENCE;
@@ -173,7 +173,7 @@ namespace plugin {
 	  cur->numUsedKeystrokes = x;
 	}
       } else {
-	bool createNewSequence = (leadingTap != 0
+	bool createNewSequence = (leadingTap != MACRO_SIZE
 	    && (cur->numUsedKeystrokes - leadingTap) >= 12);
 	if (latestKeyDown != (cur->numUsedKeystrokes - 3)
 	    || macroBuffer[latestKeyDown + 2] != keyCode
@@ -182,7 +182,7 @@ namespace plugin {
 	  macroBuffer[cur->numUsedKeystrokes++] = event.key.getFlags();
 	  macroBuffer[cur->numUsedKeystrokes++] = keyCode;
 	  clearRecordingCompressionState();
-	} else if (leadingTapSeq != 0) {
+	} else if (leadingTapSeq != MACRO_SIZE) {
 	  /* In tap sequence.
 	   * Two bytes before the keyDown code must be zero (the terminating
 	   * bytes of the tap sequence).  We want to make those the key which
@@ -196,7 +196,7 @@ namespace plugin {
 	} else if (!createNewSequence) {
 	  /* Out of tap sequence, not enough taps to make new one.  */
 	  macroBuffer[latestKeyDown] = MACRO_ACTION_STEP_TAP;
-	  if (leadingTap == 0) { leadingTap = latestKeyDown; }
+	  if (leadingTap == MACRO_SIZE) { leadingTap = latestKeyDown; }
 	} else /* Start new tap sequence.  */ {
 	  macroBuffer[leadingTap] = MACRO_ACTION_STEP_TAP_SEQUENCE;
 	  uint8_t numTaps = (cur->numUsedKeystrokes - leadingTapCode) / 3;
@@ -219,7 +219,7 @@ namespace plugin {
 	  cur->numUsedKeystrokes = x;
 	}
       }
-      latestKeyDown = latestKeyCodeDown = 0;
+      latestKeyDown = latestKeyCodeDown = MACRO_SIZE;
     }
 
     return true;
@@ -558,12 +558,12 @@ exit:
   uint8_t MacrosOnTheFly::sLastPlayedSlot   = 0;
   uint8_t MacrosOnTheFly::delayInterval     = 0;
   uint8_t MacrosOnTheFly::replaying         = 0;
-  uint8_t MacrosOnTheFly::leadingTapSeq     = 0;
-  uint8_t MacrosOnTheFly::leadingTap        = 0;
-  uint8_t MacrosOnTheFly::leadingTapCode    = 0;
-  uint8_t MacrosOnTheFly::leadingTapCodeSeq = 0;
-  uint8_t MacrosOnTheFly::latestKeyCodeDown = 0;
-  uint8_t MacrosOnTheFly::latestKeyDown     = 0;
+  uint8_t MacrosOnTheFly::leadingTapSeq     = MACRO_SIZE;
+  uint8_t MacrosOnTheFly::leadingTap        = MACRO_SIZE;
+  uint8_t MacrosOnTheFly::leadingTapCode    = MACRO_SIZE;
+  uint8_t MacrosOnTheFly::leadingTapCodeSeq = MACRO_SIZE;
+  uint8_t MacrosOnTheFly::latestKeyCodeDown = MACRO_SIZE;
+  uint8_t MacrosOnTheFly::latestKeyDown     = MACRO_SIZE;
 
 }  // namespace plugin
 }  // namespace kaleidoscope

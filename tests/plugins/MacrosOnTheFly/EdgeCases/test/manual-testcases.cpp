@@ -215,7 +215,8 @@ class ManualTests : public VirtualDeviceTest {
     MACRO_ACTION_STEP_TAP_CODE_SEQUENCE,
   } MacroActionStepType;
 
-  void printMacro(const std::string id) {
+  void printMacro(const char idChar) {
+    std::string id(1, idChar);
     GTEST_COUT << "Printing Macro: " << id << std::endl << "\t";
     auto [ mIndex, slot ] = getMacroSlot(id);
     Key key;
@@ -272,8 +273,8 @@ class ManualTests : public VirtualDeviceTest {
 	    while (i < slot.numUsedKeystrokes) {
 	      key.setFlags(::MacrosOnTheFly.macroStorage[mIndex + i++]);
 	      key.setKeyCode(::MacrosOnTheFly.macroStorage[mIndex + i++]);
-	      std::cout << key.getFlags();
-	      std::cout << key.getKeyCode();
+	      std::cout << +key.getFlags() << " ";
+	      std::cout << +key.getKeyCode() << " ";
 	      if (key == Key_NoKey)
 		break;
 	    }
@@ -285,7 +286,7 @@ class ManualTests : public VirtualDeviceTest {
 	    while (i < slot.numUsedKeystrokes) {
 	      key.setFlags(0);
 	      key.setKeyCode(::MacrosOnTheFly.macroStorage[mIndex + i++]);
-	      std::cout << key.getKeyCode();
+	      std::cout << +key.getKeyCode() << " ";
 	      if (key.getKeyCode() == 0)
 		break;
 	    }
@@ -418,7 +419,7 @@ TEST_F(ManualTests, 6_CompressionChecks) {
 
   runAction("REC ~A A J REC");
   storeMacro("A", "A J");
-  printMacro("A");
+  printMacro('A');
   runAction("PLAY %A");
   // ASSERT_EQ(::MacrosOnTheFly.macroStorage[
 
@@ -427,7 +428,7 @@ TEST_F(ManualTests, 6_CompressionChecks) {
    * as that the macro replay works.  */
   runAction("REC ~A A J A J A J REC");
   storeMacro("A", "A J A J A J");
-  printMacro("A");
+  printMacro('A');
 
   runAction("PLAY %A");
   LoadState();
