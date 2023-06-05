@@ -9,6 +9,7 @@
 
 SETUP_GOOGLETEST();
 
+#define GTEST_COUT std::cout << "[ INFO     ] "
 namespace kaleidoscope {
 namespace testing {
 namespace {
@@ -167,10 +168,143 @@ class ManualTests : public VirtualDeviceTest {
       f();
     }
   }
+
+  std::pair<uint8_t, ::kaleidoscope::plugin::MacrosOnTheFly::Slot>
+    getMacroSlot(const std::string id) {
+    const auto [ keyId, mapValue ] = *keyTypes.find(id);
+    const auto [ addr,   event ] = mapValue;
+
+    uint8_t slotId = ::MacrosOnTheFly.sFindSlot(event);
+    assert(slotId != ::kaleidoscope::plugin::MacrosOnTheFly::NUM_MACROS);
+    ::kaleidoscope::plugin::MacrosOnTheFly::Slot slot = ::MacrosOnTheFly.slotRecord[slotId];
+    uint8_t bufferIdx = ::MacrosOnTheFly.mIndexFrom_s(slotId);
+    return { bufferIdx, slot };
+  }
+
+  /* Compare the buffer against the macro we should have stored.  */
+  void checkCompressedBuffer(const std::string id ) {
+    const auto [ keyId, mapValue ] = *keyTypes.find(id);
+    const auto [ addr,   event ] = mapValue;
+
+    auto [ bufferIdx, slot ] = getMacroSlot(id);
+
+    auto x = knownMacros.find(id);
+    assert (x != knownMacros.end());
+
+  }
+
+  typedef enum {
+    MACRO_ACTION_END,
+
+    MACRO_ACTION_STEP_INTERVAL,
+    MACRO_ACTION_STEP_WAIT,
+
+    MACRO_ACTION_STEP_KEYDOWN,
+    MACRO_ACTION_STEP_KEYUP,
+    MACRO_ACTION_STEP_TAP,
+
+    MACRO_ACTION_STEP_KEYCODEDOWN,
+    MACRO_ACTION_STEP_KEYCODEUP,
+    MACRO_ACTION_STEP_TAPCODE,
+
+    MACRO_ACTION_STEP_EXPLICIT_REPORT,
+    MACRO_ACTION_STEP_IMPLICIT_REPORT,
+    MACRO_ACTION_STEP_SEND_REPORT,
+
+    MACRO_ACTION_STEP_TAP_SEQUENCE,
+    MACRO_ACTION_STEP_TAP_CODE_SEQUENCE,
+  } MacroActionStepType;
+
+  void printMacro(const std::string id) {
+    GTEST_COUT << "Printing Macro: " << id << std::endl << "\t";
+    auto [ mIndex, slot ] = getMacroSlot(id);
+    Key key;
+    for (uint8_t i = 0; i < slot.numUsedKeystrokes; ) {
+      switch (::MacrosOnTheFly.macroStorage[i++]) {
+	// Macro code claims these are not useful.
+	case MACRO_ACTION_STEP_EXPLICIT_REPORT:
+	case MACRO_ACTION_STEP_IMPLICIT_REPORT:
+	case MACRO_ACTION_STEP_SEND_REPORT:
+	  assert(false);
+	  break;
+	  // End legacy macro step commands
+
+	case MACRO_ACTION_STEP_WAIT:
+	  std::cout << "WAIT";
+	  break;
+	case MACRO_ACTION_STEP_INTERVAL:
+	  std::cout << "INTERVAL ";
+	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++];
+	  break;
+
+	case MACRO_ACTION_STEP_KEYDOWN:
+	  std::cout << "KEYDOWN ";
+	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++];
+	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++];
+	  break;
+	case MACRO_ACTION_STEP_KEYUP:
+	  std::cout << "KEYUP" ;
+	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++];
+	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++];
+	  break;
+	case MACRO_ACTION_STEP_TAP:
+	  std::cout << "TAP ";
+	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++];
+	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++];
+	  break;
+
+	case MACRO_ACTION_STEP_KEYCODEDOWN:
+	  std::cout << "KEYCODEDOWN ";
+	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++];
+	  break;
+	case MACRO_ACTION_STEP_KEYCODEUP:
+	  std::cout << "KEYCODEUP ";
+	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++];
+	  break;
+	case MACRO_ACTION_STEP_TAPCODE:
+	  std::cout << "TAPCODE ";
+	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++];
+	  break;
+
+	case MACRO_ACTION_STEP_TAP_SEQUENCE:
+	  {
+	    std::cout << "TAP_SEQUENCE ";
+	    while (i < slot.numUsedKeystrokes) {
+	      key.setFlags(::MacrosOnTheFly.macroStorage[mIndex + i++]);
+	      key.setKeyCode(::MacrosOnTheFly.macroStorage[mIndex + i++]);
+	      std::cout << key.getFlags();
+	      std::cout << key.getKeyCode();
+	      if (key == Key_NoKey)
+		break;
+	    }
+	    break;
+	  }
+	case MACRO_ACTION_STEP_TAP_CODE_SEQUENCE:
+	  {
+	    std::cout << "TAP_CODE_SEQUENCE ";
+	    while (i < slot.numUsedKeystrokes) {
+	      key.setFlags(0);
+	      key.setKeyCode(::MacrosOnTheFly.macroStorage[mIndex + i++]);
+	      std::cout << key.getKeyCode();
+	      if (key.getKeyCode() == 0)
+		break;
+	    }
+	    break;
+	  }
+
+	case MACRO_ACTION_END:
+	  std::cout << "END";
+	default:
+	  goto exit;
+      }
+      std::cout << ",";
+    }
+exit:
+    std::cout << std::endl;
+  }
 };
 
 
-#define GTEST_COUT std::cout << "[ INFO     ] "
 TEST_F(ManualTests, 0_test) {
   ClearState(); // Clear any state from previous tests
   GTEST_COUT << "test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/test/manual-testcases.cpp"   << std::endl;
@@ -278,6 +412,37 @@ TEST_F(ManualTests, 5_MacrosOnTheFlyBailOut) {
   };
   forEachState(canGetIdle);
 }
+
+TEST_F(ManualTests, 6_CompressionChecks) {
+  ClearState();
+
+  runAction("REC ~A A J REC");
+  storeMacro("A", "A J");
+  printMacro("A");
+  runAction("PLAY %A");
+  // ASSERT_EQ(::MacrosOnTheFly.macroStorage[
+
+
+  /* Want to check that the Macro storage stuff is actually compressed, as well
+   * as that the macro replay works.  */
+  runAction("REC ~A A J A J A J REC");
+  storeMacro("A", "A J A J A J");
+  printMacro("A");
+
+  runAction("PLAY %A");
+  LoadState();
+  CheckReports();
+}
+
+TEST_F(ManualTests, 7_ShiftCheck) {
+  ClearState();
+  runAction("REC ~A LeftShift| A J LeftShift^ REC");
+  storeMacro("A", "LeftShift| A J LeftShift^");
+  runAction("PLAY %A");
+  LoadState();
+  CheckReports();
+}
+
 
 }
 }
