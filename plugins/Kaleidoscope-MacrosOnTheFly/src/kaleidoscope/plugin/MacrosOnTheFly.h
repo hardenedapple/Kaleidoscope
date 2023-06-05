@@ -56,6 +56,12 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
     static uint8_t sRecordingSlot;
     static uint8_t sLastPlayedSlot;
     static uint8_t delayInterval;
+    static uint8_t leadingTapSeq;
+    static uint8_t leadingTap;
+    static uint8_t leadingTapCode;
+    static uint8_t leadingTapCodeSeq;
+    static uint8_t latestKeyCodeDown;
+    static uint8_t latestKeyDown;
 
     typedef enum State_ {
       PICKING_SLOT_FOR_REC,
@@ -147,6 +153,11 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
     /// specified `key`, passing both in sequence to `Runtime.handleKeyEvent()`.
     static inline void tap(Key key) { ::MacroSupport.tap(key); }
 #endif
+
+    static inline void clearRecordingCompressionState () {
+      leadingTap = leadingTapSeq = leadingTapCode = leadingTapCodeSeq
+	= latestKeyDown = latestKeyCodeDown = 0;
+    }
 
     static inline bool isTransitionEvent (KeyEvent &event) {
       return keyToggledOn(event.state)
