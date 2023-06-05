@@ -156,7 +156,7 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
 
     static inline void clearRecordingCompressionState () {
       leadingTap = leadingTapSeq = leadingTapCode = leadingTapCodeSeq
-	= latestKeyDown = latestKeyCodeDown = 0;
+	= latestKeyDown = latestKeyCodeDown = MACRO_SIZE;
     }
 
     static inline bool isTransitionEvent (KeyEvent &event) {
