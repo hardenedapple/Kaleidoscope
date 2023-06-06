@@ -129,7 +129,6 @@ namespace plugin {
     } else {
       uint8_t keyCode = event.key.getKeyCode();
       if (event.key.getFlags() == 0) {
-
 	bool createNewSequence = (leadingTapCode != MACRO_SIZE
 	    && (cur->numUsedKeystrokes - leadingTapCode) >= 6);
 
@@ -157,20 +156,23 @@ namespace plugin {
 	} else /* Start new tap sequence. */ {
 	  macroBuffer[leadingTapCode] = MACRO_ACTION_STEP_TAP_CODE_SEQUENCE;
 	  uint8_t numTaps = (cur->numUsedKeystrokes - leadingTapCode) / 2;
+	  numTaps -= 1; /* Already have one done by above.  */
 	  /* assert((cur->numUsedKeystrokes - leadingTapCode) % 2 == 0) */
 	  /* First tapcode already handled by conversion of the Tap to
 	   * TAP_CODE_SEQUENCE.  */
 	  uint8_t i;
+	  uint8_t idx = leadingTapCode + 2;
 	  for (i = 0; i < numTaps; i++) {
-	    macroBuffer[leadingTapCode + 2 + i]
-	      = macroBuffer[leadingTapCode + 3 + (i*2)];
+	    macroBuffer[idx + i] = macroBuffer[idx + (i*2) + 1];
 	  }
-	  macroBuffer[leadingTapCode + 2 + i++] = Key_NoKey.getKeyCode();
+	  macroBuffer[idx + i++] = Key_NoKey.getKeyCode();
 	  uint8_t x = i;
 	  for ( ; i < cur->numUsedKeystrokes; i++) {
-	    macroBuffer[leadingTapCode + 2 + i] = MACRO_ACTION_END;
+	    macroBuffer[idx + i] = MACRO_ACTION_END;
 	  }
-	  cur->numUsedKeystrokes = x;
+	  cur->numUsedKeystrokes = idx + x;
+	  leadingTapCodeSeq = leadingTapCode;
+	  leadingTapCode = MACRO_SIZE;
 	}
       } else {
 	bool createNewSequence = (leadingTap != MACRO_SIZE
@@ -200,23 +202,27 @@ namespace plugin {
 	} else /* Start new tap sequence.  */ {
 	  macroBuffer[leadingTap] = MACRO_ACTION_STEP_TAP_SEQUENCE;
 	  uint8_t numTaps = (cur->numUsedKeystrokes - leadingTapCode) / 3;
+	  numTaps -= 1;
 	  /* assert((cur->numUsedKeystrokes - leadingTapCode) % 3 == 0) */
 	  uint8_t i;
+	  uint8_t idx = leadingTap + 3;
 	  /* All taps to send.  */
 	  for (i = 0; i < numTaps; i++) {
-	    uint8_t writeptr = leadingTap + 3 + (i*2);
-	    uint8_t readptr  = leadingTap + 4 + (i*3);
+	    uint8_t writeptr = idx + (i*2);
+	    uint8_t readptr  = idx + (i*3) + 1;
 	    macroBuffer[writeptr] = macroBuffer[readptr];
 	    macroBuffer[writeptr + 1] = macroBuffer[readptr + 1];
 	  }
 	  /* Tap end marker.  */
-	  macroBuffer[leadingTap + 3 + i++] = Key_NoKey.getFlags();
-	  macroBuffer[leadingTap + 3 + i++] = Key_NoKey.getKeyCode();
+	  macroBuffer[idx + i++] = Key_NoKey.getFlags();
+	  macroBuffer[idx + i++] = Key_NoKey.getKeyCode();
 	  uint8_t x = i;
 	  for ( ; i < cur->numUsedKeystrokes; i++) {
-	    macroBuffer[leadingTap + 3 + i] = MACRO_ACTION_END;
+	    macroBuffer[idx + i] = MACRO_ACTION_END;
 	  }
-	  cur->numUsedKeystrokes = x;
+	  cur->numUsedKeystrokes = idx + x;
+	  leadingTapSeq = leadingTap;
+	  leadingTap = MACRO_SIZE;
 	}
       }
       latestKeyDown = latestKeyCodeDown = MACRO_SIZE;
