@@ -114,12 +114,23 @@ namespace plugin {
 
     CHECK_REMAINING_SPACE (cur, event.key.getFlags() == 0 ? 2 : 3);
     if (keyToggledOn(event.state)) {
+      /* If we have a `latestKeyDown` marker, then the last event was not a
+       * keyToggledOff event -- the only compression that we work with is a
+       * single TAP or multiple TAP's.
+       * Hence we mark that we can't use a sequence of TAP's (could never do
+       * that if there are two keyToggledOn events).  That's marked by
+       * unsetting `leadingTap{Code,}` and `leadingTap{Code,}Seq` according to
+       * if we were looking at code-only presses or full keys.  */
       if (event.key.getFlags() == 0) {
 	latestKeyDown = leadingTap = leadingTapSeq = MACRO_SIZE;
+	if (latestKeyCodeDown != MACRO_SIZE)
+	  leadingTapCode = leadingTapCodeSeq = MACRO_SIZE;
 	latestKeyCodeDown = cur->numUsedKeystrokes;
 	macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_STEP_KEYCODEDOWN;
       } else {
 	latestKeyCodeDown = leadingTapCode = leadingTapCodeSeq = MACRO_SIZE;
+	if (latestKeyDown != MACRO_SIZE)
+	  leadingTap = leadingTapSeq = MACRO_SIZE;
 	latestKeyDown = cur->numUsedKeystrokes;
 	macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_STEP_KEYDOWN;
 	macroBuffer[cur->numUsedKeystrokes++] = event.key.getFlags();

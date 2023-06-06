@@ -575,15 +575,16 @@ TEST_F(ManualTests, 8_ShiftCheck) {
 
 TEST_F(ManualTests, 9_CompressSeqInMiddle) {
   ClearState();
+
   runAction("REC ~A LeftShift| A J LeftShift^ A A A A A REC");
   storeMacro("A", "LeftShift| A J LeftShift^ A A A A A");
   printMacro('A');
   runAction("PLAY %A");
 
-  // runAction("REC ~A LeftShift| A J LeftShift^ A A A A A J A| J A^ REC");
-  // storeMacro("A", "LeftShift| A J LeftShift^ A A A A A J A| J A^");
-  // printMacro('A');
-  // runAction("PLAY %A");
+  runAction("REC ~A LeftShift| A J LeftShift^ A A A A A J A| J A^ REC");
+  storeMacro("A", "LeftShift| A J LeftShift^ A A A A A J A| J A^");
+  printMacro('A');
+  runAction("PLAY %A");
 
   LoadState();
   CheckReports();
