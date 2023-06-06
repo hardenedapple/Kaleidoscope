@@ -240,12 +240,12 @@ class ManualTests : public VirtualDeviceTest {
 
 	case MACRO_ACTION_STEP_KEYDOWN:
 	  std::cout << "KEYDOWN ";
-	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++];
+	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++] << " ";
 	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++];
 	  break;
 	case MACRO_ACTION_STEP_KEYUP:
-	  std::cout << "KEYUP" ;
-	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++];
+	  std::cout << "KEYUP " ;
+	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++] << " ";
 	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++];
 	  break;
 	case MACRO_ACTION_STEP_TAP:
@@ -275,8 +275,10 @@ class ManualTests : public VirtualDeviceTest {
 	      key.setKeyCode(::MacrosOnTheFly.macroStorage[mIndex + i++]);
 	      std::cout << +key.getFlags() << " ";
 	      std::cout << +key.getKeyCode() << " ";
-	      if (key == Key_NoKey)
+	      if (key == Key_NoKey) {
+		std::cout << "|";
 		break;
+	      }
 	    }
 	    break;
 	  }
@@ -287,8 +289,10 @@ class ManualTests : public VirtualDeviceTest {
 	      key.setFlags(0);
 	      key.setKeyCode(::MacrosOnTheFly.macroStorage[mIndex + i++]);
 	      std::cout << +key.getKeyCode() << " ";
-	      if (key.getKeyCode() == 0)
+	      if (key.getKeyCode() == 0) {
+		std::cout << "|";
 		break;
+	      }
 	    }
 	    break;
 	  }
@@ -424,18 +428,64 @@ TEST_F(ManualTests, 6_CompressionChecks) {
   // ASSERT_EQ(::MacrosOnTheFly.macroStorage[
 
 
-  /* Want to check that the Macro storage stuff is actually compressed, as well
-   * as that the macro replay works.  */
   runAction("REC ~A A J A J A J REC");
   storeMacro("A", "A J A J A J");
   printMacro('A');
-
   runAction("PLAY %A");
+
+  runAction("REC ~A LeftShift| A J A J A J LeftShift^ REC");
+  storeMacro("A", "LeftShift| A J A J A J LeftShift^");
+  printMacro('A');
+  runAction("PLAY %A");
+
   LoadState();
   CheckReports();
 }
 
-TEST_F(ManualTests, 7_ShiftCheck) {
+TEST_F(ManualTests, 7_FlagsCompression) {
+  ClearState();
+  
+  runAction("REC ~A LeftControl| A J A J A J LeftControl^ REC");
+  storeMacro("A", "LeftControl| A J A J A J LeftControl^");
+  printMacro('A');
+  runAction("PLAY %A");
+
+  LoadState();
+  CheckReports();
+}
+
+TEST_F(ManualTests, 7_FlagsCompression2) {
+  ClearState();
+  runAction("REC ~A *LeftControl_A| A *LeftControl_A^ REC");
+  storeMacro("A", "*LeftControl_A| A *LeftControl_A^");
+  printMacro('A');
+  runAction("PLAY %A");
+
+  LoadState();
+  CheckReports();
+}
+TEST_F(ManualTests, 7_FlagsCompression3) {
+  ClearState();
+  runAction("REC ~A *LeftControl_A REC");
+  storeMacro("A", "*LeftControl_A");
+  printMacro('A');
+  runAction("PLAY %A");
+
+  LoadState();
+  CheckReports();
+}
+TEST_F(ManualTests, 7_FlagsCompression4) {
+  ClearState();
+  runAction("REC ~A *LeftControl_A *LeftControl_A *LeftControl_A *LeftControl_A REC");
+  storeMacro("A", "*LeftControl_A *LeftControl_A *LeftControl_A *LeftControl_A");
+  printMacro('A');
+  runAction("PLAY %A");
+
+  LoadState();
+  CheckReports();
+}
+
+TEST_F(ManualTests, 8_ShiftCheck) {
   ClearState();
   runAction("REC ~A LeftShift| A J LeftShift^ REC");
   storeMacro("A", "LeftShift| A J LeftShift^");
