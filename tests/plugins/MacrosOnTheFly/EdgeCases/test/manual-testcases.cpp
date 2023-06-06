@@ -586,6 +586,11 @@ TEST_F(ManualTests, 9_CompressSeqInMiddle) {
   printMacro('A');
   runAction("PLAY %A");
 
+  runAction("REC ~A LeftShift| A J LeftShift^ A A A A A J A| J A^ J A J A J REC");
+  storeMacro("A", "LeftShift| A J LeftShift^ A A A A A J A| J A^ J A J A J");
+  printMacro('A');
+  runAction("PLAY %A");
+
   LoadState();
   CheckReports();
 }
