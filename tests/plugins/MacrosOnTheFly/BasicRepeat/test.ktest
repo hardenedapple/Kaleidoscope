@@ -559,4 +559,70 @@ RUN 1 ms
 
 # ......................................................................... }}}
 
+NAME MacrosOnTheFly Key held down for long time
+# Holding down a key for a long time (until automatic repeat). {{{
+
+# {{{ Holding down a key for a long time outside of macro record.
+PRESS A
+RUN 1 cycle
+EXPECT keyboard-report Key_A
+RUN 2000 ms
+EXPECT no keyboard-report
+RELEASE A
+RUN 1 cycle
+EXPECT keyboard-report empty
+RUN 1 ms
+# }}}
+
+# {{{ Holding down a key for a long time during macro record.
+PRESS MACROREC
+RUN 1 cycle
+EXPECT no keyboard-report
+RELEASE MACROREC
+RUN 1 cycle
+EXPECT no keyboard-report
+PRESS A
+RUN 1 cycle
+EXPECT no keyboard-report
+RELEASE A
+RUN 1 cycle
+EXPECT no keyboard-report
+
+PRESS A
+RUN 1 cycle
+EXPECT keyboard-report Key_A
+RUN 2000 ms
+EXPECT no keyboard-report
+RELEASE A
+RUN 1 cycle
+EXPECT keyboard-report empty
+RUN 1 ms
+EXPECT no keyboard-report
+PRESS MACROREC
+RUN 1 cycle
+EXPECT no keyboard-report
+RELEASE MACROREC
+RUN 1 cycle
+EXPECT no keyboard-report
+# }}}
+
+# {{{ Replaying macro recording while holding down a key
+PRESS MACROPLAY
+RUN 1 cycle
+EXPECT no keyboard-report
+RUN 1 cycle
+RELEASE MACROPLAY
+RUN 1 cycle
+PRESS A
+RUN 1 cycle
+EXPECT keyboard-report Key_A
+EXPECT keyboard-report empty
+RUN 1 cycle
+RELEASE A
+RUN 1 cycle
+EXPECT no keyboard-report
+RUN 1 ms
+# }}}
+
+# ......................................................................... }}}
 # vim: foldmethod=marker
