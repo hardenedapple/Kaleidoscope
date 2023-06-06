@@ -521,11 +521,27 @@ TEST_F(ManualTests, 7_FlagsCompression4) {
   CheckReports();
 }
 
-/* N.b. The behaviour here seems to be doing what it should based on debugging,
- * but frankly the behaviour it should be doing is pretty complex and I don't
- * believe it will be used very often.  Hence I'm not keen on figuring out a
- * nice way to test it right now.  (Maybe once this plugin is mostly working
- * I'll revisit this).  */
+/* N.b. The behaviour here seems to be doing something reasonable (observed via
+ * debugging), but frankly the behaviour it's doing is pretty complex and I
+ * don't believe it will be used very often.  Hence I'm not keen on figuring
+ * out a nice way to test it right now.  (Maybe once this plugin is mostly
+ * working I'll revisit this).
+ *
+ * Things to understand about how this is tricky:
+ *    1) What report is sent depends on an interaction between what was sent
+ *       *last* and what's getting sent now.  `sendReport` in the below file
+ *       chooses to send a report removing the non-modifiers before removing
+ *       the modifiers if both are removed at the same time.
+ *       .arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src/MultiReport/Keyboard.cpp
+ *    2) Because of a difference between the mechanisms by which
+ *	 active_macro_keys_ and live_keys are added to a keyboard report,
+ *	 when pressing `A` after `CTRL-A` we have a difference in reports sent
+ *	 between recording and replaying.
+ *	 This is not the best, but the difference should only happen with
+ *	 special characters (which are not usually used), in rare
+ *	 circumstances, and AFAIK should not trigger any different behaviour by
+ *	 the machine we send to. */
+
 // TEST_F(ManualTests, 7_FlagsCompression2) {
 //   ClearState();
 //   runAction("REC ~A *LeftControl_A| A *LeftControl_A^ REC");
@@ -557,6 +573,21 @@ TEST_F(ManualTests, 8_ShiftCheck) {
   CheckReports();
 }
 
+TEST_F(ManualTests, 9_CompressSeqInMiddle) {
+  ClearState();
+  runAction("REC ~A LeftShift| A J LeftShift^ A A A A A REC");
+  storeMacro("A", "LeftShift| A J LeftShift^ A A A A A");
+  printMacro('A');
+  runAction("PLAY %A");
+
+  // runAction("REC ~A LeftShift| A J LeftShift^ A A A A A J A| J A^ REC");
+  // storeMacro("A", "LeftShift| A J LeftShift^ A A A A A J A| J A^");
+  // printMacro('A');
+  // runAction("PLAY %A");
+
+  LoadState();
+  CheckReports();
+}
 
 }
 }

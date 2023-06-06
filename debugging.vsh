@@ -3,224 +3,7 @@ vshcmd: > echo 0 > /proc/sys/kernel/perf_event_paranoid
 root@e124762:/home/matmal01/Documents/not-work/keyboard/Kaleidoscope# exit
 Kaleidoscope [13:42:46] $ 
 vshcmd: > rr ./_build/plugins/MacrosOnTheFly/EdgeCases/bin/EdgeCases -t -q
-rr: Saving execution to trace directory `/home/matmal01/.local/share/rr/EdgeCases-22'.
-[==========] Running 14 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 14 tests from ManualTests
-[ RUN      ] ManualTests.0_test
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/test/manual-testcases.cpp
-[       OK ] ManualTests.0_test (0 ms)
-[ RUN      ] ManualTests.1_MacrosOnTheFlyTestHelpers
-[       OK ] ManualTests.1_MacrosOnTheFlyTestHelpers (0 ms)
-[ RUN      ] ManualTests.2_MacrosOnTheFlyNoHeldOverPlay
-[       OK ] ManualTests.2_MacrosOnTheFlyNoHeldOverPlay (0 ms)
-[ RUN      ] ManualTests.3_MacrosOnTheFlyRecursiveReplay
-[       OK ] ManualTests.3_MacrosOnTheFlyRecursiveReplay (0 ms)
-[ RUN      ] ManualTests.4_MacrosOnTheFlyRecursiveAvoidance
-[       OK ] ManualTests.4_MacrosOnTheFlyRecursiveAvoidance (0 ms)
-[ RUN      ] ManualTests.4_MacrosOnTheFlyAvoidKeyUp
-[       OK ] ManualTests.4_MacrosOnTheFlyAvoidKeyUp (0 ms)
-[ RUN      ] ManualTests.5_MacrosOnTheFlyBailOut
-[       OK ] ManualTests.5_MacrosOnTheFlyBailOut (0 ms)
-[ RUN      ] ManualTests.6_CompressionChecks
-[ INFO     ] Printing Macro: A
-	TAPCODE 4,TAPCODE 13,
-[ INFO     ] Printing Macro: A
-	TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 225,TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,KEYCODEUP 225,
-[       OK ] ManualTests.6_CompressionChecks (2 ms)
-[ RUN      ] ManualTests.7_FlagsCompression
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 224,TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,KEYCODEUP 224,
-[       OK ] ManualTests.7_FlagsCompression (0 ms)
-[ RUN      ] ManualTests.7_FlagsCompression2
-[ INFO     ] Printing Macro: A
-	KEYDOWN 1 4,TAPCODE 4,KEYUP 1 4,
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:164: Failure
-Expected equality of these values:
-  observed_keyboard_report_count
-    Which is: 10
-  expected_keyboard_report_count
-    Which is: 12
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
-Value of: observed_keycodes
-Expected: has 2 elements where
-element #0 is equal to '\x4' (4),
-element #1 is equal to '\xE0' (224)
-  Actual: { '\xE0' (224) }, which has 1 element
-autogen (i=2)
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
-Value of: observed_keycodes
-Expected: has 1 element that is equal to '\xE0' (224)
-  Actual: {}
-autogen (i=3)
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:180: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 344
-  expected_report.Timestamp()
-    Which is: 345
-Report timestamps don't match (i=3)
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
-Value of: observed_keycodes
-Expected: is empty
-  Actual: { '\x4' (4) }, which has 1 element
-autogen (i=4)
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:180: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 344
-  expected_report.Timestamp()
-    Which is: 346
-Report timestamps don't match (i=4)
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
-Value of: observed_keycodes
-Expected: has 2 elements where
-element #0 is equal to '\x4' (4),
-element #1 is equal to '\xE0' (224)
-  Actual: { '\x4' (4) }, which has 1 element
-autogen (i=8)
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
-Value of: observed_keycodes
-Expected: has 1 element that is equal to '\xE0' (224)
-  Actual: {}
-autogen (i=9)
-[  FAILED  ] ManualTests.7_FlagsCompression2 (2 ms)
-[ RUN      ] ManualTests.7_FlagsCompression3
-[ INFO     ] Printing Macro: A
-	TAP 14,
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
-Value of: observed_keycodes
-Expected: has 1 element that is equal to '\x4' (4)
-  Actual: { '\xE0' (224) }, whose element #0 doesn't match
-autogen (i=2)
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
-Value of: observed_keycodes
-Expected: has 1 element that is equal to '\x4' (4)
-  Actual: { '\xE0' (224) }, whose element #0 doesn't match
-autogen (i=6)
-[  FAILED  ] ManualTests.7_FlagsCompression3 (0 ms)
-[ RUN      ] ManualTests.7_FlagsCompression4
-[ INFO     ] Printing Macro: A
-	TAP_SEQUENCE 0 0 |,END
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:164: Failure
-Expected equality of these values:
-  observed_keyboard_report_count
-    Which is: 16
-  expected_keyboard_report_count
-    Which is: 32
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
-Value of: observed_keycodes
-Expected: has 1 element that is equal to '\x4' (4)
-  Actual: { '\xE0' (224) }, whose element #0 doesn't match
-autogen (i=2)
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
-Value of: observed_keycodes
-Expected: has 1 element that is equal to '\x4' (4)
-  Actual: { '\xE0' (224) }, whose element #0 doesn't match
-autogen (i=6)
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
-Value of: observed_keycodes
-Expected: has 1 element that is equal to '\x4' (4)
-  Actual: { '\xE0' (224) }, whose element #0 doesn't match
-autogen (i=10)
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
-Value of: observed_keycodes
-Expected: has 1 element that is equal to '\x4' (4)
-  Actual: { '\xE0' (224) }, whose element #0 doesn't match
-autogen (i=14)
-[  FAILED  ] ManualTests.7_FlagsCompression4 (1 ms)
-[ RUN      ] ManualTests.7_FlagsCompression5
-[ INFO     ] Printing Macro: A
-	KEYDOWN 1 4,TAPCODE 13,KEYUP 1 4,
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
-Value of: observed_keycodes
-Expected: has 3 elements where
-element #0 is equal to '\x4' (4),
-element #1 is equal to '\r' (13, 0xD),
-element #2 is equal to '\xE0' (224)
-  Actual: { '\x4' (4) }, which has 1 element
-autogen (i=2)
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
-Value of: observed_keycodes
-Expected: has 2 elements where
-element #0 is equal to '\x4' (4),
-element #1 is equal to '\xE0' (224)
-  Actual: { '\x4' (4), '\r' (13, 0xD) }, whose element #1 doesn't match
-autogen (i=3)
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:180: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 388
-  expected_report.Timestamp()
-    Which is: 389
-Report timestamps don't match (i=3)
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:180: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 389
-  expected_report.Timestamp()
-    Which is: 390
-Report timestamps don't match (i=4)
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
-Value of: observed_keycodes
-Expected: has 3 elements where
-element #0 is equal to '\x4' (4),
-element #1 is equal to '\r' (13, 0xD),
-element #2 is equal to '\xE0' (224)
-  Actual: { '\x4' (4) }, which has 1 element
-autogen (i=8)
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
-Value of: observed_keycodes
-Expected: has 2 elements where
-element #0 is equal to '\x4' (4),
-element #1 is equal to '\xE0' (224)
-  Actual: { '\x4' (4), '\r' (13, 0xD) }, whose element #1 doesn't match
-autogen (i=9)
-[  FAILED  ] ManualTests.7_FlagsCompression5 (1 ms)
-[ RUN      ] ManualTests.8_ShiftCheck
-[       OK ] ManualTests.8_ShiftCheck (0 ms)
-[----------] 14 tests from ManualTests (16 ms total)
-
-[----------] Global test environment tear-down
-[==========] 14 tests from 1 test suite ran. (16 ms total)
-[  PASSED  ] 10 tests.
-[  FAILED  ] 4 tests, listed below:
-[  FAILED  ] ManualTests.7_FlagsCompression2
-[  FAILED  ] ManualTests.7_FlagsCompression3
-[  FAILED  ] ManualTests.7_FlagsCompression4
-[  FAILED  ] ManualTests.7_FlagsCompression5
-
- 4 FAILED TESTS
-Kaleidoscope [11:29:56] $ 
-vshcmd: > rr replay
-vshcmd: > break kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke if $_any_caller_matches(".*ManualTests_7_FlagsCompression4", 999)
-vshcmd: > cont
-GNU gdb (GDB) 13.1.90.20230317-git
-Copyright (C) 2023 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
-Type "show copying" and "show warranty" for details.
-This GDB was configured as "x86_64-pc-linux-gnu".
-Type "show configuration" for configuration details.
-For bug reporting instructions, please see:
-<https://www.gnu.org/software/gdb/bugs/>.
-Find the GDB manual and other documentation resources online at:
-    <http://www.gnu.org/software/gdb/documentation/>.
-
-For help, type "help".
-Type "apropos word" to search for commands related to "word"...
-Reading symbols from /home/matmal01/.local/share/rr/EdgeCases-20/mmap_hardlink_4_EdgeCases...
-Really redefine built-in command "restart"? (y or n) [answered Y; input not from terminal]
-Remote debugging using 127.0.0.1:22879
-Reading symbols from /lib64/ld-linux-x86-64.so.2...
-(No debugging symbols found in /lib64/ld-linux-x86-64.so.2)
-BFD: warning: system-supplied DSO at 0x6fffd000 has a section extending past end of file
-0x00007f63578fd2b0 in ?? () from /lib64/ld-linux-x86-64.so.2
-(rr) Breakpoint 1 at 0x55e891c7041f: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp, line 63.
-(rr) Continuing.
+rr: Saving execution to trace directory `/home/matmal01/.local/share/rr/EdgeCases-26'.
 [==========] Running 13 tests from 1 test suite.
 [----------] Global test environment set-up.
 [----------] 13 tests from ManualTests
@@ -246,19 +29,489 @@ BFD: warning: system-supplied DSO at 0x6fffd000 has a section extending past end
 	TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,
 [ INFO     ] Printing Macro: A
 	KEYCODEDOWN 225,TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,KEYCODEUP 225,
-[       OK ] ManualTests.6_CompressionChecks (1 ms)
+[       OK ] ManualTests.6_CompressionChecks (2 ms)
 [ RUN      ] ManualTests.7_FlagsCompression
 [ INFO     ] Printing Macro: A
 	KEYCODEDOWN 224,TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,KEYCODEUP 224,
 [       OK ] ManualTests.7_FlagsCompression (0 ms)
+[ RUN      ] ManualTests.7_FlagsCompression3
+[ INFO     ] Printing Macro: A
+	TAP 1 4,
+[       OK ] ManualTests.7_FlagsCompression3 (0 ms)
+[ RUN      ] ManualTests.7_FlagsCompression4
+[ INFO     ] Printing Macro: A
+	TAP_SEQUENCE 1 4 1 4 1 4 1 4 0 0 |,
+[       OK ] ManualTests.7_FlagsCompression4 (0 ms)
 [ RUN      ] ManualTests.7_FlagsCompression2
+[ INFO     ] Printing Macro: A
+	KEYDOWN 1 4,TAPCODE 4,KEYUP 1 4,
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:164: Failure
+Expected equality of these values:
+  observed_keyboard_report_count
+    Which is: 10
+  expected_keyboard_report_count
+    Which is: 12
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
+Value of: observed_keycodes
+Expected: has 2 elements where
+element #0 is equal to '\x4' (4),
+element #1 is equal to '\xE0' (224)
+  Actual: { '\xE0' (224) }, which has 1 element
+autogen (i=2)
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
+Value of: observed_keycodes
+Expected: has 1 element that is equal to '\xE0' (224)
+  Actual: {}
+autogen (i=3)
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:180: Failure
+Expected equality of these values:
+  observed_report.Timestamp()
+    Which is: 374
+  expected_report.Timestamp()
+    Which is: 375
+Report timestamps don't match (i=3)
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
+Value of: observed_keycodes
+Expected: has 1 element that is equal to '\xE0' (224)
+  Actual: { '\x4' (4) }, whose element #0 doesn't match
+autogen (i=4)
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:180: Failure
+Expected equality of these values:
+  observed_report.Timestamp()
+    Which is: 374
+  expected_report.Timestamp()
+    Which is: 376
+Report timestamps don't match (i=4)
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
+Value of: observed_keycodes
+Expected: has 2 elements where
+element #0 is equal to '\x4' (4),
+element #1 is equal to '\xE0' (224)
+  Actual: { '\x4' (4) }, which has 1 element
+autogen (i=8)
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
+Value of: observed_keycodes
+Expected: has 1 element that is equal to '\xE0' (224)
+  Actual: {}
+autogen (i=9)
+[  FAILED  ] ManualTests.7_FlagsCompression2 (2 ms)
+[ RUN      ] ManualTests.8_ShiftCheck
+[       OK ] ManualTests.8_ShiftCheck (0 ms)
+[----------] 13 tests from ManualTests (13 ms total)
 
-Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:63
-63	  bool MacrosOnTheFly::recordKeystroke(KeyEvent &event) {
+[----------] Global test environment tear-down
+[==========] 13 tests from 1 test suite ran. (14 ms total)
+[  PASSED  ] 12 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] ManualTests.7_FlagsCompression2
+
+ 1 FAILED TEST
+Kaleidoscope [14:14:02] $ 
+vshcmd: > rr replay
+vshcmd: > python
+vshcmd: > do_autoimport('kaleidoscope')
+vshcmd: > end
+vshcmd: > break 'sendKeyboardReport' if $_any_caller_matches(".*ManualTests_7_FlagsCompression2", 999)
+vshcmd: > command 1
+vshcmd: >   silent
+vshcmd: >   printf "XXXX  ---\n"
+vshcmd: >   print event.key
+vshcmd: >   print $_event_state_name(event.state)
+vshcmd: >   cont
+vshcmd: > end
+vshcmd: > break 'kaleidoscope::driver::hid::base::Keyboard<kaleidoscope::driver::hid::keyboardio::KeyboardProps>::sendReport' if $_any_caller_matches(".*ManualTests_7_FlagsCompression2", 999)
+vshcmd: > command 2
+vshcmd: >   silent
+vshcmd: >   bt 3
+vshcmd: >   cont
+vshcmd: > end
+vshcmd: > cont
+Breakpoint 1 at 0x559074759814: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp, line 261.
+(rr) Type commands for breakpoint(s) 1, one per line.
+End with a line saying just "end".
+>>>>>>(rr) Breakpoint 2 at 0x559074759f3a: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/hid/base/Keyboard.h, line 150.
+(rr) Type commands for breakpoint(s) 2, one per line.
+End with a line saying just "end".
+>>>>(rr) Continuing.
+[==========] Running 13 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 13 tests from ManualTests
+[ RUN      ] ManualTests.0_test
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/test/manual-testcases.cpp
+[       OK ] ManualTests.0_test (0 ms)
+[ RUN      ] ManualTests.1_MacrosOnTheFlyTestHelpers
+[       OK ] ManualTests.1_MacrosOnTheFlyTestHelpers (0 ms)
+[ RUN      ] ManualTests.2_MacrosOnTheFlyNoHeldOverPlay
+[       OK ] ManualTests.2_MacrosOnTheFlyNoHeldOverPlay (0 ms)
+[ RUN      ] ManualTests.3_MacrosOnTheFlyRecursiveReplay
+[       OK ] ManualTests.3_MacrosOnTheFlyRecursiveReplay (0 ms)
+[ RUN      ] ManualTests.4_MacrosOnTheFlyRecursiveAvoidance
+[       OK ] ManualTests.4_MacrosOnTheFlyRecursiveAvoidance (1 ms)
+[ RUN      ] ManualTests.4_MacrosOnTheFlyAvoidKeyUp
+[       OK ] ManualTests.4_MacrosOnTheFlyAvoidKeyUp (0 ms)
+[ RUN      ] ManualTests.5_MacrosOnTheFlyBailOut
+[       OK ] ManualTests.5_MacrosOnTheFlyBailOut (0 ms)
+[ RUN      ] ManualTests.6_CompressionChecks
+[ INFO     ] Printing Macro: A
+	TAPCODE 4,TAPCODE 13,
+[ INFO     ] Printing Macro: A
+	TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,
+[ INFO     ] Printing Macro: A
+	KEYCODEDOWN 225,TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,KEYCODEUP 225,
+[       OK ] ManualTests.6_CompressionChecks (2 ms)
+[ RUN      ] ManualTests.7_FlagsCompression
+[ INFO     ] Printing Macro: A
+	KEYCODEDOWN 224,TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,KEYCODEUP 224,
+[       OK ] ManualTests.7_FlagsCompression (0 ms)
+[ RUN      ] ManualTests.7_FlagsCompression3
+[ INFO     ] Printing Macro: A
+	TAP 1 4,
+[       OK ] ManualTests.7_FlagsCompression3 (0 ms)
+[ RUN      ] ManualTests.7_FlagsCompression4
+[ INFO     ] Printing Macro: A
+	TAP_SEQUENCE 1 4 1 4 1 4 1 4 0 0 |,
+[       OK ] ManualTests.7_FlagsCompression4 (0 ms)
+[ RUN      ] ManualTests.7_FlagsCompression2
+XXXX  ---
+$1 = {keyCode_ = 192 '\300', flags_ = 209 '\321', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+$2 = "WAS_PRESSED"
+#0  kaleidoscope::driver::hid::base::Keyboard<kaleidoscope::driver::hid::keyboardio::KeyboardProps>::sendReport (this=0x559074815f21 <kaleidoscope_internal::device+1>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/hid/base/Keyboard.h:150
+#1  0x0000559074759a2f in kaleidoscope::Runtime_::sendKeyboardReport (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:297
+#2  0x00005590747594fc in kaleidoscope::Runtime_::handleKeyEvent (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+XXXX  ---
+$3 = {keyCode_ = 4 '\004', flags_ = 1 '\001', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+$4 = "IS_PRESSED"
+#0  kaleidoscope::driver::hid::base::Keyboard<kaleidoscope::driver::hid::keyboardio::KeyboardProps>::sendReport (this=0x559074815f21 <kaleidoscope_internal::device+1>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/hid/base/Keyboard.h:150
+#1  0x0000559074759953 in kaleidoscope::Runtime_::sendKeyboardReport (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:279
+#2  0x00005590747594fc in kaleidoscope::Runtime_::handleKeyEvent (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+#0  kaleidoscope::driver::hid::base::Keyboard<kaleidoscope::driver::hid::keyboardio::KeyboardProps>::sendReport (this=0x559074815f21 <kaleidoscope_internal::device+1>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/hid/base/Keyboard.h:150
+#1  0x0000559074759a2f in kaleidoscope::Runtime_::sendKeyboardReport (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:297
+#2  0x00005590747594fc in kaleidoscope::Runtime_::handleKeyEvent (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+XXXX  ---
+$5 = {keyCode_ = 4 '\004', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+$6 = "IS_PRESSED"
+#0  kaleidoscope::driver::hid::base::Keyboard<kaleidoscope::driver::hid::keyboardio::KeyboardProps>::sendReport (this=0x559074815f21 <kaleidoscope_internal::device+1>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/hid/base/Keyboard.h:150
+#1  0x00005590747598ee in kaleidoscope::Runtime_::sendKeyboardReport (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:275
+#2  0x00005590747594fc in kaleidoscope::Runtime_::handleKeyEvent (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+#0  kaleidoscope::driver::hid::base::Keyboard<kaleidoscope::driver::hid::keyboardio::KeyboardProps>::sendReport (this=0x559074815f21 <kaleidoscope_internal::device+1>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/hid/base/Keyboard.h:150
+#1  0x0000559074759a2f in kaleidoscope::Runtime_::sendKeyboardReport (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:297
+#2  0x00005590747594fc in kaleidoscope::Runtime_::handleKeyEvent (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+XXXX  ---
+$7 = {keyCode_ = 4 '\004', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+$8 = "WAS_PRESSED"
+#0  kaleidoscope::driver::hid::base::Keyboard<kaleidoscope::driver::hid::keyboardio::KeyboardProps>::sendReport (this=0x559074815f21 <kaleidoscope_internal::device+1>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/hid/base/Keyboard.h:150
+#1  0x0000559074759a2f in kaleidoscope::Runtime_::sendKeyboardReport (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:297
+#2  0x00005590747594fc in kaleidoscope::Runtime_::handleKeyEvent (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+XXXX  ---
+$9 = {keyCode_ = 4 '\004', flags_ = 1 '\001', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+$10 = "WAS_PRESSED"
+#0  kaleidoscope::driver::hid::base::Keyboard<kaleidoscope::driver::hid::keyboardio::KeyboardProps>::sendReport (this=0x559074815f21 <kaleidoscope_internal::device+1>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/hid/base/Keyboard.h:150
+#1  0x0000559074759a2f in kaleidoscope::Runtime_::sendKeyboardReport (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:297
+#2  0x00005590747594fc in kaleidoscope::Runtime_::handleKeyEvent (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+XXXX  ---
+$11 = {keyCode_ = 192 '\300', flags_ = 209 '\321', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+$12 = "WAS_PRESSED"
+#0  kaleidoscope::driver::hid::base::Keyboard<kaleidoscope::driver::hid::keyboardio::KeyboardProps>::sendReport (this=0x559074815f21 <kaleidoscope_internal::device+1>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/hid/base/Keyboard.h:150
+#1  0x0000559074759a2f in kaleidoscope::Runtime_::sendKeyboardReport (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:297
+#2  0x00005590747594fc in kaleidoscope::Runtime_::handleKeyEvent (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+[ INFO     ] Printing Macro: A
+	KEYDOWN 1 4,TAPCODE 4,KEYUP 1 4,
+XXXX  ---
+$13 = {keyCode_ = 193 '\301', flags_ = 209 '\321', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+$14 = "WAS_PRESSED"
+#0  kaleidoscope::driver::hid::base::Keyboard<kaleidoscope::driver::hid::keyboardio::KeyboardProps>::sendReport (this=0x559074815f21 <kaleidoscope_internal::device+1>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/hid/base/Keyboard.h:150
+#1  0x0000559074759a2f in kaleidoscope::Runtime_::sendKeyboardReport (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:297
+#2  0x00005590747594fc in kaleidoscope::Runtime_::handleKeyEvent (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+XXXX  ---
+$15 = {keyCode_ = 4 '\004', flags_ = 1 '\001', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+$16 = "IS_PRESSED"
+#0  kaleidoscope::driver::hid::base::Keyboard<kaleidoscope::driver::hid::keyboardio::KeyboardProps>::sendReport (this=0x559074815f21 <kaleidoscope_internal::device+1>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/hid/base/Keyboard.h:150
+#1  0x0000559074759953 in kaleidoscope::Runtime_::sendKeyboardReport (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:279
+#2  0x00005590747594fc in kaleidoscope::Runtime_::handleKeyEvent (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+#0  kaleidoscope::driver::hid::base::Keyboard<kaleidoscope::driver::hid::keyboardio::KeyboardProps>::sendReport (this=0x559074815f21 <kaleidoscope_internal::device+1>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/hid/base/Keyboard.h:150
+#1  0x0000559074759a2f in kaleidoscope::Runtime_::sendKeyboardReport (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:297
+#2  0x00005590747594fc in kaleidoscope::Runtime_::handleKeyEvent (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+XXXX  ---
+$17 = {keyCode_ = 4 '\004', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+$18 = "IS_PRESSED"
+#0  kaleidoscope::driver::hid::base::Keyboard<kaleidoscope::driver::hid::keyboardio::KeyboardProps>::sendReport (this=0x559074815f21 <kaleidoscope_internal::device+1>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/hid/base/Keyboard.h:150
+#1  0x0000559074759a2f in kaleidoscope::Runtime_::sendKeyboardReport (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:297
+#2  0x00005590747594fc in kaleidoscope::Runtime_::handleKeyEvent (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+XXXX  ---
+$19 = {keyCode_ = 4 '\004', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+$20 = "WAS_PRESSED"
+#0  kaleidoscope::driver::hid::base::Keyboard<kaleidoscope::driver::hid::keyboardio::KeyboardProps>::sendReport (this=0x559074815f21 <kaleidoscope_internal::device+1>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/hid/base/Keyboard.h:150
+#1  0x0000559074759a2f in kaleidoscope::Runtime_::sendKeyboardReport (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:297
+#2  0x00005590747594fc in kaleidoscope::Runtime_::handleKeyEvent (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+XXXX  ---
+$21 = {keyCode_ = 4 '\004', flags_ = 1 '\001', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+$22 = "WAS_PRESSED"
+#0  kaleidoscope::driver::hid::base::Keyboard<kaleidoscope::driver::hid::keyboardio::KeyboardProps>::sendReport (this=0x559074815f21 <kaleidoscope_internal::device+1>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/hid/base/Keyboard.h:150
+#1  0x0000559074759a2f in kaleidoscope::Runtime_::sendKeyboardReport (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:297
+#2  0x00005590747594fc in kaleidoscope::Runtime_::handleKeyEvent (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:164: Failure
+Expected equality of these values:
+  observed_keyboard_report_count
+    Which is: 10
+  expected_keyboard_report_count
+    Which is: 12
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
+Value of: observed_keycodes
+Expected: has 2 elements where
+element #0 is equal to '\x4' (4),
+element #1 is equal to '\xE0' (224)
+  Actual: { '\xE0' (224) }, which has 1 element
+autogen (i=2)
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
+Value of: observed_keycodes
+Expected: has 1 element that is equal to '\xE0' (224)
+  Actual: {}
+autogen (i=3)
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:180: Failure
+Expected equality of these values:
+  observed_report.Timestamp()
+    Which is: 374
+  expected_report.Timestamp()
+    Which is: 375
+Report timestamps don't match (i=3)
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
+Value of: observed_keycodes
+Expected: has 1 element that is equal to '\xE0' (224)
+  Actual: { '\x4' (4) }, whose element #0 doesn't match
+autogen (i=4)
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:180: Failure
+Expected equality of these values:
+  observed_report.Timestamp()
+    Which is: 374
+  expected_report.Timestamp()
+    Which is: 376
+Report timestamps don't match (i=4)
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
+Value of: observed_keycodes
+Expected: has 2 elements where
+element #0 is equal to '\x4' (4),
+element #1 is equal to '\xE0' (224)
+  Actual: { '\x4' (4) }, which has 1 element
+autogen (i=8)
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
+Value of: observed_keycodes
+Expected: has 1 element that is equal to '\xE0' (224)
+  Actual: {}
+autogen (i=9)
+[  FAILED  ] ManualTests.7_FlagsCompression2 (2 ms)
+[ RUN      ] ManualTests.8_ShiftCheck
+[       OK ] ManualTests.8_ShiftCheck (0 ms)
+[----------] 13 tests from ManualTests (13 ms total)
+
+[----------] Global test environment tear-down
+[==========] 13 tests from 1 test suite ran. (14 ms total)
+[  PASSED  ] 12 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] ManualTests.7_FlagsCompression2
+
+ 1 FAILED TEST
+
+Program received signal SIGKILL, Killed.
+0x0000000070000002 in syscall_traced ()
 (rr) 
 vshcmd: > cont
 vshcmd: > print event.key
-$1 = {keyCode_ = 4 '\004', flags_ = 1 '\001', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+vshcmd: > print $_event_state_name(event.state)
+$1 = "WAS_PRESSED"
+(rr) 
+vshcmd: > cont
+vshcmd: > bt 3
+#0  kaleidoscope::driver::hid::base::Keyboard<kaleidoscope::driver::hid::keyboardio::KeyboardProps>::sendReport (this=0x559074815f21 <kaleidoscope_internal::device+1>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/hid/base/Keyboard.h:150
+#1  0x0000559074759a2f in kaleidoscope::Runtime_::sendKeyboardReport (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:297
+#2  0x00005590747594fc in kaleidoscope::Runtime_::handleKeyEvent (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+(More stack frames follow...)
+(rr) 
+vshcmd: > detach
+Detaching from program: /home/matmal01/.local/share/rr/EdgeCases-26/mmap_hardlink_4_EdgeCases, process 1514718
+[Inferior 1 (process 1514718) detached]
+(rr) quit
+Kaleidoscope [14:59:38] $ 
+vshcmd: > # One key in the live_keys map.
+vshcmd: > gdb-pipe array &live_keys.key_map_.values_[0]; 64 \
+vshcmd: >       | if $cur->keyCode_ != 255 \
+vshcmd: >       | show print *$cur
+$2 = {keyCode_ = 4 '\004', flags_ = 1 '\001', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+(rr) 
+vshcmd: > bt
+#0  kaleidoscope::Runtime_::sendKeyboardReport (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:261
+#1  0x00005590747594fc in kaleidoscope::Runtime_::handleKeyEvent (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+#2  0x00005590747591eb in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
+#3  0x000055907475c3c6 in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=1 '\001') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
+#4  0x000055907475ac5c in kaleidoscope::device::virt::VirtualKeyScanner::actOnMatrixScan (this=0x559074815f28 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.cpp:264
+#5  0x0000559074758c58 in kaleidoscope::device::virt::VirtualKeyScanner::scanMatrix (this=0x559074815f28 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.h:66
+#6  0x0000559074759c7c in kaleidoscope::device::Base<kaleidoscope::device::virt::VirtualProps>::scanMatrix (this=0x559074815f20 <kaleidoscope_internal::device>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/Base.h:253
+#7  0x0000559074759035 in kaleidoscope::Runtime_::loop (this=0x559074815a90 <kaleidoscope::Runtime>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:77
+#8  0x000055907473e328 in kaleidoscope::testing::SimHarness::RunCycle() ()
+#9  0x000055907473e356 in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
+#10 0x00005590746f99ac in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x55907602fd30, str=..., replaying=false) at test/manual-testcases.cpp:168
+#11 0x00005590746fcd98 in kaleidoscope::testing::(anonymous namespace)::ManualTests_7_FlagsCompression2_Test::TestBody (this=0x55907602fd30) at test/manual-testcases.cpp:531
+#12 0x00005590747a1559 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#13 0x0000559074799b0f in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#14 0x000055907476dc44 in testing::Test::Run() ()
+#15 0x000055907476e6d2 in testing::TestInfo::Run() ()
+#16 0x000055907476efd9 in testing::TestSuite::Run() ()
+#17 0x000055907477ef09 in testing::internal::UnitTestImpl::RunAllTests() ()
+#18 0x00005590747a24f2 in bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#19 0x000055907479abdb in bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#20 0x000055907477d671 in testing::UnitTest::Run() ()
+#21 0x000055907470470c in RUN_ALL_TESTS () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/googletest/include/gtest/gtest.h:2490
+#22 0x00005590746f83ca in executeTestFunction () at test/manual-testcases.cpp:10
+#23 0x0000559074761482 in main (argc=3, argv=0x7ffcdb71eae8) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56
+(rr) 
+vshcmd: > quit
+vshcmd: > y
+A debugging session is active.
+
+	Inferior 1 [process 1514718] will be detached.
+
+Quit anyway? (y or n) Detaching from program: /home/matmal01/.local/share/rr/EdgeCases-26/mmap_hardlink_4_EdgeCases, process 1514718
+[Inferior 1 (process 1514718) detached]
+Kaleidoscope [14:53:47] $ 
+vshcmd: > bt
+#0  kaleidoscope::driver::hid::base::Keyboard<kaleidoscope::driver::hid::keyboardio::KeyboardProps>::sendReport (this=0x559074815f21 <kaleidoscope_internal::device+1>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/hid/base/Keyboard.h:150
+#1  0x0000559074759a2f in kaleidoscope::Runtime_::sendKeyboardReport (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:297
+#2  0x00005590747594fc in kaleidoscope::Runtime_::handleKeyEvent (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+#3  0x00005590747591eb in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
+#4  0x000055907475c3c6 in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
+#5  0x000055907475ac5c in kaleidoscope::device::virt::VirtualKeyScanner::actOnMatrixScan (this=0x559074815f28 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.cpp:264
+#6  0x0000559074758c58 in kaleidoscope::device::virt::VirtualKeyScanner::scanMatrix (this=0x559074815f28 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.h:66
+#7  0x0000559074759c7c in kaleidoscope::device::Base<kaleidoscope::device::virt::VirtualProps>::scanMatrix (this=0x559074815f20 <kaleidoscope_internal::device>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/Base.h:253
+#8  0x0000559074759035 in kaleidoscope::Runtime_::loop (this=0x559074815a90 <kaleidoscope::Runtime>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:77
+#9  0x000055907473e328 in kaleidoscope::testing::SimHarness::RunCycle() ()
+#10 0x000055907473e356 in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
+#11 0x00005590746f8deb in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x55907602fd30, str=..., replaying=false) at test/manual-testcases.cpp:161
+#12 0x00005590746fcd98 in kaleidoscope::testing::(anonymous namespace)::ManualTests_7_FlagsCompression2_Test::TestBody (this=0x55907602fd30) at test/manual-testcases.cpp:531
+#13 0x00005590747a1559 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#14 0x0000559074799b0f in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#15 0x000055907476dc44 in testing::Test::Run() ()
+#16 0x000055907476e6d2 in testing::TestInfo::Run() ()
+#17 0x000055907476efd9 in testing::TestSuite::Run() ()
+#18 0x000055907477ef09 in testing::internal::UnitTestImpl::RunAllTests() ()
+#19 0x00005590747a24f2 in bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#20 0x000055907479abdb in bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#21 0x000055907477d671 in testing::UnitTest::Run() ()
+#22 0x000055907470470c in RUN_ALL_TESTS () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/googletest/include/gtest/gtest.h:2490
+#23 0x00005590746f83ca in executeTestFunction () at test/manual-testcases.cpp:10
+#24 0x0000559074761482 in main (argc=3, argv=0x7ffcdb71eae8) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56
+(rr) 
+vshcmd: > finish
+vshcmd: > info function sendReport
+All functions matching regular expression "sendReport":
+
+File /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src/BootKeyboard/BootKeyboard.cpp:
+249:	int BootKeyboard_::sendReport();
+
+File /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src/MultiReport/ConsumerControl.cpp:
+93:	void ConsumerControl_::sendReport();
+89:	void ConsumerControl_::sendReportUnchecked();
+
+File /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src/MultiReport/Keyboard.cpp:
+123:	int Keyboard_::sendReport();
+93:	int Keyboard_::sendReportUnchecked();
+
+File /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src/MultiReport/SystemControl.cpp:
+91:	void SystemControl_::sendReport(void*, int);
+
+File /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/hid/base/Keyboard.h:
+149:	void kaleidoscope::driver::hid::base::Keyboard<kaleidoscope::driver::hid::keyboardio::KeyboardProps>::sendReport();
+
+File /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/hid/keyboardio/Keyboard.h:
+60:	void kaleidoscope::driver::hid::keyboardio::BootKeyboardWrapper::sendReport();
+144:	void kaleidoscope::driver::hid::keyboardio::ConsumerControlWrapper::sendReport();
+102:	void kaleidoscope::driver::hid::keyboardio::NKROKeyboardWrapper::sendReport();
+(rr) 
+vshcmd: > bt
+#0  kaleidoscope::Runtime_::addToReport (this=0x559074815a90 <kaleidoscope::Runtime>, key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:225
+#1  0x00005590747599fd in kaleidoscope::Runtime_::sendKeyboardReport (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:289
+#2  0x00005590747594fc in kaleidoscope::Runtime_::handleKeyEvent (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+#3  0x00005590747591eb in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x559074815a90 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
+#4  0x000055907475c3c6 in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
+#5  0x000055907475ac5c in kaleidoscope::device::virt::VirtualKeyScanner::actOnMatrixScan (this=0x559074815f28 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.cpp:264
+#6  0x0000559074758c58 in kaleidoscope::device::virt::VirtualKeyScanner::scanMatrix (this=0x559074815f28 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.h:66
+#7  0x0000559074759c7c in kaleidoscope::device::Base<kaleidoscope::device::virt::VirtualProps>::scanMatrix (this=0x559074815f20 <kaleidoscope_internal::device>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/Base.h:253
+#8  0x0000559074759035 in kaleidoscope::Runtime_::loop (this=0x559074815a90 <kaleidoscope::Runtime>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:77
+#9  0x000055907473e328 in kaleidoscope::testing::SimHarness::RunCycle() ()
+#10 0x000055907473e356 in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
+#11 0x00005590746f8deb in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x55907602fd30, str=..., replaying=false) at test/manual-testcases.cpp:161
+#12 0x00005590746fcd98 in kaleidoscope::testing::(anonymous namespace)::ManualTests_7_FlagsCompression2_Test::TestBody (this=0x55907602fd30) at test/manual-testcases.cpp:531
+#13 0x00005590747a1559 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#14 0x0000559074799b0f in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#15 0x000055907476dc44 in testing::Test::Run() ()
+#16 0x000055907476e6d2 in testing::TestInfo::Run() ()
+#17 0x000055907476efd9 in testing::TestSuite::Run() ()
+#18 0x000055907477ef09 in testing::internal::UnitTestImpl::RunAllTests() ()
+#19 0x00005590747a24f2 in bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#20 0x000055907479abdb in bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#21 0x000055907477d671 in testing::UnitTest::Run() ()
+#22 0x000055907470470c in RUN_ALL_TESTS () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/googletest/include/gtest/gtest.h:2490
+#23 0x00005590746f83ca in executeTestFunction () at test/manual-testcases.cpp:10
+#24 0x0000559074761482 in main (argc=3, argv=0x7ffcdb71eae8) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56
+(rr) 
+vshcmd: > cont
+vshcmd: > print event.key
+Continuing.
+
+Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:46
+46	  bool MacrosOnTheFly::recordKeystroke(KeyEvent &event) {
+(rr) $8 = {keyCode_ = 4 '\004', flags_ = 1 '\001', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+(rr) 
+vshcmd: > print j
+$11 = 9 '\t'
+(rr) 
+vshcmd: > print idx
+$12 = 3 '\003'
+(rr) 
+vshcmd: > detach
+Detaching from program: /home/matmal01/.local/share/rr/EdgeCases-25/mmap_hardlink_4_EdgeCases, process 1498175
+[Inferior 1 (process 1498175) detached]
+(rr) quit
+Kaleidoscope [13:15:34] $ 
+vshcmd: > next
+220		  uint8_t x = j;
+(rr) 
+vshcmd: > frame 15
+vshcmd: > call 'kaleidoscope::testing::(anonymous namespace)::ManualTests::printMacro'(this, (char)65)
+vshcmd: > frame 0
+#15 0x000055794d79e9ac in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x55794d96aba0, str=..., replaying=false) at test/manual-testcases.cpp:168
+168		  doRelease;
+(rr) [ INFO     ] Printing Macro: A
+	TAP_SEQUENCE 1 4 1 4 1 4 1 4 3 1 4 0 ,
+(rr) #0  kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:220
+220		  uint8_t x = j;
+(rr) 
+vshcmd: > print cur->numUsedKeystrokes
+vshcmd: > y
+Detaching from program: /home/matmal01/.local/share/rr/EdgeCases-24/mmap_hardlink_4_EdgeCases, process 1497147
+[Inferior 1 (process 1497147) detached]
+Kaleidoscope [13:00:48] $ 
+vshcmd: > print cur->numUsedKeystrokes - leadingTapCode
+$30 = -38
+(rr) quit
+A debugging session is active.
+
+	Inferior 1 [process 1497147] will be detached.
+
+Quit anyway? (y or n) 
+vshcmd: > next
+204		  uint8_t numTaps = (cur->numUsedKeystrokes - leadingTapCode) / 3;
+(rr) 
+vshcmd: > print leadingTapSeq    
+vshcmd: > print leadingTap       
+vshcmd: > print leadingTapCode   
+vshcmd: > print leadingTapCodeSeq
+vshcmd: > print latestKeyCodeDown
+vshcmd: > print latestKeyDown    
+$22 = 50 '2'
+(rr) $23 = 0 '\000'
+(rr) $24 = 50 '2'
+(rr) $25 = 50 '2'
+(rr) $26 = 50 '2'
+(rr) $27 = 9 '\t'
 (rr) 
 vshcmd: > break flags_key_held
 Breakpoint 2 at 0x55e891c067f4: file test/manual-testcases.cpp, line 95.
