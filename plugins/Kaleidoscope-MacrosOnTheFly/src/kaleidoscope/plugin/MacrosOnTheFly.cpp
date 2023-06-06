@@ -29,23 +29,6 @@ namespace plugin {
     clearRecordingCompressionState();
   }
 
-  /* Times we want to transform things for space-saving reasons:
-      1) KEYDOWN + KEYUP  -> TAP.
-      2) TAP + TAP + TAP + TAP -> TAPSEQ <...>
-	TAP     flags code TAP   flags code TAP   flags code
-	TAPSEQ  flags code flags code  flags code nokey nokey
-      3) KEYCODEDOWN + KEYCODEUP -> TAPCODE
-      3) TAPCODE + TAPCODE + TAPCODE  -> TAPCODESEQ <...>
-	TAPCODE     code TAPCODE code  TAPCODE  code
-	TAPCODESEQ  code code    code  nokey
-      5) TAPX + TAPX + TAPX + TAPX  -> REPEATTAP 4 X
-         (N.b. this is not something that MacroSupport currently handles, is
-         probably not worth the extra complexity to do that myself).
-         Similar for
-          REPEATTAP <N> X + TAPX  -> REPEATTAP <N+1> X
-     
-     None of this is yet implemented.
-    */
 
 #define numRemainingKeystrokes(SLOT) MACRO_SIZE - (SLOT)->numUsedKeystrokes
 #define CHECK_REMAINING_SPACE(SLOT, REQUIRED) \
@@ -113,6 +96,22 @@ namespace plugin {
       return true;
     }
 
+    /* Times we want to transform things for space-saving reasons:
+	1) KEYDOWN + KEYUP  -> TAP.
+	2) TAP + TAP + TAP + TAP -> TAPSEQ <...>
+	  TAP     flags code TAP   flags code TAP   flags code
+	  TAPSEQ  flags code flags code  flags code nokey nokey
+	3) KEYCODEDOWN + KEYCODEUP -> TAPCODE
+	4) TAPCODE + TAPCODE + TAPCODE  -> TAPCODESEQ <...>
+	  TAPCODE     code TAPCODE code  TAPCODE  code
+	  TAPCODESEQ  code code    code  nokey
+	5) TAPX + TAPX + TAPX + TAPX  -> REPEATTAP 4 X
+	   (N.b. this is not something that MacroSupport currently handles, is
+	   probably not worth the extra complexity to do that myself).
+	   Similar for
+	    REPEATTAP <N> X + TAPX  -> REPEATTAP <N+1> X
+	NOT IMPLEMENTED.  */
+
     CHECK_REMAINING_SPACE (cur, event.key.getFlags() == 0 ? 2 : 3);
     if (keyToggledOn(event.state)) {
       if (event.key.getFlags() == 0) {
@@ -128,7 +127,8 @@ namespace plugin {
       macroBuffer[cur->numUsedKeystrokes++] = event.key.getKeyCode();
     } else {
       uint8_t keyCode = event.key.getKeyCode();
-      if (event.key.getFlags() == 0) {
+      uint8_t keyFlags = event.key.getFlags();
+      if (keyFlags == 0) {
 	bool createNewSequence = (leadingTapCode != MACRO_SIZE
 	    && (cur->numUsedKeystrokes - leadingTapCode) >= 6);
 
@@ -179,9 +179,9 @@ namespace plugin {
 	    && (cur->numUsedKeystrokes - leadingTap) >= 12);
 	if (latestKeyDown != (cur->numUsedKeystrokes - 3)
 	    || macroBuffer[latestKeyDown + 2] != keyCode
-	    || macroBuffer[latestKeyDown + 1] != event.key.getFlags()) {
+	    || macroBuffer[latestKeyDown + 1] != keyFlags) {
 	  macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_STEP_KEYUP;
-	  macroBuffer[cur->numUsedKeystrokes++] = event.key.getFlags();
+	  macroBuffer[cur->numUsedKeystrokes++] = keyFlags;
 	  macroBuffer[cur->numUsedKeystrokes++] = keyCode;
 	  clearRecordingCompressionState();
 	} else if (leadingTapSeq != MACRO_SIZE) {
@@ -189,7 +189,7 @@ namespace plugin {
 	   * Two bytes before the keyDown code must be zero (the terminating
 	   * bytes of the tap sequence).  We want to make those the key which
 	   * were used for the current tap.  */
-	  macroBuffer[latestKeyDown - 2] = event.key.getFlags();
+	  macroBuffer[latestKeyDown - 2] = keyFlags;
 	  macroBuffer[latestKeyDown - 1] = keyCode;
 	  macroBuffer[latestKeyDown]     = Key_NoKey.getFlags();
 	  macroBuffer[latestKeyDown + 1] = Key_NoKey.getKeyCode();
@@ -201,9 +201,9 @@ namespace plugin {
 	  if (leadingTap == MACRO_SIZE) { leadingTap = latestKeyDown; }
 	} else /* Start new tap sequence.  */ {
 	  macroBuffer[leadingTap] = MACRO_ACTION_STEP_TAP_SEQUENCE;
-	  uint8_t numTaps = (cur->numUsedKeystrokes - leadingTapCode) / 3;
+	  uint8_t numTaps = (cur->numUsedKeystrokes - leadingTap) / 3;
 	  numTaps -= 1;
-	  /* assert((cur->numUsedKeystrokes - leadingTapCode) % 3 == 0) */
+	  /* assert((cur->numUsedKeystrokes - leadingTap) % 3 == 0) */
 	  uint8_t i;
 	  uint8_t idx = leadingTap + 3;
 	  /* All taps to send.  */
@@ -213,12 +213,13 @@ namespace plugin {
 	    macroBuffer[writeptr] = macroBuffer[readptr];
 	    macroBuffer[writeptr + 1] = macroBuffer[readptr + 1];
 	  }
+	  uint8_t j = (i*2);
 	  /* Tap end marker.  */
-	  macroBuffer[idx + i++] = Key_NoKey.getFlags();
-	  macroBuffer[idx + i++] = Key_NoKey.getKeyCode();
-	  uint8_t x = i;
-	  for ( ; i < cur->numUsedKeystrokes; i++) {
-	    macroBuffer[idx + i] = MACRO_ACTION_END;
+	  macroBuffer[idx + j++] = Key_NoKey.getFlags();
+	  macroBuffer[idx + j++] = Key_NoKey.getKeyCode();
+	  uint8_t x = j;
+	  for ( ; j < cur->numUsedKeystrokes; j++) {
+	    macroBuffer[idx + j] = MACRO_ACTION_END;
 	  }
 	  cur->numUsedKeystrokes = idx + x;
 	  leadingTapSeq = leadingTap;

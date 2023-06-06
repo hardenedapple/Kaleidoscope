@@ -1,6 +1,3 @@
-groups: cannot find name for group ID 38659
-groups: cannot find name for group ID 61021
-Kaleidoscope [12:52:39] $ 
 vshcmd: > export KALEIDOSCOPE_DIR=/home/matmal01/Documents/not-work/keyboard/Kaleidoscope
 vshcmd: > make simulator-tests TEST_PATH=plugins/MacrosOnTheFly/BasicRepeat
 Building in quiet mode. For a lot more information, add 'VERBOSE=1' to the beginning of your call to make
@@ -50,25 +47,23 @@ Running test plugins/MacrosOnTheFly/BasicRepeat
 [==========] 6 tests from 1 test suite ran. (1 ms total)
 [  PASSED  ] 6 tests.
 make[1]: Leaving directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
-Kaleidoscope [13:42:07] $ 
-vshcmd: > make simulator-tests TEST_PATH=plugins/MacrosOnTheFly/EdgeCases VERBOSE=1
+Kaleidoscope [12:28:16] $ 
+vshcmd: > make simulator-tests TEST_PATH=plugins/MacrosOnTheFly/EdgeCases
 Building in quiet mode. For a lot more information, add 'VERBOSE=1' to the beginning of your call to make
-make -C tests all
+make -C tests clean
 make[1]: Entering directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
-make -C /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build
-[ 25%] Built target gtest
-[ 50%] Built target gmock
-[ 75%] Built target gmock_main
-[100%] Built target gtest_main
-test/manual-testcases.cpp:3:10: fatal error: Kaleidoscope-MacrosOnTheFly.h: No such file or directory
-    3 | #include "Kaleidoscope-MacrosOnTheFly.h"
-      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[2]: *** [/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/makefiles/testcase.mk:111: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/MacrosOnTheFly/EdgeCases/obj/manual-testcases.o] Error 1
-make[1]: *** [Makefile:96: plugins/MacrosOnTheFly/EdgeCases] Error 2
+rm -rf "/home/matmal01/Documents/not-work/keyboard/Kaleidoscope"/testing/googletest/build/*
+
+vshcmd: > make clean
+Building in quiet mode. For a lot more information, add 'VERBOSE=1' to the beginning of your call to make
+make -C tests clean
+make[1]: Entering directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
+rm -rf "/home/matmal01/Documents/not-work/keyboard/Kaleidoscope"/testing/googletest/build/*
+rm -rf "/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build"/*
 make[1]: Leaving directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
-make: *** [Makefile:82: simulator-tests] Error 2
-Kaleidoscope [16:17:31] $ 
+rm -rf -- "testing/googletest/build/*"
+rm -rf -- "_build/*"
+Kaleidoscope [12:32:12] $ 
 vshcmd: > make simulator-tests TEST_PATH=plugins/MacrosOnTheFly
 Building in quiet mode. For a lot more information, add 'VERBOSE=1' to the beginning of your call to make
 make -C tests all
