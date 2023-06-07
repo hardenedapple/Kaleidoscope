@@ -87,6 +87,7 @@ parseAction(const std::string str)
 class ManualTests : public VirtualDeviceTest {
   protected:
   std::unordered_map<std::string, std::string> knownMacros;
+  std::string lastRanMacro;
 
 #define key_flag_KEY_FLAGS  0b00000000
 #define key_flag_CTRL_HELD  0b00000001
@@ -134,11 +135,17 @@ class ManualTests : public VirtualDeviceTest {
 #define checkPressed checkReport(Add)
 #define checkRelease checkReport(Remove)
 
-#define checkMacro                           \
-    if (report == ReportIds::triggerMacro) { \
-      auto x = knownMacros.find(keyId);      \
-      assert (x != knownMacros.end());       \
-      runAction(x->second, true);            \
+#define checkMacro                                    \
+    if (report == ReportIds::triggerMacro) {          \
+      std::string id = keyId;                         \
+      if (keyId == "PLAY")                            \
+        id = lastRanMacro;                            \
+      auto x = knownMacros.find(id);                  \
+      if (keyId != "PLAY" || !lastRanMacro.empty()) { \
+	assert (x != knownMacros.end());              \
+	runAction(x->second, true);                   \
+      }                                               \
+      lastRanMacro = id;                              \
     }
 
 #define doPress          \
@@ -380,7 +387,27 @@ TEST_F(ManualTests, 1_MacrosOnTheFlyTestHelpers) {
   CheckReports();
 }
 
-TEST_F(ManualTests, 2_MacrosOnTheFlyNoHeldOverPlay) {
+
+TEST_F(ManualTests, 2_ReplayRepeat) {
+  ClearState();
+  initialiseMacros();
+  /* Should give no keyboard events because we've not played anything yet.
+   * N.b. this means that this test needs to be the first run.  The
+   * `ClearState()` call above does not clear the MacrosOnTheFly class state,
+   * which means that PLAY's from previous tests would affect this one.  */
+  runAction("PLAY %PLAY");
+  runAction("PLAY %B");
+  /* Should give same keyboard events as PLAY %B */
+  runAction("PLAY %PLAY");
+  runAction("REC ~B A A A B J REC");
+  storeMacro("B", "A A A B J");
+  runAction("PLAY %PLAY");
+
+  LoadState();
+  CheckReports();
+}
+
+TEST_F(ManualTests, 3_MacrosOnTheFlyNoHeldOverPlay) {
   ClearState();
   sim_.RunForMillis(10);
   initialiseMacros();
@@ -389,7 +416,7 @@ TEST_F(ManualTests, 2_MacrosOnTheFlyNoHeldOverPlay) {
   CheckReports();
 }
 
-TEST_F(ManualTests, 3_MacrosOnTheFlyRecursiveReplay) {
+TEST_F(ManualTests, 4_MacrosOnTheFlyRecursiveReplay) {
   ClearState();
   sim_.RunForMillis(10);
   initialiseMacros();
@@ -408,7 +435,7 @@ TEST_F(ManualTests, 3_MacrosOnTheFlyRecursiveReplay) {
   CheckReports();
 }
 
-TEST_F(ManualTests, 4_MacrosOnTheFlyRecursiveAvoidance) {
+TEST_F(ManualTests, 5_MacrosOnTheFlyRecursiveAvoidance) {
   ClearState();
   sim_.RunForMillis(10);
   initialiseMacros();
@@ -446,7 +473,7 @@ TEST_F(ManualTests, 4_MacrosOnTheFlyRecursiveAvoidance) {
   CheckReports();
 }
 
-TEST_F(ManualTests, 4_MacrosOnTheFlyAvoidKeyUp) {
+TEST_F(ManualTests, 5_MacrosOnTheFlyAvoidKeyUp) {
   ClearState();
   sim_.RunForMillis(10);
 
@@ -459,7 +486,7 @@ TEST_F(ManualTests, 4_MacrosOnTheFlyAvoidKeyUp) {
   CheckReports();
 }
 
-TEST_F(ManualTests, 5_MacrosOnTheFlyBailOut) {
+TEST_F(ManualTests, 6_MacrosOnTheFlyBailOut) {
   ClearState();
 
   /* Get into each possible state, then run REC -> PLAY -> REC, then assert we
@@ -472,7 +499,7 @@ TEST_F(ManualTests, 5_MacrosOnTheFlyBailOut) {
   forEachState(canGetIdle);
 }
 
-TEST_F(ManualTests, 6_CompressionChecks) {
+TEST_F(ManualTests, 7_CompressionChecks) {
   ClearState();
 
   runAction("REC ~A A J REC");
@@ -496,7 +523,7 @@ TEST_F(ManualTests, 6_CompressionChecks) {
   CheckReports();
 }
 
-TEST_F(ManualTests, 7_FlagsCompression) {
+TEST_F(ManualTests, 8_FlagsCompression) {
   ClearState();
   
   runAction("REC ~A LeftControl| A J A J A J LeftControl^ REC");
@@ -508,7 +535,7 @@ TEST_F(ManualTests, 7_FlagsCompression) {
   CheckReports();
 }
 
-TEST_F(ManualTests, 7_FlagsCompression3) {
+TEST_F(ManualTests, 8_FlagsCompression3) {
   ClearState();
   runAction("REC ~A *LeftControl_A REC");
   storeMacro("A", "*LeftControl_A");
@@ -519,7 +546,7 @@ TEST_F(ManualTests, 7_FlagsCompression3) {
   CheckReports();
 }
 
-TEST_F(ManualTests, 7_FlagsCompression4) {
+TEST_F(ManualTests, 8_FlagsCompression4) {
   ClearState();
   runAction("REC ~A *LeftControl_A *LeftControl_A *LeftControl_A *LeftControl_A REC");
   storeMacro("A", "*LeftControl_A *LeftControl_A *LeftControl_A *LeftControl_A");
@@ -551,7 +578,7 @@ TEST_F(ManualTests, 7_FlagsCompression4) {
  *	 circumstances, and AFAIK should not trigger any different behaviour by
  *	 the machine we send to. */
 
-// TEST_F(ManualTests, 7_FlagsCompression2) {
+// TEST_F(ManualTests, 8_FlagsCompression2) {
 //   ClearState();
 //   runAction("REC ~A *LeftControl_A| A *LeftControl_A^ REC");
 //   storeMacro("A", "*LeftControl_A| A *LeftControl_A^");
@@ -562,7 +589,7 @@ TEST_F(ManualTests, 7_FlagsCompression4) {
 //   CheckReports();
 // }
 
-// TEST_F(ManualTests, 7_FlagsCompression5) {
+// TEST_F(ManualTests, 8_FlagsCompression5) {
 //   ClearState();
 //   runAction("REC ~A *LeftControl_A| J *LeftControl_A^ REC");
 //   storeMacro("A", "*LeftControl_A| J *LeftControl_A^");
@@ -573,7 +600,7 @@ TEST_F(ManualTests, 7_FlagsCompression4) {
 //   CheckReports();
 // }
 
-TEST_F(ManualTests, 8_ShiftCheck) {
+TEST_F(ManualTests, 9_ShiftCheck) {
   ClearState();
   runAction("REC ~A LeftShift| A J LeftShift^ REC");
   storeMacro("A", "LeftShift| A J LeftShift^");
@@ -582,7 +609,7 @@ TEST_F(ManualTests, 8_ShiftCheck) {
   CheckReports();
 }
 
-TEST_F(ManualTests, 9_CompressSeqInMiddle) {
+TEST_F(ManualTests, 10_CompressSeqInMiddle) {
   ClearState();
 
   runAction("REC ~A LeftShift| A J LeftShift^ A A A A A REC");
@@ -604,7 +631,7 @@ TEST_F(ManualTests, 9_CompressSeqInMiddle) {
   CheckReports();
 }
 
-TEST_F(ManualTests, 10_LayerBasics) {
+TEST_F(ManualTests, 11_LayerBasics) {
   ClearState();
 
   runAction("LockLayer REC ~A X LockLayer B LockLayer X LockLayer B REC");
@@ -648,7 +675,7 @@ TEST_F(ManualTests, 10_LayerBasics) {
   CheckReports();
 }
 
-TEST_F(ManualTests, 11_Delays) {
+TEST_F(ManualTests, 12_Delays) {
   ClearState();
 
   runAction("DELAY DELAY REC ~B B B B REC");
@@ -671,10 +698,10 @@ TEST_F(ManualTests, 11_Delays) {
   printMacro("B");
   runAction("PLAY %B");
 
-  runAction("DELAY REC ~B B A B| DELAY DELAY DELAY B^ A B REC");
-  storeMacro("B", "B A B A B");
-  printMacro("B");
-  runAction("PLAY %B");
+  runAction("DELAY REC ~A B A B| DELAY DELAY DELAY B^ A B REC");
+  storeMacro("A", "B A B A B");
+  printMacro("A");
+  runAction("PLAY %A");
 
   LoadState();
   CheckReports();
