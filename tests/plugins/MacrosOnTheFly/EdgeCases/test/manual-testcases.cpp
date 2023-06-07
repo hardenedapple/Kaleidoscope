@@ -28,6 +28,9 @@ constexpr KeyAddr key_addr_B {0, 1};
 constexpr KeyAddr key_addr_MACROPLAY {1, 7};
 constexpr KeyAddr key_addr_LeftControl {0, 9};
 constexpr KeyAddr key_addr_LeftControl_A {1, 9};
+constexpr KeyAddr key_addr_X {0, 1};
+constexpr KeyAddr key_addr_ShiftLayer {1, 10};
+constexpr KeyAddr key_addr_LockLayer {1, 11};
 
 std::vector<std::string> split(const std::string str, const std::string regex_str)
 {
@@ -47,6 +50,9 @@ const std::unordered_map<std::string, Keyval> keyTypes = {
   { "LeftShift", { key_addr_LeftShift, Key_LeftShift }},
   { "LeftControl", { key_addr_LeftControl, Key_LeftControl }},
   { "LeftControl_A", { key_addr_LeftControl_A, LCTRL(Key_A) }},
+  { "X", { key_addr_X, Key_X }},
+  { "ShiftLayer", { key_addr_ShiftLayer, Key_NoEvent }},
+  { "LockLayer", { key_addr_LockLayer, Key_NoEvent }},
 };
 
 enum class KeyActions { press, release, tap };
@@ -260,13 +266,16 @@ class ManualTests : public VirtualDeviceTest {
     MACRO_ACTION_STEP_TAP_CODE_SEQUENCE,
   } MacroActionStepType;
 
+  /* Have two interfaces -- const char one so I can use it in the debugger,
+   * std::string one so I can have a nice interface for this testsuite.  */
+  void printMacro(const std::string id) { printMacro(id[0]); }
   void printMacro(const char idChar) {
     std::string id(1, idChar);
     GTEST_COUT << "Printing Macro: " << id << std::endl << "\t";
     auto [ mIndex, slot ] = getMacroSlot(id);
     Key key;
     for (uint8_t i = 0; i < slot.numUsedKeystrokes; ) {
-      switch (::MacrosOnTheFly.macroStorage[i++]) {
+      switch (::MacrosOnTheFly.macroStorage[mIndex + i++]) {
 	// Macro code claims these are not useful.
 	case MACRO_ACTION_STEP_EXPLICIT_REPORT:
 	case MACRO_ACTION_STEP_IMPLICIT_REPORT:
@@ -468,19 +477,19 @@ TEST_F(ManualTests, 6_CompressionChecks) {
 
   runAction("REC ~A A J REC");
   storeMacro("A", "A J");
-  printMacro('A');
+  printMacro("A");
   runAction("PLAY %A");
   // ASSERT_EQ(::MacrosOnTheFly.macroStorage[
 
 
   runAction("REC ~A A J A J A J REC");
   storeMacro("A", "A J A J A J");
-  printMacro('A');
+  printMacro("A");
   runAction("PLAY %A");
 
   runAction("REC ~A LeftShift| A J A J A J LeftShift^ REC");
   storeMacro("A", "LeftShift| A J A J A J LeftShift^");
-  printMacro('A');
+  printMacro("A");
   runAction("PLAY %A");
 
   LoadState();
@@ -492,7 +501,7 @@ TEST_F(ManualTests, 7_FlagsCompression) {
   
   runAction("REC ~A LeftControl| A J A J A J LeftControl^ REC");
   storeMacro("A", "LeftControl| A J A J A J LeftControl^");
-  printMacro('A');
+  printMacro("A");
   runAction("PLAY %A");
 
   LoadState();
@@ -503,7 +512,7 @@ TEST_F(ManualTests, 7_FlagsCompression3) {
   ClearState();
   runAction("REC ~A *LeftControl_A REC");
   storeMacro("A", "*LeftControl_A");
-  printMacro('A');
+  printMacro("A");
   runAction("PLAY %A");
 
   LoadState();
@@ -514,7 +523,7 @@ TEST_F(ManualTests, 7_FlagsCompression4) {
   ClearState();
   runAction("REC ~A *LeftControl_A *LeftControl_A *LeftControl_A *LeftControl_A REC");
   storeMacro("A", "*LeftControl_A *LeftControl_A *LeftControl_A *LeftControl_A");
-  printMacro('A');
+  printMacro("A");
   runAction("PLAY %A");
 
   LoadState();
@@ -546,7 +555,7 @@ TEST_F(ManualTests, 7_FlagsCompression4) {
 //   ClearState();
 //   runAction("REC ~A *LeftControl_A| A *LeftControl_A^ REC");
 //   storeMacro("A", "*LeftControl_A| A *LeftControl_A^");
-//   printMacro('A');
+//   printMacro("A");
 //   runAction("PLAY %A");
 
 //   LoadState();
@@ -557,7 +566,7 @@ TEST_F(ManualTests, 7_FlagsCompression4) {
 //   ClearState();
 //   runAction("REC ~A *LeftControl_A| J *LeftControl_A^ REC");
 //   storeMacro("A", "*LeftControl_A| J *LeftControl_A^");
-//   printMacro('A');
+//   printMacro("A");
 //   runAction("PLAY %A");
 
 //   LoadState();
@@ -578,18 +587,94 @@ TEST_F(ManualTests, 9_CompressSeqInMiddle) {
 
   runAction("REC ~A LeftShift| A J LeftShift^ A A A A A REC");
   storeMacro("A", "LeftShift| A J LeftShift^ A A A A A");
-  printMacro('A');
+  printMacro("A");
   runAction("PLAY %A");
 
   runAction("REC ~A LeftShift| A J LeftShift^ A A A A A J A| J A^ REC");
   storeMacro("A", "LeftShift| A J LeftShift^ A A A A A J A| J A^");
-  printMacro('A');
+  printMacro("A");
   runAction("PLAY %A");
 
   runAction("REC ~A LeftShift| A J LeftShift^ A A A A A J A| J A^ J A J A J REC");
   storeMacro("A", "LeftShift| A J LeftShift^ A A A A A J A| J A^ J A J A J");
-  printMacro('A');
+  printMacro("A");
   runAction("PLAY %A");
+
+  LoadState();
+  CheckReports();
+}
+
+TEST_F(ManualTests, 10_LayerBasics) {
+  ClearState();
+
+  runAction("LockLayer REC ~A X LockLayer B LockLayer X LockLayer B REC");
+  storeMacro("A", "X B X B");
+  printMacro("A");
+  runAction("PLAY %A");
+  runAction("LockLayer");  /* Because the macro above changed the layers.  */
+
+  runAction("LockLayer REC ~A X LockLayer B LockLayer X LockLayer B LockLayer REC");
+  storeMacro("A", "X B X B");
+  runAction("X LockLayer");  /* Retain locklayer state after finishing recording macro.  */
+  printMacro("A");
+  runAction("PLAY %A");
+  runAction("B"); /* LockLayer state carried over after replaying macro. */
+
+  /* Checks that ShiftLayer automatically clears on exit of replaying macro.
+   * Also checks that ShiftLayer works as expected in the middle of a macro.  */
+  runAction("REC ~A ShiftLayer| X ShiftLayer^ B ShiftLayer| X REC X ShiftLayer^");
+  storeMacro("A", "X B X");
+  printMacro("A");
+  runAction("PLAY %A");
+  runAction("B");    /* Automatically cleared.  */
+
+  initialiseMacros();
+  /* Checking that ShiftLayer held down while pressing record disables
+   * recording.  This does mean that all macro slots need to be on the base
+   * layer (or accessible with a LockLayer) but that seems like an acceptable
+   * price to pay.  */
+  runAction("ShiftLayer| REC ~B X REC ShiftLayer^");
+  /* No storeMacro because macro has not changed.  */
+  runAction("PLAY %B");
+  runAction("ShiftLayer| REC ShiftLayer^ ~B B REC");
+  storeMacro("B", "B");
+  runAction("PLAY %B");
+
+  /* Checking holding ShiftLayer while replaying.
+   * Should not play anything because we're holding something down.  */
+  runAction("ShiftLayer| PLAY ~B ShiftLayer^");
+
+  LoadState();
+  CheckReports();
+}
+
+TEST_F(ManualTests, 11_Delays) {
+  ClearState();
+
+  runAction("DELAY DELAY REC ~B B B B REC");
+  printMacro("B");
+  storeMacro("B", "B B B");
+  runAction("PLAY %B");
+
+  runAction("DELAY DELAY REC ~B B B DELAY B REC");
+  storeMacro("B", "B B B");
+  printMacro("B");
+  runAction("PLAY %B");
+
+  runAction("DELAY REC ~B B| DELAY B^ A REC");
+  storeMacro("B", "B A");
+  printMacro("B");
+  runAction("PLAY %B");
+
+  runAction("DELAY REC ~B B A B| DELAY B^ A B REC");
+  storeMacro("B", "B A B A B");
+  printMacro("B");
+  runAction("PLAY %B");
+
+  runAction("DELAY REC ~B B A B| DELAY DELAY DELAY B^ A B REC");
+  storeMacro("B", "B A B A B");
+  printMacro("B");
+  runAction("PLAY %B");
 
   LoadState();
   CheckReports();
