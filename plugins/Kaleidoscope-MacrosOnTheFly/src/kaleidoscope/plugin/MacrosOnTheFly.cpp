@@ -576,8 +576,8 @@ exit:
   MacrosOnTheFly::State MacrosOnTheFly::currentState   = IDLE;
   MacrosOnTheFly::Slot MacrosOnTheFly::slotRecord[NUM_MACROS]   = {0};
   byte MacrosOnTheFly::macroStorage[MacrosOnTheFly::STORAGE_SIZE_IN_BYTES] = {0};
-  uint8_t MacrosOnTheFly::sRecordingSlot    = 0;
-  uint8_t MacrosOnTheFly::sLastPlayedSlot   = 0;
+  uint8_t MacrosOnTheFly::sRecordingSlot    = NUM_MACROS;
+  uint8_t MacrosOnTheFly::sLastPlayedSlot   = NUM_MACROS;
   uint8_t MacrosOnTheFly::delayInterval     = 0;
   uint8_t MacrosOnTheFly::replaying         = 0;
   uint8_t MacrosOnTheFly::leadingTapSeq     = MACRO_SIZE;
