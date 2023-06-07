@@ -159,12 +159,6 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
 	= latestKeyDown = latestKeyCodeDown = MACRO_SIZE;
     }
 
-    static inline bool isTransitionEvent (KeyEvent &event) {
-      return keyToggledOn(event.state)
-	&& !event.key.isKeyboardModifier ()
-	&& !event.key.isLayerShift ();
-    }
-
     static void initialise(Key[NUM_MACROS]);
     static bool recordKeystroke(KeyEvent &);
     static bool play(const uint8_t);

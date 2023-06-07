@@ -68,7 +68,8 @@ namespace plugin {
 
     /* First use of the MACRODELAY key does not store the delayInterval.
      * Only do that on the the last press.  */
-    if (keyToggledOn(event.state) && IS_MACRODELAY(event)) {
+    if (IS_MACRODELAY(event)) {
+      if (keyToggledOff(event.state)) return true;
       CHECK_REMAINING_SPACE(cur, 2);
       if (currentState != SETTING_DELAY_AND_RECORDING) {
 	/* Can not compress over a MacroActionStepInterval.  */
@@ -81,8 +82,7 @@ namespace plugin {
     }
 
     /* Have seen our last MACRODELAY keypress.  */
-    if (currentState == SETTING_DELAY_AND_RECORDING
-	&& keyToggledOn(event.state) && !IS_MACRODELAY(event)) {
+    if (currentState == SETTING_DELAY_AND_RECORDING && !IS_MACRODELAY(event)) {
       /* State change will be handled by onKeyEvent, we just record the
        * keystroke.  */
       macroBuffer[cur->numUsedKeystrokes++] = delayInterval;
@@ -348,33 +348,36 @@ exit:
     return true;
   }
 
-#define RET_IF_NON_TRANSITION(EVENT)  \
-  if (!isTransitionEvent ((EVENT))) \
-    return kaleidoscope::EventHandlerResult::OK;
+#define RET_MAYBE_RESET_IF_NON_TRANSITION(EVENT)                      \
+  if ((EVENT).key.isKeyboardModifier() || (EVENT).key.isLayerShift()) \
+    return kaleidoscope::EventHandlerResult::OK;                      \
+  if (keyToggledOff(event.state)) {                                   \
+    if ((EVENT).key.isKeyboardKey()) {                                \
+    currentState = isRecording(currentState)                          \
+      ? IDLE_AND_RECORDING                                            \
+      : IDLE;                                                         \
+    }                                                                 \
+    return kaleidoscope::EventHandlerResult::OK;                      \
+  }
 
-#define STATE_CHANGE_AND_RET_IF_HELD_KEY(STATE, EVENT, ARE_RECORDING) \
-  do { \
-    currentState = STATE; \
-    for (Key key : live_keys.all()) { \
+
+#define RESET_AND_RET_IF_HELD_KEY(EVENT)                                    \
+  do {                                                                      \
+    bool are_recording = isRecording(currentState);                         \
+    currentState = are_recording ? IDLE_AND_RECORDING : IDLE;               \
+    for (Key key : live_keys.all()) {                                       \
       if (key != Key_Inactive && key != Key_Masked && key != (EVENT).key) { \
-	LED_complain ((EVENT).addr); \
-	return maskKeyAndRet(EVENT, ARE_RECORDING); \
-      } \
-    } \
-    if (anyMacroKeyHeld()) { \
-      LED_complain ((EVENT).addr); \
-      return maskKeyAndRet(EVENT, ARE_RECORDING); \
-    } \
+	LED_complain ((EVENT).addr);                                        \
+	return maskKeyAndRet(EVENT, are_recording);                         \
+      }                                                                     \
+    }                                                                       \
+    if (anyMacroKeyHeld()) {                                                \
+      LED_complain ((EVENT).addr);                                          \
+      return maskKeyAndRet(EVENT, are_recording);                           \
+    }                                                                       \
   } while (false)
 
-#define IDLE_AND_RET_IF_HELD_KEY(EVENT) \
-    STATE_CHANGE_AND_RET_IF_HELD_KEY (IDLE, EVENT, false)
-
-#define IDLE_REC_AND_RET_IF_HELD_KEY(EVENT) \
-    STATE_CHANGE_AND_RET_IF_HELD_KEY (IDLE_AND_RECORDING, EVENT, true)
-
   EventHandlerResult MacrosOnTheFly::doNewPlay(KeyEvent &event) {
-    RET_IF_NON_TRANSITION (event);
     bool success = false;
     uint8_t sIndex = IS_MACROPLAY(event) ? sLastPlayedSlot : sFindSlot (event.key);
     success = (sIndex != NUM_MACROS) && play(sIndex);
@@ -462,7 +465,7 @@ exit:
      *
      * Either way there is nothing else to do.  */
     if (currentState == PICKING_SLOT_FOR_REC) {
-      RET_IF_NON_TRANSITION (event);
+      RET_MAYBE_RESET_IF_NON_TRANSITION (event);
       if (IS_MACROPLAY(event)) {
         /* Special case handling.  MACROREC MACROPLAY will always leave you in
          * PICKING_PLAY state, hence REC PLAY REC will always leave you in
@@ -478,7 +481,7 @@ exit:
        *   - difference between recording with the key pressed, and replaying behaviour
        *   - should we emit some fake keypresses to try and emulate?
        * Way easier to disallow.  */
-      IDLE_AND_RET_IF_HELD_KEY (event);
+      RESET_AND_RET_IF_HELD_KEY (event);
       bool recording = prepareForRecording (event.key);
       currentState = recording ? IDLE_AND_RECORDING : IDLE;
       if (!recording) LED_complain (event.addr);
@@ -494,12 +497,13 @@ exit:
       if (!keyToggledOn(event.state))
           /* Do not want to choose which slot to play based on a keyUp event. */
         return kaleidoscope::EventHandlerResult::OK;
-      IDLE_AND_RET_IF_HELD_KEY (event);
+      RET_MAYBE_RESET_IF_NON_TRANSITION (event);
+      RESET_AND_RET_IF_HELD_KEY (event);
       return doNewPlay (event);
     }
 
     if (currentState == SETTING_DELAY || currentState == IDLE) {
-      RET_IF_NON_TRANSITION (event);
+      RET_MAYBE_RESET_IF_NON_TRANSITION (event);
       if (IS_MACRODELAY(event)) {
 	if (currentState == SETTING_DELAY)
 	  delayInterval += 1;
@@ -548,7 +552,7 @@ exit:
 
     if (currentState == SETTING_DELAY_AND_RECORDING
 	|| currentState == IDLE_AND_RECORDING) {
-      RET_IF_NON_TRANSITION (event);
+      RET_MAYBE_RESET_IF_NON_TRANSITION (event);
       if (IS_MACRODELAY(event)) {
 	/* Delay count already handled in recording above.  */
 	currentState = SETTING_DELAY_AND_RECORDING;
@@ -564,8 +568,8 @@ exit:
     }
 
     /* currentState must be PICKING_SLOT_FOR_PLAY_AND_RECORDING.  */
-    RET_IF_NON_TRANSITION (event);
-    IDLE_REC_AND_RET_IF_HELD_KEY (event);
+    RET_MAYBE_RESET_IF_NON_TRANSITION (event);
+    RESET_AND_RET_IF_HELD_KEY (event);
     return doNewPlay (event);
   }
 
