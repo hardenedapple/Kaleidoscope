@@ -34,7 +34,7 @@ namespace plugin {
 #define CHECK_REMAINING_SPACE(SLOT, REQUIRED) \
   do { \
     uint8_t rem = numRemainingKeystrokes(SLOT); \
-    if (rem >= REQUIRED) break; \
+    if (rem >= (REQUIRED)) break; \
     /* Clear the macro if we run out of space.
      * This means we don't end up with some surprising broken half-recorded
      * state.  */ \
@@ -528,8 +528,12 @@ exit:
 
     if (IS_MACROREC(event)) {
       if (keyToggledOn(event.state)) {
-	  /* Do not need space to stop recording.  Hence don't check space
-	   * flag.  */
+	  /* Do not need space to stop recording.
+	   * The `recordKeystroke` function only returns `false` if we failed
+	   * to store our keypress.  This should never happen for MACROREC
+	   * since there is nothing we *have* to record (that said, there is
+	   * something we record if we have space, just for extra robustness).
+	   */
           // assert(recordKeystroke(event));
           recordKeystroke(event);
           currentState = IDLE;

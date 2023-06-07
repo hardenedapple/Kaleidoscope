@@ -103,6 +103,7 @@ class ManualTests : public VirtualDeviceTest {
     orderAdd,
     orderRemove
   } MultikeyOrder;
+
   std::vector<Key> flags_key_held(Key keyval, MultikeyOrder ord) {
     std::vector<Key> x;
     
@@ -237,6 +238,21 @@ class ManualTests : public VirtualDeviceTest {
     ::kaleidoscope::plugin::MacrosOnTheFly::Slot slot = ::MacrosOnTheFly.slotRecord[slotId];
     uint8_t bufferIdx = ::MacrosOnTheFly.mIndexFrom_s(slotId);
     return { bufferIdx, slot };
+  }
+
+  void runOutOfMacroMemory (const std::string slot) {
+    std::stringstream keysequence;
+    keysequence << "REC ~" << slot;
+    for (int i = 0; i < ::kaleidoscope::plugin::MacrosOnTheFly::MACRO_SIZE; i++) {
+      keysequence << " A";
+    }
+    runAction(keysequence.str());
+    ASSERT_EQ(::MacrosOnTheFly.currentState, ::kaleidoscope::plugin::MacrosOnTheFly::State_::IDLE);
+    storeMacro(slot, "");
+    /* Clear sequence.  */
+    keysequence.str("");
+    keysequence << "PLAY %" << slot;
+    runAction(keysequence.str());
   }
 
   /* Compare the buffer against the macro we should have stored.  */
@@ -702,6 +718,16 @@ TEST_F(ManualTests, 12_Delays) {
   storeMacro("A", "B A B A B");
   printMacro("A");
   runAction("PLAY %A");
+
+  LoadState();
+  CheckReports();
+}
+
+TEST_F(ManualTests, 13_OutOfMemory) {
+  ClearState();
+
+  runOutOfMacroMemory("A");
+  runOutOfMacroMemory("B");
 
   LoadState();
   CheckReports();
