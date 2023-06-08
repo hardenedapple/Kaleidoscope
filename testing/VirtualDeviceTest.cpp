@@ -166,7 +166,8 @@ void VirtualDeviceTest::CheckKeyboardReports() const {
   int max_count = std::max(observed_keyboard_report_count,
                            expected_keyboard_report_count);
 
-  for (int i = 0; i < observed_keyboard_report_count; ++i) {
+  int i;
+  for (i = 0; i < observed_keyboard_report_count; ++i) {
     auto observed_report   = HIDReports()->Keyboard(i);
     auto observed_keycodes = observed_report.ActiveKeycodes();
 
@@ -189,6 +190,16 @@ void VirtualDeviceTest::CheckKeyboardReports() const {
       }
       std::cerr << "}" << std::dec << std::endl;
     }
+  }
+  for ( ; i < expected_keyboard_report_count; ++i) {
+    auto expected_report = expected_keyboard_reports_[i];
+    auto expected_keycodes = expected_report.Keycodes();
+    std::cerr << "Missing expected keyboard report at "
+      << expected_report.Timestamp() << "ms: { " << std::hex;
+    for (uint8_t keycode : expected_keycodes) {
+      std::cerr << int(keycode) << " ";
+    }
+    std::cerr << "}" << std::dec << std::endl;
   }
 }
 
