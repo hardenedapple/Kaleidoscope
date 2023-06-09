@@ -111,7 +111,12 @@ class ManualTests : public VirtualDeviceTest {
     if (ord == orderRemove) x.push_back(keyonly);
 
     uint8_t flags = keyval.getFlags();
-    /* TODO Will have to figure out how the order works later.  */
+    /* TODO Will have to figure out how the order works later.
+     * TODO As it happens some special handling in sendKeyboardReport and
+     * sendReport adds extra keyboard reports for cases like LCTRL(A)| A, and
+     * that does not happen when currently pressed keys are in
+     * active_macro_keys_ but are in live_keys.
+     * Have not made this function accomodate that.  */
     if (flags & key_flag_CTRL_HELD)  x.push_back(Key_LeftControl);
     if (flags & key_flag_LALT_HELD)  x.push_back(Key_LeftAlt);
     if (flags & key_flag_RALT_HELD)  x.push_back(Key_RightAlt);
@@ -253,18 +258,6 @@ class ManualTests : public VirtualDeviceTest {
     keysequence.str("");
     keysequence << "PLAY %" << slot;
     runAction(keysequence.str());
-  }
-
-  /* Compare the buffer against the macro we should have stored.  */
-  void checkCompressedBuffer(const std::string id ) {
-    const auto [ keyId, mapValue ] = *keyTypes.find(id);
-    const auto [ addr,   event ] = mapValue;
-
-    auto [ bufferIdx, slot ] = getMacroSlot(id);
-
-    auto x = knownMacros.find(id);
-    assert (x != knownMacros.end());
-
   }
 
   typedef enum {
