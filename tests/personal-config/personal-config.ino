@@ -454,6 +454,9 @@ KALEIDOSCOPE_INIT_PLUGINS(
   // My hacky "ShiftToLayer but two keys acts like shift" plugin.
   SpecialShift,
 
+  // Enables recording and replaying macros.
+  MacrosOnTheFly,
+
   // TopsyTurvy plugin gives support for switching the shift layout for a key.
   TopsyTurvy,
 
@@ -467,10 +470,7 @@ KALEIDOSCOPE_INIT_PLUGINS(
 
   // Enables setting, saving (via Chrysalis), and restoring (on boot) the
   // default LED mode.
-  DefaultLEDModeConfig,
-
-  // Enables recording and replaying macros.
-  MacrosOnTheFly);
+  DefaultLEDModeConfig);
 
 /** The 'setup' function is one of the two standard Arduino sketch functions.
  * It's called when your keyboard first powers up. This is where you set up
