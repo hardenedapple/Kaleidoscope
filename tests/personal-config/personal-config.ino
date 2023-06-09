@@ -454,15 +454,15 @@ KALEIDOSCOPE_INIT_PLUGINS(
   // My hacky "ShiftToLayer but two keys acts like shift" plugin.
   SpecialShift,
 
+  // OneShot plugin allows giving an extra behaviour to our ShiftModifiers (at
+  // least that's what I'm using it for).
+  OneShot,
+
   // Enables recording and replaying macros.
   MacrosOnTheFly,
 
   // TopsyTurvy plugin gives support for switching the shift layout for a key.
   TopsyTurvy,
-
-  // OneShot plugin allows giving an extra behaviour to our ShiftModifiers (at
-  // least that's what I'm using it for).
-  OneShot,
 
   // The LayerNames plugin allows Chrysalis to display - and edit - custom layer
   // names, to be shown instead of the default indexes.

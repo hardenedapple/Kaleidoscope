@@ -84,6 +84,10 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
 	|| s == SETTING_DELAY_AND_RECORDING;
     }
 
+    static inline bool shouldRecordEvent(KeyEvent event) {
+      return !keyIsInjected(event.state) || event.state & MACRO_RECORD;
+    }
+
     static inline constexpr uint16_t mIndexFrom_s(uint8_t sIndex) {
       return ((uint16_t)sIndex)*MACRO_SIZE;
     }

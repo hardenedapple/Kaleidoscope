@@ -543,7 +543,7 @@ exit:
 
     /* Assume injected keys will get injected again based on the keys that
      * were actually pressed and that will get replayed.  */
-    if (!keyIsInjected (event.state) && !replaying) {
+    if (shouldRecordEvent (event) && !replaying) {
       if (!recordKeystroke (event)) {
 	/* Decision here to either clear macro entirely or to just stop the
 	 * macro where it failed.  We choose to clear the macro entirely to

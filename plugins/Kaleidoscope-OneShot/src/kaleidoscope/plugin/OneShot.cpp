@@ -382,7 +382,7 @@ __attribute__((always_inline)) inline void OneShot::releaseKey(KeyAddr key_addr)
   glue_addrs_.clear(key_addr);
   temp_addrs_.clear(key_addr);
 
-  KeyEvent event{key_addr, WAS_PRESSED | INJECTED};
+  KeyEvent event{key_addr, WAS_PRESSED | INJECTED | MACRO_RECORD};
   Runtime.handleKeyEvent(event);
 }
 
