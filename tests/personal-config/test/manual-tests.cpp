@@ -168,7 +168,7 @@ const std::unordered_map<uint16_t, std::string> keyBaseNames = {
   {OSM(LeftShift).getRaw(), "OSM(LeftShift)"},
   {OSM(RightShift).getRaw(), "OSM(RightShift)"},
   {SPECIALSHIFT.getRaw(), "SPECIALSHIFT"},
-  {TOGGLELAYER(SHIFTED_KEYS).getRaw(), "TOGGLELAYER(SHIFTED_KEYS)"},
+  {TOGGLELAYER(SHIFTED_KEYS).getRaw(), "TOGGLE_SHIFTED"},
   {TOPSY(0).getRaw(), "TOPSY(0)"},
   {TOPSY(1).getRaw(), "TOPSY(1)"},
   {TOPSY(2).getRaw(), "TOPSY(2)"},
@@ -181,6 +181,17 @@ const std::unordered_map<uint16_t, std::string> keyBaseNames = {
   {TOPSY(9).getRaw(), "TOPSY(9)"},
   {TOPSY(Minus).getRaw(), "TOPSY(Minus)"},
   {XXX.getRaw(), "XXX"},
+};
+
+std::map<std::string, std::vector<std::string> > shortcutKeys = {
+  { "REC1", { "SPECIALSHIFT1|", "MACROREC1", "SPECIALSHIFT1^" } },
+  { "PLAY1", { "SPECIALSHIFT1|", "MACROPLAY1", "SPECIALSHIFT1^" } },
+  { "DELAY1", { "SPECIALSHIFT1|", "MACRODELAY1", "SPECIALSHIFT1^" } },
+  { "REC2", { "SPECIALSHIFT2|", "MACROREC2", "SPECIALSHIFT2^" } },
+  { "PLAY2", { "SPECIALSHIFT2|", "MACROPLAY2", "SPECIALSHIFT2^" } },
+  { "DELAY2", { "SPECIALSHIFT2|", "MACRODELAY2", "SPECIALSHIFT2^" } },
+  { "TOPSY_TOG1", { "SPECIALSHIFT1|", "TOGGLE_SHIFTED1", "SPECIALSHIFT1^" } },
+  { "TOPSY_TOG2", { "SPECIALSHIFT2|", "TOGGLE_SHIFTED2", "SPECIALSHIFT2^" } },
 };
 
 enum class KeyActions { press, release, tap };
@@ -239,18 +250,16 @@ keyEvent(Key k) {
   }
 }
 
-class ManualTests : public VirtualDeviceTest {
+class PersonalConfig : public VirtualDeviceTest {
   protected:
     std::unordered_map<std::string, std::string> knownMacros;
     std::string lastRanMacro;
     std::unordered_map<std::string, Keyval> keyTypes;
-    void SetUp() {
-      VirtualDeviceTest::SetUp();
+    PersonalConfig() {
       /* `layer_count` starts out as 3 because I use the KEYMAPS macro in the
        * config.  However it then gets adjusted by EEPROMKeymap::setup,
        * eventually ending up as 11 (3 + max==8).  */
       assert(layer_count == 11);
-
       std::unordered_map<uint16_t, std::pair<uint8_t, uint8_t> > keysSeen;
 
       auto findDuplicates
@@ -296,6 +305,10 @@ class ManualTests : public VirtualDeviceTest {
       forEachKey(findDuplicates);
       forEachKey(makeNames);
 
+      /* Insert base key types which are not in my keymap but are useful for
+       * describing what keys expand into.  */
+      keyTypes.insert({"LeftShift", { {0, 0}, Key_LeftShift}});
+
       /* Was used to print out the keys in order to double-check things look
        * like they should.  Have not done any real testing apart from
        * eyeballing the output from this.  */
@@ -328,25 +341,33 @@ class ManualTests : public VirtualDeviceTest {
   std::vector<Key> flags_key_held(Key keyval, MultikeyOrder ord) {
     std::vector<Key> x;
     
-    Key keyonly(keyval.getKeyCode());
-    if (ord == orderRemove) x.push_back(keyonly);
+    if (keyval >= ::kaleidoscope::ranges::TT_FIRST
+	&& keyval <= ::kaleidoscope::ranges::TT_LAST) {
+      Key base_key(keyval.getRaw() - ::kaleidoscope::ranges::TT_FIRST);
+      if (ord == orderRemove) x.push_back(base_key);
+      x.push_back(Key_LeftShift);
+      if (ord == orderAdd) x.push_back(base_key);
+    } else {
+      Key keyonly(keyval.getKeyCode());
+      if (ord == orderRemove) x.push_back(keyonly);
 
-    uint8_t flags = keyval.getFlags();
-    /* TODO Will have to figure out how the order works later.
-     * TODO As it happens some special handling in sendKeyboardReport and
-     * sendReport adds extra keyboard reports for cases like LCTRL(A)| A, and
-     * that does not happen when currently pressed keys are in
-     * active_macro_keys_ but are in live_keys.
-     * Have not made this function accomodate that.  */
-    if (flags & key_flag_CTRL_HELD)  x.push_back(Key_LeftControl);
-    if (flags & key_flag_LALT_HELD)  x.push_back(Key_LeftAlt);
-    if (flags & key_flag_RALT_HELD)  x.push_back(Key_RightAlt);
-    if (flags & key_flag_SHIFT_HELD) x.push_back(Key_LeftShift);
-    if (flags & key_flag_GUI_HELD)   x.push_back(Key_LeftGui);
-    assert(!(flags & key_flag_SYNTHETIC));
-    assert(!(flags & key_flag_RESERVED));
+      uint8_t flags = keyval.getFlags();
+      /* TODO Will have to figure out how the order works later.
+      * TODO As it happens some special handling in sendKeyboardReport and
+      * sendReport adds extra keyboard reports for cases like LCTRL(A)| A, and
+      * that does not happen when currently pressed keys are in
+      * active_macro_keys_ but are in live_keys.
+      * Have not made this function accomodate that.  */
+      if (flags & key_flag_CTRL_HELD)  x.push_back(Key_LeftControl);
+      if (flags & key_flag_LALT_HELD)  x.push_back(Key_LeftAlt);
+      if (flags & key_flag_RALT_HELD)  x.push_back(Key_RightAlt);
+      if (flags & key_flag_SHIFT_HELD) x.push_back(Key_LeftShift);
+      if (flags & key_flag_GUI_HELD)   x.push_back(Key_LeftGui);
+      assert(!(flags & key_flag_SYNTHETIC));
+      assert(!(flags & key_flag_RESERVED));
 
-    if (ord == orderAdd) x.push_back(keyonly);
+      if (ord == orderAdd) x.push_back(keyonly);
+    }
     return x;
   }
 
@@ -392,9 +413,24 @@ class ManualTests : public VirtualDeviceTest {
   void runAction(const std::string str, bool replaying = false) {
     if (str.empty()) return;
     std::vector<std::string> action_list = split(str, " +");
+
+    /* First expand shortcuts.  */
+    size_t i, j;
+    for (i = 0; i < action_list.size(); i++) {
+      const auto item = shortcutKeys.find(action_list[i]);
+      if (item == shortcutKeys.end())
+	continue;
+      for (j = 0; j < item->second.size() - 1; j++) {
+	action_list.insert(action_list.begin() + i++, item->second[j]);
+      }
+      action_list[i] = item->second[j];
+    }
+
     for (auto actionRepr: action_list) {
       const auto [ action, report, keyId ] = parseAction(actionRepr);
-      const auto [ keyId2, mapValue ] = *keyTypes.find(keyId);
+      auto x = keyTypes.find(keyId);
+      assert (x != keyTypes.end());
+      const auto [ keyId2, mapValue ] = *x;
       const auto [ addr,   event ] = mapValue;
       switch (action) {
 	case KeyActions::press:
@@ -601,7 +637,7 @@ exit:
 };
 
 
-TEST_F(ManualTests, 0_test) {
+TEST_F(PersonalConfig, 0_test) {
   ClearState(); // Clear any state from previous tests
   GTEST_COUT << "test: tests/personal-config/test/manual-tests.cpp"   << std::endl;
 
@@ -609,6 +645,48 @@ TEST_F(ManualTests, 0_test) {
   CheckReports();
 } // TEST_F
 
+TEST_F(PersonalConfig, 1_MacroRecordBasic) {
+  ClearState();
+
+  runAction("REC1 ~A X X REC1");
+  storeMacro("A", "X X");
+  runAction("PLAY2 %A");
+
+  LoadState();
+  CheckReports();
+}
+
+TEST_F(PersonalConfig, 2_MacroRecordTopsy) {
+  ClearState();
+
+  // runAction("REC1 ~A 1 2 3 TOPSY_TOG1 A REC1 TOPSY_TOG2");
+  // storeMacro("A", "1 2 3 TOPSY_TOG1 A");
+  // runAction("PLAY1 %A TOPSY_TOG1");
+
+  runAction("REC1 ~A 1 2 3 TOPSY_TOG1 *TOPSY(1) REC1 TOPSY_TOG2");
+  storeMacro("A", "1 2 3 TOPSY_TOG1 *TOPSY(1)");
+  printMacro("A");
+  runAction("PLAY1 %A TOPSY_TOG1");
+
+  // runAction("REC1 ~A 1 2 3 TOPSY_TOG1 TOPSY(1) TOPSY(2) TOPSY(3) REC1 TOPSY_TOG2");
+  // storeMacro("A", "1 2 3 TOPSY_TOG1 TOPSY(1) TOPSY(2) TOPSY(3)");
+  // runAction("PLAY1 %A TOPSY_TOG1");
+
+  LoadState();
+  CheckReports();
+}
+
+TEST_F(PersonalConfig, 3_MacroRecordOneShot) {
+  ClearState();
+
+  runAction("REC1 ~A OSM(LeftShift) A A REC1");
+  storeMacro("A", "OSM(LeftShift) A A");
+  printMacro("A");
+  runAction("PLAY1 %A");
+
+  LoadState();
+  CheckReports();
+}
 
 }
 }
