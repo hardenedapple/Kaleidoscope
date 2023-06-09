@@ -149,8 +149,6 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
     /// for each key stored there.
     static inline void clear() { ::MacroSupport.clear(); }
 
-    static inline bool anyMacroKeyHeld() { return ::MacroSupport.anyMacroKeyHeld(); }
-
     /// Send a key "tap event" from a Macro
     ///
     /// Generates two new `KeyEvent` objects, one each to press and release the
@@ -168,11 +166,6 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
     static bool play(const uint8_t);
     static EventHandlerResult doNewPlay(KeyEvent &);
     EventHandlerResult onKeyEvent(KeyEvent &);
-#ifndef IN_TESTSUITE
-    EventHandlerResult beforeReportingState(const KeyEvent &event) {
-        return ::MacroSupport.beforeReportingState(event);
-    }
-#endif
     static inline void LED_complain (KeyAddr addr) {}
     static inline void LED_record_success (KeyAddr addr) {}
   private:
@@ -188,26 +181,6 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
        * plugins are still run, but they would run with some misleading
        * information.  */
       kaleidoscope::live_keys.mask(event.addr);
-      if (recording) {
-	/* Insert an artificial "release" for this key press.
-	 * This is so that when replaying this event it looks quite similar to
-	 * what happens when recording.  When recording we use live_keys.mask
-	 * to and return ABORT to pretend this key was not pressed.  When
-	 * replaying we return ABORT to pretend this key was not pressed, but
-	 * have no real way to tell MacroSupport to not remember that this
-	 * particular key is active (in `active_macro_keys_`.  In order to fake
-	 * that we emit a release. */
-	KeyEvent alt = event;
-	// assert (keyToggledOn (event));
-	// assert (alt.state == IS_PRESSED);
-	alt.state &= ~IS_PRESSED;
-	alt.state |= WAS_PRESSED;
-	if (!recordKeystroke(alt)) {
-	  /* Failed to record a keystroke.  Drop out of "recording" state.  */
-	  currentState = IDLE;
-	  LED_complain (event.addr);
-	}
-      }
       return kaleidoscope::EventHandlerResult::ABORT;
   }
 

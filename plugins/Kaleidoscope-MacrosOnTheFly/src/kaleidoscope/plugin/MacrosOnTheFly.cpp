@@ -371,10 +371,6 @@ exit:
 	return maskKeyAndRet(EVENT, are_recording);                         \
       }                                                                     \
     }                                                                       \
-    if (anyMacroKeyHeld()) {                                                \
-      LED_complain ((EVENT).addr);                                          \
-      return maskKeyAndRet(EVENT, are_recording);                           \
-    }                                                                       \
   } while (false)
 
   EventHandlerResult MacrosOnTheFly::doNewPlay(KeyEvent &event) {

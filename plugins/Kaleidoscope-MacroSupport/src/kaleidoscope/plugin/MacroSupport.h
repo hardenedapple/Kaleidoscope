@@ -71,11 +71,6 @@ class MacroSupport : public Plugin {
   // ---------------------------------------------------------------------------
   // Event handlers
   EventHandlerResult onNameQuery();
-  EventHandlerResult beforeReportingState(const KeyEvent &event);
-
- private:
-  // An array of key values that are active while a macro sequence is playing
-  Key active_macro_keys_[MAX_CONCURRENT_MACRO_KEYS];
 };
 
 }  // namespace plugin

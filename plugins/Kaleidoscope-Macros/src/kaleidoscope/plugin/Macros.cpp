@@ -247,6 +247,8 @@ EventHandlerResult Macros::onKeyEvent(KeyEvent &event) {
   // Ignore everything except Macros keys
   if (!isMacrosKey(event.key))
     return EventHandlerResult::OK;
+  if (keyToggledOff(event.state))
+    return EventHandlerResult::OK;
 
   // Decode the macro ID from the Macros `Key` value.
   uint8_t macro_id = event.key.getRaw() - ranges::MACRO_FIRST;

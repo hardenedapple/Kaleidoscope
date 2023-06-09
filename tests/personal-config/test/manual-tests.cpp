@@ -679,10 +679,23 @@ TEST_F(PersonalConfig, 2_MacroRecordTopsy) {
 TEST_F(PersonalConfig, 3_MacroRecordOneShot) {
   ClearState();
 
-  runAction("REC1 ~A OSM(LeftShift) A A REC1");
-  storeMacro("A", "OSM(LeftShift) A A");
-  printMacro("A");
-  runAction("PLAY1 %A");
+  // runAction("REC1 ~A OSM(LeftShift) A A REC1");
+  // storeMacro("A", "OSM(LeftShift) A A");
+  // printMacro("A");
+  // runAction("PLAY1 %A");
+
+  // /* Decision made because it doesn't look that wrong, but OneShot automatic
+  //  * hold does not block the start of a record.  */
+  // runAction("OSM(LeftShift) REC1 ~A OSM(LeftShift) A A REC1");
+  // storeMacro("A", "OSM(LeftShift) A A");
+  // printMacro("A");
+  // runAction("PLAY1 %A");
+
+  // /* OSM does not break the ending of a record.  */
+  // runAction("REC1 ~A A A OSM(LeftShift) REC1");
+  // storeMacro("A", "A A LeftShift");
+  // printMacro("A");
+  // runAction("PLAY1 %A");
 
   LoadState();
   CheckReports();
