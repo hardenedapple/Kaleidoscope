@@ -67,6 +67,10 @@ class Issue1010 : public ::testing::Test {
     CS_FIRST,
     CS_LAST = CS_FIRST + MAX_CS_KEYS,
 
+    MACRO_REC,
+    MACRO_PLAY,
+    MACRO_DELAY,
+
     SAFE_START,
     KALEIDOSCOPE_SAFE_START = SAFE_START
   };
@@ -148,6 +152,13 @@ TEST_F(Issue1010, RangesHaveNotChanged) {
             uint16_t(kaleidoscope::ranges::CS_FIRST));
   ASSERT_EQ(uint16_t(Issue1010::CS_LAST),
             uint16_t(kaleidoscope::ranges::CS_LAST));
+
+  ASSERT_EQ(uint16_t(Issue1010::MACRO_REC),
+            uint16_t(kaleidoscope::ranges::MACRO_REC));
+  ASSERT_EQ(uint16_t(Issue1010::MACRO_PLAY),
+            uint16_t(kaleidoscope::ranges::MACRO_PLAY));
+  ASSERT_EQ(uint16_t(Issue1010::MACRO_DELAY),
+            uint16_t(kaleidoscope::ranges::MACRO_DELAY));
 
   ASSERT_EQ(uint16_t(Issue1010::SAFE_START),
             uint16_t(kaleidoscope::ranges::SAFE_START));
