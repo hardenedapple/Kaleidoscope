@@ -659,18 +659,25 @@ TEST_F(PersonalConfig, 1_MacroRecordBasic) {
 TEST_F(PersonalConfig, 2_MacroRecordTopsy) {
   ClearState();
 
-  // runAction("REC1 ~A 1 2 3 TOPSY_TOG1 A REC1 TOPSY_TOG2");
-  // storeMacro("A", "1 2 3 TOPSY_TOG1 A");
-  // runAction("PLAY1 %A TOPSY_TOG1");
+  runAction("REC1 ~A 1 2 3 TOPSY_TOG1 A REC1 TOPSY_TOG2");
+  storeMacro("A", "1 2 3 TOPSY_TOG1 A");
+  printMacro("A");
+  runAction("PLAY1 %A TOPSY_TOG1");
 
   runAction("REC1 ~A 1 2 3 TOPSY_TOG1 *TOPSY(1) REC1 TOPSY_TOG2");
   storeMacro("A", "1 2 3 TOPSY_TOG1 *TOPSY(1)");
   printMacro("A");
   runAction("PLAY1 %A TOPSY_TOG1");
 
-  // runAction("REC1 ~A 1 2 3 TOPSY_TOG1 TOPSY(1) TOPSY(2) TOPSY(3) REC1 TOPSY_TOG2");
-  // storeMacro("A", "1 2 3 TOPSY_TOG1 TOPSY(1) TOPSY(2) TOPSY(3)");
-  // runAction("PLAY1 %A TOPSY_TOG1");
+  runAction("REC1 ~A 1 2 3 TOPSY_TOG1 *TOPSY(1) *TOPSY(2) *TOPSY(3) REC1 TOPSY_TOG2");
+  storeMacro("A", "1 2 3 TOPSY_TOG1 *TOPSY(1) *TOPSY(2) *TOPSY(3)");
+  printMacro("A");
+  runAction("PLAY1 %A TOPSY_TOG1");
+
+  runAction("TOPSY_TOG2 *TOPSY(1) REC1 ~A *TOPSY(1) *TOPSY(2) *TOPSY(3) TOPSY_TOG1 1 2 3 REC1");
+  storeMacro("A", "*TOPSY(1) *TOPSY(2) *TOPSY(3) TOPSY_TOG1 1 2 3 ");
+  printMacro("A");
+  runAction("TOPSY_TOG1 PLAY1 %A");
 
   LoadState();
   CheckReports();
@@ -696,6 +703,41 @@ TEST_F(PersonalConfig, 3_MacroRecordOneShot) {
   // storeMacro("A", "A A LeftShift");
   // printMacro("A");
   // runAction("PLAY1 %A");
+
+  // /* OSM hold acts like a LeftShift */
+  // runAction("REC1 ~A A A OSM(LeftShift)| A OSM(LeftShift)^ REC1");
+  // storeMacro("A", "A A LeftShift| A LeftShift^");
+  // printMacro("A");
+  // runAction("PLAY1 %A");
+
+  LoadState();
+  CheckReports();
+}
+
+TEST_F(PersonalConfig, 4_MacroRecordSpecialShift) {
+
+  storeMacro("A", "*TOPSY(1) *TOPSY(2) *TOPSY(3) TOPSY_TOG1 1 2 3 ");
+  printMacro("A");
+  runAction("TOPSY_TOG1 PLAY1 %A");
+
+  LoadState();
+  CheckReports();
+}
+
+TEST_F(PersonalConfig, 5_MacroRecordSpecialShift) {
+  ClearState();
+
+  /* TODO
+   * Test that we record SpecialShift presses.
+   * This should happen because the SpecialShift plugin is after the
+   * MacrosOnTheFly plugin in the initialisation order.
+   *
+   * I'm not sure it really matters.
+   * Recording these keys being sent shouldn't do anything except do unecessary
+   * moving of layers around (because we only record and replay the keys
+   * sent).  We have decided to record and replay these for consistency during
+   * replay -- we chohse to do it for the LockLayer stuff so that any state
+   * change while recording is repeated during replaying.  */
 
   LoadState();
   CheckReports();

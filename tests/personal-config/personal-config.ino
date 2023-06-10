@@ -449,10 +449,10 @@ KALEIDOSCOPE_INIT_PLUGINS(
   // programmatically.
   FirmwareVersion,
 
-  // My plugin for toggling a particular layer.
-  ToggleLayer,
-  // My hacky "ShiftToLayer but two keys acts like shift" plugin.
-  SpecialShift,
+  /* XXX Order required:
+   *    OneShot > MacrosOnTheFly
+   *    MacrosOnTheFly > ToggleLayer
+   *    MacrosOnTheFly > TopsyTurvy    .*/
 
   // OneShot plugin allows giving an extra behaviour to our ShiftModifiers (at
   // least that's what I'm using it for).
@@ -460,6 +460,11 @@ KALEIDOSCOPE_INIT_PLUGINS(
 
   // Enables recording and replaying macros.
   MacrosOnTheFly,
+
+  // My plugin for toggling a particular layer.
+  ToggleLayer,
+  // My hacky "ShiftToLayer but two keys acts like shift" plugin.
+  SpecialShift,
 
   // TopsyTurvy plugin gives support for switching the shift layout for a key.
   TopsyTurvy,
