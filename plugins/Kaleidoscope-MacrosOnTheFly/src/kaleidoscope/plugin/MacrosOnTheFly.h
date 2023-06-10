@@ -16,7 +16,6 @@
 #ifndef IN_TESTSUITE
 #include <Kaleidoscope-Ranges.h> // for SAFE_START
 /* So that I can use some Macro stuff.  */
-#include "Kaleidoscope-MacroSupport.h"
 #include "kaleidoscope/plugin/Macros/MacroSteps.h"  // for MACRO_ACTION_END, MACRO_ACTION_STEP_E...
 #endif
 #include "kaleidoscope/LiveKeys.h"
@@ -127,6 +126,7 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
       slotRecord[recordingSlot].numUsedKeystrokes = 0;
       macroStorage[mIndexFrom_s(recordingSlot)] = MACRO_ACTION_END;
     }
+#endif
 
     /// Send a key press event from a Macro
     ///
@@ -134,29 +134,28 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
     /// specified `key`, then stores that `key` in an array of active macro key
     /// values. This allows the macro to press one key and keep it active when a
     /// subsequent key event is sent as part of the same macro sequence.
-    static inline void press(Key key) { ::MacroSupport.press(key); }
+    static void press(Key key);
 
     /// Send a key release event from a Macro
     ///
     /// Generates a new `KeyEvent` and calls `Runtime.handleKeyEvent()` with the
     /// specified `key`, then removes that key from the array of active macro
     /// keys (see `Macros.press()`).
-    static inline void release(Key key) { ::MacroSupport.release(key); }
+    static void release(Key key);
 
     /// Clear all virtual keys held by Macros
     ///
     /// This function clears the active macro keys array, sending a release event
     /// for each key stored there.
-    static inline void clear() { ::MacroSupport.clear(); }
+    static void clear();
 
     /// Send a key "tap event" from a Macro
     ///
     /// Generates two new `KeyEvent` objects, one each to press and release the
     /// specified `key`, passing both in sequence to `Runtime.handleKeyEvent()`.
-    static inline void tap(Key key) { ::MacroSupport.tap(key); }
-#endif
+    static void tap(Key key);
 
-    static inline void clearRecordingCompressionState () {
+    static void clearRecordingCompressionState () {
       leadingTap = leadingTapSeq = leadingTapCode = leadingTapCodeSeq
 	= latestKeyDown = latestKeyCodeDown = MACRO_SIZE;
     }

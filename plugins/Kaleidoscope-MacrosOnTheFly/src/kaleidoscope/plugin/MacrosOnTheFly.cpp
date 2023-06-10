@@ -1,6 +1,6 @@
 #include "kaleidoscope/plugin/MacrosOnTheFly.h"
 #include <Kaleidoscope-Ranges.h>
-#include <Kaleidoscope-MacroSupport.h>
+#include "kaleidoscope/Runtime.h"               // for Runtime, Runtime_
 // This is a special exception to the rule of only including a plugin's
 // top-level header file, because MacrosOnTheFly doesn't depend on the Macros
 // plugin itself; it's just using the same macro step definitions.
@@ -10,6 +10,27 @@
  * of max concurrent macro keys pressed at the same time.  */
 
 namespace kaleidoscope {
+
+static KeyAddr findEmptyAddr() {
+  for (KeyAddr key_addr : KeyAddr::all()) {
+    if (live_keys[key_addr] == Key_Inactive)
+      return key_addr;
+  }
+  return KeyAddr::none();
+}
+
+/* XXX may have a problem here with releasing a different key address than the
+ * one which was pressed (because both have the same key).
+ * Don't think this would cause any problems with my particular setup, so doing
+ * this for now.  */
+static KeyAddr findThisKey(Key key) {
+  for (KeyAddr key_addr : KeyAddr::all()) {
+    if (live_keys[key_addr] == key)
+      return key_addr;
+  }
+  return KeyAddr::none();
+}
+
 namespace plugin {
   void MacrosOnTheFly::initialise(Key names[NUM_MACROS]) {
     /* TODO Would like to assert that we do not have anything problematic here.
@@ -28,6 +49,44 @@ namespace plugin {
     delayInterval = 0;
     clearRecordingCompressionState();
   }
+
+constexpr uint8_t press_state   = IS_PRESSED | INJECTED;
+constexpr uint8_t release_state = WAS_PRESSED | INJECTED;
+
+// -----------------------------------------------------------------------------
+// Public helper functions
+
+void MacrosOnTheFly::press(Key key) {
+  // This key may remain active for several subsequent events, so we need to
+  // store it somewhere the runtime will pick it up.
+  Runtime.handleKeyEvent(KeyEvent{findEmptyAddr(), press_state, key});
+}
+
+void MacrosOnTheFly::release(Key key) {
+  Runtime.handleKeyEvent(KeyEvent{findThisKey(key), release_state, key});
+}
+
+void MacrosOnTheFly::clear() {
+  // Clear the active macro keys array.
+  for (KeyAddr key_addr : KeyAddr::all()) {
+    Key macro_key = live_keys[key_addr];
+    if (macro_key != Key_Inactive) {
+      Runtime.handleKeyEvent(KeyEvent{key_addr, release_state, macro_key});
+      /* TODO */
+      // assert(live_keys[key_addr] == Key_Inactive);
+      live_keys[key_addr] = Key_Inactive;
+    }
+  }
+}
+
+void MacrosOnTheFly::tap(Key key) {
+  // No need to call `press()` & `release()`, because we're immediately
+  // releasing the key after pressing it. It is possible for some other plugin
+  // to insert an event in between, but very unlikely.
+  KeyAddr key_addr = findEmptyAddr();
+  Runtime.handleKeyEvent(KeyEvent{key_addr, press_state, key});
+  Runtime.handleKeyEvent(KeyEvent{key_addr, release_state, key});
+}
 
 
 #define numRemainingKeystrokes(SLOT) MACRO_SIZE - (SLOT)->numUsedKeystrokes
@@ -106,11 +165,10 @@ namespace plugin {
 	  TAPCODE     code TAPCODE code  TAPCODE  code
 	  TAPCODESEQ  code code    code  nokey
 	5) TAPX + TAPX + TAPX + TAPX  -> REPEATTAP 4 X
-	   (N.b. this is not something that MacroSupport currently handles, is
-	   probably not worth the extra complexity to do that myself).
+	   (N.b. this is not something that we currently handle, is probably
+	   not worth the extra complexity to do that myself).
 	   Similar for
-	    REPEATTAP <N> X + TAPX  -> REPEATTAP <N+1> X
-	NOT IMPLEMENTED.  */
+	    REPEATTAP <N> X + TAPX  -> REPEATTAP <N+1> X.  */
 
     CHECK_REMAINING_SPACE (cur, event.key.getFlags() == 0 ? 2 : 3);
     if (keyToggledOn(event.state)) {

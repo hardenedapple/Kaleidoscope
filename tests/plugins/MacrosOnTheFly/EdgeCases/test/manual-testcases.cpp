@@ -587,6 +587,11 @@ TEST_F(ManualTests, 8_FlagsCompression4) {
  *	 circumstances, and AFAIK should not trigger any different behaviour by
  *	 the machine we send to. */
 
+/*
+ * Update to above:
+ *    Behaviour is correctly reproducing, but have not updated testsuite
+ *    framework to correctly check this.
+ */
 // TEST_F(ManualTests, 8_FlagsCompression2) {
 //   ClearState();
 //   runAction("REC ~A *LeftControl_A| A *LeftControl_A^ REC");
