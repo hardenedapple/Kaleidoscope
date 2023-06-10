@@ -90,6 +90,9 @@ class Macros : public kaleidoscope::Plugin {
   // Event handlers
   EventHandlerResult onNameQuery();
   EventHandlerResult onKeyEvent(KeyEvent &event);
+  EventHandlerResult beforeReportingState(const KeyEvent &event) {
+    return ::MacroSupport.beforeReportingState(event);
+  }
 
  private:
   // Translate and ASCII character value to a corresponding `Key`
