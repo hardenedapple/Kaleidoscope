@@ -2,104 +2,719 @@ vshcmd: > sudo su
 vshcmd: > echo 0 > /proc/sys/kernel/perf_event_paranoid
 root@e124762:/home/matmal01/Documents/not-work/keyboard/Kaleidoscope# exit
 Kaleidoscope [13:42:46] $ 
-vshcmd: > rr ./_build/plugins/MacrosOnTheFly/EdgeCases/bin/EdgeCases -t -q
-rr: Saving execution to trace directory `/home/matmal01/.local/share/rr/EdgeCases-36'.
-[==========] Running 16 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 16 tests from ManualTests
-[ RUN      ] ManualTests.0_test
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/test/manual-testcases.cpp
-[       OK ] ManualTests.0_test (0 ms)
-[ RUN      ] ManualTests.1_MacrosOnTheFlyTestHelpers
-[       OK ] ManualTests.1_MacrosOnTheFlyTestHelpers (0 ms)
-[ RUN      ] ManualTests.2_MacrosOnTheFlyNoHeldOverPlay
-[       OK ] ManualTests.2_MacrosOnTheFlyNoHeldOverPlay (0 ms)
-[ RUN      ] ManualTests.3_MacrosOnTheFlyRecursiveReplay
-[       OK ] ManualTests.3_MacrosOnTheFlyRecursiveReplay (0 ms)
-[ RUN      ] ManualTests.4_MacrosOnTheFlyRecursiveAvoidance
-[       OK ] ManualTests.4_MacrosOnTheFlyRecursiveAvoidance (0 ms)
-[ RUN      ] ManualTests.4_MacrosOnTheFlyAvoidKeyUp
-[       OK ] ManualTests.4_MacrosOnTheFlyAvoidKeyUp (0 ms)
-[ RUN      ] ManualTests.5_MacrosOnTheFlyBailOut
-[       OK ] ManualTests.5_MacrosOnTheFlyBailOut (0 ms)
-[ RUN      ] ManualTests.6_CompressionChecks
-[ INFO     ] Printing Macro: A
-	TAPCODE 4,TAPCODE 13,
-[ INFO     ] Printing Macro: A
-	TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 225,TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,KEYCODEUP 225,
-[       OK ] ManualTests.6_CompressionChecks (1 ms)
-[ RUN      ] ManualTests.7_FlagsCompression
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 224,TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,KEYCODEUP 224,
-[       OK ] ManualTests.7_FlagsCompression (0 ms)
-[ RUN      ] ManualTests.7_FlagsCompression3
-[ INFO     ] Printing Macro: A
-	TAP 1 4,
-[       OK ] ManualTests.7_FlagsCompression3 (0 ms)
-[ RUN      ] ManualTests.7_FlagsCompression4
-[ INFO     ] Printing Macro: A
-	TAP_SEQUENCE 1 4 1 4 1 4 1 4 0 0 |,
-[       OK ] ManualTests.7_FlagsCompression4 (0 ms)
-[ RUN      ] ManualTests.8_ShiftCheck
-[       OK ] ManualTests.8_ShiftCheck (0 ms)
-[ RUN      ] ManualTests.9_CompressSeqInMiddle
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 225,TAPCODE 4,TAPCODE 13,KEYCODEUP 225,TAP_CODE_SEQUENCE 4 4 4 4 4 0 |,
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 225,TAPCODE 4,TAPCODE 13,KEYCODEUP 225,TAP_CODE_SEQUENCE 4 4 4 4 4 13 0 |,KEYCODEDOWN 4,TAPCODE 13,KEYCODEUP 4,
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 225,TAPCODE 4,TAPCODE 13,KEYCODEUP 225,TAP_CODE_SEQUENCE 4 4 4 4 4 13 0 |,KEYCODEDOWN 4,TAPCODE 13,KEYCODEUP 4,TAP_CODE_SEQUENCE 13 4 13 4 13 0 |,
-[       OK ] ManualTests.9_CompressSeqInMiddle (3 ms)
-[ RUN      ] ManualTests.10_LayerBasics
-[ INFO     ] Printing Macro: A
-	TAPCODE 27,TAP 68 1,TAPCODE 5,TAP 68 1,TAPCODE 27,TAP 68 1,TAPCODE 5,
-[ INFO     ] Printing Macro: A
-	TAPCODE 27,TAP 68 1,TAPCODE 5,TAP 68 1,TAPCODE 27,TAP 68 1,TAPCODE 5,TAP 68 1,
-[ INFO     ] Printing Macro: A
-	KEYDOWN 68 43,TAPCODE 27,KEYUP 68 43,TAPCODE 5,KEYDOWN 68 43,TAPCODE 27,
-[       OK ] ManualTests.10_LayerBasics (3 ms)
-[ RUN      ] ManualTests.11_Delays
-[ INFO     ] Printing Macro: B
-	TAP_CODE_SEQUENCE 5 5 5 0 |,
-[ INFO     ] Printing Macro: B
-	TAPCODE 5,TAPCODE 5,INTERVAL 0,TAPCODE 5,
-[ INFO     ] Printing Macro: B
-	KEYCODEDOWN 5,INTERVAL 0,KEYCODEUP 5,TAPCODE 4,
-[ INFO     ] Printing Macro: B
-	TAPCODE 5,TAPCODE 4,KEYCODEDOWN 5,INTERVAL 0,KEYCODEUP 5,TAPCODE 4,TAPCODE 5,
-[ INFO     ] Printing Macro: B
-	TAPCODE 5,TAPCODE 4,KEYCODEDOWN 5,INTERVAL 2,KEYCODEUP 5,TAPCODE 4,TAPCODE 5,
-[       OK ] ManualTests.11_Delays (3 ms)
-[ RUN      ] ManualTests.12_ReplayRepeat
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:164: Failure
-Expected equality of these values:
-  observed_keyboard_report_count
-    Which is: 12
-  expected_keyboard_report_count
-    Which is: 8
-Unexpected keyboard report at 2559ms: { 4 }
-Unexpected keyboard report at 2559ms: { }
-Unexpected keyboard report at 2559ms: { 4 }
-Unexpected keyboard report at 2559ms: { }
-[  FAILED  ] ManualTests.12_ReplayRepeat (2 ms)
-[----------] 16 tests from ManualTests (24 ms total)
+vshcmd: > rr /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/personal-config/bin/personal-config -t -q
+rr: Saving execution to trace directory `/home/matmal01/.local/share/rr/1113-1'.
 
-[----------] Global test environment tear-down
-[==========] 16 tests from 1 test suite ran. (24 ms total)
-[  PASSED  ] 15 tests.
-[  FAILED  ] 1 test, listed below:
-[  FAILED  ] ManualTests.12_ReplayRepeat
-
- 1 FAILED TEST
-Kaleidoscope [17:29:08] $ 
-vshcmd: > rr replay
+execve failed: '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/issues/1113/bin/1113' (or interpreter) not found (ENOENT)
+Kaleidoscope [07:16:51] $ 
+vshcmd: > y
+Detaching from program: /home/matmal01/.local/share/rr/1113-0/mmap_hardlink_4_1113, process 2579687
+[Inferior 1 (process 2579687) detached]
+Kaleidoscope [07:16:51] $ 
+vshcmd: > rr replay -- -q
 vshcmd: > python
 vshcmd: > do_autoimport('kaleidoscope')
 vshcmd: > end
-vshcmd: > break 'kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent' if $_any_caller_matches(".*ManualTests_11_Delays", 999) && event.key.keyCode_ == 4
-vshcmd: > break 'kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent' if $_any_caller_matches(".*ManualTests_12", 999)
+Reading symbols from /home/matmal01/.local/share/rr/1113-0/mmap_hardlink_4_1113...
+Really redefine built-in command "restart"? (y or n) [answered Y; input not from terminal]
+Remote debugging using 127.0.0.1:23787
+Reading symbols from /lib64/ld-linux-x86-64.so.2...
+(No debugging symbols found in /lib64/ld-linux-x86-64.so.2)
+BFD: warning: system-supplied DSO at 0x6fffd000 has a section extending past end of file
+0x00007f86ede362b0 in ?? () from /lib64/ld-linux-x86-64.so.2
+(rr) >>(rr) 
+vshcmd: > break kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent if $_any_caller_matches(".*PersonalConfig_2", 999)
+vshcmd: > cont
+Continuing.
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from GeneratedKTest
+[ RUN      ] GeneratedKTest.0_KtestSourceFilename
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/1113/test.ktest
+[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
+[ RUN      ] GeneratedKTest.1_MouseButtonKeyTapInMacros
+
+Program received signal SIGSEGV, Segmentation fault.
+0x0000562582a15568 in kaleidoscope::plugin::Macros::isMacrosKey (this=0x562582aadfe0 <Macros>, key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros/src/kaleidoscope/plugin/Macros.h:100
+100	    if (key >= ranges::MACRO_FIRST && key <= ranges::MACRO_LAST)
+(rr) 
+vshcmd: > reverse-finish
+Run back to call of #0  0x0000562582a162d7 in kaleidoscope::plugin::MacroSupport::clear (this=0x562582aadfe1 <MacroSupport>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src/kaleidoscope/plugin/MacroSupport.cpp:78
+0x0000562582a15540 in kaleidoscope::plugin::Macros::clear (this=0x562582aadfe0 <Macros>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros/src/kaleidoscope/plugin/Macros.h:62
+62	    ::MacroSupport.clear();
+(rr) 
+vshcmd: > reverse-next
+260	  if (keyToggledOff(event.state) || !isMacrosKey(event.key)) {
+(rr) 
+vshcmd: > watch -l event.state
+vshcmd: > reverse-cont
+Continuing.
+
+Hardware watchpoint 1: -location event.state
+
+Old value = 129 '\201'
+New value = 146 '\222'
+0x0000562582a0c7cc in kaleidoscope::Runtime_::handleKeyEvent (this=0x562582aad500 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:126
+126	void Runtime_::handleKeyEvent(KeyEvent event) {
+(rr) 
+vshcmd: > help reverse-finish
+Execute backward until just before selected stack frame is called.
+(rr) 
+vshcmd: > reverse-finish
+Run back to call of #999 0x0000562582a0ac3a in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/1113/1113.ino:59
+0x0000562582a162d7 in kaleidoscope::plugin::MacroSupport::clear (this=0x562582aadfe1 <MacroSupport>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src/kaleidoscope/plugin/MacroSupport.cpp:78
+78	      Runtime.handleKeyEvent(KeyEvent{key_addr, release_state, macro_key});
+(rr) 
+vshcmd: > set variable $counter = -1
+vshcmd: > gdb-pipe array &live_keys.key_map_.values_[0]; 64 \
+vshcmd: >       | show set variable $counter += 1 \
+vshcmd: >       | if $cur->keyCode_ != 255 \
+vshcmd: >       | show printf "%d \t", $counter \
+vshcmd: >       | show print *$cur
+(rr) 48 	$10 = {keyCode_ = 0 '\000', flags_ = 96 '`', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+(rr) 
+vshcmd: > print live_keys.key_map_.values_[48]
+$11 = {keyCode_ = 0 '\000', flags_ = 96 '`', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+(rr) 
+vshcmd: > watch -l live_keys.key_map_.values_[48]
+vshcmd: > print 
+vshcmd: > reverse-finish
+Run back to call of #0  0x0000562582a162d7 in kaleidoscope::plugin::MacroSupport::clear (this=0x562582aadfe1 <MacroSupport>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src/kaleidoscope/plugin/MacroSupport.cpp:78
+
+Hardware watchpoint 1: -location event.state
+
+Old value = 146 '\222'
+New value = 0 '\000'
+0x0000562582a0c5f4 in kaleidoscope::MatrixAddr<(unsigned char)4, (unsigned char)16>::isValid (this=0x0) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/MatrixAddr.h:133
+133	  constexpr bool isValid() const {
+(rr) 
+vshcmd: > reverse-finish
+Run back to call of #0  0x0000562582a15540 in kaleidoscope::plugin::Macros::clear (this=0x562582aadfe0 <Macros>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros/src/kaleidoscope/plugin/Macros.h:62
+0x0000562582a15edb in kaleidoscope::plugin::Macros::onKeyEvent (this=0x562582aadfe0 <Macros>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros/src/kaleidoscope/plugin/Macros.cpp:266
+266	    clear();
+(rr) 
+vshcmd: > print (int)::kaleidoscope::ranges::MACRO_FIRST
+$16 = 24576
+(rr) 
+vshcmd: > print event.key.getRaw()
+$14 = 24576
+(rr) 
+vshcmd: > print event.key
+$13 = {keyCode_ = 0 '\000',
+ flags_ = 96 '`',
+ static hid_type_mask_ = 48 '0',
+ static system_control_mask_ = 207 '\317',
+ static consumer_control_mask_ = 200 '\310'}
+(rr) 
+vshcmd: > bt 5
+#0  0x0000562582a0c5f4 in kaleidoscope::MatrixAddr<(unsigned char)4, (unsigned char)16>::isValid (this=0x0) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/MatrixAddr.h:133
+#1  0x0000562582a0c253 in kaleidoscope::LiveKeys::operator[] (this=0x562582aadf00 <kaleidoscope::live_keys>, key_addr=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/LiveKeys.h:59
+#2  0x0000562582a1623f in kaleidoscope::plugin::MacroSupport::clear (this=0x562582aadfe1 <MacroSupport>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src/kaleidoscope/plugin/MacroSupport.cpp:76
+#3  0x0000562582a15545 in kaleidoscope::plugin::Macros::clear (this=0x562582aadfe0 <Macros>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros/src/kaleidoscope/plugin/Macros.h:62
+#4  0x0000562582a15ee0 in kaleidoscope::plugin::Macros::onKeyEvent (this=0x562582aadfe0 <Macros>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros/src/kaleidoscope/plugin/Macros.cpp:266
+(More stack frames follow...)
+(rr) 
+vshcmd: > print $_event_state_name(event.state)
+$4 = "IS_PRESSED"
+(rr) 
+vshcmd: > print $_event event.state
+$1 = 129 '\201'
+(rr) 
+vshcmd: > print key
+vshcmd: > bt
+
+vshcmd: > cont
+vshcmd: > print event.key
+Continuing.
+
+Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x561b619a2592 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:403
+403	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+(rr) $10 = {keyCode_ = 75 'K', flags_ = 208 '\320', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+(rr) 
+vshcmd: > break 'kaleidoscope::plugin::TopsyTurvy::onKeyEvent'
+vshcmd: > break 'kaleidoscope::plugin::TopsyTurvy::beforeReportingState'
+Breakpoint 2 at 0x561b618de889: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src/kaleidoscope/plugin/TopsyTurvy.cpp, line 35.
+(rr) Breakpoint 3 at 0x561b618deb41: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src/kaleidoscope/plugin/TopsyTurvy.cpp, line 75.
+(rr) 
+vshcmd: > cont
+Continuing.
+
+Breakpoint 2, kaleidoscope::plugin::TopsyTurvy::onKeyEvent (this=0x561b619a1456 <TopsyTurvy>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src/kaleidoscope/plugin/TopsyTurvy.cpp:35
+35	EventHandlerResult TopsyTurvy::onKeyEvent(KeyEvent &event) {
+(rr) 
+vshcmd: > cont
+Continuing.
+
+Breakpoint 3, kaleidoscope::plugin::TopsyTurvy::beforeReportingState (this=0x561b619a1456 <TopsyTurvy>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src/kaleidoscope/plugin/TopsyTurvy.cpp:75
+75	EventHandlerResult TopsyTurvy::beforeReportingState(const KeyEvent &event) {
+(rr) 
+vshcmd: > until
+93	  if (shift_detected) {
+(rr) 
+vshcmd: > reverse-next
+100	  return EventHandlerResult::OK;
+(rr) 
+vshcmd: > bt
+
+vshcmd: > up
+#5  0x0000561b618d4b33 in kaleidoscope::Runtime_::sendKeyboardReport (this=0x561b619a1adc <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:293
+293	  if (Hooks::beforeReportingState(event) == EventHandlerResult::ABORT)
+(rr) quit
+y
+A debugging session is active.
+
+	Inferior 1 [process 2566089] will be detached.
+
+Quit anyway? (y or n) 
+vshcmd: > y
+Detaching from program: /home/matmal01/.local/share/rr/personal-config-7/mmap_hardlink_4_personal-config, process 2566089
+[Inferior 1 (process 2566089) detached]
+Kaleidoscope [17:45:34] $ 
+vshcmd: > print 
+vshcmd: > print tt_addr_
+$12 = {offset_ = 1 '\001', static rows = 4 '\004', static cols = 16 '\020', static upper_limit = 64 '@', static invalid_state = 255 '\377'}
+(rr) 
+vshcmd: > print event.state
+$13 = 2 '\002'
+(rr) 
+vshcmd: > y
+Detaching from program: /home/matmal01/.local/share/rr/personal-config-6/mmap_hardlink_4_personal-config, process 2547231
+[Inferior 1 (process 2547231) detached]
+Kaleidoscope [16:46:44] $ 
+vshcmd: > bt
+#0  kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:46
+#1  0x00005582eef8846b in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x5582ef0447d2 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:547
+#2  0x00005582eef73dd1 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
+#3  0x00005582eef70c5b in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
+#4  0x00005582eef6bff0 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
+#5  0x00005582eef69dae in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
+#6  0x00005582eef75c39 in kaleidoscope::Runtime_::handleKeyEvent (this=0x5582ef043adc <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
+#7  0x00005582eef75b6d in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x5582ef043adc <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
+#8  0x00005582eef8013a in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=1 '\001') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
+#9  0x00005582eef775de in kaleidoscope::device::virt::VirtualKeyScanner::actOnMatrixScan (this=0x5582ef043f88 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.cpp:264
+#10 0x00005582eef755f0 in kaleidoscope::device::virt::VirtualKeyScanner::scanMatrix (this=0x5582ef043f88 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.h:66
+#11 0x00005582eef765fe in kaleidoscope::device::Base<kaleidoscope::device::virt::VirtualProps>::scanMatrix (this=0x5582ef043f80 <kaleidoscope_internal::device>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/Base.h:253
+#12 0x00005582eef759b7 in kaleidoscope::Runtime_::loop (this=0x5582ef043adc <kaleidoscope::Runtime>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:77
+#13 0x00005582eef55254 in kaleidoscope::testing::SimHarness::RunCycle() ()
+#14 0x00005582eef55282 in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
+#15 0x00005582eef0c803 in kaleidoscope::testing::(anonymous namespace)::PersonalConfig::runAction (this=0x5582eff86670, str=..., replaying=false) at test/manual-tests.cpp:444
+#16 0x00005582eef0dd2e in kaleidoscope::testing::(anonymous namespace)::PersonalConfig_2_MacroRecordTopsy_Test::TestBody (this=0x5582eff86670) at test/manual-tests.cpp:666
+#17 0x00005582eefc64ed in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#18 0x00005582eefbe9bf in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#19 0x00005582eef924c8 in testing::Test::Run() ()
+#20 0x00005582eef92f56 in testing::TestInfo::Run() ()
+#21 0x00005582eef9385d in testing::TestSuite::Run() ()
+#22 0x00005582eefa378d in testing::internal::UnitTestImpl::RunAllTests() ()
+#23 0x00005582eefc7486 in bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#24 0x00005582eefbfa8b in bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#25 0x00005582eefa1ef5 in testing::UnitTest::Run() ()
+#26 0x00005582eef16af2 in RUN_ALL_TESTS () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/googletest/include/gtest/gtest.h:2490
+#27 0x00005582eef0a34a in executeTestFunction () at test/manual-tests.cpp:12
+#28 0x00005582eef7c921 in main (argc=3, argv=0x7ffe56532d18) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56
+(rr) 
+vshcmd: > frame 15
+vshcmd: > call 'kaleidoscope::testing::(anonymous namespace)::PersonalConfig::printMacro'(this, (char)65)
+vshcmd: > frame 0
+#15 0x00005582eef0c803 in kaleidoscope::testing::(anonymous namespace)::PersonalConfig::runAction (this=0x5582eff86670, str=..., replaying=false) at test/manual-tests.cpp:444
+444		  doRelease;
+(rr) [ INFO     ] Printing Macro: A
+	TAP_CODE_SEQUENCE 30 31 32 0 |,KEYDOWN 208 75,
+(rr) #0  kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:46
+46	  bool MacrosOnTheFly::recordKeystroke(KeyEvent &event) {
+(rr) 
+vshcmd: > print event.key
+$1 = {keyCode_ = 30 '\036', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+(rr) 
+vshcmd: > watch -l event.key.keyCode_
+Hardware watchpoint 2: -location event.key.keyCode_
+(rr) 
+vshcmd: > reverse-cont
+Continuing.
+
+Hardware watchpoint 2: -location event.key.keyCode_
+
+Old value = 30 '\036'
+New value = 83 'S'
+0x00005582eef75b9c in kaleidoscope::Runtime_::handleKeyEvent (this=0x5582ef043adc <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:126
+126	void Runtime_::handleKeyEvent(KeyEvent event) {
+(rr) 
+vshcmd: > reverse-next
+kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x5582ef043adc <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
+122	  handleKeyEvent(event);
+(rr) 
+vshcmd: > print event.key
+$2 = {keyCode_ = 30 '\036', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+(rr) 
+vshcmd: > watch -l event.key.keyCode_
+Hardware watchpoint 3: -location event.key.keyCode_
+(rr) 
+vshcmd: > reverse-next
+
+Hardware watchpoint 3: -location event.key.keyCode_
+
+Old value = 30 '\036'
+New value = 255 '\377'
+0x00005582eef75a88 in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x5582ef043adc <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:99
+99	    event.key = live_keys[event.addr];
+(rr) 
+vshcmd: > # live_keys believes we have `1` pressed on the keyboard.
+vshcmd: > # The runtime sees a release at this address, and reports to all
+vshcmd: > # other plugins that we see a `1` being released.
+vshcmd: > print live_keys[event.addr]
+$3 = (kaleidoscope::Key &) @0x5582ef0444e2: {keyCode_ = 30 '\036', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+(rr) 
+vshcmd: > info break
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x00005582eef86883 in kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke(kaleidoscope::KeyEvent&) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:46
+	stop only if event.key.getKeyCode() == 30 && event.state == 1 (host evals)
+	breakpoint already hit 2 times
+2       hw watchpoint  keep y                      -location event.key.keyCode_
+	breakpoint already hit 1 time
+3       hw watchpoint  keep y                      -location event.key.keyCode_
+	breakpoint already hit 1 time
+(rr) 
+vshcmd: > disable 2 3
+(rr) 
+vshcmd: > watch -l live_keys[event.addr].keyCode_
+Hardware watchpoint 4: -location live_keys[event.addr].keyCode_
+(rr) 
+vshcmd: > # This was set by handleKeyEvent in the Runtime.
+vshcmd: > reverse-cont
+Continuing.
+
+Hardware watchpoint 4: -location live_keys[event.addr].keyCode_
+
+Old value = 30 '\036'
+New value = 255 '\377'
+0x00005582eef756bc in kaleidoscope::LiveKeys::activate (this=0x5582ef0444e0 <kaleidoscope::live_keys>, key_addr=..., key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/LiveKeys.h:69
+69	      key_map_[key_addr] = key;
+(rr) 
+vshcmd: > bt
+#0  0x00005582eef756bc in kaleidoscope::LiveKeys::activate (this=0x5582ef0444e0 <kaleidoscope::live_keys>, key_addr=..., key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/LiveKeys.h:69
+#1  0x00005582eef75ca2 in kaleidoscope::Runtime_::handleKeyEvent (this=0x5582ef043adc <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:147
+#2  0x00005582eef75b6d in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x5582ef043adc <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
+#3  0x00005582eef8013a in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
+#4  0x00005582eef775de in kaleidoscope::device::virt::VirtualKeyScanner::actOnMatrixScan (this=0x5582ef043f88 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.cpp:264
+#5  0x00005582eef755f0 in kaleidoscope::device::virt::VirtualKeyScanner::scanMatrix (this=0x5582ef043f88 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.h:66
+#6  0x00005582eef765fe in kaleidoscope::device::Base<kaleidoscope::device::virt::VirtualProps>::scanMatrix (this=0x5582ef043f80 <kaleidoscope_internal::device>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/Base.h:253
+#7  0x00005582eef759b7 in kaleidoscope::Runtime_::loop (this=0x5582ef043adc <kaleidoscope::Runtime>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:77
+#8  0x00005582eef55254 in kaleidoscope::testing::SimHarness::RunCycle() ()
+#9  0x00005582eef55282 in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
+#10 0x00005582eef0c2fb in kaleidoscope::testing::(anonymous namespace)::PersonalConfig::runAction (this=0x5582eff86670, str=..., replaying=false) at test/manual-tests.cpp:443
+#11 0x00005582eef0dd2e in kaleidoscope::testing::(anonymous namespace)::PersonalConfig_2_MacroRecordTopsy_Test::TestBody (this=0x5582eff86670) at test/manual-tests.cpp:666
+#12 0x00005582eefc64ed in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#13 0x00005582eefbe9bf in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#14 0x00005582eef924c8 in testing::Test::Run() ()
+#15 0x00005582eef92f56 in testing::TestInfo::Run() ()
+#16 0x00005582eef9385d in testing::TestSuite::Run() ()
+#17 0x00005582eefa378d in testing::internal::UnitTestImpl::RunAllTests() ()
+#18 0x00005582eefc7486 in bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#19 0x00005582eefbfa8b in bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#20 0x00005582eefa1ef5 in testing::UnitTest::Run() ()
+#21 0x00005582eef16af2 in RUN_ALL_TESTS () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/googletest/include/gtest/gtest.h:2490
+#22 0x00005582eef0a34a in executeTestFunction () at test/manual-tests.cpp:12
+#23 0x00005582eef7c921 in main (argc=3, argv=0x7ffe56532d18) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56
+(rr) 
+vshcmd: > reverse-finish
+Run back to call of #0  0x00005582eef756bc in kaleidoscope::LiveKeys::activate (this=0x5582ef0444e0 <kaleidoscope::live_keys>, key_addr=..., key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/LiveKeys.h:69
+0x00005582eef75c9d in kaleidoscope::Runtime_::handleKeyEvent (this=0x5582ef043adc <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:147
+147	      live_keys.activate(event.addr, event.key);
+(rr) 
+vshcmd: > # And it was set based on the event.key which was changed earlier by
+vshcmd: > # TopsyTurvy plugin.
+vshcmd: > watch -l event.key.keyCode_
+Hardware watchpoint 5: -location event.key.keyCode_
+(rr) 
+vshcmd: > reverse-cont
+Continuing.
+
+Hardware watchpoint 5: -location event.key.keyCode_
+
+Old value = 30 '\036'
+New value = 75 'K'
+0x00005582eef8133d in kaleidoscope::Key::setRaw (this=0x7ffe565322b2, raw=30) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/key_defs.h:122
+122	    keyCode_ = (uint8_t)(raw & 0x00FF);
+(rr) 
+vshcmd: > bt
+#0  0x00005582eef8133d in kaleidoscope::Key::setRaw (this=0x7ffe565322b2, raw=30) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/key_defs.h:122
+#1  0x00005582eef848e8 in kaleidoscope::plugin::TopsyTurvy::onKeyEvent (this=0x5582ef043456 <TopsyTurvy>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src/kaleidoscope/plugin/TopsyTurvy.cpp:46
+#2  0x00005582eef73dfa in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::TopsyTurvy, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
+#3  0x00005582eef70c8c in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::TopsyTurvy, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
+#4  0x00005582eef6c031 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
+#5  0x00005582eef69dae in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
+#6  0x00005582eef75c39 in kaleidoscope::Runtime_::handleKeyEvent (this=0x5582ef043adc <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
+#7  0x00005582eef75b6d in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x5582ef043adc <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
+#8  0x00005582eef8013a in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
+#9  0x00005582eef775de in kaleidoscope::device::virt::VirtualKeyScanner::actOnMatrixScan (this=0x5582ef043f88 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.cpp:264
+#10 0x00005582eef755f0 in kaleidoscope::device::virt::VirtualKeyScanner::scanMatrix (this=0x5582ef043f88 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.h:66
+#11 0x00005582eef765fe in kaleidoscope::device::Base<kaleidoscope::device::virt::VirtualProps>::scanMatrix (this=0x5582ef043f80 <kaleidoscope_internal::device>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/Base.h:253
+#12 0x00005582eef759b7 in kaleidoscope::Runtime_::loop (this=0x5582ef043adc <kaleidoscope::Runtime>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:77
+#13 0x00005582eef55254 in kaleidoscope::testing::SimHarness::RunCycle() ()
+#14 0x00005582eef55282 in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
+#15 0x00005582eef0c2fb in kaleidoscope::testing::(anonymous namespace)::PersonalConfig::runAction (this=0x5582eff86670, str=..., replaying=false) at test/manual-tests.cpp:443
+#16 0x00005582eef0dd2e in kaleidoscope::testing::(anonymous namespace)::PersonalConfig_2_MacroRecordTopsy_Test::TestBody (this=0x5582eff86670) at test/manual-tests.cpp:666
+#17 0x00005582eefc64ed in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#18 0x00005582eefbe9bf in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#19 0x00005582eef924c8 in testing::Test::Run() ()
+#20 0x00005582eef92f56 in testing::TestInfo::Run() ()
+#21 0x00005582eef9385d in testing::TestSuite::Run() ()
+#22 0x00005582eefa378d in testing::internal::UnitTestImpl::RunAllTests() ()
+#23 0x00005582eefc7486 in bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#24 0x00005582eefbfa8b in bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#25 0x00005582eefa1ef5 in testing::UnitTest::Run() ()
+#26 0x00005582eef16af2 in RUN_ALL_TESTS () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/googletest/include/gtest/gtest.h:2490
+#27 0x00005582eef0a34a in executeTestFunction () at test/manual-tests.cpp:12
+#28 0x00005582eef7c921 in main (argc=3, argv=0x7ffe56532d18) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56
+(rr) quit
+A debugging session is active.
+
+	Inferior 1 [process 2516489] will be detached.
+
+Quit anyway? (y or n) 
+vshcmd: > y
+Detaching from program: /home/matmal01/.local/share/rr/personal-config-5/mmap_hardlink_4_personal-config, process 2516489
+[Inferior 1 (process 2516489) detached]
+Kaleidoscope [16:44:23] $ 
+vshcmd: > reverse-next
+105	  } else if (event.key == Key_Undefined) {
+(rr) 
+vshcmd: > print $_event_state_name(event.state)
+$13 = "IS_PRESSED"
+(rr) quit
+A debugging session is active.
+
+	Inferior 1 [process 2516489] will be detached.
+
+Quit anyway? (y or n) 
+vshcmd: > y
+Detaching from program: /home/matmal01/.local/share/rr/personal-config-5/mmap_hardlink_4_personal-config, process 2516489
+[Inferior 1 (process 2516489) detached]
+Kaleidoscope [13:37:07] $ 
+vshcmd: > print live_keys[event.addr]
+$11 = (kaleidoscope::Key &) @0x5582ef0444e2: {keyCode_ = 255 '\377', flags_ = 255 '\377', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+(rr) 
+vshcmd: > print 
+vshcmd: > print &event
+$7 = (kaleidoscope::KeyEvent *) 0x7ffe565322b0
+(rr) 
+vshcmd: > reverse-next
+kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x5582ef043adc <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
+122	  handleKeyEvent(event);
+(rr) 
+vshcmd: > print
+vshcmd: > print event.addr
+$9 = {offset_ = 1 '\001', static rows = 4 '\004', static cols = 16 '\020', static upper_limit = 64 '@', static invalid_state = 255 '\377'}
+(rr) 
+vshcmd: > watch -l event.key.keyCode_
+vshcmd: > print live_keys[event.addr]
+$8 = (kaleidoscope::Key &) @0x5582ef0444e2: {keyCode_ = 255 '\377', flags_ = 255 '\377', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+(rr) 
+vshcmd: > bt
+#0  0x00005582eef75b9c in kaleidoscope::Runtime_::handleKeyEvent (this=0x5582ef043adc <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:126
+#1  0x00005582eef75b6d in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x5582ef043adc <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
+#2  0x00005582eef8013a in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
+#3  0x00005582eef775de in kaleidoscope::device::virt::VirtualKeyScanner::actOnMatrixScan (this=0x5582ef043f88 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.cpp:264
+#4  0x00005582eef755f0 in kaleidoscope::device::virt::VirtualKeyScanner::scanMatrix (this=0x5582ef043f88 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.h:66
+#5  0x00005582eef765fe in kaleidoscope::device::Base<kaleidoscope::device::virt::VirtualProps>::scanMatrix (this=0x5582ef043f80 <kaleidoscope_internal::device>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/Base.h:253
+#6  0x00005582eef759b7 in kaleidoscope::Runtime_::loop (this=0x5582ef043adc <kaleidoscope::Runtime>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:77
+#7  0x00005582eef55254 in kaleidoscope::testing::SimHarness::RunCycle() ()
+#8  0x00005582eef55282 in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
+#9  0x00005582eef0c2fb in kaleidoscope::testing::(anonymous namespace)::PersonalConfig::runAction (this=0x5582eff86670, str=..., replaying=false) at test/manual-tests.cpp:443
+#10 0x00005582eef0dd2e in kaleidoscope::testing::(anonymous namespace)::PersonalConfig_2_MacroRecordTopsy_Test::TestBody (this=0x5582eff86670) at test/manual-tests.cpp:666
+#11 0x00005582eefc64ed in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#12 0x00005582eefbe9bf in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#13 0x00005582eef924c8 in testing::Test::Run() ()
+#14 0x00005582eef92f56 in testing::TestInfo::Run() ()
+#15 0x00005582eef9385d in testing::TestSuite::Run() ()
+#16 0x00005582eefa378d in testing::internal::UnitTestImpl::RunAllTests() ()
+#17 0x00005582eefc7486 in bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#18 0x00005582eefbfa8b in bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#19 0x00005582eefa1ef5 in testing::UnitTest::Run() ()
+#20 0x00005582eef16af2 in RUN_ALL_TESTS () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/googletest/include/gtest/gtest.h:2490
+#21 0x00005582eef0a34a in executeTestFunction () at test/manual-tests.cpp:12
+#22 0x00005582eef7c921 in main (argc=3, argv=0x7ffe56532d18) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56
+(rr) 
+vshcmd: > set width 80
+vshcmd: > bt
+vshcmd: > set width 0
+Reading symbols from /home/matmal01/.local/share/rr/personal-config-3/mmap_hardlink_4_personal-config...
+Really redefine built-in command "restart"? (y or n) [answered Y; input not from terminal]
+Remote debugging using 127.0.0.1:59467
+Reading symbols from /lib64/ld-linux-x86-64.so.2...
+(No debugging symbols found in /lib64/ld-linux-x86-64.so.2)
+BFD: warning: system-supplied DSO at 0x6fffd000 has a section extending past end of file
+0x00007f2fa51832b0 in ?? () from /lib64/ld-linux-x86-64.so.2
+(rr) Continuing.
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from PersonalConfig
+[ RUN      ] PersonalConfig.0_test
+In Test constructor function
+Finished Test constructor function
+[ INFO     ] test: tests/personal-config/test/manual-tests.cpp
+[       OK ] PersonalConfig.0_test (0 ms)
+[ RUN      ] PersonalConfig.1_MacroRecordBasic
+In Test constructor function
+Finished Test constructor function
+personal-config: test/manual-tests.cpp:399: void kaleidoscope::testing::{anonymous}::PersonalConfig::runAction(std::string, bool): Assertion `x != keyTypes.end()' failed.
+
+Program received signal SIGABRT, Aborted.
+0x00007f2fa4c74a7c in pthread_kill () from /lib/x86_64-linux-gnu/libc.so.6
+(rr) (rr) #0  0x00007f2fa4c74a7c in pthread_kill () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f2fa4c20476 in raise () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007f2fa4c067f3 in abort () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007f2fa4c0671b in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007f2fa4c17e96 in __assert_fail () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x0000557a12da171b in kaleidoscope::testing::(anonymous namespace)::PersonalConfig::runAction (this=0x557a12f1b720, str=..., replaying=false)
+    at test/manual-tests.cpp:399
+#6  0x0000557a12da2e34 in kaleidoscope::testing::(anonymous namespace)::PersonalConfig_1_MacroRecordBasic_Test::TestBody (this=0x557a12f1b720)
+    at test/manual-tests.cpp:618
+#7  0x0000557a12e5ccb5 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#8  0x0000557a12e5526b in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#9  0x0000557a12e293a0 in testing::Test::Run() ()
+#10 0x0000557a12e29e2e in testing::TestInfo::Run() ()
+#11 0x0000557a12e2a735 in testing::TestSuite::Run() ()
+#12 0x0000557a12e3a665 in testing::internal::UnitTestImpl::RunAllTests() ()
+#13 0x0000557a12e5dc4e in bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#14 0x0000557a12e56337 in bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#15 0x0000557a12e38dcd in testing::UnitTest::Run() ()
+#16 0x0000557a12daa2cc in RUN_ALL_TESTS ()
+    at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/googletest/include/gtest/gtest.h:2490
+#17 0x0000557a12da03ea in executeTestFunction () at test/manual-tests.cpp:12
+#18 0x0000557a12e1c8e3 in main (argc=3, argv=0x7ffde50c9bf8)
+    at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56
+(rr) (rr) 
+vshcmd: > frame 5
+vshcmd: > print keyId
+$2 = (std::tuple_element<2,
+ std::tuple<kaleidoscope::testing::(anonymous namespace)::KeyActions const,
+ kaleidoscope::testing::(anonymous namespace)::ReportIds const,
+ std::__cxx11::basic_string<char,
+ std::char_traits<char>,
+ std::allocator<char> > const> const>::type &&) @0x7ffde50c9540: {static npos = 18446744073709551615,
+ _M_dataplus = {<std::allocator<char>> = {<__gnu_cxx::new_allocator<char>> = {<No data fields>},
+ <No data fields>},
+ _M_p = 0x7ffde50c9550 "MACROREC"},
+ _M_string_length = 8,
+ {_M_local_buf = "MACROREC\000IFT1\000\000",
+ _M_allocated_capacity = 4847371074570240333}}
+(rr) quit
+A debugging session is active.
+
+	Inferior 1 [process 2484294] will be detached.
+
+Quit anyway? (y or n) 
+vshcmd: > y
+Detaching from program: /home/matmal01/.local/share/rr/personal-config-3/mmap_hardlink_4_personal-config, process 2484294
+[Inferior 1 (process 2484294) detached]
+Kaleidoscope [11:51:36] $ 
+vshcmd: > up
+#1  0x0000555cc6c3434b in std::pair<std::__cxx11::basic_string<char,
+std::char_traits<char>, std::allocator<char> > const,
+std::pair<kaleidoscope::MatrixAddr<(unsigned char)4, (unsigned char)16>,
+kaleidoscope::Key> >::pair (this=0x7ffd813eb800) at
+/usr/include/c++/11/bits/stl_pair.h:314
+314	      constexpr pair(const pair&) = default;	///< Copy constructor
+(rr) 
+vshcmd: > up
+#2  0x0000555cc6c296db in kaleidoscope::testing::(anonymous namespace)::PersonalConfig::runAction (this=0x555cc88b1720, str=..., replaying=false) at test/manual-tests.cpp:398
+398	      const auto [ keyId2, mapValue ] = *keyTypes.find(keyId);
+(rr) 
+vshcmd: > down
+#1  0x0000555cc6c3434b in std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::pair<kaleidoscope::MatrixAddr<(unsigned char)4, (unsigned char)16>, kaleidoscope::Key> >::pair (this=0x7ffd813eb800) at /usr/include/c++/11/bits/stl_pair.h:314
+314	      constexpr pair(const pair&) = default;	///< Copy constructor
+(rr) 
+vshcmd: > print *this
+$2 = {<std::__pair_base<std::__cxx11::basic_string<char,
+ std::char_traits<char>,
+ std::allocator<char> > const,
+ std::pair<kaleidoscope::MatrixAddr<4,
+ 16>,
+ kaleidoscope::Key> >> = {<No data fields>},
+ first = {static npos = 18446744073709551615,
+ _M_dataplus = {<std::allocator<char>> = {<__gnu_cxx::new_allocator<char>> = {<No data fields>},
+ <No data fields>},
+ _M_p = 0x7ffd813eb810 "SPECIALSHIFT|"},
+ _M_string_length = 13,
+ {_M_local_buf = "SPECIALSHIFT|\000\000",
+ _M_allocated_capacity = 6002244186295062611}},
+ second = {<std::__pair_base<kaleidoscope::MatrixAddr<4,
+ 16>,
+ kaleidoscope::Key>> = {<No data fields>},
+ first = {offset_ = 0 '\000',
+ static rows = 4 '\004',
+ static cols = 16 '\020'},
+ second = {keyCode_ = 0 '\000',
+ flags_ = 0 '\000',
+ static hid_type_mask_ = 48 '0',
+ static system_control_mask_ = 207 '\317',
+ static consumer_control_mask_ = 200 '\310'}}}
+(rr) 
+vshcmd: > break parseAction
+Breakpoint 1 at 0x555cc6c28609: file test/manual-tests.cpp, line 201.
+(rr) 
+vshcmd: > reverse-finish
+Run back to call of #0  0x0000555cc6c34346 in std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::pair<kaleidoscope::MatrixAddr<(unsigned char)4, (unsigned char)16>, kaleidoscope::Key> >::pair (this=0x7ffd813eb800) at /usr/include/c++/11/bits/stl_pair.h:314
+0x0000555cc6c296d6 in kaleidoscope::testing::(anonymous namespace)::PersonalConfig::runAction (this=0x555cc88b1720, str=..., replaying=false) at test/manual-tests.cpp:398
+398	      const auto [ keyId2, mapValue ] = *keyTypes.find(keyId);
+(rr) 
+vshcmd: > print keyId
+$3 = (std::tuple_element<2,
+ std::tuple<kaleidoscope::testing::(anonymous namespace)::KeyActions const,
+ kaleidoscope::testing::(anonymous namespace)::ReportIds const,
+ std::__cxx11::basic_string<char,
+ std::char_traits<char>,
+ std::allocator<char> > const> const>::type &&) @0x7ffd813eb7d0: {static npos = 18446744073709551615,
+ _M_dataplus = {<std::allocator<char>> = {<__gnu_cxx::new_allocator<char>> = {<No data fields>},
+ <No data fields>},
+ _M_p = 0x7ffd813eb7e0 "SPECIALSHIFT"},
+ _M_string_length = 12,
+ {_M_local_buf = "SPECIALSHIFT\000\177\000",
+ _M_allocated_capacity = 6002244186295062611}}
+(rr) 
+vshcmd: > reverse-finish
+Run back to call of #0  std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::pair<kaleidoscope::MatrixAddr<(unsigned char)4, (unsigned char)16>, kaleidoscope::Key> >::pair (this=0x7ffd813eb800) at /usr/include/c++/11/bits/stl_pair.h:314
+0x0000555cc6c296d6 in kaleidoscope::testing::(anonymous namespace)::PersonalConfig::runAction (this=0x555cc88b1720, str=..., replaying=false) at test/manual-tests.cpp:398
+398	      const auto [ keyId2, mapValue ] = *keyTypes.find(keyId);
+(rr) 
+vshcmd: > step
+std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<kaleidoscope::MatrixAddr<(unsigned char)4, (unsigned char)16>, kaleidoscope::Key>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::pair<kaleidoscope::MatrixAddr<(unsigned char)4, (unsigned char)16>, kaleidoscope::Key> > > >::find (this=0x555cc88b1810, __x=...) at /usr/include/c++/11/bits/unordered_map.h:869
+869	      { return _M_h.find(__x); }
+(rr) 
+vshcmd: > print __x
+$5 = (const std::unordered_map<std::__cxx11::basic_string<char,
+ std::char_traits<char>,
+ std::allocator<char> >,
+ std::pair<kaleidoscope::MatrixAddr<4,
+ 16>,
+ kaleidoscope::Key>,
+ std::hash<std::__cxx11::basic_string<char,
+ std::char_traits<char>,
+ std::allocator<char> > >,
+ std::equal_to<std::__cxx11::basic_string<char,
+ std::char_traits<char>,
+ std::allocator<char> > >,
+ std::allocator<std::pair<std::__cxx11::basic_string<char,
+ std::char_traits<char>,
+ std::allocator<char> > const,
+ std::pair<kaleidoscope::MatrixAddr<4,
+ 16>,
+ kaleidoscope::Key> > > >::key_type &) @0x7ffd813eb7d0: {static npos = 18446744073709551615,
+ _M_dataplus = {<std::allocator<char>> = {<__gnu_cxx::new_allocator<char>> = {<No data fields>},
+ <No data fields>},
+ _M_p = 0x7ffd813eb7e0 "SPECIALSHIFT"},
+ _M_string_length = 12,
+ {_M_local_buf = "SPECIALSHIFT\000\177\000",
+ _M_allocated_capacity = 6002244186295062611}}
+(rr) 
+vshcmd: > finish
+Run till exit from #0  std::unordered_map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<kaleidoscope::MatrixAddr<(unsigned char)4, (unsigned char)16>, kaleidoscope::Key>, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::pair<kaleidoscope::MatrixAddr<(unsigned char)4, (unsigned char)16>, kaleidoscope::Key> > > >::find (this=0x555cc88b1810, __x=...) at /usr/include/c++/11/bits/unordered_map.h:869
+0x0000555cc6c296b3 in kaleidoscope::testing::(anonymous namespace)::PersonalConfig::runAction (this=0x555cc88b1720, str=..., replaying=false) at test/manual-tests.cpp:398
+398	      const auto [ keyId2, mapValue ] = *keyTypes.find(keyId);
+Value returned is $6 =
+{<std::__detail::_Node_iterator_base<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const,
+  std::pair<kaleidoscope::MatrixAddr<4, 16>, kaleidoscope::Key> >, true>> = {_M_cur = 0x0}, <No data fields>}
+(rr) 
+vshcmd: > y
+Detaching from program: /home/matmal01/.local/share/rr/personal-config-2/mmap_hardlink_4_personal-config, process 2477392
+[Inferior 1 (process 2477392) detached]
+Kaleidoscope [11:47:16] $ 
+vshcmd: > reverse-finish
+Run back to call of #0  0x00007f660f6a2b18 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) () from /lib/x86_64-linux-gnu/libstdc++.so.6
+0x0000555beeb1e31c in std::pair<std::__cxx11::basic_string<char,
+std::char_traits<char>, std::allocator<char> > const,
+std::pair<kaleidoscope::MatrixAddr<(unsigned char)4, (unsigned char)16>,
+kaleidoscope::Key> >::pair (this=0x7ffc6deefd80) at
+/usr/include/c++/11/bits/stl_pair.h:314
+314	      constexpr pair(const pair&) = default;	///< Copy constructor
+(rr) 
+vshcmd: > reverse-finish
+Run back to call of #0  0x0000555beeb1e31c in std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::pair<kaleidoscope::MatrixAddr<(unsigned char)4, (unsigned char)16>, kaleidoscope::Key> >::pair (this=0x7ffc6deefd80) at /usr/include/c++/11/bits/stl_pair.h:314
+0x0000555beeb136ac in kaleidoscope::testing::(anonymous namespace)::PersonalConfig::runAction (this=0x555beef71720, str=..., replaying=false) at test/manual-tests.cpp:397
+397	      const auto [ keyId2, mapValue ] = *keyTypes.find(keyId);
+(rr) 
+vshcmd: > print keyId
+$1 = (std::tuple_element<2,
+ std::tuple<kaleidoscope::testing::(anonymous namespace)::KeyActions const, kaleidoscope::testing::(anonymous namespace)::ReportIds const,
+ std::__cxx11::basic_string<char,
+ std::char_traits<char>,
+ std::allocator<char> > const> const>::type &&) @0x7ffc6deefd50: {static npos = 18446744073709551615,
+ _M_dataplus = {<std::allocator<char>> = {<__gnu_cxx::new_allocator<char>> = {<No data fields>},
+ <No data fields>},
+ _M_p = 0x7ffc6deefd60 "SPECIALSHIFT"},
+ _M_string_length = 12,
+ {_M_local_buf = "SPECIALSHIFT\000\177\000",
+ _M_allocated_capacity = 6002244186295062611}}
+(rr) 
+vshcmd: > y
+Detaching from program: /home/matmal01/.local/share/rr/personal-config-1/mmap_hardlink_4_personal-config, process 2476988
+[Inferior 1 (process 2476988) detached]
+Kaleidoscope [11:36:42] $ 
+vshcmd: > break 'kaleidoscope::testing::(anonymous namespace)::ManualTests::SetUp'
+vshcmd: > cont
+Continuing.
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ManualTests
+[ RUN      ] ManualTests.0_test
+
+Breakpoint 1, kaleidoscope::testing::(anonymous namespace)::ManualTests::SetUp (this=0x55b4769cea70) at test/manual-tests.cpp:302
+302	  void SetUp() {
+(rr) 
+vshcmd: > watch -l layer_count
+Hardware watchpoint 2: -location layer_count
+(rr) 
+vshcmd: > reverse-cont
+Continuing.
+
+Hardware watchpoint 2: -location layer_count
+
+Old value = 11 '\v'
+New value = 8 '\b'
+0x000055b47624b548 in kaleidoscope::plugin::EEPROMKeymap::setup (max=8 '\b') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src/kaleidoscope/plugin/EEPROM-Keymap.cpp:53
+53	    layer_count += progmem_layers_;
+(rr) 
+vshcmd: > reverse-cont
+Continuing.
+
+Hardware watchpoint 2: -location layer_count
+
+Old value = 8 '\b'
+New value = 3 '\003'
+0x000055b47624b50f in kaleidoscope::plugin::EEPROMKeymap::setup (max=8 '\b') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src/kaleidoscope/plugin/EEPROM-Keymap.cpp:49
+49	  layer_count = max;
+(rr) 
+vshcmd: > info function SetUp
+All functions matching regular expression "SetUp":
+
+File /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/googletest/include/gtest/gtest.h:
+441:	void testing::Test::SetUpTestCase();
+427:	void testing::Test::SetUpTestSuite();
+
+File /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/googletest/include/gtest/internal/gtest-internal.h:
+521:	static testing::internal::SetUpTearDownSuiteFuncType testing::internal::SuiteApiResolver<kaleidoscope::testing::(anonymous namespace)::ManualTests>::GetSetUpCaseOrSuite(char const*, int);
+
+File test/manual-tests.cpp:
+302:	static void kaleidoscope::testing::(anonymous namespace)::ManualTests::SetUp();
+
+Non-debugging symbols:
+0x000055b47621c49e  kaleidoscope::testing::VirtualDeviceTest::SetUp()
+0x000055b47621e777  _GLOBAL__sub_I__ZN12kaleidoscope7testing17VirtualDeviceTest5SetUpEv
+0x000055b476260356  testing::Test::SetUp()
+0x000055b476262f7c  testing::internal::PrettyUnitTestResultPrinter::OnEnvironmentsSetUpStart(testing::UnitTest const&)
+0x000055b476264450  testing::internal::TestEventRepeater::OnEnvironmentsSetUpStart(testing::UnitTest const&)
+0x000055b476264744  testing::internal::TestEventRepeater::OnEnvironmentsSetUpEnd(testing::UnitTest const&)
+0x000055b476271bac  testing::internal::SetUpEnvironment(testing::Environment*)
+0x000055b476280dfa  testing::internal::SuiteApiResolver<testing::internal::(anonymous namespace)::FailureTest>::GetSetUpCaseOrSuite(char const*, int)
+0x000055b476283d60  testing::TestSuite::RunSetUpTestSuite()
+0x000055b47628403e  testing::EmptyTestEventListener::OnEnvironmentsSetUpStart(testing::UnitTest const&)
+0x000055b476284052  testing::EmptyTestEventListener::OnEnvironmentsSetUpEnd(testing::UnitTest const&)
+0x000055b476286b6e  testing::internal::PrettyUnitTestResultPrinter::OnEnvironmentsSetUpEnd(testing::UnitTest const&)
+0x000055b476286c38  testing::internal::BriefUnitTestResultPrinter::OnEnvironmentsSetUpStart(testing::UnitTest const&)
+0x000055b476286c4c  testing::internal::BriefUnitTestResultPrinter::OnEnvironmentsSetUpEnd(testing::UnitTest const&)
+(rr) 
+vshcmd: > break 'kaleidoscope::testing::(anonymous namespace)::ManualTests::runOutOfMacroMemory'
+vshcmd: > cont
 GNU gdb (GDB) 13.1.90.20230317-git
 Copyright (C) 2023 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
@@ -115,46 +730,192 @@ Find the GDB manual and other documentation resources online at:
 
 For help, type "help".
 Type "apropos word" to search for commands related to "word"...
-Reading symbols from /home/matmal01/.local/share/rr/EdgeCases-36/mmap_hardlink_4_EdgeCases...
+Reading symbols from /home/matmal01/.local/share/rr/EdgeCases-39/mmap_hardlink_4_EdgeCases...
 Really redefine built-in command "restart"? (y or n) [answered Y; input not from terminal]
-Remote debugging using 127.0.0.1:15219
+Remote debugging using 127.0.0.1:20154
 Reading symbols from /lib64/ld-linux-x86-64.so.2...
 (No debugging symbols found in /lib64/ld-linux-x86-64.so.2)
 BFD: warning: system-supplied DSO at 0x6fffd000 has a section extending past end of file
-0x00007fac4d6992b0 in ?? () from /lib64/ld-linux-x86-64.so.2
-(rr) >>(rr) Breakpoint 1 at 0x5561dbcd9a78: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp, line 46.
+0x00007f61da7fa2b0 in ?? () from /lib64/ld-linux-x86-64.so.2
+(rr) >>(rr) Breakpoint 1 at 0x55a7c596e7c2: file test/manual-testcases.cpp, line 243.
+(rr) Continuing.
+[==========] Running 17 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 17 tests from ManualTests
+[ RUN      ] ManualTests.0_test
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/test/manual-testcases.cpp
+[       OK ] ManualTests.0_test (0 ms)
+[ RUN      ] ManualTests.1_MacrosOnTheFlyTestHelpers
+[       OK ] ManualTests.1_MacrosOnTheFlyTestHelpers (0 ms)
+[ RUN      ] ManualTests.2_ReplayRepeat
+[       OK ] ManualTests.2_ReplayRepeat (1 ms)
+[ RUN      ] ManualTests.3_MacrosOnTheFlyNoHeldOverPlay
+[       OK ] ManualTests.3_MacrosOnTheFlyNoHeldOverPlay (0 ms)
+[ RUN      ] ManualTests.4_MacrosOnTheFlyRecursiveReplay
+[       OK ] ManualTests.4_MacrosOnTheFlyRecursiveReplay (0 ms)
+[ RUN      ] ManualTests.5_MacrosOnTheFlyRecursiveAvoidance
+[       OK ] ManualTests.5_MacrosOnTheFlyRecursiveAvoidance (0 ms)
+[ RUN      ] ManualTests.5_MacrosOnTheFlyAvoidKeyUp
+[       OK ] ManualTests.5_MacrosOnTheFlyAvoidKeyUp (0 ms)
+[ RUN      ] ManualTests.6_MacrosOnTheFlyBailOut
+[       OK ] ManualTests.6_MacrosOnTheFlyBailOut (0 ms)
+[ RUN      ] ManualTests.7_CompressionChecks
+[ INFO     ] Printing Macro: A
+	TAPCODE 4,TAPCODE 13,
+[ INFO     ] Printing Macro: A
+	TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,
+[ INFO     ] Printing Macro: A
+	KEYCODEDOWN 225,TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,KEYCODEUP 225,
+[       OK ] ManualTests.7_CompressionChecks (2 ms)
+[ RUN      ] ManualTests.8_FlagsCompression
+[ INFO     ] Printing Macro: A
+	KEYCODEDOWN 224,TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,KEYCODEUP 224,
+[       OK ] ManualTests.8_FlagsCompression (0 ms)
+[ RUN      ] ManualTests.8_FlagsCompression3
+[ INFO     ] Printing Macro: A
+	TAP 1 4,
+[       OK ] ManualTests.8_FlagsCompression3 (0 ms)
+[ RUN      ] ManualTests.8_FlagsCompression4
+[ INFO     ] Printing Macro: A
+	TAP_SEQUENCE 1 4 1 4 1 4 1 4 0 0 |,
+[       OK ] ManualTests.8_FlagsCompression4 (0 ms)
+[ RUN      ] ManualTests.9_ShiftCheck
+[       OK ] ManualTests.9_ShiftCheck (0 ms)
+[ RUN      ] ManualTests.10_CompressSeqInMiddle
+[ INFO     ] Printing Macro: A
+	KEYCODEDOWN 225,TAPCODE 4,TAPCODE 13,KEYCODEUP 225,TAP_CODE_SEQUENCE 4 4 4 4 4 0 |,
+[ INFO     ] Printing Macro: A
+	KEYCODEDOWN 225,TAPCODE 4,TAPCODE 13,KEYCODEUP 225,TAP_CODE_SEQUENCE 4 4 4 4 4 13 0 |,KEYCODEDOWN 4,TAPCODE 13,KEYCODEUP 4,
+[ INFO     ] Printing Macro: A
+	KEYCODEDOWN 225,TAPCODE 4,TAPCODE 13,KEYCODEUP 225,TAP_CODE_SEQUENCE 4 4 4 4 4 13 0 |,KEYCODEDOWN 4,TAPCODE 13,KEYCODEUP 4,TAP_CODE_SEQUENCE 13 4 13 4 13 0 |,
+[       OK ] ManualTests.10_CompressSeqInMiddle (3 ms)
+[ RUN      ] ManualTests.11_LayerBasics
+[ INFO     ] Printing Macro: A
+	TAPCODE 27,TAP 68 1,TAPCODE 5,TAP 68 1,TAPCODE 27,TAP 68 1,TAPCODE 5,
+[ INFO     ] Printing Macro: A
+	TAPCODE 27,TAP 68 1,TAPCODE 5,TAP 68 1,TAPCODE 27,TAP 68 1,TAPCODE 5,TAP 68 1,
+[ INFO     ] Printing Macro: A
+	KEYDOWN 68 43,TAPCODE 27,KEYUP 68 43,TAPCODE 5,KEYDOWN 68 43,TAPCODE 27,
+[       OK ] ManualTests.11_LayerBasics (2 ms)
+[ RUN      ] ManualTests.12_Delays
+[ INFO     ] Printing Macro: B
+	TAP_CODE_SEQUENCE 5 5 5 0 |,
+[ INFO     ] Printing Macro: B
+	TAPCODE 5,TAPCODE 5,INTERVAL 0,TAPCODE 5,
+[ INFO     ] Printing Macro: B
+	KEYCODEDOWN 5,INTERVAL 0,KEYCODEUP 5,TAPCODE 4,
+[ INFO     ] Printing Macro: B
+	TAPCODE 5,TAPCODE 4,KEYCODEDOWN 5,INTERVAL 0,KEYCODEUP 5,TAPCODE 4,TAPCODE 5,
+[ INFO     ] Printing Macro: A
+	TAPCODE 5,TAPCODE 4,KEYCODEDOWN 5,INTERVAL 2,KEYCODEUP 5,TAPCODE 4,TAPCODE 5,
+[       OK ] ManualTests.12_Delays (3 ms)
+[ RUN      ] ManualTests.13_OutOfMemory
+
+Breakpoint 1, kaleidoscope::testing::(anonymous namespace)::ManualTests::runOutOfMacroMemory (this=0x55a7c6ede470, slot=...) at test/manual-testcases.cpp:243
+243	  void runOutOfMacroMemory (const std::string slot) {
 (rr) 
-vshcmd: > bt
-#0  kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:46
-#1  0x00005561dbcdb659 in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x5561dbd974f2 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:543
-#2  0x00005561dbcd46b1 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:42
-#3  0x00005561dbcd44a7 in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:42
-#4  0x00005561dbcd40ea in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:42
-#5  0x00005561dbcd3d04 in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:42
-#6  0x00005561dbcd51ef in kaleidoscope::Runtime_::handleKeyEvent (this=0x5561dbd96aa0 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
-#7  0x00005561dbcd5123 in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x5561dbd96aa0 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
-#8  0x00005561dbcd82fe in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
-#9  0x00005561dbcd6b94 in kaleidoscope::device::virt::VirtualKeyScanner::actOnMatrixScan (this=0x5561dbd96f48 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.cpp:264
-#10 0x00005561dbcd4b90 in kaleidoscope::device::virt::VirtualKeyScanner::scanMatrix (this=0x5561dbd96f48 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.h:66
-#11 0x00005561dbcd5bb4 in kaleidoscope::device::Base<kaleidoscope::device::virt::VirtualProps>::scanMatrix (this=0x5561dbd96f40 <kaleidoscope_internal::device>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/Base.h:253
-#12 0x00005561dbcd4f6d in kaleidoscope::Runtime_::loop (this=0x5561dbd96aa0 <kaleidoscope::Runtime>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:77
-#13 0x00005561dbcb5368 in kaleidoscope::testing::SimHarness::RunCycle() ()
-#14 0x00005561dbcb5396 in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
-#15 0x00005561dbc6d668 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x5561dbe5f240, str=..., replaying=false) at test/manual-testcases.cpp:180
-#16 0x00005561dbc72e0a in kaleidoscope::testing::(anonymous namespace)::ManualTests_11_Delays_Test::TestBody (this=0x5561dbe5f240) at test/manual-testcases.cpp:671
-#17 0x00005561dbd1da47 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
-#18 0x00005561dbd15ffd in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
-#19 0x00005561dbcea132 in testing::Test::Run() ()
-#20 0x00005561dbceabc0 in testing::TestInfo::Run() ()
-#21 0x00005561dbceb4c7 in testing::TestSuite::Run() ()
-#22 0x00005561dbcfb3f7 in testing::internal::UnitTestImpl::RunAllTests() ()
-#23 0x00005561dbd1e9e0 in bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
-#24 0x00005561dbd170c9 in bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
-#25 0x00005561dbcf9b5f in testing::UnitTest::Run() ()
-#26 0x00005561dbc7b66a in RUN_ALL_TESTS () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/googletest/include/gtest/gtest.h:2490
-#27 0x00005561dbc6c3ea in executeTestFunction () at test/manual-testcases.cpp:10
-#28 0x00005561dbcdd970 in main (argc=3, argv=0x7fffd33eb028) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56
+vshcmd: > print ::kaleidoscope::plugin::MacrosOnTheFly::MACRO_SIZE
+$1 = 50 '2'
 (rr) 
+vshcmd: > until
+249	    runAction(keysequence.str());
+(rr) 
+vshcmd: > step
+kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x55a7c6ede470, str=..., replaying=false) at test/manual-testcases.cpp:166
+166	  void runAction(const std::string str, bool replaying = false) {
+(rr) 
+vshcmd: > print (char *)str._M_dataplus._M_p
+$4 = 0x55a7c6ee0be0 "REC ~A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A"
+(rr) 
+vshcmd: > print str
+$2 = {static npos = 18446744073709551615,
+ _M_dataplus = {<std::allocator<char>> = {<__gnu_cxx::new_allocator<char>> = {<No data fields>},
+ <No data fields>},
+ _M_p = 0x55a7c6ee0be0 "REC ~A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A"},
+ _M_string_length = 106,
+ {_M_local_buf = "j\000\000\000\000\000\000\000\0041\231ŧU\000",
+ _M_allocated_capacity = 106}}
+(rr) 
+vshcmd: > finish
+Run till exit from #0  kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x55a7c6ede470, str=..., replaying=false) at test/manual-testcases.cpp:166
+0x000055a7c596e882 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runOutOfMacroMemory (this=0x55a7c6ede470, slot=...) at test/manual-testcases.cpp:249
+249	    runAction(keysequence.str());
+(rr) 
+vshcmd: > break 'kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent'
+vshcmd: > reverse-cont
+Breakpoint 2 at 0x55a7c59db821: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp, line 403.
+(rr) Continuing.
+
+Breakpoint 2, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x55a7c5a984f2 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:403
+403	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+(rr) 
+vshcmd: > print currentState
+$5 = kaleidoscope::plugin::MacrosOnTheFly::IDLE_AND_RECORDING
+(rr) 
+vshcmd: > next
+547	      if (!recordKeystroke (event)) {
+(rr) 
+vshcmd: > step
+kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:46
+46	  bool MacrosOnTheFly::recordKeystroke(KeyEvent &event) {
+(rr) 
+vshcmd: > next
+64	    if (keyToggledOff(event.state) && cur->numUsedKeystrokes == 0)
+(rr) 
+vshcmd: > print cur->numUsedKeystrokes
+$6 = 53 '5'
+(rr) 
+vshcmd: > watch -l cur->numUsedKeystrokes
+vshcmd: > disable 2
+(rr) 
+vshcmd: > next
+115	    CHECK_REMAINING_SPACE (cur, event.key.getFlags() == 0 ? 2 : 3);
+(rr) 
+vshcmd: > print MACRO_SIZE - cur->numUsedKeystrokes
+$9 = 1
+(rr) 
+vshcmd: > print event.key.getFlags() == 0 ? 2 : 3
+$11 = 2
+(rr) 
+vshcmd: > print 1 >= event.key.getFlags() == 0 ? 2 : 3
+$12 = 3
+(rr) 
+vshcmd: > cont
+Continuing.
+
+Hardware watchpoint 3: -location cur->numUsedKeystrokes
+
+Old value = 53 '5'
+New value = 52 '4'
+0x000055a7c59dac35 in kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:161
+161		  cur->numUsedKeystrokes = latestKeyCodeDown + 1;
+(rr) quit
+A debugging session is active.
+
+	Inferior 1 [process 1920694] will be detached.
+
+Quit anyway? (y or n) 
+vshcmd: > y
+Detaching from program: /home/matmal01/.local/share/rr/EdgeCases-39/mmap_hardlink_4_EdgeCases, process 1920694
+[Inferior 1 (process 1920694) detached]
+Kaleidoscope [18:21:47] $ 
+vshcmd: > cont
+Continuing.
+
+Hardware watchpoint 3: -location cur->numUsedKeystrokes
+
+Old value = 49 '1'
+New value = 48 '0'
+0x000055a7c59dac35 in kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:161
+161		  cur->numUsedKeystrokes = latestKeyCodeDown + 1;
+(rr) 
+vshcmd: > next
+85	    if (currentState == SETTING_DELAY_AND_RECORDING && !IS_MACRODELAY(event)) {
+(rr) 
+vshcmd: > next
+491	    if (currentState == PICKING_SLOT_FOR_PLAY) {
+(rr) 
+vshcmd: > break 'kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent' if $_any_caller_matches(".*ManualTests_12", 999)
 vshcmd: > cont
 Continuing.
 [==========] Running 16 tests from 1 test suite.
@@ -182,7 +943,7 @@ Continuing.
 	TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,
 [ INFO     ] Printing Macro: A
 	KEYCODEDOWN 225,TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,KEYCODEUP 225,
-[       OK ] ManualTests.6_CompressionChecks (1 ms)
+[       OK ] ManualTests.6_CompressionChecks (2 ms)
 [ RUN      ] ManualTests.7_FlagsCompression
 [ INFO     ] Printing Macro: A
 	KEYCODEDOWN 224,TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,KEYCODEUP 224,
@@ -219,11 +980,15 @@ Continuing.
 [ INFO     ] Printing Macro: B
 	TAPCODE 5,TAPCODE 5,INTERVAL 0,TAPCODE 5,
 
-Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:46
-46	  bool MacrosOnTheFly::recordKeystroke(KeyEvent &event) {
+Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x5644721ce732 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:403
+403	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
 (rr) 
 vshcmd: > print sLastPlayedSlot
+$2 = 1 '\001'
+(rr) 
 vshcmd: > watch -l sLastPlayedSlot
+Hardware watchpoint 3: -location sLastPlayedSlot
+(rr) 
 vshcmd: > delete 1
 (rr) 
 vshcmd: > cont
@@ -232,22 +997,40 @@ Continuing.
 	KEYCODEDOWN 5,INTERVAL 0,KEYCODEUP 5,TAPCODE 4,
 [ INFO     ] Printing Macro: B
 	TAPCODE 5,TAPCODE 4,KEYCODEDOWN 5,INTERVAL 0,KEYCODEUP 5,TAPCODE 4,TAPCODE 5,
-[ INFO     ] Printing Macro: B
+[ INFO     ] Printing Macro: A
 	TAPCODE 5,TAPCODE 4,KEYCODEDOWN 5,INTERVAL 2,KEYCODEUP 5,TAPCODE 4,TAPCODE 5,
+
+Hardware watchpoint 3: -location sLastPlayedSlot
+
+Old value = 1 '\001'
+New value = 0 '\000'
+0x000056447211626d in kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:384
+384	    if (success) sLastPlayedSlot = sIndex;
+(rr) 
+vshcmd: > cont
+Continuing.
 [       OK ] ManualTests.11_Delays (3 ms)
 [ RUN      ] ManualTests.12_ReplayRepeat
+
+Breakpoint 2, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x5644721ce732 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:403
+403	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+(rr) 
+vshcmd: > delete 2
+(rr) 
+vshcmd: > cont
+Continuing.
 /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:164: Failure
 Expected equality of these values:
   observed_keyboard_report_count
     Which is: 12
   expected_keyboard_report_count
     Which is: 8
-Unexpected keyboard report at 2559ms: { 4 }
+Unexpected keyboard report at 2559ms: { 5 }
 Unexpected keyboard report at 2559ms: { }
-Unexpected keyboard report at 2559ms: { 4 }
+Unexpected keyboard report at 2559ms: { d }
 Unexpected keyboard report at 2559ms: { }
 [  FAILED  ] ManualTests.12_ReplayRepeat (2 ms)
-[----------] 16 tests from ManualTests (24 ms total)
+[----------] 16 tests from ManualTests (23 ms total)
 
 [----------] Global test environment tear-down
 [==========] 16 tests from 1 test suite ran. (24 ms total)
@@ -3138,4 +3921,9 @@ A debugging session is active.
 	Inferior 1 [process 1248350] will be detached.
 
 Quit anyway? (y or n) Kaleidoscope [11:24:45] $ Kaleidoscope [11:24:47] $ (rr) (rr) quit
-Kaleidoscope [12:11:12] $ 
+Kaleidoscope [12:11:12] $ Kaleidoscope [18:05:19] $ Kaleidoscope [18:05:22] $ quit
+A debugging session is active.
+
+	Inferior 1 [process 2476988] will be detached.
+
+Quit anyway? (y or n) 
