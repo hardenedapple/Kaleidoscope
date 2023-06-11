@@ -157,7 +157,7 @@ class ManualTests : public VirtualDeviceTest {
 #define doPress          \
     if (!replaying) {    \
       PressKey(addr);    \
-      sim_.RunCycles(1); \
+      sim_.RunCycle(); \
     }                    \
     checkPressed;        \
     checkMacro;
@@ -165,7 +165,7 @@ class ManualTests : public VirtualDeviceTest {
 #define doRelease                                              \
     if (!replaying) {                                          \
       ReleaseKey(addr);                                        \
-      sim_.RunCycles(1);                                       \
+      sim_.RunCycle();                                       \
     }                                                          \
     checkRelease;
   void runAction(const std::string str, bool replaying = false) {
@@ -592,27 +592,79 @@ TEST_F(ManualTests, 8_FlagsCompression4) {
  *    Behaviour is correctly reproducing, but have not updated testsuite
  *    framework to correctly check this.
  */
-// TEST_F(ManualTests, 8_FlagsCompression2) {
-//   ClearState();
-//   runAction("REC ~A *LeftControl_A| A *LeftControl_A^ REC");
-//   storeMacro("A", "*LeftControl_A| A *LeftControl_A^");
-//   printMacro("A");
-//   runAction("PLAY %A");
+TEST_F(ManualTests, 8_FlagsCompression2) {
+  ClearState();
+  /* Actions that we see are:
+  REC            => <sends nothing>
+  A              => <sends nothing>
+  LeftControl_A| => {ctrl} {ctrl a}
+  A press        => {ctrl} {} {A}
+  A release      => {}
+  LeftControl_A^ => <does nothing>   */
+  runAction("REC ~A *LeftControl_A|");
+  PressKey(key_addr_A);
+  sim_.RunCycle();
+  ExpectKeyboardReport(RemoveKeycodes{Key_A}, "remove original A");
+  ExpectKeyboardReport(RemoveKeycodes{Key_LeftControl},
+      "remove original ctrl");
+  ExpectKeyboardReport(AddKeycodes{Key_A}, "add A back in");
+  runAction("~A^");
+  /* Here releasing the LeftControl_A key is seen as releasing an A key at this
+   * address.  The flags are essentially ignored for all cycles after the first
+   * one.  That is why releasing the A above did not send any report (because
+   * as far as the runtime is concerned we have two `A`'s held and we only
+   * released one).  */
+  ReleaseKey(key_addr_LeftControl_A);
+  sim_.RunCycle();
+  ExpectKeyboardReport(RemoveKeycodes{Key_A}, "remove final A");
+  runAction("REC");
 
-//   LoadState();
-//   CheckReports();
-// }
+  /* Though we press the same keys as above, when replaying it looks like this.  */
+  storeMacro("A", "LeftControl| A LeftControl^ A");
+  printMacro("A");
+  runAction("PLAY %A");
 
-// TEST_F(ManualTests, 8_FlagsCompression5) {
-//   ClearState();
-//   runAction("REC ~A *LeftControl_A| J *LeftControl_A^ REC");
-//   storeMacro("A", "*LeftControl_A| J *LeftControl_A^");
-//   printMacro("A");
-//   runAction("PLAY %A");
+  LoadState();
+  CheckReports();
+}
 
-//   LoadState();
-//   CheckReports();
-// }
+TEST_F(ManualTests, 8_FlagsCompression5) {
+  ClearState();
+  /* Similar to 8_FlagsCompression2, except that since the newly pressed J is
+   * different to the key which is held with LeftControl_A there are no special
+   * extra keypresses to release the `A` before pressing it again.  */
+  runAction("REC ~A *LeftControl_A|");
+
+  PressKey(key_addr_J);
+  sim_.RunCycle();
+  /* See point 2. in comment above
+   * MultiReport/Keyboard.cpp:Keyboard_::sendReport
+   * If a non-modifier keycode toggles on in the same report as a modifier
+   * changes the host might process the non-modifier first.  Hence we send two
+   * reports, one removing the modifier and one adding the J.
+   * N.b. the modifier is removed since the LeftControl_A key only triggers a
+   * modifier on the cycle that it toggles on -- holding it is not the same as
+   * holding Ctrl and A.  */
+  ExpectKeyboardReport(Keycodes{Key_A}, "removed Ctrl from LeftControl_A");
+  ExpectKeyboardReport(Keycodes{Key_A, Key_J}, "pressed J");
+
+  runAction("J^");
+
+  ReleaseKey(key_addr_LeftControl_A);
+  sim_.RunCycle();
+  ExpectKeyboardReport(Keycodes{}, "released final A");
+
+  runAction("REC");
+
+  /* What we saw above was:
+   *    {ctrl} {ctrl a} {a} {j a} {a} {} */
+  storeMacro("A", "LeftControl| A| LeftControl^ J A^");
+  printMacro("A");
+  runAction("PLAY %A");
+
+  LoadState();
+  CheckReports();
+}
 
 TEST_F(ManualTests, 9_ShiftCheck) {
   ClearState();
