@@ -52,6 +52,7 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
     static Slot slotRecord[NUM_MACROS];
     static const uint16_t STORAGE_SIZE_IN_BYTES = MACRO_SIZE*NUM_MACROS;
     static byte macroStorage[STORAGE_SIZE_IN_BYTES];
+    static Key userLayerShiftKey;
     static uint8_t sRecordingSlot;
     static uint8_t sLastPlayedSlot;
     static uint8_t delayInterval;
@@ -160,7 +161,7 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
 	= latestKeyDown = latestKeyCodeDown = MACRO_SIZE;
     }
 
-    static void initialise(Key[NUM_MACROS]);
+    static void initialise(Key[NUM_MACROS], Key layerShift=Key_NoKey);
     static bool recordKeystroke(KeyEvent &);
     static bool play(const uint8_t);
     static EventHandlerResult doNewPlay(KeyEvent &);

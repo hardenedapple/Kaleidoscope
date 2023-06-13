@@ -392,17 +392,17 @@ class PersonalConfig : public VirtualDeviceTest {
 #define checkPressed checkReport(Add)
 #define checkRelease checkReport(Remove)
 
-#define checkMacro                                    \
-    if (report == ReportIds::triggerMacro) {          \
-      std::string id = keyId;                         \
-      if (keyId == "PLAY")                            \
-        id = lastRanMacro;                            \
-      auto x = knownMacros.find(id);                  \
-      if (keyId != "PLAY" || !lastRanMacro.empty()) { \
-	assert (x != knownMacros.end());              \
-	runAction(x->second, true);                   \
-      }                                               \
-      lastRanMacro = id;                              \
+#define checkMacro                                                \
+    if (report == ReportIds::triggerMacro) {                      \
+      std::string id = keyId;                                     \
+      if (keyId.rfind("PLAY", 0) == 0)                            \
+        id = lastRanMacro;                                        \
+      auto x = knownMacros.find(id);                              \
+      if (keyId.rfind("PLAY", 0) != 0 || !lastRanMacro.empty()) { \
+	assert (x != knownMacros.end());                          \
+	runAction(x->second, true);                               \
+      }                                                           \
+      lastRanMacro = id;                                          \
     }
 
 #define doPress          \
@@ -939,6 +939,59 @@ TEST_F(PersonalConfig, 8_MacroRecordIntoWrongSlot) {
   storeMacro("J", "");
   ASSERT_EQ(::MacrosOnTheFly.currentState, ::kaleidoscope::plugin::MacrosOnTheFly::State_::IDLE);
   runAction("PLAY1 %J");
+
+  LoadState();
+  CheckReports();
+}
+
+TEST_F(PersonalConfig, 9_MacroReplayPLAYPLAY) {
+  ClearState();
+  runAction("REC2 ~T A B REC2");
+  storeMacro("T", "A B");
+  runAction("PLAY2 %T");
+
+  runAction("SPECIALSHIFT1|");
+
+  PressKey(addrByName("MACROPLAY1"));
+  sim_.RunCycle();
+  /* Expect nothing sent.  */
+  ReleaseKey(addrByName("MACROPLAY1"));
+  sim_.RunCycle();
+  /* Expect nothing sent.  */
+
+  PressKey(addrByName("MACROPLAY2"));
+  sim_.RunCycle();
+  /* Expect entire macro replay here.  */
+  ExpectKeyboardReport(AddKeycodes{Key_A}, "A from re-PLAY PLAY");
+  ExpectKeyboardReport(RemoveKeycodes{Key_A}, "A from re-PLAY PLAY");
+  ExpectKeyboardReport(AddKeycodes{Key_B}, "B from re-PLAY PLAY");
+  ExpectKeyboardReport(RemoveKeycodes{Key_B}, "B from re-PLAY PLAY");
+
+  ReleaseKey(addrByName("MACROPLAY2"));
+  sim_.RunCycle();
+  /* Expect no keyboard report here.  */
+
+  runAction("SPECIALSHIFT1^");
+
+  /* SpecialShift is ignored (consumed by an earlier plugin). */
+  runAction("PLAY1 SPECIALSHIFT1|");
+  PressKey(addrByName("MACROPLAY1"));
+  sim_.RunCycle();
+  ExpectKeyboardReport(AddKeycodes{Key_A}, "A from re-PLAY PLAY2");
+  ExpectKeyboardReport(RemoveKeycodes{Key_A}, "A from re-PLAY PLAY2");
+  ExpectKeyboardReport(AddKeycodes{Key_B}, "B from re-PLAY PLAY2");
+  ExpectKeyboardReport(RemoveKeycodes{Key_B}, "B from re-PLAY PLAY2");
+
+  ReleaseKey(addrByName("MACROPLAY1"));
+  sim_.RunCycle();
+  /* To double-check we're in the correct SPECIALSHIFT state.  */
+  runAction("Backtick2");
+
+  ReleaseKey(addrByName("SPECIALSHIFT1"));
+  sim_.RunCycle();
+
+  /* To double-check we're in the correct SPECIALSHIFT state.  */
+  runAction("G");
 
   LoadState();
   CheckReports();
