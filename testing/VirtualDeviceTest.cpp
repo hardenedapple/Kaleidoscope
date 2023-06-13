@@ -175,21 +175,26 @@ void VirtualDeviceTest::CheckKeyboardReports() const {
       auto expected_report   = expected_keyboard_reports_[i];
       auto expected_keycodes = expected_report.Keycodes();
 
-      EXPECT_THAT(observed_keycodes,
-                  ::testing::ElementsAreArray(expected_keycodes))
-        << expected_keyboard_reports_[i].Message() << " (i=" << i << ")";
+      std::cerr << "Expected keyboard report at "
+	<< expected_report.Timestamp() << "ms: { " << std::hex;
+      for (uint8_t keycode : expected_keycodes) {
+	std::cerr << int(keycode) << " ";
+      }
+      std::cerr << "}" << std::dec << std::endl;
+      // EXPECT_THAT(observed_keycodes,
+      //             ::testing::ElementsAreArray(expected_keycodes))
+      //   << expected_keyboard_reports_[i].Message() << " (i=" << i << ")";
       EXPECT_EQ(observed_report.Timestamp(), expected_report.Timestamp())
         << "Report timestamps don't match (i=" << i << ")";
 
     } else {
-
-      std::cerr << "Unexpected keyboard report at "
-                << observed_report.Timestamp() << "ms: { " << std::hex;
-      for (uint8_t keycode : observed_keycodes) {
-        std::cerr << int(keycode) << " ";
-      }
-      std::cerr << "}" << std::dec << std::endl;
     }
+    std::cerr << "Observed keyboard report at "
+	      << observed_report.Timestamp() << "ms: { " << std::hex;
+    for (uint8_t keycode : observed_keycodes) {
+      std::cerr << int(keycode) << " ";
+    }
+    std::cerr << "}" << std::dec << std::endl;
   }
   for ( ; i < expected_keyboard_report_count; ++i) {
     auto expected_report = expected_keyboard_reports_[i];

@@ -2,41 +2,1350 @@ vshcmd: > sudo su
 vshcmd: > echo 0 > /proc/sys/kernel/perf_event_paranoid
 root@e124762:/home/matmal01/Documents/not-work/keyboard/Kaleidoscope# exit
 Kaleidoscope [13:42:46] $ 
+vshcmd: > rr /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/MacrosOnTheFly/EdgeCases/bin/EdgeCases -t -q
 vshcmd: > rr /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/personal-config/bin/personal-config -t -q
-rr: Saving execution to trace directory `/home/matmal01/.local/share/rr/1113-1'.
+rr: Saving execution to trace directory `/home/matmal01/.local/share/rr/personal-config-10'.
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from PersonalConfig
+[ RUN      ] PersonalConfig.0_test
+[ INFO     ] test: tests/personal-config/test/manual-tests.cpp
+[       OK ] PersonalConfig.0_test (0 ms)
+[ RUN      ] PersonalConfig.1_MacroRecordBasic
+Expected keyboard report at 7ms: { 1b }
+Observed keyboard report at 7ms: { 1b }
+Expected keyboard report at 8ms: { }
+Observed keyboard report at 8ms: { }
+Expected keyboard report at 9ms: { 1b }
+Observed keyboard report at 9ms: { 1b }
+Expected keyboard report at 10ms: { }
+Observed keyboard report at 10ms: { }
+Expected keyboard report at 19ms: { 1b }
+Observed keyboard report at 19ms: { 1b }
+Expected keyboard report at 19ms: { }
+Observed keyboard report at 19ms: { }
+Expected keyboard report at 19ms: { 1b }
+Observed keyboard report at 19ms: { 1b }
+Expected keyboard report at 19ms: { }
+Observed keyboard report at 19ms: { }
+[       OK ] PersonalConfig.1_MacroRecordBasic (8 ms)
+[ RUN      ] PersonalConfig.2_MacroRecordTopsy
+[ INFO     ] Printing Macro: A
+	TAP_CODE_SEQUENCE 30 31 32 0 |,KEYDOWN 209 199,TAP 209 197,KEYUP 209 199,TAPCODE 4,KEYDOWN 209 199,
+[ INFO     ] Printing Macro: A
+	TAP_CODE_SEQUENCE 30 31 32 0 |,KEYDOWN 209 199,TAP 209 197,KEYUP 209 199,KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 209 199,
+[ INFO     ] Printing Macro: A
+	TAP_CODE_SEQUENCE 30 31 32 0 |,KEYDOWN 209 199,TAP 209 197,KEYUP 209 199,KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,KEYDOWN 209 199,
+[ INFO     ] Printing Macro: A
+	KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,KEYDOWN 209 199,TAP 209 197,KEYUP 209 199,TAP_CODE_SEQUENCE 30 31 32 0 |,KEYDOWN 209 199,
+Expected keyboard report at 27ms: { 1e }
+Observed keyboard report at 27ms: { 1e }
+Expected keyboard report at 28ms: { }
+Observed keyboard report at 28ms: { }
+Expected keyboard report at 29ms: { 1f }
+Observed keyboard report at 29ms: { 1f }
+Expected keyboard report at 30ms: { }
+Observed keyboard report at 30ms: { }
+Expected keyboard report at 31ms: { 20 }
+Observed keyboard report at 31ms: { 20 }
+Expected keyboard report at 32ms: { }
+Observed keyboard report at 32ms: { }
+Expected keyboard report at 37ms: { 4 }
+Observed keyboard report at 37ms: { 4 }
+Expected keyboard report at 38ms: { }
+Observed keyboard report at 38ms: { }
+Expected keyboard report at 51ms: { 1e }
+Observed keyboard report at 51ms: { 1e }
+Expected keyboard report at 51ms: { }
+Observed keyboard report at 51ms: { }
+Expected keyboard report at 51ms: { 1f }
+Observed keyboard report at 51ms: { 1f }
+Expected keyboard report at 51ms: { }
+Observed keyboard report at 51ms: { }
+Expected keyboard report at 51ms: { 20 }
+Observed keyboard report at 51ms: { 20 }
+Expected keyboard report at 51ms: { }
+Observed keyboard report at 51ms: { }
+Expected keyboard report at 51ms: { 4 }
+Observed keyboard report at 51ms: { 4 }
+Expected keyboard report at 51ms: { }
+Observed keyboard report at 51ms: { }
+Expected keyboard report at 63ms: { 1e }
+Observed keyboard report at 63ms: { 1e }
+Expected keyboard report at 64ms: { }
+Observed keyboard report at 64ms: { }
+Expected keyboard report at 65ms: { 1f }
+Observed keyboard report at 65ms: { 1f }
+Expected keyboard report at 66ms: { }
+Observed keyboard report at 66ms: { }
+Expected keyboard report at 67ms: { 20 }
+Observed keyboard report at 67ms: { 20 }
+Expected keyboard report at 68ms: { }
+Observed keyboard report at 68ms: { }
+Expected keyboard report at 73ms: { e1 }
+Observed keyboard report at 73ms: { e1 }
+Expected keyboard report at 73ms: { 1e e1 }
+Observed keyboard report at 73ms: { 1e e1 }
+Expected keyboard report at 74ms: { e1 }
+Observed keyboard report at 74ms: { e1 }
+Expected keyboard report at 74ms: { }
+Observed keyboard report at 74ms: { }
+Expected keyboard report at 87ms: { 1e }
+Observed keyboard report at 87ms: { 1e }
+Expected keyboard report at 87ms: { }
+Observed keyboard report at 87ms: { }
+Expected keyboard report at 87ms: { 1f }
+Observed keyboard report at 87ms: { 1f }
+Expected keyboard report at 87ms: { }
+Observed keyboard report at 87ms: { }
+Expected keyboard report at 87ms: { 20 }
+Observed keyboard report at 87ms: { 20 }
+Expected keyboard report at 87ms: { }
+Observed keyboard report at 87ms: { }
+Expected keyboard report at 87ms: { e1 }
+Observed keyboard report at 87ms: { e1 }
+Expected keyboard report at 87ms: { 1e e1 }
+Observed keyboard report at 87ms: { 1e e1 }
+Expected keyboard report at 87ms: { e1 }
+Observed keyboard report at 87ms: { e1 }
+Expected keyboard report at 87ms: { }
+Observed keyboard report at 87ms: { }
+Expected keyboard report at 99ms: { 1e }
+Observed keyboard report at 99ms: { 1e }
+Expected keyboard report at 100ms: { }
+Observed keyboard report at 100ms: { }
+Expected keyboard report at 101ms: { 1f }
+Observed keyboard report at 101ms: { 1f }
+Expected keyboard report at 102ms: { }
+Observed keyboard report at 102ms: { }
+Expected keyboard report at 103ms: { 20 }
+Observed keyboard report at 103ms: { 20 }
+Expected keyboard report at 104ms: { }
+Observed keyboard report at 104ms: { }
+Expected keyboard report at 109ms: { e1 }
+Observed keyboard report at 109ms: { e1 }
+Expected keyboard report at 109ms: { 1e e1 }
+Observed keyboard report at 109ms: { 1e e1 }
+Expected keyboard report at 110ms: { e1 }
+Observed keyboard report at 110ms: { e1 }
+Expected keyboard report at 110ms: { }
+Observed keyboard report at 110ms: { }
+Expected keyboard report at 111ms: { e1 }
+Observed keyboard report at 111ms: { e1 }
+Expected keyboard report at 111ms: { 1f e1 }
+Observed keyboard report at 111ms: { 1f e1 }
+Expected keyboard report at 112ms: { e1 }
+Observed keyboard report at 112ms: { e1 }
+Expected keyboard report at 112ms: { }
+Observed keyboard report at 112ms: { }
+Expected keyboard report at 113ms: { e1 }
+Observed keyboard report at 113ms: { e1 }
+Expected keyboard report at 113ms: { 20 e1 }
+Observed keyboard report at 113ms: { 20 e1 }
+Expected keyboard report at 114ms: { e1 }
+Observed keyboard report at 114ms: { e1 }
+Expected keyboard report at 114ms: { }
+Observed keyboard report at 114ms: { }
+Expected keyboard report at 127ms: { 1e }
+Observed keyboard report at 127ms: { 1e }
+Expected keyboard report at 127ms: { }
+Observed keyboard report at 127ms: { }
+Expected keyboard report at 127ms: { 1f }
+Observed keyboard report at 127ms: { 1f }
+Expected keyboard report at 127ms: { }
+Observed keyboard report at 127ms: { }
+Expected keyboard report at 127ms: { 20 }
+Observed keyboard report at 127ms: { 20 }
+Expected keyboard report at 127ms: { }
+Observed keyboard report at 127ms: { }
+Expected keyboard report at 127ms: { e1 }
+Observed keyboard report at 127ms: { e1 }
+Expected keyboard report at 127ms: { 1e e1 }
+Observed keyboard report at 127ms: { 1e e1 }
+Expected keyboard report at 127ms: { e1 }
+Observed keyboard report at 127ms: { e1 }
+Expected keyboard report at 127ms: { }
+Observed keyboard report at 127ms: { }
+Expected keyboard report at 127ms: { e1 }
+Observed keyboard report at 127ms: { e1 }
+Expected keyboard report at 127ms: { 1f e1 }
+Observed keyboard report at 127ms: { 1f e1 }
+Expected keyboard report at 127ms: { e1 }
+Observed keyboard report at 127ms: { e1 }
+Expected keyboard report at 127ms: { }
+Observed keyboard report at 127ms: { }
+Expected keyboard report at 127ms: { e1 }
+Observed keyboard report at 127ms: { e1 }
+Expected keyboard report at 127ms: { 20 e1 }
+Observed keyboard report at 127ms: { 20 e1 }
+Expected keyboard report at 127ms: { e1 }
+Observed keyboard report at 127ms: { e1 }
+Expected keyboard report at 127ms: { }
+Observed keyboard report at 127ms: { }
+Expected keyboard report at 137ms: { e1 }
+Observed keyboard report at 137ms: { e1 }
+Expected keyboard report at 137ms: { 1e e1 }
+Observed keyboard report at 137ms: { 1e e1 }
+Expected keyboard report at 138ms: { e1 }
+Observed keyboard report at 138ms: { e1 }
+Expected keyboard report at 138ms: { }
+Observed keyboard report at 138ms: { }
+Expected keyboard report at 145ms: { e1 }
+Observed keyboard report at 145ms: { e1 }
+Expected keyboard report at 145ms: { 1e e1 }
+Observed keyboard report at 145ms: { 1e e1 }
+Expected keyboard report at 146ms: { e1 }
+Observed keyboard report at 146ms: { e1 }
+Expected keyboard report at 146ms: { }
+Observed keyboard report at 146ms: { }
+Expected keyboard report at 147ms: { e1 }
+Observed keyboard report at 147ms: { e1 }
+Expected keyboard report at 147ms: { 1f e1 }
+Observed keyboard report at 147ms: { 1f e1 }
+Expected keyboard report at 148ms: { e1 }
+Observed keyboard report at 148ms: { e1 }
+Expected keyboard report at 148ms: { }
+Observed keyboard report at 148ms: { }
+Expected keyboard report at 149ms: { e1 }
+Observed keyboard report at 149ms: { e1 }
+Expected keyboard report at 149ms: { 20 e1 }
+Observed keyboard report at 149ms: { 20 e1 }
+Expected keyboard report at 150ms: { e1 }
+Observed keyboard report at 150ms: { e1 }
+Expected keyboard report at 150ms: { }
+Observed keyboard report at 150ms: { }
+Expected keyboard report at 155ms: { 1e }
+Observed keyboard report at 155ms: { 1e }
+Expected keyboard report at 156ms: { }
+Observed keyboard report at 156ms: { }
+Expected keyboard report at 157ms: { 1f }
+Observed keyboard report at 157ms: { 1f }
+Expected keyboard report at 158ms: { }
+Observed keyboard report at 158ms: { }
+Expected keyboard report at 159ms: { 20 }
+Observed keyboard report at 159ms: { 20 }
+Expected keyboard report at 160ms: { }
+Observed keyboard report at 160ms: { }
+Expected keyboard report at 173ms: { e1 }
+Observed keyboard report at 173ms: { e1 }
+Expected keyboard report at 173ms: { 1e e1 }
+Observed keyboard report at 173ms: { 1e e1 }
+Expected keyboard report at 173ms: { e1 }
+Observed keyboard report at 173ms: { e1 }
+Expected keyboard report at 173ms: { }
+Observed keyboard report at 173ms: { }
+Expected keyboard report at 173ms: { e1 }
+Observed keyboard report at 173ms: { e1 }
+Expected keyboard report at 173ms: { 1f e1 }
+Observed keyboard report at 173ms: { 1f e1 }
+Expected keyboard report at 173ms: { e1 }
+Observed keyboard report at 173ms: { e1 }
+Expected keyboard report at 173ms: { }
+Observed keyboard report at 173ms: { }
+Expected keyboard report at 173ms: { e1 }
+Observed keyboard report at 173ms: { e1 }
+Expected keyboard report at 173ms: { 20 e1 }
+Observed keyboard report at 173ms: { 20 e1 }
+Expected keyboard report at 173ms: { e1 }
+Observed keyboard report at 173ms: { e1 }
+Expected keyboard report at 173ms: { }
+Observed keyboard report at 173ms: { }
+Expected keyboard report at 173ms: { 1e }
+Observed keyboard report at 173ms: { 1e }
+Expected keyboard report at 173ms: { }
+Observed keyboard report at 173ms: { }
+Expected keyboard report at 173ms: { 1f }
+Observed keyboard report at 173ms: { 1f }
+Expected keyboard report at 173ms: { }
+Observed keyboard report at 173ms: { }
+Expected keyboard report at 173ms: { 20 }
+Observed keyboard report at 173ms: { 20 }
+Expected keyboard report at 173ms: { }
+Observed keyboard report at 173ms: { }
+[       OK ] PersonalConfig.2_MacroRecordTopsy (119 ms)
+[ RUN      ] PersonalConfig.3_MacroRecordOneShot
+[ INFO     ] Printing Macro: A
+	KEYCODEDOWN 225,KEYCODEDOWN 4,KEYCODEUP 225,KEYCODEUP 4,TAPCODE 4,KEYDOWN 209 199,
+[ INFO     ] Printing Macro: A
+	TAPCODE 4,TAPCODE 4,KEYDOWN 209 199,
+[ INFO     ] Printing Macro: A
+	TAPCODE 4,TAPCODE 4,KEYCODEDOWN 225,KEYDOWN 209 199,KEYCODEUP 225,
+[ INFO     ] Printing Macro: A
+	TAPCODE 4,TAPCODE 4,KEYCODEDOWN 225,TAPCODE 4,KEYCODEUP 225,KEYDOWN 209 199,
+Expected keyboard report at 181ms: { e1 }
+Observed keyboard report at 181ms: { e1 }
+Expected keyboard report at 183ms: { 4 e1 }
+Observed keyboard report at 183ms: { 4 e1 }
+Expected keyboard report at 183ms: { e1 }
+Observed keyboard report at 183ms: { 4 }
+Expected keyboard report at 184ms: { e1 }
+Observed keyboard report at 184ms: { }
+Expected keyboard report at 185ms: { 4 e1 }
+Observed keyboard report at 185ms: { 4 }
+Expected keyboard report at 186ms: { e1 }
+Observed keyboard report at 186ms: { }
+Expected keyboard report at 195ms: { e1 }
+Observed keyboard report at 195ms: { e1 }
+Expected keyboard report at 195ms: { 4 e1 }
+Observed keyboard report at 195ms: { 4 e1 }
+Expected keyboard report at 195ms: { 4 }
+Observed keyboard report at 195ms: { 4 }
+Expected keyboard report at 195ms: { }
+Observed keyboard report at 195ms: { }
+Expected keyboard report at 195ms: { 4 }
+Observed keyboard report at 195ms: { 4 }
+Expected keyboard report at 195ms: { }
+Observed keyboard report at 195ms: { }
+Expected keyboard report at 197ms: { e1 }
+Observed keyboard report at 197ms: { e1 }
+Expected keyboard report at 199ms: { }
+Observed keyboard report at 199ms: { }
+Expected keyboard report at 205ms: { 4 }
+Observed keyboard report at 205ms: { 4 }
+Expected keyboard report at 206ms: { }
+Observed keyboard report at 206ms: { }
+Expected keyboard report at 207ms: { 4 }
+Observed keyboard report at 207ms: { 4 }
+Expected keyboard report at 208ms: { }
+Observed keyboard report at 208ms: { }
+Expected keyboard report at 217ms: { 4 }
+Observed keyboard report at 217ms: { 4 }
+Expected keyboard report at 217ms: { }
+Observed keyboard report at 217ms: { }
+Expected keyboard report at 217ms: { 4 }
+Observed keyboard report at 217ms: { 4 }
+Expected keyboard report at 217ms: { }
+Observed keyboard report at 217ms: { }
+Expected keyboard report at 225ms: { 4 }
+Observed keyboard report at 225ms: { 4 }
+Expected keyboard report at 226ms: { }
+Observed keyboard report at 226ms: { }
+Expected keyboard report at 227ms: { 4 }
+Observed keyboard report at 227ms: { 4 }
+Expected keyboard report at 228ms: { }
+Observed keyboard report at 228ms: { }
+Expected keyboard report at 229ms: { e1 }
+Observed keyboard report at 229ms: { e1 }
+Expected keyboard report at 231ms: { }
+Observed keyboard report at 231ms: { }
+Expected keyboard report at 239ms: { 4 }
+Observed keyboard report at 239ms: { 4 }
+Expected keyboard report at 239ms: { }
+Observed keyboard report at 239ms: { }
+Expected keyboard report at 239ms: { 4 }
+Observed keyboard report at 239ms: { 4 }
+Expected keyboard report at 239ms: { }
+Observed keyboard report at 239ms: { }
+Expected keyboard report at 239ms: { e1 }
+Observed keyboard report at 239ms: { e1 }
+Expected keyboard report at 239ms: { }
+Observed keyboard report at 239ms: { }
+Expected keyboard report at 247ms: { 4 }
+Observed keyboard report at 247ms: { 4 }
+Expected keyboard report at 248ms: { }
+Observed keyboard report at 248ms: { }
+Expected keyboard report at 249ms: { 4 }
+Observed keyboard report at 249ms: { 4 }
+Expected keyboard report at 250ms: { }
+Observed keyboard report at 250ms: { }
+Expected keyboard report at 251ms: { e1 }
+Observed keyboard report at 251ms: { e1 }
+Expected keyboard report at 252ms: { 4 e1 }
+Observed keyboard report at 252ms: { 4 e1 }
+Expected keyboard report at 253ms: { e1 }
+Observed keyboard report at 253ms: { e1 }
+Expected keyboard report at 254ms: { }
+Observed keyboard report at 254ms: { }
+Expected keyboard report at 263ms: { 4 }
+Observed keyboard report at 263ms: { 4 }
+Expected keyboard report at 263ms: { }
+Observed keyboard report at 263ms: { }
+Expected keyboard report at 263ms: { 4 }
+Observed keyboard report at 263ms: { 4 }
+Expected keyboard report at 263ms: { }
+Observed keyboard report at 263ms: { }
+Expected keyboard report at 263ms: { e1 }
+Observed keyboard report at 263ms: { e1 }
+Expected keyboard report at 263ms: { 4 e1 }
+Observed keyboard report at 263ms: { 4 e1 }
+Expected keyboard report at 263ms: { e1 }
+Observed keyboard report at 263ms: { e1 }
+Expected keyboard report at 263ms: { }
+Observed keyboard report at 263ms: { }
+[       OK ] PersonalConfig.3_MacroRecordOneShot (52 ms)
+[ RUN      ] PersonalConfig.4_MacroRecordSpecialShift
+[       OK ] PersonalConfig.4_MacroRecordSpecialShift (0 ms)
+[ RUN      ] PersonalConfig.5_MacroRecordSpecialShift
+[       OK ] PersonalConfig.5_MacroRecordSpecialShift (0 ms)
+[ RUN      ] PersonalConfig.6_MacroRecordTopsyOneShot
+[ INFO     ] Printing Macro: A
+	TAPCODE 30,TAPCODE 31,KEYDOWN 209 199,TAP 209 197,KEYUP 209 199,TAPCODE 4,KEYDOWN 208 75,KEYCODEUP 30,KEYCODEDOWN 229,KEYDOWN 208 75,KEYCODEUP 30,KEYCODEUP 229,KEYDOWN 209 199,
+[ INFO     ] Printing Macro: O
+	KEYCODEDOWN 229,KEYDOWN 208 77,KEYCODEUP 229,KEYCODEUP 32,KEYDOWN 209 199,
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:164: Failure
+Expected equality of these values:
+  observed_keyboard_report_count
+    Which is: 44
+  expected_keyboard_report_count
+    Which is: 41
+Expected keyboard report at 271ms: { 1e }
+Observed keyboard report at 271ms: { 1e }
+Expected keyboard report at 272ms: { }
+Observed keyboard report at 272ms: { }
+Expected keyboard report at 273ms: { 1f }
+Observed keyboard report at 273ms: { 1f }
+Expected keyboard report at 274ms: { }
+Observed keyboard report at 274ms: { }
+Expected keyboard report at 279ms: { 4 }
+Observed keyboard report at 279ms: { 4 }
+Expected keyboard report at 280ms: { }
+Observed keyboard report at 280ms: { }
+Expected keyboard report at 281ms: { e1 }
+Observed keyboard report at 281ms: { e1 }
+Expected keyboard report at 281ms: { 1e e1 }
+Observed keyboard report at 281ms: { 1e e1 }
+Expected keyboard report at 282ms: { e1 }
+Observed keyboard report at 282ms: { e1 }
+Expected keyboard report at 282ms: { }
+Observed keyboard report at 282ms: { }
+Expected keyboard report at 283ms: { e5 }
+Observed keyboard report at 283ms: { e5 }
+Expected keyboard report at 284ms: { }
+Observed keyboard report at 284ms: { }
+Expected keyboard report at 284ms: { 1e }
+Observed keyboard report at 284ms: { 1e }
+Expected keyboard report at 285ms: { }
+Observed keyboard report at 285ms: { }
+Expected keyboard report at 285ms: { e5 }
+Observed keyboard report at 285ms: { e5 }
+Expected keyboard report at 286ms: { }
+Observed keyboard report at 286ms: { }
+Expected keyboard report at 299ms: { 1e }
+Observed keyboard report at 299ms: { 1e }
+Expected keyboard report at 299ms: { }
+Observed keyboard report at 299ms: { }
+Expected keyboard report at 299ms: { 1f }
+Observed keyboard report at 299ms: { 1f }
+Expected keyboard report at 299ms: { }
+Observed keyboard report at 299ms: { }
+Expected keyboard report at 299ms: { 4 }
+Observed keyboard report at 299ms: { 4 }
+Expected keyboard report at 299ms: { }
+Observed keyboard report at 299ms: { }
+Expected keyboard report at 299ms: { e1 }
+Observed keyboard report at 299ms: { e1 }
+Expected keyboard report at 299ms: { 1e e1 }
+Observed keyboard report at 299ms: { 1e e1 }
+Expected keyboard report at 299ms: { e1 }
+Observed keyboard report at 299ms: { e1 }
+Expected keyboard report at 299ms: { }
+Observed keyboard report at 299ms: { }
+Expected keyboard report at 299ms: { e5 }
+Observed keyboard report at 299ms: { e5 }
+Expected keyboard report at 299ms: { }
+Observed keyboard report at 299ms: { }
+Expected keyboard report at 299ms: { 1e }
+Observed keyboard report at 299ms: { 1e }
+Expected keyboard report at 299ms: { }
+Observed keyboard report at 299ms: { }
+Expected keyboard report at 299ms: { e5 }
+Observed keyboard report at 299ms: { e5 }
+Expected keyboard report at 299ms: { }
+Observed keyboard report at 299ms: { }
+Expected keyboard report at 315ms: { e5 }
+Observed keyboard report at 315ms: { e5 }
+Expected keyboard report at 317ms: { }
+Observed keyboard report at 317ms: { }
+Expected keyboard report at 317ms: { 20 }
+Observed keyboard report at 317ms: { 20 }
+Expected keyboard report at 318ms: { 20 }
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
+Expected equality of these values:
+  observed_report.Timestamp()
+    Which is: 317
+  expected_report.Timestamp()
+    Which is: 318
+Report timestamps don't match (i=35)
+Observed keyboard report at 317ms: { 20 e1 }
+Expected keyboard report at 318ms: { }
+Observed keyboard report at 318ms: { e1 }
+Expected keyboard report at 327ms: { e5 }
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
+Expected equality of these values:
+  observed_report.Timestamp()
+    Which is: 318
+  expected_report.Timestamp()
+    Which is: 327
+Report timestamps don't match (i=37)
+Observed keyboard report at 318ms: { }
+Expected keyboard report at 327ms: { 20 e5 }
+Observed keyboard report at 327ms: { e5 }
+Expected keyboard report at 327ms: { 20 }
+Observed keyboard report at 327ms: { }
+Expected keyboard report at 327ms: { }
+Observed keyboard report at 327ms: { 20 }
+Observed keyboard report at 327ms: { 20 e1 }
+Observed keyboard report at 327ms: { e1 }
+Observed keyboard report at 327ms: { }
+[  FAILED  ] PersonalConfig.6_MacroRecordTopsyOneShot (44 ms)
+[----------] 7 tests from PersonalConfig (227 ms total)
 
-execve failed: '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/issues/1113/bin/1113' (or interpreter) not found (ENOENT)
-Kaleidoscope [07:16:51] $ 
-vshcmd: > y
-Detaching from program: /home/matmal01/.local/share/rr/1113-0/mmap_hardlink_4_1113, process 2579687
-[Inferior 1 (process 2579687) detached]
-Kaleidoscope [07:16:51] $ 
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (227 ms total)
+[  PASSED  ] 6 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] PersonalConfig.6_MacroRecordTopsyOneShot
+
+ 1 FAILED TEST
+Kaleidoscope [11:51:27] $ 
 vshcmd: > rr replay -- -q
 vshcmd: > python
 vshcmd: > do_autoimport('kaleidoscope')
 vshcmd: > end
-Reading symbols from /home/matmal01/.local/share/rr/1113-0/mmap_hardlink_4_1113...
+Reading symbols from /home/matmal01/.local/share/rr/personal-config-10/mmap_hardlink_4_personal-config...
 Really redefine built-in command "restart"? (y or n) [answered Y; input not from terminal]
-Remote debugging using 127.0.0.1:23787
+Remote debugging using 127.0.0.1:34775
 Reading symbols from /lib64/ld-linux-x86-64.so.2...
 (No debugging symbols found in /lib64/ld-linux-x86-64.so.2)
 BFD: warning: system-supplied DSO at 0x6fffd000 has a section extending past end of file
-0x00007f86ede362b0 in ?? () from /lib64/ld-linux-x86-64.so.2
+0x00007f824f1012b0 in ?? () from /lib64/ld-linux-x86-64.so.2
 (rr) >>(rr) 
-vshcmd: > break kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent if $_any_caller_matches(".*PersonalConfig_2", 999)
+vshcmd: > break TopsyTurvy::beforeReportingState if $_any_caller_matches(".*PersonalConfig_6_MacroRecordTopsyOneShot", 999)
+vshcmd: > cont
+Breakpoint 1 at 0x55fa1a735f71: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src/kaleidoscope/plugin/TopsyTurvy.cpp, line 70.
+(rr) Continuing.
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from PersonalConfig
+[ RUN      ] PersonalConfig.0_test
+[ INFO     ] test: tests/personal-config/test/manual-tests.cpp
+[       OK ] PersonalConfig.0_test (0 ms)
+[ RUN      ] PersonalConfig.1_MacroRecordBasic
+Expected keyboard report at 7ms: { 1b }
+Observed keyboard report at 7ms: { 1b }
+Expected keyboard report at 8ms: { }
+Observed keyboard report at 8ms: { }
+Expected keyboard report at 9ms: { 1b }
+Observed keyboard report at 9ms: { 1b }
+Expected keyboard report at 10ms: { }
+Observed keyboard report at 10ms: { }
+Expected keyboard report at 19ms: { 1b }
+Observed keyboard report at 19ms: { 1b }
+Expected keyboard report at 19ms: { }
+Observed keyboard report at 19ms: { }
+Expected keyboard report at 19ms: { 1b }
+Observed keyboard report at 19ms: { 1b }
+Expected keyboard report at 19ms: { }
+Observed keyboard report at 19ms: { }
+[       OK ] PersonalConfig.1_MacroRecordBasic (8 ms)
+[ RUN      ] PersonalConfig.2_MacroRecordTopsy
+[ INFO     ] Printing Macro: A
+	TAP_CODE_SEQUENCE 30 31 32 0 |,KEYDOWN 209 199,TAP 209 197,KEYUP 209 199,TAPCODE 4,KEYDOWN 209 199,
+[ INFO     ] Printing Macro: A
+	TAP_CODE_SEQUENCE 30 31 32 0 |,KEYDOWN 209 199,TAP 209 197,KEYUP 209 199,KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 209 199,
+[ INFO     ] Printing Macro: A
+	TAP_CODE_SEQUENCE 30 31 32 0 |,KEYDOWN 209 199,TAP 209 197,KEYUP 209 199,KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,KEYDOWN 209 199,
+[ INFO     ] Printing Macro: A
+	KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,KEYDOWN 209 199,TAP 209 197,KEYUP 209 199,TAP_CODE_SEQUENCE 30 31 32 0 |,KEYDOWN 209 199,
+Expected keyboard report at 27ms: { 1e }
+Observed keyboard report at 27ms: { 1e }
+Expected keyboard report at 28ms: { }
+Observed keyboard report at 28ms: { }
+Expected keyboard report at 29ms: { 1f }
+Observed keyboard report at 29ms: { 1f }
+Expected keyboard report at 30ms: { }
+Observed keyboard report at 30ms: { }
+Expected keyboard report at 31ms: { 20 }
+Observed keyboard report at 31ms: { 20 }
+Expected keyboard report at 32ms: { }
+Observed keyboard report at 32ms: { }
+Expected keyboard report at 37ms: { 4 }
+Observed keyboard report at 37ms: { 4 }
+Expected keyboard report at 38ms: { }
+Observed keyboard report at 38ms: { }
+Expected keyboard report at 51ms: { 1e }
+Observed keyboard report at 51ms: { 1e }
+Expected keyboard report at 51ms: { }
+Observed keyboard report at 51ms: { }
+Expected keyboard report at 51ms: { 1f }
+Observed keyboard report at 51ms: { 1f }
+Expected keyboard report at 51ms: { }
+Observed keyboard report at 51ms: { }
+Expected keyboard report at 51ms: { 20 }
+Observed keyboard report at 51ms: { 20 }
+Expected keyboard report at 51ms: { }
+Observed keyboard report at 51ms: { }
+Expected keyboard report at 51ms: { 4 }
+Observed keyboard report at 51ms: { 4 }
+Expected keyboard report at 51ms: { }
+Observed keyboard report at 51ms: { }
+Expected keyboard report at 63ms: { 1e }
+Observed keyboard report at 63ms: { 1e }
+Expected keyboard report at 64ms: { }
+Observed keyboard report at 64ms: { }
+Expected keyboard report at 65ms: { 1f }
+Observed keyboard report at 65ms: { 1f }
+Expected keyboard report at 66ms: { }
+Observed keyboard report at 66ms: { }
+Expected keyboard report at 67ms: { 20 }
+Observed keyboard report at 67ms: { 20 }
+Expected keyboard report at 68ms: { }
+Observed keyboard report at 68ms: { }
+Expected keyboard report at 73ms: { e1 }
+Observed keyboard report at 73ms: { e1 }
+Expected keyboard report at 73ms: { 1e e1 }
+Observed keyboard report at 73ms: { 1e e1 }
+Expected keyboard report at 74ms: { e1 }
+Observed keyboard report at 74ms: { e1 }
+Expected keyboard report at 74ms: { }
+Observed keyboard report at 74ms: { }
+Expected keyboard report at 87ms: { 1e }
+Observed keyboard report at 87ms: { 1e }
+Expected keyboard report at 87ms: { }
+Observed keyboard report at 87ms: { }
+Expected keyboard report at 87ms: { 1f }
+Observed keyboard report at 87ms: { 1f }
+Expected keyboard report at 87ms: { }
+Observed keyboard report at 87ms: { }
+Expected keyboard report at 87ms: { 20 }
+Observed keyboard report at 87ms: { 20 }
+Expected keyboard report at 87ms: { }
+Observed keyboard report at 87ms: { }
+Expected keyboard report at 87ms: { e1 }
+Observed keyboard report at 87ms: { e1 }
+Expected keyboard report at 87ms: { 1e e1 }
+Observed keyboard report at 87ms: { 1e e1 }
+Expected keyboard report at 87ms: { e1 }
+Observed keyboard report at 87ms: { e1 }
+Expected keyboard report at 87ms: { }
+Observed keyboard report at 87ms: { }
+Expected keyboard report at 99ms: { 1e }
+Observed keyboard report at 99ms: { 1e }
+Expected keyboard report at 100ms: { }
+Observed keyboard report at 100ms: { }
+Expected keyboard report at 101ms: { 1f }
+Observed keyboard report at 101ms: { 1f }
+Expected keyboard report at 102ms: { }
+Observed keyboard report at 102ms: { }
+Expected keyboard report at 103ms: { 20 }
+Observed keyboard report at 103ms: { 20 }
+Expected keyboard report at 104ms: { }
+Observed keyboard report at 104ms: { }
+Expected keyboard report at 109ms: { e1 }
+Observed keyboard report at 109ms: { e1 }
+Expected keyboard report at 109ms: { 1e e1 }
+Observed keyboard report at 109ms: { 1e e1 }
+Expected keyboard report at 110ms: { e1 }
+Observed keyboard report at 110ms: { e1 }
+Expected keyboard report at 110ms: { }
+Observed keyboard report at 110ms: { }
+Expected keyboard report at 111ms: { e1 }
+Observed keyboard report at 111ms: { e1 }
+Expected keyboard report at 111ms: { 1f e1 }
+Observed keyboard report at 111ms: { 1f e1 }
+Expected keyboard report at 112ms: { e1 }
+Observed keyboard report at 112ms: { e1 }
+Expected keyboard report at 112ms: { }
+Observed keyboard report at 112ms: { }
+Expected keyboard report at 113ms: { e1 }
+Observed keyboard report at 113ms: { e1 }
+Expected keyboard report at 113ms: { 20 e1 }
+Observed keyboard report at 113ms: { 20 e1 }
+Expected keyboard report at 114ms: { e1 }
+Observed keyboard report at 114ms: { e1 }
+Expected keyboard report at 114ms: { }
+Observed keyboard report at 114ms: { }
+Expected keyboard report at 127ms: { 1e }
+Observed keyboard report at 127ms: { 1e }
+Expected keyboard report at 127ms: { }
+Observed keyboard report at 127ms: { }
+Expected keyboard report at 127ms: { 1f }
+Observed keyboard report at 127ms: { 1f }
+Expected keyboard report at 127ms: { }
+Observed keyboard report at 127ms: { }
+Expected keyboard report at 127ms: { 20 }
+Observed keyboard report at 127ms: { 20 }
+Expected keyboard report at 127ms: { }
+Observed keyboard report at 127ms: { }
+Expected keyboard report at 127ms: { e1 }
+Observed keyboard report at 127ms: { e1 }
+Expected keyboard report at 127ms: { 1e e1 }
+Observed keyboard report at 127ms: { 1e e1 }
+Expected keyboard report at 127ms: { e1 }
+Observed keyboard report at 127ms: { e1 }
+Expected keyboard report at 127ms: { }
+Observed keyboard report at 127ms: { }
+Expected keyboard report at 127ms: { e1 }
+Observed keyboard report at 127ms: { e1 }
+Expected keyboard report at 127ms: { 1f e1 }
+Observed keyboard report at 127ms: { 1f e1 }
+Expected keyboard report at 127ms: { e1 }
+Observed keyboard report at 127ms: { e1 }
+Expected keyboard report at 127ms: { }
+Observed keyboard report at 127ms: { }
+Expected keyboard report at 127ms: { e1 }
+Observed keyboard report at 127ms: { e1 }
+Expected keyboard report at 127ms: { 20 e1 }
+Observed keyboard report at 127ms: { 20 e1 }
+Expected keyboard report at 127ms: { e1 }
+Observed keyboard report at 127ms: { e1 }
+Expected keyboard report at 127ms: { }
+Observed keyboard report at 127ms: { }
+Expected keyboard report at 137ms: { e1 }
+Observed keyboard report at 137ms: { e1 }
+Expected keyboard report at 137ms: { 1e e1 }
+Observed keyboard report at 137ms: { 1e e1 }
+Expected keyboard report at 138ms: { e1 }
+Observed keyboard report at 138ms: { e1 }
+Expected keyboard report at 138ms: { }
+Observed keyboard report at 138ms: { }
+Expected keyboard report at 145ms: { e1 }
+Observed keyboard report at 145ms: { e1 }
+Expected keyboard report at 145ms: { 1e e1 }
+Observed keyboard report at 145ms: { 1e e1 }
+Expected keyboard report at 146ms: { e1 }
+Observed keyboard report at 146ms: { e1 }
+Expected keyboard report at 146ms: { }
+Observed keyboard report at 146ms: { }
+Expected keyboard report at 147ms: { e1 }
+Observed keyboard report at 147ms: { e1 }
+Expected keyboard report at 147ms: { 1f e1 }
+Observed keyboard report at 147ms: { 1f e1 }
+Expected keyboard report at 148ms: { e1 }
+Observed keyboard report at 148ms: { e1 }
+Expected keyboard report at 148ms: { }
+Observed keyboard report at 148ms: { }
+Expected keyboard report at 149ms: { e1 }
+Observed keyboard report at 149ms: { e1 }
+Expected keyboard report at 149ms: { 20 e1 }
+Observed keyboard report at 149ms: { 20 e1 }
+Expected keyboard report at 150ms: { e1 }
+Observed keyboard report at 150ms: { e1 }
+Expected keyboard report at 150ms: { }
+Observed keyboard report at 150ms: { }
+Expected keyboard report at 155ms: { 1e }
+Observed keyboard report at 155ms: { 1e }
+Expected keyboard report at 156ms: { }
+Observed keyboard report at 156ms: { }
+Expected keyboard report at 157ms: { 1f }
+Observed keyboard report at 157ms: { 1f }
+Expected keyboard report at 158ms: { }
+Observed keyboard report at 158ms: { }
+Expected keyboard report at 159ms: { 20 }
+Observed keyboard report at 159ms: { 20 }
+Expected keyboard report at 160ms: { }
+Observed keyboard report at 160ms: { }
+Expected keyboard report at 173ms: { e1 }
+Observed keyboard report at 173ms: { e1 }
+Expected keyboard report at 173ms: { 1e e1 }
+Observed keyboard report at 173ms: { 1e e1 }
+Expected keyboard report at 173ms: { e1 }
+Observed keyboard report at 173ms: { e1 }
+Expected keyboard report at 173ms: { }
+Observed keyboard report at 173ms: { }
+Expected keyboard report at 173ms: { e1 }
+Observed keyboard report at 173ms: { e1 }
+Expected keyboard report at 173ms: { 1f e1 }
+Observed keyboard report at 173ms: { 1f e1 }
+Expected keyboard report at 173ms: { e1 }
+Observed keyboard report at 173ms: { e1 }
+Expected keyboard report at 173ms: { }
+Observed keyboard report at 173ms: { }
+Expected keyboard report at 173ms: { e1 }
+Observed keyboard report at 173ms: { e1 }
+Expected keyboard report at 173ms: { 20 e1 }
+Observed keyboard report at 173ms: { 20 e1 }
+Expected keyboard report at 173ms: { e1 }
+Observed keyboard report at 173ms: { e1 }
+Expected keyboard report at 173ms: { }
+Observed keyboard report at 173ms: { }
+Expected keyboard report at 173ms: { 1e }
+Observed keyboard report at 173ms: { 1e }
+Expected keyboard report at 173ms: { }
+Observed keyboard report at 173ms: { }
+Expected keyboard report at 173ms: { 1f }
+Observed keyboard report at 173ms: { 1f }
+Expected keyboard report at 173ms: { }
+Observed keyboard report at 173ms: { }
+Expected keyboard report at 173ms: { 20 }
+Observed keyboard report at 173ms: { 20 }
+Expected keyboard report at 173ms: { }
+Observed keyboard report at 173ms: { }
+[       OK ] PersonalConfig.2_MacroRecordTopsy (119 ms)
+[ RUN      ] PersonalConfig.3_MacroRecordOneShot
+[ INFO     ] Printing Macro: A
+	KEYCODEDOWN 225,KEYCODEDOWN 4,KEYCODEUP 225,KEYCODEUP 4,TAPCODE 4,KEYDOWN 209 199,
+[ INFO     ] Printing Macro: A
+	TAPCODE 4,TAPCODE 4,KEYDOWN 209 199,
+[ INFO     ] Printing Macro: A
+	TAPCODE 4,TAPCODE 4,KEYCODEDOWN 225,KEYDOWN 209 199,KEYCODEUP 225,
+[ INFO     ] Printing Macro: A
+	TAPCODE 4,TAPCODE 4,KEYCODEDOWN 225,TAPCODE 4,KEYCODEUP 225,KEYDOWN 209 199,
+Expected keyboard report at 181ms: { e1 }
+Observed keyboard report at 181ms: { e1 }
+Expected keyboard report at 183ms: { 4 e1 }
+Observed keyboard report at 183ms: { 4 e1 }
+Expected keyboard report at 183ms: { e1 }
+Observed keyboard report at 183ms: { 4 }
+Expected keyboard report at 184ms: { e1 }
+Observed keyboard report at 184ms: { }
+Expected keyboard report at 185ms: { 4 e1 }
+Observed keyboard report at 185ms: { 4 }
+Expected keyboard report at 186ms: { e1 }
+Observed keyboard report at 186ms: { }
+Expected keyboard report at 195ms: { e1 }
+Observed keyboard report at 195ms: { e1 }
+Expected keyboard report at 195ms: { 4 e1 }
+Observed keyboard report at 195ms: { 4 e1 }
+Expected keyboard report at 195ms: { 4 }
+Observed keyboard report at 195ms: { 4 }
+Expected keyboard report at 195ms: { }
+Observed keyboard report at 195ms: { }
+Expected keyboard report at 195ms: { 4 }
+Observed keyboard report at 195ms: { 4 }
+Expected keyboard report at 195ms: { }
+Observed keyboard report at 195ms: { }
+Expected keyboard report at 197ms: { e1 }
+Observed keyboard report at 197ms: { e1 }
+Expected keyboard report at 199ms: { }
+Observed keyboard report at 199ms: { }
+Expected keyboard report at 205ms: { 4 }
+Observed keyboard report at 205ms: { 4 }
+Expected keyboard report at 206ms: { }
+Observed keyboard report at 206ms: { }
+Expected keyboard report at 207ms: { 4 }
+Observed keyboard report at 207ms: { 4 }
+Expected keyboard report at 208ms: { }
+Observed keyboard report at 208ms: { }
+Expected keyboard report at 217ms: { 4 }
+Observed keyboard report at 217ms: { 4 }
+Expected keyboard report at 217ms: { }
+Observed keyboard report at 217ms: { }
+Expected keyboard report at 217ms: { 4 }
+Observed keyboard report at 217ms: { 4 }
+Expected keyboard report at 217ms: { }
+Observed keyboard report at 217ms: { }
+Expected keyboard report at 225ms: { 4 }
+Observed keyboard report at 225ms: { 4 }
+Expected keyboard report at 226ms: { }
+Observed keyboard report at 226ms: { }
+Expected keyboard report at 227ms: { 4 }
+Observed keyboard report at 227ms: { 4 }
+Expected keyboard report at 228ms: { }
+Observed keyboard report at 228ms: { }
+Expected keyboard report at 229ms: { e1 }
+Observed keyboard report at 229ms: { e1 }
+Expected keyboard report at 231ms: { }
+Observed keyboard report at 231ms: { }
+Expected keyboard report at 239ms: { 4 }
+Observed keyboard report at 239ms: { 4 }
+Expected keyboard report at 239ms: { }
+Observed keyboard report at 239ms: { }
+Expected keyboard report at 239ms: { 4 }
+Observed keyboard report at 239ms: { 4 }
+Expected keyboard report at 239ms: { }
+Observed keyboard report at 239ms: { }
+Expected keyboard report at 239ms: { e1 }
+Observed keyboard report at 239ms: { e1 }
+Expected keyboard report at 239ms: { }
+Observed keyboard report at 239ms: { }
+Expected keyboard report at 247ms: { 4 }
+Observed keyboard report at 247ms: { 4 }
+Expected keyboard report at 248ms: { }
+Observed keyboard report at 248ms: { }
+Expected keyboard report at 249ms: { 4 }
+Observed keyboard report at 249ms: { 4 }
+Expected keyboard report at 250ms: { }
+Observed keyboard report at 250ms: { }
+Expected keyboard report at 251ms: { e1 }
+Observed keyboard report at 251ms: { e1 }
+Expected keyboard report at 252ms: { 4 e1 }
+Observed keyboard report at 252ms: { 4 e1 }
+Expected keyboard report at 253ms: { e1 }
+Observed keyboard report at 253ms: { e1 }
+Expected keyboard report at 254ms: { }
+Observed keyboard report at 254ms: { }
+Expected keyboard report at 263ms: { 4 }
+Observed keyboard report at 263ms: { 4 }
+Expected keyboard report at 263ms: { }
+Observed keyboard report at 263ms: { }
+Expected keyboard report at 263ms: { 4 }
+Observed keyboard report at 263ms: { 4 }
+Expected keyboard report at 263ms: { }
+Observed keyboard report at 263ms: { }
+Expected keyboard report at 263ms: { e1 }
+Observed keyboard report at 263ms: { e1 }
+Expected keyboard report at 263ms: { 4 e1 }
+Observed keyboard report at 263ms: { 4 e1 }
+Expected keyboard report at 263ms: { e1 }
+Observed keyboard report at 263ms: { e1 }
+Expected keyboard report at 263ms: { }
+Observed keyboard report at 263ms: { }
+[       OK ] PersonalConfig.3_MacroRecordOneShot (52 ms)
+[ RUN      ] PersonalConfig.4_MacroRecordSpecialShift
+[       OK ] PersonalConfig.4_MacroRecordSpecialShift (0 ms)
+[ RUN      ] PersonalConfig.5_MacroRecordSpecialShift
+[       OK ] PersonalConfig.5_MacroRecordSpecialShift (0 ms)
+[ RUN      ] PersonalConfig.6_MacroRecordTopsyOneShot
+
+Breakpoint 1, kaleidoscope::plugin::TopsyTurvy::beforeReportingState (this=0x55fa1a7f9456 <TopsyTurvy>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src/kaleidoscope/plugin/TopsyTurvy.cpp:70
+70	EventHandlerResult TopsyTurvy::beforeReportingState(const KeyEvent &event) {
+(rr) 
+vshcmd: > cont
+vshcmd: > print event.key
+vshcmd: > print event.state
+$34 = {keyCode_ = 32 ' ', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+(rr) $35 = 2 '\002'
+(rr) 
+vshcmd: > set variable $counter = -1
+vshcmd: > gdb-pipe array &live_keys.key_map_.values_[0]; 64 \
+vshcmd: >       | show set variable $counter += 1 \
+vshcmd: >       | if $cur->keyCode_ != 255 \
+vshcmd: >       | show printf "%d \t", $counter \
+vshcmd: >       | show print *$cur
+(rr) 3 	$36 = {keyCode_ = 32 ' ', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+40 	$37 = {keyCode_ = 229 '\345', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+(rr) 
+vshcmd: > print shift_detected
+$38 = true
+(rr) 
 vshcmd: > cont
 Continuing.
-[==========] Running 3 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 3 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/1113/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_MouseButtonKeyTapInMacros
 
-Program received signal SIGSEGV, Segmentation fault.
-0x0000562582a15568 in kaleidoscope::plugin::Macros::isMacrosKey (this=0x562582aadfe0 <Macros>, key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros/src/kaleidoscope/plugin/Macros.h:100
-100	    if (key >= ranges::MACRO_FIRST && key <= ranges::MACRO_LAST)
+Breakpoint 1, kaleidoscope::plugin::TopsyTurvy::beforeReportingState (this=0x55fa1a7f9456 <TopsyTurvy>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src/kaleidoscope/plugin/TopsyTurvy.cpp:70
+70	EventHandlerResult TopsyTurvy::beforeReportingState(const KeyEvent &event) {
+(rr) 
+vshcmd: > bt
+#0  kaleidoscope::plugin::TopsyTurvy::beforeReportingState (this=0x55fa1a7f9456 <TopsyTurvy>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src/kaleidoscope/plugin/TopsyTurvy.cpp:70
+#1  0x000055fa1a72a715 in kaleidoscope_internal::EventHandler_beforeReportingState_v1_caller<true, kaleidoscope::plugin::TopsyTurvy, kaleidoscope::KeyEvent const&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
+#2  0x000055fa1a728224 in kaleidoscope_internal::EventHandler_beforeReportingState_v1::call<kaleidoscope::plugin::TopsyTurvy, kaleidoscope::KeyEvent const&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
+#3  0x000055fa1a7240b0 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_beforeReportingState_v1, kaleidoscope::KeyEvent const&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
+#4  0x000055fa1a71fa7c in kaleidoscope::Hooks::beforeReportingState (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
+#5  0x000055fa1a72bf63 in kaleidoscope::Runtime_::sendKeyboardReport (this=0x55fa1a7f9afc <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:293
+#6  0x000055fa1a72ba56 in kaleidoscope::Runtime_::handleKeyEvent (this=0x55fa1a7f9afc <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+#7  0x000055fa1a737519 in kaleidoscope::plugin::OneShot::releaseKey (key_addr=..., this=0x55fa1a7f9460 <OneShot>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot/src/kaleidoscope/plugin/OneShot.cpp:384
+#8  kaleidoscope::plugin::OneShot::afterEachCycle (this=0x55fa1a7f9460 <OneShot>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot/src/kaleidoscope/plugin/OneShot.cpp:299
+#9  0x000055fa1a737390 in kaleidoscope::plugin::OneShot::afterReportingState (this=0x55fa1a7f9460 <OneShot>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot/src/kaleidoscope/plugin/OneShot.cpp:282
+#10 0x000055fa1a72a90a in kaleidoscope_internal::EventHandler_afterReportingState_v1_caller<true, kaleidoscope::plugin::OneShot, kaleidoscope::KeyEvent const&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
+#11 0x000055fa1a728629 in kaleidoscope_internal::EventHandler_afterReportingState_v1::call<kaleidoscope::plugin::OneShot, kaleidoscope::KeyEvent const&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
+#12 0x000055fa1a724615 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_afterReportingState_v1, kaleidoscope::KeyEvent const&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
+#13 0x000055fa1a71faaa in kaleidoscope::Hooks::afterReportingState (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
+#14 0x000055fa1a72ba62 in kaleidoscope::Runtime_::handleKeyEvent (this=0x55fa1a7f9afc <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:193
+#15 0x000055fa1a72b745 in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x55fa1a7f9afc <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
+#16 0x000055fa1a730226 in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
+#17 0x000055fa1a72d1b6 in kaleidoscope::device::virt::VirtualKeyScanner::actOnMatrixScan (this=0x55fa1a7f9fa8 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.cpp:264
+#18 0x000055fa1a72b1c8 in kaleidoscope::device::virt::VirtualKeyScanner::scanMatrix (this=0x55fa1a7f9fa8 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.h:66
+#19 0x000055fa1a72c1d6 in kaleidoscope::device::Base<kaleidoscope::device::virt::VirtualProps>::scanMatrix (this=0x55fa1a7f9fa0 <kaleidoscope_internal::device>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/Base.h:253
+#20 0x000055fa1a72b58f in kaleidoscope::Runtime_::loop (this=0x55fa1a7f9afc <kaleidoscope::Runtime>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:77
+#21 0x000055fa1a70ae6a in kaleidoscope::testing::SimHarness::RunCycle() ()
+#22 0x000055fa1a6c25cd in kaleidoscope::testing::(anonymous namespace)::PersonalConfig_6_MacroRecordTopsyOneShot_Test::TestBody (this=0x55fa1b5cab30) at test/manual-tests.cpp:886
+#23 0x000055fa1a77be21 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#24 0x000055fa1a7742f3 in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#25 0x000055fa1a747dfc in testing::Test::Run() ()
+#26 0x000055fa1a74888a in testing::TestInfo::Run() ()
+#27 0x000055fa1a749191 in testing::TestSuite::Run() ()
+#28 0x000055fa1a7590c1 in testing::internal::UnitTestImpl::RunAllTests() ()
+#29 0x000055fa1a77cdba in bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#30 0x000055fa1a7753bf in bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#31 0x000055fa1a757829 in testing::UnitTest::Run() ()
+#32 0x000055fa1a6cc562 in RUN_ALL_TESTS () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/googletest/include/gtest/gtest.h:2490
+#33 0x000055fa1a6bb34a in executeTestFunction () at test/manual-tests.cpp:12
+#34 0x000055fa1a73b33f in main (argc=3, argv=0x7ffe3edf44a8) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56
+(rr) 
+vshcmd: > print event.key
+vshcmd: > print event.state
+$39 = {keyCode_ = 229 '\345', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+(rr) $40 = 193 '\301'
+(rr) 
+vshcmd: > # At this point there is no `shift` in the live_keys, so Topsy would add a shift.
+vshcmd: > set variable $counter = -1
+vshcmd: > gdb-pipe array &live_keys.key_map_.values_[0]; 64 \
+vshcmd: >       | show set variable $counter += 1 \
+vshcmd: >       | if $cur->keyCode_ != 255 \
+vshcmd: >       | show printf "%d \t", $counter \
+vshcmd: >       | show print *$cur
+(rr) 3 	$41 = {keyCode_ = 32 ' ', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+(rr) 
+vshcmd: > cont
+Continuing.
+
+Breakpoint 1, kaleidoscope::plugin::TopsyTurvy::beforeReportingState (this=0x55fa1a7f9456 <TopsyTurvy>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src/kaleidoscope/plugin/TopsyTurvy.cpp:70
+70	EventHandlerResult TopsyTurvy::beforeReportingState(const KeyEvent &event) {
+(rr) 
+vshcmd: > bt
+#0  kaleidoscope::plugin::TopsyTurvy::beforeReportingState (this=0x55fa1a7f9456 <TopsyTurvy>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src/kaleidoscope/plugin/TopsyTurvy.cpp:70
+#1  0x000055fa1a72a715 in kaleidoscope_internal::EventHandler_beforeReportingState_v1_caller<true, kaleidoscope::plugin::TopsyTurvy, kaleidoscope::KeyEvent const&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
+#2  0x000055fa1a728224 in kaleidoscope_internal::EventHandler_beforeReportingState_v1::call<kaleidoscope::plugin::TopsyTurvy, kaleidoscope::KeyEvent const&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
+#3  0x000055fa1a7240b0 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_beforeReportingState_v1, kaleidoscope::KeyEvent const&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
+#4  0x000055fa1a71fa7c in kaleidoscope::Hooks::beforeReportingState (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
+#5  0x000055fa1a72bf63 in kaleidoscope::Runtime_::sendKeyboardReport (this=0x55fa1a7f9afc <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:293
+#6  0x000055fa1a72ba56 in kaleidoscope::Runtime_::handleKeyEvent (this=0x55fa1a7f9afc <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+#7  0x000055fa1a72b745 in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x55fa1a7f9afc <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
+#8  0x000055fa1a730226 in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
+#9  0x000055fa1a72d1b6 in kaleidoscope::device::virt::VirtualKeyScanner::actOnMatrixScan (this=0x55fa1a7f9fa8 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.cpp:264
+#10 0x000055fa1a72b1c8 in kaleidoscope::device::virt::VirtualKeyScanner::scanMatrix (this=0x55fa1a7f9fa8 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.h:66
+#11 0x000055fa1a72c1d6 in kaleidoscope::device::Base<kaleidoscope::device::virt::VirtualProps>::scanMatrix (this=0x55fa1a7f9fa0 <kaleidoscope_internal::device>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/Base.h:253
+#12 0x000055fa1a72b58f in kaleidoscope::Runtime_::loop (this=0x55fa1a7f9afc <kaleidoscope::Runtime>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:77
+#13 0x000055fa1a70ae6a in kaleidoscope::testing::SimHarness::RunCycle() ()
+#14 0x000055fa1a6c2411 in kaleidoscope::testing::(anonymous namespace)::PersonalConfig_6_MacroRecordTopsyOneShot_Test::TestBody (this=0x55fa1b5cab30) at test/manual-tests.cpp:878
+#15 0x000055fa1a77be21 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#16 0x000055fa1a7742f3 in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#17 0x000055fa1a747dfc in testing::Test::Run() ()
+#18 0x000055fa1a74888a in testing::TestInfo::Run() ()
+#19 0x000055fa1a749191 in testing::TestSuite::Run() ()
+#20 0x000055fa1a7590c1 in testing::internal::UnitTestImpl::RunAllTests() ()
+#21 0x000055fa1a77cdba in bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#22 0x000055fa1a7753bf in bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#23 0x000055fa1a757829 in testing::UnitTest::Run() ()
+#24 0x000055fa1a6cc562 in RUN_ALL_TESTS () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/googletest/include/gtest/gtest.h:2490
+#25 0x000055fa1a6bb34a in executeTestFunction () at test/manual-tests.cpp:12
+#26 0x000055fa1a73b33f in main (argc=3, argv=0x7ffe3edf44a8) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56
+(rr) 
+vshcmd: > break kaleidoscope
+vshcmd: > reverse-finish
+Run back to call of #0  0x00007fa8d421e7ee in abort () from /lib/x86_64-linux-gnu/libc.so.6
+
+Program stopped.
+0x00007fa8d479b2b0 in ?? () from /lib64/ld-linux-x86-64.so.2
+(rr) 
+vshcmd: > bt
+#0  0x00007fa8d428ca7c in pthread_kill () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007fa8d4238476 in raise () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x00007fa8d421e7f3 in abort () from /lib/x86_64-linux-gnu/libc.so.6
+#3  0x00007fa8d421e71b in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007fa8d422fe96 in __assert_fail () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x0000559b03d05976 in kaleidoscope::testing::(anonymous namespace)::PersonalConfig::runAction (this=0x559b05ab0b30, str=..., replaying=false) at test/manual-tests.cpp:452
+#6  0x0000559b03d0aae4 in kaleidoscope::testing::(anonymous namespace)::PersonalConfig_6_MacroRecordTopsyOneShot_Test::TestBody (this=0x559b05ab0b30) at test/manual-tests.cpp:901
+#7  0x0000559b03dc3e21 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#8  0x0000559b03dbc2f3 in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#9  0x0000559b03d8fdfc in testing::Test::Run() ()
+#10 0x0000559b03d9088a in testing::TestInfo::Run() ()
+#11 0x0000559b03d91191 in testing::TestSuite::Run() ()
+#12 0x0000559b03da10c1 in testing::internal::UnitTestImpl::RunAllTests() ()
+#13 0x0000559b03dc4dba in bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#14 0x0000559b03dbd3bf in bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#15 0x0000559b03d9f829 in testing::UnitTest::Run() ()
+#16 0x0000559b03d14562 in RUN_ALL_TESTS () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/googletest/include/gtest/gtest.h:2490
+#17 0x0000559b03d0334a in executeTestFunction () at test/manual-tests.cpp:12
+#18 0x0000559b03d8333f in main (argc=3, argv=0x7ffce1ef7e98) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56
+(rr) 
+vshcmd: > reverse-cont
+vshcmd: > print $_event_state_name(event.state)
+vshcmd: > print event.key
+$28 = "WAS_PRESSED"
+(rr) $29 = {keyCode_ = 4 '\004', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+(rr) 
+vshcmd: > break sendKeyboardReport
+vshcmd: > cont
+Continuing.
+
+Breakpoint 2, kaleidoscope::Runtime_::sendKeyboardReport (this=0x56404e708ab0 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:261
+261	void Runtime_::sendKeyboardReport(const KeyEvent &event) {
+(rr) 
+vshcmd: >
+vshcmd: > next
+297	  device().hid().keyboard().sendReport();
+(rr) 
+vshcmd: > step
+Keyboard_::sendReport (this=0x56404e7092c0 <Keyboard>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src/MultiReport/Keyboard.cpp:127
+127	  const uint8_t old_modifiers = last_report_.modifiers;
+(rr) 
+vshcmd: > print report_
+$35 = {{modifiers = 0 '\000', keys = "\020", '\000' <repeats 26 times>}, allkeys = "\000\020", '\000' <repeats 26 times>}
+(rr) 
+vshcmd: > break prepareKeyboardReport
+vshcmd: > reverse-cont
+Continuing.
+
+Breakpoint 3, kaleidoscope::Runtime_::prepareKeyboardReport (this=0x56404e708ab0 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:197
+197	void Runtime_::prepareKeyboardReport(const KeyEvent &event) {
+(rr) 
+vshcmd: > next
+217	    if (key == Key_Inactive || key == Key_Masked)
+(rr) quit
+A debugging session is active.
+
+	Inferior 1 [process 3145778] will be detached.
+
+Quit anyway? (y or n) 
+vshcmd: > y
+Detaching from program: /home/matmal01/.local/share/rr/EdgeCases-41/mmap_hardlink_4_EdgeCases, process 3145778
+[Inferior 1 (process 3145778) detached]
+Kaleidoscope [11:33:36] $ 
+vshcmd: > next
+154	    nkro_keyboard_.sendReport();
+(rr) 
+vshcmd: > bt
+#0  kaleidoscope::driver::hid::base::Keyboard<kaleidoscope::driver::hid::keyboardio::KeyboardProps>::sendReport (this=0x56404e708f41 <kaleidoscope_internal::device+1>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/hid/base/Keyboard.h:150
+#1  0x000056404e64f443 in kaleidoscope::Runtime_::sendKeyboardReport (this=0x56404e708ab0 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:297
+#2  0x000056404e64ef10 in kaleidoscope::Runtime_::handleKeyEvent (this=0x56404e708ab0 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+#3  0x000056404e64ebff in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x56404e708ab0 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
+#4  0x000056404e6578aa in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=1 '\001') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
+#5  0x000056404e650670 in kaleidoscope::device::virt::VirtualKeyScanner::actOnMatrixScan (this=0x56404e708f48 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.cpp:264
+#6  0x000056404e64e66c in kaleidoscope::device::virt::VirtualKeyScanner::scanMatrix (this=0x56404e708f48 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.h:66
+#7  0x000056404e64f690 in kaleidoscope::device::Base<kaleidoscope::device::virt::VirtualProps>::scanMatrix (this=0x56404e708f40 <kaleidoscope_internal::device>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/Base.h:253
+#8  0x000056404e64ea49 in kaleidoscope::Runtime_::loop (this=0x56404e708ab0 <kaleidoscope::Runtime>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:77
+#9  0x000056404e639866 in kaleidoscope::testing::SimHarness::RunCycle() ()
+#10 0x000056404e5f026e in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x56404f001600, str=..., replaying=false) at test/manual-testcases.cpp:184
+#11 0x000056404e5f4d64 in kaleidoscope::testing::(anonymous namespace)::ManualTests_8_FlagsCompression2_Test::TestBody (this=0x56404f001600) at test/manual-testcases.cpp:612
+#12 0x000056404e6973a3 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#13 0x000056404e68f81b in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#14 0x000056404e6632fe in testing::Test::Run() ()
+#15 0x000056404e663d8c in testing::TestInfo::Run() ()
+#16 0x000056404e664693 in testing::TestSuite::Run() ()
+#17 0x000056404e6745c3 in testing::internal::UnitTestImpl::RunAllTests() ()
+#18 0x000056404e69833c in bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#19 0x000056404e6908e7 in bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#20 0x000056404e672d2b in testing::UnitTest::Run() ()
+#21 0x000056404e5ffb68 in RUN_ALL_TESTS () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/googletest/include/gtest/gtest.h:2490
+#22 0x000056404e5ef34a in executeTestFunction () at test/manual-testcases.cpp:10
+#23 0x000056404e654092 in main (argc=3, argv=0x7ffffb999478) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56
+(rr) 
+vshcmd: > stepbt
+Undefined command: "stepbt".  Try "help".
+(rr) 
+vshcmd: > ptype Keyboard
+type = void (kaleidoscope::driver::hid::base::Keyboard<kaleidoscope::driver::hid::keyboardio::KeyboardProps> * const)
+(rr) 
+vshcmd: > print Keyboard
+$34 = {void
+(kaleidoscope::driver::hid::base::Keyboard<kaleidoscope::driver::hid::keyboardio::KeyboardProps>
+* const)} 0x56404e651b02
+<kaleidoscope::driver::hid::base::Keyboard<kaleidoscope::driver::hid::keyboardio::KeyboardProps>::Keyboard()>
+(rr) 
+vshcmd: > ptype nkro_keyboard_
+type = class kaleidoscope::driver::hid::keyboardio::NKROKeyboardWrapper {
+  public:
+    NKROKeyboardWrapper(void);
+    void begin(void);
+    void sendReport(void);
+    void press(uint8_t);
+    void release(uint8_t);
+    void releaseAll(void);
+    bool isKeyPressed(uint8_t);
+    bool isModifierActive(uint8_t);
+    bool wasModifierActive(uint8_t);
+    bool isAnyModifierActive(void);
+    bool wasAnyModifierActive(void);
+    uint8_t getLeds(void);
+}
+(rr) 
+vshcmd: > print nkro_keyboard_
+$32 = {<No data fields>}
+(rr) 
+vshcmd: > bt
+#0  kaleidoscope::Runtime_::sendKeyboardReport (this=0x55e8f6637ab0 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:261
+#1  0x000055e8f657df3c in kaleidoscope::Runtime_::handleKeyEvent (this=0x55e8f6637ab0 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+#2  0x000055e8f657dc2b in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x55e8f6637ab0 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
+#3  0x000055e8f6580e06 in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=1 '\001') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
+#4  0x000055e8f657f69c in kaleidoscope::device::virt::VirtualKeyScanner::actOnMatrixScan (this=0x55e8f6637f48 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.cpp:264
+#5  0x000055e8f657d698 in kaleidoscope::device::virt::VirtualKeyScanner::scanMatrix (this=0x55e8f6637f48 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.h:66
+#6  0x000055e8f657e6bc in kaleidoscope::device::Base<kaleidoscope::device::virt::VirtualProps>::scanMatrix (this=0x55e8f6637f40 <kaleidoscope_internal::device>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/Base.h:253
+#7  0x000055e8f657da75 in kaleidoscope::Runtime_::loop (this=0x55e8f6637ab0 <kaleidoscope::Runtime>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:77
+#8  0x000055e8f6568892 in kaleidoscope::testing::SimHarness::RunCycle() ()
+#9  0x000055e8f65688c0 in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
+#10 0x000055e8f651f278 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x55e8f6f1b600, str=..., replaying=false) at test/manual-testcases.cpp:184
+#11 0x000055e8f6523d90 in kaleidoscope::testing::(anonymous namespace)::ManualTests_8_FlagsCompression2_Test::TestBody (this=0x55e8f6f1b600) at test/manual-testcases.cpp:615
+#12 0x000055e8f65c63cf in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#13 0x000055e8f65be847 in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#14 0x000055e8f659232a in testing::Test::Run() ()
+#15 0x000055e8f6592db8 in testing::TestInfo::Run() ()
+#16 0x000055e8f65936bf in testing::TestSuite::Run() ()
+#17 0x000055e8f65a35ef in testing::internal::UnitTestImpl::RunAllTests() ()
+#18 0x000055e8f65c7368 in bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#19 0x000055e8f65bf913 in bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#20 0x000055e8f65a1d57 in testing::UnitTest::Run() ()
+#21 0x000055e8f652eb94 in RUN_ALL_TESTS () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/googletest/include/gtest/gtest.h:2490
+#22 0x000055e8f651e34a in executeTestFunction () at test/manual-testcases.cpp:10
+#23 0x000055e8f6585b68 in main (argc=3, argv=0x7fff8f100f78) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56
+(rr) 
+vshcmd: > fram 8
+#8  0x000055e8f6568892 in kaleidoscope::testing::SimHarness::RunCycle() ()
+(rr) 
+vshcmd: > up
+#9  0x000055e8f65688c0 in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
+(rr) 
+vshcmd: > print ::kaleidoscope::testing::SimHarness::millis_per_cycle_
+Cannot reference non-static field "millis_per_cycle_"
+(rr) 
+vshcmd: > print SimHarness::millis_per_cycle_
+No symbol "SimHarness" in current context.
+(rr) 
+vshcmd: > up
+#10 0x000055e8f651f278 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x55e8f6f1b600, str=..., replaying=false) at test/manual-testcases.cpp:184
+warning: Source file is more recent than executable.
+184		  doRelease;
+(rr) 
+vshcmd: > info variables .*Sim
+All variables matching regular expression ".*Sim":
+(rr) 
+vshcmd: > 
+#0  kaleidoscope::Runtime_::sendKeyboardReport (this=0x55e8f6637ab0 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:261
+#1  0x000055e8f657df3c in kaleidoscope::Runtime_::handleKeyEvent (this=0x55e8f6637ab0 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:188
+#2  0x000055e8f657dc2b in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x55e8f6637ab0 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
+#3  0x000055e8f6580e06 in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=1 '\001') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
+#4  0x000055e8f657f69c in kaleidoscope::device::virt::VirtualKeyScanner::actOnMatrixScan (this=0x55e8f6637f48 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.cpp:264
+#5  0x000055e8f657d698 in kaleidoscope::device::virt::VirtualKeyScanner::scanMatrix (this=0x55e8f6637f48 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.h:66
+#6  0x000055e8f657e6bc in kaleidoscope::device::Base<kaleidoscope::device::virt::VirtualProps>::scanMatrix (this=0x55e8f6637f40 <kaleidoscope_internal::device>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/Base.h:253
+#7  0x000055e8f657da75 in kaleidoscope::Runtime_::loop (this=0x55e8f6637ab0 <kaleidoscope::Runtime>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:77
+#8  0x000055e8f6568892 in kaleidoscope::testing::SimHarness::RunCycle() ()
+#9  0x000055e8f65688c0 in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
+#10 0x000055e8f651f278 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x55e8f6f1b600, str=..., replaying=false) at test/manual-testcases.cpp:184
+#11 0x000055e8f6523d90 in kaleidoscope::testing::(anonymous namespace)::ManualTests_8_FlagsCompression2_Test::TestBody (this=0x55e8f6f1b600) at test/manual-testcases.cpp:615
+#12 0x000055e8f65c63cf in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#13 0x000055e8f65be847 in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#14 0x000055e8f659232a in testing::Test::Run() ()
+#15 0x000055e8f6592db8 in testing::TestInfo::Run() ()
+#16 0x000055e8f65936bf in testing::TestSuite::Run() ()
+#17 0x000055e8f65a35ef in testing::internal::UnitTestImpl::RunAllTests() ()
+#18 0x000055e8f65c7368 in bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#19 0x000055e8f65bf913 in bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#20 0x000055e8f65a1d57 in testing::UnitTest::Run() ()
+#21 0x000055e8f652eb94 in RUN_ALL_TESTS () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/googletest/include/gtest/gtest.h:2490
+#22 0x000055e8f651e34a in executeTestFunction () at test/manual-testcases.cpp:10
+#23 0x000055e8f6585b68 in main (argc=3, argv=0x7fff8f100f78) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56
+(rr) quit
+A debugging session is active.
+
+	Inferior 1 [process 3140451] will be detached.
+
+Quit anyway? (y or n) 
+vshcmd: > y
+Detaching from program: /home/matmal01/.local/share/rr/EdgeCases-40/mmap_hardlink_4_EdgeCases, process 3140451
+[Inferior 1 (process 3140451) detached]
+Kaleidoscope [17:16:02] $ exit
+
+vshcmd: > ptype this
+type = class kaleidoscope::testing::(anonymous namespace)::ManualTests_8_FlagsCompression2_Test : public kaleidoscope::testing::(anonymous namespace)::ManualTests {
+  private:
+    static testing::TestInfo * const test_info_;
+
+  public:
+    ManualTests_8_FlagsCompression2_Test(void);
+    ManualTests_8_FlagsCompression2_Test(const kaleidoscope::testing::(anonymous namespace)::ManualTests_8_FlagsCompression2_Test &);
+    ManualTests_8_FlagsCompression2_Test(kaleidoscope::testing::(anonymous namespace)::ManualTests_8_FlagsCompression2_Test &&);
+    ~ManualTests_8_FlagsCompression2_Test(void);
+    kaleidoscope::testing::(anonymous namespace)::ManualTests_8_FlagsCompression2_Test & operator=(const kaleidoscope::testing::(anonymous namespace)::ManualTests_8_FlagsCompression2_Test &);
+    kaleidoscope::testing::(anonymous namespace)::ManualTests_8_FlagsCompression2_Test & operator=(kaleidoscope::testing::(anonymous namespace)::ManualTests_8_FlagsCompression2_Test &&);
+  private:
+    virtual void TestBody(void);
+} * const
+(rr) 
+vshcmd: > up
+#11 0x000055e8f6523d90 in kaleidoscope::testing::(anonymous namespace)::ManualTests_8_FlagsCompression2_Test::TestBody (this=0x55e8f6f1b600) at test/manual-testcases.cpp:615
+615	
+(rr) 
+vshcmd: > print this
+256	  // take effect on toggle-on or toggle-off events, they don't get added to HID
+257	  // reports when held.
+258	}
+259	
+260	// ----------------------------------------------------------------------------
+261	void Runtime_::sendKeyboardReport(const KeyEvent &event) {
+262	  // If the keycode for this key is already in the report, we need to send an
+263	  // extra report without that keycode in order to correctly process the
+264	  // rollover. It might be better to exempt modifiers from this rule, but it's
+265	  // not clear that would be better.
+(rr) 
+vshcmd: > print this->millis_per_cycle_
+No symbol "this" in current context.
+(rr) 
+vshcmd: > print millis_per_cycle_
+No symbol "millis_per_cycle_" in current context.
+(rr) 
+vshcmd: > break kaleidoscope::plugin::ToggleLayer::onKeyEvent if $_any_caller_matches(".*PersonalConfig_2", 999)
+
+vshcmd: > cont
+vshcmd: > print event.key
+Continuing.
+
+Breakpoint 2, kaleidoscope::plugin::ToggleLayer::onKeyEvent (this=0x55f740322aba <ToggleLayer>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:185
+185	    EventHandlerResult onKeyEvent(KeyEvent &event) {
+(rr) $20 = {keyCode_ = 199 '\307', flags_ = 209 '\321', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+(rr) quit
+A debugging session is active.
+
+	Inferior 1 [process 2763064] will be detached.
+
+Quit anyway? (y or n) 
+vshcmd: > y
+Detaching from program: /home/matmal01/.local/share/rr/personal-config-8/mmap_hardlink_4_personal-config, process 2763064
+[Inferior 1 (process 2763064) detached]
+Kaleidoscope [07:20:02] $ 
+vshcmd: > info function onKeyEvent
+All functions matching regular expression "onKeyEvent":
+
+File /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs/src/kaleidoscope/plugin/IdleLEDs.cpp:
+60:	kaleidoscope::EventHandlerResult kaleidoscope::plugin::IdleLEDs::onKeyEvent(kaleidoscope::KeyEvent&);
+
+File /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:
+457:	kaleidoscope::EventHandlerResult kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent(kaleidoscope::KeyEvent&);
+
+File /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot/src/kaleidoscope/plugin/OneShot.cpp:
+191:	kaleidoscope::EventHandlerResult kaleidoscope::plugin::OneShot::onKeyEvent(kaleidoscope::KeyEvent&);
+
+File /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src/kaleidoscope/plugin/TopsyTurvy.cpp:
+35:	kaleidoscope::EventHandlerResult kaleidoscope::plugin::TopsyTurvy::onKeyEvent(kaleidoscope::KeyEvent&);
+
+File /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:
+165:	kaleidoscope::EventHandlerResult kaleidoscope::plugin::LEDControl::onKeyEvent(kaleidoscope::KeyEvent&);
+
+File /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:
+381:	kaleidoscope::EventHandlerResult kaleidoscope::Hooks::onKeyEvent(kaleidoscope::KeyEvent&);
+212:	kaleidoscope::EventHandlerResult kaleidoscope::plugin::SpecialShift::onKeyEvent(kaleidoscope::KeyEvent&);
+185:	kaleidoscope::EventHandlerResult kaleidoscope::plugin::ToggleLayer::onKeyEvent(kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&>(kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::BootGreetingEffect, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::BootGreetingEffect&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::DefaultLEDModeConfig, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::DefaultLEDModeConfig&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::EEPROMKeymap, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::EEPROMKeymap&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::EEPROMSettings, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::EEPROMSettings&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::FirmwareVersion, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::FirmwareVersion&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::FocusEEPROMCommand, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::FocusEEPROMCommand&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::FocusSerial, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::FocusSerial&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::FocusSettingsCommand, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::FocusSettingsCommand&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::HardwareTestMode, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::HardwareTestMode&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::HostPowerManagement, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::HostPowerManagement&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::IdleLEDs, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::IdleLEDs&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::LEDBreatheEffect, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::LEDBreatheEffect&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::LEDControl, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::LEDControl&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::LEDOff, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::LEDOff&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::LEDPaletteTheme, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::LEDPaletteTheme&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::LEDRainbowEffect, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::LEDRainbowEffect&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::LEDRainbowWaveEffect, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::LEDRainbowWaveEffect&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::MacrosOnTheFly&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MagicCombo, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::MagicCombo&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::OneShot, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::OneShot&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::PersistentIdleLEDs, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::PersistentIdleLEDs&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::SpecialShift, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::SpecialShift&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::ToggleLayer, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::ToggleLayer&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::TopsyTurvy, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::TopsyTurvy&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::USBQuirks, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::USBQuirks&, kaleidoscope::KeyEvent&);
+381:	bool kaleidoscope_internal::EventHandler_onKeyEvent_v1::shouldExitIfResultNotOk();
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<false, kaleidoscope::plugin::BootGreetingEffect, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::BootGreetingEffect&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<false, kaleidoscope::plugin::DefaultLEDModeConfig, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::DefaultLEDModeConfig&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<false, kaleidoscope::plugin::EEPROMKeymap, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::EEPROMKeymap&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<false, kaleidoscope::plugin::EEPROMSettings, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::EEPROMSettings&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<false, kaleidoscope::plugin::FirmwareVersion, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::FirmwareVersion&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<false, kaleidoscope::plugin::FocusEEPROMCommand, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::FocusEEPROMCommand&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<false, kaleidoscope::plugin::FocusSerial, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::FocusSerial&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<false, kaleidoscope::plugin::FocusSettingsCommand, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::FocusSettingsCommand&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<false, kaleidoscope::plugin::HardwareTestMode, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::HardwareTestMode&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<false, kaleidoscope::plugin::HostPowerManagement, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::HostPowerManagement&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<false, kaleidoscope::plugin::LEDBreatheEffect, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::LEDBreatheEffect&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<false, kaleidoscope::plugin::LEDOff, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::LEDOff&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<false, kaleidoscope::plugin::LEDPaletteTheme, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::LEDPaletteTheme&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<false, kaleidoscope::plugin::LEDRainbowEffect, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::LEDRainbowEffect&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<false, kaleidoscope::plugin::LEDRainbowWaveEffect, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::LEDRainbowWaveEffect&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<false, kaleidoscope::plugin::MagicCombo, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::MagicCombo&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<false, kaleidoscope::plugin::USBQuirks, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::USBQuirks&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::IdleLEDs, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::IdleLEDs&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::LEDControl, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::LEDControl&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::MacrosOnTheFly&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::OneShot, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::OneShot&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::PersistentIdleLEDs, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::PersistentIdleLEDs&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::SpecialShift, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::SpecialShift&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::ToggleLayer, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::ToggleLayer&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::TopsyTurvy, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::TopsyTurvy&, kaleidoscope::KeyEvent&);
 (rr) 
 vshcmd: > reverse-finish
 Run back to call of #0  0x0000562582a162d7 in kaleidoscope::plugin::MacroSupport::clear (this=0x562582aadfe1 <MacroSupport>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src/kaleidoscope/plugin/MacroSupport.cpp:78
@@ -71,7 +1380,8 @@ vshcmd: >       | show set variable $counter += 1 \
 vshcmd: >       | if $cur->keyCode_ != 255 \
 vshcmd: >       | show printf "%d \t", $counter \
 vshcmd: >       | show print *$cur
-(rr) 48 	$10 = {keyCode_ = 0 '\000', flags_ = 96 '`', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+(rr) 0 	$30 = {keyCode_ = 4 '\004', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+25 	$31 = {keyCode_ = 4 '\004', flags_ = 1 '\001', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
 (rr) 
 vshcmd: > print live_keys.key_map_.values_[48]
 $11 = {keyCode_ = 0 '\000', flags_ = 96 '`', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
@@ -3926,4 +5236,13 @@ A debugging session is active.
 
 	Inferior 1 [process 2476988] will be detached.
 
+Quit anyway? (y or n) quit
+A debugging session is active.
+
+	Inferior 1 [process 3498148] will be detached.
+
 Quit anyway? (y or n) 
+vshcmd: > y
+Detaching from program: /home/matmal01/.local/share/rr/personal-config-9/mmap_hardlink_4_personal-config, process 3498148
+[Inferior 1 (process 3498148) detached]
+Kaleidoscope [11:35:05] $ 
