@@ -117,7 +117,7 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
     /* Increments in milliseconds are not very nice as an interface.
      * Give increments in 100 milliseconds instead.  */
     static inline void do_delay(const uint8_t todelay) {
-      uint16_t milliseconds = (uint16_t)todelay * 100;
+      uint16_t milliseconds = (uint16_t)todelay * 20 + 1;
       delay(milliseconds);
     }
 
