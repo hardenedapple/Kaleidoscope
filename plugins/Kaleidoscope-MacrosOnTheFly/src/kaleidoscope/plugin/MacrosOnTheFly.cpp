@@ -100,8 +100,7 @@ void MacrosOnTheFly::tap(Key key) {
     /* Clear the macro if we run out of space.
      * This means we don't end up with some surprising broken half-recorded
      * state.  */ \
-    if (rem != 0) \
-      macroBuffer[0] = MACRO_ACTION_END; \
+    macroBuffer[0] = MACRO_ACTION_END; \
     return false; \
   } while (0)
 
