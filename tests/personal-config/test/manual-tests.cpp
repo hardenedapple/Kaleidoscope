@@ -810,6 +810,20 @@ TEST_F(PersonalConfig, 3_MacroRecordOneShot) {
 TEST_F(PersonalConfig, 4_MacroRecordSpecialShift) {
   ClearState();
 
+  runAction("REC2 ~U SPECIALSHIFT1| Delete1 SPECIALSHIFT1^ REC1");
+  storeMacro("U", "SPECIALSHIFT1| Delete1 SPECIALSHIFT1^");
+  printMacro("U");
+  runAction("PLAY2 %U");
+
+  /* Add automatic release of SPECIALSHIFT1.  */
+  runAction("REC2 ~U SPECIALSHIFT1| Delete1 REC1 SPECIALSHIFT1^");
+  storeMacro("U", "SPECIALSHIFT1| Delete1 SPECIALSHIFT1^");
+  printMacro("U");
+  runAction("PLAY2 %U");
+  /* Press a key which has a different meaning on the SPECIALSHIFT layer to the
+   * base layer, and assert that it gives the base layer meaning.  */
+  runAction("Minus");
+
   LoadState();
   CheckReports();
 }
@@ -817,7 +831,7 @@ TEST_F(PersonalConfig, 4_MacroRecordSpecialShift) {
 TEST_F(PersonalConfig, 5_MacroRecordSpecialShift) {
   ClearState();
 
-  /* TODO
+  /* MAYBE TODO
    * Test that we record SpecialShift presses.
    * This should happen because the SpecialShift plugin is after the
    * MacrosOnTheFly plugin in the initialisation order.
@@ -900,6 +914,31 @@ TEST_F(PersonalConfig, 6_MacroRecordTopsyOneShot) {
   storeMacro("O", "RightShift 3| LeftShift| 3^ LeftShift^");
   printMacro("O");
   runAction("PLAY2 %O TOPSY_TOG2");
+
+  LoadState();
+  CheckReports();
+}
+
+TEST_F(PersonalConfig, 7_SpecialShiftDoubleRelease) {
+  ClearState();
+
+  /* Checking the special shift double-release thing.  */
+  runAction("SPECIALSHIFT1| Backtick1 SPECIALSHIFT2| Backtick2 SPECIALSHIFT2^ Backtick2 SPECIALSHIFT1^ G");
+  runAction("SPECIALSHIFT1| Backtick1 SPECIALSHIFT2| Backtick2 SPECIALSHIFT1^ Backtick2 SPECIALSHIFT2^ G");
+
+  LoadState();
+  CheckReports();
+}
+
+TEST_F(PersonalConfig, 8_MacroRecordIntoWrongSlot) {
+  ClearState();
+
+  /* Should just not record any macro but not cause any problem
+   * Should not stay in macro record state.  */
+  runAction("REC2 ~J A B C");
+  storeMacro("J", "");
+  ASSERT_EQ(::MacrosOnTheFly.currentState, ::kaleidoscope::plugin::MacrosOnTheFly::State_::IDLE);
+  runAction("PLAY1 %J");
 
   LoadState();
   CheckReports();
