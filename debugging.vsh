@@ -4,10 +4,10 @@ root@e124762:/home/matmal01/Documents/not-work/keyboard/Kaleidoscope# exit
 Kaleidoscope [13:42:46] $ 
 vshcmd: > rr /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/MacrosOnTheFly/EdgeCases/bin/EdgeCases -t -q
 vshcmd: > rr /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/personal-config/bin/personal-config -t -q
-rr: Saving execution to trace directory `/home/matmal01/.local/share/rr/personal-config-10'.
-[==========] Running 7 tests from 1 test suite.
+rr: Saving execution to trace directory `/home/matmal01/.local/share/rr/personal-config-14'.
+[==========] Running 10 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 7 tests from PersonalConfig
+[----------] 10 tests from PersonalConfig
 [ RUN      ] PersonalConfig.0_test
 [ INFO     ] test: tests/personal-config/test/manual-tests.cpp
 [       OK ] PersonalConfig.0_test (0 ms)
@@ -38,231 +38,231 @@ Observed keyboard report at 19ms: { }
 	TAP_CODE_SEQUENCE 30 31 32 0 |,KEYDOWN 209 199,TAP 209 197,KEYUP 209 199,KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,KEYDOWN 209 199,
 [ INFO     ] Printing Macro: A
 	KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,KEYDOWN 209 199,TAP 209 197,KEYUP 209 199,TAP_CODE_SEQUENCE 30 31 32 0 |,KEYDOWN 209 199,
-Expected keyboard report at 27ms: { 1e }
-Observed keyboard report at 27ms: { 1e }
-Expected keyboard report at 28ms: { }
-Observed keyboard report at 28ms: { }
-Expected keyboard report at 29ms: { 1f }
-Observed keyboard report at 29ms: { 1f }
-Expected keyboard report at 30ms: { }
-Observed keyboard report at 30ms: { }
-Expected keyboard report at 31ms: { 20 }
-Observed keyboard report at 31ms: { 20 }
-Expected keyboard report at 32ms: { }
-Observed keyboard report at 32ms: { }
-Expected keyboard report at 37ms: { 4 }
-Observed keyboard report at 37ms: { 4 }
-Expected keyboard report at 38ms: { }
-Observed keyboard report at 38ms: { }
-Expected keyboard report at 51ms: { 1e }
-Observed keyboard report at 51ms: { 1e }
-Expected keyboard report at 51ms: { }
-Observed keyboard report at 51ms: { }
-Expected keyboard report at 51ms: { 1f }
-Observed keyboard report at 51ms: { 1f }
-Expected keyboard report at 51ms: { }
-Observed keyboard report at 51ms: { }
-Expected keyboard report at 51ms: { 20 }
-Observed keyboard report at 51ms: { 20 }
-Expected keyboard report at 51ms: { }
-Observed keyboard report at 51ms: { }
-Expected keyboard report at 51ms: { 4 }
-Observed keyboard report at 51ms: { 4 }
-Expected keyboard report at 51ms: { }
-Observed keyboard report at 51ms: { }
-Expected keyboard report at 63ms: { 1e }
-Observed keyboard report at 63ms: { 1e }
-Expected keyboard report at 64ms: { }
-Observed keyboard report at 64ms: { }
-Expected keyboard report at 65ms: { 1f }
-Observed keyboard report at 65ms: { 1f }
-Expected keyboard report at 66ms: { }
-Observed keyboard report at 66ms: { }
-Expected keyboard report at 67ms: { 20 }
-Observed keyboard report at 67ms: { 20 }
-Expected keyboard report at 68ms: { }
-Observed keyboard report at 68ms: { }
-Expected keyboard report at 73ms: { e1 }
-Observed keyboard report at 73ms: { e1 }
-Expected keyboard report at 73ms: { 1e e1 }
-Observed keyboard report at 73ms: { 1e e1 }
-Expected keyboard report at 74ms: { e1 }
-Observed keyboard report at 74ms: { e1 }
-Expected keyboard report at 74ms: { }
-Observed keyboard report at 74ms: { }
-Expected keyboard report at 87ms: { 1e }
-Observed keyboard report at 87ms: { 1e }
-Expected keyboard report at 87ms: { }
-Observed keyboard report at 87ms: { }
-Expected keyboard report at 87ms: { 1f }
-Observed keyboard report at 87ms: { 1f }
-Expected keyboard report at 87ms: { }
-Observed keyboard report at 87ms: { }
-Expected keyboard report at 87ms: { 20 }
-Observed keyboard report at 87ms: { 20 }
-Expected keyboard report at 87ms: { }
-Observed keyboard report at 87ms: { }
-Expected keyboard report at 87ms: { e1 }
-Observed keyboard report at 87ms: { e1 }
-Expected keyboard report at 87ms: { 1e e1 }
-Observed keyboard report at 87ms: { 1e e1 }
-Expected keyboard report at 87ms: { e1 }
-Observed keyboard report at 87ms: { e1 }
-Expected keyboard report at 87ms: { }
-Observed keyboard report at 87ms: { }
+Expected keyboard report at 30ms: { 1e }
+Observed keyboard report at 30ms: { 1e }
+Expected keyboard report at 31ms: { }
+Observed keyboard report at 31ms: { }
+Expected keyboard report at 32ms: { 1f }
+Observed keyboard report at 32ms: { 1f }
+Expected keyboard report at 33ms: { }
+Observed keyboard report at 33ms: { }
+Expected keyboard report at 34ms: { 20 }
+Observed keyboard report at 34ms: { 20 }
+Expected keyboard report at 35ms: { }
+Observed keyboard report at 35ms: { }
+Expected keyboard report at 40ms: { 4 }
+Observed keyboard report at 40ms: { 4 }
+Expected keyboard report at 41ms: { }
+Observed keyboard report at 41ms: { }
+Expected keyboard report at 54ms: { 1e }
+Observed keyboard report at 54ms: { 1e }
+Expected keyboard report at 54ms: { }
+Observed keyboard report at 54ms: { }
+Expected keyboard report at 54ms: { 1f }
+Observed keyboard report at 54ms: { 1f }
+Expected keyboard report at 54ms: { }
+Observed keyboard report at 54ms: { }
+Expected keyboard report at 54ms: { 20 }
+Observed keyboard report at 54ms: { 20 }
+Expected keyboard report at 54ms: { }
+Observed keyboard report at 54ms: { }
+Expected keyboard report at 54ms: { 4 }
+Observed keyboard report at 54ms: { 4 }
+Expected keyboard report at 54ms: { }
+Observed keyboard report at 54ms: { }
+Expected keyboard report at 75ms: { 1e }
+Observed keyboard report at 75ms: { 1e }
+Expected keyboard report at 76ms: { }
+Observed keyboard report at 76ms: { }
+Expected keyboard report at 77ms: { 1f }
+Observed keyboard report at 77ms: { 1f }
+Expected keyboard report at 78ms: { }
+Observed keyboard report at 78ms: { }
+Expected keyboard report at 79ms: { 20 }
+Observed keyboard report at 79ms: { 20 }
+Expected keyboard report at 80ms: { }
+Observed keyboard report at 80ms: { }
+Expected keyboard report at 85ms: { e1 }
+Observed keyboard report at 85ms: { e1 }
+Expected keyboard report at 85ms: { 1e e1 }
+Observed keyboard report at 85ms: { 1e e1 }
+Expected keyboard report at 86ms: { e1 }
+Observed keyboard report at 86ms: { e1 }
+Expected keyboard report at 86ms: { }
+Observed keyboard report at 86ms: { }
 Expected keyboard report at 99ms: { 1e }
 Observed keyboard report at 99ms: { 1e }
-Expected keyboard report at 100ms: { }
-Observed keyboard report at 100ms: { }
-Expected keyboard report at 101ms: { 1f }
-Observed keyboard report at 101ms: { 1f }
-Expected keyboard report at 102ms: { }
-Observed keyboard report at 102ms: { }
-Expected keyboard report at 103ms: { 20 }
-Observed keyboard report at 103ms: { 20 }
-Expected keyboard report at 104ms: { }
-Observed keyboard report at 104ms: { }
-Expected keyboard report at 109ms: { e1 }
-Observed keyboard report at 109ms: { e1 }
-Expected keyboard report at 109ms: { 1e e1 }
-Observed keyboard report at 109ms: { 1e e1 }
-Expected keyboard report at 110ms: { e1 }
-Observed keyboard report at 110ms: { e1 }
-Expected keyboard report at 110ms: { }
-Observed keyboard report at 110ms: { }
-Expected keyboard report at 111ms: { e1 }
-Observed keyboard report at 111ms: { e1 }
-Expected keyboard report at 111ms: { 1f e1 }
-Observed keyboard report at 111ms: { 1f e1 }
-Expected keyboard report at 112ms: { e1 }
-Observed keyboard report at 112ms: { e1 }
-Expected keyboard report at 112ms: { }
-Observed keyboard report at 112ms: { }
-Expected keyboard report at 113ms: { e1 }
-Observed keyboard report at 113ms: { e1 }
-Expected keyboard report at 113ms: { 20 e1 }
-Observed keyboard report at 113ms: { 20 e1 }
-Expected keyboard report at 114ms: { e1 }
-Observed keyboard report at 114ms: { e1 }
-Expected keyboard report at 114ms: { }
-Observed keyboard report at 114ms: { }
-Expected keyboard report at 127ms: { 1e }
-Observed keyboard report at 127ms: { 1e }
-Expected keyboard report at 127ms: { }
-Observed keyboard report at 127ms: { }
-Expected keyboard report at 127ms: { 1f }
-Observed keyboard report at 127ms: { 1f }
-Expected keyboard report at 127ms: { }
-Observed keyboard report at 127ms: { }
-Expected keyboard report at 127ms: { 20 }
-Observed keyboard report at 127ms: { 20 }
-Expected keyboard report at 127ms: { }
-Observed keyboard report at 127ms: { }
-Expected keyboard report at 127ms: { e1 }
-Observed keyboard report at 127ms: { e1 }
-Expected keyboard report at 127ms: { 1e e1 }
-Observed keyboard report at 127ms: { 1e e1 }
-Expected keyboard report at 127ms: { e1 }
-Observed keyboard report at 127ms: { e1 }
-Expected keyboard report at 127ms: { }
-Observed keyboard report at 127ms: { }
-Expected keyboard report at 127ms: { e1 }
-Observed keyboard report at 127ms: { e1 }
-Expected keyboard report at 127ms: { 1f e1 }
-Observed keyboard report at 127ms: { 1f e1 }
-Expected keyboard report at 127ms: { e1 }
-Observed keyboard report at 127ms: { e1 }
-Expected keyboard report at 127ms: { }
-Observed keyboard report at 127ms: { }
-Expected keyboard report at 127ms: { e1 }
-Observed keyboard report at 127ms: { e1 }
-Expected keyboard report at 127ms: { 20 e1 }
-Observed keyboard report at 127ms: { 20 e1 }
-Expected keyboard report at 127ms: { e1 }
-Observed keyboard report at 127ms: { e1 }
-Expected keyboard report at 127ms: { }
-Observed keyboard report at 127ms: { }
-Expected keyboard report at 137ms: { e1 }
-Observed keyboard report at 137ms: { e1 }
-Expected keyboard report at 137ms: { 1e e1 }
-Observed keyboard report at 137ms: { 1e e1 }
-Expected keyboard report at 138ms: { e1 }
-Observed keyboard report at 138ms: { e1 }
-Expected keyboard report at 138ms: { }
-Observed keyboard report at 138ms: { }
-Expected keyboard report at 145ms: { e1 }
-Observed keyboard report at 145ms: { e1 }
-Expected keyboard report at 145ms: { 1e e1 }
-Observed keyboard report at 145ms: { 1e e1 }
-Expected keyboard report at 146ms: { e1 }
-Observed keyboard report at 146ms: { e1 }
-Expected keyboard report at 146ms: { }
-Observed keyboard report at 146ms: { }
-Expected keyboard report at 147ms: { e1 }
-Observed keyboard report at 147ms: { e1 }
-Expected keyboard report at 147ms: { 1f e1 }
-Observed keyboard report at 147ms: { 1f e1 }
-Expected keyboard report at 148ms: { e1 }
-Observed keyboard report at 148ms: { e1 }
-Expected keyboard report at 148ms: { }
-Observed keyboard report at 148ms: { }
+Expected keyboard report at 99ms: { }
+Observed keyboard report at 99ms: { }
+Expected keyboard report at 99ms: { 1f }
+Observed keyboard report at 99ms: { 1f }
+Expected keyboard report at 99ms: { }
+Observed keyboard report at 99ms: { }
+Expected keyboard report at 99ms: { 20 }
+Observed keyboard report at 99ms: { 20 }
+Expected keyboard report at 99ms: { }
+Observed keyboard report at 99ms: { }
+Expected keyboard report at 99ms: { e1 }
+Observed keyboard report at 99ms: { e1 }
+Expected keyboard report at 99ms: { 1e e1 }
+Observed keyboard report at 99ms: { 1e e1 }
+Expected keyboard report at 99ms: { e1 }
+Observed keyboard report at 99ms: { e1 }
+Expected keyboard report at 99ms: { }
+Observed keyboard report at 99ms: { }
+Expected keyboard report at 121ms: { 1e }
+Observed keyboard report at 121ms: { 1e }
+Expected keyboard report at 122ms: { }
+Observed keyboard report at 122ms: { }
+Expected keyboard report at 123ms: { 1f }
+Observed keyboard report at 123ms: { 1f }
+Expected keyboard report at 124ms: { }
+Observed keyboard report at 124ms: { }
+Expected keyboard report at 125ms: { 20 }
+Observed keyboard report at 125ms: { 20 }
+Expected keyboard report at 126ms: { }
+Observed keyboard report at 126ms: { }
+Expected keyboard report at 131ms: { e1 }
+Observed keyboard report at 131ms: { e1 }
+Expected keyboard report at 131ms: { 1e e1 }
+Observed keyboard report at 131ms: { 1e e1 }
+Expected keyboard report at 132ms: { e1 }
+Observed keyboard report at 132ms: { e1 }
+Expected keyboard report at 132ms: { }
+Observed keyboard report at 132ms: { }
+Expected keyboard report at 133ms: { e1 }
+Observed keyboard report at 133ms: { e1 }
+Expected keyboard report at 133ms: { 1f e1 }
+Observed keyboard report at 133ms: { 1f e1 }
+Expected keyboard report at 134ms: { e1 }
+Observed keyboard report at 134ms: { e1 }
+Expected keyboard report at 134ms: { }
+Observed keyboard report at 134ms: { }
+Expected keyboard report at 135ms: { e1 }
+Observed keyboard report at 135ms: { e1 }
+Expected keyboard report at 135ms: { 20 e1 }
+Observed keyboard report at 135ms: { 20 e1 }
+Expected keyboard report at 136ms: { e1 }
+Observed keyboard report at 136ms: { e1 }
+Expected keyboard report at 136ms: { }
+Observed keyboard report at 136ms: { }
+Expected keyboard report at 149ms: { 1e }
+Observed keyboard report at 149ms: { 1e }
+Expected keyboard report at 149ms: { }
+Observed keyboard report at 149ms: { }
+Expected keyboard report at 149ms: { 1f }
+Observed keyboard report at 149ms: { 1f }
+Expected keyboard report at 149ms: { }
+Observed keyboard report at 149ms: { }
+Expected keyboard report at 149ms: { 20 }
+Observed keyboard report at 149ms: { 20 }
+Expected keyboard report at 149ms: { }
+Observed keyboard report at 149ms: { }
+Expected keyboard report at 149ms: { e1 }
+Observed keyboard report at 149ms: { e1 }
+Expected keyboard report at 149ms: { 1e e1 }
+Observed keyboard report at 149ms: { 1e e1 }
+Expected keyboard report at 149ms: { e1 }
+Observed keyboard report at 149ms: { e1 }
+Expected keyboard report at 149ms: { }
+Observed keyboard report at 149ms: { }
+Expected keyboard report at 149ms: { e1 }
+Observed keyboard report at 149ms: { e1 }
+Expected keyboard report at 149ms: { 1f e1 }
+Observed keyboard report at 149ms: { 1f e1 }
+Expected keyboard report at 149ms: { e1 }
+Observed keyboard report at 149ms: { e1 }
+Expected keyboard report at 149ms: { }
+Observed keyboard report at 149ms: { }
 Expected keyboard report at 149ms: { e1 }
 Observed keyboard report at 149ms: { e1 }
 Expected keyboard report at 149ms: { 20 e1 }
 Observed keyboard report at 149ms: { 20 e1 }
-Expected keyboard report at 150ms: { e1 }
-Observed keyboard report at 150ms: { e1 }
-Expected keyboard report at 150ms: { }
-Observed keyboard report at 150ms: { }
-Expected keyboard report at 155ms: { 1e }
-Observed keyboard report at 155ms: { 1e }
-Expected keyboard report at 156ms: { }
-Observed keyboard report at 156ms: { }
-Expected keyboard report at 157ms: { 1f }
-Observed keyboard report at 157ms: { 1f }
-Expected keyboard report at 158ms: { }
-Observed keyboard report at 158ms: { }
-Expected keyboard report at 159ms: { 20 }
-Observed keyboard report at 159ms: { 20 }
-Expected keyboard report at 160ms: { }
-Observed keyboard report at 160ms: { }
+Expected keyboard report at 149ms: { e1 }
+Observed keyboard report at 149ms: { e1 }
+Expected keyboard report at 149ms: { }
+Observed keyboard report at 149ms: { }
 Expected keyboard report at 173ms: { e1 }
 Observed keyboard report at 173ms: { e1 }
 Expected keyboard report at 173ms: { 1e e1 }
 Observed keyboard report at 173ms: { 1e e1 }
-Expected keyboard report at 173ms: { e1 }
-Observed keyboard report at 173ms: { e1 }
-Expected keyboard report at 173ms: { }
-Observed keyboard report at 173ms: { }
-Expected keyboard report at 173ms: { e1 }
-Observed keyboard report at 173ms: { e1 }
-Expected keyboard report at 173ms: { 1f e1 }
-Observed keyboard report at 173ms: { 1f e1 }
-Expected keyboard report at 173ms: { e1 }
-Observed keyboard report at 173ms: { e1 }
-Expected keyboard report at 173ms: { }
-Observed keyboard report at 173ms: { }
-Expected keyboard report at 173ms: { e1 }
-Observed keyboard report at 173ms: { e1 }
-Expected keyboard report at 173ms: { 20 e1 }
-Observed keyboard report at 173ms: { 20 e1 }
-Expected keyboard report at 173ms: { e1 }
-Observed keyboard report at 173ms: { e1 }
-Expected keyboard report at 173ms: { }
-Observed keyboard report at 173ms: { }
-Expected keyboard report at 173ms: { 1e }
-Observed keyboard report at 173ms: { 1e }
-Expected keyboard report at 173ms: { }
-Observed keyboard report at 173ms: { }
-Expected keyboard report at 173ms: { 1f }
-Observed keyboard report at 173ms: { 1f }
-Expected keyboard report at 173ms: { }
-Observed keyboard report at 173ms: { }
-Expected keyboard report at 173ms: { 20 }
-Observed keyboard report at 173ms: { 20 }
-Expected keyboard report at 173ms: { }
-Observed keyboard report at 173ms: { }
-[       OK ] PersonalConfig.2_MacroRecordTopsy (119 ms)
+Expected keyboard report at 174ms: { e1 }
+Observed keyboard report at 174ms: { e1 }
+Expected keyboard report at 174ms: { }
+Observed keyboard report at 174ms: { }
+Expected keyboard report at 181ms: { e1 }
+Observed keyboard report at 181ms: { e1 }
+Expected keyboard report at 181ms: { 1e e1 }
+Observed keyboard report at 181ms: { 1e e1 }
+Expected keyboard report at 182ms: { e1 }
+Observed keyboard report at 182ms: { e1 }
+Expected keyboard report at 182ms: { }
+Observed keyboard report at 182ms: { }
+Expected keyboard report at 183ms: { e1 }
+Observed keyboard report at 183ms: { e1 }
+Expected keyboard report at 183ms: { 1f e1 }
+Observed keyboard report at 183ms: { 1f e1 }
+Expected keyboard report at 184ms: { e1 }
+Observed keyboard report at 184ms: { e1 }
+Expected keyboard report at 184ms: { }
+Observed keyboard report at 184ms: { }
+Expected keyboard report at 185ms: { e1 }
+Observed keyboard report at 185ms: { e1 }
+Expected keyboard report at 185ms: { 20 e1 }
+Observed keyboard report at 185ms: { 20 e1 }
+Expected keyboard report at 186ms: { e1 }
+Observed keyboard report at 186ms: { e1 }
+Expected keyboard report at 186ms: { }
+Observed keyboard report at 186ms: { }
+Expected keyboard report at 191ms: { 1e }
+Observed keyboard report at 191ms: { 1e }
+Expected keyboard report at 192ms: { }
+Observed keyboard report at 192ms: { }
+Expected keyboard report at 193ms: { 1f }
+Observed keyboard report at 193ms: { 1f }
+Expected keyboard report at 194ms: { }
+Observed keyboard report at 194ms: { }
+Expected keyboard report at 195ms: { 20 }
+Observed keyboard report at 195ms: { 20 }
+Expected keyboard report at 196ms: { }
+Observed keyboard report at 196ms: { }
+Expected keyboard report at 209ms: { e1 }
+Observed keyboard report at 209ms: { e1 }
+Expected keyboard report at 209ms: { 1e e1 }
+Observed keyboard report at 209ms: { 1e e1 }
+Expected keyboard report at 209ms: { e1 }
+Observed keyboard report at 209ms: { e1 }
+Expected keyboard report at 209ms: { }
+Observed keyboard report at 209ms: { }
+Expected keyboard report at 209ms: { e1 }
+Observed keyboard report at 209ms: { e1 }
+Expected keyboard report at 209ms: { 1f e1 }
+Observed keyboard report at 209ms: { 1f e1 }
+Expected keyboard report at 209ms: { e1 }
+Observed keyboard report at 209ms: { e1 }
+Expected keyboard report at 209ms: { }
+Observed keyboard report at 209ms: { }
+Expected keyboard report at 209ms: { e1 }
+Observed keyboard report at 209ms: { e1 }
+Expected keyboard report at 209ms: { 20 e1 }
+Observed keyboard report at 209ms: { 20 e1 }
+Expected keyboard report at 209ms: { e1 }
+Observed keyboard report at 209ms: { e1 }
+Expected keyboard report at 209ms: { }
+Observed keyboard report at 209ms: { }
+Expected keyboard report at 209ms: { 1e }
+Observed keyboard report at 209ms: { 1e }
+Expected keyboard report at 209ms: { }
+Observed keyboard report at 209ms: { }
+Expected keyboard report at 209ms: { 1f }
+Observed keyboard report at 209ms: { 1f }
+Expected keyboard report at 209ms: { }
+Observed keyboard report at 209ms: { }
+Expected keyboard report at 209ms: { 20 }
+Observed keyboard report at 209ms: { 20 }
+Expected keyboard report at 209ms: { }
+Observed keyboard report at 209ms: { }
+[       OK ] PersonalConfig.2_MacroRecordTopsy (114 ms)
 [ RUN      ] PersonalConfig.3_MacroRecordOneShot
 [ INFO     ] Printing Macro: A
 	KEYCODEDOWN 225,KEYCODEDOWN 4,KEYCODEUP 225,KEYCODEUP 4,TAPCODE 4,KEYDOWN 209 199,
@@ -272,109 +272,133 @@ Observed keyboard report at 173ms: { }
 	TAPCODE 4,TAPCODE 4,KEYCODEDOWN 225,KEYDOWN 209 199,KEYCODEUP 225,
 [ INFO     ] Printing Macro: A
 	TAPCODE 4,TAPCODE 4,KEYCODEDOWN 225,TAPCODE 4,KEYCODEUP 225,KEYDOWN 209 199,
-Expected keyboard report at 181ms: { e1 }
-Observed keyboard report at 181ms: { e1 }
-Expected keyboard report at 183ms: { 4 e1 }
-Observed keyboard report at 183ms: { 4 e1 }
-Expected keyboard report at 183ms: { e1 }
-Observed keyboard report at 183ms: { 4 }
-Expected keyboard report at 184ms: { e1 }
-Observed keyboard report at 184ms: { }
-Expected keyboard report at 185ms: { 4 e1 }
-Observed keyboard report at 185ms: { 4 }
-Expected keyboard report at 186ms: { e1 }
-Observed keyboard report at 186ms: { }
-Expected keyboard report at 195ms: { e1 }
-Observed keyboard report at 195ms: { e1 }
-Expected keyboard report at 195ms: { 4 e1 }
-Observed keyboard report at 195ms: { 4 e1 }
-Expected keyboard report at 195ms: { 4 }
-Observed keyboard report at 195ms: { 4 }
-Expected keyboard report at 195ms: { }
-Observed keyboard report at 195ms: { }
-Expected keyboard report at 195ms: { 4 }
-Observed keyboard report at 195ms: { 4 }
-Expected keyboard report at 195ms: { }
-Observed keyboard report at 195ms: { }
-Expected keyboard report at 197ms: { e1 }
-Observed keyboard report at 197ms: { e1 }
-Expected keyboard report at 199ms: { }
-Observed keyboard report at 199ms: { }
-Expected keyboard report at 205ms: { 4 }
-Observed keyboard report at 205ms: { 4 }
-Expected keyboard report at 206ms: { }
-Observed keyboard report at 206ms: { }
-Expected keyboard report at 207ms: { 4 }
-Observed keyboard report at 207ms: { 4 }
-Expected keyboard report at 208ms: { }
-Observed keyboard report at 208ms: { }
-Expected keyboard report at 217ms: { 4 }
-Observed keyboard report at 217ms: { 4 }
-Expected keyboard report at 217ms: { }
-Observed keyboard report at 217ms: { }
-Expected keyboard report at 217ms: { 4 }
-Observed keyboard report at 217ms: { 4 }
-Expected keyboard report at 217ms: { }
-Observed keyboard report at 217ms: { }
-Expected keyboard report at 225ms: { 4 }
-Observed keyboard report at 225ms: { 4 }
-Expected keyboard report at 226ms: { }
-Observed keyboard report at 226ms: { }
-Expected keyboard report at 227ms: { 4 }
-Observed keyboard report at 227ms: { 4 }
-Expected keyboard report at 228ms: { }
-Observed keyboard report at 228ms: { }
-Expected keyboard report at 229ms: { e1 }
-Observed keyboard report at 229ms: { e1 }
-Expected keyboard report at 231ms: { }
-Observed keyboard report at 231ms: { }
-Expected keyboard report at 239ms: { 4 }
-Observed keyboard report at 239ms: { 4 }
-Expected keyboard report at 239ms: { }
-Observed keyboard report at 239ms: { }
-Expected keyboard report at 239ms: { 4 }
-Observed keyboard report at 239ms: { 4 }
-Expected keyboard report at 239ms: { }
-Observed keyboard report at 239ms: { }
-Expected keyboard report at 239ms: { e1 }
-Observed keyboard report at 239ms: { e1 }
-Expected keyboard report at 239ms: { }
-Observed keyboard report at 239ms: { }
-Expected keyboard report at 247ms: { 4 }
-Observed keyboard report at 247ms: { 4 }
-Expected keyboard report at 248ms: { }
-Observed keyboard report at 248ms: { }
-Expected keyboard report at 249ms: { 4 }
-Observed keyboard report at 249ms: { 4 }
-Expected keyboard report at 250ms: { }
-Observed keyboard report at 250ms: { }
-Expected keyboard report at 251ms: { e1 }
-Observed keyboard report at 251ms: { e1 }
-Expected keyboard report at 252ms: { 4 e1 }
-Observed keyboard report at 252ms: { 4 e1 }
+Expected keyboard report at 231ms: { e1 }
+Observed keyboard report at 231ms: { e1 }
+Expected keyboard report at 233ms: { 4 e1 }
+Observed keyboard report at 233ms: { 4 e1 }
+Expected keyboard report at 233ms: { e1 }
+Observed keyboard report at 233ms: { 4 }
+Expected keyboard report at 234ms: { e1 }
+Observed keyboard report at 234ms: { }
+Expected keyboard report at 235ms: { 4 e1 }
+Observed keyboard report at 235ms: { 4 }
+Expected keyboard report at 236ms: { e1 }
+Observed keyboard report at 236ms: { }
+Expected keyboard report at 245ms: { e1 }
+Observed keyboard report at 245ms: { e1 }
+Expected keyboard report at 245ms: { 4 e1 }
+Observed keyboard report at 245ms: { 4 e1 }
+Expected keyboard report at 245ms: { 4 }
+Observed keyboard report at 245ms: { 4 }
+Expected keyboard report at 245ms: { }
+Observed keyboard report at 245ms: { }
+Expected keyboard report at 245ms: { 4 }
+Observed keyboard report at 245ms: { 4 }
+Expected keyboard report at 245ms: { }
+Observed keyboard report at 245ms: { }
 Expected keyboard report at 253ms: { e1 }
 Observed keyboard report at 253ms: { e1 }
-Expected keyboard report at 254ms: { }
-Observed keyboard report at 254ms: { }
+Expected keyboard report at 255ms: { }
+Observed keyboard report at 255ms: { }
+Expected keyboard report at 261ms: { 4 }
+Observed keyboard report at 261ms: { 4 }
+Expected keyboard report at 262ms: { }
+Observed keyboard report at 262ms: { }
 Expected keyboard report at 263ms: { 4 }
 Observed keyboard report at 263ms: { 4 }
-Expected keyboard report at 263ms: { }
-Observed keyboard report at 263ms: { }
-Expected keyboard report at 263ms: { 4 }
-Observed keyboard report at 263ms: { 4 }
-Expected keyboard report at 263ms: { }
-Observed keyboard report at 263ms: { }
-Expected keyboard report at 263ms: { e1 }
-Observed keyboard report at 263ms: { e1 }
-Expected keyboard report at 263ms: { 4 e1 }
-Observed keyboard report at 263ms: { 4 e1 }
-Expected keyboard report at 263ms: { e1 }
-Observed keyboard report at 263ms: { e1 }
-Expected keyboard report at 263ms: { }
-Observed keyboard report at 263ms: { }
-[       OK ] PersonalConfig.3_MacroRecordOneShot (52 ms)
+Expected keyboard report at 264ms: { }
+Observed keyboard report at 264ms: { }
+Expected keyboard report at 273ms: { 4 }
+Observed keyboard report at 273ms: { 4 }
+Expected keyboard report at 273ms: { }
+Observed keyboard report at 273ms: { }
+Expected keyboard report at 273ms: { 4 }
+Observed keyboard report at 273ms: { 4 }
+Expected keyboard report at 273ms: { }
+Observed keyboard report at 273ms: { }
+Expected keyboard report at 284ms: { 4 }
+Observed keyboard report at 284ms: { 4 }
+Expected keyboard report at 285ms: { }
+Observed keyboard report at 285ms: { }
+Expected keyboard report at 286ms: { 4 }
+Observed keyboard report at 286ms: { 4 }
+Expected keyboard report at 287ms: { }
+Observed keyboard report at 287ms: { }
+Expected keyboard report at 288ms: { e1 }
+Observed keyboard report at 288ms: { e1 }
+Expected keyboard report at 290ms: { }
+Observed keyboard report at 290ms: { }
+Expected keyboard report at 298ms: { 4 }
+Observed keyboard report at 298ms: { 4 }
+Expected keyboard report at 298ms: { }
+Observed keyboard report at 298ms: { }
+Expected keyboard report at 298ms: { 4 }
+Observed keyboard report at 298ms: { 4 }
+Expected keyboard report at 298ms: { }
+Observed keyboard report at 298ms: { }
+Expected keyboard report at 298ms: { e1 }
+Observed keyboard report at 298ms: { e1 }
+Expected keyboard report at 298ms: { }
+Observed keyboard report at 298ms: { }
+Expected keyboard report at 311ms: { 4 }
+Observed keyboard report at 311ms: { 4 }
+Expected keyboard report at 312ms: { }
+Observed keyboard report at 312ms: { }
+Expected keyboard report at 313ms: { 4 }
+Observed keyboard report at 313ms: { 4 }
+Expected keyboard report at 314ms: { }
+Observed keyboard report at 314ms: { }
+Expected keyboard report at 315ms: { e1 }
+Observed keyboard report at 315ms: { e1 }
+Expected keyboard report at 316ms: { 4 e1 }
+Observed keyboard report at 316ms: { 4 e1 }
+Expected keyboard report at 317ms: { e1 }
+Observed keyboard report at 317ms: { e1 }
+Expected keyboard report at 318ms: { }
+Observed keyboard report at 318ms: { }
+Expected keyboard report at 327ms: { 4 }
+Observed keyboard report at 327ms: { 4 }
+Expected keyboard report at 327ms: { }
+Observed keyboard report at 327ms: { }
+Expected keyboard report at 327ms: { 4 }
+Observed keyboard report at 327ms: { 4 }
+Expected keyboard report at 327ms: { }
+Observed keyboard report at 327ms: { }
+Expected keyboard report at 327ms: { e1 }
+Observed keyboard report at 327ms: { e1 }
+Expected keyboard report at 327ms: { 4 e1 }
+Observed keyboard report at 327ms: { 4 e1 }
+Expected keyboard report at 327ms: { e1 }
+Observed keyboard report at 327ms: { e1 }
+Expected keyboard report at 327ms: { }
+Observed keyboard report at 327ms: { }
+[       OK ] PersonalConfig.3_MacroRecordOneShot (51 ms)
 [ RUN      ] PersonalConfig.4_MacroRecordSpecialShift
-[       OK ] PersonalConfig.4_MacroRecordSpecialShift (0 ms)
+[ INFO     ] Printing Macro: U
+	KEYDOWN 209 199,TAPCODE 76,KEYUP 209 199,KEYDOWN 209 199,
+[ INFO     ] Printing Macro: U
+	KEYDOWN 209 199,TAPCODE 76,
+Expected keyboard report at 342ms: { 4c }
+Observed keyboard report at 342ms: { 4c }
+Expected keyboard report at 343ms: { }
+Observed keyboard report at 343ms: { }
+Expected keyboard report at 353ms: { 4c }
+Observed keyboard report at 353ms: { 4c }
+Expected keyboard report at 353ms: { }
+Observed keyboard report at 353ms: { }
+Expected keyboard report at 366ms: { 4c }
+Observed keyboard report at 366ms: { 4c }
+Expected keyboard report at 367ms: { }
+Observed keyboard report at 367ms: { }
+Expected keyboard report at 377ms: { 4c }
+Observed keyboard report at 377ms: { 4c }
+Expected keyboard report at 377ms: { }
+Observed keyboard report at 377ms: { }
+Expected keyboard report at 381ms: { 2d }
+Observed keyboard report at 381ms: { 2d }
+Expected keyboard report at 382ms: { }
+Observed keyboard report at 382ms: { }
+[       OK ] PersonalConfig.4_MacroRecordSpecialShift (10 ms)
 [ RUN      ] PersonalConfig.5_MacroRecordSpecialShift
 [       OK ] PersonalConfig.5_MacroRecordSpecialShift (0 ms)
 [ RUN      ] PersonalConfig.6_MacroRecordTopsyOneShot
@@ -382,141 +406,199 @@ Observed keyboard report at 263ms: { }
 	TAPCODE 30,TAPCODE 31,KEYDOWN 209 199,TAP 209 197,KEYUP 209 199,TAPCODE 4,KEYDOWN 208 75,KEYCODEUP 30,KEYCODEDOWN 229,KEYDOWN 208 75,KEYCODEUP 30,KEYCODEUP 229,KEYDOWN 209 199,
 [ INFO     ] Printing Macro: O
 	KEYCODEDOWN 229,KEYDOWN 208 77,KEYCODEUP 229,KEYCODEUP 32,KEYDOWN 209 199,
+Expected keyboard report at 389ms: { 1e }
+Observed keyboard report at 389ms: { 1e }
+Expected keyboard report at 390ms: { }
+Observed keyboard report at 390ms: { }
+Expected keyboard report at 391ms: { 1f }
+Observed keyboard report at 391ms: { 1f }
+Expected keyboard report at 392ms: { }
+Observed keyboard report at 392ms: { }
+Expected keyboard report at 397ms: { 4 }
+Observed keyboard report at 397ms: { 4 }
+Expected keyboard report at 398ms: { }
+Observed keyboard report at 398ms: { }
+Expected keyboard report at 399ms: { e1 }
+Observed keyboard report at 399ms: { e1 }
+Expected keyboard report at 399ms: { 1e e1 }
+Observed keyboard report at 399ms: { 1e e1 }
+Expected keyboard report at 400ms: { e1 }
+Observed keyboard report at 400ms: { e1 }
+Expected keyboard report at 400ms: { }
+Observed keyboard report at 400ms: { }
+Expected keyboard report at 401ms: { e5 }
+Observed keyboard report at 401ms: { e5 }
+Expected keyboard report at 402ms: { }
+Observed keyboard report at 402ms: { }
+Expected keyboard report at 402ms: { 1e }
+Observed keyboard report at 402ms: { 1e }
+Expected keyboard report at 403ms: { }
+Observed keyboard report at 403ms: { }
+Expected keyboard report at 403ms: { e5 }
+Observed keyboard report at 403ms: { e5 }
+Expected keyboard report at 404ms: { }
+Observed keyboard report at 404ms: { }
+Expected keyboard report at 417ms: { 1e }
+Observed keyboard report at 417ms: { 1e }
+Expected keyboard report at 417ms: { }
+Observed keyboard report at 417ms: { }
+Expected keyboard report at 417ms: { 1f }
+Observed keyboard report at 417ms: { 1f }
+Expected keyboard report at 417ms: { }
+Observed keyboard report at 417ms: { }
+Expected keyboard report at 417ms: { 4 }
+Observed keyboard report at 417ms: { 4 }
+Expected keyboard report at 417ms: { }
+Observed keyboard report at 417ms: { }
+Expected keyboard report at 417ms: { e1 }
+Observed keyboard report at 417ms: { e1 }
+Expected keyboard report at 417ms: { 1e e1 }
+Observed keyboard report at 417ms: { 1e e1 }
+Expected keyboard report at 417ms: { e1 }
+Observed keyboard report at 417ms: { e1 }
+Expected keyboard report at 417ms: { }
+Observed keyboard report at 417ms: { }
+Expected keyboard report at 417ms: { e5 }
+Observed keyboard report at 417ms: { e5 }
+Expected keyboard report at 417ms: { }
+Observed keyboard report at 417ms: { }
+Expected keyboard report at 417ms: { 1e }
+Observed keyboard report at 417ms: { 1e }
+Expected keyboard report at 417ms: { }
+Observed keyboard report at 417ms: { }
+Expected keyboard report at 417ms: { e5 }
+Observed keyboard report at 417ms: { e5 }
+Expected keyboard report at 417ms: { }
+Observed keyboard report at 417ms: { }
+Expected keyboard report at 446ms: { e5 }
+Observed keyboard report at 446ms: { e5 }
+Expected keyboard report at 448ms: { }
+Observed keyboard report at 448ms: { }
+Expected keyboard report at 448ms: { 20 }
+Observed keyboard report at 448ms: { 20 }
+Expected keyboard report at 448ms: { 20 e1 }
+Observed keyboard report at 448ms: { 20 e1 }
+Expected keyboard report at 449ms: { e1 }
+Observed keyboard report at 449ms: { e1 }
+Expected keyboard report at 449ms: { }
+Observed keyboard report at 449ms: { }
+Expected keyboard report at 458ms: { e5 }
+Observed keyboard report at 458ms: { e5 }
+Expected keyboard report at 458ms: { }
+Observed keyboard report at 458ms: { }
+Expected keyboard report at 458ms: { 20 }
+Observed keyboard report at 458ms: { 20 }
+Expected keyboard report at 458ms: { 20 e1 }
+Observed keyboard report at 458ms: { 20 e1 }
+Expected keyboard report at 458ms: { e1 }
+Observed keyboard report at 458ms: { e1 }
+Expected keyboard report at 458ms: { }
+Observed keyboard report at 458ms: { }
+[       OK ] PersonalConfig.6_MacroRecordTopsyOneShot (45 ms)
+[ RUN      ] PersonalConfig.7_SpecialShiftDoubleRelease
+Expected keyboard report at 470ms: { 35 }
+Observed keyboard report at 470ms: { 35 }
+Expected keyboard report at 471ms: { }
+Observed keyboard report at 471ms: { }
+Expected keyboard report at 473ms: { 35 }
+Observed keyboard report at 473ms: { 35 }
+Expected keyboard report at 474ms: { }
+Observed keyboard report at 474ms: { }
+Expected keyboard report at 476ms: { 35 }
+Observed keyboard report at 476ms: { 35 }
+Expected keyboard report at 477ms: { }
+Observed keyboard report at 477ms: { }
+Expected keyboard report at 479ms: { a }
+Observed keyboard report at 479ms: { a }
+Expected keyboard report at 480ms: { }
+Observed keyboard report at 480ms: { }
+Expected keyboard report at 482ms: { 35 }
+Observed keyboard report at 482ms: { 35 }
+Expected keyboard report at 483ms: { }
+Observed keyboard report at 483ms: { }
+Expected keyboard report at 485ms: { 35 }
+Observed keyboard report at 485ms: { 35 }
+Expected keyboard report at 486ms: { }
+Observed keyboard report at 486ms: { }
+Expected keyboard report at 488ms: { 35 }
+Observed keyboard report at 488ms: { 35 }
+Expected keyboard report at 489ms: { }
+Observed keyboard report at 489ms: { }
+Expected keyboard report at 491ms: { a }
+Observed keyboard report at 491ms: { a }
+Expected keyboard report at 492ms: { }
+Observed keyboard report at 492ms: { }
+[       OK ] PersonalConfig.7_SpecialShiftDoubleRelease (14 ms)
+[ RUN      ] PersonalConfig.8_MacroRecordIntoWrongSlot
+Expected keyboard report at 499ms: { 4 }
+Observed keyboard report at 499ms: { 4 }
+Expected keyboard report at 500ms: { }
+Observed keyboard report at 500ms: { }
+Expected keyboard report at 501ms: { 5 }
+Observed keyboard report at 501ms: { 5 }
+Expected keyboard report at 502ms: { }
+Observed keyboard report at 502ms: { }
+Expected keyboard report at 503ms: { 6 }
+Observed keyboard report at 503ms: { 6 }
+Expected keyboard report at 504ms: { }
+Observed keyboard report at 504ms: { }
+[       OK ] PersonalConfig.8_MacroRecordIntoWrongSlot (5 ms)
+[ RUN      ] PersonalConfig.9_MacroReplayPLAYPLAY
 /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:164: Failure
 Expected equality of these values:
   observed_keyboard_report_count
-    Which is: 44
+    Which is: 8
   expected_keyboard_report_count
-    Which is: 41
-Expected keyboard report at 271ms: { 1e }
-Observed keyboard report at 271ms: { 1e }
-Expected keyboard report at 272ms: { }
-Observed keyboard report at 272ms: { }
-Expected keyboard report at 273ms: { 1f }
-Observed keyboard report at 273ms: { 1f }
-Expected keyboard report at 274ms: { }
-Observed keyboard report at 274ms: { }
-Expected keyboard report at 279ms: { 4 }
-Observed keyboard report at 279ms: { 4 }
-Expected keyboard report at 280ms: { }
-Observed keyboard report at 280ms: { }
-Expected keyboard report at 281ms: { e1 }
-Observed keyboard report at 281ms: { e1 }
-Expected keyboard report at 281ms: { 1e e1 }
-Observed keyboard report at 281ms: { 1e e1 }
-Expected keyboard report at 282ms: { e1 }
-Observed keyboard report at 282ms: { e1 }
-Expected keyboard report at 282ms: { }
-Observed keyboard report at 282ms: { }
-Expected keyboard report at 283ms: { e5 }
-Observed keyboard report at 283ms: { e5 }
-Expected keyboard report at 284ms: { }
-Observed keyboard report at 284ms: { }
-Expected keyboard report at 284ms: { 1e }
-Observed keyboard report at 284ms: { 1e }
-Expected keyboard report at 285ms: { }
-Observed keyboard report at 285ms: { }
-Expected keyboard report at 285ms: { e5 }
-Observed keyboard report at 285ms: { e5 }
-Expected keyboard report at 286ms: { }
-Observed keyboard report at 286ms: { }
-Expected keyboard report at 299ms: { 1e }
-Observed keyboard report at 299ms: { 1e }
-Expected keyboard report at 299ms: { }
-Observed keyboard report at 299ms: { }
-Expected keyboard report at 299ms: { 1f }
-Observed keyboard report at 299ms: { 1f }
-Expected keyboard report at 299ms: { }
-Observed keyboard report at 299ms: { }
-Expected keyboard report at 299ms: { 4 }
-Observed keyboard report at 299ms: { 4 }
-Expected keyboard report at 299ms: { }
-Observed keyboard report at 299ms: { }
-Expected keyboard report at 299ms: { e1 }
-Observed keyboard report at 299ms: { e1 }
-Expected keyboard report at 299ms: { 1e e1 }
-Observed keyboard report at 299ms: { 1e e1 }
-Expected keyboard report at 299ms: { e1 }
-Observed keyboard report at 299ms: { e1 }
-Expected keyboard report at 299ms: { }
-Observed keyboard report at 299ms: { }
-Expected keyboard report at 299ms: { e5 }
-Observed keyboard report at 299ms: { e5 }
-Expected keyboard report at 299ms: { }
-Observed keyboard report at 299ms: { }
-Expected keyboard report at 299ms: { 1e }
-Observed keyboard report at 299ms: { 1e }
-Expected keyboard report at 299ms: { }
-Observed keyboard report at 299ms: { }
-Expected keyboard report at 299ms: { e5 }
-Observed keyboard report at 299ms: { e5 }
-Expected keyboard report at 299ms: { }
-Observed keyboard report at 299ms: { }
-Expected keyboard report at 315ms: { e5 }
-Observed keyboard report at 315ms: { e5 }
-Expected keyboard report at 317ms: { }
-Observed keyboard report at 317ms: { }
-Expected keyboard report at 317ms: { 20 }
-Observed keyboard report at 317ms: { 20 }
-Expected keyboard report at 318ms: { 20 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 317
-  expected_report.Timestamp()
-    Which is: 318
-Report timestamps don't match (i=35)
-Observed keyboard report at 317ms: { 20 e1 }
-Expected keyboard report at 318ms: { }
-Observed keyboard report at 318ms: { e1 }
-Expected keyboard report at 327ms: { e5 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 318
-  expected_report.Timestamp()
-    Which is: 327
-Report timestamps don't match (i=37)
-Observed keyboard report at 318ms: { }
-Expected keyboard report at 327ms: { 20 e5 }
-Observed keyboard report at 327ms: { e5 }
-Expected keyboard report at 327ms: { 20 }
-Observed keyboard report at 327ms: { }
-Expected keyboard report at 327ms: { }
-Observed keyboard report at 327ms: { 20 }
-Observed keyboard report at 327ms: { 20 e1 }
-Observed keyboard report at 327ms: { e1 }
-Observed keyboard report at 327ms: { }
-[  FAILED  ] PersonalConfig.6_MacroRecordTopsyOneShot (44 ms)
-[----------] 7 tests from PersonalConfig (227 ms total)
+    Which is: 12
+Expected keyboard report at 517ms: { 4 }
+Observed keyboard report at 517ms: { 4 }
+Expected keyboard report at 518ms: { }
+Observed keyboard report at 518ms: { }
+Expected keyboard report at 519ms: { 5 }
+Observed keyboard report at 519ms: { 5 }
+Expected keyboard report at 520ms: { }
+Observed keyboard report at 520ms: { }
+Expected keyboard report at 529ms: { 4 }
+Observed keyboard report at 529ms: { 4 }
+Expected keyboard report at 529ms: { }
+Observed keyboard report at 529ms: { }
+Expected keyboard report at 529ms: { 5 }
+Observed keyboard report at 529ms: { 5 }
+Expected keyboard report at 529ms: { }
+Observed keyboard report at 529ms: { }
+Missing expected keyboard report at 537ms: { 4 }
+Missing expected keyboard report at 537ms: { }
+Missing expected keyboard report at 537ms: { 5 }
+Missing expected keyboard report at 537ms: { }
+[  FAILED  ] PersonalConfig.9_MacroReplayPLAYPLAY (9 ms)
+[----------] 10 tests from PersonalConfig (262 ms total)
 
 [----------] Global test environment tear-down
-[==========] 7 tests from 1 test suite ran. (227 ms total)
-[  PASSED  ] 6 tests.
+[==========] 10 tests from 1 test suite ran. (263 ms total)
+[  PASSED  ] 9 tests.
 [  FAILED  ] 1 test, listed below:
-[  FAILED  ] PersonalConfig.6_MacroRecordTopsyOneShot
+[  FAILED  ] PersonalConfig.9_MacroReplayPLAYPLAY
 
  1 FAILED TEST
-Kaleidoscope [11:51:27] $ 
+Kaleidoscope [13:47:35] $ 
 vshcmd: > rr replay -- -q
 vshcmd: > python
 vshcmd: > do_autoimport('kaleidoscope')
 vshcmd: > end
-Reading symbols from /home/matmal01/.local/share/rr/personal-config-10/mmap_hardlink_4_personal-config...
+vshcmd: > break 'kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent' if $_any_caller_matches(".*PLAYPLAY", 999) && event.key.keyCode_ > 190 && currentState == PICKING_SLOT_FOR_PLAY
+vshcmd: > cont
+Reading symbols from /home/matmal01/.local/share/rr/personal-config-14/mmap_hardlink_4_personal-config...
 Really redefine built-in command "restart"? (y or n) [answered Y; input not from terminal]
-Remote debugging using 127.0.0.1:34775
+Remote debugging using 127.0.0.1:2527
 Reading symbols from /lib64/ld-linux-x86-64.so.2...
 (No debugging symbols found in /lib64/ld-linux-x86-64.so.2)
 BFD: warning: system-supplied DSO at 0x6fffd000 has a section extending past end of file
-0x00007f824f1012b0 in ?? () from /lib64/ld-linux-x86-64.so.2
-(rr) >>(rr) 
-vshcmd: > break TopsyTurvy::beforeReportingState if $_any_caller_matches(".*PersonalConfig_6_MacroRecordTopsyOneShot", 999)
-vshcmd: > cont
-Breakpoint 1 at 0x55fa1a735f71: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src/kaleidoscope/plugin/TopsyTurvy.cpp, line 70.
+0x00007f27777642b0 in ?? () from /lib64/ld-linux-x86-64.so.2
+(rr) >>(rr) Breakpoint 1 at 0x5585b00cbddd: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp, line 457.
 (rr) Continuing.
-[==========] Running 7 tests from 1 test suite.
+[==========] Running 10 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 7 tests from PersonalConfig
+[----------] 10 tests from PersonalConfig
 [ RUN      ] PersonalConfig.0_test
 [ INFO     ] test: tests/personal-config/test/manual-tests.cpp
 [       OK ] PersonalConfig.0_test (0 ms)
@@ -547,231 +629,231 @@ Observed keyboard report at 19ms: { }
 	TAP_CODE_SEQUENCE 30 31 32 0 |,KEYDOWN 209 199,TAP 209 197,KEYUP 209 199,KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,KEYDOWN 209 199,
 [ INFO     ] Printing Macro: A
 	KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,KEYDOWN 209 199,TAP 209 197,KEYUP 209 199,TAP_CODE_SEQUENCE 30 31 32 0 |,KEYDOWN 209 199,
-Expected keyboard report at 27ms: { 1e }
-Observed keyboard report at 27ms: { 1e }
-Expected keyboard report at 28ms: { }
-Observed keyboard report at 28ms: { }
-Expected keyboard report at 29ms: { 1f }
-Observed keyboard report at 29ms: { 1f }
-Expected keyboard report at 30ms: { }
-Observed keyboard report at 30ms: { }
-Expected keyboard report at 31ms: { 20 }
-Observed keyboard report at 31ms: { 20 }
-Expected keyboard report at 32ms: { }
-Observed keyboard report at 32ms: { }
-Expected keyboard report at 37ms: { 4 }
-Observed keyboard report at 37ms: { 4 }
-Expected keyboard report at 38ms: { }
-Observed keyboard report at 38ms: { }
-Expected keyboard report at 51ms: { 1e }
-Observed keyboard report at 51ms: { 1e }
-Expected keyboard report at 51ms: { }
-Observed keyboard report at 51ms: { }
-Expected keyboard report at 51ms: { 1f }
-Observed keyboard report at 51ms: { 1f }
-Expected keyboard report at 51ms: { }
-Observed keyboard report at 51ms: { }
-Expected keyboard report at 51ms: { 20 }
-Observed keyboard report at 51ms: { 20 }
-Expected keyboard report at 51ms: { }
-Observed keyboard report at 51ms: { }
-Expected keyboard report at 51ms: { 4 }
-Observed keyboard report at 51ms: { 4 }
-Expected keyboard report at 51ms: { }
-Observed keyboard report at 51ms: { }
-Expected keyboard report at 63ms: { 1e }
-Observed keyboard report at 63ms: { 1e }
-Expected keyboard report at 64ms: { }
-Observed keyboard report at 64ms: { }
-Expected keyboard report at 65ms: { 1f }
-Observed keyboard report at 65ms: { 1f }
-Expected keyboard report at 66ms: { }
-Observed keyboard report at 66ms: { }
-Expected keyboard report at 67ms: { 20 }
-Observed keyboard report at 67ms: { 20 }
-Expected keyboard report at 68ms: { }
-Observed keyboard report at 68ms: { }
-Expected keyboard report at 73ms: { e1 }
-Observed keyboard report at 73ms: { e1 }
-Expected keyboard report at 73ms: { 1e e1 }
-Observed keyboard report at 73ms: { 1e e1 }
-Expected keyboard report at 74ms: { e1 }
-Observed keyboard report at 74ms: { e1 }
-Expected keyboard report at 74ms: { }
-Observed keyboard report at 74ms: { }
-Expected keyboard report at 87ms: { 1e }
-Observed keyboard report at 87ms: { 1e }
-Expected keyboard report at 87ms: { }
-Observed keyboard report at 87ms: { }
-Expected keyboard report at 87ms: { 1f }
-Observed keyboard report at 87ms: { 1f }
-Expected keyboard report at 87ms: { }
-Observed keyboard report at 87ms: { }
-Expected keyboard report at 87ms: { 20 }
-Observed keyboard report at 87ms: { 20 }
-Expected keyboard report at 87ms: { }
-Observed keyboard report at 87ms: { }
-Expected keyboard report at 87ms: { e1 }
-Observed keyboard report at 87ms: { e1 }
-Expected keyboard report at 87ms: { 1e e1 }
-Observed keyboard report at 87ms: { 1e e1 }
-Expected keyboard report at 87ms: { e1 }
-Observed keyboard report at 87ms: { e1 }
-Expected keyboard report at 87ms: { }
-Observed keyboard report at 87ms: { }
+Expected keyboard report at 30ms: { 1e }
+Observed keyboard report at 30ms: { 1e }
+Expected keyboard report at 31ms: { }
+Observed keyboard report at 31ms: { }
+Expected keyboard report at 32ms: { 1f }
+Observed keyboard report at 32ms: { 1f }
+Expected keyboard report at 33ms: { }
+Observed keyboard report at 33ms: { }
+Expected keyboard report at 34ms: { 20 }
+Observed keyboard report at 34ms: { 20 }
+Expected keyboard report at 35ms: { }
+Observed keyboard report at 35ms: { }
+Expected keyboard report at 40ms: { 4 }
+Observed keyboard report at 40ms: { 4 }
+Expected keyboard report at 41ms: { }
+Observed keyboard report at 41ms: { }
+Expected keyboard report at 54ms: { 1e }
+Observed keyboard report at 54ms: { 1e }
+Expected keyboard report at 54ms: { }
+Observed keyboard report at 54ms: { }
+Expected keyboard report at 54ms: { 1f }
+Observed keyboard report at 54ms: { 1f }
+Expected keyboard report at 54ms: { }
+Observed keyboard report at 54ms: { }
+Expected keyboard report at 54ms: { 20 }
+Observed keyboard report at 54ms: { 20 }
+Expected keyboard report at 54ms: { }
+Observed keyboard report at 54ms: { }
+Expected keyboard report at 54ms: { 4 }
+Observed keyboard report at 54ms: { 4 }
+Expected keyboard report at 54ms: { }
+Observed keyboard report at 54ms: { }
+Expected keyboard report at 75ms: { 1e }
+Observed keyboard report at 75ms: { 1e }
+Expected keyboard report at 76ms: { }
+Observed keyboard report at 76ms: { }
+Expected keyboard report at 77ms: { 1f }
+Observed keyboard report at 77ms: { 1f }
+Expected keyboard report at 78ms: { }
+Observed keyboard report at 78ms: { }
+Expected keyboard report at 79ms: { 20 }
+Observed keyboard report at 79ms: { 20 }
+Expected keyboard report at 80ms: { }
+Observed keyboard report at 80ms: { }
+Expected keyboard report at 85ms: { e1 }
+Observed keyboard report at 85ms: { e1 }
+Expected keyboard report at 85ms: { 1e e1 }
+Observed keyboard report at 85ms: { 1e e1 }
+Expected keyboard report at 86ms: { e1 }
+Observed keyboard report at 86ms: { e1 }
+Expected keyboard report at 86ms: { }
+Observed keyboard report at 86ms: { }
 Expected keyboard report at 99ms: { 1e }
 Observed keyboard report at 99ms: { 1e }
-Expected keyboard report at 100ms: { }
-Observed keyboard report at 100ms: { }
-Expected keyboard report at 101ms: { 1f }
-Observed keyboard report at 101ms: { 1f }
-Expected keyboard report at 102ms: { }
-Observed keyboard report at 102ms: { }
-Expected keyboard report at 103ms: { 20 }
-Observed keyboard report at 103ms: { 20 }
-Expected keyboard report at 104ms: { }
-Observed keyboard report at 104ms: { }
-Expected keyboard report at 109ms: { e1 }
-Observed keyboard report at 109ms: { e1 }
-Expected keyboard report at 109ms: { 1e e1 }
-Observed keyboard report at 109ms: { 1e e1 }
-Expected keyboard report at 110ms: { e1 }
-Observed keyboard report at 110ms: { e1 }
-Expected keyboard report at 110ms: { }
-Observed keyboard report at 110ms: { }
-Expected keyboard report at 111ms: { e1 }
-Observed keyboard report at 111ms: { e1 }
-Expected keyboard report at 111ms: { 1f e1 }
-Observed keyboard report at 111ms: { 1f e1 }
-Expected keyboard report at 112ms: { e1 }
-Observed keyboard report at 112ms: { e1 }
-Expected keyboard report at 112ms: { }
-Observed keyboard report at 112ms: { }
-Expected keyboard report at 113ms: { e1 }
-Observed keyboard report at 113ms: { e1 }
-Expected keyboard report at 113ms: { 20 e1 }
-Observed keyboard report at 113ms: { 20 e1 }
-Expected keyboard report at 114ms: { e1 }
-Observed keyboard report at 114ms: { e1 }
-Expected keyboard report at 114ms: { }
-Observed keyboard report at 114ms: { }
-Expected keyboard report at 127ms: { 1e }
-Observed keyboard report at 127ms: { 1e }
-Expected keyboard report at 127ms: { }
-Observed keyboard report at 127ms: { }
-Expected keyboard report at 127ms: { 1f }
-Observed keyboard report at 127ms: { 1f }
-Expected keyboard report at 127ms: { }
-Observed keyboard report at 127ms: { }
-Expected keyboard report at 127ms: { 20 }
-Observed keyboard report at 127ms: { 20 }
-Expected keyboard report at 127ms: { }
-Observed keyboard report at 127ms: { }
-Expected keyboard report at 127ms: { e1 }
-Observed keyboard report at 127ms: { e1 }
-Expected keyboard report at 127ms: { 1e e1 }
-Observed keyboard report at 127ms: { 1e e1 }
-Expected keyboard report at 127ms: { e1 }
-Observed keyboard report at 127ms: { e1 }
-Expected keyboard report at 127ms: { }
-Observed keyboard report at 127ms: { }
-Expected keyboard report at 127ms: { e1 }
-Observed keyboard report at 127ms: { e1 }
-Expected keyboard report at 127ms: { 1f e1 }
-Observed keyboard report at 127ms: { 1f e1 }
-Expected keyboard report at 127ms: { e1 }
-Observed keyboard report at 127ms: { e1 }
-Expected keyboard report at 127ms: { }
-Observed keyboard report at 127ms: { }
-Expected keyboard report at 127ms: { e1 }
-Observed keyboard report at 127ms: { e1 }
-Expected keyboard report at 127ms: { 20 e1 }
-Observed keyboard report at 127ms: { 20 e1 }
-Expected keyboard report at 127ms: { e1 }
-Observed keyboard report at 127ms: { e1 }
-Expected keyboard report at 127ms: { }
-Observed keyboard report at 127ms: { }
-Expected keyboard report at 137ms: { e1 }
-Observed keyboard report at 137ms: { e1 }
-Expected keyboard report at 137ms: { 1e e1 }
-Observed keyboard report at 137ms: { 1e e1 }
-Expected keyboard report at 138ms: { e1 }
-Observed keyboard report at 138ms: { e1 }
-Expected keyboard report at 138ms: { }
-Observed keyboard report at 138ms: { }
-Expected keyboard report at 145ms: { e1 }
-Observed keyboard report at 145ms: { e1 }
-Expected keyboard report at 145ms: { 1e e1 }
-Observed keyboard report at 145ms: { 1e e1 }
-Expected keyboard report at 146ms: { e1 }
-Observed keyboard report at 146ms: { e1 }
-Expected keyboard report at 146ms: { }
-Observed keyboard report at 146ms: { }
-Expected keyboard report at 147ms: { e1 }
-Observed keyboard report at 147ms: { e1 }
-Expected keyboard report at 147ms: { 1f e1 }
-Observed keyboard report at 147ms: { 1f e1 }
-Expected keyboard report at 148ms: { e1 }
-Observed keyboard report at 148ms: { e1 }
-Expected keyboard report at 148ms: { }
-Observed keyboard report at 148ms: { }
+Expected keyboard report at 99ms: { }
+Observed keyboard report at 99ms: { }
+Expected keyboard report at 99ms: { 1f }
+Observed keyboard report at 99ms: { 1f }
+Expected keyboard report at 99ms: { }
+Observed keyboard report at 99ms: { }
+Expected keyboard report at 99ms: { 20 }
+Observed keyboard report at 99ms: { 20 }
+Expected keyboard report at 99ms: { }
+Observed keyboard report at 99ms: { }
+Expected keyboard report at 99ms: { e1 }
+Observed keyboard report at 99ms: { e1 }
+Expected keyboard report at 99ms: { 1e e1 }
+Observed keyboard report at 99ms: { 1e e1 }
+Expected keyboard report at 99ms: { e1 }
+Observed keyboard report at 99ms: { e1 }
+Expected keyboard report at 99ms: { }
+Observed keyboard report at 99ms: { }
+Expected keyboard report at 121ms: { 1e }
+Observed keyboard report at 121ms: { 1e }
+Expected keyboard report at 122ms: { }
+Observed keyboard report at 122ms: { }
+Expected keyboard report at 123ms: { 1f }
+Observed keyboard report at 123ms: { 1f }
+Expected keyboard report at 124ms: { }
+Observed keyboard report at 124ms: { }
+Expected keyboard report at 125ms: { 20 }
+Observed keyboard report at 125ms: { 20 }
+Expected keyboard report at 126ms: { }
+Observed keyboard report at 126ms: { }
+Expected keyboard report at 131ms: { e1 }
+Observed keyboard report at 131ms: { e1 }
+Expected keyboard report at 131ms: { 1e e1 }
+Observed keyboard report at 131ms: { 1e e1 }
+Expected keyboard report at 132ms: { e1 }
+Observed keyboard report at 132ms: { e1 }
+Expected keyboard report at 132ms: { }
+Observed keyboard report at 132ms: { }
+Expected keyboard report at 133ms: { e1 }
+Observed keyboard report at 133ms: { e1 }
+Expected keyboard report at 133ms: { 1f e1 }
+Observed keyboard report at 133ms: { 1f e1 }
+Expected keyboard report at 134ms: { e1 }
+Observed keyboard report at 134ms: { e1 }
+Expected keyboard report at 134ms: { }
+Observed keyboard report at 134ms: { }
+Expected keyboard report at 135ms: { e1 }
+Observed keyboard report at 135ms: { e1 }
+Expected keyboard report at 135ms: { 20 e1 }
+Observed keyboard report at 135ms: { 20 e1 }
+Expected keyboard report at 136ms: { e1 }
+Observed keyboard report at 136ms: { e1 }
+Expected keyboard report at 136ms: { }
+Observed keyboard report at 136ms: { }
+Expected keyboard report at 149ms: { 1e }
+Observed keyboard report at 149ms: { 1e }
+Expected keyboard report at 149ms: { }
+Observed keyboard report at 149ms: { }
+Expected keyboard report at 149ms: { 1f }
+Observed keyboard report at 149ms: { 1f }
+Expected keyboard report at 149ms: { }
+Observed keyboard report at 149ms: { }
+Expected keyboard report at 149ms: { 20 }
+Observed keyboard report at 149ms: { 20 }
+Expected keyboard report at 149ms: { }
+Observed keyboard report at 149ms: { }
+Expected keyboard report at 149ms: { e1 }
+Observed keyboard report at 149ms: { e1 }
+Expected keyboard report at 149ms: { 1e e1 }
+Observed keyboard report at 149ms: { 1e e1 }
+Expected keyboard report at 149ms: { e1 }
+Observed keyboard report at 149ms: { e1 }
+Expected keyboard report at 149ms: { }
+Observed keyboard report at 149ms: { }
+Expected keyboard report at 149ms: { e1 }
+Observed keyboard report at 149ms: { e1 }
+Expected keyboard report at 149ms: { 1f e1 }
+Observed keyboard report at 149ms: { 1f e1 }
+Expected keyboard report at 149ms: { e1 }
+Observed keyboard report at 149ms: { e1 }
+Expected keyboard report at 149ms: { }
+Observed keyboard report at 149ms: { }
 Expected keyboard report at 149ms: { e1 }
 Observed keyboard report at 149ms: { e1 }
 Expected keyboard report at 149ms: { 20 e1 }
 Observed keyboard report at 149ms: { 20 e1 }
-Expected keyboard report at 150ms: { e1 }
-Observed keyboard report at 150ms: { e1 }
-Expected keyboard report at 150ms: { }
-Observed keyboard report at 150ms: { }
-Expected keyboard report at 155ms: { 1e }
-Observed keyboard report at 155ms: { 1e }
-Expected keyboard report at 156ms: { }
-Observed keyboard report at 156ms: { }
-Expected keyboard report at 157ms: { 1f }
-Observed keyboard report at 157ms: { 1f }
-Expected keyboard report at 158ms: { }
-Observed keyboard report at 158ms: { }
-Expected keyboard report at 159ms: { 20 }
-Observed keyboard report at 159ms: { 20 }
-Expected keyboard report at 160ms: { }
-Observed keyboard report at 160ms: { }
+Expected keyboard report at 149ms: { e1 }
+Observed keyboard report at 149ms: { e1 }
+Expected keyboard report at 149ms: { }
+Observed keyboard report at 149ms: { }
 Expected keyboard report at 173ms: { e1 }
 Observed keyboard report at 173ms: { e1 }
 Expected keyboard report at 173ms: { 1e e1 }
 Observed keyboard report at 173ms: { 1e e1 }
-Expected keyboard report at 173ms: { e1 }
-Observed keyboard report at 173ms: { e1 }
-Expected keyboard report at 173ms: { }
-Observed keyboard report at 173ms: { }
-Expected keyboard report at 173ms: { e1 }
-Observed keyboard report at 173ms: { e1 }
-Expected keyboard report at 173ms: { 1f e1 }
-Observed keyboard report at 173ms: { 1f e1 }
-Expected keyboard report at 173ms: { e1 }
-Observed keyboard report at 173ms: { e1 }
-Expected keyboard report at 173ms: { }
-Observed keyboard report at 173ms: { }
-Expected keyboard report at 173ms: { e1 }
-Observed keyboard report at 173ms: { e1 }
-Expected keyboard report at 173ms: { 20 e1 }
-Observed keyboard report at 173ms: { 20 e1 }
-Expected keyboard report at 173ms: { e1 }
-Observed keyboard report at 173ms: { e1 }
-Expected keyboard report at 173ms: { }
-Observed keyboard report at 173ms: { }
-Expected keyboard report at 173ms: { 1e }
-Observed keyboard report at 173ms: { 1e }
-Expected keyboard report at 173ms: { }
-Observed keyboard report at 173ms: { }
-Expected keyboard report at 173ms: { 1f }
-Observed keyboard report at 173ms: { 1f }
-Expected keyboard report at 173ms: { }
-Observed keyboard report at 173ms: { }
-Expected keyboard report at 173ms: { 20 }
-Observed keyboard report at 173ms: { 20 }
-Expected keyboard report at 173ms: { }
-Observed keyboard report at 173ms: { }
-[       OK ] PersonalConfig.2_MacroRecordTopsy (119 ms)
+Expected keyboard report at 174ms: { e1 }
+Observed keyboard report at 174ms: { e1 }
+Expected keyboard report at 174ms: { }
+Observed keyboard report at 174ms: { }
+Expected keyboard report at 181ms: { e1 }
+Observed keyboard report at 181ms: { e1 }
+Expected keyboard report at 181ms: { 1e e1 }
+Observed keyboard report at 181ms: { 1e e1 }
+Expected keyboard report at 182ms: { e1 }
+Observed keyboard report at 182ms: { e1 }
+Expected keyboard report at 182ms: { }
+Observed keyboard report at 182ms: { }
+Expected keyboard report at 183ms: { e1 }
+Observed keyboard report at 183ms: { e1 }
+Expected keyboard report at 183ms: { 1f e1 }
+Observed keyboard report at 183ms: { 1f e1 }
+Expected keyboard report at 184ms: { e1 }
+Observed keyboard report at 184ms: { e1 }
+Expected keyboard report at 184ms: { }
+Observed keyboard report at 184ms: { }
+Expected keyboard report at 185ms: { e1 }
+Observed keyboard report at 185ms: { e1 }
+Expected keyboard report at 185ms: { 20 e1 }
+Observed keyboard report at 185ms: { 20 e1 }
+Expected keyboard report at 186ms: { e1 }
+Observed keyboard report at 186ms: { e1 }
+Expected keyboard report at 186ms: { }
+Observed keyboard report at 186ms: { }
+Expected keyboard report at 191ms: { 1e }
+Observed keyboard report at 191ms: { 1e }
+Expected keyboard report at 192ms: { }
+Observed keyboard report at 192ms: { }
+Expected keyboard report at 193ms: { 1f }
+Observed keyboard report at 193ms: { 1f }
+Expected keyboard report at 194ms: { }
+Observed keyboard report at 194ms: { }
+Expected keyboard report at 195ms: { 20 }
+Observed keyboard report at 195ms: { 20 }
+Expected keyboard report at 196ms: { }
+Observed keyboard report at 196ms: { }
+Expected keyboard report at 209ms: { e1 }
+Observed keyboard report at 209ms: { e1 }
+Expected keyboard report at 209ms: { 1e e1 }
+Observed keyboard report at 209ms: { 1e e1 }
+Expected keyboard report at 209ms: { e1 }
+Observed keyboard report at 209ms: { e1 }
+Expected keyboard report at 209ms: { }
+Observed keyboard report at 209ms: { }
+Expected keyboard report at 209ms: { e1 }
+Observed keyboard report at 209ms: { e1 }
+Expected keyboard report at 209ms: { 1f e1 }
+Observed keyboard report at 209ms: { 1f e1 }
+Expected keyboard report at 209ms: { e1 }
+Observed keyboard report at 209ms: { e1 }
+Expected keyboard report at 209ms: { }
+Observed keyboard report at 209ms: { }
+Expected keyboard report at 209ms: { e1 }
+Observed keyboard report at 209ms: { e1 }
+Expected keyboard report at 209ms: { 20 e1 }
+Observed keyboard report at 209ms: { 20 e1 }
+Expected keyboard report at 209ms: { e1 }
+Observed keyboard report at 209ms: { e1 }
+Expected keyboard report at 209ms: { }
+Observed keyboard report at 209ms: { }
+Expected keyboard report at 209ms: { 1e }
+Observed keyboard report at 209ms: { 1e }
+Expected keyboard report at 209ms: { }
+Observed keyboard report at 209ms: { }
+Expected keyboard report at 209ms: { 1f }
+Observed keyboard report at 209ms: { 1f }
+Expected keyboard report at 209ms: { }
+Observed keyboard report at 209ms: { }
+Expected keyboard report at 209ms: { 20 }
+Observed keyboard report at 209ms: { 20 }
+Expected keyboard report at 209ms: { }
+Observed keyboard report at 209ms: { }
+[       OK ] PersonalConfig.2_MacroRecordTopsy (114 ms)
 [ RUN      ] PersonalConfig.3_MacroRecordOneShot
 [ INFO     ] Printing Macro: A
 	KEYCODEDOWN 225,KEYCODEDOWN 4,KEYCODEUP 225,KEYCODEUP 4,TAPCODE 4,KEYDOWN 209 199,
@@ -781,131 +863,389 @@ Observed keyboard report at 173ms: { }
 	TAPCODE 4,TAPCODE 4,KEYCODEDOWN 225,KEYDOWN 209 199,KEYCODEUP 225,
 [ INFO     ] Printing Macro: A
 	TAPCODE 4,TAPCODE 4,KEYCODEDOWN 225,TAPCODE 4,KEYCODEUP 225,KEYDOWN 209 199,
-Expected keyboard report at 181ms: { e1 }
-Observed keyboard report at 181ms: { e1 }
-Expected keyboard report at 183ms: { 4 e1 }
-Observed keyboard report at 183ms: { 4 e1 }
-Expected keyboard report at 183ms: { e1 }
-Observed keyboard report at 183ms: { 4 }
-Expected keyboard report at 184ms: { e1 }
-Observed keyboard report at 184ms: { }
-Expected keyboard report at 185ms: { 4 e1 }
-Observed keyboard report at 185ms: { 4 }
-Expected keyboard report at 186ms: { e1 }
-Observed keyboard report at 186ms: { }
-Expected keyboard report at 195ms: { e1 }
-Observed keyboard report at 195ms: { e1 }
-Expected keyboard report at 195ms: { 4 e1 }
-Observed keyboard report at 195ms: { 4 e1 }
-Expected keyboard report at 195ms: { 4 }
-Observed keyboard report at 195ms: { 4 }
-Expected keyboard report at 195ms: { }
-Observed keyboard report at 195ms: { }
-Expected keyboard report at 195ms: { 4 }
-Observed keyboard report at 195ms: { 4 }
-Expected keyboard report at 195ms: { }
-Observed keyboard report at 195ms: { }
-Expected keyboard report at 197ms: { e1 }
-Observed keyboard report at 197ms: { e1 }
-Expected keyboard report at 199ms: { }
-Observed keyboard report at 199ms: { }
-Expected keyboard report at 205ms: { 4 }
-Observed keyboard report at 205ms: { 4 }
-Expected keyboard report at 206ms: { }
-Observed keyboard report at 206ms: { }
-Expected keyboard report at 207ms: { 4 }
-Observed keyboard report at 207ms: { 4 }
-Expected keyboard report at 208ms: { }
-Observed keyboard report at 208ms: { }
-Expected keyboard report at 217ms: { 4 }
-Observed keyboard report at 217ms: { 4 }
-Expected keyboard report at 217ms: { }
-Observed keyboard report at 217ms: { }
-Expected keyboard report at 217ms: { 4 }
-Observed keyboard report at 217ms: { 4 }
-Expected keyboard report at 217ms: { }
-Observed keyboard report at 217ms: { }
-Expected keyboard report at 225ms: { 4 }
-Observed keyboard report at 225ms: { 4 }
-Expected keyboard report at 226ms: { }
-Observed keyboard report at 226ms: { }
-Expected keyboard report at 227ms: { 4 }
-Observed keyboard report at 227ms: { 4 }
-Expected keyboard report at 228ms: { }
-Observed keyboard report at 228ms: { }
-Expected keyboard report at 229ms: { e1 }
-Observed keyboard report at 229ms: { e1 }
-Expected keyboard report at 231ms: { }
-Observed keyboard report at 231ms: { }
-Expected keyboard report at 239ms: { 4 }
-Observed keyboard report at 239ms: { 4 }
-Expected keyboard report at 239ms: { }
-Observed keyboard report at 239ms: { }
-Expected keyboard report at 239ms: { 4 }
-Observed keyboard report at 239ms: { 4 }
-Expected keyboard report at 239ms: { }
-Observed keyboard report at 239ms: { }
-Expected keyboard report at 239ms: { e1 }
-Observed keyboard report at 239ms: { e1 }
-Expected keyboard report at 239ms: { }
-Observed keyboard report at 239ms: { }
-Expected keyboard report at 247ms: { 4 }
-Observed keyboard report at 247ms: { 4 }
-Expected keyboard report at 248ms: { }
-Observed keyboard report at 248ms: { }
-Expected keyboard report at 249ms: { 4 }
-Observed keyboard report at 249ms: { 4 }
-Expected keyboard report at 250ms: { }
-Observed keyboard report at 250ms: { }
-Expected keyboard report at 251ms: { e1 }
-Observed keyboard report at 251ms: { e1 }
-Expected keyboard report at 252ms: { 4 e1 }
-Observed keyboard report at 252ms: { 4 e1 }
+Expected keyboard report at 231ms: { e1 }
+Observed keyboard report at 231ms: { e1 }
+Expected keyboard report at 233ms: { 4 e1 }
+Observed keyboard report at 233ms: { 4 e1 }
+Expected keyboard report at 233ms: { e1 }
+Observed keyboard report at 233ms: { 4 }
+Expected keyboard report at 234ms: { e1 }
+Observed keyboard report at 234ms: { }
+Expected keyboard report at 235ms: { 4 e1 }
+Observed keyboard report at 235ms: { 4 }
+Expected keyboard report at 236ms: { e1 }
+Observed keyboard report at 236ms: { }
+Expected keyboard report at 245ms: { e1 }
+Observed keyboard report at 245ms: { e1 }
+Expected keyboard report at 245ms: { 4 e1 }
+Observed keyboard report at 245ms: { 4 e1 }
+Expected keyboard report at 245ms: { 4 }
+Observed keyboard report at 245ms: { 4 }
+Expected keyboard report at 245ms: { }
+Observed keyboard report at 245ms: { }
+Expected keyboard report at 245ms: { 4 }
+Observed keyboard report at 245ms: { 4 }
+Expected keyboard report at 245ms: { }
+Observed keyboard report at 245ms: { }
 Expected keyboard report at 253ms: { e1 }
 Observed keyboard report at 253ms: { e1 }
-Expected keyboard report at 254ms: { }
-Observed keyboard report at 254ms: { }
+Expected keyboard report at 255ms: { }
+Observed keyboard report at 255ms: { }
+Expected keyboard report at 261ms: { 4 }
+Observed keyboard report at 261ms: { 4 }
+Expected keyboard report at 262ms: { }
+Observed keyboard report at 262ms: { }
 Expected keyboard report at 263ms: { 4 }
 Observed keyboard report at 263ms: { 4 }
-Expected keyboard report at 263ms: { }
-Observed keyboard report at 263ms: { }
-Expected keyboard report at 263ms: { 4 }
-Observed keyboard report at 263ms: { 4 }
-Expected keyboard report at 263ms: { }
-Observed keyboard report at 263ms: { }
-Expected keyboard report at 263ms: { e1 }
-Observed keyboard report at 263ms: { e1 }
-Expected keyboard report at 263ms: { 4 e1 }
-Observed keyboard report at 263ms: { 4 e1 }
-Expected keyboard report at 263ms: { e1 }
-Observed keyboard report at 263ms: { e1 }
-Expected keyboard report at 263ms: { }
-Observed keyboard report at 263ms: { }
-[       OK ] PersonalConfig.3_MacroRecordOneShot (52 ms)
+Expected keyboard report at 264ms: { }
+Observed keyboard report at 264ms: { }
+Expected keyboard report at 273ms: { 4 }
+Observed keyboard report at 273ms: { 4 }
+Expected keyboard report at 273ms: { }
+Observed keyboard report at 273ms: { }
+Expected keyboard report at 273ms: { 4 }
+Observed keyboard report at 273ms: { 4 }
+Expected keyboard report at 273ms: { }
+Observed keyboard report at 273ms: { }
+Expected keyboard report at 284ms: { 4 }
+Observed keyboard report at 284ms: { 4 }
+Expected keyboard report at 285ms: { }
+Observed keyboard report at 285ms: { }
+Expected keyboard report at 286ms: { 4 }
+Observed keyboard report at 286ms: { 4 }
+Expected keyboard report at 287ms: { }
+Observed keyboard report at 287ms: { }
+Expected keyboard report at 288ms: { e1 }
+Observed keyboard report at 288ms: { e1 }
+Expected keyboard report at 290ms: { }
+Observed keyboard report at 290ms: { }
+Expected keyboard report at 298ms: { 4 }
+Observed keyboard report at 298ms: { 4 }
+Expected keyboard report at 298ms: { }
+Observed keyboard report at 298ms: { }
+Expected keyboard report at 298ms: { 4 }
+Observed keyboard report at 298ms: { 4 }
+Expected keyboard report at 298ms: { }
+Observed keyboard report at 298ms: { }
+Expected keyboard report at 298ms: { e1 }
+Observed keyboard report at 298ms: { e1 }
+Expected keyboard report at 298ms: { }
+Observed keyboard report at 298ms: { }
+Expected keyboard report at 311ms: { 4 }
+Observed keyboard report at 311ms: { 4 }
+Expected keyboard report at 312ms: { }
+Observed keyboard report at 312ms: { }
+Expected keyboard report at 313ms: { 4 }
+Observed keyboard report at 313ms: { 4 }
+Expected keyboard report at 314ms: { }
+Observed keyboard report at 314ms: { }
+Expected keyboard report at 315ms: { e1 }
+Observed keyboard report at 315ms: { e1 }
+Expected keyboard report at 316ms: { 4 e1 }
+Observed keyboard report at 316ms: { 4 e1 }
+Expected keyboard report at 317ms: { e1 }
+Observed keyboard report at 317ms: { e1 }
+Expected keyboard report at 318ms: { }
+Observed keyboard report at 318ms: { }
+Expected keyboard report at 327ms: { 4 }
+Observed keyboard report at 327ms: { 4 }
+Expected keyboard report at 327ms: { }
+Observed keyboard report at 327ms: { }
+Expected keyboard report at 327ms: { 4 }
+Observed keyboard report at 327ms: { 4 }
+Expected keyboard report at 327ms: { }
+Observed keyboard report at 327ms: { }
+Expected keyboard report at 327ms: { e1 }
+Observed keyboard report at 327ms: { e1 }
+Expected keyboard report at 327ms: { 4 e1 }
+Observed keyboard report at 327ms: { 4 e1 }
+Expected keyboard report at 327ms: { e1 }
+Observed keyboard report at 327ms: { e1 }
+Expected keyboard report at 327ms: { }
+Observed keyboard report at 327ms: { }
+[       OK ] PersonalConfig.3_MacroRecordOneShot (51 ms)
 [ RUN      ] PersonalConfig.4_MacroRecordSpecialShift
-[       OK ] PersonalConfig.4_MacroRecordSpecialShift (0 ms)
+[ INFO     ] Printing Macro: U
+	KEYDOWN 209 199,TAPCODE 76,KEYUP 209 199,KEYDOWN 209 199,
+[ INFO     ] Printing Macro: U
+	KEYDOWN 209 199,TAPCODE 76,
+Expected keyboard report at 342ms: { 4c }
+Observed keyboard report at 342ms: { 4c }
+Expected keyboard report at 343ms: { }
+Observed keyboard report at 343ms: { }
+Expected keyboard report at 353ms: { 4c }
+Observed keyboard report at 353ms: { 4c }
+Expected keyboard report at 353ms: { }
+Observed keyboard report at 353ms: { }
+Expected keyboard report at 366ms: { 4c }
+Observed keyboard report at 366ms: { 4c }
+Expected keyboard report at 367ms: { }
+Observed keyboard report at 367ms: { }
+Expected keyboard report at 377ms: { 4c }
+Observed keyboard report at 377ms: { 4c }
+Expected keyboard report at 377ms: { }
+Observed keyboard report at 377ms: { }
+Expected keyboard report at 381ms: { 2d }
+Observed keyboard report at 381ms: { 2d }
+Expected keyboard report at 382ms: { }
+Observed keyboard report at 382ms: { }
+[       OK ] PersonalConfig.4_MacroRecordSpecialShift (10 ms)
 [ RUN      ] PersonalConfig.5_MacroRecordSpecialShift
 [       OK ] PersonalConfig.5_MacroRecordSpecialShift (0 ms)
 [ RUN      ] PersonalConfig.6_MacroRecordTopsyOneShot
+[ INFO     ] Printing Macro: A
+	TAPCODE 30,TAPCODE 31,KEYDOWN 209 199,TAP 209 197,KEYUP 209 199,TAPCODE 4,KEYDOWN 208 75,KEYCODEUP 30,KEYCODEDOWN 229,KEYDOWN 208 75,KEYCODEUP 30,KEYCODEUP 229,KEYDOWN 209 199,
+[ INFO     ] Printing Macro: O
+	KEYCODEDOWN 229,KEYDOWN 208 77,KEYCODEUP 229,KEYCODEUP 32,KEYDOWN 209 199,
+Expected keyboard report at 389ms: { 1e }
+Observed keyboard report at 389ms: { 1e }
+Expected keyboard report at 390ms: { }
+Observed keyboard report at 390ms: { }
+Expected keyboard report at 391ms: { 1f }
+Observed keyboard report at 391ms: { 1f }
+Expected keyboard report at 392ms: { }
+Observed keyboard report at 392ms: { }
+Expected keyboard report at 397ms: { 4 }
+Observed keyboard report at 397ms: { 4 }
+Expected keyboard report at 398ms: { }
+Observed keyboard report at 398ms: { }
+Expected keyboard report at 399ms: { e1 }
+Observed keyboard report at 399ms: { e1 }
+Expected keyboard report at 399ms: { 1e e1 }
+Observed keyboard report at 399ms: { 1e e1 }
+Expected keyboard report at 400ms: { e1 }
+Observed keyboard report at 400ms: { e1 }
+Expected keyboard report at 400ms: { }
+Observed keyboard report at 400ms: { }
+Expected keyboard report at 401ms: { e5 }
+Observed keyboard report at 401ms: { e5 }
+Expected keyboard report at 402ms: { }
+Observed keyboard report at 402ms: { }
+Expected keyboard report at 402ms: { 1e }
+Observed keyboard report at 402ms: { 1e }
+Expected keyboard report at 403ms: { }
+Observed keyboard report at 403ms: { }
+Expected keyboard report at 403ms: { e5 }
+Observed keyboard report at 403ms: { e5 }
+Expected keyboard report at 404ms: { }
+Observed keyboard report at 404ms: { }
+Expected keyboard report at 417ms: { 1e }
+Observed keyboard report at 417ms: { 1e }
+Expected keyboard report at 417ms: { }
+Observed keyboard report at 417ms: { }
+Expected keyboard report at 417ms: { 1f }
+Observed keyboard report at 417ms: { 1f }
+Expected keyboard report at 417ms: { }
+Observed keyboard report at 417ms: { }
+Expected keyboard report at 417ms: { 4 }
+Observed keyboard report at 417ms: { 4 }
+Expected keyboard report at 417ms: { }
+Observed keyboard report at 417ms: { }
+Expected keyboard report at 417ms: { e1 }
+Observed keyboard report at 417ms: { e1 }
+Expected keyboard report at 417ms: { 1e e1 }
+Observed keyboard report at 417ms: { 1e e1 }
+Expected keyboard report at 417ms: { e1 }
+Observed keyboard report at 417ms: { e1 }
+Expected keyboard report at 417ms: { }
+Observed keyboard report at 417ms: { }
+Expected keyboard report at 417ms: { e5 }
+Observed keyboard report at 417ms: { e5 }
+Expected keyboard report at 417ms: { }
+Observed keyboard report at 417ms: { }
+Expected keyboard report at 417ms: { 1e }
+Observed keyboard report at 417ms: { 1e }
+Expected keyboard report at 417ms: { }
+Observed keyboard report at 417ms: { }
+Expected keyboard report at 417ms: { e5 }
+Observed keyboard report at 417ms: { e5 }
+Expected keyboard report at 417ms: { }
+Observed keyboard report at 417ms: { }
+Expected keyboard report at 446ms: { e5 }
+Observed keyboard report at 446ms: { e5 }
+Expected keyboard report at 448ms: { }
+Observed keyboard report at 448ms: { }
+Expected keyboard report at 448ms: { 20 }
+Observed keyboard report at 448ms: { 20 }
+Expected keyboard report at 448ms: { 20 e1 }
+Observed keyboard report at 448ms: { 20 e1 }
+Expected keyboard report at 449ms: { e1 }
+Observed keyboard report at 449ms: { e1 }
+Expected keyboard report at 449ms: { }
+Observed keyboard report at 449ms: { }
+Expected keyboard report at 458ms: { e5 }
+Observed keyboard report at 458ms: { e5 }
+Expected keyboard report at 458ms: { }
+Observed keyboard report at 458ms: { }
+Expected keyboard report at 458ms: { 20 }
+Observed keyboard report at 458ms: { 20 }
+Expected keyboard report at 458ms: { 20 e1 }
+Observed keyboard report at 458ms: { 20 e1 }
+Expected keyboard report at 458ms: { e1 }
+Observed keyboard report at 458ms: { e1 }
+Expected keyboard report at 458ms: { }
+Observed keyboard report at 458ms: { }
+[       OK ] PersonalConfig.6_MacroRecordTopsyOneShot (45 ms)
+[ RUN      ] PersonalConfig.7_SpecialShiftDoubleRelease
+Expected keyboard report at 470ms: { 35 }
+Observed keyboard report at 470ms: { 35 }
+Expected keyboard report at 471ms: { }
+Observed keyboard report at 471ms: { }
+Expected keyboard report at 473ms: { 35 }
+Observed keyboard report at 473ms: { 35 }
+Expected keyboard report at 474ms: { }
+Observed keyboard report at 474ms: { }
+Expected keyboard report at 476ms: { 35 }
+Observed keyboard report at 476ms: { 35 }
+Expected keyboard report at 477ms: { }
+Observed keyboard report at 477ms: { }
+Expected keyboard report at 479ms: { a }
+Observed keyboard report at 479ms: { a }
+Expected keyboard report at 480ms: { }
+Observed keyboard report at 480ms: { }
+Expected keyboard report at 482ms: { 35 }
+Observed keyboard report at 482ms: { 35 }
+Expected keyboard report at 483ms: { }
+Observed keyboard report at 483ms: { }
+Expected keyboard report at 485ms: { 35 }
+Observed keyboard report at 485ms: { 35 }
+Expected keyboard report at 486ms: { }
+Observed keyboard report at 486ms: { }
+Expected keyboard report at 488ms: { 35 }
+Observed keyboard report at 488ms: { 35 }
+Expected keyboard report at 489ms: { }
+Observed keyboard report at 489ms: { }
+Expected keyboard report at 491ms: { a }
+Observed keyboard report at 491ms: { a }
+Expected keyboard report at 492ms: { }
+Observed keyboard report at 492ms: { }
+[       OK ] PersonalConfig.7_SpecialShiftDoubleRelease (14 ms)
+[ RUN      ] PersonalConfig.8_MacroRecordIntoWrongSlot
+Expected keyboard report at 499ms: { 4 }
+Observed keyboard report at 499ms: { 4 }
+Expected keyboard report at 500ms: { }
+Observed keyboard report at 500ms: { }
+Expected keyboard report at 501ms: { 5 }
+Observed keyboard report at 501ms: { 5 }
+Expected keyboard report at 502ms: { }
+Observed keyboard report at 502ms: { }
+Expected keyboard report at 503ms: { 6 }
+Observed keyboard report at 503ms: { 6 }
+Expected keyboard report at 504ms: { }
+Observed keyboard report at 504ms: { }
+[       OK ] PersonalConfig.8_MacroRecordIntoWrongSlot (5 ms)
+[ RUN      ] PersonalConfig.9_MacroReplayPLAYPLAY
 
-Breakpoint 1, kaleidoscope::plugin::TopsyTurvy::beforeReportingState (this=0x55fa1a7f9456 <TopsyTurvy>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src/kaleidoscope/plugin/TopsyTurvy.cpp:70
-70	EventHandlerResult TopsyTurvy::beforeReportingState(const KeyEvent &event) {
+Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x5585b0188812 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:457
+457	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
 (rr) 
 vshcmd: > cont
 vshcmd: > print event.key
+vshcmd: > print $_event_state_name(event.state)
 vshcmd: > print event.state
-$34 = {keyCode_ = 32 ' ', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
-(rr) $35 = 2 '\002'
+Continuing.
+
+Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x5585b0188812 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:457
+457	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+(rr) $12 = {keyCode_ = 193 '\301', flags_ = 209 '\321', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+(rr) $13 = "IS_PRESSED"
+(rr) $14 = 2 '\002'
 (rr) 
+vshcmd: > print currentState
+$15 = kaleidoscope::plugin::MacrosOnTheFly::PICKING_SLOT_FOR_PLAY
+(rr) 
+vshcmd: > next
+kaleidoscope::Runtime_::handleKeyEvent (this=0x5585b0187b0c <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:139
+139	  if (result == EventHandlerResult::ABORT)
+(rr) 
+vshcmd: > next
+kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x5585b0188812 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:632
+632	  }
+(rr) 
+vshcmd: > reverse-next
+555	      RESET_AND_RET_IF_HELD_KEY (event);
+(rr) 
+
 vshcmd: > set variable $counter = -1
 vshcmd: > gdb-pipe array &live_keys.key_map_.values_[0]; 64 \
 vshcmd: >       | show set variable $counter += 1 \
 vshcmd: >       | if $cur->keyCode_ != 255 \
 vshcmd: >       | show printf "%d \t", $counter \
 vshcmd: >       | show print *$cur
-(rr) 3 	$36 = {keyCode_ = 32 ' ', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
-40 	$37 = {keyCode_ = 229 '\345', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+
+vshcmd: > bt
+#0  kaleidoscope::Runtime_::handleKeyEvent (this=0x5585b0187b0c <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:139
+#1  0x00005585b00b9aa7 in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x5585b0187b0c <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
+#2  0x00005585b00c4074 in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
+#3  0x00005585b00bb518 in kaleidoscope::device::virt::VirtualKeyScanner::actOnMatrixScan (this=0x5585b0187fc8 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.cpp:264
+#4  0x00005585b00b952a in kaleidoscope::device::virt::VirtualKeyScanner::scanMatrix (this=0x5585b0187fc8 <kaleidoscope_internal::device+8>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.h:66
+#5  0x00005585b00ba538 in kaleidoscope::device::Base<kaleidoscope::device::virt::VirtualProps>::scanMatrix (this=0x5585b0187fc0 <kaleidoscope_internal::device>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/Base.h:253
+#6  0x00005585b00b98f1 in kaleidoscope::Runtime_::loop (this=0x5585b0187b0c <kaleidoscope::Runtime>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:77
+#7  0x00005585b0099718 in kaleidoscope::testing::SimHarness::RunCycle() ()
+#8  0x00005585b00502f9 in kaleidoscope::testing::(anonymous namespace)::PersonalConfig_9_MacroReplayPLAYPLAY_Test::TestBody (this=0x5585b0db6050) at test/manual-tests.cpp:963
+#9  0x00005585b010a151 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#10 0x00005585b0102623 in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
+#11 0x00005585b00d6100 in testing::Test::Run() ()
+#12 0x00005585b00d6b8e in testing::TestInfo::Run() ()
+#13 0x00005585b00d7495 in testing::TestSuite::Run() ()
+#14 0x00005585b00e73c5 in testing::internal::UnitTestImpl::RunAllTests() ()
+#15 0x00005585b010b0ea in bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#16 0x00005585b01036ef in bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) ()
+#17 0x00005585b00e5b2d in testing::UnitTest::Run() ()
+#18 0x00005585b005a55c in RUN_ALL_TESTS () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/googletest/include/gtest/gtest.h:2490
+#19 0x00005585b004736a in executeTestFunction () at test/manual-tests.cpp:12
+#20 0x00005585b00c085b in main (argc=3, argv=0x7ffd33b1e0f8) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56
 (rr) 
+vshcmd: > print event.key
+$66 = {keyCode_ = 199 '\307', flags_ = 209 '\321', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+(rr) 
+vshcmd: > next
+557	      return doNewPlay (event);
+(rr) 
+vshcmd: > step
+kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:436
+436	    bool success = false;
+(rr) 
+vshcmd: > next
+438	    success = (sIndex != NUM_MACROS) && play(sIndex);
+(rr) 
+vshcmd: > print sIndex == NUM_MACROS
+$68 = true
+(rr) quit
+A debugging session is active.
+
+	Inferior 1 [process 3537239] will be detached.
+
+Quit anyway? (y or n) 
+vshcmd: > y
+Detaching from program: /home/matmal01/.local/share/rr/personal-config-13/mmap_hardlink_4_personal-config, process 3537239
+[Inferior 1 (process 3537239) detached]
+Kaleidoscope [13:47:32] $ 
+vshcmd: > condition 1
+Breakpoint 1 now unconditional.
+(rr) 
+vshcmd: > y
+Detaching from program: /home/matmal01/.local/share/rr/personal-config-11/mmap_hardlink_4_personal-config, process 3533686
+[Inferior 1 (process 3533686) detached]
+Kaleidoscope [13:19:44] $ 
+vshcmd: > # Continue until the testcase I'm interested in.
+vshcmd: > cont
+vshcmd: > print event.key
+vshcmd: > print event.state
+$34 = {keyCode_ = 32 ' ', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
+(rr) $35 = 2 '\002'
+(rr) 
+vshcmd: > # At this point, there is a shift in the live_keys array.
+vshcmd: > set variable $counter = -1
+vshcmd: > gdb-pipe array &live_keys.key_map_.values_[0]; 64 \
+vshcmd: >       | show set variable $counter += 1 \
+vshcmd: >       | if $cur->keyCode_ != 255 \
+vshcmd: >       | show printf "%d \t", $counter \
+vshcmd: >       | show print *$cur
+(rr) (rr) 
+vshcmd: > # Hence TopsyTurvy identifies this (and will remove any shift from
+vshcmd: > # the report).
+vshcmd: > next
 vshcmd: > print shift_detected
 $38 = true
 (rr) 
@@ -915,6 +1255,8 @@ Continuing.
 Breakpoint 1, kaleidoscope::plugin::TopsyTurvy::beforeReportingState (this=0x55fa1a7f9456 <TopsyTurvy>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src/kaleidoscope/plugin/TopsyTurvy.cpp:70
 70	EventHandlerResult TopsyTurvy::beforeReportingState(const KeyEvent &event) {
 (rr) 
+vshcmd: > # Next time we enter the beforeReportingState it's from an event
+vshcmd: > # triggered in OneShot.afterEachCycle.
 vshcmd: > bt
 #0  kaleidoscope::plugin::TopsyTurvy::beforeReportingState (this=0x55fa1a7f9456 <TopsyTurvy>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src/kaleidoscope/plugin/TopsyTurvy.cpp:70
 #1  0x000055fa1a72a715 in kaleidoscope_internal::EventHandler_beforeReportingState_v1_caller<true, kaleidoscope::plugin::TopsyTurvy, kaleidoscope::KeyEvent const&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
@@ -952,6 +1294,7 @@ vshcmd: > bt
 #33 0x000055fa1a6bb34a in executeTestFunction () at test/manual-tests.cpp:12
 #34 0x000055fa1a73b33f in main (argc=3, argv=0x7ffe3edf44a8) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56
 (rr) 
+vshcmd: > # This is the injected release of the RightShift (injected by OneShot).
 vshcmd: > print event.key
 vshcmd: > print event.state
 $39 = {keyCode_ = 229 '\345', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
@@ -965,7 +1308,16 @@ vshcmd: >       | if $cur->keyCode_ != 255 \
 vshcmd: >       | show printf "%d \t", $counter \
 vshcmd: >       | show print *$cur
 (rr) 3 	$41 = {keyCode_ = 32 ' ', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
-(rr) 
+(rr) quit
+A debugging session is active.
+
+	Inferior 1 [process 3507623] will be detached.
+
+Quit anyway? (y or n) 
+vshcmd: > y
+Detaching from program: /home/matmal01/.local/share/rr/personal-config-10/mmap_hardlink_4_personal-config, process 3507623
+[Inferior 1 (process 3507623) detached]
+Kaleidoscope [13:14:13] $ 
 vshcmd: > cont
 Continuing.
 
