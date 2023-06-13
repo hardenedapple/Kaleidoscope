@@ -48,7 +48,7 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
      * Less comfortable with hard coded limits on number of actions in a macro.
      */
     static const uint8_t NUM_MACROS = 8;
-    static const uint8_t MACRO_SIZE = 50;
+    static const uint8_t MACRO_SIZE = 250;
     static Slot slotRecord[NUM_MACROS];
     static const uint16_t STORAGE_SIZE_IN_BYTES = MACRO_SIZE*NUM_MACROS;
     static byte macroStorage[STORAGE_SIZE_IN_BYTES];
