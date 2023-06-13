@@ -32,7 +32,7 @@ static KeyAddr findThisKey(Key key) {
 }
 
 namespace plugin {
-  void MacrosOnTheFly::initialise(Key names[NUM_MACROS]) {
+  void MacrosOnTheFly::initialise(Key names[NUM_MACROS], Key layerShift) {
     /* TODO Would like to assert that we do not have anything problematic here.
      *      Since these keys should be hard-coded in the setup code, I think we
      *      could use some compile-time checking.  Would like to look into
@@ -42,6 +42,7 @@ namespace plugin {
       slotRecord[sI].numUsedKeystrokes = 0;
       macroStorage[mIndexFrom_s(sI)] = MACRO_ACTION_END;
     }
+    userLayerShiftKey = layerShift;
     sLastPlayedSlot = NUM_MACROS;
     sRecordingSlot = NUM_MACROS;
     currentState = IDLE;
@@ -70,7 +71,8 @@ void MacrosOnTheFly::clear() {
   // Clear the active macro keys array.
   for (KeyAddr key_addr : KeyAddr::all()) {
     Key macro_key = live_keys[key_addr];
-    if (macro_key != Key_Inactive && macro_key != Key_Masked) {
+    if (macro_key != Key_Inactive && macro_key != Key_Masked
+	&& macro_key != userLayerShiftKey) {
       /* Emulate handleKeyswitchEvent mask behaviour by not triggering this
        * event for Key_Masked.  */
       Runtime.handleKeyEvent(KeyEvent{key_addr, release_state, macro_key});
@@ -420,15 +422,16 @@ exit:
   }
 
 
-#define RESET_AND_RET_IF_HELD_KEY(EVENT)                                    \
-  do {                                                                      \
+#define RESET_AND_RET_IF_HELD_KEY(EVENT)                                  \
+  do {                                                                    \
     currentState = isRecording(currentState) ? IDLE_AND_RECORDING : IDLE; \
-    for (Key key : live_keys.all()) {                                       \
-      if (key != Key_Inactive && key != Key_Masked && key != (EVENT).key) { \
-	LED_complain ((EVENT).addr);                                        \
+    for (Key key : live_keys.all()) {                                     \
+      if (key != Key_Inactive && key != Key_Masked && key != (EVENT).key  \
+	  && key != userLayerShiftKey) {                                  \
+	LED_complain ((EVENT).addr);                                      \
 	return maskKeyAndRet(EVENT);                                      \
-      }                                                                     \
-    }                                                                       \
+      }                                                                   \
+    }                                                                     \
   } while (false)
 
   EventHandlerResult MacrosOnTheFly::doNewPlay(KeyEvent &event) {
@@ -634,6 +637,7 @@ exit:
   MacrosOnTheFly::State MacrosOnTheFly::currentState   = IDLE;
   MacrosOnTheFly::Slot MacrosOnTheFly::slotRecord[NUM_MACROS]   = {0};
   byte MacrosOnTheFly::macroStorage[MacrosOnTheFly::STORAGE_SIZE_IN_BYTES] = {0};
+  Key MacrosOnTheFly::userLayerShiftKey     = Key_NoKey;
   uint8_t MacrosOnTheFly::sRecordingSlot    = NUM_MACROS;
   uint8_t MacrosOnTheFly::sLastPlayedSlot   = NUM_MACROS;
   uint8_t MacrosOnTheFly::delayInterval     = 0;
