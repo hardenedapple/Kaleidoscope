@@ -718,7 +718,7 @@ TEST_F(PersonalConfig, 3_MacroRecordOneShot) {
   PressKey(addrByName("A"));
   sim_.RunCycle();
   ExpectKeyboardReport(AddKeycodes{Key_A}, "A with OneShot modifier");
-  ExpectKeyboardReport(RemoveKeycodes{Key_A}, "Removing OneShot modifier");
+  ExpectKeyboardReport(RemoveKeycodes{Key_LeftShift}, "Removing OneShot modifier");
 
   runAction("A^ A REC1");
   storeMacro("A", "LeftShift| A| LeftShift^ A^ A");
