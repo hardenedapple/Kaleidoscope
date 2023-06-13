@@ -508,20 +508,34 @@ KALEIDOSCOPE_INIT_PLUGINS(
    *	  Without timeouts we could probably get things working such that we
    *	  record the OneShot key and re-send it letting OneShot perform same
    *	  handling as it did when recording.
+   *    SpecialShift > MacrosOnTheFly
+   *      For my personal config I want to allow PLAY PLAY while holding
+   *      SpecialShift.  When doing this we need to avoid recording/replaying
+   *      SPECIALSHIFT stuff since otherwise the interaction between
+   *      `MacrosOnTheFly::clear()` and the counter I have in SpecialShift gets
+   *      difficult.
    *    MacrosOnTheFly > ToggleLayer
-   *    MacrosOnTheFly > TopsyTurvy    .*/
+   *      To ensure that we record (and hence replay) ToggleLayer.
+   *      This is important since the state-transition of ToggleLayer is a
+   *      behaviour that I decided I wanted to replay faithfully.
+   *    MacrosOnTheFly > TopsyTurvy
+   *      TopsyTurvy changes the logical keys that are pressed.  What
+   *      MacrosOnTheFly would see when recording would just be the key
+   *      TopsyTurvy reported, and MacrosOnTheFly would not know about the
+   *      special behaviour.  .*/
 
   // OneShot plugin allows giving an extra behaviour to our ShiftModifiers (at
   // least that's what I'm using it for).
   OneShot,
+
+  // My hacky "ShiftToLayer but two keys acts like shift" plugin.
+  SpecialShift,
 
   // Enables recording and replaying macros.
   MacrosOnTheFly,
 
   // My plugin for toggling a particular layer.
   ToggleLayer,
-  // My hacky "ShiftToLayer but two keys acts like shift" plugin.
-  SpecialShift,
 
   // TopsyTurvy plugin gives support for switching the shift layout for a key.
   TopsyTurvy,
@@ -582,7 +596,7 @@ void setup() {
   Key macroKeys[MacrosOnTheFly.NUM_MACROS] = {
     Key_A, Key_O, Key_E, Key_U, Key_H, Key_T, Key_N, Key_S
   };
-  MacrosOnTheFly.initialise(macroKeys);
+  MacrosOnTheFly.initialise(macroKeys, SPECIALSHIFT);
 }
 
 /** loop is the second of the standard Arduino sketch functions.
