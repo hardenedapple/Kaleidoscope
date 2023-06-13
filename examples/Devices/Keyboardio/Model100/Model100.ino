@@ -264,19 +264,19 @@ KEYMAPS(
 #endif
 
   [FUNCTION] =  KEYMAP_STACKED
- (XXX                   , Key_F1   , Key_F2        , Key_F3                    , Key_F4       , Key_F5         , Key_LEDEffectNext ,
-  Key_F12               , ___      , Key_Delete    , Key_Backspace             , Key_Backtick , ___            , ___               ,
-  Key_PcApplication     , Key_Home , Key_PageUp    , Key_PageDown              , Key_End      , ___            ,
-  ___                   , ___      , Key_CapsLock  , TOGGLELAYER(SHIFTED_KEYS) , Key_Insert   , ___            , ___               ,
-  ___                   , ___      , ___           , ___                       ,
-  ___                   ,
+ (XXX                , Key_F1     , Key_F2        , Key_F3                    , Key_F4       , Key_F5         , Key_LEDEffectNext ,
+  Key_F12            , ___        , Key_Delete    , Key_Backspace             , Key_Backtick , MACROREC       , ___               ,
+  Key_PcApplication  , Key_Home   , Key_PageUp    , Key_PageDown              , Key_End      , MACROPLAY      ,
+  ___                , ___        , Key_CapsLock  , TOGGLELAYER(SHIFTED_KEYS) , Key_Insert   , MACRODELAY     , ___               ,
+  ___                , ___        , ___           , ___                       ,
+  ___                ,
 
-  ___                   , Key_F6   , Key_F7        , Key_F8                    , Key_F9       , Key_F10        , Key_F11           ,
-  ___                   , ___      , Key_Backtick  , Key_Backspace             , Key_Delete   , ___            , ___               ,
-                          ___      , Key_LeftArrow , Key_DownArrow             , Key_UpArrow  , Key_RightArrow , ___               ,
-  ___                   , ___      , Key_Insert    , TOGGLELAYER(SHIFTED_KEYS) , Key_CapsLock , ___            , ___               ,
-  ___                   , ___      , ___           , ___                       ,
-  ___)                  ,
+  ___                , Key_F6     , Key_F7        , Key_F8                    , Key_F9       , Key_F10        , Key_F11           ,
+  ___                , MACROREC   , Key_Backtick  , Key_Backspace             , Key_Delete   , ___            , ___               ,
+                       MACROPLAY  , Key_LeftArrow , Key_DownArrow             , Key_UpArrow  , Key_RightArrow , ___               ,
+  ___                , MACRODELAY , Key_Insert    , TOGGLELAYER(SHIFTED_KEYS) , Key_CapsLock , ___            , ___               ,
+  ___                , ___        , ___           , ___                       ,
+  ___)               ,
 
  [SHIFTED_KEYS] = KEYMAP_STACKED
   (___                    , TOPSY(1) , TOPSY(2) , TOPSY(3)     , TOPSY(4) , TOPSY(5) , ___ ,
@@ -502,6 +502,22 @@ KALEIDOSCOPE_INIT_PLUGINS(
   // by BIOSes) and Report (NKRO).
   USBQuirks,
 
+  /* XXX Order required:
+   *    OneShot > MacrosOnTheFly
+   *	  Because we don't want to re-implement OneShot's handling of timeouts.
+   *	  Without timeouts we could probably get things working such that we
+   *	  record the OneShot key and re-send it letting OneShot perform same
+   *	  handling as it did when recording.
+   *    MacrosOnTheFly > ToggleLayer
+   *    MacrosOnTheFly > TopsyTurvy    .*/
+
+  // OneShot plugin allows giving an extra behaviour to our ShiftModifiers (at
+  // least that's what I'm using it for).
+  OneShot,
+
+  // Enables recording and replaying macros.
+  MacrosOnTheFly,
+
   // My plugin for toggling a particular layer.
   ToggleLayer,
   // My hacky "ShiftToLayer but two keys acts like shift" plugin.
@@ -509,10 +525,6 @@ KALEIDOSCOPE_INIT_PLUGINS(
 
   // TopsyTurvy plugin gives support for switching the shift layout for a key.
   TopsyTurvy,
-
-  // OneShot plugin allows giving an extra behaviour to our ShiftModifiers (at
-  // least that's what I'm using it for).
-  OneShot,
 
   // The hardware test mode, which can be invoked by tapping Prog, LED and the
   // left Fn button at the same time.
@@ -564,6 +576,13 @@ void setup() {
   OneShot.disableStickabilityForModifiers();
   // Decrease timeout for OneShot.
   OneShot.setTimeout(1000);
+
+  // Choose my Macro slots for MacrosOnTheFly.
+  // Choosing them as the keys my fingers hover over when not typing.
+  Key macroKeys[MacrosOnTheFly.NUM_MACROS] = {
+    Key_A, Key_O, Key_E, Key_U, Key_H, Key_T, Key_N, Key_S
+  };
+  MacrosOnTheFly.initialise(macroKeys);
 }
 
 /** loop is the second of the standard Arduino sketch functions.
