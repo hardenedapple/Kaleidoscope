@@ -422,12 +422,11 @@ exit:
 
 #define RESET_AND_RET_IF_HELD_KEY(EVENT)                                    \
   do {                                                                      \
-    bool are_recording = isRecording(currentState);                         \
-    currentState = are_recording ? IDLE_AND_RECORDING : IDLE;               \
+    currentState = isRecording(currentState) ? IDLE_AND_RECORDING : IDLE; \
     for (Key key : live_keys.all()) {                                       \
       if (key != Key_Inactive && key != Key_Masked && key != (EVENT).key) { \
 	LED_complain ((EVENT).addr);                                        \
-	return maskKeyAndRet(EVENT, are_recording);                         \
+	return maskKeyAndRet(EVENT);                                      \
       }                                                                     \
     }                                                                       \
   } while (false)
@@ -452,7 +451,7 @@ exit:
      * no worry about clearing "outer" macro keys after having finished
      * clearing "inner" macro keys.  */
     clear();
-    return maskKeyAndRet (event, isRecording(currentState));
+    return maskKeyAndRet (event);
   }
 
   EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
@@ -540,7 +539,7 @@ exit:
       bool recording = prepareForRecording (event.key);
       currentState = recording ? IDLE_AND_RECORDING : IDLE;
       if (!recording) LED_complain (event.addr);
-      return maskKeyAndRet (event, false);
+      return maskKeyAndRet (event);
     }
 
     if (currentState == PICKING_SLOT_FOR_PLAY) {

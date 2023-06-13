@@ -169,16 +169,16 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
     static inline void LED_record_success (KeyAddr addr) {}
   private:
     static inline EventHandlerResult
-      maskKeyAndRet (KeyEvent event, bool recording) {
-      /* Mask the macro play recording key so that it's event does not get
-       * reported to the computer.  To avoid Runtime_::handleKeyEvent immediately
-       * undoing this work after the event handlers have all finished we return
-       * EventHandlerResult::ABORT rather than EventHandler::EVENT_CONSUMED.
-       * Another approach while returning EventHandlerResult::EVENT_CONSUMED
-       * could be to either adjust event.addr.isValid() so that it returns
-       * `false`, or to adjust event.key to be Key_Masked.  This would mean that
-       * plugins are still run, but they would run with some misleading
-       * information.  */
+      maskKeyAndRet (KeyEvent event) {
+      /* Mask the macro play recording/playing key so that it's event does not
+       * get reported to the computer.  To avoid Runtime_::handleKeyEvent
+       * immediately undoing this work after the event handlers have all
+       * finished we return EventHandlerResult::ABORT rather than
+       * EventHandler::EVENT_CONSUMED.  Another approach while returning
+       * EventHandlerResult::EVENT_CONSUMED could be to either adjust
+       * event.addr.isValid() so that it returns `false`, or to adjust
+       * event.key to be Key_Masked.  This would mean that plugins are still
+       * run, but they would run with some misleading information.  */
       kaleidoscope::live_keys.mask(event.addr);
       return kaleidoscope::EventHandlerResult::ABORT;
   }
