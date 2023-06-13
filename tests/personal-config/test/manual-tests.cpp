@@ -308,6 +308,15 @@ class PersonalConfig : public VirtualDeviceTest {
       /* Insert base key types which are not in my keymap but are useful for
        * describing what keys expand into.  */
       keyTypes.insert({"LeftShift", { {0, 0}, Key_LeftShift}});
+      keyTypes.insert({"RightShift", { {0, 0}, Key_RightShift}});
+
+      /* Most of the time OSM(*) tests are handled manually since there are
+       * strange timing things at play.  When there are not strange things at
+       * play (i.e. *next* key having the shift instead of the current one)
+       * then it acts just like a standard modifier, so having the key mapping
+       * look like a standard modifier is the most useful.  */
+      keyTypes.find("OSM(LeftShift)")->second.second = Key_LeftShift;
+      keyTypes.find("OSM(RightShift)")->second.second = Key_RightShift;
 
       /* Was used to print out the keys in order to double-check things look
        * like they should.  Have not done any real testing apart from
@@ -315,7 +324,7 @@ class PersonalConfig : public VirtualDeviceTest {
       // for (auto item : keyTypes) {
 	// std::cout << item.first
 	  // << " {" << (int)item.second.first.row()
-	  // << ", " << (int)item.second.first.col() 
+	  // << ", " << (int)item.second.first.col()
 	  // << "}("
 	  // << (item.second.second.getRaw() & 0xff) << ", "
 	  // << (item.second.second.getRaw() >> 8) << "), "
@@ -340,7 +349,7 @@ class PersonalConfig : public VirtualDeviceTest {
 
   std::vector<Key> flags_key_held(Key keyval, MultikeyOrder ord) {
     std::vector<Key> x;
-    
+
     if (keyval >= ::kaleidoscope::ranges::TT_FIRST
 	&& keyval <= ::kaleidoscope::ranges::TT_LAST) {
       Key base_key(keyval.getRaw() - ::kaleidoscope::ranges::TT_FIRST);
@@ -399,7 +408,7 @@ class PersonalConfig : public VirtualDeviceTest {
 #define doPress          \
     if (!replaying) {    \
       PressKey(addr);    \
-      sim_.RunCycles(1); \
+      sim_.RunCycle(); \
     }                    \
     checkPressed;        \
     checkMacro;
@@ -407,7 +416,7 @@ class PersonalConfig : public VirtualDeviceTest {
 #define doRelease                                              \
     if (!replaying) {                                          \
       ReleaseKey(addr);                                        \
-      sim_.RunCycles(1);                                       \
+      sim_.RunCycle();                                       \
     }                                                          \
     checkRelease;
   void runAction(const std::string str, bool replaying = false) {
@@ -454,6 +463,15 @@ class PersonalConfig : public VirtualDeviceTest {
 #undef checkMacro
 #undef doPress
 #undef doRelease
+
+  KeyAddr addrByName(std::string name) {
+    const auto [ action, report, keyId ] = parseAction(name);
+    assert (action == KeyActions::tap);
+    assert (report == ReportIds::passed);
+    auto x = keyTypes.find(keyId);
+    assert (x != keyTypes.end());
+    return x->second.first;
+  }
 
   void storeMacro(const std::string id, const std::string recorded) {
     knownMacros.insert_or_assign(id, recorded);
@@ -686,39 +704,111 @@ TEST_F(PersonalConfig, 2_MacroRecordTopsy) {
 TEST_F(PersonalConfig, 3_MacroRecordOneShot) {
   ClearState();
 
-  // runAction("REC1 ~A OSM(LeftShift) A A REC1");
-  // storeMacro("A", "OSM(LeftShift) A A");
-  // printMacro("A");
-  // runAction("PLAY1 %A");
+  // REC1 ~A OSM(LeftShift) A A REC1  {{{
+  runAction("REC1 ~A");
 
-  // /* Decision made because it doesn't look that wrong, but OneShot automatic
-  //  * hold does not block the start of a record.  */
-  // runAction("OSM(LeftShift) REC1 ~A OSM(LeftShift) A A REC1");
-  // storeMacro("A", "OSM(LeftShift) A A");
-  // printMacro("A");
-  // runAction("PLAY1 %A");
+  PressKey(addrByName("OSM(LeftShift)"));
+  sim_.RunCycle();
+  ExpectKeyboardReport(AddKeycodes{Key_LeftShift}, "OneShot press");
 
-  // /* OSM does not break the ending of a record.  */
-  // runAction("REC1 ~A A A OSM(LeftShift) REC1");
-  // storeMacro("A", "A A LeftShift");
-  // printMacro("A");
-  // runAction("PLAY1 %A");
+  ReleaseKey(addrByName("OSM(LeftShift)"));
+  sim_.RunCycle();
+  /* Do not expect any report here.  */
 
-  // /* OSM hold acts like a LeftShift */
-  // runAction("REC1 ~A A A OSM(LeftShift)| A OSM(LeftShift)^ REC1");
-  // storeMacro("A", "A A LeftShift| A LeftShift^");
-  // printMacro("A");
-  // runAction("PLAY1 %A");
+  PressKey(addrByName("A"));
+  sim_.RunCycle();
+  ExpectKeyboardReport(AddKeycodes{Key_A}, "A with OneShot modifier");
+  ExpectKeyboardReport(RemoveKeycodes{Key_A}, "Removing OneShot modifier");
+
+  runAction("A^ A REC1");
+  storeMacro("A", "LeftShift| A| LeftShift^ A^ A");
+  printMacro("A");
+  runAction("PLAY1 %A");
+  // REC1 ~A OSM(LeftShift) A A REC1  }}}
+
+
+
+  // OSM(LeftShift) REC1 ~A A A REC1 {{{
+  /* Decision made because it doesn't look that wrong, but OneShot automatic
+   * hold does not block the start of a record.  */
+  PressKey(addrByName("OSM(LeftShift)"));
+  sim_.RunCycle();
+  ExpectKeyboardReport(AddKeycodes{Key_LeftShift}, "OneShot press");
+
+  ReleaseKey(addrByName("OSM(LeftShift)"));
+  sim_.RunCycle();
+  /* Do not expect any report here.  */
+
+  /* REC1 does not send a report, but "deactivates" the OneShot.  */
+  PressKey(addrByName("SPECIALSHIFT1"));
+  sim_.RunCycle();
+  ExpectKeyboardReport(Keycodes{}, "REC1 does not send report but \"deactivates\" OneShot");
+
+  PressKey(addrByName("MACROREC1"));
+  sim_.RunCycle();
+  /* Do not expect any report here.  */
+  ReleaseKey(addrByName("MACROREC1"));
+  sim_.RunCycle();
+  /* Do not expect any report here.  */
+
+  /* REC1 does not send a report, but "deactivates" the OneShot.  */
+  ReleaseKey(addrByName("SPECIALSHIFT1"));
+  sim_.RunCycle();
+  /* Do not expect any report here.  */
+
+  runAction("~A A A REC1");
+  storeMacro("A", "A A");
+  printMacro("A");
+  runAction("PLAY1 %A");
+  // OSM(LeftShift) REC1 ~A A A REC1 }}}
+
+
+
+  /* OSM does not break the ending of a record.  */
+  // REC1 ~A A A OSM(LeftShift) REC1 {{{
+  runAction("REC1 ~A A A");
+  PressKey(addrByName("OSM(LeftShift)"));
+  sim_.RunCycle();
+  ExpectKeyboardReport(AddKeycodes{Key_LeftShift}, "OneShot press");
+
+  ReleaseKey(addrByName("OSM(LeftShift)"));
+  sim_.RunCycle();
+  /* Do not expect any report here.  */
+
+  /* REC1 does not send a report, but "deactivates" the OneShot.  */
+  PressKey(addrByName("SPECIALSHIFT1"));
+  sim_.RunCycle();
+  ExpectKeyboardReport(Keycodes{}, "REC1 does not send report but \"deactivates\" OneShot");
+  PressKey(addrByName("MACROREC1"));
+  sim_.RunCycle();
+  /* Do not expect any report here.  */
+  ReleaseKey(addrByName("MACROREC1"));
+  sim_.RunCycle();
+  /* Do not expect any report here.  */
+  /* REC1 does not send a report, but "deactivates" the OneShot.  */
+  ReleaseKey(addrByName("SPECIALSHIFT1"));
+  sim_.RunCycle();
+  /* Do not expect any report here.  */
+
+  storeMacro("A", "A A LeftShift");
+  printMacro("A");
+  runAction("PLAY1 %A");
+  // REC1 ~A A A OSM(LeftShift) REC1 }}}
+
+  /* OSM hold acts like a LeftShift */
+  // REC1 ~A A A OSM(LeftShift)| A OSM(LeftShift)^ REC1 {{{
+  runAction("REC1 ~A A A OSM(LeftShift)| A OSM(LeftShift)^ REC1");
+  storeMacro("A", "A A LeftShift| A LeftShift^");
+  printMacro("A");
+  runAction("PLAY1 %A");
+  // REC1 ~A A A OSM(LeftShift)| A OSM(LeftShift)^ REC1 }}}
 
   LoadState();
   CheckReports();
 }
 
 TEST_F(PersonalConfig, 4_MacroRecordSpecialShift) {
-
-  storeMacro("A", "*TOPSY(1) *TOPSY(2) *TOPSY(3) TOPSY_TOG1 1 2 3 ");
-  printMacro("A");
-  runAction("TOPSY_TOG1 PLAY1 %A");
+  ClearState();
 
   LoadState();
   CheckReports();
@@ -738,6 +828,78 @@ TEST_F(PersonalConfig, 5_MacroRecordSpecialShift) {
    * sent).  We have decided to record and replay these for consistency during
    * replay -- we chohse to do it for the LockLayer stuff so that any state
    * change while recording is repeated during replaying.  */
+
+  LoadState();
+  CheckReports();
+}
+
+TEST_F(PersonalConfig, 6_MacroRecordTopsyOneShot) {
+  ClearState();
+
+  runAction("REC1 ~A 1 2 TOPSY_TOG2 A *TOPSY(1)");
+
+  /* OneShot held over TOPSY
+   * OSM(RightShift)| TOPSY(1) OSM(RightShift)^
+   * => RightShift| TOPSY(1) RightShift^
+   * => RightShift| RightShift^ TOPSY(1) */
+  PressKey(addrByName("OSM(RightShift)"));
+  sim_.RunCycle();
+  ExpectKeyboardReport(AddKeycodes{Key_RightShift}, "OneShot press");
+
+  /* TOPSY releases the OneShot for one and only one event send.
+   * Runtime would end up releasing in one report and sending the 1 in another.  */
+  PressKey(addrByName("TOPSY(1)"));
+  sim_.RunCycle();
+  ExpectKeyboardReport(RemoveKeycodes{Key_RightShift}, "TOPSY press removes OneShot");
+  ExpectKeyboardReport(AddKeycodes{Key_1}, "TOPSY press adds 1");
+
+  ReleaseKey(addrByName("TOPSY(1)"));
+  sim_.RunCycle();
+  /* Non-modifier Key_1 toggles off in same report as modifier toggles back on.
+   * (Toggling back on because TopsyTurvy is no longer removing it).  */
+  ExpectKeyboardReport(RemoveKeycodes{Key_1}, "TOPSY(1) is unpressed");
+  ExpectKeyboardReport(AddKeycodes{Key_RightShift}, "Shift back on after TOPSY removed");
+
+  ReleaseKey(addrByName("OSM(RightShift)"));
+  sim_.RunCycle();
+  ExpectKeyboardReport(RemoveKeycodes{Key_RightShift}, "OneShot RightShift released");
+
+  runAction("REC1 TOPSY_TOG1");
+
+  storeMacro("A", "1 2 TOPSY_TOG2 A *TOPSY(1) RightShift 1 RightShift");
+  printMacro("A");
+  runAction("PLAY2 %A TOPSY_TOG2");
+
+  /* OneShot tapped for TOPSY(1).
+   *   OSM(RightShift) TOPSY(3)
+   *   => RightShift| <wait> TOPSY(3)*/
+  runAction("TOPSY_TOG2 REC1 ~O");
+  PressKey(addrByName("OSM(RightShift)"));
+  sim_.RunCycle();
+  ExpectKeyboardReport(AddKeycodes{Key_RightShift}, "OneShot press");
+
+  ReleaseKey(addrByName("OSM(RightShift)"));
+  sim_.RunCycle();
+  /* Do not expect any report here.  */
+
+  PressKey(addrByName("TOPSY(3)"));
+  sim_.RunCycle();
+  ExpectKeyboardReport(RemoveKeycodes{Key_RightShift}, "TOPSY press removes OneShot");
+  ExpectKeyboardReport(AddKeycodes{Key_3}, "TOPSY press adds 3");
+  ExpectKeyboardReport(AddKeycodes{Key_LeftShift},
+      "OneShot sends RightShift release -- TOPSY adds LeftShift on this report");
+
+  ReleaseKey(addrByName("TOPSY(3)"));
+  sim_.RunCycle();
+  /* Should not create a *different* keyboard report since RightShift was not
+   * in the previous report.   */
+  ExpectKeyboardReport(RemoveKeycodes{Key_3}, "TOPSY(3) is unpressed");
+  ExpectKeyboardReport(RemoveKeycodes{Key_LeftShift}, "LeftShift removed separately due to Keyboard.sendReport handling");
+
+  runAction("REC1");
+  storeMacro("O", "RightShift 3| LeftShift| 3^ LeftShift^");
+  printMacro("O");
+  runAction("PLAY2 %O TOPSY_TOG2");
 
   LoadState();
   CheckReports();

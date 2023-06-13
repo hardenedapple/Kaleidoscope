@@ -451,6 +451,10 @@ KALEIDOSCOPE_INIT_PLUGINS(
 
   /* XXX Order required:
    *    OneShot > MacrosOnTheFly
+   *	  Because we don't want to re-implement OneShot's handling of timeouts.
+   *	  Without timeouts we could probably get things working such that we
+   *	  record the OneShot key and re-send it letting OneShot perform same
+   *	  handling as it did when recording.
    *    MacrosOnTheFly > ToggleLayer
    *    MacrosOnTheFly > TopsyTurvy    .*/
 
