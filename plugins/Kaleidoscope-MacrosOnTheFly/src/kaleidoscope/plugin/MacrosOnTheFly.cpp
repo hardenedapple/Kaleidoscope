@@ -71,14 +71,15 @@ void MacrosOnTheFly::clear() {
   // Clear the active macro keys array.
   for (KeyAddr key_addr : KeyAddr::all()) {
     Key macro_key = live_keys[key_addr];
-    if (macro_key != Key_Inactive && macro_key != Key_Masked
-	&& macro_key != userLayerShiftKey) {
+    if (macro_key == Key_Inactive)
+      continue;
+    if (macro_key != Key_Masked && macro_key != userLayerShiftKey) {
       /* Emulate handleKeyswitchEvent mask behaviour by not triggering this
        * event for Key_Masked.  */
       Runtime.handleKeyEvent(KeyEvent{key_addr, release_state, macro_key});
     }
     /* Everything needs to be Inactive.  */
-    live_keys[key_addr] == Key_Inactive;
+    live_keys[key_addr] = Key_Inactive;
   }
 }
 

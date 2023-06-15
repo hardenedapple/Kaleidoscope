@@ -997,6 +997,72 @@ TEST_F(PersonalConfig, 9_MacroReplayPLAYPLAY) {
   CheckReports();
 }
 
+TEST_F(PersonalConfig, 10_ObservedMacroPLAYBug) {
+  ClearState();
+
+  runAction("REC2 ~A TOPSY_TOG2 *TOPSY(1) *TOPSY(2) *TOPSY(3) TOPSY_TOG2 REC2");
+  storeMacro("A", "TOPSY_TOG2 *TOPSY(1) *TOPSY(2) *TOPSY(3) TOPSY_TOG2");
+  printMacro("A");
+  runAction("PLAY2 %A");
+
+  runAction("1 2 LeftControl| A LeftControl^");
+
+  runAction("REC2 ~A TOPSY_TOG2 *TOPSY(1) *TOPSY(2) *TOPSY(3) TOPSY_TOG2 REC2");
+  storeMacro("A", "TOPSY_TOG2 *TOPSY(1) *TOPSY(2) *TOPSY(3) TOPSY_TOG2");
+  printMacro("A");
+  runAction("PLAY2 %A");
+
+  runAction("1 2 LeftControl| A LeftControl^");
+
+
+  runAction("REC2 ~A TOPSY_TOG2");
+  PressKey(addrByName("TOPSY(1)"));
+  sim_.RunCycle();
+  ExpectKeyboardReport(AddKeycodes{Key_LeftShift}, "Shift for TOPSY");
+  ExpectKeyboardReport(AddKeycodes{Key_1}, "1 for Topsy");
+
+  PressKey(addrByName("TOPSY(2)"));
+  sim_.RunCycle();
+  ExpectKeyboardReport(Keycodes{Key_2, Key_LeftShift}, "remove 1, add 2 for Topsy");
+
+  ReleaseKey(addrByName("TOPSY(1)"));
+  sim_.RunCycle();
+  /* Expect no keyboard report from this.  */
+
+  PressKey(addrByName("TOPSY(3)"));
+  sim_.RunCycle();
+  ExpectKeyboardReport(Keycodes{Key_3, Key_LeftShift}, "remove 2, add 3 for Topsy");
+
+  ReleaseKey(addrByName("TOPSY(2)"));
+  sim_.RunCycle();
+  /* Expect no keyboard report from this.  */
+  ReleaseKey(addrByName("TOPSY(3)"));
+  sim_.RunCycle();
+  ExpectKeyboardReport(RemoveKeycodes{Key_3}, "remove 3 for Topsy");
+  ExpectKeyboardReport(RemoveKeycodes{Key_LeftShift}, "remove LeftShift for Topsy");
+
+  runAction("TOPSY_TOG2 REC2");
+
+  printMacro("A");
+  runAction("PLAY2");
+  PressKey(addrByName("A"));
+  sim_.RunCycle();
+  ExpectKeyboardReport(AddKeycodes{Key_LeftShift}, "Shift for TOPSY");
+  ExpectKeyboardReport(AddKeycodes{Key_1}, "1 for Topsy");
+  ExpectKeyboardReport(Keycodes{Key_2, Key_LeftShift}, "remove 1, add 2 for Topsy");
+  ExpectKeyboardReport(Keycodes{Key_3, Key_LeftShift}, "remove 2, add 3 for Topsy");
+  ExpectKeyboardReport(RemoveKeycodes{Key_3}, "remove 3 for Topsy");
+  ExpectKeyboardReport(RemoveKeycodes{Key_LeftShift}, "remove LeftShift for Topsy");
+  ReleaseKey(addrByName("A"));
+  sim_.RunCycle();
+  /* Do not expect any keyboard report here.  */
+
+  runAction("1 2 LeftControl| A LeftControl^");
+
+  LoadState();
+  CheckReports();
+}
+
 }
 }
 }
