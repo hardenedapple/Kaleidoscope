@@ -1,4 +1,7 @@
 vshcmd: > export KALEIDOSCOPE_DIR=/home/matmal01/Documents/not-work/keyboard/Kaleidoscope
+groups: cannot find name for group ID 38659
+groups: cannot find name for group ID 61021
+Kaleidoscope [17:32:22] $ 
 vshcmd: > make clean && make simulator-tests TEST_PATH=plugins/MacrosOnTheFly/EdgeCases
 
 vshcmd: > g++ test.cpp -o testbin
@@ -892,18 +895,6 @@ Running test examples/basic-keypress
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/examples/basic-keypress/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_KeysActiveWhenPressed
-Expected keyboard report at 5ms: { 4 }
-Observed keyboard report at 5ms: { 4 }
-Expected keyboard report at 10ms: { }
-Observed keyboard report at 10ms: { }
-Expected keyboard report at 15ms: { 4 }
-Observed keyboard report at 15ms: { 4 }
-Expected keyboard report at 15ms: { 4 16 }
-Observed keyboard report at 15ms: { 4 16 }
-Expected keyboard report at 20ms: { 16 }
-Observed keyboard report at 20ms: { 16 }
-Expected keyboard report at 20ms: { }
-Observed keyboard report at 20ms: { }
 [       OK ] GeneratedKTest.1_KeysActiveWhenPressed (0 ms)
 [----------] 2 tests from GeneratedKTest (0 ms total)
 
@@ -934,42 +925,10 @@ Running test issues/1057
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/1057/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_Chrysalis566And605
-Expected keyboard report at 25ms: { e1 }
-Observed keyboard report at 25ms: { e1 }
-Expected keyboard report at 25ms: { 6 e1 }
-Observed keyboard report at 25ms: { 6 e1 }
-Expected keyboard report at 25ms: { e1 }
-Observed keyboard report at 25ms: { e1 }
-Expected keyboard report at 30ms: { }
-Observed keyboard report at 30ms: { }
 [       OK ] GeneratedKTest.1_Chrysalis566And605 (0 ms)
 [ RUN      ] GeneratedKTest.2_Chrysalis688
-Expected keyboard report at 40ms: { b }
-Observed keyboard report at 40ms: { b }
-Expected keyboard report at 65ms: { b e0 }
-Observed keyboard report at 65ms: { b e0 }
-Expected keyboard report at 65ms: { e0 }
-Observed keyboard report at 65ms: { e0 }
-Expected keyboard report at 65ms: { 1c e0 }
-Observed keyboard report at 65ms: { 1c e0 }
-Expected keyboard report at 65ms: { e0 }
-Observed keyboard report at 65ms: { e0 }
-Expected keyboard report at 70ms: { }
-Observed keyboard report at 70ms: { }
 [       OK ] GeneratedKTest.2_Chrysalis688 (0 ms)
 [ RUN      ] GeneratedKTest.3_Chrysalis427Workaround
-Expected keyboard report at 80ms: { e3 }
-Observed keyboard report at 80ms: { e3 }
-Expected keyboard report at 90ms: { e1 e3 }
-Observed keyboard report at 90ms: { e1 e3 }
-Expected keyboard report at 95ms: { b e1 e3 }
-Observed keyboard report at 95ms: { b e1 e3 }
-Expected keyboard report at 95ms: { b e1 }
-Observed keyboard report at 95ms: { b e1 }
-Expected keyboard report at 100ms: { e1 }
-Observed keyboard report at 100ms: { e1 }
-Expected keyboard report at 105ms: { }
-Observed keyboard report at 105ms: { }
 [       OK ] GeneratedKTest.3_Chrysalis427Workaround (0 ms)
 [----------] 4 tests from GeneratedKTest (0 ms total)
 
@@ -999,20 +958,8 @@ Running test issues/896
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/896/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_OneShotNextKey
-Expected keyboard report at 21ms: { 6 }
-Observed keyboard report at 21ms: { 6 }
-Expected keyboard report at 27ms: { }
-Observed keyboard report at 27ms: { }
 [       OK ] GeneratedKTest.1_OneShotNextKey (0 ms)
 [ RUN      ] GeneratedKTest.2_OneShotDoubleTapLayer896
-Expected keyboard report at 98ms: { 6 }
-Observed keyboard report at 98ms: { 6 }
-Expected keyboard report at 104ms: { }
-Observed keyboard report at 104ms: { }
-Expected keyboard report at 115ms: { 6 }
-Observed keyboard report at 115ms: { 6 }
-Expected keyboard report at 121ms: { }
-Observed keyboard report at 121ms: { }
 [       OK ] GeneratedKTest.2_OneShotDoubleTapLayer896 (0 ms)
 [----------] 3 tests from GeneratedKTest (0 ms total)
 
@@ -1043,16 +990,8 @@ Running test issues/984
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/984/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_EscapeOneShotModifier
-Expected keyboard report at 5ms: { e1 }
-Observed keyboard report at 5ms: { e1 }
-Expected keyboard report at 15ms: { }
-Observed keyboard report at 15ms: { }
 [       OK ] GeneratedKTest.1_EscapeOneShotModifier (0 ms)
 [ RUN      ] GeneratedKTest.2_EscapeStickyOneShotModifier
-Expected keyboard report at 30ms: { e1 }
-Observed keyboard report at 30ms: { e1 }
-Expected keyboard report at 5050ms: { }
-Observed keyboard report at 5050ms: { }
 [       OK ] GeneratedKTest.2_EscapeStickyOneShotModifier (7 ms)
 [----------] 3 tests from GeneratedKTest (7 ms total)
 
@@ -1083,67 +1022,11 @@ Running test issues/1042
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/1042/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_LeaderPrefixSequence
-Expected keyboard report at 35ms: { 1c }
-Observed keyboard report at 35ms: { 1c }
-Expected keyboard report at 35ms: { }
-Observed keyboard report at 35ms: { }
-Expected keyboard report at 35ms: { 1b }
-Observed keyboard report at 35ms: { 1b }
-Expected keyboard report at 35ms: { }
-Observed keyboard report at 35ms: { }
-Expected keyboard report at 35ms: { 1b }
-Observed keyboard report at 35ms: { 1b }
-Expected keyboard report at 35ms: { }
-Observed keyboard report at 35ms: { }
-Expected keyboard report at 35ms: { 1b }
-Observed keyboard report at 35ms: { 1b }
-Expected keyboard report at 35ms: { }
-Observed keyboard report at 35ms: { }
-Expected keyboard report at 35ms: { 1b }
-Observed keyboard report at 35ms: { 1b }
-Expected keyboard report at 35ms: { }
-Observed keyboard report at 35ms: { }
-Expected keyboard report at 35ms: { 1b }
-Observed keyboard report at 35ms: { 1b }
-Expected keyboard report at 35ms: { }
-Observed keyboard report at 35ms: { }
-Expected keyboard report at 35ms: { 1b }
-Observed keyboard report at 35ms: { 1b }
-Expected keyboard report at 35ms: { }
-Observed keyboard report at 35ms: { }
-Expected keyboard report at 35ms: { 1b }
-Observed keyboard report at 35ms: { 1b }
-Expected keyboard report at 35ms: { }
-Observed keyboard report at 35ms: { }
-Expected keyboard report at 35ms: { 1b }
-Observed keyboard report at 35ms: { 1b }
-Expected keyboard report at 35ms: { }
-Observed keyboard report at 35ms: { }
-Expected keyboard report at 35ms: { 1b }
-Observed keyboard report at 35ms: { 1b }
-Expected keyboard report at 35ms: { }
-Observed keyboard report at 35ms: { }
-Expected keyboard report at 35ms: { 1b }
-Observed keyboard report at 35ms: { 1b }
-Expected keyboard report at 35ms: { }
-Observed keyboard report at 35ms: { }
-Expected keyboard report at 35ms: { 1b }
-Observed keyboard report at 35ms: { 1b }
-Expected keyboard report at 35ms: { }
-Observed keyboard report at 35ms: { }
-Expected keyboard report at 35ms: { 1b }
-Observed keyboard report at 35ms: { 1b }
-Expected keyboard report at 35ms: { }
-Observed keyboard report at 35ms: { }
-Expected keyboard report at 45ms: { 1a }
-Observed keyboard report at 45ms: { 1a }
-Expected keyboard report at 50ms: { }
-Observed keyboard report at 50ms: { }
 [       OK ] GeneratedKTest.1_LeaderPrefixSequence (0 ms)
-[----------] 2 tests from GeneratedKTest (1 ms total)
+[----------] 2 tests from GeneratedKTest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (1 ms total)
+[==========] 2 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 2 tests.
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
@@ -1165,28 +1048,8 @@ Running test issues/941
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/941/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_Issue941OneKeypressPerCycle
-Expected keyboard report at 11ms: { 4 }
-Observed keyboard report at 11ms: { 4 }
-Expected keyboard report at 22ms: { 4 16 }
-Observed keyboard report at 22ms: { 4 16 }
-Expected keyboard report at 48ms: { 16 }
-Observed keyboard report at 48ms: { 16 }
-Expected keyboard report at 49ms: { }
-Observed keyboard report at 49ms: { }
 [       OK ] GeneratedKTest.1_Issue941OneKeypressPerCycle (0 ms)
 [ RUN      ] GeneratedKTest.2_Issue941SimultaneousKeypresses
-Expected keyboard report at 65ms: { 4 }
-Observed keyboard report at 65ms: { 4 }
-Expected keyboard report at 65ms: { 4 16 }
-Observed keyboard report at 65ms: { 4 16 }
-Expected keyboard report at 65ms: { 4 7 16 }
-Observed keyboard report at 65ms: { 4 7 16 }
-Expected keyboard report at 71ms: { 7 16 }
-Observed keyboard report at 71ms: { 7 16 }
-Expected keyboard report at 71ms: { 7 }
-Observed keyboard report at 71ms: { 7 }
-Expected keyboard report at 71ms: { }
-Observed keyboard report at 71ms: { }
 [       OK ] GeneratedKTest.2_Issue941SimultaneousKeypresses (0 ms)
 [----------] 3 tests from GeneratedKTest (0 ms total)
 
@@ -1291,19 +1154,11 @@ Running test issues/970
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/970/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_Issue970QukeysMinPriorIntervalOverflow
-Expected keyboard report at 11ms: { 4 }
-Observed keyboard report at 11ms: { 4 }
-Expected keyboard report at 11ms: { }
-Observed keyboard report at 11ms: { }
-Expected keyboard report at 65748ms: { e3 }
-Observed keyboard report at 65748ms: { e3 }
-Expected keyboard report at 65759ms: { }
-Observed keyboard report at 65759ms: { }
-[       OK ] GeneratedKTest.1_Issue970QukeysMinPriorIntervalOverflow (72 ms)
-[----------] 2 tests from GeneratedKTest (72 ms total)
+[       OK ] GeneratedKTest.1_Issue970QukeysMinPriorIntervalOverflow (78 ms)
+[----------] 2 tests from GeneratedKTest (78 ms total)
 
 [----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (72 ms total)
+[==========] 2 tests from 1 test suite ran. (78 ms total)
 [  PASSED  ] 2 tests.
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
@@ -1360,56 +1215,8 @@ Running test issues/1032
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/1032/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_SysterSequenceWithoutZero
-Expected keyboard report at 15ms: { 4 }
-Observed keyboard report at 15ms: { 4 }
-Expected keyboard report at 20ms: { }
-Observed keyboard report at 20ms: { }
-Expected keyboard report at 25ms: { 5 }
-Observed keyboard report at 25ms: { 5 }
-Expected keyboard report at 30ms: { }
-Observed keyboard report at 30ms: { }
-Expected keyboard report at 35ms: { 6 }
-Observed keyboard report at 35ms: { 6 }
-Expected keyboard report at 40ms: { }
-Observed keyboard report at 40ms: { }
-Expected keyboard report at 45ms: { 2a }
-Observed keyboard report at 45ms: { 2a }
-Expected keyboard report at 45ms: { }
-Observed keyboard report at 45ms: { }
-Expected keyboard report at 45ms: { 2a }
-Observed keyboard report at 45ms: { 2a }
-Expected keyboard report at 45ms: { }
-Observed keyboard report at 45ms: { }
-Expected keyboard report at 45ms: { 2a }
-Observed keyboard report at 45ms: { 2a }
-Expected keyboard report at 45ms: { }
-Observed keyboard report at 45ms: { }
-Expected keyboard report at 45ms: { 1b }
-Observed keyboard report at 45ms: { 1b }
-Expected keyboard report at 45ms: { }
-Observed keyboard report at 45ms: { }
 [       OK ] GeneratedKTest.1_SysterSequenceWithoutZero (0 ms)
 [ RUN      ] GeneratedKTest.2_SysterSequenceWithZero
-Expected keyboard report at 75ms: { 4 }
-Observed keyboard report at 75ms: { 4 }
-Expected keyboard report at 80ms: { }
-Observed keyboard report at 80ms: { }
-Expected keyboard report at 85ms: { 27 }
-Observed keyboard report at 85ms: { 27 }
-Expected keyboard report at 90ms: { }
-Observed keyboard report at 90ms: { }
-Expected keyboard report at 95ms: { 2a }
-Observed keyboard report at 95ms: { 2a }
-Expected keyboard report at 95ms: { }
-Observed keyboard report at 95ms: { }
-Expected keyboard report at 95ms: { 2a }
-Observed keyboard report at 95ms: { 2a }
-Expected keyboard report at 95ms: { }
-Observed keyboard report at 95ms: { }
-Expected keyboard report at 95ms: { 1c }
-Observed keyboard report at 95ms: { 1c }
-Expected keyboard report at 95ms: { }
-Observed keyboard report at 95ms: { }
 [       OK ] GeneratedKTest.2_SysterSequenceWithZero (0 ms)
 [----------] 3 tests from GeneratedKTest (0 ms total)
 
@@ -1442,75 +1249,15 @@ Running test issues/423
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/423/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_BackAndForth
-Expected keyboard report at 15ms: { 37 }
-Observed keyboard report at 15ms: { 37 }
-Expected keyboard report at 15ms: { }
-Observed keyboard report at 15ms: { }
-Expected keyboard report at 15ms: { e1 }
-Observed keyboard report at 15ms: { e1 }
-Expected keyboard report at 35ms: { 37 e1 }
-Observed keyboard report at 35ms: { 37 e1 }
-Expected keyboard report at 35ms: { 37 }
-Observed keyboard report at 35ms: { 37 }
-Expected keyboard report at 35ms: { }
-Observed keyboard report at 35ms: { }
-Expected keyboard report at 35ms: { 2c }
-Observed keyboard report at 35ms: { 2c }
-Expected keyboard report at 40ms: { }
-Observed keyboard report at 40ms: { }
-Expected keyboard report at 45ms: { e1 }
-Observed keyboard report at 45ms: { e1 }
-Expected keyboard report at 55ms: { 4 e1 }
-Observed keyboard report at 55ms: { 4 e1 }
-Expected keyboard report at 55ms: { 4 }
-Observed keyboard report at 55ms: { 4 }
-Expected keyboard report at 60ms: { }
-Observed keyboard report at 60ms: { }
 [       OK ] GeneratedKTest.1_BackAndForth (0 ms)
 [ RUN      ] GeneratedKTest.2_SingleRollover
-Expected keyboard report at 75ms: { 37 }
-Observed keyboard report at 75ms: { 37 }
-Expected keyboard report at 75ms: { 2c 37 }
-Observed keyboard report at 75ms: { 2c 37 }
-Expected keyboard report at 80ms: { 2c 37 e1 }
-Observed keyboard report at 80ms: { 2c 37 e1 }
-Expected keyboard report at 85ms: { 2c e1 }
-Observed keyboard report at 85ms: { 2c e1 }
-Expected keyboard report at 90ms: { e1 }
-Observed keyboard report at 90ms: { e1 }
-Expected keyboard report at 95ms: { 4 e1 }
-Observed keyboard report at 95ms: { 4 e1 }
-Expected keyboard report at 100ms: { 4 }
-Observed keyboard report at 100ms: { 4 }
-Expected keyboard report at 105ms: { }
-Observed keyboard report at 105ms: { }
 [       OK ] GeneratedKTest.2_SingleRollover (0 ms)
 [ RUN      ] GeneratedKTest.3_OSMAppliesToWholeMacro
-Expected keyboard report at 115ms: { e1 }
-Observed keyboard report at 115ms: { e1 }
-Expected keyboard report at 145ms: { 4 e1 }
-Observed keyboard report at 145ms: { 4 e1 }
-Expected keyboard report at 145ms: { e1 }
-Observed keyboard report at 145ms: { e1 }
-Expected keyboard report at 145ms: { 5 e1 }
-Observed keyboard report at 145ms: { 5 e1 }
-Expected keyboard report at 145ms: { e1 }
-Observed keyboard report at 145ms: { e1 }
-Expected keyboard report at 145ms: { 6 e1 }
-Observed keyboard report at 145ms: { 6 e1 }
-Expected keyboard report at 145ms: { e1 }
-Observed keyboard report at 145ms: { e1 }
-Expected keyboard report at 145ms: { }
-Observed keyboard report at 145ms: { }
-Expected keyboard report at 145ms: { 2c }
-Observed keyboard report at 145ms: { 2c }
-Expected keyboard report at 150ms: { }
-Observed keyboard report at 150ms: { }
 [       OK ] GeneratedKTest.3_OSMAppliesToWholeMacro (0 ms)
-[----------] 4 tests from GeneratedKTest (1 ms total)
+[----------] 4 tests from GeneratedKTest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 4 tests from 1 test suite ran. (1 ms total)
+[==========] 4 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 4 tests.
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
@@ -1534,16 +1281,8 @@ Running test issues/980
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/980/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_TapDanceIssue980NoOverlap
-Expected keyboard report at 31ms: { 1c }
-Observed keyboard report at 31ms: { 1c }
-Expected keyboard report at 37ms: { }
-Observed keyboard report at 37ms: { }
 [       OK ] GeneratedKTest.1_TapDanceIssue980NoOverlap (0 ms)
 [ RUN      ] GeneratedKTest.2_TapDanceIssue980Rollover
-Expected keyboard report at 70ms: { 1c }
-Observed keyboard report at 70ms: { 1c }
-Expected keyboard report at 81ms: { }
-Observed keyboard report at 81ms: { }
 [       OK ] GeneratedKTest.2_TapDanceIssue980Rollover (0 ms)
 [----------] 3 tests from GeneratedKTest (0 ms total)
 
@@ -1572,22 +1311,6 @@ Running test issues/1074
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/1074/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_AutoShiftOverflow
-Expected keyboard report at 10ms: { 4 }
-Observed keyboard report at 10ms: { 4 }
-Expected keyboard report at 15ms: { 4 5 }
-Observed keyboard report at 15ms: { 4 5 }
-Expected keyboard report at 20ms: { 4 5 6 }
-Observed keyboard report at 20ms: { 4 5 6 }
-Expected keyboard report at 40ms: { 4 5 6 7 }
-Observed keyboard report at 40ms: { 4 5 6 7 }
-Expected keyboard report at 40ms: { 5 6 7 }
-Observed keyboard report at 40ms: { 5 6 7 }
-Expected keyboard report at 40ms: { 6 7 }
-Observed keyboard report at 40ms: { 6 7 }
-Expected keyboard report at 40ms: { 7 }
-Observed keyboard report at 40ms: { 7 }
-Expected keyboard report at 40ms: { }
-Observed keyboard report at 40ms: { }
 [       OK ] GeneratedKTest.1_AutoShiftOverflow (0 ms)
 [----------] 2 tests from GeneratedKTest (0 ms total)
 
@@ -1685,22 +1408,6 @@ Running test issues/571
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/571/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_Issue571
-Expected keyboard report at 10ms: { e0 }
-Observed keyboard report at 10ms: { e0 }
-Expected keyboard report at 10ms: { 2b e0 }
-Observed keyboard report at 10ms: { 2b e0 }
-Expected keyboard report at 30ms: { e0 }
-Observed keyboard report at 30ms: { e0 }
-Expected keyboard report at 35ms: { }
-Observed keyboard report at 35ms: { }
-Expected keyboard report at 55ms: { e0 }
-Observed keyboard report at 55ms: { e0 }
-Expected keyboard report at 55ms: { 2b e0 }
-Observed keyboard report at 55ms: { 2b e0 }
-Expected keyboard report at 75ms: { e0 }
-Observed keyboard report at 75ms: { e0 }
-Expected keyboard report at 80ms: { }
-Observed keyboard report at 80ms: { }
 [       OK ] GeneratedKTest.1_Issue571 (0 ms)
 [----------] 2 tests from GeneratedKTest (0 ms total)
 
@@ -1730,14 +1437,6 @@ Running test issues/673
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/673/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_Issue673
-Expected keyboard report at 5ms: { e0 }
-Observed keyboard report at 5ms: { e0 }
-Expected keyboard report at 125ms: { e0 e1 }
-Observed keyboard report at 125ms: { e0 e1 }
-Expected keyboard report at 245ms: { 4 e0 e1 }
-Observed keyboard report at 245ms: { 4 e0 e1 }
-Expected keyboard report at 250ms: { e0 e1 }
-Observed keyboard report at 250ms: { e0 e1 }
 [       OK ] GeneratedKTest.1_Issue673 (0 ms)
 [----------] 2 tests from GeneratedKTest (0 ms total)
 
@@ -1766,10 +1465,6 @@ Running test issues/806
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/806/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_TapDanceHoldPastTimeout
-Expected keyboard report at 31ms: { 4 }
-Observed keyboard report at 31ms: { 4 }
-Expected keyboard report at 52ms: { }
-Observed keyboard report at 52ms: { }
 [       OK ] GeneratedKTest.1_TapDanceHoldPastTimeout (0 ms)
 [----------] 2 tests from GeneratedKTest (0 ms total)
 
@@ -1798,63 +1493,15 @@ Running test issues/922
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/922/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_TapDanceToTapDanceRolloverLeftToRight
-Expected keyboard report at 11ms: { 4 }
-Observed keyboard report at 11ms: { 4 }
-Expected keyboard report at 36ms: { 4 5 }
-Observed keyboard report at 36ms: { 4 5 }
-Expected keyboard report at 36ms: { 5 }
-Observed keyboard report at 36ms: { 5 }
-Expected keyboard report at 36ms: { }
-Observed keyboard report at 36ms: { }
-Expected keyboard report at 61ms: { 4 }
-Observed keyboard report at 61ms: { 4 }
-Expected keyboard report at 86ms: { 4 5 }
-Observed keyboard report at 86ms: { 4 5 }
-Expected keyboard report at 86ms: { 5 }
-Observed keyboard report at 86ms: { 5 }
-Expected keyboard report at 86ms: { }
-Observed keyboard report at 86ms: { }
 [       OK ] GeneratedKTest.1_TapDanceToTapDanceRolloverLeftToRight (0 ms)
 [ RUN      ] GeneratedKTest.2_TapDanceToTapDanceRolloverRightToLeft
-Expected keyboard report at 111ms: { 5 }
-Observed keyboard report at 111ms: { 5 }
-Expected keyboard report at 136ms: { 4 5 }
-Observed keyboard report at 136ms: { 4 5 }
-Expected keyboard report at 136ms: { 4 }
-Observed keyboard report at 136ms: { 4 }
-Expected keyboard report at 136ms: { }
-Observed keyboard report at 136ms: { }
-Expected keyboard report at 161ms: { 5 }
-Observed keyboard report at 161ms: { 5 }
-Expected keyboard report at 186ms: { 4 5 }
-Observed keyboard report at 186ms: { 4 5 }
-Expected keyboard report at 186ms: { 4 }
-Observed keyboard report at 186ms: { 4 }
-Expected keyboard report at 186ms: { }
-Observed keyboard report at 186ms: { }
 [       OK ] GeneratedKTest.2_TapDanceToTapDanceRolloverRightToLeft (0 ms)
 [ RUN      ] GeneratedKTest.3_TapDanceToTapDanceRolloverBackAndForth
-Expected keyboard report at 211ms: { 4 }
-Observed keyboard report at 211ms: { 4 }
-Expected keyboard report at 236ms: { 4 5 }
-Observed keyboard report at 236ms: { 4 5 }
-Expected keyboard report at 236ms: { 5 }
-Observed keyboard report at 236ms: { 5 }
-Expected keyboard report at 236ms: { }
-Observed keyboard report at 236ms: { }
-Expected keyboard report at 261ms: { 5 }
-Observed keyboard report at 261ms: { 5 }
-Expected keyboard report at 286ms: { 4 5 }
-Observed keyboard report at 286ms: { 4 5 }
-Expected keyboard report at 286ms: { 4 }
-Observed keyboard report at 286ms: { 4 }
-Expected keyboard report at 286ms: { }
-Observed keyboard report at 286ms: { }
 [       OK ] GeneratedKTest.3_TapDanceToTapDanceRolloverBackAndForth (0 ms)
-[----------] 4 tests from GeneratedKTest (1 ms total)
+[----------] 4 tests from GeneratedKTest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 4 tests from 1 test suite ran. (1 ms total)
+[==========] 4 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 4 tests.
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
@@ -1879,50 +1526,14 @@ Running test issues/1061
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/1061/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_OneShotInsertTimeout
-Expected keyboard report at 5ms: { 49 }
-Observed keyboard report at 5ms: { 49 }
-Expected keyboard report at 55ms: { }
-Observed keyboard report at 55ms: { }
-Expected keyboard report at 60ms: { 4 }
-Observed keyboard report at 60ms: { 4 }
-Expected keyboard report at 65ms: { }
-Observed keyboard report at 65ms: { }
 [       OK ] GeneratedKTest.1_OneShotInsertTimeout (0 ms)
 [ RUN      ] GeneratedKTest.2_OneShotInsertInterrupt
-Expected keyboard report at 75ms: { 49 }
-Observed keyboard report at 75ms: { 49 }
-Expected keyboard report at 85ms: { 4 49 }
-Observed keyboard report at 85ms: { 4 49 }
-Expected keyboard report at 85ms: { 4 }
-Observed keyboard report at 85ms: { 4 }
-Expected keyboard report at 90ms: { }
-Observed keyboard report at 90ms: { }
 [       OK ] GeneratedKTest.2_OneShotInsertInterrupt (0 ms)
 [ RUN      ] GeneratedKTest.3_OneShotInsertSticky
-Expected keyboard report at 100ms: { 49 }
-Observed keyboard report at 100ms: { 49 }
-Expected keyboard report at 120ms: { 4 49 }
-Observed keyboard report at 120ms: { 4 49 }
-Expected keyboard report at 125ms: { 49 }
-Observed keyboard report at 125ms: { 49 }
-Expected keyboard report at 235ms: { }
-Observed keyboard report at 235ms: { }
 [       OK ] GeneratedKTest.3_OneShotInsertSticky (0 ms)
 [ RUN      ] GeneratedKTest.4_OneShotLeftAltNotSticky
-Expected keyboard report at 245ms: { e2 }
-Observed keyboard report at 245ms: { e2 }
-Expected keyboard report at 260ms: { }
-Observed keyboard report at 260ms: { }
 [       OK ] GeneratedKTest.4_OneShotLeftAltNotSticky (0 ms)
 [ RUN      ] GeneratedKTest.5_OneShotRightAltSticky
-Expected keyboard report at 270ms: { e6 }
-Observed keyboard report at 270ms: { e6 }
-Expected keyboard report at 290ms: { 4 e6 }
-Observed keyboard report at 290ms: { 4 e6 }
-Expected keyboard report at 295ms: { e6 }
-Observed keyboard report at 295ms: { e6 }
-Expected keyboard report at 405ms: { }
-Observed keyboard report at 405ms: { }
 [       OK ] GeneratedKTest.5_OneShotRightAltSticky (0 ms)
 [----------] 6 tests from GeneratedKTest (1 ms total)
 
@@ -1971,22 +1582,6 @@ Running test personal-config
 [ INFO     ] test: tests/personal-config/test/manual-tests.cpp
 [       OK ] PersonalConfig.0_test (0 ms)
 [ RUN      ] PersonalConfig.1_MacroRecordBasic
-Expected keyboard report at 7ms: { 1b }
-Observed keyboard report at 7ms: { 1b }
-Expected keyboard report at 8ms: { }
-Observed keyboard report at 8ms: { }
-Expected keyboard report at 9ms: { 1b }
-Observed keyboard report at 9ms: { 1b }
-Expected keyboard report at 10ms: { }
-Observed keyboard report at 10ms: { }
-Expected keyboard report at 19ms: { 1b }
-Observed keyboard report at 19ms: { 1b }
-Expected keyboard report at 19ms: { }
-Observed keyboard report at 19ms: { }
-Expected keyboard report at 19ms: { 1b }
-Observed keyboard report at 19ms: { 1b }
-Expected keyboard report at 19ms: { }
-Observed keyboard report at 19ms: { }
 [       OK ] PersonalConfig.1_MacroRecordBasic (0 ms)
 [ RUN      ] PersonalConfig.2_MacroRecordTopsy
 [ INFO     ] Printing Macro: A
@@ -1997,231 +1592,7 @@ Observed keyboard report at 19ms: { }
 	TAP_CODE_SEQUENCE 30 31 32 0 |,TAP 209 197,KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,
 [ INFO     ] Printing Macro: A
 	KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,TAP 209 197,TAP_CODE_SEQUENCE 30 31 32 0 |,
-Expected keyboard report at 29ms: { 1e }
-Observed keyboard report at 29ms: { 1e }
-Expected keyboard report at 30ms: { }
-Observed keyboard report at 30ms: { }
-Expected keyboard report at 31ms: { 1f }
-Observed keyboard report at 31ms: { 1f }
-Expected keyboard report at 32ms: { }
-Observed keyboard report at 32ms: { }
-Expected keyboard report at 33ms: { 20 }
-Observed keyboard report at 33ms: { 20 }
-Expected keyboard report at 34ms: { }
-Observed keyboard report at 34ms: { }
-Expected keyboard report at 39ms: { 4 }
-Observed keyboard report at 39ms: { 4 }
-Expected keyboard report at 40ms: { }
-Observed keyboard report at 40ms: { }
-Expected keyboard report at 53ms: { 1e }
-Observed keyboard report at 53ms: { 1e }
-Expected keyboard report at 53ms: { }
-Observed keyboard report at 53ms: { }
-Expected keyboard report at 53ms: { 1f }
-Observed keyboard report at 53ms: { 1f }
-Expected keyboard report at 53ms: { }
-Observed keyboard report at 53ms: { }
-Expected keyboard report at 53ms: { 20 }
-Observed keyboard report at 53ms: { 20 }
-Expected keyboard report at 53ms: { }
-Observed keyboard report at 53ms: { }
-Expected keyboard report at 53ms: { 4 }
-Observed keyboard report at 53ms: { 4 }
-Expected keyboard report at 53ms: { }
-Observed keyboard report at 53ms: { }
-Expected keyboard report at 71ms: { 1e }
-Observed keyboard report at 71ms: { 1e }
-Expected keyboard report at 72ms: { }
-Observed keyboard report at 72ms: { }
-Expected keyboard report at 73ms: { 1f }
-Observed keyboard report at 73ms: { 1f }
-Expected keyboard report at 74ms: { }
-Observed keyboard report at 74ms: { }
-Expected keyboard report at 75ms: { 20 }
-Observed keyboard report at 75ms: { 20 }
-Expected keyboard report at 76ms: { }
-Observed keyboard report at 76ms: { }
-Expected keyboard report at 81ms: { e1 }
-Observed keyboard report at 81ms: { e1 }
-Expected keyboard report at 81ms: { 1e e1 }
-Observed keyboard report at 81ms: { 1e e1 }
-Expected keyboard report at 82ms: { e1 }
-Observed keyboard report at 82ms: { e1 }
-Expected keyboard report at 82ms: { }
-Observed keyboard report at 82ms: { }
-Expected keyboard report at 95ms: { 1e }
-Observed keyboard report at 95ms: { 1e }
-Expected keyboard report at 95ms: { }
-Observed keyboard report at 95ms: { }
-Expected keyboard report at 95ms: { 1f }
-Observed keyboard report at 95ms: { 1f }
-Expected keyboard report at 95ms: { }
-Observed keyboard report at 95ms: { }
-Expected keyboard report at 95ms: { 20 }
-Observed keyboard report at 95ms: { 20 }
-Expected keyboard report at 95ms: { }
-Observed keyboard report at 95ms: { }
-Expected keyboard report at 95ms: { e1 }
-Observed keyboard report at 95ms: { e1 }
-Expected keyboard report at 95ms: { 1e e1 }
-Observed keyboard report at 95ms: { 1e e1 }
-Expected keyboard report at 95ms: { e1 }
-Observed keyboard report at 95ms: { e1 }
-Expected keyboard report at 95ms: { }
-Observed keyboard report at 95ms: { }
-Expected keyboard report at 114ms: { 1e }
-Observed keyboard report at 114ms: { 1e }
-Expected keyboard report at 115ms: { }
-Observed keyboard report at 115ms: { }
-Expected keyboard report at 116ms: { 1f }
-Observed keyboard report at 116ms: { 1f }
-Expected keyboard report at 117ms: { }
-Observed keyboard report at 117ms: { }
-Expected keyboard report at 118ms: { 20 }
-Observed keyboard report at 118ms: { 20 }
-Expected keyboard report at 119ms: { }
-Observed keyboard report at 119ms: { }
-Expected keyboard report at 124ms: { e1 }
-Observed keyboard report at 124ms: { e1 }
-Expected keyboard report at 124ms: { 1e e1 }
-Observed keyboard report at 124ms: { 1e e1 }
-Expected keyboard report at 125ms: { e1 }
-Observed keyboard report at 125ms: { e1 }
-Expected keyboard report at 125ms: { }
-Observed keyboard report at 125ms: { }
-Expected keyboard report at 126ms: { e1 }
-Observed keyboard report at 126ms: { e1 }
-Expected keyboard report at 126ms: { 1f e1 }
-Observed keyboard report at 126ms: { 1f e1 }
-Expected keyboard report at 127ms: { e1 }
-Observed keyboard report at 127ms: { e1 }
-Expected keyboard report at 127ms: { }
-Observed keyboard report at 127ms: { }
-Expected keyboard report at 128ms: { e1 }
-Observed keyboard report at 128ms: { e1 }
-Expected keyboard report at 128ms: { 20 e1 }
-Observed keyboard report at 128ms: { 20 e1 }
-Expected keyboard report at 129ms: { e1 }
-Observed keyboard report at 129ms: { e1 }
-Expected keyboard report at 129ms: { }
-Observed keyboard report at 129ms: { }
-Expected keyboard report at 142ms: { 1e }
-Observed keyboard report at 142ms: { 1e }
-Expected keyboard report at 142ms: { }
-Observed keyboard report at 142ms: { }
-Expected keyboard report at 142ms: { 1f }
-Observed keyboard report at 142ms: { 1f }
-Expected keyboard report at 142ms: { }
-Observed keyboard report at 142ms: { }
-Expected keyboard report at 142ms: { 20 }
-Observed keyboard report at 142ms: { 20 }
-Expected keyboard report at 142ms: { }
-Observed keyboard report at 142ms: { }
-Expected keyboard report at 142ms: { e1 }
-Observed keyboard report at 142ms: { e1 }
-Expected keyboard report at 142ms: { 1e e1 }
-Observed keyboard report at 142ms: { 1e e1 }
-Expected keyboard report at 142ms: { e1 }
-Observed keyboard report at 142ms: { e1 }
-Expected keyboard report at 142ms: { }
-Observed keyboard report at 142ms: { }
-Expected keyboard report at 142ms: { e1 }
-Observed keyboard report at 142ms: { e1 }
-Expected keyboard report at 142ms: { 1f e1 }
-Observed keyboard report at 142ms: { 1f e1 }
-Expected keyboard report at 142ms: { e1 }
-Observed keyboard report at 142ms: { e1 }
-Expected keyboard report at 142ms: { }
-Observed keyboard report at 142ms: { }
-Expected keyboard report at 142ms: { e1 }
-Observed keyboard report at 142ms: { e1 }
-Expected keyboard report at 142ms: { 20 e1 }
-Observed keyboard report at 142ms: { 20 e1 }
-Expected keyboard report at 142ms: { e1 }
-Observed keyboard report at 142ms: { e1 }
-Expected keyboard report at 142ms: { }
-Observed keyboard report at 142ms: { }
-Expected keyboard report at 163ms: { e1 }
-Observed keyboard report at 163ms: { e1 }
-Expected keyboard report at 163ms: { 1e e1 }
-Observed keyboard report at 163ms: { 1e e1 }
-Expected keyboard report at 164ms: { e1 }
-Observed keyboard report at 164ms: { e1 }
-Expected keyboard report at 164ms: { }
-Observed keyboard report at 164ms: { }
-Expected keyboard report at 171ms: { e1 }
-Observed keyboard report at 171ms: { e1 }
-Expected keyboard report at 171ms: { 1e e1 }
-Observed keyboard report at 171ms: { 1e e1 }
-Expected keyboard report at 172ms: { e1 }
-Observed keyboard report at 172ms: { e1 }
-Expected keyboard report at 172ms: { }
-Observed keyboard report at 172ms: { }
-Expected keyboard report at 173ms: { e1 }
-Observed keyboard report at 173ms: { e1 }
-Expected keyboard report at 173ms: { 1f e1 }
-Observed keyboard report at 173ms: { 1f e1 }
-Expected keyboard report at 174ms: { e1 }
-Observed keyboard report at 174ms: { e1 }
-Expected keyboard report at 174ms: { }
-Observed keyboard report at 174ms: { }
-Expected keyboard report at 175ms: { e1 }
-Observed keyboard report at 175ms: { e1 }
-Expected keyboard report at 175ms: { 20 e1 }
-Observed keyboard report at 175ms: { 20 e1 }
-Expected keyboard report at 176ms: { e1 }
-Observed keyboard report at 176ms: { e1 }
-Expected keyboard report at 176ms: { }
-Observed keyboard report at 176ms: { }
-Expected keyboard report at 181ms: { 1e }
-Observed keyboard report at 181ms: { 1e }
-Expected keyboard report at 182ms: { }
-Observed keyboard report at 182ms: { }
-Expected keyboard report at 183ms: { 1f }
-Observed keyboard report at 183ms: { 1f }
-Expected keyboard report at 184ms: { }
-Observed keyboard report at 184ms: { }
-Expected keyboard report at 185ms: { 20 }
-Observed keyboard report at 185ms: { 20 }
-Expected keyboard report at 186ms: { }
-Observed keyboard report at 186ms: { }
-Expected keyboard report at 199ms: { e1 }
-Observed keyboard report at 199ms: { e1 }
-Expected keyboard report at 199ms: { 1e e1 }
-Observed keyboard report at 199ms: { 1e e1 }
-Expected keyboard report at 199ms: { e1 }
-Observed keyboard report at 199ms: { e1 }
-Expected keyboard report at 199ms: { }
-Observed keyboard report at 199ms: { }
-Expected keyboard report at 199ms: { e1 }
-Observed keyboard report at 199ms: { e1 }
-Expected keyboard report at 199ms: { 1f e1 }
-Observed keyboard report at 199ms: { 1f e1 }
-Expected keyboard report at 199ms: { e1 }
-Observed keyboard report at 199ms: { e1 }
-Expected keyboard report at 199ms: { }
-Observed keyboard report at 199ms: { }
-Expected keyboard report at 199ms: { e1 }
-Observed keyboard report at 199ms: { e1 }
-Expected keyboard report at 199ms: { 20 e1 }
-Observed keyboard report at 199ms: { 20 e1 }
-Expected keyboard report at 199ms: { e1 }
-Observed keyboard report at 199ms: { e1 }
-Expected keyboard report at 199ms: { }
-Observed keyboard report at 199ms: { }
-Expected keyboard report at 199ms: { 1e }
-Observed keyboard report at 199ms: { 1e }
-Expected keyboard report at 199ms: { }
-Observed keyboard report at 199ms: { }
-Expected keyboard report at 199ms: { 1f }
-Observed keyboard report at 199ms: { 1f }
-Expected keyboard report at 199ms: { }
-Observed keyboard report at 199ms: { }
-Expected keyboard report at 199ms: { 20 }
-Observed keyboard report at 199ms: { 20 }
-Expected keyboard report at 199ms: { }
-Observed keyboard report at 199ms: { }
-[       OK ] PersonalConfig.2_MacroRecordTopsy (6 ms)
+[       OK ] PersonalConfig.2_MacroRecordTopsy (4 ms)
 [ RUN      ] PersonalConfig.3_MacroRecordOneShot
 [ INFO     ] Printing Macro: A
 	KEYCODEDOWN 225,KEYCODEDOWN 4,KEYCODEUP 225,KEYCODEUP 4,TAPCODE 4,
@@ -2231,132 +1602,12 @@ Observed keyboard report at 199ms: { }
 	TAP_CODE_SEQUENCE 4 4 225 0 |,
 [ INFO     ] Printing Macro: A
 	TAPCODE 4,TAPCODE 4,KEYCODEDOWN 225,TAPCODE 4,KEYCODEUP 225,
-Expected keyboard report at 218ms: { e1 }
-Observed keyboard report at 218ms: { e1 }
-Expected keyboard report at 220ms: { 4 e1 }
-Observed keyboard report at 220ms: { 4 e1 }
-Expected keyboard report at 220ms: { e1 }
-Observed keyboard report at 220ms: { 4 }
-Expected keyboard report at 221ms: { e1 }
-Observed keyboard report at 221ms: { }
-Expected keyboard report at 222ms: { 4 e1 }
-Observed keyboard report at 222ms: { 4 }
-Expected keyboard report at 223ms: { e1 }
-Observed keyboard report at 223ms: { }
-Expected keyboard report at 232ms: { e1 }
-Observed keyboard report at 232ms: { e1 }
-Expected keyboard report at 232ms: { 4 e1 }
-Observed keyboard report at 232ms: { 4 e1 }
-Expected keyboard report at 232ms: { 4 }
-Observed keyboard report at 232ms: { 4 }
-Expected keyboard report at 232ms: { }
-Observed keyboard report at 232ms: { }
-Expected keyboard report at 232ms: { 4 }
-Observed keyboard report at 232ms: { 4 }
-Expected keyboard report at 232ms: { }
-Observed keyboard report at 232ms: { }
-Expected keyboard report at 239ms: { e1 }
-Observed keyboard report at 239ms: { e1 }
-Expected keyboard report at 241ms: { }
-Observed keyboard report at 241ms: { }
-Expected keyboard report at 247ms: { 4 }
-Observed keyboard report at 247ms: { 4 }
-Expected keyboard report at 248ms: { }
-Observed keyboard report at 248ms: { }
-Expected keyboard report at 249ms: { 4 }
-Observed keyboard report at 249ms: { 4 }
-Expected keyboard report at 250ms: { }
-Observed keyboard report at 250ms: { }
-Expected keyboard report at 259ms: { 4 }
-Observed keyboard report at 259ms: { 4 }
-Expected keyboard report at 259ms: { }
-Observed keyboard report at 259ms: { }
-Expected keyboard report at 259ms: { 4 }
-Observed keyboard report at 259ms: { 4 }
-Expected keyboard report at 259ms: { }
-Observed keyboard report at 259ms: { }
-Expected keyboard report at 269ms: { 4 }
-Observed keyboard report at 269ms: { 4 }
-Expected keyboard report at 270ms: { }
-Observed keyboard report at 270ms: { }
-Expected keyboard report at 271ms: { 4 }
-Observed keyboard report at 271ms: { 4 }
-Expected keyboard report at 272ms: { }
-Observed keyboard report at 272ms: { }
-Expected keyboard report at 273ms: { e1 }
-Observed keyboard report at 273ms: { e1 }
-Expected keyboard report at 275ms: { }
-Observed keyboard report at 275ms: { }
-Expected keyboard report at 283ms: { 4 }
-Observed keyboard report at 283ms: { 4 }
-Expected keyboard report at 283ms: { }
-Observed keyboard report at 283ms: { }
-Expected keyboard report at 283ms: { 4 }
-Observed keyboard report at 283ms: { 4 }
-Expected keyboard report at 283ms: { }
-Observed keyboard report at 283ms: { }
-Expected keyboard report at 283ms: { e1 }
-Observed keyboard report at 283ms: { e1 }
-Expected keyboard report at 283ms: { }
-Observed keyboard report at 283ms: { }
-Expected keyboard report at 295ms: { 4 }
-Observed keyboard report at 295ms: { 4 }
-Expected keyboard report at 296ms: { }
-Observed keyboard report at 296ms: { }
-Expected keyboard report at 297ms: { 4 }
-Observed keyboard report at 297ms: { 4 }
-Expected keyboard report at 298ms: { }
-Observed keyboard report at 298ms: { }
-Expected keyboard report at 299ms: { e1 }
-Observed keyboard report at 299ms: { e1 }
-Expected keyboard report at 300ms: { 4 e1 }
-Observed keyboard report at 300ms: { 4 e1 }
-Expected keyboard report at 301ms: { e1 }
-Observed keyboard report at 301ms: { e1 }
-Expected keyboard report at 302ms: { }
-Observed keyboard report at 302ms: { }
-Expected keyboard report at 311ms: { 4 }
-Observed keyboard report at 311ms: { 4 }
-Expected keyboard report at 311ms: { }
-Observed keyboard report at 311ms: { }
-Expected keyboard report at 311ms: { 4 }
-Observed keyboard report at 311ms: { 4 }
-Expected keyboard report at 311ms: { }
-Observed keyboard report at 311ms: { }
-Expected keyboard report at 311ms: { e1 }
-Observed keyboard report at 311ms: { e1 }
-Expected keyboard report at 311ms: { 4 e1 }
-Observed keyboard report at 311ms: { 4 e1 }
-Expected keyboard report at 311ms: { e1 }
-Observed keyboard report at 311ms: { e1 }
-Expected keyboard report at 311ms: { }
-Observed keyboard report at 311ms: { }
-[       OK ] PersonalConfig.3_MacroRecordOneShot (3 ms)
+[       OK ] PersonalConfig.3_MacroRecordOneShot (2 ms)
 [ RUN      ] PersonalConfig.4_MacroRecordSpecialShift
 [ INFO     ] Printing Macro: U
-	TAPCODE 76,
+	END
 [ INFO     ] Printing Macro: U
-	TAPCODE 76,
-Expected keyboard report at 325ms: { 4c }
-Observed keyboard report at 325ms: { 4c }
-Expected keyboard report at 326ms: { }
-Observed keyboard report at 326ms: { }
-Expected keyboard report at 336ms: { 4c }
-Observed keyboard report at 336ms: { 4c }
-Expected keyboard report at 336ms: { }
-Observed keyboard report at 336ms: { }
-Expected keyboard report at 346ms: { 4c }
-Observed keyboard report at 346ms: { 4c }
-Expected keyboard report at 347ms: { }
-Observed keyboard report at 347ms: { }
-Expected keyboard report at 357ms: { 4c }
-Observed keyboard report at 357ms: { 4c }
-Expected keyboard report at 357ms: { }
-Observed keyboard report at 357ms: { }
-Expected keyboard report at 360ms: { 2d }
-Observed keyboard report at 360ms: { 2d }
-Expected keyboard report at 361ms: { }
-Observed keyboard report at 361ms: { }
+	END
 [       OK ] PersonalConfig.4_MacroRecordSpecialShift (1 ms)
 [ RUN      ] PersonalConfig.5_MacroRecordSpecialShift
 [       OK ] PersonalConfig.5_MacroRecordSpecialShift (0 ms)
@@ -2365,189 +1616,17 @@ Observed keyboard report at 361ms: { }
 	TAPCODE 30,TAPCODE 31,TAP 209 197,TAPCODE 4,KEYDOWN 208 75,KEYCODEUP 30,KEYCODEDOWN 229,KEYDOWN 208 75,KEYCODEUP 30,KEYCODEUP 229,
 [ INFO     ] Printing Macro: O
 	KEYCODEDOWN 229,KEYDOWN 208 77,KEYCODEUP 229,KEYCODEUP 32,
-Expected keyboard report at 368ms: { 1e }
-Observed keyboard report at 368ms: { 1e }
-Expected keyboard report at 369ms: { }
-Observed keyboard report at 369ms: { }
-Expected keyboard report at 370ms: { 1f }
-Observed keyboard report at 370ms: { 1f }
-Expected keyboard report at 371ms: { }
-Observed keyboard report at 371ms: { }
-Expected keyboard report at 376ms: { 4 }
-Observed keyboard report at 376ms: { 4 }
-Expected keyboard report at 377ms: { }
-Observed keyboard report at 377ms: { }
-Expected keyboard report at 378ms: { e1 }
-Observed keyboard report at 378ms: { e1 }
-Expected keyboard report at 378ms: { 1e e1 }
-Observed keyboard report at 378ms: { 1e e1 }
-Expected keyboard report at 379ms: { e1 }
-Observed keyboard report at 379ms: { e1 }
-Expected keyboard report at 379ms: { }
-Observed keyboard report at 379ms: { }
-Expected keyboard report at 380ms: { e5 }
-Observed keyboard report at 380ms: { e5 }
-Expected keyboard report at 381ms: { }
-Observed keyboard report at 381ms: { }
-Expected keyboard report at 381ms: { 1e }
-Observed keyboard report at 381ms: { 1e }
-Expected keyboard report at 382ms: { }
-Observed keyboard report at 382ms: { }
-Expected keyboard report at 382ms: { e5 }
-Observed keyboard report at 382ms: { e5 }
-Expected keyboard report at 383ms: { }
-Observed keyboard report at 383ms: { }
-Expected keyboard report at 396ms: { 1e }
-Observed keyboard report at 396ms: { 1e }
-Expected keyboard report at 396ms: { }
-Observed keyboard report at 396ms: { }
-Expected keyboard report at 396ms: { 1f }
-Observed keyboard report at 396ms: { 1f }
-Expected keyboard report at 396ms: { }
-Observed keyboard report at 396ms: { }
-Expected keyboard report at 396ms: { 4 }
-Observed keyboard report at 396ms: { 4 }
-Expected keyboard report at 396ms: { }
-Observed keyboard report at 396ms: { }
-Expected keyboard report at 396ms: { e1 }
-Observed keyboard report at 396ms: { e1 }
-Expected keyboard report at 396ms: { 1e e1 }
-Observed keyboard report at 396ms: { 1e e1 }
-Expected keyboard report at 396ms: { e1 }
-Observed keyboard report at 396ms: { e1 }
-Expected keyboard report at 396ms: { }
-Observed keyboard report at 396ms: { }
-Expected keyboard report at 396ms: { e5 }
-Observed keyboard report at 396ms: { e5 }
-Expected keyboard report at 396ms: { }
-Observed keyboard report at 396ms: { }
-Expected keyboard report at 396ms: { 1e }
-Observed keyboard report at 396ms: { 1e }
-Expected keyboard report at 396ms: { }
-Observed keyboard report at 396ms: { }
-Expected keyboard report at 396ms: { e5 }
-Observed keyboard report at 396ms: { e5 }
-Expected keyboard report at 396ms: { }
-Observed keyboard report at 396ms: { }
-Expected keyboard report at 422ms: { e5 }
-Observed keyboard report at 422ms: { e5 }
-Expected keyboard report at 424ms: { }
-Observed keyboard report at 424ms: { }
-Expected keyboard report at 424ms: { 20 }
-Observed keyboard report at 424ms: { 20 }
-Expected keyboard report at 424ms: { 20 e1 }
-Observed keyboard report at 424ms: { 20 e1 }
-Expected keyboard report at 425ms: { e1 }
-Observed keyboard report at 425ms: { e1 }
-Expected keyboard report at 425ms: { }
-Observed keyboard report at 425ms: { }
-Expected keyboard report at 434ms: { e5 }
-Observed keyboard report at 434ms: { e5 }
-Expected keyboard report at 434ms: { }
-Observed keyboard report at 434ms: { }
-Expected keyboard report at 434ms: { 20 }
-Observed keyboard report at 434ms: { 20 }
-Expected keyboard report at 434ms: { 20 e1 }
-Observed keyboard report at 434ms: { 20 e1 }
-Expected keyboard report at 434ms: { e1 }
-Observed keyboard report at 434ms: { e1 }
-Expected keyboard report at 434ms: { }
-Observed keyboard report at 434ms: { }
-[       OK ] PersonalConfig.6_MacroRecordTopsyOneShot (2 ms)
+[       OK ] PersonalConfig.6_MacroRecordTopsyOneShot (1 ms)
 [ RUN      ] PersonalConfig.7_SpecialShiftDoubleRelease
-Expected keyboard report at 445ms: { 35 }
-Observed keyboard report at 445ms: { 35 }
-Expected keyboard report at 446ms: { }
-Observed keyboard report at 446ms: { }
-Expected keyboard report at 448ms: { 35 }
-Observed keyboard report at 448ms: { 35 }
-Expected keyboard report at 449ms: { }
-Observed keyboard report at 449ms: { }
-Expected keyboard report at 451ms: { 35 }
-Observed keyboard report at 451ms: { 35 }
-Expected keyboard report at 452ms: { }
-Observed keyboard report at 452ms: { }
-Expected keyboard report at 454ms: { a }
-Observed keyboard report at 454ms: { a }
-Expected keyboard report at 455ms: { }
-Observed keyboard report at 455ms: { }
-Expected keyboard report at 457ms: { 35 }
-Observed keyboard report at 457ms: { 35 }
-Expected keyboard report at 458ms: { }
-Observed keyboard report at 458ms: { }
-Expected keyboard report at 460ms: { 35 }
-Observed keyboard report at 460ms: { 35 }
-Expected keyboard report at 461ms: { }
-Observed keyboard report at 461ms: { }
-Expected keyboard report at 463ms: { 35 }
-Observed keyboard report at 463ms: { 35 }
-Expected keyboard report at 464ms: { }
-Observed keyboard report at 464ms: { }
-Expected keyboard report at 466ms: { a }
-Observed keyboard report at 466ms: { a }
-Expected keyboard report at 467ms: { }
-Observed keyboard report at 467ms: { }
-[       OK ] PersonalConfig.7_SpecialShiftDoubleRelease (1 ms)
+[       OK ] PersonalConfig.7_SpecialShiftDoubleRelease (0 ms)
 [ RUN      ] PersonalConfig.8_MacroRecordIntoWrongSlot
-Expected keyboard report at 474ms: { 4 }
-Observed keyboard report at 474ms: { 4 }
-Expected keyboard report at 475ms: { }
-Observed keyboard report at 475ms: { }
-Expected keyboard report at 476ms: { 5 }
-Observed keyboard report at 476ms: { 5 }
-Expected keyboard report at 477ms: { }
-Observed keyboard report at 477ms: { }
-Expected keyboard report at 478ms: { 6 }
-Observed keyboard report at 478ms: { 6 }
-Expected keyboard report at 479ms: { }
-Observed keyboard report at 479ms: { }
 [       OK ] PersonalConfig.8_MacroRecordIntoWrongSlot (0 ms)
 [ RUN      ] PersonalConfig.9_MacroReplayPLAYPLAY
-Expected keyboard report at 492ms: { 4 }
-Observed keyboard report at 492ms: { 4 }
-Expected keyboard report at 493ms: { }
-Observed keyboard report at 493ms: { }
-Expected keyboard report at 494ms: { 5 }
-Observed keyboard report at 494ms: { 5 }
-Expected keyboard report at 495ms: { }
-Observed keyboard report at 495ms: { }
-Expected keyboard report at 504ms: { 4 }
-Observed keyboard report at 504ms: { 4 }
-Expected keyboard report at 504ms: { }
-Observed keyboard report at 504ms: { }
-Expected keyboard report at 504ms: { 5 }
-Observed keyboard report at 504ms: { 5 }
-Expected keyboard report at 504ms: { }
-Observed keyboard report at 504ms: { }
-Expected keyboard report at 511ms: { 4 }
-Observed keyboard report at 511ms: { 4 }
-Expected keyboard report at 511ms: { }
-Observed keyboard report at 511ms: { }
-Expected keyboard report at 511ms: { 5 }
-Observed keyboard report at 511ms: { 5 }
-Expected keyboard report at 511ms: { }
-Observed keyboard report at 511ms: { }
-Expected keyboard report at 521ms: { 4 }
-Observed keyboard report at 521ms: { 4 }
-Expected keyboard report at 521ms: { }
-Observed keyboard report at 521ms: { }
-Expected keyboard report at 521ms: { 5 }
-Observed keyboard report at 521ms: { 5 }
-Expected keyboard report at 521ms: { }
-Observed keyboard report at 521ms: { }
-Expected keyboard report at 525ms: { 35 }
-Observed keyboard report at 525ms: { 35 }
-Expected keyboard report at 526ms: { }
-Observed keyboard report at 526ms: { }
-Expected keyboard report at 528ms: { a }
-Observed keyboard report at 528ms: { a }
-Expected keyboard report at 529ms: { }
-Observed keyboard report at 529ms: { }
 [       OK ] PersonalConfig.9_MacroReplayPLAYPLAY (1 ms)
-[----------] 10 tests from PersonalConfig (20 ms total)
+[----------] 10 tests from PersonalConfig (14 ms total)
 
 [----------] Global test environment tear-down
-[==========] 10 tests from 1 test suite ran. (20 ms total)
+[==========] 10 tests from 1 test suite ran. (14 ms total)
 [  PASSED  ] 10 tests.
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
@@ -2594,67 +1673,15 @@ Running test plugins/Turbo/sticky
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/Turbo/sticky/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_TurboNoRegression
-Expected keyboard report at 5ms: { 4 }
-Observed keyboard report at 5ms: { 4 }
-Expected keyboard report at 10ms: { }
-Observed keyboard report at 10ms: { }
 [       OK ] GeneratedKTest.1_TurboNoRegression (0 ms)
 [ RUN      ] GeneratedKTest.2_TurboSecond
-Expected keyboard report at 20ms: { 4 }
-Observed keyboard report at 20ms: { 4 }
-Expected keyboard report at 25ms: { }
-Observed keyboard report at 25ms: { }
-Expected keyboard report at 25ms: { 4 }
-Observed keyboard report at 25ms: { 4 }
-Expected keyboard report at 45ms: { }
-Observed keyboard report at 45ms: { }
-Expected keyboard report at 45ms: { 4 }
-Observed keyboard report at 45ms: { 4 }
-Expected keyboard report at 65ms: { }
-Observed keyboard report at 65ms: { }
-Expected keyboard report at 65ms: { 4 }
-Observed keyboard report at 65ms: { 4 }
-Expected keyboard report at 85ms: { }
-Observed keyboard report at 85ms: { }
-Expected keyboard report at 85ms: { 4 }
-Observed keyboard report at 85ms: { 4 }
-Expected keyboard report at 105ms: { }
-Observed keyboard report at 105ms: { }
-Expected keyboard report at 105ms: { 4 }
-Observed keyboard report at 105ms: { 4 }
-Expected keyboard report at 115ms: { }
-Observed keyboard report at 115ms: { }
-Expected keyboard report at 140ms: { 5 }
-Observed keyboard report at 140ms: { 5 }
-Expected keyboard report at 145ms: { }
-Observed keyboard report at 145ms: { }
-Expected keyboard report at 145ms: { 5 }
-Observed keyboard report at 145ms: { 5 }
-Expected keyboard report at 165ms: { }
-Observed keyboard report at 165ms: { }
-Expected keyboard report at 165ms: { 5 }
-Observed keyboard report at 165ms: { 5 }
-Expected keyboard report at 196ms: { }
-Observed keyboard report at 196ms: { }
 [       OK ] GeneratedKTest.2_TurboSecond (0 ms)
 [ RUN      ] GeneratedKTest.3_TurboFirst
-Expected keyboard report at 221ms: { 4 }
-Observed keyboard report at 221ms: { 4 }
-Expected keyboard report at 226ms: { }
-Observed keyboard report at 226ms: { }
-Expected keyboard report at 226ms: { 4 }
-Observed keyboard report at 226ms: { 4 }
-Expected keyboard report at 246ms: { }
-Observed keyboard report at 246ms: { }
-Expected keyboard report at 246ms: { 4 }
-Observed keyboard report at 246ms: { 4 }
-Expected keyboard report at 251ms: { }
-Observed keyboard report at 251ms: { }
 [       OK ] GeneratedKTest.3_TurboFirst (0 ms)
-[----------] 4 tests from GeneratedKTest (1 ms total)
+[----------] 4 tests from GeneratedKTest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 4 tests from 1 test suite ran. (1 ms total)
+[==========] 4 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 4 tests.
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
@@ -2678,55 +1705,15 @@ Running test plugins/Turbo/basic
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/Turbo/basic/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_TurboNoRegression
-Expected keyboard report at 5ms: { 4 }
-Observed keyboard report at 5ms: { 4 }
-Expected keyboard report at 10ms: { }
-Observed keyboard report at 10ms: { }
 [       OK ] GeneratedKTest.1_TurboNoRegression (0 ms)
 [ RUN      ] GeneratedKTest.2_TurboSecond
-Expected keyboard report at 20ms: { 4 }
-Observed keyboard report at 20ms: { 4 }
-Expected keyboard report at 25ms: { }
-Observed keyboard report at 25ms: { }
-Expected keyboard report at 25ms: { 4 }
-Observed keyboard report at 25ms: { 4 }
-Expected keyboard report at 35ms: { }
-Observed keyboard report at 35ms: { }
-Expected keyboard report at 35ms: { 4 }
-Observed keyboard report at 35ms: { 4 }
-Expected keyboard report at 45ms: { }
-Observed keyboard report at 45ms: { }
-Expected keyboard report at 45ms: { 4 }
-Observed keyboard report at 45ms: { 4 }
-Expected keyboard report at 55ms: { }
-Observed keyboard report at 55ms: { }
-Expected keyboard report at 55ms: { 4 }
-Observed keyboard report at 55ms: { 4 }
-Expected keyboard report at 65ms: { }
-Observed keyboard report at 65ms: { }
-Expected keyboard report at 65ms: { 4 }
-Observed keyboard report at 65ms: { 4 }
-Expected keyboard report at 95ms: { }
-Observed keyboard report at 95ms: { }
 [       OK ] GeneratedKTest.2_TurboSecond (0 ms)
 [ RUN      ] GeneratedKTest.3_TurboFirst
-Expected keyboard report at 120ms: { 4 }
-Observed keyboard report at 120ms: { 4 }
-Expected keyboard report at 125ms: { }
-Observed keyboard report at 125ms: { }
-Expected keyboard report at 125ms: { 4 }
-Observed keyboard report at 125ms: { 4 }
-Expected keyboard report at 135ms: { }
-Observed keyboard report at 135ms: { }
-Expected keyboard report at 135ms: { 4 }
-Observed keyboard report at 135ms: { 4 }
-Expected keyboard report at 140ms: { }
-Observed keyboard report at 140ms: { }
 [       OK ] GeneratedKTest.3_TurboFirst (0 ms)
-[----------] 4 tests from GeneratedKTest (1 ms total)
+[----------] 4 tests from GeneratedKTest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 4 tests from 1 test suite ran. (1 ms total)
+[==========] 4 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 4 tests.
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
@@ -2749,20 +1736,8 @@ Running test plugins/ShapeShifter/basic
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/ShapeShifter/basic/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_ShapeShifterWithoutShift
-Expected keyboard report at 6ms: { 1e }
-Observed keyboard report at 6ms: { 1e }
-Expected keyboard report at 12ms: { }
-Observed keyboard report at 12ms: { }
 [       OK ] GeneratedKTest.1_ShapeShifterWithoutShift (0 ms)
 [ RUN      ] GeneratedKTest.2_ShapeShifterFullOverlap
-Expected keyboard report at 18ms: { e1 }
-Observed keyboard report at 18ms: { e1 }
-Expected keyboard report at 24ms: { 1f e1 }
-Observed keyboard report at 24ms: { 1f e1 }
-Expected keyboard report at 30ms: { e1 }
-Observed keyboard report at 30ms: { e1 }
-Expected keyboard report at 36ms: { }
-Observed keyboard report at 36ms: { }
 [       OK ] GeneratedKTest.2_ShapeShifterFullOverlap (0 ms)
 [----------] 3 tests from GeneratedKTest (0 ms total)
 
@@ -2791,41 +1766,17 @@ Running test plugins/TapDance/basic
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/TapDance/basic/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_TapdanceInterrupt
-Expected keyboard report at 31ms: { 5 }
-Observed keyboard report at 31ms: { 5 }
-Expected keyboard report at 31ms: { }
-Observed keyboard report at 31ms: { }
-Expected keyboard report at 31ms: { 1b }
-Observed keyboard report at 31ms: { 1b }
-Expected keyboard report at 47ms: { }
-Observed keyboard report at 47ms: { }
 [       OK ] GeneratedKTest.1_TapdanceInterrupt (0 ms)
 [ RUN      ] GeneratedKTest.2_TapdanceTimeout
-Expected keyboard report at 138ms: { 5 }
-Observed keyboard report at 138ms: { 5 }
-Expected keyboard report at 138ms: { }
-Observed keyboard report at 138ms: { }
 [       OK ] GeneratedKTest.2_TapdanceTimeout (0 ms)
 [ RUN      ] GeneratedKTest.3_TapdanceInterruptWithRollover
-Expected keyboard report at 164ms: { 5 }
-Observed keyboard report at 164ms: { 5 }
-Expected keyboard report at 164ms: { 5 1b }
-Observed keyboard report at 164ms: { 5 1b }
-Expected keyboard report at 170ms: { 1b }
-Observed keyboard report at 170ms: { 1b }
-Expected keyboard report at 176ms: { }
-Observed keyboard report at 176ms: { }
 [       OK ] GeneratedKTest.3_TapdanceInterruptWithRollover (0 ms)
 [ RUN      ] GeneratedKTest.4_TapdanceTimeoutWhileHeld
-Expected keyboard report at 222ms: { b }
-Observed keyboard report at 222ms: { b }
-Expected keyboard report at 233ms: { }
-Observed keyboard report at 233ms: { }
 [       OK ] GeneratedKTest.4_TapdanceTimeoutWhileHeld (0 ms)
-[----------] 5 tests from GeneratedKTest (1 ms total)
+[----------] 5 tests from GeneratedKTest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 5 tests from 1 test suite ran. (1 ms total)
+[==========] 5 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 5 tests.
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
@@ -2851,74 +1802,18 @@ Running test plugins/OneShot/meta-keys
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/OneShot/meta-keys/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_OneShotMetaSticky
-Expected keyboard report at 15ms: { 4 }
-Observed keyboard report at 15ms: { 4 }
-Expected keyboard report at 30ms: { }
-Observed keyboard report at 30ms: { }
-Expected keyboard report at 35ms: { 4 }
-Observed keyboard report at 35ms: { 4 }
-Expected keyboard report at 40ms: { }
-Observed keyboard report at 40ms: { }
 [       OK ] GeneratedKTest.1_OneShotMetaSticky (0 ms)
 [ RUN      ] GeneratedKTest.2_OneShotMetaStickyRollover
-Expected keyboard report at 55ms: { 4 }
-Observed keyboard report at 55ms: { 4 }
-Expected keyboard report at 75ms: { }
-Observed keyboard report at 75ms: { }
-Expected keyboard report at 80ms: { 4 }
-Observed keyboard report at 80ms: { 4 }
-Expected keyboard report at 85ms: { }
-Observed keyboard report at 85ms: { }
 [       OK ] GeneratedKTest.2_OneShotMetaStickyRollover (0 ms)
 [ RUN      ] GeneratedKTest.3_OneShotMetaStickyOverlap
-Expected keyboard report at 100ms: { 4 }
-Observed keyboard report at 100ms: { 4 }
-Expected keyboard report at 120ms: { }
-Observed keyboard report at 120ms: { }
-Expected keyboard report at 125ms: { 4 }
-Observed keyboard report at 125ms: { 4 }
-Expected keyboard report at 130ms: { }
-Observed keyboard report at 130ms: { }
 [       OK ] GeneratedKTest.3_OneShotMetaStickyOverlap (0 ms)
 [ RUN      ] GeneratedKTest.4_OneShotMetaStickyOverlapToRollover
-Expected keyboard report at 145ms: { 4 }
-Observed keyboard report at 145ms: { 4 }
-Expected keyboard report at 165ms: { }
-Observed keyboard report at 165ms: { }
-Expected keyboard report at 170ms: { 4 }
-Observed keyboard report at 170ms: { 4 }
-Expected keyboard report at 175ms: { }
-Observed keyboard report at 175ms: { }
 [       OK ] GeneratedKTest.4_OneShotMetaStickyOverlapToRollover (0 ms)
 [ RUN      ] GeneratedKTest.5_OneShotMetaStickySticky
-Expected keyboard report at 205ms: { 4 }
-Observed keyboard report at 205ms: { 4 }
-Expected keyboard report at 215ms: { 4 5 }
-Observed keyboard report at 215ms: { 4 5 }
-Expected keyboard report at 240ms: { 5 }
-Observed keyboard report at 240ms: { 5 }
-Expected keyboard report at 250ms: { }
-Observed keyboard report at 250ms: { }
-Expected keyboard report at 255ms: { 4 }
-Observed keyboard report at 255ms: { 4 }
-Expected keyboard report at 260ms: { }
-Observed keyboard report at 260ms: { }
 [       OK ] GeneratedKTest.5_OneShotMetaStickySticky (0 ms)
 [ RUN      ] GeneratedKTest.6_OneShotActiveSticky
-Expected keyboard report at 270ms: { 4 }
-Observed keyboard report at 270ms: { 4 }
-Expected keyboard report at 295ms: { }
-Observed keyboard report at 295ms: { }
 [       OK ] GeneratedKTest.6_OneShotActiveSticky (0 ms)
 [ RUN      ] GeneratedKTest.7_OneShotActiveStickyTwoKeys
-Expected keyboard report at 305ms: { 4 }
-Observed keyboard report at 305ms: { 4 }
-Expected keyboard report at 310ms: { 4 5 }
-Observed keyboard report at 310ms: { 4 5 }
-Expected keyboard report at 340ms: { 5 }
-Observed keyboard report at 340ms: { 5 }
-Expected keyboard report at 350ms: { }
-Observed keyboard report at 350ms: { }
 [       OK ] GeneratedKTest.7_OneShotActiveStickyTwoKeys (0 ms)
 [----------] 8 tests from GeneratedKTest (1 ms total)
 
@@ -2948,65 +1843,21 @@ Running test plugins/OneShot/basic
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/OneShot/basic/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_OneShotTimeout
-Expected keyboard report at 6ms: { e1 }
-Observed keyboard report at 6ms: { e1 }
-Expected keyboard report at 56ms: { }
-Observed keyboard report at 56ms: { }
 [       OK ] GeneratedKTest.1_OneShotTimeout (0 ms)
 [ RUN      ] GeneratedKTest.2_OneShotNextKey
-Expected keyboard report at 62ms: { e1 }
-Observed keyboard report at 62ms: { e1 }
-Expected keyboard report at 78ms: { 4 e1 }
-Observed keyboard report at 78ms: { 4 e1 }
-Expected keyboard report at 78ms: { 4 }
-Observed keyboard report at 78ms: { 4 }
-Expected keyboard report at 84ms: { }
-Observed keyboard report at 84ms: { }
 [       OK ] GeneratedKTest.2_OneShotNextKey (0 ms)
 [ RUN      ] GeneratedKTest.3_OneShotDoubleTap
-Expected keyboard report at 90ms: { e1 }
-Observed keyboard report at 90ms: { e1 }
-Expected keyboard report at 156ms: { 4 e1 }
-Observed keyboard report at 156ms: { 4 e1 }
-Expected keyboard report at 162ms: { e1 }
-Observed keyboard report at 162ms: { e1 }
-Expected keyboard report at 173ms: { 4 e1 }
-Observed keyboard report at 173ms: { 4 e1 }
-Expected keyboard report at 179ms: { e1 }
-Observed keyboard report at 179ms: { e1 }
-Expected keyboard report at 190ms: { }
-Observed keyboard report at 190ms: { }
 [       OK ] GeneratedKTest.3_OneShotDoubleTap (0 ms)
 [ RUN      ] GeneratedKTest.4_OneShotDoubleTapTimeout
-Expected keyboard report at 196ms: { e1 }
-Observed keyboard report at 196ms: { e1 }
-Expected keyboard report at 227ms: { }
-Observed keyboard report at 227ms: { }
-Expected keyboard report at 278ms: { 4 }
-Observed keyboard report at 278ms: { 4 }
-Expected keyboard report at 284ms: { }
-Observed keyboard report at 284ms: { }
 [       OK ] GeneratedKTest.4_OneShotDoubleTapTimeout (0 ms)
 [ RUN      ] GeneratedKTest.5_OneShotHoldTimeout
-Expected keyboard report at 300ms: { e1 }
-Observed keyboard report at 300ms: { e1 }
-Expected keyboard report at 331ms: { }
-Observed keyboard report at 331ms: { }
 [       OK ] GeneratedKTest.5_OneShotHoldTimeout (0 ms)
 [ RUN      ] GeneratedKTest.6_OneShotRollover
-Expected keyboard report at 337ms: { e1 }
-Observed keyboard report at 337ms: { e1 }
-Expected keyboard report at 343ms: { 4 e1 }
-Observed keyboard report at 343ms: { 4 e1 }
-Expected keyboard report at 349ms: { 4 }
-Observed keyboard report at 349ms: { 4 }
-Expected keyboard report at 355ms: { }
-Observed keyboard report at 355ms: { }
 [       OK ] GeneratedKTest.6_OneShotRollover (0 ms)
-[----------] 7 tests from GeneratedKTest (1 ms total)
+[----------] 7 tests from GeneratedKTest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 7 tests from 1 test suite ran. (1 ms total)
+[==========] 7 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 7 tests.
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
@@ -3030,46 +1881,10 @@ Running test plugins/Qukeys/TapRepeat
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/Qukeys/TapRepeat/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_TapRepeatGenericQukey
-Expected keyboard report at 16ms: { 4 }
-Observed keyboard report at 16ms: { 4 }
-Expected keyboard report at 27ms: { }
-Observed keyboard report at 27ms: { }
-Expected keyboard report at 27ms: { 4 }
-Observed keyboard report at 27ms: { 4 }
-Expected keyboard report at 42ms: { }
-Observed keyboard report at 42ms: { }
-Expected keyboard report at 148ms: { 4 }
-Observed keyboard report at 148ms: { 4 }
-Expected keyboard report at 204ms: { }
-Observed keyboard report at 204ms: { }
 [       OK ] GeneratedKTest.1_TapRepeatGenericQukey (0 ms)
 [ RUN      ] GeneratedKTest.2_TapRepeatDualUseQukey
-Expected keyboard report at 220ms: { d }
-Observed keyboard report at 220ms: { d }
-Expected keyboard report at 231ms: { }
-Observed keyboard report at 231ms: { }
-Expected keyboard report at 231ms: { d }
-Observed keyboard report at 231ms: { d }
-Expected keyboard report at 246ms: { }
-Observed keyboard report at 246ms: { }
-Expected keyboard report at 352ms: { d }
-Observed keyboard report at 352ms: { d }
-Expected keyboard report at 408ms: { }
-Observed keyboard report at 408ms: { }
 [       OK ] GeneratedKTest.2_TapRepeatDualUseQukey (0 ms)
 [ RUN      ] GeneratedKTest.3_TapRepeatSpaceCadetQukey
-Expected keyboard report at 424ms: { 5 }
-Observed keyboard report at 424ms: { 5 }
-Expected keyboard report at 435ms: { }
-Observed keyboard report at 435ms: { }
-Expected keyboard report at 435ms: { 5 }
-Observed keyboard report at 435ms: { 5 }
-Expected keyboard report at 450ms: { }
-Observed keyboard report at 450ms: { }
-Expected keyboard report at 556ms: { 5 }
-Observed keyboard report at 556ms: { 5 }
-Expected keyboard report at 612ms: { }
-Observed keyboard report at 612ms: { }
 [       OK ] GeneratedKTest.3_TapRepeatSpaceCadetQukey (0 ms)
 [----------] 4 tests from GeneratedKTest (1 ms total)
 
@@ -3131,20 +1946,8 @@ Running test plugins/AutoShift/basic
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/AutoShift/basic/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_AutoShiftTap
-Expected keyboard report at 10ms: { 4 }
-Observed keyboard report at 10ms: { 4 }
-Expected keyboard report at 10ms: { }
-Observed keyboard report at 10ms: { }
 [       OK ] GeneratedKTest.1_AutoShiftTap (0 ms)
 [ RUN      ] GeneratedKTest.2_AutoShiftLongPress
-Expected keyboard report at 40ms: { e1 }
-Observed keyboard report at 40ms: { e1 }
-Expected keyboard report at 40ms: { 4 e1 }
-Observed keyboard report at 40ms: { 4 e1 }
-Expected keyboard report at 45ms: { e1 }
-Observed keyboard report at 45ms: { e1 }
-Expected keyboard report at 45ms: { }
-Observed keyboard report at 45ms: { }
 [       OK ] GeneratedKTest.2_AutoShiftLongPress (0 ms)
 [----------] 3 tests from GeneratedKTest (0 ms total)
 
@@ -3175,49 +1978,17 @@ Running test plugins/Redial/basic
 [ RUN      ] GeneratedKTest.1_RedialWithNoPriorKeypress
 [       OK ] GeneratedKTest.1_RedialWithNoPriorKeypress (0 ms)
 [ RUN      ] GeneratedKTest.2_RedialFirstKey
-Expected keyboard report at 26ms: { 4 }
-Observed keyboard report at 26ms: { 4 }
-Expected keyboard report at 37ms: { }
-Observed keyboard report at 37ms: { }
-Expected keyboard report at 48ms: { 4 }
-Observed keyboard report at 48ms: { 4 }
-Expected keyboard report at 59ms: { }
-Observed keyboard report at 59ms: { }
 [       OK ] GeneratedKTest.2_RedialFirstKey (0 ms)
 [ RUN      ] GeneratedKTest.3_RedialNextKey
-Expected keyboard report at 70ms: { 1b }
-Observed keyboard report at 70ms: { 1b }
-Expected keyboard report at 81ms: { }
-Observed keyboard report at 81ms: { }
-Expected keyboard report at 92ms: { 1b }
-Observed keyboard report at 92ms: { 1b }
-Expected keyboard report at 103ms: { }
-Observed keyboard report at 103ms: { }
 [       OK ] GeneratedKTest.3_RedialNextKey (0 ms)
 [ RUN      ] GeneratedKTest.4_RedialRollover
-Expected keyboard report at 114ms: { 4 }
-Observed keyboard report at 114ms: { 4 }
-Expected keyboard report at 125ms: { }
-Observed keyboard report at 125ms: { }
-Expected keyboard report at 125ms: { 4 }
-Observed keyboard report at 125ms: { 4 }
-Expected keyboard report at 146ms: { }
-Observed keyboard report at 146ms: { }
 [       OK ] GeneratedKTest.4_RedialRollover (0 ms)
 [ RUN      ] GeneratedKTest.5_RedialRolloverRightToLeft
-Expected keyboard report at 157ms: { 1b }
-Observed keyboard report at 157ms: { 1b }
-Expected keyboard report at 168ms: { }
-Observed keyboard report at 168ms: { }
-Expected keyboard report at 168ms: { 1b }
-Observed keyboard report at 168ms: { 1b }
-Expected keyboard report at 189ms: { }
-Observed keyboard report at 189ms: { }
 [       OK ] GeneratedKTest.5_RedialRolloverRightToLeft (0 ms)
-[----------] 6 tests from GeneratedKTest (1 ms total)
+[----------] 6 tests from GeneratedKTest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 6 tests from 1 test suite ran. (1 ms total)
+[==========] 6 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 6 tests.
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
@@ -3242,65 +2013,21 @@ Running test plugins/SpaceCadet/no-delay
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/SpaceCadet/no-delay/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_SpaceCadetTap
-Expected keyboard report at 5ms: { e1 }
-Observed keyboard report at 5ms: { e1 }
-Expected keyboard report at 10ms: { }
-Observed keyboard report at 10ms: { }
-Expected keyboard report at 10ms: { 1b }
-Observed keyboard report at 10ms: { 1b }
-Expected keyboard report at 10ms: { }
-Observed keyboard report at 10ms: { }
 [       OK ] GeneratedKTest.1_SpaceCadetTap (0 ms)
 [ RUN      ] GeneratedKTest.2_SpaceCadetHold
-Expected keyboard report at 20ms: { e1 }
-Observed keyboard report at 20ms: { e1 }
-Expected keyboard report at 31ms: { }
-Observed keyboard report at 31ms: { }
 [       OK ] GeneratedKTest.2_SpaceCadetHold (0 ms)
 [ RUN      ] GeneratedKTest.3_SpaceCadetHoldWithGlobalTimeout
-Expected keyboard report at 41ms: { e5 }
-Observed keyboard report at 41ms: { e5 }
-Expected keyboard report at 62ms: { }
-Observed keyboard report at 62ms: { }
 [       OK ] GeneratedKTest.3_SpaceCadetHoldWithGlobalTimeout (0 ms)
 [ RUN      ] GeneratedKTest.4_SpaceCadetInterrupt
-Expected keyboard report at 72ms: { e1 }
-Observed keyboard report at 72ms: { e1 }
-Expected keyboard report at 77ms: { 4 e1 }
-Observed keyboard report at 77ms: { 4 e1 }
-Expected keyboard report at 82ms: { 4 }
-Observed keyboard report at 82ms: { 4 }
-Expected keyboard report at 87ms: { }
-Observed keyboard report at 87ms: { }
 [       OK ] GeneratedKTest.4_SpaceCadetInterrupt (0 ms)
 [ RUN      ] GeneratedKTest.5_SpaceCadetInterruptSpaceCadetWithTap
-Expected keyboard report at 97ms: { e1 }
-Observed keyboard report at 97ms: { e1 }
-Expected keyboard report at 102ms: { e1 e5 }
-Observed keyboard report at 102ms: { e1 e5 }
-Expected keyboard report at 107ms: { e1 }
-Observed keyboard report at 107ms: { e1 }
-Expected keyboard report at 107ms: { 1c e1 }
-Observed keyboard report at 107ms: { 1c e1 }
-Expected keyboard report at 107ms: { e1 }
-Observed keyboard report at 107ms: { e1 }
-Expected keyboard report at 112ms: { }
-Observed keyboard report at 112ms: { }
 [       OK ] GeneratedKTest.5_SpaceCadetInterruptSpaceCadetWithTap (0 ms)
 [ RUN      ] GeneratedKTest.6_SpaceCadetInterruptSpaceCadetWithHold
-Expected keyboard report at 122ms: { e1 }
-Observed keyboard report at 122ms: { e1 }
-Expected keyboard report at 127ms: { e1 e5 }
-Observed keyboard report at 127ms: { e1 e5 }
-Expected keyboard report at 147ms: { e5 }
-Observed keyboard report at 147ms: { e5 }
-Expected keyboard report at 152ms: { }
-Observed keyboard report at 152ms: { }
 [       OK ] GeneratedKTest.6_SpaceCadetInterruptSpaceCadetWithHold (0 ms)
-[----------] 7 tests from GeneratedKTest (1 ms total)
+[----------] 7 tests from GeneratedKTest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 7 tests from 1 test suite ran. (1 ms total)
+[==========] 7 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 7 tests.
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
@@ -3325,67 +2052,23 @@ Running test plugins/SpaceCadet/basic
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/SpaceCadet/basic/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_SpaceCadetTap
-Expected keyboard report at 11ms: { 1b }
-Observed keyboard report at 11ms: { 1b }
-Expected keyboard report at 11ms: { }
-Observed keyboard report at 11ms: { }
 [       OK ] GeneratedKTest.1_SpaceCadetTap (0 ms)
 [ RUN      ] GeneratedKTest.2_SpaceCadetHold
-Expected keyboard report at 32ms: { e1 }
-Observed keyboard report at 32ms: { e1 }
-Expected keyboard report at 38ms: { }
-Observed keyboard report at 38ms: { }
 [       OK ] GeneratedKTest.2_SpaceCadetHold (0 ms)
 [ RUN      ] GeneratedKTest.3_SpaceCadetHoldWithGlobalTimeout
-Expected keyboard report at 64ms: { e5 }
-Observed keyboard report at 64ms: { e5 }
-Expected keyboard report at 70ms: { }
-Observed keyboard report at 70ms: { }
 [       OK ] GeneratedKTest.3_SpaceCadetHoldWithGlobalTimeout (0 ms)
 [ RUN      ] GeneratedKTest.4_SpaceCadetInterrupt
-Expected keyboard report at 80ms: { e1 }
-Observed keyboard report at 80ms: { e1 }
-Expected keyboard report at 80ms: { 4 e1 }
-Observed keyboard report at 80ms: { 4 e1 }
-Expected keyboard report at 84ms: { 4 }
-Observed keyboard report at 84ms: { 4 }
-Expected keyboard report at 88ms: { }
-Observed keyboard report at 88ms: { }
 [       OK ] GeneratedKTest.4_SpaceCadetInterrupt (0 ms)
 [ RUN      ] GeneratedKTest.5_SpaceCadetInterruptSpaceCadetWithTap
-Expected keyboard report at 98ms: { e1 }
-Observed keyboard report at 98ms: { e1 }
-Expected keyboard report at 102ms: { 1c e1 }
-Observed keyboard report at 102ms: { 1c e1 }
-Expected keyboard report at 102ms: { e1 }
-Observed keyboard report at 102ms: { e1 }
-Expected keyboard report at 106ms: { }
-Observed keyboard report at 106ms: { }
 [       OK ] GeneratedKTest.5_SpaceCadetInterruptSpaceCadetWithTap (0 ms)
 [ RUN      ] GeneratedKTest.6_SpaceCadetInterruptSpaceCadetWithHold
-Expected keyboard report at 116ms: { e1 }
-Observed keyboard report at 116ms: { e1 }
-Expected keyboard report at 136ms: { e1 e5 }
-Observed keyboard report at 136ms: { e1 e5 }
-Expected keyboard report at 142ms: { e5 }
-Observed keyboard report at 142ms: { e5 }
-Expected keyboard report at 146ms: { }
-Observed keyboard report at 146ms: { }
 [       OK ] GeneratedKTest.6_SpaceCadetInterruptSpaceCadetWithHold (0 ms)
 [ RUN      ] GeneratedKTest.7_SpaceCadetInterruptWithModifier
-Expected keyboard report at 156ms: { e1 }
-Observed keyboard report at 156ms: { e1 }
-Expected keyboard report at 156ms: { e1 e7 }
-Observed keyboard report at 156ms: { e1 e7 }
-Expected keyboard report at 162ms: { e7 }
-Observed keyboard report at 162ms: { e7 }
-Expected keyboard report at 166ms: { }
-Observed keyboard report at 166ms: { }
 [       OK ] GeneratedKTest.7_SpaceCadetInterruptWithModifier (0 ms)
-[----------] 8 tests from GeneratedKTest (1 ms total)
+[----------] 8 tests from GeneratedKTest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 8 tests from 1 test suite ran. (1 ms total)
+[==========] 8 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 8 tests.
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
@@ -3409,207 +2092,37 @@ Running test plugins/TopsyTurvy/basic
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/TopsyTurvy/basic/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_TopsyTurvyWithoutShift
-Expected keyboard report at 6ms: { e1 }
-Observed keyboard report at 6ms: { e1 }
-Expected keyboard report at 6ms: { 1e e1 }
-Observed keyboard report at 6ms: { 1e e1 }
-Expected keyboard report at 12ms: { e1 }
-Observed keyboard report at 12ms: { e1 }
-Expected keyboard report at 12ms: { }
-Observed keyboard report at 12ms: { }
 [       OK ] GeneratedKTest.1_TopsyTurvyWithoutShift (0 ms)
 [ RUN      ] GeneratedKTest.2_TopsyTurvyWithShift
-Expected keyboard report at 18ms: { e1 }
-Observed keyboard report at 18ms: { e1 }
-Expected keyboard report at 24ms: { }
-Observed keyboard report at 24ms: { }
-Expected keyboard report at 24ms: { 1e }
-Observed keyboard report at 24ms: { 1e }
-Expected keyboard report at 30ms: { }
-Observed keyboard report at 30ms: { }
-Expected keyboard report at 30ms: { e1 }
-Observed keyboard report at 30ms: { e1 }
-Expected keyboard report at 36ms: { }
-Observed keyboard report at 36ms: { }
 [       OK ] GeneratedKTest.2_TopsyTurvyWithShift (0 ms)
 [ RUN      ] GeneratedKTest.3_TopsyTurvyRolloverFromShift
-Expected keyboard report at 42ms: { e1 }
-Observed keyboard report at 42ms: { e1 }
-Expected keyboard report at 48ms: { }
-Observed keyboard report at 48ms: { }
-Expected keyboard report at 48ms: { 1e }
-Observed keyboard report at 48ms: { 1e }
-Expected keyboard report at 54ms: { 1e e1 }
-Observed keyboard report at 54ms: { 1e e1 }
-Expected keyboard report at 60ms: { e1 }
-Observed keyboard report at 60ms: { e1 }
-Expected keyboard report at 60ms: { }
-Observed keyboard report at 60ms: { }
 [       OK ] GeneratedKTest.3_TopsyTurvyRolloverFromShift (0 ms)
 [ RUN      ] GeneratedKTest.4_TopsyTurvyRolloverToShift
-Expected keyboard report at 66ms: { e1 }
-Observed keyboard report at 66ms: { e1 }
-Expected keyboard report at 66ms: { 1e e1 }
-Observed keyboard report at 66ms: { 1e e1 }
-Expected keyboard report at 72ms: { 1e }
-Observed keyboard report at 72ms: { 1e }
-Expected keyboard report at 78ms: { }
-Observed keyboard report at 78ms: { }
-Expected keyboard report at 78ms: { e1 }
-Observed keyboard report at 78ms: { e1 }
-Expected keyboard report at 84ms: { }
-Observed keyboard report at 84ms: { }
 [       OK ] GeneratedKTest.4_TopsyTurvyRolloverToShift (0 ms)
 [ RUN      ] GeneratedKTest.5_TopsyTurvyEncompassingShift
-Expected keyboard report at 90ms: { e1 }
-Observed keyboard report at 90ms: { e1 }
-Expected keyboard report at 90ms: { 1e e1 }
-Observed keyboard report at 90ms: { 1e e1 }
-Expected keyboard report at 96ms: { 1e }
-Observed keyboard report at 96ms: { 1e }
-Expected keyboard report at 102ms: { 1e e1 }
-Observed keyboard report at 102ms: { 1e e1 }
-Expected keyboard report at 108ms: { e1 }
-Observed keyboard report at 108ms: { e1 }
-Expected keyboard report at 108ms: { }
-Observed keyboard report at 108ms: { }
 [       OK ] GeneratedKTest.5_TopsyTurvyEncompassingShift (0 ms)
 [ RUN      ] GeneratedKTest.6_TopsyTurvyRolloverFromOther
-Expected keyboard report at 114ms: { 4 }
-Observed keyboard report at 114ms: { 4 }
-Expected keyboard report at 120ms: { }
-Observed keyboard report at 120ms: { }
-Expected keyboard report at 120ms: { e1 }
-Observed keyboard report at 120ms: { e1 }
-Expected keyboard report at 120ms: { 1e e1 }
-Observed keyboard report at 120ms: { 1e e1 }
-Expected keyboard report at 132ms: { e1 }
-Observed keyboard report at 132ms: { e1 }
-Expected keyboard report at 132ms: { }
-Observed keyboard report at 132ms: { }
 [       OK ] GeneratedKTest.6_TopsyTurvyRolloverFromOther (0 ms)
 [ RUN      ] GeneratedKTest.7_TopsyTurvyRolloverToOther
-Expected keyboard report at 138ms: { e1 }
-Observed keyboard report at 138ms: { e1 }
-Expected keyboard report at 138ms: { 1e e1 }
-Observed keyboard report at 138ms: { 1e e1 }
-Expected keyboard report at 144ms: { e1 }
-Observed keyboard report at 144ms: { e1 }
-Expected keyboard report at 144ms: { }
-Observed keyboard report at 144ms: { }
-Expected keyboard report at 144ms: { 4 }
-Observed keyboard report at 144ms: { 4 }
-Expected keyboard report at 156ms: { }
-Observed keyboard report at 156ms: { }
 [       OK ] GeneratedKTest.7_TopsyTurvyRolloverToOther (0 ms)
 [ RUN      ] GeneratedKTest.8_TopsyTurvyEncompassingOther
-Expected keyboard report at 162ms: { e1 }
-Observed keyboard report at 162ms: { e1 }
-Expected keyboard report at 162ms: { 1e e1 }
-Observed keyboard report at 162ms: { 1e e1 }
-Expected keyboard report at 168ms: { e1 }
-Observed keyboard report at 168ms: { e1 }
-Expected keyboard report at 168ms: { }
-Observed keyboard report at 168ms: { }
-Expected keyboard report at 168ms: { 4 }
-Observed keyboard report at 168ms: { 4 }
-Expected keyboard report at 174ms: { }
-Observed keyboard report at 174ms: { }
 [       OK ] GeneratedKTest.8_TopsyTurvyEncompassingOther (0 ms)
 [ RUN      ] GeneratedKTest.9_TopsyTurvyEncompassedByOther
-Expected keyboard report at 186ms: { 4 }
-Observed keyboard report at 186ms: { 4 }
-Expected keyboard report at 192ms: { }
-Observed keyboard report at 192ms: { }
-Expected keyboard report at 192ms: { e1 }
-Observed keyboard report at 192ms: { e1 }
-Expected keyboard report at 192ms: { 1e e1 }
-Observed keyboard report at 192ms: { 1e e1 }
-Expected keyboard report at 198ms: { e1 }
-Observed keyboard report at 198ms: { e1 }
-Expected keyboard report at 198ms: { }
-Observed keyboard report at 198ms: { }
 [       OK ] GeneratedKTest.9_TopsyTurvyEncompassedByOther (0 ms)
 [ RUN      ] GeneratedKTest.10_TopsyTurvyRolloverFromOtherWithShift
-Expected keyboard report at 210ms: { e1 }
-Observed keyboard report at 210ms: { e1 }
-Expected keyboard report at 216ms: { 4 e1 }
-Observed keyboard report at 216ms: { 4 e1 }
-Expected keyboard report at 222ms: { e1 }
-Observed keyboard report at 222ms: { e1 }
-Expected keyboard report at 222ms: { }
-Observed keyboard report at 222ms: { }
-Expected keyboard report at 222ms: { 1e }
-Observed keyboard report at 222ms: { 1e }
-Expected keyboard report at 234ms: { }
-Observed keyboard report at 234ms: { }
-Expected keyboard report at 234ms: { e1 }
-Observed keyboard report at 234ms: { e1 }
-Expected keyboard report at 240ms: { }
-Observed keyboard report at 240ms: { }
 [       OK ] GeneratedKTest.10_TopsyTurvyRolloverFromOtherWithShift (0 ms)
 [ RUN      ] GeneratedKTest.11_TopsyTurvyRolloverToOtherWithShift
-Expected keyboard report at 246ms: { e1 }
-Observed keyboard report at 246ms: { e1 }
-Expected keyboard report at 252ms: { }
-Observed keyboard report at 252ms: { }
-Expected keyboard report at 252ms: { 1e }
-Observed keyboard report at 252ms: { 1e }
-Expected keyboard report at 258ms: { }
-Observed keyboard report at 258ms: { }
-Expected keyboard report at 258ms: { e1 }
-Observed keyboard report at 258ms: { e1 }
-Expected keyboard report at 258ms: { 4 e1 }
-Observed keyboard report at 258ms: { 4 e1 }
-Expected keyboard report at 270ms: { e1 }
-Observed keyboard report at 270ms: { e1 }
-Expected keyboard report at 276ms: { }
-Observed keyboard report at 276ms: { }
 [       OK ] GeneratedKTest.11_TopsyTurvyRolloverToOtherWithShift (0 ms)
 [ RUN      ] GeneratedKTest.12_TopsyTurvyRolloverToTopsyTurvy
-Expected keyboard report at 282ms: { e1 }
-Observed keyboard report at 282ms: { e1 }
-Expected keyboard report at 282ms: { 1e e1 }
-Observed keyboard report at 282ms: { 1e e1 }
-Expected keyboard report at 288ms: { 1f e1 }
-Observed keyboard report at 288ms: { 1f e1 }
-Expected keyboard report at 300ms: { e1 }
-Observed keyboard report at 300ms: { e1 }
-Expected keyboard report at 300ms: { }
-Observed keyboard report at 300ms: { }
 [       OK ] GeneratedKTest.12_TopsyTurvyRolloverToTopsyTurvy (0 ms)
 [ RUN      ] GeneratedKTest.13_TopsyTurvyRolloverFromOtherModifier
-Expected keyboard report at 306ms: { e2 }
-Observed keyboard report at 306ms: { e2 }
-Expected keyboard report at 312ms: { e1 e2 }
-Observed keyboard report at 312ms: { e1 e2 }
-Expected keyboard report at 312ms: { 1e e1 e2 }
-Observed keyboard report at 312ms: { 1e e1 e2 }
-Expected keyboard report at 318ms: { 1e e1 }
-Observed keyboard report at 318ms: { 1e e1 }
-Expected keyboard report at 324ms: { e1 }
-Observed keyboard report at 324ms: { e1 }
-Expected keyboard report at 324ms: { }
-Observed keyboard report at 324ms: { }
 [       OK ] GeneratedKTest.13_TopsyTurvyRolloverFromOtherModifier (0 ms)
 [ RUN      ] GeneratedKTest.14_TopsyTurvyWithOtherModifier
-Expected keyboard report at 330ms: { e2 }
-Observed keyboard report at 330ms: { e2 }
-Expected keyboard report at 336ms: { e1 e2 }
-Observed keyboard report at 336ms: { e1 e2 }
-Expected keyboard report at 336ms: { 1e e1 e2 }
-Observed keyboard report at 336ms: { 1e e1 e2 }
-Expected keyboard report at 342ms: { e1 e2 }
-Observed keyboard report at 342ms: { e1 e2 }
-Expected keyboard report at 342ms: { e2 }
-Observed keyboard report at 342ms: { e2 }
-Expected keyboard report at 348ms: { }
-Observed keyboard report at 348ms: { }
 [       OK ] GeneratedKTest.14_TopsyTurvyWithOtherModifier (0 ms)
-[----------] 15 tests from GeneratedKTest (3 ms total)
+[----------] 15 tests from GeneratedKTest (2 ms total)
 
 [----------] Global test environment tear-down
-[==========] 15 tests from 1 test suite ran. (3 ms total)
+[==========] 15 tests from 1 test suite ran. (2 ms total)
 [  PASSED  ] 15 tests.
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
@@ -3635,24 +2148,12 @@ Running test plugins/WinKeyToggle/basic
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/WinKeyToggle/basic/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_WinKeyEnabledOnStart
-Expected keyboard report at 5ms: { e3 }
-Observed keyboard report at 5ms: { e3 }
-Expected keyboard report at 10ms: { }
-Observed keyboard report at 10ms: { }
 [       OK ] GeneratedKTest.1_WinKeyEnabledOnStart (0 ms)
 [ RUN      ] GeneratedKTest.2_WinKeyDisabledAfterToggle
 [       OK ] GeneratedKTest.2_WinKeyDisabledAfterToggle (0 ms)
 [ RUN      ] GeneratedKTest.3_WinKeyToggleOtherKeysNotDisabled
-Expected keyboard report at 45ms: { 4 }
-Observed keyboard report at 45ms: { 4 }
-Expected keyboard report at 50ms: { }
-Observed keyboard report at 50ms: { }
 [       OK ] GeneratedKTest.3_WinKeyToggleOtherKeysNotDisabled (0 ms)
 [ RUN      ] GeneratedKTest.4_WinKeyToggleTurnsBackOn
-Expected keyboard report at 70ms: { e3 }
-Observed keyboard report at 70ms: { e3 }
-Expected keyboard report at 75ms: { }
-Observed keyboard report at 75ms: { }
 [       OK ] GeneratedKTest.4_WinKeyToggleTurnsBackOn (0 ms)
 [----------] 5 tests from GeneratedKTest (0 ms total)
 
@@ -3683,129 +2184,21 @@ Running test plugins/MacrosOnTheFly/BasicRepeat
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/BasicRepeat/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_MacrosOnTheFlyNothingRecorded
-Expected keyboard report at 11ms: { 4 }
-Observed keyboard report at 11ms: { 4 }
-Expected keyboard report at 13ms: { }
-Observed keyboard report at 13ms: { }
-Expected keyboard report at 20ms: { 5 }
-Observed keyboard report at 20ms: { 5 }
-Expected keyboard report at 22ms: { }
-Observed keyboard report at 22ms: { }
-Expected keyboard report at 29ms: { d }
-Observed keyboard report at 29ms: { d }
-Expected keyboard report at 31ms: { }
-Observed keyboard report at 31ms: { }
 [       OK ] GeneratedKTest.1_MacrosOnTheFlyNothingRecorded (0 ms)
 [ RUN      ] GeneratedKTest.2_MacrosOnTheFlySimpleRecording
-Expected keyboard report at 48ms: { d }
-Observed keyboard report at 48ms: { d }
-Expected keyboard report at 49ms: { }
-Observed keyboard report at 49ms: { }
-Expected keyboard report at 56ms: { 5 }
-Observed keyboard report at 56ms: { 5 }
-Expected keyboard report at 57ms: { }
-Observed keyboard report at 57ms: { }
-Expected keyboard report at 69ms: { 5 }
-Observed keyboard report at 69ms: { 5 }
-Expected keyboard report at 69ms: { }
-Observed keyboard report at 69ms: { }
-Expected keyboard report at 76ms: { 5 }
-Observed keyboard report at 76ms: { 5 }
-Expected keyboard report at 76ms: { }
-Observed keyboard report at 76ms: { }
-Expected keyboard report at 83ms: { d }
-Observed keyboard report at 83ms: { d }
-Expected keyboard report at 83ms: { }
-Observed keyboard report at 83ms: { }
 [       OK ] GeneratedKTest.2_MacrosOnTheFlySimpleRecording (0 ms)
 [ RUN      ] GeneratedKTest.3_MacrosOnTheFlyHeldDuringREC
-Expected keyboard report at 101ms: { d }
-Observed keyboard report at 101ms: { d }
-Expected keyboard report at 102ms: { }
-Observed keyboard report at 102ms: { }
 [       OK ] GeneratedKTest.3_MacrosOnTheFlyHeldDuringREC (0 ms)
 [ RUN      ] GeneratedKTest.4_MacrosOnTheFlyMultiPressDuringRecord
-Expected keyboard report at 112ms: { e1 }
-Observed keyboard report at 112ms: { e1 }
-Expected keyboard report at 113ms: { d e1 }
-Observed keyboard report at 113ms: { d e1 }
-Expected keyboard report at 114ms: { e1 }
-Observed keyboard report at 114ms: { e1 }
-Expected keyboard report at 115ms: { }
-Observed keyboard report at 115ms: { }
-Expected keyboard report at 120ms: { e1 }
-Observed keyboard report at 120ms: { e1 }
-Expected keyboard report at 120ms: { d e1 }
-Observed keyboard report at 120ms: { d e1 }
-Expected keyboard report at 120ms: { e1 }
-Observed keyboard report at 120ms: { e1 }
-Expected keyboard report at 120ms: { }
-Observed keyboard report at 120ms: { }
-Expected keyboard report at 126ms: { e1 }
-Observed keyboard report at 126ms: { e1 }
-Expected keyboard report at 131ms: { }
-Observed keyboard report at 131ms: { }
-Expected keyboard report at 133ms: { e1 }
-Observed keyboard report at 133ms: { e1 }
-Expected keyboard report at 138ms: { d e1 }
-Observed keyboard report at 138ms: { d e1 }
-Expected keyboard report at 139ms: { e1 }
-Observed keyboard report at 139ms: { e1 }
-Expected keyboard report at 140ms: { }
-Observed keyboard report at 140ms: { }
-Expected keyboard report at 142ms: { 5 }
-Observed keyboard report at 142ms: { 5 }
-Expected keyboard report at 143ms: { 5 e1 }
-Observed keyboard report at 143ms: { 5 e1 }
-Expected keyboard report at 144ms: { 5 d e1 }
-Observed keyboard report at 144ms: { 5 d e1 }
-Expected keyboard report at 145ms: { 5 e1 }
-Observed keyboard report at 145ms: { 5 e1 }
-Expected keyboard report at 146ms: { 5 }
-Observed keyboard report at 146ms: { 5 }
-Expected keyboard report at 147ms: { }
-Observed keyboard report at 147ms: { }
-Expected keyboard report at 149ms: { 5 }
-Observed keyboard report at 149ms: { 5 }
-Expected keyboard report at 153ms: { }
-Observed keyboard report at 153ms: { }
-Expected keyboard report at 164ms: { e1 }
-Observed keyboard report at 164ms: { e1 }
-Expected keyboard report at 164ms: { d e1 }
-Observed keyboard report at 164ms: { d e1 }
-Expected keyboard report at 164ms: { e1 }
-Observed keyboard report at 164ms: { e1 }
-Expected keyboard report at 164ms: { }
-Observed keyboard report at 164ms: { }
-[       OK ] GeneratedKTest.4_MacrosOnTheFlyMultiPressDuringRecord (1 ms)
+[       OK ] GeneratedKTest.4_MacrosOnTheFlyMultiPressDuringRecord (0 ms)
 [ RUN      ] GeneratedKTest.5_MacrosOnTheFlyHeldAfterExiting
-Expected keyboard report at 174ms: { d }
-Observed keyboard report at 174ms: { d }
-Expected keyboard report at 177ms: { }
-Observed keyboard report at 177ms: { }
-Expected keyboard report at 182ms: { d }
-Observed keyboard report at 182ms: { d }
-Expected keyboard report at 182ms: { }
-Observed keyboard report at 182ms: { }
 [       OK ] GeneratedKTest.5_MacrosOnTheFlyHeldAfterExiting (0 ms)
 [ RUN      ] GeneratedKTest.6_MacrosOnTheFlyKeyHeldDownForLongTime
-Expected keyboard report at 187ms: { 4 }
-Observed keyboard report at 187ms: { 4 }
-Expected keyboard report at 2188ms: { }
-Observed keyboard report at 2188ms: { }
-Expected keyboard report at 2194ms: { 4 }
-Observed keyboard report at 2194ms: { 4 }
-Expected keyboard report at 4195ms: { }
-Observed keyboard report at 4195ms: { }
-Expected keyboard report at 4202ms: { 4 }
-Observed keyboard report at 4202ms: { 4 }
-Expected keyboard report at 4202ms: { }
-Observed keyboard report at 4202ms: { }
-[       OK ] GeneratedKTest.6_MacrosOnTheFlyKeyHeldDownForLongTime (6 ms)
-[----------] 7 tests from GeneratedKTest (9 ms total)
+[       OK ] GeneratedKTest.6_MacrosOnTheFlyKeyHeldDownForLongTime (5 ms)
+[----------] 7 tests from GeneratedKTest (6 ms total)
 
 [----------] Global test environment tear-down
-[==========] 7 tests from 1 test suite ran. (9 ms total)
+[==========] 7 tests from 1 test suite ran. (6 ms total)
 [  PASSED  ] 7 tests.
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
@@ -3831,232 +2224,16 @@ Running test plugins/MacrosOnTheFly/EdgeCases
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/test/manual-testcases.cpp
 [       OK ] ManualTests.0_test (0 ms)
 [ RUN      ] ManualTests.1_MacrosOnTheFlyTestHelpers
-Expected keyboard report at 11ms: { 4 }
-Observed keyboard report at 11ms: { 4 }
-Expected keyboard report at 12ms: { }
-Observed keyboard report at 12ms: { }
-Expected keyboard report at 13ms: { 4 }
-Observed keyboard report at 13ms: { 4 }
-Expected keyboard report at 14ms: { 4 d }
-Observed keyboard report at 14ms: { 4 d }
-Expected keyboard report at 15ms: { 4 }
-Observed keyboard report at 15ms: { 4 }
-Expected keyboard report at 16ms: { }
-Observed keyboard report at 16ms: { }
 [       OK ] ManualTests.1_MacrosOnTheFlyTestHelpers (0 ms)
 [ RUN      ] ManualTests.2_ReplayRepeat
-Expected keyboard report at 21ms: { 5 }
-Observed keyboard report at 21ms: { 5 }
-Expected keyboard report at 22ms: { }
-Observed keyboard report at 22ms: { }
-Expected keyboard report at 23ms: { d }
-Observed keyboard report at 23ms: { d }
-Expected keyboard report at 24ms: { }
-Observed keyboard report at 24ms: { }
-Expected keyboard report at 31ms: { 4 }
-Observed keyboard report at 31ms: { 4 }
-Expected keyboard report at 32ms: { }
-Observed keyboard report at 32ms: { }
-Expected keyboard report at 33ms: { 4 }
-Observed keyboard report at 33ms: { 4 }
-Expected keyboard report at 34ms: { }
-Observed keyboard report at 34ms: { }
-Expected keyboard report at 43ms: { 4 }
-Observed keyboard report at 43ms: { 4 }
-Expected keyboard report at 43ms: { }
-Observed keyboard report at 43ms: { }
-Expected keyboard report at 43ms: { 4 }
-Observed keyboard report at 43ms: { 4 }
-Expected keyboard report at 43ms: { }
-Observed keyboard report at 43ms: { }
-Expected keyboard report at 49ms: { 4 }
-Observed keyboard report at 49ms: { 4 }
-Expected keyboard report at 49ms: { }
-Observed keyboard report at 49ms: { }
-Expected keyboard report at 49ms: { 4 }
-Observed keyboard report at 49ms: { 4 }
-Expected keyboard report at 49ms: { }
-Observed keyboard report at 49ms: { }
-Expected keyboard report at 57ms: { 4 }
-Observed keyboard report at 57ms: { 4 }
-Expected keyboard report at 58ms: { }
-Observed keyboard report at 58ms: { }
-Expected keyboard report at 59ms: { 4 }
-Observed keyboard report at 59ms: { 4 }
-Expected keyboard report at 60ms: { }
-Observed keyboard report at 60ms: { }
-Expected keyboard report at 61ms: { 4 }
-Observed keyboard report at 61ms: { 4 }
-Expected keyboard report at 62ms: { }
-Observed keyboard report at 62ms: { }
-Expected keyboard report at 63ms: { 5 }
-Observed keyboard report at 63ms: { 5 }
-Expected keyboard report at 64ms: { }
-Observed keyboard report at 64ms: { }
-Expected keyboard report at 65ms: { d }
-Observed keyboard report at 65ms: { d }
-Expected keyboard report at 66ms: { }
-Observed keyboard report at 66ms: { }
-Expected keyboard report at 71ms: { 4 }
-Observed keyboard report at 71ms: { 4 }
-Expected keyboard report at 71ms: { }
-Observed keyboard report at 71ms: { }
-Expected keyboard report at 71ms: { 4 }
-Observed keyboard report at 71ms: { 4 }
-Expected keyboard report at 71ms: { }
-Observed keyboard report at 71ms: { }
-Expected keyboard report at 71ms: { 4 }
-Observed keyboard report at 71ms: { 4 }
-Expected keyboard report at 71ms: { }
-Observed keyboard report at 71ms: { }
-Expected keyboard report at 71ms: { 5 }
-Observed keyboard report at 71ms: { 5 }
-Expected keyboard report at 71ms: { }
-Observed keyboard report at 71ms: { }
-Expected keyboard report at 71ms: { d }
-Observed keyboard report at 71ms: { d }
-Expected keyboard report at 71ms: { }
-Observed keyboard report at 71ms: { }
 [       OK ] ManualTests.2_ReplayRepeat (1 ms)
 [ RUN      ] ManualTests.3_MacrosOnTheFlyNoHeldOverPlay
-Expected keyboard report at 93ms: { 5 }
-Observed keyboard report at 93ms: { 5 }
-Expected keyboard report at 94ms: { }
-Observed keyboard report at 94ms: { }
-Expected keyboard report at 95ms: { d }
-Observed keyboard report at 95ms: { d }
-Expected keyboard report at 96ms: { }
-Observed keyboard report at 96ms: { }
-Expected keyboard report at 103ms: { 4 }
-Observed keyboard report at 103ms: { 4 }
-Expected keyboard report at 104ms: { }
-Observed keyboard report at 104ms: { }
-Expected keyboard report at 105ms: { 4 }
-Observed keyboard report at 105ms: { 4 }
-Expected keyboard report at 106ms: { }
-Observed keyboard report at 106ms: { }
-Expected keyboard report at 109ms: { d }
-Observed keyboard report at 109ms: { d }
-Expected keyboard report at 114ms: { }
-Observed keyboard report at 114ms: { }
 [       OK ] ManualTests.3_MacrosOnTheFlyNoHeldOverPlay (0 ms)
 [ RUN      ] ManualTests.4_MacrosOnTheFlyRecursiveReplay
-Expected keyboard report at 129ms: { 5 }
-Observed keyboard report at 129ms: { 5 }
-Expected keyboard report at 130ms: { }
-Observed keyboard report at 130ms: { }
-Expected keyboard report at 131ms: { d }
-Observed keyboard report at 131ms: { d }
-Expected keyboard report at 132ms: { }
-Observed keyboard report at 132ms: { }
-Expected keyboard report at 139ms: { 4 }
-Observed keyboard report at 139ms: { 4 }
-Expected keyboard report at 140ms: { }
-Observed keyboard report at 140ms: { }
-Expected keyboard report at 141ms: { 4 }
-Observed keyboard report at 141ms: { 4 }
-Expected keyboard report at 142ms: { }
-Observed keyboard report at 142ms: { }
-Expected keyboard report at 147ms: { 4 }
-Observed keyboard report at 147ms: { 4 }
-Expected keyboard report at 147ms: { }
-Observed keyboard report at 147ms: { }
-Expected keyboard report at 147ms: { 4 }
-Observed keyboard report at 147ms: { 4 }
-Expected keyboard report at 147ms: { }
-Observed keyboard report at 147ms: { }
-Expected keyboard report at 155ms: { d }
-Observed keyboard report at 155ms: { d }
-Expected keyboard report at 156ms: { }
-Observed keyboard report at 156ms: { }
-Expected keyboard report at 159ms: { 4 }
-Observed keyboard report at 159ms: { 4 }
-Expected keyboard report at 159ms: { }
-Observed keyboard report at 159ms: { }
-Expected keyboard report at 159ms: { 4 }
-Observed keyboard report at 159ms: { 4 }
-Expected keyboard report at 159ms: { }
-Observed keyboard report at 159ms: { }
-Expected keyboard report at 163ms: { d }
-Observed keyboard report at 163ms: { d }
-Expected keyboard report at 164ms: { }
-Observed keyboard report at 164ms: { }
-Expected keyboard report at 169ms: { d }
-Observed keyboard report at 169ms: { d }
-Expected keyboard report at 169ms: { }
-Observed keyboard report at 169ms: { }
-Expected keyboard report at 169ms: { 4 }
-Observed keyboard report at 169ms: { 4 }
-Expected keyboard report at 169ms: { }
-Observed keyboard report at 169ms: { }
-Expected keyboard report at 169ms: { 4 }
-Observed keyboard report at 169ms: { 4 }
-Expected keyboard report at 169ms: { }
-Observed keyboard report at 169ms: { }
-Expected keyboard report at 169ms: { d }
-Observed keyboard report at 169ms: { d }
-Expected keyboard report at 169ms: { }
-Observed keyboard report at 169ms: { }
-[       OK ] ManualTests.4_MacrosOnTheFlyRecursiveReplay (1 ms)
+[       OK ] ManualTests.4_MacrosOnTheFlyRecursiveReplay (0 ms)
 [ RUN      ] ManualTests.5_MacrosOnTheFlyRecursiveAvoidance
-Expected keyboard report at 191ms: { 5 }
-Observed keyboard report at 191ms: { 5 }
-Expected keyboard report at 192ms: { }
-Observed keyboard report at 192ms: { }
-Expected keyboard report at 193ms: { d }
-Observed keyboard report at 193ms: { d }
-Expected keyboard report at 194ms: { }
-Observed keyboard report at 194ms: { }
-Expected keyboard report at 201ms: { 4 }
-Observed keyboard report at 201ms: { 4 }
-Expected keyboard report at 202ms: { }
-Observed keyboard report at 202ms: { }
-Expected keyboard report at 203ms: { 4 }
-Observed keyboard report at 203ms: { 4 }
-Expected keyboard report at 204ms: { }
-Observed keyboard report at 204ms: { }
-Expected keyboard report at 211ms: { d }
-Observed keyboard report at 211ms: { d }
-Expected keyboard report at 212ms: { }
-Observed keyboard report at 212ms: { }
-Expected keyboard report at 215ms: { 4 }
-Observed keyboard report at 215ms: { 4 }
-Expected keyboard report at 215ms: { }
-Observed keyboard report at 215ms: { }
-Expected keyboard report at 215ms: { 4 }
-Observed keyboard report at 215ms: { 4 }
-Expected keyboard report at 215ms: { }
-Observed keyboard report at 215ms: { }
-Expected keyboard report at 225ms: { 4 }
-Observed keyboard report at 225ms: { 4 }
-Expected keyboard report at 226ms: { }
-Observed keyboard report at 226ms: { }
-Expected keyboard report at 229ms: { d }
-Observed keyboard report at 229ms: { d }
-Expected keyboard report at 229ms: { }
-Observed keyboard report at 229ms: { }
-Expected keyboard report at 229ms: { 4 }
-Observed keyboard report at 229ms: { 4 }
-Expected keyboard report at 229ms: { }
-Observed keyboard report at 229ms: { }
-Expected keyboard report at 237ms: { 4 }
-Observed keyboard report at 237ms: { 4 }
-Expected keyboard report at 238ms: { }
-Observed keyboard report at 238ms: { }
-Expected keyboard report at 243ms: { d }
-Observed keyboard report at 243ms: { d }
-Expected keyboard report at 243ms: { }
-Observed keyboard report at 243ms: { }
 [       OK ] ManualTests.5_MacrosOnTheFlyRecursiveAvoidance (1 ms)
 [ RUN      ] ManualTests.5_MacrosOnTheFlyAvoidKeyUp
-Expected keyboard report at 265ms: { d }
-Observed keyboard report at 265ms: { d }
-Expected keyboard report at 266ms: { }
-Observed keyboard report at 266ms: { }
-Expected keyboard report at 272ms: { d }
-Observed keyboard report at 272ms: { d }
-Expected keyboard report at 272ms: { }
-Observed keyboard report at 272ms: { }
 [       OK ] ManualTests.5_MacrosOnTheFlyAvoidKeyUp (0 ms)
 [ RUN      ] ManualTests.6_MacrosOnTheFlyBailOut
 [       OK ] ManualTests.6_MacrosOnTheFlyBailOut (0 ms)
@@ -4067,356 +2244,28 @@ Observed keyboard report at 272ms: { }
 	TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,
 [ INFO     ] Printing Macro: A
 	KEYCODEDOWN 225,TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,KEYCODEUP 225,
-Expected keyboard report at 343ms: { 4 }
-Observed keyboard report at 343ms: { 4 }
-Expected keyboard report at 344ms: { }
-Observed keyboard report at 344ms: { }
-Expected keyboard report at 345ms: { d }
-Observed keyboard report at 345ms: { d }
-Expected keyboard report at 346ms: { }
-Observed keyboard report at 346ms: { }
-Expected keyboard report at 351ms: { 4 }
-Observed keyboard report at 351ms: { 4 }
-Expected keyboard report at 351ms: { }
-Observed keyboard report at 351ms: { }
-Expected keyboard report at 351ms: { d }
-Observed keyboard report at 351ms: { d }
-Expected keyboard report at 351ms: { }
-Observed keyboard report at 351ms: { }
-Expected keyboard report at 359ms: { 4 }
-Observed keyboard report at 359ms: { 4 }
-Expected keyboard report at 360ms: { }
-Observed keyboard report at 360ms: { }
-Expected keyboard report at 361ms: { d }
-Observed keyboard report at 361ms: { d }
-Expected keyboard report at 362ms: { }
-Observed keyboard report at 362ms: { }
-Expected keyboard report at 363ms: { 4 }
-Observed keyboard report at 363ms: { 4 }
-Expected keyboard report at 364ms: { }
-Observed keyboard report at 364ms: { }
-Expected keyboard report at 365ms: { d }
-Observed keyboard report at 365ms: { d }
-Expected keyboard report at 366ms: { }
-Observed keyboard report at 366ms: { }
-Expected keyboard report at 367ms: { 4 }
-Observed keyboard report at 367ms: { 4 }
-Expected keyboard report at 368ms: { }
-Observed keyboard report at 368ms: { }
-Expected keyboard report at 369ms: { d }
-Observed keyboard report at 369ms: { d }
-Expected keyboard report at 370ms: { }
-Observed keyboard report at 370ms: { }
-Expected keyboard report at 375ms: { 4 }
-Observed keyboard report at 375ms: { 4 }
-Expected keyboard report at 375ms: { }
-Observed keyboard report at 375ms: { }
-Expected keyboard report at 375ms: { d }
-Observed keyboard report at 375ms: { d }
-Expected keyboard report at 375ms: { }
-Observed keyboard report at 375ms: { }
-Expected keyboard report at 375ms: { 4 }
-Observed keyboard report at 375ms: { 4 }
-Expected keyboard report at 375ms: { }
-Observed keyboard report at 375ms: { }
-Expected keyboard report at 375ms: { d }
-Observed keyboard report at 375ms: { d }
-Expected keyboard report at 375ms: { }
-Observed keyboard report at 375ms: { }
-Expected keyboard report at 375ms: { 4 }
-Observed keyboard report at 375ms: { 4 }
-Expected keyboard report at 375ms: { }
-Observed keyboard report at 375ms: { }
-Expected keyboard report at 375ms: { d }
-Observed keyboard report at 375ms: { d }
-Expected keyboard report at 375ms: { }
-Observed keyboard report at 375ms: { }
-Expected keyboard report at 388ms: { e1 }
-Observed keyboard report at 388ms: { e1 }
-Expected keyboard report at 389ms: { 4 e1 }
-Observed keyboard report at 389ms: { 4 e1 }
-Expected keyboard report at 390ms: { e1 }
-Observed keyboard report at 390ms: { e1 }
-Expected keyboard report at 391ms: { d e1 }
-Observed keyboard report at 391ms: { d e1 }
-Expected keyboard report at 392ms: { e1 }
-Observed keyboard report at 392ms: { e1 }
-Expected keyboard report at 393ms: { 4 e1 }
-Observed keyboard report at 393ms: { 4 e1 }
-Expected keyboard report at 394ms: { e1 }
-Observed keyboard report at 394ms: { e1 }
-Expected keyboard report at 395ms: { d e1 }
-Observed keyboard report at 395ms: { d e1 }
-Expected keyboard report at 396ms: { e1 }
-Observed keyboard report at 396ms: { e1 }
-Expected keyboard report at 397ms: { 4 e1 }
-Observed keyboard report at 397ms: { 4 e1 }
-Expected keyboard report at 398ms: { e1 }
-Observed keyboard report at 398ms: { e1 }
-Expected keyboard report at 399ms: { d e1 }
-Observed keyboard report at 399ms: { d e1 }
-Expected keyboard report at 400ms: { e1 }
-Observed keyboard report at 400ms: { e1 }
-Expected keyboard report at 401ms: { }
-Observed keyboard report at 401ms: { }
-Expected keyboard report at 406ms: { e1 }
-Observed keyboard report at 406ms: { e1 }
-Expected keyboard report at 406ms: { 4 e1 }
-Observed keyboard report at 406ms: { 4 e1 }
-Expected keyboard report at 406ms: { e1 }
-Observed keyboard report at 406ms: { e1 }
-Expected keyboard report at 406ms: { d e1 }
-Observed keyboard report at 406ms: { d e1 }
-Expected keyboard report at 406ms: { e1 }
-Observed keyboard report at 406ms: { e1 }
-Expected keyboard report at 406ms: { 4 e1 }
-Observed keyboard report at 406ms: { 4 e1 }
-Expected keyboard report at 406ms: { e1 }
-Observed keyboard report at 406ms: { e1 }
-Expected keyboard report at 406ms: { d e1 }
-Observed keyboard report at 406ms: { d e1 }
-Expected keyboard report at 406ms: { e1 }
-Observed keyboard report at 406ms: { e1 }
-Expected keyboard report at 406ms: { 4 e1 }
-Observed keyboard report at 406ms: { 4 e1 }
-Expected keyboard report at 406ms: { e1 }
-Observed keyboard report at 406ms: { e1 }
-Expected keyboard report at 406ms: { d e1 }
-Observed keyboard report at 406ms: { d e1 }
-Expected keyboard report at 406ms: { e1 }
-Observed keyboard report at 406ms: { e1 }
-Expected keyboard report at 406ms: { }
-Observed keyboard report at 406ms: { }
-[       OK ] ManualTests.7_CompressionChecks (2 ms)
+[       OK ] ManualTests.7_CompressionChecks (1 ms)
 [ RUN      ] ManualTests.8_FlagsCompression
 [ INFO     ] Printing Macro: A
 	KEYCODEDOWN 224,TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,KEYCODEUP 224,
-Expected keyboard report at 421ms: { e0 }
-Observed keyboard report at 421ms: { e0 }
-Expected keyboard report at 422ms: { 4 e0 }
-Observed keyboard report at 422ms: { 4 e0 }
-Expected keyboard report at 423ms: { e0 }
-Observed keyboard report at 423ms: { e0 }
-Expected keyboard report at 424ms: { d e0 }
-Observed keyboard report at 424ms: { d e0 }
-Expected keyboard report at 425ms: { e0 }
-Observed keyboard report at 425ms: { e0 }
-Expected keyboard report at 426ms: { 4 e0 }
-Observed keyboard report at 426ms: { 4 e0 }
-Expected keyboard report at 427ms: { e0 }
-Observed keyboard report at 427ms: { e0 }
-Expected keyboard report at 428ms: { d e0 }
-Observed keyboard report at 428ms: { d e0 }
-Expected keyboard report at 429ms: { e0 }
-Observed keyboard report at 429ms: { e0 }
-Expected keyboard report at 430ms: { 4 e0 }
-Observed keyboard report at 430ms: { 4 e0 }
-Expected keyboard report at 431ms: { e0 }
-Observed keyboard report at 431ms: { e0 }
-Expected keyboard report at 432ms: { d e0 }
-Observed keyboard report at 432ms: { d e0 }
-Expected keyboard report at 433ms: { e0 }
-Observed keyboard report at 433ms: { e0 }
-Expected keyboard report at 434ms: { }
-Observed keyboard report at 434ms: { }
-Expected keyboard report at 439ms: { e0 }
-Observed keyboard report at 439ms: { e0 }
-Expected keyboard report at 439ms: { 4 e0 }
-Observed keyboard report at 439ms: { 4 e0 }
-Expected keyboard report at 439ms: { e0 }
-Observed keyboard report at 439ms: { e0 }
-Expected keyboard report at 439ms: { d e0 }
-Observed keyboard report at 439ms: { d e0 }
-Expected keyboard report at 439ms: { e0 }
-Observed keyboard report at 439ms: { e0 }
-Expected keyboard report at 439ms: { 4 e0 }
-Observed keyboard report at 439ms: { 4 e0 }
-Expected keyboard report at 439ms: { e0 }
-Observed keyboard report at 439ms: { e0 }
-Expected keyboard report at 439ms: { d e0 }
-Observed keyboard report at 439ms: { d e0 }
-Expected keyboard report at 439ms: { e0 }
-Observed keyboard report at 439ms: { e0 }
-Expected keyboard report at 439ms: { 4 e0 }
-Observed keyboard report at 439ms: { 4 e0 }
-Expected keyboard report at 439ms: { e0 }
-Observed keyboard report at 439ms: { e0 }
-Expected keyboard report at 439ms: { d e0 }
-Observed keyboard report at 439ms: { d e0 }
-Expected keyboard report at 439ms: { e0 }
-Observed keyboard report at 439ms: { e0 }
-Expected keyboard report at 439ms: { }
-Observed keyboard report at 439ms: { }
-[       OK ] ManualTests.8_FlagsCompression (1 ms)
+[       OK ] ManualTests.8_FlagsCompression (0 ms)
 [ RUN      ] ManualTests.8_FlagsCompression3
 [ INFO     ] Printing Macro: A
 	TAP 1 4,
-Expected keyboard report at 454ms: { e0 }
-Observed keyboard report at 454ms: { e0 }
-Expected keyboard report at 454ms: { 4 e0 }
-Observed keyboard report at 454ms: { 4 e0 }
-Expected keyboard report at 455ms: { e0 }
-Observed keyboard report at 455ms: { e0 }
-Expected keyboard report at 455ms: { }
-Observed keyboard report at 455ms: { }
-Expected keyboard report at 460ms: { e0 }
-Observed keyboard report at 460ms: { e0 }
-Expected keyboard report at 460ms: { 4 e0 }
-Observed keyboard report at 460ms: { 4 e0 }
-Expected keyboard report at 460ms: { e0 }
-Observed keyboard report at 460ms: { e0 }
-Expected keyboard report at 460ms: { }
-Observed keyboard report at 460ms: { }
 [       OK ] ManualTests.8_FlagsCompression3 (0 ms)
 [ RUN      ] ManualTests.8_FlagsCompression4
 [ INFO     ] Printing Macro: A
 	TAP_SEQUENCE 1 4 1 4 1 4 1 4 0 0 |,
-Expected keyboard report at 467ms: { e0 }
-Observed keyboard report at 467ms: { e0 }
-Expected keyboard report at 467ms: { 4 e0 }
-Observed keyboard report at 467ms: { 4 e0 }
-Expected keyboard report at 468ms: { e0 }
-Observed keyboard report at 468ms: { e0 }
-Expected keyboard report at 468ms: { }
-Observed keyboard report at 468ms: { }
-Expected keyboard report at 469ms: { e0 }
-Observed keyboard report at 469ms: { e0 }
-Expected keyboard report at 469ms: { 4 e0 }
-Observed keyboard report at 469ms: { 4 e0 }
-Expected keyboard report at 470ms: { e0 }
-Observed keyboard report at 470ms: { e0 }
-Expected keyboard report at 470ms: { }
-Observed keyboard report at 470ms: { }
-Expected keyboard report at 471ms: { e0 }
-Observed keyboard report at 471ms: { e0 }
-Expected keyboard report at 471ms: { 4 e0 }
-Observed keyboard report at 471ms: { 4 e0 }
-Expected keyboard report at 472ms: { e0 }
-Observed keyboard report at 472ms: { e0 }
-Expected keyboard report at 472ms: { }
-Observed keyboard report at 472ms: { }
-Expected keyboard report at 473ms: { e0 }
-Observed keyboard report at 473ms: { e0 }
-Expected keyboard report at 473ms: { 4 e0 }
-Observed keyboard report at 473ms: { 4 e0 }
-Expected keyboard report at 474ms: { e0 }
-Observed keyboard report at 474ms: { e0 }
-Expected keyboard report at 474ms: { }
-Observed keyboard report at 474ms: { }
-Expected keyboard report at 479ms: { e0 }
-Observed keyboard report at 479ms: { e0 }
-Expected keyboard report at 479ms: { 4 e0 }
-Observed keyboard report at 479ms: { 4 e0 }
-Expected keyboard report at 479ms: { e0 }
-Observed keyboard report at 479ms: { e0 }
-Expected keyboard report at 479ms: { }
-Observed keyboard report at 479ms: { }
-Expected keyboard report at 479ms: { e0 }
-Observed keyboard report at 479ms: { e0 }
-Expected keyboard report at 479ms: { 4 e0 }
-Observed keyboard report at 479ms: { 4 e0 }
-Expected keyboard report at 479ms: { e0 }
-Observed keyboard report at 479ms: { e0 }
-Expected keyboard report at 479ms: { }
-Observed keyboard report at 479ms: { }
-Expected keyboard report at 479ms: { e0 }
-Observed keyboard report at 479ms: { e0 }
-Expected keyboard report at 479ms: { 4 e0 }
-Observed keyboard report at 479ms: { 4 e0 }
-Expected keyboard report at 479ms: { e0 }
-Observed keyboard report at 479ms: { e0 }
-Expected keyboard report at 479ms: { }
-Observed keyboard report at 479ms: { }
-Expected keyboard report at 479ms: { e0 }
-Observed keyboard report at 479ms: { e0 }
-Expected keyboard report at 479ms: { 4 e0 }
-Observed keyboard report at 479ms: { 4 e0 }
-Expected keyboard report at 479ms: { e0 }
-Observed keyboard report at 479ms: { e0 }
-Expected keyboard report at 479ms: { }
-Observed keyboard report at 479ms: { }
-[       OK ] ManualTests.8_FlagsCompression4 (1 ms)
+[       OK ] ManualTests.8_FlagsCompression4 (0 ms)
 [ RUN      ] ManualTests.8_FlagsCompression2
 [ INFO     ] Printing Macro: A
 	KEYDOWN 1 4,TAPCODE 4,KEYUP 1 4,
-Expected keyboard report at 490ms: { e0 }
-Observed keyboard report at 490ms: { e0 }
-Expected keyboard report at 490ms: { 4 e0 }
-Observed keyboard report at 490ms: { 4 e0 }
-Expected keyboard report at 491ms: { e0 }
-Observed keyboard report at 491ms: { e0 }
-Expected keyboard report at 491ms: { }
-Observed keyboard report at 491ms: { }
-Expected keyboard report at 491ms: { 4 }
-Observed keyboard report at 491ms: { 4 }
-Expected keyboard report at 493ms: { }
-Observed keyboard report at 493ms: { }
-Expected keyboard report at 498ms: { e0 }
-Observed keyboard report at 498ms: { e0 }
-Expected keyboard report at 498ms: { 4 e0 }
-Observed keyboard report at 498ms: { 4 e0 }
-Expected keyboard report at 498ms: { e0 }
-Observed keyboard report at 498ms: { e0 }
-Expected keyboard report at 498ms: { }
-Observed keyboard report at 498ms: { }
-Expected keyboard report at 498ms: { 4 }
-Observed keyboard report at 498ms: { 4 }
-Expected keyboard report at 498ms: { }
-Observed keyboard report at 498ms: { }
 [       OK ] ManualTests.8_FlagsCompression2 (0 ms)
 [ RUN      ] ManualTests.8_FlagsCompression5
 [ INFO     ] Printing Macro: A
 	KEYDOWN 1 4,TAPCODE 13,KEYUP 1 4,
-Expected keyboard report at 507ms: { e0 }
-Observed keyboard report at 507ms: { e0 }
-Expected keyboard report at 507ms: { 4 e0 }
-Observed keyboard report at 507ms: { 4 e0 }
-Expected keyboard report at 508ms: { 4 }
-Observed keyboard report at 508ms: { 4 }
-Expected keyboard report at 508ms: { 4 d }
-Observed keyboard report at 508ms: { 4 d }
-Expected keyboard report at 509ms: { 4 }
-Observed keyboard report at 509ms: { 4 }
-Expected keyboard report at 510ms: { }
-Observed keyboard report at 510ms: { }
-Expected keyboard report at 515ms: { e0 }
-Observed keyboard report at 515ms: { e0 }
-Expected keyboard report at 515ms: { 4 e0 }
-Observed keyboard report at 515ms: { 4 e0 }
-Expected keyboard report at 515ms: { 4 }
-Observed keyboard report at 515ms: { 4 }
-Expected keyboard report at 515ms: { 4 d }
-Observed keyboard report at 515ms: { 4 d }
-Expected keyboard report at 515ms: { 4 }
-Observed keyboard report at 515ms: { 4 }
-Expected keyboard report at 515ms: { }
-Observed keyboard report at 515ms: { }
 [       OK ] ManualTests.8_FlagsCompression5 (0 ms)
 [ RUN      ] ManualTests.9_ShiftCheck
-Expected keyboard report at 524ms: { e1 }
-Observed keyboard report at 524ms: { e1 }
-Expected keyboard report at 525ms: { 4 e1 }
-Observed keyboard report at 525ms: { 4 e1 }
-Expected keyboard report at 526ms: { e1 }
-Observed keyboard report at 526ms: { e1 }
-Expected keyboard report at 527ms: { d e1 }
-Observed keyboard report at 527ms: { d e1 }
-Expected keyboard report at 528ms: { e1 }
-Observed keyboard report at 528ms: { e1 }
-Expected keyboard report at 529ms: { }
-Observed keyboard report at 529ms: { }
-Expected keyboard report at 534ms: { e1 }
-Observed keyboard report at 534ms: { e1 }
-Expected keyboard report at 534ms: { 4 e1 }
-Observed keyboard report at 534ms: { 4 e1 }
-Expected keyboard report at 534ms: { e1 }
-Observed keyboard report at 534ms: { e1 }
-Expected keyboard report at 534ms: { d e1 }
-Observed keyboard report at 534ms: { d e1 }
-Expected keyboard report at 534ms: { e1 }
-Observed keyboard report at 534ms: { e1 }
-Expected keyboard report at 534ms: { }
-Observed keyboard report at 534ms: { }
 [       OK ] ManualTests.9_ShiftCheck (0 ms)
 [ RUN      ] ManualTests.10_CompressSeqInMiddle
 [ INFO     ] Printing Macro: A
@@ -4425,287 +2274,7 @@ Observed keyboard report at 534ms: { }
 	KEYCODEDOWN 225,TAPCODE 4,TAPCODE 13,KEYCODEUP 225,TAP_CODE_SEQUENCE 4 4 4 4 4 13 0 |,KEYCODEDOWN 4,TAPCODE 13,KEYCODEUP 4,
 [ INFO     ] Printing Macro: A
 	KEYCODEDOWN 225,TAPCODE 4,TAPCODE 13,KEYCODEUP 225,TAP_CODE_SEQUENCE 4 4 4 4 4 13 0 |,KEYCODEDOWN 4,TAPCODE 13,KEYCODEUP 4,TAP_CODE_SEQUENCE 13 4 13 4 13 0 |,
-Expected keyboard report at 544ms: { e1 }
-Observed keyboard report at 544ms: { e1 }
-Expected keyboard report at 545ms: { 4 e1 }
-Observed keyboard report at 545ms: { 4 e1 }
-Expected keyboard report at 546ms: { e1 }
-Observed keyboard report at 546ms: { e1 }
-Expected keyboard report at 547ms: { d e1 }
-Observed keyboard report at 547ms: { d e1 }
-Expected keyboard report at 548ms: { e1 }
-Observed keyboard report at 548ms: { e1 }
-Expected keyboard report at 549ms: { }
-Observed keyboard report at 549ms: { }
-Expected keyboard report at 550ms: { 4 }
-Observed keyboard report at 550ms: { 4 }
-Expected keyboard report at 551ms: { }
-Observed keyboard report at 551ms: { }
-Expected keyboard report at 552ms: { 4 }
-Observed keyboard report at 552ms: { 4 }
-Expected keyboard report at 553ms: { }
-Observed keyboard report at 553ms: { }
-Expected keyboard report at 554ms: { 4 }
-Observed keyboard report at 554ms: { 4 }
-Expected keyboard report at 555ms: { }
-Observed keyboard report at 555ms: { }
-Expected keyboard report at 556ms: { 4 }
-Observed keyboard report at 556ms: { 4 }
-Expected keyboard report at 557ms: { }
-Observed keyboard report at 557ms: { }
-Expected keyboard report at 558ms: { 4 }
-Observed keyboard report at 558ms: { 4 }
-Expected keyboard report at 559ms: { }
-Observed keyboard report at 559ms: { }
-Expected keyboard report at 564ms: { e1 }
-Observed keyboard report at 564ms: { e1 }
-Expected keyboard report at 564ms: { 4 e1 }
-Observed keyboard report at 564ms: { 4 e1 }
-Expected keyboard report at 564ms: { e1 }
-Observed keyboard report at 564ms: { e1 }
-Expected keyboard report at 564ms: { d e1 }
-Observed keyboard report at 564ms: { d e1 }
-Expected keyboard report at 564ms: { e1 }
-Observed keyboard report at 564ms: { e1 }
-Expected keyboard report at 564ms: { }
-Observed keyboard report at 564ms: { }
-Expected keyboard report at 564ms: { 4 }
-Observed keyboard report at 564ms: { 4 }
-Expected keyboard report at 564ms: { }
-Observed keyboard report at 564ms: { }
-Expected keyboard report at 564ms: { 4 }
-Observed keyboard report at 564ms: { 4 }
-Expected keyboard report at 564ms: { }
-Observed keyboard report at 564ms: { }
-Expected keyboard report at 564ms: { 4 }
-Observed keyboard report at 564ms: { 4 }
-Expected keyboard report at 564ms: { }
-Observed keyboard report at 564ms: { }
-Expected keyboard report at 564ms: { 4 }
-Observed keyboard report at 564ms: { 4 }
-Expected keyboard report at 564ms: { }
-Observed keyboard report at 564ms: { }
-Expected keyboard report at 564ms: { 4 }
-Observed keyboard report at 564ms: { 4 }
-Expected keyboard report at 564ms: { }
-Observed keyboard report at 564ms: { }
-Expected keyboard report at 580ms: { e1 }
-Observed keyboard report at 580ms: { e1 }
-Expected keyboard report at 581ms: { 4 e1 }
-Observed keyboard report at 581ms: { 4 e1 }
-Expected keyboard report at 582ms: { e1 }
-Observed keyboard report at 582ms: { e1 }
-Expected keyboard report at 583ms: { d e1 }
-Observed keyboard report at 583ms: { d e1 }
-Expected keyboard report at 584ms: { e1 }
-Observed keyboard report at 584ms: { e1 }
-Expected keyboard report at 585ms: { }
-Observed keyboard report at 585ms: { }
-Expected keyboard report at 586ms: { 4 }
-Observed keyboard report at 586ms: { 4 }
-Expected keyboard report at 587ms: { }
-Observed keyboard report at 587ms: { }
-Expected keyboard report at 588ms: { 4 }
-Observed keyboard report at 588ms: { 4 }
-Expected keyboard report at 589ms: { }
-Observed keyboard report at 589ms: { }
-Expected keyboard report at 590ms: { 4 }
-Observed keyboard report at 590ms: { 4 }
-Expected keyboard report at 591ms: { }
-Observed keyboard report at 591ms: { }
-Expected keyboard report at 592ms: { 4 }
-Observed keyboard report at 592ms: { 4 }
-Expected keyboard report at 593ms: { }
-Observed keyboard report at 593ms: { }
-Expected keyboard report at 594ms: { 4 }
-Observed keyboard report at 594ms: { 4 }
-Expected keyboard report at 595ms: { }
-Observed keyboard report at 595ms: { }
-Expected keyboard report at 596ms: { d }
-Observed keyboard report at 596ms: { d }
-Expected keyboard report at 597ms: { }
-Observed keyboard report at 597ms: { }
-Expected keyboard report at 598ms: { 4 }
-Observed keyboard report at 598ms: { 4 }
-Expected keyboard report at 599ms: { 4 d }
-Observed keyboard report at 599ms: { 4 d }
-Expected keyboard report at 600ms: { 4 }
-Observed keyboard report at 600ms: { 4 }
-Expected keyboard report at 601ms: { }
-Observed keyboard report at 601ms: { }
-Expected keyboard report at 606ms: { e1 }
-Observed keyboard report at 606ms: { e1 }
-Expected keyboard report at 606ms: { 4 e1 }
-Observed keyboard report at 606ms: { 4 e1 }
-Expected keyboard report at 606ms: { e1 }
-Observed keyboard report at 606ms: { e1 }
-Expected keyboard report at 606ms: { d e1 }
-Observed keyboard report at 606ms: { d e1 }
-Expected keyboard report at 606ms: { e1 }
-Observed keyboard report at 606ms: { e1 }
-Expected keyboard report at 606ms: { }
-Observed keyboard report at 606ms: { }
-Expected keyboard report at 606ms: { 4 }
-Observed keyboard report at 606ms: { 4 }
-Expected keyboard report at 606ms: { }
-Observed keyboard report at 606ms: { }
-Expected keyboard report at 606ms: { 4 }
-Observed keyboard report at 606ms: { 4 }
-Expected keyboard report at 606ms: { }
-Observed keyboard report at 606ms: { }
-Expected keyboard report at 606ms: { 4 }
-Observed keyboard report at 606ms: { 4 }
-Expected keyboard report at 606ms: { }
-Observed keyboard report at 606ms: { }
-Expected keyboard report at 606ms: { 4 }
-Observed keyboard report at 606ms: { 4 }
-Expected keyboard report at 606ms: { }
-Observed keyboard report at 606ms: { }
-Expected keyboard report at 606ms: { 4 }
-Observed keyboard report at 606ms: { 4 }
-Expected keyboard report at 606ms: { }
-Observed keyboard report at 606ms: { }
-Expected keyboard report at 606ms: { d }
-Observed keyboard report at 606ms: { d }
-Expected keyboard report at 606ms: { }
-Observed keyboard report at 606ms: { }
-Expected keyboard report at 606ms: { 4 }
-Observed keyboard report at 606ms: { 4 }
-Expected keyboard report at 606ms: { 4 d }
-Observed keyboard report at 606ms: { 4 d }
-Expected keyboard report at 606ms: { 4 }
-Observed keyboard report at 606ms: { 4 }
-Expected keyboard report at 606ms: { }
-Observed keyboard report at 606ms: { }
-Expected keyboard report at 626ms: { e1 }
-Observed keyboard report at 626ms: { e1 }
-Expected keyboard report at 627ms: { 4 e1 }
-Observed keyboard report at 627ms: { 4 e1 }
-Expected keyboard report at 628ms: { e1 }
-Observed keyboard report at 628ms: { e1 }
-Expected keyboard report at 629ms: { d e1 }
-Observed keyboard report at 629ms: { d e1 }
-Expected keyboard report at 630ms: { e1 }
-Observed keyboard report at 630ms: { e1 }
-Expected keyboard report at 631ms: { }
-Observed keyboard report at 631ms: { }
-Expected keyboard report at 632ms: { 4 }
-Observed keyboard report at 632ms: { 4 }
-Expected keyboard report at 633ms: { }
-Observed keyboard report at 633ms: { }
-Expected keyboard report at 634ms: { 4 }
-Observed keyboard report at 634ms: { 4 }
-Expected keyboard report at 635ms: { }
-Observed keyboard report at 635ms: { }
-Expected keyboard report at 636ms: { 4 }
-Observed keyboard report at 636ms: { 4 }
-Expected keyboard report at 637ms: { }
-Observed keyboard report at 637ms: { }
-Expected keyboard report at 638ms: { 4 }
-Observed keyboard report at 638ms: { 4 }
-Expected keyboard report at 639ms: { }
-Observed keyboard report at 639ms: { }
-Expected keyboard report at 640ms: { 4 }
-Observed keyboard report at 640ms: { 4 }
-Expected keyboard report at 641ms: { }
-Observed keyboard report at 641ms: { }
-Expected keyboard report at 642ms: { d }
-Observed keyboard report at 642ms: { d }
-Expected keyboard report at 643ms: { }
-Observed keyboard report at 643ms: { }
-Expected keyboard report at 644ms: { 4 }
-Observed keyboard report at 644ms: { 4 }
-Expected keyboard report at 645ms: { 4 d }
-Observed keyboard report at 645ms: { 4 d }
-Expected keyboard report at 646ms: { 4 }
-Observed keyboard report at 646ms: { 4 }
-Expected keyboard report at 647ms: { }
-Observed keyboard report at 647ms: { }
-Expected keyboard report at 648ms: { d }
-Observed keyboard report at 648ms: { d }
-Expected keyboard report at 649ms: { }
-Observed keyboard report at 649ms: { }
-Expected keyboard report at 650ms: { 4 }
-Observed keyboard report at 650ms: { 4 }
-Expected keyboard report at 651ms: { }
-Observed keyboard report at 651ms: { }
-Expected keyboard report at 652ms: { d }
-Observed keyboard report at 652ms: { d }
-Expected keyboard report at 653ms: { }
-Observed keyboard report at 653ms: { }
-Expected keyboard report at 654ms: { 4 }
-Observed keyboard report at 654ms: { 4 }
-Expected keyboard report at 655ms: { }
-Observed keyboard report at 655ms: { }
-Expected keyboard report at 656ms: { d }
-Observed keyboard report at 656ms: { d }
-Expected keyboard report at 657ms: { }
-Observed keyboard report at 657ms: { }
-Expected keyboard report at 662ms: { e1 }
-Observed keyboard report at 662ms: { e1 }
-Expected keyboard report at 662ms: { 4 e1 }
-Observed keyboard report at 662ms: { 4 e1 }
-Expected keyboard report at 662ms: { e1 }
-Observed keyboard report at 662ms: { e1 }
-Expected keyboard report at 662ms: { d e1 }
-Observed keyboard report at 662ms: { d e1 }
-Expected keyboard report at 662ms: { e1 }
-Observed keyboard report at 662ms: { e1 }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { 4 }
-Observed keyboard report at 662ms: { 4 }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { 4 }
-Observed keyboard report at 662ms: { 4 }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { 4 }
-Observed keyboard report at 662ms: { 4 }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { 4 }
-Observed keyboard report at 662ms: { 4 }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { 4 }
-Observed keyboard report at 662ms: { 4 }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { d }
-Observed keyboard report at 662ms: { d }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { 4 }
-Observed keyboard report at 662ms: { 4 }
-Expected keyboard report at 662ms: { 4 d }
-Observed keyboard report at 662ms: { 4 d }
-Expected keyboard report at 662ms: { 4 }
-Observed keyboard report at 662ms: { 4 }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { d }
-Observed keyboard report at 662ms: { d }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { 4 }
-Observed keyboard report at 662ms: { 4 }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { d }
-Observed keyboard report at 662ms: { d }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { 4 }
-Observed keyboard report at 662ms: { 4 }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { d }
-Observed keyboard report at 662ms: { d }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-[       OK ] ManualTests.10_CompressSeqInMiddle (5 ms)
+[       OK ] ManualTests.10_CompressSeqInMiddle (2 ms)
 [ RUN      ] ManualTests.11_LayerBasics
 [ INFO     ] Printing Macro: A
 	TAPCODE 27,TAP 68 1,TAPCODE 5,TAP 68 1,TAPCODE 27,TAP 68 1,TAPCODE 5,
@@ -4713,147 +2282,7 @@ Observed keyboard report at 662ms: { }
 	TAPCODE 27,TAP 68 1,TAPCODE 5,TAP 68 1,TAPCODE 27,TAP 68 1,TAPCODE 5,TAP 68 1,
 [ INFO     ] Printing Macro: A
 	KEYDOWN 68 43,TAPCODE 27,KEYUP 68 43,TAPCODE 5,KEYDOWN 68 43,TAPCODE 27,
-Expected keyboard report at 690ms: { 1b }
-Observed keyboard report at 690ms: { 1b }
-Expected keyboard report at 691ms: { }
-Observed keyboard report at 691ms: { }
-Expected keyboard report at 694ms: { 5 }
-Observed keyboard report at 694ms: { 5 }
-Expected keyboard report at 695ms: { }
-Observed keyboard report at 695ms: { }
-Expected keyboard report at 698ms: { 1b }
-Observed keyboard report at 698ms: { 1b }
-Expected keyboard report at 699ms: { }
-Observed keyboard report at 699ms: { }
-Expected keyboard report at 702ms: { 5 }
-Observed keyboard report at 702ms: { 5 }
-Expected keyboard report at 703ms: { }
-Observed keyboard report at 703ms: { }
-Expected keyboard report at 708ms: { 1b }
-Observed keyboard report at 708ms: { 1b }
-Expected keyboard report at 708ms: { }
-Observed keyboard report at 708ms: { }
-Expected keyboard report at 708ms: { 5 }
-Observed keyboard report at 708ms: { 5 }
-Expected keyboard report at 708ms: { }
-Observed keyboard report at 708ms: { }
-Expected keyboard report at 708ms: { 1b }
-Observed keyboard report at 708ms: { 1b }
-Expected keyboard report at 708ms: { }
-Observed keyboard report at 708ms: { }
-Expected keyboard report at 708ms: { 5 }
-Observed keyboard report at 708ms: { 5 }
-Expected keyboard report at 708ms: { }
-Observed keyboard report at 708ms: { }
-Expected keyboard report at 725ms: { 1b }
-Observed keyboard report at 725ms: { 1b }
-Expected keyboard report at 726ms: { }
-Observed keyboard report at 726ms: { }
-Expected keyboard report at 729ms: { 5 }
-Observed keyboard report at 729ms: { 5 }
-Expected keyboard report at 730ms: { }
-Observed keyboard report at 730ms: { }
-Expected keyboard report at 733ms: { 1b }
-Observed keyboard report at 733ms: { 1b }
-Expected keyboard report at 734ms: { }
-Observed keyboard report at 734ms: { }
-Expected keyboard report at 737ms: { 5 }
-Observed keyboard report at 737ms: { 5 }
-Expected keyboard report at 738ms: { }
-Observed keyboard report at 738ms: { }
-Expected keyboard report at 743ms: { 1b }
-Observed keyboard report at 743ms: { 1b }
-Expected keyboard report at 744ms: { }
-Observed keyboard report at 744ms: { }
-Expected keyboard report at 749ms: { 1b }
-Observed keyboard report at 749ms: { 1b }
-Expected keyboard report at 749ms: { }
-Observed keyboard report at 749ms: { }
-Expected keyboard report at 749ms: { 5 }
-Observed keyboard report at 749ms: { 5 }
-Expected keyboard report at 749ms: { }
-Observed keyboard report at 749ms: { }
-Expected keyboard report at 749ms: { 1b }
-Observed keyboard report at 749ms: { 1b }
-Expected keyboard report at 749ms: { }
-Observed keyboard report at 749ms: { }
-Expected keyboard report at 749ms: { 5 }
-Observed keyboard report at 749ms: { 5 }
-Expected keyboard report at 749ms: { }
-Observed keyboard report at 749ms: { }
-Expected keyboard report at 759ms: { 5 }
-Observed keyboard report at 759ms: { 5 }
-Expected keyboard report at 760ms: { }
-Observed keyboard report at 760ms: { }
-Expected keyboard report at 766ms: { 1b }
-Observed keyboard report at 766ms: { 1b }
-Expected keyboard report at 767ms: { }
-Observed keyboard report at 767ms: { }
-Expected keyboard report at 769ms: { 5 }
-Observed keyboard report at 769ms: { 5 }
-Expected keyboard report at 770ms: { }
-Observed keyboard report at 770ms: { }
-Expected keyboard report at 772ms: { 1b }
-Observed keyboard report at 772ms: { 1b }
-Expected keyboard report at 773ms: { }
-Observed keyboard report at 773ms: { }
-Expected keyboard report at 776ms: { 1b }
-Observed keyboard report at 776ms: { 1b }
-Expected keyboard report at 777ms: { }
-Observed keyboard report at 777ms: { }
-Expected keyboard report at 781ms: { 1b }
-Observed keyboard report at 781ms: { 1b }
-Expected keyboard report at 781ms: { }
-Observed keyboard report at 781ms: { }
-Expected keyboard report at 781ms: { 5 }
-Observed keyboard report at 781ms: { 5 }
-Expected keyboard report at 781ms: { }
-Observed keyboard report at 781ms: { }
-Expected keyboard report at 781ms: { 1b }
-Observed keyboard report at 781ms: { 1b }
-Expected keyboard report at 781ms: { }
-Observed keyboard report at 781ms: { }
-Expected keyboard report at 789ms: { 5 }
-Observed keyboard report at 789ms: { 5 }
-Expected keyboard report at 790ms: { }
-Observed keyboard report at 790ms: { }
-Expected keyboard report at 795ms: { 5 }
-Observed keyboard report at 795ms: { 5 }
-Expected keyboard report at 796ms: { }
-Observed keyboard report at 796ms: { }
-Expected keyboard report at 797ms: { d }
-Observed keyboard report at 797ms: { d }
-Expected keyboard report at 798ms: { }
-Observed keyboard report at 798ms: { }
-Expected keyboard report at 805ms: { 4 }
-Observed keyboard report at 805ms: { 4 }
-Expected keyboard report at 806ms: { }
-Observed keyboard report at 806ms: { }
-Expected keyboard report at 807ms: { 4 }
-Observed keyboard report at 807ms: { 4 }
-Expected keyboard report at 808ms: { }
-Observed keyboard report at 808ms: { }
-Expected keyboard report at 816ms: { 1b }
-Observed keyboard report at 816ms: { 1b }
-Expected keyboard report at 817ms: { }
-Observed keyboard report at 817ms: { }
-Expected keyboard report at 823ms: { 4 }
-Observed keyboard report at 823ms: { 4 }
-Expected keyboard report at 823ms: { }
-Observed keyboard report at 823ms: { }
-Expected keyboard report at 823ms: { 4 }
-Observed keyboard report at 823ms: { 4 }
-Expected keyboard report at 823ms: { }
-Observed keyboard report at 823ms: { }
-Expected keyboard report at 833ms: { 5 }
-Observed keyboard report at 833ms: { 5 }
-Expected keyboard report at 834ms: { }
-Observed keyboard report at 834ms: { }
-Expected keyboard report at 839ms: { 5 }
-Observed keyboard report at 839ms: { 5 }
-Expected keyboard report at 839ms: { }
-Observed keyboard report at 839ms: { }
-[       OK ] ManualTests.11_LayerBasics (3 ms)
+[       OK ] ManualTests.11_LayerBasics (2 ms)
 [ RUN      ] ManualTests.12_Delays
 [ INFO     ] Printing Macro: B
 	TAP_CODE_SEQUENCE 5 5 5 0 |,
@@ -4865,557 +2294,13 @@ Observed keyboard report at 839ms: { }
 	TAPCODE 5,TAPCODE 4,KEYCODEDOWN 5,INTERVAL 0,KEYCODEUP 5,TAPCODE 4,TAPCODE 5,
 [ INFO     ] Printing Macro: A
 	TAPCODE 5,TAPCODE 4,KEYCODEDOWN 5,INTERVAL 2,KEYCODEUP 5,TAPCODE 4,TAPCODE 5,
-Expected keyboard report at 856ms: { 5 }
-Observed keyboard report at 856ms: { 5 }
-Expected keyboard report at 857ms: { }
-Observed keyboard report at 857ms: { }
-Expected keyboard report at 858ms: { 5 }
-Observed keyboard report at 858ms: { 5 }
-Expected keyboard report at 859ms: { }
-Observed keyboard report at 859ms: { }
-Expected keyboard report at 860ms: { 5 }
-Observed keyboard report at 860ms: { 5 }
-Expected keyboard report at 861ms: { }
-Observed keyboard report at 861ms: { }
-Expected keyboard report at 866ms: { 5 }
-Observed keyboard report at 866ms: { 5 }
-Expected keyboard report at 866ms: { }
-Observed keyboard report at 866ms: { }
-Expected keyboard report at 866ms: { 5 }
-Observed keyboard report at 866ms: { 5 }
-Expected keyboard report at 866ms: { }
-Observed keyboard report at 866ms: { }
-Expected keyboard report at 866ms: { 5 }
-Observed keyboard report at 866ms: { 5 }
-Expected keyboard report at 866ms: { }
-Observed keyboard report at 866ms: { }
-Expected keyboard report at 960ms: { 5 }
-Observed keyboard report at 960ms: { 5 }
-Expected keyboard report at 961ms: { }
-Observed keyboard report at 961ms: { }
-Expected keyboard report at 962ms: { 5 }
-Observed keyboard report at 962ms: { 5 }
-Expected keyboard report at 963ms: { }
-Observed keyboard report at 963ms: { }
-Expected keyboard report at 966ms: { 5 }
-Observed keyboard report at 966ms: { 5 }
-Expected keyboard report at 967ms: { }
-Observed keyboard report at 967ms: { }
-Expected keyboard report at 972ms: { 5 }
-Observed keyboard report at 972ms: { 5 }
-Expected keyboard report at 972ms: { }
-Observed keyboard report at 972ms: { }
-Expected keyboard report at 972ms: { 5 }
-Observed keyboard report at 972ms: { 5 }
-Expected keyboard report at 972ms: { }
-Observed keyboard report at 972ms: { }
-Expected keyboard report at 972ms: { 5 }
-Observed keyboard report at 972ms: { 5 }
-Expected keyboard report at 972ms: { }
-Observed keyboard report at 972ms: { }
-Expected keyboard report at 984ms: { 5 }
-Observed keyboard report at 984ms: { 5 }
-Expected keyboard report at 987ms: { }
-Observed keyboard report at 987ms: { }
-Expected keyboard report at 988ms: { 4 }
-Observed keyboard report at 988ms: { 4 }
-Expected keyboard report at 989ms: { }
-Observed keyboard report at 989ms: { }
-Expected keyboard report at 994ms: { 5 }
-Observed keyboard report at 994ms: { 5 }
-Expected keyboard report at 994ms: { }
-Observed keyboard report at 994ms: { }
-Expected keyboard report at 994ms: { 4 }
-Observed keyboard report at 994ms: { 4 }
-Expected keyboard report at 994ms: { }
-Observed keyboard report at 994ms: { }
-Expected keyboard report at 1006ms: { 5 }
-Observed keyboard report at 1006ms: { 5 }
-Expected keyboard report at 1007ms: { }
-Observed keyboard report at 1007ms: { }
-Expected keyboard report at 1008ms: { 4 }
-Observed keyboard report at 1008ms: { 4 }
-Expected keyboard report at 1009ms: { }
-Observed keyboard report at 1009ms: { }
-Expected keyboard report at 1010ms: { 5 }
-Observed keyboard report at 1010ms: { 5 }
-Expected keyboard report at 1013ms: { }
-Observed keyboard report at 1013ms: { }
-Expected keyboard report at 1014ms: { 4 }
-Observed keyboard report at 1014ms: { 4 }
-Expected keyboard report at 1015ms: { }
-Observed keyboard report at 1015ms: { }
-Expected keyboard report at 1016ms: { 5 }
-Observed keyboard report at 1016ms: { 5 }
-Expected keyboard report at 1017ms: { }
-Observed keyboard report at 1017ms: { }
-Expected keyboard report at 1022ms: { 5 }
-Observed keyboard report at 1022ms: { 5 }
-Expected keyboard report at 1022ms: { }
-Observed keyboard report at 1022ms: { }
-Expected keyboard report at 1022ms: { 4 }
-Observed keyboard report at 1022ms: { 4 }
-Expected keyboard report at 1022ms: { }
-Observed keyboard report at 1022ms: { }
-Expected keyboard report at 1022ms: { 5 }
-Observed keyboard report at 1022ms: { 5 }
-Expected keyboard report at 1022ms: { }
-Observed keyboard report at 1022ms: { }
-Expected keyboard report at 1022ms: { 4 }
-Observed keyboard report at 1022ms: { 4 }
-Expected keyboard report at 1022ms: { }
-Observed keyboard report at 1022ms: { }
-Expected keyboard report at 1022ms: { 5 }
-Observed keyboard report at 1022ms: { 5 }
-Expected keyboard report at 1022ms: { }
-Observed keyboard report at 1022ms: { }
-Expected keyboard report at 1037ms: { 5 }
-Observed keyboard report at 1037ms: { 5 }
-Expected keyboard report at 1038ms: { }
-Observed keyboard report at 1038ms: { }
-Expected keyboard report at 1039ms: { 4 }
-Observed keyboard report at 1039ms: { 4 }
-Expected keyboard report at 1040ms: { }
-Observed keyboard report at 1040ms: { }
-Expected keyboard report at 1041ms: { 5 }
-Observed keyboard report at 1041ms: { 5 }
-Expected keyboard report at 1048ms: { }
-Observed keyboard report at 1048ms: { }
-Expected keyboard report at 1049ms: { 4 }
-Observed keyboard report at 1049ms: { 4 }
-Expected keyboard report at 1050ms: { }
-Observed keyboard report at 1050ms: { }
-Expected keyboard report at 1051ms: { 5 }
-Observed keyboard report at 1051ms: { 5 }
-Expected keyboard report at 1052ms: { }
-Observed keyboard report at 1052ms: { }
-Expected keyboard report at 1057ms: { 5 }
-Observed keyboard report at 1057ms: { 5 }
-Expected keyboard report at 1057ms: { }
-Observed keyboard report at 1057ms: { }
-Expected keyboard report at 1057ms: { 4 }
-Observed keyboard report at 1057ms: { 4 }
-Expected keyboard report at 1057ms: { }
-Observed keyboard report at 1057ms: { }
-Expected keyboard report at 1057ms: { 5 }
-Observed keyboard report at 1057ms: { 5 }
-Expected keyboard report at 1057ms: { }
-Observed keyboard report at 1057ms: { }
-Expected keyboard report at 1057ms: { 4 }
-Observed keyboard report at 1057ms: { 4 }
-Expected keyboard report at 1057ms: { }
-Observed keyboard report at 1057ms: { }
-Expected keyboard report at 1057ms: { 5 }
-Observed keyboard report at 1057ms: { 5 }
-Expected keyboard report at 1057ms: { }
-Observed keyboard report at 1057ms: { }
-[       OK ] ManualTests.12_Delays (3 ms)
+[       OK ] ManualTests.12_Delays (1 ms)
 [ RUN      ] ManualTests.13_OutOfMemory
-Expected keyboard report at 1350ms: { 4 }
-Observed keyboard report at 1350ms: { 4 }
-Expected keyboard report at 1351ms: { }
-Observed keyboard report at 1351ms: { }
-Expected keyboard report at 1352ms: { 4 }
-Observed keyboard report at 1352ms: { 4 }
-Expected keyboard report at 1353ms: { }
-Observed keyboard report at 1353ms: { }
-Expected keyboard report at 1354ms: { 4 }
-Observed keyboard report at 1354ms: { 4 }
-Expected keyboard report at 1355ms: { }
-Observed keyboard report at 1355ms: { }
-Expected keyboard report at 1356ms: { 4 }
-Observed keyboard report at 1356ms: { 4 }
-Expected keyboard report at 1357ms: { }
-Observed keyboard report at 1357ms: { }
-Expected keyboard report at 1358ms: { 4 }
-Observed keyboard report at 1358ms: { 4 }
-Expected keyboard report at 1359ms: { }
-Observed keyboard report at 1359ms: { }
-Expected keyboard report at 1360ms: { 4 }
-Observed keyboard report at 1360ms: { 4 }
-Expected keyboard report at 1361ms: { }
-Observed keyboard report at 1361ms: { }
-Expected keyboard report at 1362ms: { 4 }
-Observed keyboard report at 1362ms: { 4 }
-Expected keyboard report at 1363ms: { }
-Observed keyboard report at 1363ms: { }
-Expected keyboard report at 1364ms: { 4 }
-Observed keyboard report at 1364ms: { 4 }
-Expected keyboard report at 1365ms: { }
-Observed keyboard report at 1365ms: { }
-Expected keyboard report at 1366ms: { 4 }
-Observed keyboard report at 1366ms: { 4 }
-Expected keyboard report at 1367ms: { }
-Observed keyboard report at 1367ms: { }
-Expected keyboard report at 1368ms: { 4 }
-Observed keyboard report at 1368ms: { 4 }
-Expected keyboard report at 1369ms: { }
-Observed keyboard report at 1369ms: { }
-Expected keyboard report at 1370ms: { 4 }
-Observed keyboard report at 1370ms: { 4 }
-Expected keyboard report at 1371ms: { }
-Observed keyboard report at 1371ms: { }
-Expected keyboard report at 1372ms: { 4 }
-Observed keyboard report at 1372ms: { 4 }
-Expected keyboard report at 1373ms: { }
-Observed keyboard report at 1373ms: { }
-Expected keyboard report at 1374ms: { 4 }
-Observed keyboard report at 1374ms: { 4 }
-Expected keyboard report at 1375ms: { }
-Observed keyboard report at 1375ms: { }
-Expected keyboard report at 1376ms: { 4 }
-Observed keyboard report at 1376ms: { 4 }
-Expected keyboard report at 1377ms: { }
-Observed keyboard report at 1377ms: { }
-Expected keyboard report at 1378ms: { 4 }
-Observed keyboard report at 1378ms: { 4 }
-Expected keyboard report at 1379ms: { }
-Observed keyboard report at 1379ms: { }
-Expected keyboard report at 1380ms: { 4 }
-Observed keyboard report at 1380ms: { 4 }
-Expected keyboard report at 1381ms: { }
-Observed keyboard report at 1381ms: { }
-Expected keyboard report at 1382ms: { 4 }
-Observed keyboard report at 1382ms: { 4 }
-Expected keyboard report at 1383ms: { }
-Observed keyboard report at 1383ms: { }
-Expected keyboard report at 1384ms: { 4 }
-Observed keyboard report at 1384ms: { 4 }
-Expected keyboard report at 1385ms: { }
-Observed keyboard report at 1385ms: { }
-Expected keyboard report at 1386ms: { 4 }
-Observed keyboard report at 1386ms: { 4 }
-Expected keyboard report at 1387ms: { }
-Observed keyboard report at 1387ms: { }
-Expected keyboard report at 1388ms: { 4 }
-Observed keyboard report at 1388ms: { 4 }
-Expected keyboard report at 1389ms: { }
-Observed keyboard report at 1389ms: { }
-Expected keyboard report at 1390ms: { 4 }
-Observed keyboard report at 1390ms: { 4 }
-Expected keyboard report at 1391ms: { }
-Observed keyboard report at 1391ms: { }
-Expected keyboard report at 1392ms: { 4 }
-Observed keyboard report at 1392ms: { 4 }
-Expected keyboard report at 1393ms: { }
-Observed keyboard report at 1393ms: { }
-Expected keyboard report at 1394ms: { 4 }
-Observed keyboard report at 1394ms: { 4 }
-Expected keyboard report at 1395ms: { }
-Observed keyboard report at 1395ms: { }
-Expected keyboard report at 1396ms: { 4 }
-Observed keyboard report at 1396ms: { 4 }
-Expected keyboard report at 1397ms: { }
-Observed keyboard report at 1397ms: { }
-Expected keyboard report at 1398ms: { 4 }
-Observed keyboard report at 1398ms: { 4 }
-Expected keyboard report at 1399ms: { }
-Observed keyboard report at 1399ms: { }
-Expected keyboard report at 1400ms: { 4 }
-Observed keyboard report at 1400ms: { 4 }
-Expected keyboard report at 1401ms: { }
-Observed keyboard report at 1401ms: { }
-Expected keyboard report at 1402ms: { 4 }
-Observed keyboard report at 1402ms: { 4 }
-Expected keyboard report at 1403ms: { }
-Observed keyboard report at 1403ms: { }
-Expected keyboard report at 1404ms: { 4 }
-Observed keyboard report at 1404ms: { 4 }
-Expected keyboard report at 1405ms: { }
-Observed keyboard report at 1405ms: { }
-Expected keyboard report at 1406ms: { 4 }
-Observed keyboard report at 1406ms: { 4 }
-Expected keyboard report at 1407ms: { }
-Observed keyboard report at 1407ms: { }
-Expected keyboard report at 1408ms: { 4 }
-Observed keyboard report at 1408ms: { 4 }
-Expected keyboard report at 1409ms: { }
-Observed keyboard report at 1409ms: { }
-Expected keyboard report at 1410ms: { 4 }
-Observed keyboard report at 1410ms: { 4 }
-Expected keyboard report at 1411ms: { }
-Observed keyboard report at 1411ms: { }
-Expected keyboard report at 1412ms: { 4 }
-Observed keyboard report at 1412ms: { 4 }
-Expected keyboard report at 1413ms: { }
-Observed keyboard report at 1413ms: { }
-Expected keyboard report at 1414ms: { 4 }
-Observed keyboard report at 1414ms: { 4 }
-Expected keyboard report at 1415ms: { }
-Observed keyboard report at 1415ms: { }
-Expected keyboard report at 1416ms: { 4 }
-Observed keyboard report at 1416ms: { 4 }
-Expected keyboard report at 1417ms: { }
-Observed keyboard report at 1417ms: { }
-Expected keyboard report at 1418ms: { 4 }
-Observed keyboard report at 1418ms: { 4 }
-Expected keyboard report at 1419ms: { }
-Observed keyboard report at 1419ms: { }
-Expected keyboard report at 1420ms: { 4 }
-Observed keyboard report at 1420ms: { 4 }
-Expected keyboard report at 1421ms: { }
-Observed keyboard report at 1421ms: { }
-Expected keyboard report at 1422ms: { 4 }
-Observed keyboard report at 1422ms: { 4 }
-Expected keyboard report at 1423ms: { }
-Observed keyboard report at 1423ms: { }
-Expected keyboard report at 1424ms: { 4 }
-Observed keyboard report at 1424ms: { 4 }
-Expected keyboard report at 1425ms: { }
-Observed keyboard report at 1425ms: { }
-Expected keyboard report at 1426ms: { 4 }
-Observed keyboard report at 1426ms: { 4 }
-Expected keyboard report at 1427ms: { }
-Observed keyboard report at 1427ms: { }
-Expected keyboard report at 1428ms: { 4 }
-Observed keyboard report at 1428ms: { 4 }
-Expected keyboard report at 1429ms: { }
-Observed keyboard report at 1429ms: { }
-Expected keyboard report at 1430ms: { 4 }
-Observed keyboard report at 1430ms: { 4 }
-Expected keyboard report at 1431ms: { }
-Observed keyboard report at 1431ms: { }
-Expected keyboard report at 1432ms: { 4 }
-Observed keyboard report at 1432ms: { 4 }
-Expected keyboard report at 1433ms: { }
-Observed keyboard report at 1433ms: { }
-Expected keyboard report at 1434ms: { 4 }
-Observed keyboard report at 1434ms: { 4 }
-Expected keyboard report at 1435ms: { }
-Observed keyboard report at 1435ms: { }
-Expected keyboard report at 1436ms: { 4 }
-Observed keyboard report at 1436ms: { 4 }
-Expected keyboard report at 1437ms: { }
-Observed keyboard report at 1437ms: { }
-Expected keyboard report at 1438ms: { 4 }
-Observed keyboard report at 1438ms: { 4 }
-Expected keyboard report at 1439ms: { }
-Observed keyboard report at 1439ms: { }
-Expected keyboard report at 1440ms: { 4 }
-Observed keyboard report at 1440ms: { 4 }
-Expected keyboard report at 1441ms: { }
-Observed keyboard report at 1441ms: { }
-Expected keyboard report at 1442ms: { 4 }
-Observed keyboard report at 1442ms: { 4 }
-Expected keyboard report at 1443ms: { }
-Observed keyboard report at 1443ms: { }
-Expected keyboard report at 1444ms: { 4 }
-Observed keyboard report at 1444ms: { 4 }
-Expected keyboard report at 1445ms: { }
-Observed keyboard report at 1445ms: { }
-Expected keyboard report at 1446ms: { 4 }
-Observed keyboard report at 1446ms: { 4 }
-Expected keyboard report at 1447ms: { }
-Observed keyboard report at 1447ms: { }
-Expected keyboard report at 1448ms: { 4 }
-Observed keyboard report at 1448ms: { 4 }
-Expected keyboard report at 1449ms: { }
-Observed keyboard report at 1449ms: { }
-Expected keyboard report at 1458ms: { 4 }
-Observed keyboard report at 1458ms: { 4 }
-Expected keyboard report at 1459ms: { }
-Observed keyboard report at 1459ms: { }
-Expected keyboard report at 1460ms: { 4 }
-Observed keyboard report at 1460ms: { 4 }
-Expected keyboard report at 1461ms: { }
-Observed keyboard report at 1461ms: { }
-Expected keyboard report at 1462ms: { 4 }
-Observed keyboard report at 1462ms: { 4 }
-Expected keyboard report at 1463ms: { }
-Observed keyboard report at 1463ms: { }
-Expected keyboard report at 1464ms: { 4 }
-Observed keyboard report at 1464ms: { 4 }
-Expected keyboard report at 1465ms: { }
-Observed keyboard report at 1465ms: { }
-Expected keyboard report at 1466ms: { 4 }
-Observed keyboard report at 1466ms: { 4 }
-Expected keyboard report at 1467ms: { }
-Observed keyboard report at 1467ms: { }
-Expected keyboard report at 1468ms: { 4 }
-Observed keyboard report at 1468ms: { 4 }
-Expected keyboard report at 1469ms: { }
-Observed keyboard report at 1469ms: { }
-Expected keyboard report at 1470ms: { 4 }
-Observed keyboard report at 1470ms: { 4 }
-Expected keyboard report at 1471ms: { }
-Observed keyboard report at 1471ms: { }
-Expected keyboard report at 1472ms: { 4 }
-Observed keyboard report at 1472ms: { 4 }
-Expected keyboard report at 1473ms: { }
-Observed keyboard report at 1473ms: { }
-Expected keyboard report at 1474ms: { 4 }
-Observed keyboard report at 1474ms: { 4 }
-Expected keyboard report at 1475ms: { }
-Observed keyboard report at 1475ms: { }
-Expected keyboard report at 1476ms: { 4 }
-Observed keyboard report at 1476ms: { 4 }
-Expected keyboard report at 1477ms: { }
-Observed keyboard report at 1477ms: { }
-Expected keyboard report at 1478ms: { 4 }
-Observed keyboard report at 1478ms: { 4 }
-Expected keyboard report at 1479ms: { }
-Observed keyboard report at 1479ms: { }
-Expected keyboard report at 1480ms: { 4 }
-Observed keyboard report at 1480ms: { 4 }
-Expected keyboard report at 1481ms: { }
-Observed keyboard report at 1481ms: { }
-Expected keyboard report at 1482ms: { 4 }
-Observed keyboard report at 1482ms: { 4 }
-Expected keyboard report at 1483ms: { }
-Observed keyboard report at 1483ms: { }
-Expected keyboard report at 1484ms: { 4 }
-Observed keyboard report at 1484ms: { 4 }
-Expected keyboard report at 1485ms: { }
-Observed keyboard report at 1485ms: { }
-Expected keyboard report at 1486ms: { 4 }
-Observed keyboard report at 1486ms: { 4 }
-Expected keyboard report at 1487ms: { }
-Observed keyboard report at 1487ms: { }
-Expected keyboard report at 1488ms: { 4 }
-Observed keyboard report at 1488ms: { 4 }
-Expected keyboard report at 1489ms: { }
-Observed keyboard report at 1489ms: { }
-Expected keyboard report at 1490ms: { 4 }
-Observed keyboard report at 1490ms: { 4 }
-Expected keyboard report at 1491ms: { }
-Observed keyboard report at 1491ms: { }
-Expected keyboard report at 1492ms: { 4 }
-Observed keyboard report at 1492ms: { 4 }
-Expected keyboard report at 1493ms: { }
-Observed keyboard report at 1493ms: { }
-Expected keyboard report at 1494ms: { 4 }
-Observed keyboard report at 1494ms: { 4 }
-Expected keyboard report at 1495ms: { }
-Observed keyboard report at 1495ms: { }
-Expected keyboard report at 1496ms: { 4 }
-Observed keyboard report at 1496ms: { 4 }
-Expected keyboard report at 1497ms: { }
-Observed keyboard report at 1497ms: { }
-Expected keyboard report at 1498ms: { 4 }
-Observed keyboard report at 1498ms: { 4 }
-Expected keyboard report at 1499ms: { }
-Observed keyboard report at 1499ms: { }
-Expected keyboard report at 1500ms: { 4 }
-Observed keyboard report at 1500ms: { 4 }
-Expected keyboard report at 1501ms: { }
-Observed keyboard report at 1501ms: { }
-Expected keyboard report at 1502ms: { 4 }
-Observed keyboard report at 1502ms: { 4 }
-Expected keyboard report at 1503ms: { }
-Observed keyboard report at 1503ms: { }
-Expected keyboard report at 1504ms: { 4 }
-Observed keyboard report at 1504ms: { 4 }
-Expected keyboard report at 1505ms: { }
-Observed keyboard report at 1505ms: { }
-Expected keyboard report at 1506ms: { 4 }
-Observed keyboard report at 1506ms: { 4 }
-Expected keyboard report at 1507ms: { }
-Observed keyboard report at 1507ms: { }
-Expected keyboard report at 1508ms: { 4 }
-Observed keyboard report at 1508ms: { 4 }
-Expected keyboard report at 1509ms: { }
-Observed keyboard report at 1509ms: { }
-Expected keyboard report at 1510ms: { 4 }
-Observed keyboard report at 1510ms: { 4 }
-Expected keyboard report at 1511ms: { }
-Observed keyboard report at 1511ms: { }
-Expected keyboard report at 1512ms: { 4 }
-Observed keyboard report at 1512ms: { 4 }
-Expected keyboard report at 1513ms: { }
-Observed keyboard report at 1513ms: { }
-Expected keyboard report at 1514ms: { 4 }
-Observed keyboard report at 1514ms: { 4 }
-Expected keyboard report at 1515ms: { }
-Observed keyboard report at 1515ms: { }
-Expected keyboard report at 1516ms: { 4 }
-Observed keyboard report at 1516ms: { 4 }
-Expected keyboard report at 1517ms: { }
-Observed keyboard report at 1517ms: { }
-Expected keyboard report at 1518ms: { 4 }
-Observed keyboard report at 1518ms: { 4 }
-Expected keyboard report at 1519ms: { }
-Observed keyboard report at 1519ms: { }
-Expected keyboard report at 1520ms: { 4 }
-Observed keyboard report at 1520ms: { 4 }
-Expected keyboard report at 1521ms: { }
-Observed keyboard report at 1521ms: { }
-Expected keyboard report at 1522ms: { 4 }
-Observed keyboard report at 1522ms: { 4 }
-Expected keyboard report at 1523ms: { }
-Observed keyboard report at 1523ms: { }
-Expected keyboard report at 1524ms: { 4 }
-Observed keyboard report at 1524ms: { 4 }
-Expected keyboard report at 1525ms: { }
-Observed keyboard report at 1525ms: { }
-Expected keyboard report at 1526ms: { 4 }
-Observed keyboard report at 1526ms: { 4 }
-Expected keyboard report at 1527ms: { }
-Observed keyboard report at 1527ms: { }
-Expected keyboard report at 1528ms: { 4 }
-Observed keyboard report at 1528ms: { 4 }
-Expected keyboard report at 1529ms: { }
-Observed keyboard report at 1529ms: { }
-Expected keyboard report at 1530ms: { 4 }
-Observed keyboard report at 1530ms: { 4 }
-Expected keyboard report at 1531ms: { }
-Observed keyboard report at 1531ms: { }
-Expected keyboard report at 1532ms: { 4 }
-Observed keyboard report at 1532ms: { 4 }
-Expected keyboard report at 1533ms: { }
-Observed keyboard report at 1533ms: { }
-Expected keyboard report at 1534ms: { 4 }
-Observed keyboard report at 1534ms: { 4 }
-Expected keyboard report at 1535ms: { }
-Observed keyboard report at 1535ms: { }
-Expected keyboard report at 1536ms: { 4 }
-Observed keyboard report at 1536ms: { 4 }
-Expected keyboard report at 1537ms: { }
-Observed keyboard report at 1537ms: { }
-Expected keyboard report at 1538ms: { 4 }
-Observed keyboard report at 1538ms: { 4 }
-Expected keyboard report at 1539ms: { }
-Observed keyboard report at 1539ms: { }
-Expected keyboard report at 1540ms: { 4 }
-Observed keyboard report at 1540ms: { 4 }
-Expected keyboard report at 1541ms: { }
-Observed keyboard report at 1541ms: { }
-Expected keyboard report at 1542ms: { 4 }
-Observed keyboard report at 1542ms: { 4 }
-Expected keyboard report at 1543ms: { }
-Observed keyboard report at 1543ms: { }
-Expected keyboard report at 1544ms: { 4 }
-Observed keyboard report at 1544ms: { 4 }
-Expected keyboard report at 1545ms: { }
-Observed keyboard report at 1545ms: { }
-Expected keyboard report at 1546ms: { 4 }
-Observed keyboard report at 1546ms: { 4 }
-Expected keyboard report at 1547ms: { }
-Observed keyboard report at 1547ms: { }
-Expected keyboard report at 1548ms: { 4 }
-Observed keyboard report at 1548ms: { 4 }
-Expected keyboard report at 1549ms: { }
-Observed keyboard report at 1549ms: { }
-Expected keyboard report at 1550ms: { 4 }
-Observed keyboard report at 1550ms: { 4 }
-Expected keyboard report at 1551ms: { }
-Observed keyboard report at 1551ms: { }
-Expected keyboard report at 1552ms: { 4 }
-Observed keyboard report at 1552ms: { 4 }
-Expected keyboard report at 1553ms: { }
-Observed keyboard report at 1553ms: { }
-Expected keyboard report at 1554ms: { 4 }
-Observed keyboard report at 1554ms: { 4 }
-Expected keyboard report at 1555ms: { }
-Observed keyboard report at 1555ms: { }
-Expected keyboard report at 1556ms: { 4 }
-Observed keyboard report at 1556ms: { 4 }
-Expected keyboard report at 1557ms: { }
-Observed keyboard report at 1557ms: { }
-[       OK ] ManualTests.13_OutOfMemory (7 ms)
-[----------] 19 tests from ManualTests (34 ms total)
+[       OK ] ManualTests.13_OutOfMemory (14 ms)
+[----------] 19 tests from ManualTests (31 ms total)
 
 [----------] Global test environment tear-down
-[==========] 19 tests from 1 test suite ran. (34 ms total)
+[==========] 19 tests from 1 test suite ran. (31 ms total)
 [  PASSED  ] 19 tests.
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
@@ -5440,38 +2325,8 @@ Running test plugins/Macros/shift-blocker
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/Macros/shift-blocker/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_MacroWithoutShift
-Expected keyboard report at 6ms: { e6 }
-Observed keyboard report at 6ms: { e6 }
-Expected keyboard report at 6ms: { 24 e6 }
-Observed keyboard report at 6ms: { 24 e6 }
-Expected keyboard report at 6ms: { e6 }
-Observed keyboard report at 6ms: { e6 }
-Expected keyboard report at 6ms: { }
-Observed keyboard report at 6ms: { }
-Expected keyboard report at 6ms: { 8 }
-Observed keyboard report at 6ms: { 8 }
-Expected keyboard report at 12ms: { }
-Observed keyboard report at 12ms: { }
 [       OK ] GeneratedKTest.1_MacroWithoutShift (0 ms)
 [ RUN      ] GeneratedKTest.2_MacroWithShift
-Expected keyboard report at 23ms: { e1 }
-Observed keyboard report at 23ms: { e1 }
-Expected keyboard report at 29ms: { e6 }
-Observed keyboard report at 29ms: { e6 }
-Expected keyboard report at 29ms: { 24 e6 }
-Observed keyboard report at 29ms: { 24 e6 }
-Expected keyboard report at 29ms: { e6 }
-Observed keyboard report at 29ms: { e6 }
-Expected keyboard report at 29ms: { }
-Observed keyboard report at 29ms: { }
-Expected keyboard report at 29ms: { e1 }
-Observed keyboard report at 29ms: { e1 }
-Expected keyboard report at 29ms: { 8 e1 }
-Observed keyboard report at 29ms: { 8 e1 }
-Expected keyboard report at 35ms: { e1 }
-Observed keyboard report at 35ms: { e1 }
-Expected keyboard report at 41ms: { }
-Observed keyboard report at 41ms: { }
 [       OK ] GeneratedKTest.2_MacroWithShift (0 ms)
 [----------] 3 tests from GeneratedKTest (0 ms total)
 
@@ -5501,65 +2356,21 @@ Running test plugins/Macros/basic
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/Macros/basic/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_MacroIndex0
-Expected keyboard report at 6ms: { 4 }
-Observed keyboard report at 6ms: { 4 }
-Expected keyboard report at 6ms: { }
-Observed keyboard report at 6ms: { }
 [       OK ] GeneratedKTest.1_MacroIndex0 (0 ms)
 [ RUN      ] GeneratedKTest.2_MacroIndex1
-Expected keyboard report at 18ms: { 4 }
-Observed keyboard report at 18ms: { 4 }
-Expected keyboard report at 18ms: { }
-Observed keyboard report at 18ms: { }
-Expected keyboard report at 18ms: { 5 }
-Observed keyboard report at 18ms: { 5 }
-Expected keyboard report at 18ms: { }
-Observed keyboard report at 18ms: { }
-Expected keyboard report at 18ms: { 6 }
-Observed keyboard report at 18ms: { 6 }
-Expected keyboard report at 18ms: { }
-Observed keyboard report at 18ms: { }
 [       OK ] GeneratedKTest.2_MacroIndex1 (0 ms)
 [ RUN      ] GeneratedKTest.3_MacroIndex2
-Expected keyboard report at 30ms: { 4 }
-Observed keyboard report at 30ms: { 4 }
-Expected keyboard report at 30ms: { 4 6 }
-Observed keyboard report at 30ms: { 4 6 }
-Expected keyboard report at 30ms: { 4 }
-Observed keyboard report at 30ms: { 4 }
-Expected keyboard report at 30ms: { }
-Observed keyboard report at 30ms: { }
-Expected keyboard report at 30ms: { 5 }
-Observed keyboard report at 30ms: { 5 }
-Expected keyboard report at 30ms: { }
-Observed keyboard report at 30ms: { }
 [       OK ] GeneratedKTest.3_MacroIndex2 (0 ms)
 [ RUN      ] GeneratedKTest.4_MacroIndex3
-Expected keyboard report at 42ms: { 4 }
-Observed keyboard report at 42ms: { 4 }
-Expected keyboard report at 42ms: { 4 5 }
-Observed keyboard report at 42ms: { 4 5 }
-Expected keyboard report at 48ms: { 5 }
-Observed keyboard report at 48ms: { 5 }
-Expected keyboard report at 48ms: { }
-Observed keyboard report at 48ms: { }
 [       OK ] GeneratedKTest.4_MacroIndex3 (0 ms)
 [ RUN      ] GeneratedKTest.5_MacroIndex255
-Expected keyboard report at 55ms: { 6 }
-Observed keyboard report at 55ms: { 6 }
-Expected keyboard report at 55ms: { }
-Observed keyboard report at 55ms: { }
 [       OK ] GeneratedKTest.5_MacroIndex255 (0 ms)
 [ RUN      ] GeneratedKTest.6_MacrosOtherKey
-Expected keyboard report at 67ms: { 1b }
-Observed keyboard report at 67ms: { 1b }
-Expected keyboard report at 73ms: { }
-Observed keyboard report at 73ms: { }
 [       OK ] GeneratedKTest.6_MacrosOtherKey (0 ms)
-[----------] 7 tests from GeneratedKTest (1 ms total)
+[----------] 7 tests from GeneratedKTest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 7 tests from 1 test suite ran. (1 ms total)
+[==========] 7 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 7 tests.
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
@@ -5583,109 +2394,21 @@ Running test plugins/CharShift/basic
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/CharShift/basic/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_CharShiftLowerLower
-Expected keyboard report at 5ms: { 4 }
-Observed keyboard report at 5ms: { 4 }
-Expected keyboard report at 10ms: { }
-Observed keyboard report at 10ms: { }
-Expected keyboard report at 15ms: { e1 }
-Observed keyboard report at 15ms: { e1 }
-Expected keyboard report at 20ms: { }
-Observed keyboard report at 20ms: { }
-Expected keyboard report at 20ms: { 5 }
-Observed keyboard report at 20ms: { 5 }
-Expected keyboard report at 25ms: { }
-Observed keyboard report at 25ms: { }
-Expected keyboard report at 25ms: { e1 }
-Observed keyboard report at 25ms: { e1 }
-Expected keyboard report at 30ms: { }
-Observed keyboard report at 30ms: { }
 [       OK ] GeneratedKTest.1_CharShiftLowerLower (0 ms)
 [ RUN      ] GeneratedKTest.2_CharShiftLowerUpper
-Expected keyboard report at 40ms: { 6 }
-Observed keyboard report at 40ms: { 6 }
-Expected keyboard report at 45ms: { }
-Observed keyboard report at 45ms: { }
-Expected keyboard report at 50ms: { e1 }
-Observed keyboard report at 50ms: { e1 }
-Expected keyboard report at 55ms: { 7 e1 }
-Observed keyboard report at 55ms: { 7 e1 }
-Expected keyboard report at 60ms: { e1 }
-Observed keyboard report at 60ms: { e1 }
-Expected keyboard report at 65ms: { }
-Observed keyboard report at 65ms: { }
 [       OK ] GeneratedKTest.2_CharShiftLowerUpper (0 ms)
 [ RUN      ] GeneratedKTest.3_CharShiftUpperLower
-Expected keyboard report at 75ms: { e1 }
-Observed keyboard report at 75ms: { e1 }
-Expected keyboard report at 75ms: { 8 e1 }
-Observed keyboard report at 75ms: { 8 e1 }
-Expected keyboard report at 80ms: { e1 }
-Observed keyboard report at 80ms: { e1 }
-Expected keyboard report at 80ms: { }
-Observed keyboard report at 80ms: { }
-Expected keyboard report at 85ms: { e1 }
-Observed keyboard report at 85ms: { e1 }
-Expected keyboard report at 90ms: { }
-Observed keyboard report at 90ms: { }
-Expected keyboard report at 90ms: { 9 }
-Observed keyboard report at 90ms: { 9 }
-Expected keyboard report at 95ms: { }
-Observed keyboard report at 95ms: { }
-Expected keyboard report at 95ms: { e1 }
-Observed keyboard report at 95ms: { e1 }
-Expected keyboard report at 100ms: { }
-Observed keyboard report at 100ms: { }
 [       OK ] GeneratedKTest.3_CharShiftUpperLower (0 ms)
 [ RUN      ] GeneratedKTest.4_CharShiftUpperUpper
-Expected keyboard report at 110ms: { e1 }
-Observed keyboard report at 110ms: { e1 }
-Expected keyboard report at 110ms: { a e1 }
-Observed keyboard report at 110ms: { a e1 }
-Expected keyboard report at 115ms: { e1 }
-Observed keyboard report at 115ms: { e1 }
-Expected keyboard report at 115ms: { }
-Observed keyboard report at 115ms: { }
-Expected keyboard report at 120ms: { e1 }
-Observed keyboard report at 120ms: { e1 }
-Expected keyboard report at 125ms: { b e1 }
-Observed keyboard report at 125ms: { b e1 }
-Expected keyboard report at 130ms: { e1 }
-Observed keyboard report at 130ms: { e1 }
-Expected keyboard report at 135ms: { }
-Observed keyboard report at 135ms: { }
 [       OK ] GeneratedKTest.4_CharShiftUpperUpper (0 ms)
 [ RUN      ] GeneratedKTest.5_RolloverFromNormalToCharShiftUpper
-Expected keyboard report at 145ms: { 1b }
-Observed keyboard report at 145ms: { 1b }
-Expected keyboard report at 150ms: { 1b e1 }
-Observed keyboard report at 150ms: { 1b e1 }
-Expected keyboard report at 150ms: { a 1b e1 }
-Observed keyboard report at 150ms: { a 1b e1 }
-Expected keyboard report at 155ms: { a e1 }
-Observed keyboard report at 155ms: { a e1 }
-Expected keyboard report at 160ms: { e1 }
-Observed keyboard report at 160ms: { e1 }
-Expected keyboard report at 160ms: { }
-Observed keyboard report at 160ms: { }
 [       OK ] GeneratedKTest.5_RolloverFromNormalToCharShiftUpper (0 ms)
 [ RUN      ] GeneratedKTest.6_RolloverFromShiftedToCharShiftLower
-Expected keyboard report at 170ms: { e1 }
-Observed keyboard report at 170ms: { e1 }
-Expected keyboard report at 170ms: { 1c e1 }
-Observed keyboard report at 170ms: { 1c e1 }
-Expected keyboard report at 175ms: { 1c }
-Observed keyboard report at 175ms: { 1c }
-Expected keyboard report at 175ms: { 4 1c }
-Observed keyboard report at 175ms: { 4 1c }
-Expected keyboard report at 180ms: { 4 }
-Observed keyboard report at 180ms: { 4 }
-Expected keyboard report at 185ms: { }
-Observed keyboard report at 185ms: { }
 [       OK ] GeneratedKTest.6_RolloverFromShiftedToCharShiftLower (0 ms)
-[----------] 7 tests from GeneratedKTest (1 ms total)
+[----------] 7 tests from GeneratedKTest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 7 tests from 1 test suite ran. (1 ms total)
+[==========] 7 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 7 tests.
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
@@ -5711,16 +2434,8 @@ Running test plugins/Escape-OneShot/basic
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/Escape-OneShot/basic/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_EscapeOneShotCancelTemporary
-Expected keyboard report at 6ms: { e1 }
-Observed keyboard report at 6ms: { e1 }
-Expected keyboard report at 22ms: { }
-Observed keyboard report at 22ms: { }
 [       OK ] GeneratedKTest.1_EscapeOneShotCancelTemporary (0 ms)
 [ RUN      ] GeneratedKTest.2_EscapeOneShotCancelSticky
-Expected keyboard report at 34ms: { e1 }
-Observed keyboard report at 34ms: { e1 }
-Expected keyboard report at 100ms: { }
-Observed keyboard report at 100ms: { }
 [       OK ] GeneratedKTest.2_EscapeOneShotCancelSticky (0 ms)
 [----------] 3 tests from GeneratedKTest (0 ms total)
 
@@ -5780,133 +2495,25 @@ Running test plugins/PrefixLayer/basic
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/PrefixLayer/basic/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_PrefixLayerPassthrough
-Expected keyboard report at 10ms: { e0 }
-Observed keyboard report at 10ms: { e0 }
-Expected keyboard report at 10ms: { 5 e0 }
-Observed keyboard report at 10ms: { 5 e0 }
-Expected keyboard report at 10ms: { e0 }
-Observed keyboard report at 10ms: { e0 }
-Expected keyboard report at 10ms: { }
-Observed keyboard report at 10ms: { }
-Expected keyboard report at 10ms: { b }
-Observed keyboard report at 10ms: { b }
-Expected keyboard report at 15ms: { }
-Observed keyboard report at 15ms: { }
 [       OK ] GeneratedKTest.1_PrefixLayerPassthrough (0 ms)
 [ RUN      ] GeneratedKTest.2_PrefixLayerExplicit
-Expected keyboard report at 30ms: { e0 }
-Observed keyboard report at 30ms: { e0 }
-Expected keyboard report at 30ms: { 5 e0 }
-Observed keyboard report at 30ms: { 5 e0 }
-Expected keyboard report at 30ms: { e0 }
-Observed keyboard report at 30ms: { e0 }
-Expected keyboard report at 30ms: { }
-Observed keyboard report at 30ms: { }
-Expected keyboard report at 30ms: { 51 }
-Observed keyboard report at 30ms: { 51 }
-Expected keyboard report at 35ms: { }
-Observed keyboard report at 35ms: { }
 [       OK ] GeneratedKTest.2_PrefixLayerExplicit (0 ms)
 [ RUN      ] GeneratedKTest.3_PrefixLayerMasked
 [       OK ] GeneratedKTest.3_PrefixLayerMasked (0 ms)
 [ RUN      ] GeneratedKTest.4_PrefixLayerSameModifierFirst
-Expected keyboard report at 65ms: { e0 }
-Observed keyboard report at 65ms: { e0 }
-Expected keyboard report at 75ms: { 5 e0 }
-Observed keyboard report at 75ms: { 5 e0 }
-Expected keyboard report at 75ms: { e0 }
-Observed keyboard report at 75ms: { e0 }
-Expected keyboard report at 75ms: { }
-Observed keyboard report at 75ms: { }
-Expected keyboard report at 75ms: { e0 }
-Observed keyboard report at 75ms: { e0 }
-Expected keyboard report at 75ms: { b e0 }
-Observed keyboard report at 75ms: { b e0 }
-Expected keyboard report at 80ms: { e0 }
-Observed keyboard report at 80ms: { e0 }
-Expected keyboard report at 90ms: { }
-Observed keyboard report at 90ms: { }
 [       OK ] GeneratedKTest.4_PrefixLayerSameModifierFirst (0 ms)
 [ RUN      ] GeneratedKTest.5_PrefixLayerSameModifierSecond
-Expected keyboard report at 100ms: { e0 }
-Observed keyboard report at 100ms: { e0 }
-Expected keyboard report at 105ms: { 5 e0 }
-Observed keyboard report at 105ms: { 5 e0 }
-Expected keyboard report at 105ms: { e0 }
-Observed keyboard report at 105ms: { e0 }
-Expected keyboard report at 105ms: { }
-Observed keyboard report at 105ms: { }
-Expected keyboard report at 105ms: { e0 }
-Observed keyboard report at 105ms: { e0 }
-Expected keyboard report at 105ms: { b e0 }
-Observed keyboard report at 105ms: { b e0 }
-Expected keyboard report at 110ms: { e0 }
-Observed keyboard report at 110ms: { e0 }
-Expected keyboard report at 115ms: { }
-Observed keyboard report at 115ms: { }
 [       OK ] GeneratedKTest.5_PrefixLayerSameModifierSecond (0 ms)
 [ RUN      ] GeneratedKTest.6_PrefixLayerDifferentModifierFirst
-Expected keyboard report at 125ms: { e1 }
-Observed keyboard report at 125ms: { e1 }
-Expected keyboard report at 135ms: { e0 }
-Observed keyboard report at 135ms: { e0 }
-Expected keyboard report at 135ms: { 5 e0 }
-Observed keyboard report at 135ms: { 5 e0 }
-Expected keyboard report at 135ms: { e0 }
-Observed keyboard report at 135ms: { e0 }
-Expected keyboard report at 135ms: { }
-Observed keyboard report at 135ms: { }
-Expected keyboard report at 135ms: { e1 }
-Observed keyboard report at 135ms: { e1 }
-Expected keyboard report at 135ms: { b e1 }
-Observed keyboard report at 135ms: { b e1 }
-Expected keyboard report at 140ms: { e1 }
-Observed keyboard report at 140ms: { e1 }
-Expected keyboard report at 150ms: { }
-Observed keyboard report at 150ms: { }
 [       OK ] GeneratedKTest.6_PrefixLayerDifferentModifierFirst (0 ms)
 [ RUN      ] GeneratedKTest.7_PrefixLayerDifferentModifierSecond
-Expected keyboard report at 160ms: { e1 }
-Observed keyboard report at 160ms: { e1 }
-Expected keyboard report at 165ms: { e0 }
-Observed keyboard report at 165ms: { e0 }
-Expected keyboard report at 165ms: { 5 e0 }
-Observed keyboard report at 165ms: { 5 e0 }
-Expected keyboard report at 165ms: { e0 }
-Observed keyboard report at 165ms: { e0 }
-Expected keyboard report at 165ms: { }
-Observed keyboard report at 165ms: { }
-Expected keyboard report at 165ms: { e1 }
-Observed keyboard report at 165ms: { e1 }
-Expected keyboard report at 165ms: { b e1 }
-Observed keyboard report at 165ms: { b e1 }
-Expected keyboard report at 170ms: { e1 }
-Observed keyboard report at 170ms: { e1 }
-Expected keyboard report at 175ms: { }
-Observed keyboard report at 175ms: { }
 [       OK ] GeneratedKTest.7_PrefixLayerDifferentModifierSecond (0 ms)
 [ RUN      ] GeneratedKTest.8_PrefixLayerRolloverFromLetter
-Expected keyboard report at 185ms: { e }
-Observed keyboard report at 185ms: { e }
-Expected keyboard report at 195ms: { e e0 }
-Observed keyboard report at 195ms: { e e0 }
-Expected keyboard report at 195ms: { 5 e e0 }
-Observed keyboard report at 195ms: { 5 e e0 }
-Expected keyboard report at 195ms: { e e0 }
-Observed keyboard report at 195ms: { e e0 }
-Expected keyboard report at 195ms: { e }
-Observed keyboard report at 195ms: { e }
-Expected keyboard report at 195ms: { b e }
-Observed keyboard report at 195ms: { b e }
-Expected keyboard report at 200ms: { b }
-Observed keyboard report at 200ms: { b }
-Expected keyboard report at 210ms: { }
-Observed keyboard report at 210ms: { }
 [       OK ] GeneratedKTest.8_PrefixLayerRolloverFromLetter (0 ms)
 [----------] 9 tests from GeneratedKTest (1 ms total)
 
 [----------] Global test environment tear-down
-[==========] 9 tests from 1 test suite ran. (2 ms total)
+[==========] 9 tests from 1 test suite ran. (1 ms total)
 [  PASSED  ] 9 tests.
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
@@ -5929,10 +2536,6 @@ Running test plugins/MagicCombo/basic
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MagicCombo/basic/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_MagicComboKeyA
-Expected keyboard report at 20ms: { 4 }
-Observed keyboard report at 20ms: { 4 }
-Expected keyboard report at 20ms: { }
-Observed keyboard report at 20ms: { }
 [       OK ] GeneratedKTest.1_MagicComboKeyA (0 ms)
 [----------] 2 tests from GeneratedKTest (0 ms total)
 
@@ -5963,90 +2566,26 @@ Running test plugins/Leader/basic
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/Leader/basic/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_LeaderSequenceAbort
-Expected keyboard report at 25ms: { 7 }
-Observed keyboard report at 25ms: { 7 }
-Expected keyboard report at 30ms: { }
-Observed keyboard report at 30ms: { }
 [       OK ] GeneratedKTest.1_LeaderSequenceAbort (0 ms)
 [ RUN      ] GeneratedKTest.2_LeaderSequenceAB
-Expected keyboard report at 60ms: { 1d }
-Observed keyboard report at 60ms: { 1d }
-Expected keyboard report at 60ms: { }
-Observed keyboard report at 60ms: { }
 [       OK ] GeneratedKTest.2_LeaderSequenceAB (0 ms)
 [ RUN      ] GeneratedKTest.3_LeaderSequenceAC
-Expected keyboard report at 95ms: { 1b }
-Observed keyboard report at 95ms: { 1b }
-Expected keyboard report at 95ms: { }
-Observed keyboard report at 95ms: { }
-Expected keyboard report at 95ms: { 1c }
-Observed keyboard report at 95ms: { 1c }
-Expected keyboard report at 95ms: { }
-Observed keyboard report at 95ms: { }
-Expected keyboard report at 95ms: { 1d }
-Observed keyboard report at 95ms: { 1d }
-Expected keyboard report at 95ms: { }
-Observed keyboard report at 95ms: { }
 [       OK ] GeneratedKTest.3_LeaderSequenceAC (0 ms)
 [ RUN      ] GeneratedKTest.4_LeaderSequenceBA
-Expected keyboard report at 130ms: { 1c }
-Observed keyboard report at 130ms: { 1c }
-Expected keyboard report at 130ms: { }
-Observed keyboard report at 130ms: { }
 [       OK ] GeneratedKTest.4_LeaderSequenceBA (0 ms)
 [ RUN      ] GeneratedKTest.5_LeaderSequenceBC
-Expected keyboard report at 165ms: { 1b }
-Observed keyboard report at 165ms: { 1b }
-Expected keyboard report at 165ms: { }
-Observed keyboard report at 165ms: { }
 [       OK ] GeneratedKTest.5_LeaderSequenceBC (0 ms)
 [ RUN      ] GeneratedKTest.6_LeaderSequenceC
-Expected keyboard report at 190ms: { 14 }
-Observed keyboard report at 190ms: { 14 }
-Expected keyboard report at 190ms: { }
-Observed keyboard report at 190ms: { }
 [       OK ] GeneratedKTest.6_LeaderSequenceC (0 ms)
 [ RUN      ] GeneratedKTest.7_LeaderSequenceBARollover
-Expected keyboard report at 220ms: { 1c }
-Observed keyboard report at 220ms: { 1c }
-Expected keyboard report at 220ms: { }
-Observed keyboard report at 220ms: { }
 [       OK ] GeneratedKTest.7_LeaderSequenceBARollover (0 ms)
 [ RUN      ] GeneratedKTest.8_LeaderSequenceCRollover
-Expected keyboard report at 250ms: { 14 }
-Observed keyboard report at 250ms: { 14 }
-Expected keyboard report at 250ms: { }
-Observed keyboard report at 250ms: { }
-Expected keyboard report at 255ms: { 7 }
-Observed keyboard report at 255ms: { 7 }
-Expected keyboard report at 265ms: { }
-Observed keyboard report at 265ms: { }
 [       OK ] GeneratedKTest.8_LeaderSequenceCRollover (0 ms)
 [ RUN      ] GeneratedKTest.9_LeaderSequenceC2Rollover
-Expected keyboard report at 285ms: { 14 }
-Observed keyboard report at 285ms: { 14 }
-Expected keyboard report at 285ms: { }
-Observed keyboard report at 285ms: { }
-Expected keyboard report at 290ms: { 7 }
-Observed keyboard report at 290ms: { 7 }
-Expected keyboard report at 300ms: { }
-Observed keyboard report at 300ms: { }
 [       OK ] GeneratedKTest.9_LeaderSequenceC2Rollover (0 ms)
 [ RUN      ] GeneratedKTest.10_LeaderSequenceABDRollover
-Expected keyboard report at 330ms: { 1d }
-Observed keyboard report at 330ms: { 1d }
-Expected keyboard report at 330ms: { }
-Observed keyboard report at 330ms: { }
-Expected keyboard report at 335ms: { 7 }
-Observed keyboard report at 335ms: { 7 }
-Expected keyboard report at 345ms: { }
-Observed keyboard report at 345ms: { }
 [       OK ] GeneratedKTest.10_LeaderSequenceABDRollover (0 ms)
 [ RUN      ] GeneratedKTest.11_LeaderSequenceTimeout
-Expected keyboard report at 395ms: { 6 }
-Observed keyboard report at 395ms: { 6 }
-Expected keyboard report at 400ms: { }
-Observed keyboard report at 400ms: { }
 [       OK ] GeneratedKTest.11_LeaderSequenceTimeout (0 ms)
 [----------] 12 tests from GeneratedKTest (1 ms total)
 
@@ -6132,18 +2671,6 @@ Running test features/events/keyboard-state/macros
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/features/events/keyboard-state/macros/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_KeyboardStateArrayCleared
-Expected keyboard report at 5ms: { 4 }
-Observed keyboard report at 5ms: { 4 }
-Expected keyboard report at 10ms: { }
-Observed keyboard report at 10ms: { }
-Expected keyboard report at 20ms: { 1c }
-Observed keyboard report at 20ms: { 1c }
-Expected keyboard report at 30ms: { }
-Observed keyboard report at 30ms: { }
-Expected keyboard report at 35ms: { 4 }
-Observed keyboard report at 35ms: { 4 }
-Expected keyboard report at 40ms: { }
-Observed keyboard report at 40ms: { }
 [       OK ] GeneratedKTest.1_KeyboardStateArrayCleared (0 ms)
 [----------] 2 tests from GeneratedKTest (0 ms total)
 
@@ -6170,16 +2697,6 @@ Running test features/events/keyboard-state/release-cleared
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/features/events/keyboard-state/release-cleared/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_KeyboardStateCleared
-Expected keyboard report at 5ms: { 4 }
-Observed keyboard report at 5ms: { 4 }
-Expected keyboard report at 10ms: { }
-Observed keyboard report at 10ms: { }
-Expected keyboard report at 20ms: { 1c }
-Observed keyboard report at 20ms: { 1c }
-Expected keyboard report at 35ms: { 4 }
-Observed keyboard report at 35ms: { 4 }
-Expected keyboard report at 40ms: { }
-Observed keyboard report at 40ms: { }
 [       OK ] GeneratedKTest.1_KeyboardStateCleared (0 ms)
 [----------] 2 tests from GeneratedKTest (0 ms total)
 
@@ -6208,32 +2725,8 @@ Running test features/layers/mod-layer
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/features/layers/mod-layer/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_Foo
-Expected keyboard report at 5ms: { 1e }
-Observed keyboard report at 5ms: { 1e }
-Expected keyboard report at 10ms: { }
-Observed keyboard report at 10ms: { }
-Expected keyboard report at 15ms: { e1 }
-Observed keyboard report at 15ms: { e1 }
-Expected keyboard report at 20ms: { 5 e1 }
-Observed keyboard report at 20ms: { 5 e1 }
-Expected keyboard report at 25ms: { e1 }
-Observed keyboard report at 25ms: { e1 }
-Expected keyboard report at 30ms: { }
-Observed keyboard report at 30ms: { }
-Expected keyboard report at 35ms: { 1e }
-Observed keyboard report at 35ms: { 1e }
-Expected keyboard report at 40ms: { }
-Observed keyboard report at 40ms: { }
 [       OK ] GeneratedKTest.1_Foo (0 ms)
 [ RUN      ] GeneratedKTest.2_QukeysModLayer
-Expected keyboard report at 60ms: { e3 }
-Observed keyboard report at 60ms: { e3 }
-Expected keyboard report at 60ms: { 5 e3 }
-Observed keyboard report at 60ms: { 5 e3 }
-Expected keyboard report at 60ms: { e3 }
-Observed keyboard report at 60ms: { e3 }
-Expected keyboard report at 65ms: { }
-Observed keyboard report at 65ms: { }
 [       OK ] GeneratedKTest.2_QukeysModLayer (0 ms)
 [----------] 3 tests from GeneratedKTest (0 ms total)
 
@@ -6260,44 +2753,12 @@ Running test features/layers/floating-base
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/features/layers/floating-base/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_BaseLayerStaysActive
-Expected keyboard report at 6ms: { 4 }
-Observed keyboard report at 6ms: { 4 }
-Expected keyboard report at 12ms: { }
-Observed keyboard report at 12ms: { }
-Expected keyboard report at 28ms: { 4 }
-Observed keyboard report at 28ms: { 4 }
-Expected keyboard report at 34ms: { }
-Observed keyboard report at 34ms: { }
 [       OK ] GeneratedKTest.1_BaseLayerStaysActive (0 ms)
 [ RUN      ] GeneratedKTest.2_LockLayer1
-Expected keyboard report at 50ms: { 5 }
-Observed keyboard report at 50ms: { 5 }
-Expected keyboard report at 56ms: { }
-Observed keyboard report at 56ms: { }
 [       OK ] GeneratedKTest.2_LockLayer1 (0 ms)
 [ RUN      ] GeneratedKTest.3_StackLayer0OnTopOfLayer1
-Expected keyboard report at 72ms: { 4 }
-Observed keyboard report at 72ms: { 4 }
-Expected keyboard report at 78ms: { }
-Observed keyboard report at 78ms: { }
-Expected keyboard report at 94ms: { 5 }
-Observed keyboard report at 94ms: { 5 }
-Expected keyboard report at 100ms: { }
-Observed keyboard report at 100ms: { }
-Expected keyboard report at 111ms: { 4 }
-Observed keyboard report at 111ms: { 4 }
-Expected keyboard report at 117ms: { }
-Observed keyboard report at 117ms: { }
-Expected keyboard report at 128ms: { 5 }
-Observed keyboard report at 128ms: { 5 }
-Expected keyboard report at 134ms: { }
-Observed keyboard report at 134ms: { }
 [       OK ] GeneratedKTest.3_StackLayer0OnTopOfLayer1 (0 ms)
 [ RUN      ] GeneratedKTest.4_DefaultToLayer0
-Expected keyboard report at 150ms: { 4 }
-Observed keyboard report at 150ms: { 4 }
-Expected keyboard report at 156ms: { }
-Observed keyboard report at 156ms: { }
 [       OK ] GeneratedKTest.4_DefaultToLayer0 (0 ms)
 [----------] 5 tests from GeneratedKTest (0 ms total)
 
@@ -6324,185 +2785,41 @@ Running test features/layers/use-cases
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/features/layers/use-cases/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_StartupLayerState
-Expected keyboard report at 5ms: { 27 }
-Observed keyboard report at 5ms: { 27 }
-Expected keyboard report at 10ms: { }
-Observed keyboard report at 10ms: { }
 [       OK ] GeneratedKTest.1_StartupLayerState (0 ms)
 [ RUN      ] GeneratedKTest.2_LayerShift1
-Expected keyboard report at 45ms: { 1e }
-Observed keyboard report at 45ms: { 1e }
-Expected keyboard report at 50ms: { }
-Observed keyboard report at 50ms: { }
-Expected keyboard report at 55ms: { 27 }
-Observed keyboard report at 55ms: { 27 }
-Expected keyboard report at 60ms: { }
-Observed keyboard report at 60ms: { }
-Expected keyboard report at 65ms: { 1e }
-Observed keyboard report at 65ms: { 1e }
-Expected keyboard report at 70ms: { }
-Observed keyboard report at 70ms: { }
 [       OK ] GeneratedKTest.2_LayerShift1 (0 ms)
 [ RUN      ] GeneratedKTest.3_LayerLock1
-Expected keyboard report at 105ms: { 1e }
-Observed keyboard report at 105ms: { 1e }
-Expected keyboard report at 110ms: { }
-Observed keyboard report at 110ms: { }
-Expected keyboard report at 115ms: { 27 }
-Observed keyboard report at 115ms: { 27 }
-Expected keyboard report at 120ms: { }
-Observed keyboard report at 120ms: { }
-Expected keyboard report at 125ms: { 1e }
-Observed keyboard report at 125ms: { 1e }
-Expected keyboard report at 130ms: { }
-Observed keyboard report at 130ms: { }
 [       OK ] GeneratedKTest.3_LayerLock1 (0 ms)
 [ RUN      ] GeneratedKTest.4_ResetFromLayerShift
 [       OK ] GeneratedKTest.4_ResetFromLayerShift (0 ms)
 [ RUN      ] GeneratedKTest.5_LayerMoves
-Expected keyboard report at 205ms: { 1e }
-Observed keyboard report at 205ms: { 1e }
-Expected keyboard report at 210ms: { }
-Observed keyboard report at 210ms: { }
-Expected keyboard report at 235ms: { 1f }
-Observed keyboard report at 235ms: { 1f }
-Expected keyboard report at 240ms: { }
-Observed keyboard report at 240ms: { }
-Expected keyboard report at 245ms: { 1f }
-Observed keyboard report at 245ms: { 1f }
-Expected keyboard report at 250ms: { }
-Observed keyboard report at 250ms: { }
 [       OK ] GeneratedKTest.5_LayerMoves (0 ms)
 [ RUN      ] GeneratedKTest.6_LayerLockPromotion
-Expected keyboard report at 310ms: { 1f }
-Observed keyboard report at 310ms: { 1f }
-Expected keyboard report at 315ms: { }
-Observed keyboard report at 315ms: { }
-Expected keyboard report at 320ms: { 1e }
-Observed keyboard report at 320ms: { 1e }
-Expected keyboard report at 325ms: { }
-Observed keyboard report at 325ms: { }
-Expected keyboard report at 340ms: { 1e }
-Observed keyboard report at 340ms: { 1e }
-Expected keyboard report at 345ms: { }
-Observed keyboard report at 345ms: { }
-Expected keyboard report at 350ms: { 1f }
-Observed keyboard report at 350ms: { 1f }
-Expected keyboard report at 355ms: { }
-Observed keyboard report at 355ms: { }
-Expected keyboard report at 370ms: { 1f }
-Observed keyboard report at 370ms: { 1f }
-Expected keyboard report at 375ms: { }
-Observed keyboard report at 375ms: { }
-Expected keyboard report at 380ms: { 1e }
-Observed keyboard report at 380ms: { 1e }
-Expected keyboard report at 385ms: { }
-Observed keyboard report at 385ms: { }
 [       OK ] GeneratedKTest.6_LayerLockPromotion (0 ms)
 [ RUN      ] GeneratedKTest.7_LayerLockPromoteBaseLayer
-Expected keyboard report at 445ms: { 27 }
-Observed keyboard report at 445ms: { 27 }
-Expected keyboard report at 450ms: { }
-Observed keyboard report at 450ms: { }
 [       OK ] GeneratedKTest.7_LayerLockPromoteBaseLayer (0 ms)
 [ RUN      ] GeneratedKTest.8_ScenarioA
-Expected keyboard report at 485ms: { 1f }
-Observed keyboard report at 485ms: { 1f }
-Expected keyboard report at 490ms: { }
-Observed keyboard report at 490ms: { }
-Expected keyboard report at 505ms: { 1e }
-Observed keyboard report at 505ms: { 1e }
-Expected keyboard report at 510ms: { }
-Observed keyboard report at 510ms: { }
 [       OK ] GeneratedKTest.8_ScenarioA (0 ms)
 [ RUN      ] GeneratedKTest.9_ScenarioB
-Expected keyboard report at 560ms: { 1e }
-Observed keyboard report at 560ms: { 1e }
-Expected keyboard report at 565ms: { }
-Observed keyboard report at 565ms: { }
-Expected keyboard report at 575ms: { 1e }
-Observed keyboard report at 575ms: { 1e }
-Expected keyboard report at 580ms: { }
-Observed keyboard report at 580ms: { }
 [       OK ] GeneratedKTest.9_ScenarioB (0 ms)
 [ RUN      ] GeneratedKTest.10_ScenarioC
-Expected keyboard report at 625ms: { 1e }
-Observed keyboard report at 625ms: { 1e }
-Expected keyboard report at 630ms: { }
-Observed keyboard report at 630ms: { }
 [       OK ] GeneratedKTest.10_ScenarioC (0 ms)
 [ RUN      ] GeneratedKTest.11_ScenarioD
-Expected keyboard report at 675ms: { 1e }
-Observed keyboard report at 675ms: { 1e }
-Expected keyboard report at 680ms: { }
-Observed keyboard report at 680ms: { }
-Expected keyboard report at 685ms: { 1f }
-Observed keyboard report at 685ms: { 1f }
-Expected keyboard report at 690ms: { }
-Observed keyboard report at 690ms: { }
 [       OK ] GeneratedKTest.11_ScenarioD (0 ms)
 [ RUN      ] GeneratedKTest.12_ScenarioE
-Expected keyboard report at 735ms: { 1e }
-Observed keyboard report at 735ms: { 1e }
-Expected keyboard report at 740ms: { }
-Observed keyboard report at 740ms: { }
-Expected keyboard report at 750ms: { 1f }
-Observed keyboard report at 750ms: { 1f }
-Expected keyboard report at 755ms: { }
-Observed keyboard report at 755ms: { }
-Expected keyboard report at 760ms: { 1e }
-Observed keyboard report at 760ms: { 1e }
-Expected keyboard report at 765ms: { }
-Observed keyboard report at 765ms: { }
-Expected keyboard report at 780ms: { 1e }
-Observed keyboard report at 780ms: { 1e }
-Expected keyboard report at 785ms: { }
-Observed keyboard report at 785ms: { }
 [       OK ] GeneratedKTest.12_ScenarioE (0 ms)
 [ RUN      ] GeneratedKTest.13_ScenarioF
-Expected keyboard report at 840ms: { 1e }
-Observed keyboard report at 840ms: { 1e }
-Expected keyboard report at 845ms: { }
-Observed keyboard report at 845ms: { }
-Expected keyboard report at 855ms: { 1e }
-Observed keyboard report at 855ms: { 1e }
-Expected keyboard report at 860ms: { }
-Observed keyboard report at 860ms: { }
-Expected keyboard report at 865ms: { 1f }
-Observed keyboard report at 865ms: { 1f }
-Expected keyboard report at 870ms: { }
-Observed keyboard report at 870ms: { }
 [       OK ] GeneratedKTest.13_ScenarioF (0 ms)
 [ RUN      ] GeneratedKTest.14_ScenarioG
-Expected keyboard report at 920ms: { 1e }
-Observed keyboard report at 920ms: { 1e }
-Expected keyboard report at 925ms: { }
-Observed keyboard report at 925ms: { }
-Expected keyboard report at 930ms: { 1f }
-Observed keyboard report at 930ms: { 1f }
-Expected keyboard report at 935ms: { }
-Observed keyboard report at 935ms: { }
 [       OK ] GeneratedKTest.14_ScenarioG (0 ms)
 [ RUN      ] GeneratedKTest.15_layerShiftNext
-Expected keyboard report at 960ms: { 1e }
-Observed keyboard report at 960ms: { 1e }
-Expected keyboard report at 965ms: { }
-Observed keyboard report at 965ms: { }
 [       OK ] GeneratedKTest.15_layerShiftNext (0 ms)
 [ RUN      ] GeneratedKTest.16_layerShiftPrevious
-Expected keyboard report at 1005ms: { 1e }
-Observed keyboard report at 1005ms: { 1e }
-Expected keyboard report at 1010ms: { }
-Observed keyboard report at 1010ms: { }
-Expected keyboard report at 1020ms: { 1f }
-Observed keyboard report at 1020ms: { 1f }
-Expected keyboard report at 1025ms: { }
-Observed keyboard report at 1025ms: { }
 [       OK ] GeneratedKTest.16_layerShiftPrevious (0 ms)
-[----------] 17 tests from GeneratedKTest (5 ms total)
+[----------] 17 tests from GeneratedKTest (3 ms total)
 
 [----------] Global test environment tear-down
-[==========] 17 tests from 1 test suite ran. (5 ms total)
+[==========] 17 tests from 1 test suite ran. (3 ms total)
 [  PASSED  ] 17 tests.
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
@@ -6527,46 +2844,14 @@ Running test features/layers/activation-order
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/features/layers/activation-order/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_LayerActivationOrderBaseLayerHasNotRegressed
-Expected keyboard report at 5ms: { 27 }
-Observed keyboard report at 5ms: { 27 }
-Expected keyboard report at 10ms: { }
-Observed keyboard report at 10ms: { }
 [       OK ] GeneratedKTest.1_LayerActivationOrderBaseLayerHasNotRegressed (0 ms)
 [ RUN      ] GeneratedKTest.2_LayerActivationOrderShiftToLayer1
-Expected keyboard report at 25ms: { 1e }
-Observed keyboard report at 25ms: { 1e }
-Expected keyboard report at 30ms: { }
-Observed keyboard report at 30ms: { }
 [       OK ] GeneratedKTest.2_LayerActivationOrderShiftToLayer1 (0 ms)
 [ RUN      ] GeneratedKTest.3_LayerActivationOrderShiftingWithCaching
-Expected keyboard report at 45ms: { 27 }
-Observed keyboard report at 45ms: { 27 }
-Expected keyboard report at 55ms: { 1e 27 }
-Observed keyboard report at 55ms: { 1e 27 }
-Expected keyboard report at 60ms: { 1e }
-Observed keyboard report at 60ms: { 1e }
-Expected keyboard report at 65ms: { }
-Observed keyboard report at 65ms: { }
-Expected keyboard report at 70ms: { 1e }
-Observed keyboard report at 70ms: { 1e }
-Expected keyboard report at 75ms: { }
-Observed keyboard report at 75ms: { }
 [       OK ] GeneratedKTest.3_LayerActivationOrderShiftingWithCaching (0 ms)
 [ RUN      ] GeneratedKTest.4_LayerActivationOrderOrdering
-Expected keyboard report at 95ms: { 1f }
-Observed keyboard report at 95ms: { 1f }
-Expected keyboard report at 105ms: { 1e 1f }
-Observed keyboard report at 105ms: { 1e 1f }
-Expected keyboard report at 110ms: { 1e }
-Observed keyboard report at 110ms: { 1e }
-Expected keyboard report at 110ms: { }
-Observed keyboard report at 110ms: { }
 [       OK ] GeneratedKTest.4_LayerActivationOrderOrdering (0 ms)
 [ RUN      ] GeneratedKTest.5_LayerActivationOrderLayer0Fallback
-Expected keyboard report at 125ms: { 27 }
-Observed keyboard report at 125ms: { 27 }
-Expected keyboard report at 130ms: { }
-Observed keyboard report at 130ms: { }
 [       OK ] GeneratedKTest.5_LayerActivationOrderLayer0Fallback (0 ms)
 [----------] 6 tests from GeneratedKTest (0 ms total)
 
@@ -6593,38 +2878,10 @@ Running test features/rollover
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/features/rollover/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_KeyWithModifierFlagAlone
-Expected keyboard report at 5ms: { e1 }
-Observed keyboard report at 5ms: { e1 }
-Expected keyboard report at 5ms: { 4 e1 }
-Observed keyboard report at 5ms: { 4 e1 }
-Expected keyboard report at 10ms: { e1 }
-Observed keyboard report at 10ms: { e1 }
-Expected keyboard report at 10ms: { }
-Observed keyboard report at 10ms: { }
 [       OK ] GeneratedKTest.1_KeyWithModifierFlagAlone (0 ms)
 [ RUN      ] GeneratedKTest.2_KeyWithMultipleModifierFlagsAlone
-Expected keyboard report at 20ms: { e0 e1 e2 }
-Observed keyboard report at 20ms: { e0 e1 e2 }
-Expected keyboard report at 20ms: { 1b e0 e1 e2 }
-Observed keyboard report at 20ms: { 1b e0 e1 e2 }
-Expected keyboard report at 25ms: { e0 e1 e2 }
-Observed keyboard report at 25ms: { e0 e1 e2 }
-Expected keyboard report at 25ms: { }
-Observed keyboard report at 25ms: { }
 [       OK ] GeneratedKTest.2_KeyWithMultipleModifierFlagsAlone (0 ms)
 [ RUN      ] GeneratedKTest.3_NoModFlagsToModFlags
-Expected keyboard report at 35ms: { 4 }
-Observed keyboard report at 35ms: { 4 }
-Expected keyboard report at 40ms: { 4 e1 }
-Observed keyboard report at 40ms: { 4 e1 }
-Expected keyboard report at 40ms: { 4 5 e1 }
-Observed keyboard report at 40ms: { 4 5 e1 }
-Expected keyboard report at 45ms: { 5 e1 }
-Observed keyboard report at 45ms: { 5 e1 }
-Expected keyboard report at 50ms: { e1 }
-Observed keyboard report at 50ms: { e1 }
-Expected keyboard report at 50ms: { }
-Observed keyboard report at 50ms: { }
 [       OK ] GeneratedKTest.3_NoModFlagsToModFlags (0 ms)
 [----------] 4 tests from GeneratedKTest (0 ms total)
 
@@ -6651,16 +2908,8 @@ Running test features/keycodes
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/features/keycodes/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_KeyboardNonModifier
-Expected keyboard report at 5ms: { 4 }
-Observed keyboard report at 5ms: { 4 }
-Expected keyboard report at 10ms: { }
-Observed keyboard report at 10ms: { }
 [       OK ] GeneratedKTest.1_KeyboardNonModifier (0 ms)
 [ RUN      ] GeneratedKTest.2_KeyboardModifier
-Expected keyboard report at 20ms: { e1 }
-Observed keyboard report at 20ms: { e1 }
-Expected keyboard report at 25ms: { }
-Observed keyboard report at 25ms: { }
 [       OK ] GeneratedKTest.2_KeyboardModifier (0 ms)
 [----------] 3 tests from GeneratedKTest (0 ms total)
 
@@ -6668,7 +2917,7 @@ Observed keyboard report at 25ms: { }
 [==========] 3 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 3 tests.
 make[1]: Leaving directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
-Kaleidoscope [15:59:03] $ 
+Kaleidoscope [17:36:47] $ 
 vshcmd: > make clean && make simulator-tests
 Building in quiet mode. For a lot more information, add 'VERBOSE=1' to the beginning of your call to make
 make -C tests clean
@@ -7617,10 +3866,14 @@ In file included from test/manual-tests.cpp:5:
 [93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
 
 
+
+[33mA new release of Arduino CLI is available:[0m [36m0.28.0[0m → [36m0.33.0[0m
+[33mhttps://arduino.github.io/arduino-cli/latest/installation/#latest-packages[0m
+
 Running test personal-config
-[==========] Running 10 tests from 1 test suite.
+[==========] Running 11 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 10 tests from PersonalConfig
+[----------] 11 tests from PersonalConfig
 [ RUN      ] PersonalConfig.0_test
 [ INFO     ] test: tests/personal-config/test/manual-tests.cpp
 [       OK ] PersonalConfig.0_test (0 ms)
@@ -7641,7 +3894,7 @@ Expected keyboard report at 19ms: { 1b }
 Observed keyboard report at 19ms: { 1b }
 Expected keyboard report at 19ms: { }
 Observed keyboard report at 19ms: { }
-[       OK ] PersonalConfig.1_MacroRecordBasic (1 ms)
+[       OK ] PersonalConfig.1_MacroRecordBasic (0 ms)
 [ RUN      ] PersonalConfig.2_MacroRecordTopsy
 [ INFO     ] Printing Macro: A
 	TAP_CODE_SEQUENCE 30 31 32 0 |,TAP 209 197,TAPCODE 4,
@@ -7651,230 +3904,230 @@ Observed keyboard report at 19ms: { }
 	TAP_CODE_SEQUENCE 30 31 32 0 |,TAP 209 197,KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,
 [ INFO     ] Printing Macro: A
 	KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,TAP 209 197,TAP_CODE_SEQUENCE 30 31 32 0 |,
-Expected keyboard report at 29ms: { 1e }
-Observed keyboard report at 29ms: { 1e }
-Expected keyboard report at 30ms: { }
-Observed keyboard report at 30ms: { }
-Expected keyboard report at 31ms: { 1f }
-Observed keyboard report at 31ms: { 1f }
-Expected keyboard report at 32ms: { }
-Observed keyboard report at 32ms: { }
-Expected keyboard report at 33ms: { 20 }
-Observed keyboard report at 33ms: { 20 }
-Expected keyboard report at 34ms: { }
-Observed keyboard report at 34ms: { }
-Expected keyboard report at 39ms: { 4 }
-Observed keyboard report at 39ms: { 4 }
+Expected keyboard report at 37ms: { 1e }
+Observed keyboard report at 37ms: { 1e }
+Expected keyboard report at 38ms: { }
+Observed keyboard report at 38ms: { }
+Expected keyboard report at 39ms: { 1f }
+Observed keyboard report at 39ms: { 1f }
 Expected keyboard report at 40ms: { }
 Observed keyboard report at 40ms: { }
-Expected keyboard report at 53ms: { 1e }
-Observed keyboard report at 53ms: { 1e }
-Expected keyboard report at 53ms: { }
-Observed keyboard report at 53ms: { }
-Expected keyboard report at 53ms: { 1f }
-Observed keyboard report at 53ms: { 1f }
-Expected keyboard report at 53ms: { }
-Observed keyboard report at 53ms: { }
-Expected keyboard report at 53ms: { 20 }
-Observed keyboard report at 53ms: { 20 }
-Expected keyboard report at 53ms: { }
-Observed keyboard report at 53ms: { }
-Expected keyboard report at 53ms: { 4 }
-Observed keyboard report at 53ms: { 4 }
-Expected keyboard report at 53ms: { }
-Observed keyboard report at 53ms: { }
-Expected keyboard report at 71ms: { 1e }
-Observed keyboard report at 71ms: { 1e }
-Expected keyboard report at 72ms: { }
-Observed keyboard report at 72ms: { }
-Expected keyboard report at 73ms: { 1f }
-Observed keyboard report at 73ms: { 1f }
-Expected keyboard report at 74ms: { }
-Observed keyboard report at 74ms: { }
-Expected keyboard report at 75ms: { 20 }
-Observed keyboard report at 75ms: { 20 }
-Expected keyboard report at 76ms: { }
-Observed keyboard report at 76ms: { }
-Expected keyboard report at 81ms: { e1 }
-Observed keyboard report at 81ms: { e1 }
-Expected keyboard report at 81ms: { 1e e1 }
-Observed keyboard report at 81ms: { 1e e1 }
-Expected keyboard report at 82ms: { e1 }
-Observed keyboard report at 82ms: { e1 }
-Expected keyboard report at 82ms: { }
-Observed keyboard report at 82ms: { }
-Expected keyboard report at 95ms: { 1e }
-Observed keyboard report at 95ms: { 1e }
-Expected keyboard report at 95ms: { }
-Observed keyboard report at 95ms: { }
-Expected keyboard report at 95ms: { 1f }
-Observed keyboard report at 95ms: { 1f }
-Expected keyboard report at 95ms: { }
-Observed keyboard report at 95ms: { }
-Expected keyboard report at 95ms: { 20 }
-Observed keyboard report at 95ms: { 20 }
-Expected keyboard report at 95ms: { }
-Observed keyboard report at 95ms: { }
-Expected keyboard report at 95ms: { e1 }
-Observed keyboard report at 95ms: { e1 }
-Expected keyboard report at 95ms: { 1e e1 }
-Observed keyboard report at 95ms: { 1e e1 }
-Expected keyboard report at 95ms: { e1 }
-Observed keyboard report at 95ms: { e1 }
-Expected keyboard report at 95ms: { }
-Observed keyboard report at 95ms: { }
-Expected keyboard report at 114ms: { 1e }
-Observed keyboard report at 114ms: { 1e }
-Expected keyboard report at 115ms: { }
-Observed keyboard report at 115ms: { }
-Expected keyboard report at 116ms: { 1f }
-Observed keyboard report at 116ms: { 1f }
-Expected keyboard report at 117ms: { }
-Observed keyboard report at 117ms: { }
-Expected keyboard report at 118ms: { 20 }
-Observed keyboard report at 118ms: { 20 }
-Expected keyboard report at 119ms: { }
-Observed keyboard report at 119ms: { }
-Expected keyboard report at 124ms: { e1 }
-Observed keyboard report at 124ms: { e1 }
-Expected keyboard report at 124ms: { 1e e1 }
-Observed keyboard report at 124ms: { 1e e1 }
-Expected keyboard report at 125ms: { e1 }
-Observed keyboard report at 125ms: { e1 }
-Expected keyboard report at 125ms: { }
-Observed keyboard report at 125ms: { }
-Expected keyboard report at 126ms: { e1 }
-Observed keyboard report at 126ms: { e1 }
-Expected keyboard report at 126ms: { 1f e1 }
-Observed keyboard report at 126ms: { 1f e1 }
+Expected keyboard report at 41ms: { 20 }
+Observed keyboard report at 41ms: { 20 }
+Expected keyboard report at 42ms: { }
+Observed keyboard report at 42ms: { }
+Expected keyboard report at 47ms: { 4 }
+Observed keyboard report at 47ms: { 4 }
+Expected keyboard report at 48ms: { }
+Observed keyboard report at 48ms: { }
+Expected keyboard report at 61ms: { 1e }
+Observed keyboard report at 61ms: { 1e }
+Expected keyboard report at 61ms: { }
+Observed keyboard report at 61ms: { }
+Expected keyboard report at 61ms: { 1f }
+Observed keyboard report at 61ms: { 1f }
+Expected keyboard report at 61ms: { }
+Observed keyboard report at 61ms: { }
+Expected keyboard report at 61ms: { 20 }
+Observed keyboard report at 61ms: { 20 }
+Expected keyboard report at 61ms: { }
+Observed keyboard report at 61ms: { }
+Expected keyboard report at 61ms: { 4 }
+Observed keyboard report at 61ms: { 4 }
+Expected keyboard report at 61ms: { }
+Observed keyboard report at 61ms: { }
+Expected keyboard report at 103ms: { 1e }
+Observed keyboard report at 103ms: { 1e }
+Expected keyboard report at 104ms: { }
+Observed keyboard report at 104ms: { }
+Expected keyboard report at 105ms: { 1f }
+Observed keyboard report at 105ms: { 1f }
+Expected keyboard report at 106ms: { }
+Observed keyboard report at 106ms: { }
+Expected keyboard report at 107ms: { 20 }
+Observed keyboard report at 107ms: { 20 }
+Expected keyboard report at 108ms: { }
+Observed keyboard report at 108ms: { }
+Expected keyboard report at 113ms: { e1 }
+Observed keyboard report at 113ms: { e1 }
+Expected keyboard report at 113ms: { 1e e1 }
+Observed keyboard report at 113ms: { 1e e1 }
+Expected keyboard report at 114ms: { e1 }
+Observed keyboard report at 114ms: { e1 }
+Expected keyboard report at 114ms: { }
+Observed keyboard report at 114ms: { }
+Expected keyboard report at 127ms: { 1e }
+Observed keyboard report at 127ms: { 1e }
+Expected keyboard report at 127ms: { }
+Observed keyboard report at 127ms: { }
+Expected keyboard report at 127ms: { 1f }
+Observed keyboard report at 127ms: { 1f }
+Expected keyboard report at 127ms: { }
+Observed keyboard report at 127ms: { }
+Expected keyboard report at 127ms: { 20 }
+Observed keyboard report at 127ms: { 20 }
+Expected keyboard report at 127ms: { }
+Observed keyboard report at 127ms: { }
+Expected keyboard report at 127ms: { e1 }
+Observed keyboard report at 127ms: { e1 }
+Expected keyboard report at 127ms: { 1e e1 }
+Observed keyboard report at 127ms: { 1e e1 }
 Expected keyboard report at 127ms: { e1 }
 Observed keyboard report at 127ms: { e1 }
 Expected keyboard report at 127ms: { }
 Observed keyboard report at 127ms: { }
-Expected keyboard report at 128ms: { e1 }
-Observed keyboard report at 128ms: { e1 }
-Expected keyboard report at 128ms: { 20 e1 }
-Observed keyboard report at 128ms: { 20 e1 }
-Expected keyboard report at 129ms: { e1 }
-Observed keyboard report at 129ms: { e1 }
-Expected keyboard report at 129ms: { }
-Observed keyboard report at 129ms: { }
-Expected keyboard report at 142ms: { 1e }
-Observed keyboard report at 142ms: { 1e }
-Expected keyboard report at 142ms: { }
-Observed keyboard report at 142ms: { }
-Expected keyboard report at 142ms: { 1f }
-Observed keyboard report at 142ms: { 1f }
-Expected keyboard report at 142ms: { }
-Observed keyboard report at 142ms: { }
-Expected keyboard report at 142ms: { 20 }
-Observed keyboard report at 142ms: { 20 }
-Expected keyboard report at 142ms: { }
-Observed keyboard report at 142ms: { }
-Expected keyboard report at 142ms: { e1 }
-Observed keyboard report at 142ms: { e1 }
-Expected keyboard report at 142ms: { 1e e1 }
-Observed keyboard report at 142ms: { 1e e1 }
-Expected keyboard report at 142ms: { e1 }
-Observed keyboard report at 142ms: { e1 }
-Expected keyboard report at 142ms: { }
-Observed keyboard report at 142ms: { }
-Expected keyboard report at 142ms: { e1 }
-Observed keyboard report at 142ms: { e1 }
-Expected keyboard report at 142ms: { 1f e1 }
-Observed keyboard report at 142ms: { 1f e1 }
-Expected keyboard report at 142ms: { e1 }
-Observed keyboard report at 142ms: { e1 }
-Expected keyboard report at 142ms: { }
-Observed keyboard report at 142ms: { }
-Expected keyboard report at 142ms: { e1 }
-Observed keyboard report at 142ms: { e1 }
-Expected keyboard report at 142ms: { 20 e1 }
-Observed keyboard report at 142ms: { 20 e1 }
-Expected keyboard report at 142ms: { e1 }
-Observed keyboard report at 142ms: { e1 }
-Expected keyboard report at 142ms: { }
-Observed keyboard report at 142ms: { }
-Expected keyboard report at 163ms: { e1 }
-Observed keyboard report at 163ms: { e1 }
-Expected keyboard report at 163ms: { 1e e1 }
-Observed keyboard report at 163ms: { 1e e1 }
-Expected keyboard report at 164ms: { e1 }
-Observed keyboard report at 164ms: { e1 }
-Expected keyboard report at 164ms: { }
-Observed keyboard report at 164ms: { }
-Expected keyboard report at 171ms: { e1 }
-Observed keyboard report at 171ms: { e1 }
-Expected keyboard report at 171ms: { 1e e1 }
-Observed keyboard report at 171ms: { 1e e1 }
-Expected keyboard report at 172ms: { e1 }
-Observed keyboard report at 172ms: { e1 }
-Expected keyboard report at 172ms: { }
-Observed keyboard report at 172ms: { }
-Expected keyboard report at 173ms: { e1 }
-Observed keyboard report at 173ms: { e1 }
-Expected keyboard report at 173ms: { 1f e1 }
-Observed keyboard report at 173ms: { 1f e1 }
-Expected keyboard report at 174ms: { e1 }
-Observed keyboard report at 174ms: { e1 }
-Expected keyboard report at 174ms: { }
-Observed keyboard report at 174ms: { }
-Expected keyboard report at 175ms: { e1 }
-Observed keyboard report at 175ms: { e1 }
-Expected keyboard report at 175ms: { 20 e1 }
-Observed keyboard report at 175ms: { 20 e1 }
-Expected keyboard report at 176ms: { e1 }
-Observed keyboard report at 176ms: { e1 }
-Expected keyboard report at 176ms: { }
-Observed keyboard report at 176ms: { }
-Expected keyboard report at 181ms: { 1e }
-Observed keyboard report at 181ms: { 1e }
-Expected keyboard report at 182ms: { }
-Observed keyboard report at 182ms: { }
-Expected keyboard report at 183ms: { 1f }
-Observed keyboard report at 183ms: { 1f }
-Expected keyboard report at 184ms: { }
-Observed keyboard report at 184ms: { }
-Expected keyboard report at 185ms: { 20 }
-Observed keyboard report at 185ms: { 20 }
-Expected keyboard report at 186ms: { }
-Observed keyboard report at 186ms: { }
-Expected keyboard report at 199ms: { e1 }
-Observed keyboard report at 199ms: { e1 }
-Expected keyboard report at 199ms: { 1e e1 }
-Observed keyboard report at 199ms: { 1e e1 }
-Expected keyboard report at 199ms: { e1 }
-Observed keyboard report at 199ms: { e1 }
-Expected keyboard report at 199ms: { }
-Observed keyboard report at 199ms: { }
-Expected keyboard report at 199ms: { e1 }
-Observed keyboard report at 199ms: { e1 }
-Expected keyboard report at 199ms: { 1f e1 }
-Observed keyboard report at 199ms: { 1f e1 }
-Expected keyboard report at 199ms: { e1 }
-Observed keyboard report at 199ms: { e1 }
-Expected keyboard report at 199ms: { }
-Observed keyboard report at 199ms: { }
-Expected keyboard report at 199ms: { e1 }
-Observed keyboard report at 199ms: { e1 }
-Expected keyboard report at 199ms: { 20 e1 }
-Observed keyboard report at 199ms: { 20 e1 }
-Expected keyboard report at 199ms: { e1 }
-Observed keyboard report at 199ms: { e1 }
-Expected keyboard report at 199ms: { }
-Observed keyboard report at 199ms: { }
-Expected keyboard report at 199ms: { 1e }
-Observed keyboard report at 199ms: { 1e }
-Expected keyboard report at 199ms: { }
-Observed keyboard report at 199ms: { }
-Expected keyboard report at 199ms: { 1f }
-Observed keyboard report at 199ms: { 1f }
-Expected keyboard report at 199ms: { }
-Observed keyboard report at 199ms: { }
-Expected keyboard report at 199ms: { 20 }
-Observed keyboard report at 199ms: { 20 }
-Expected keyboard report at 199ms: { }
-Observed keyboard report at 199ms: { }
+Expected keyboard report at 174ms: { 1e }
+Observed keyboard report at 174ms: { 1e }
+Expected keyboard report at 175ms: { }
+Observed keyboard report at 175ms: { }
+Expected keyboard report at 176ms: { 1f }
+Observed keyboard report at 176ms: { 1f }
+Expected keyboard report at 177ms: { }
+Observed keyboard report at 177ms: { }
+Expected keyboard report at 178ms: { 20 }
+Observed keyboard report at 178ms: { 20 }
+Expected keyboard report at 179ms: { }
+Observed keyboard report at 179ms: { }
+Expected keyboard report at 184ms: { e1 }
+Observed keyboard report at 184ms: { e1 }
+Expected keyboard report at 184ms: { 1e e1 }
+Observed keyboard report at 184ms: { 1e e1 }
+Expected keyboard report at 185ms: { e1 }
+Observed keyboard report at 185ms: { e1 }
+Expected keyboard report at 185ms: { }
+Observed keyboard report at 185ms: { }
+Expected keyboard report at 186ms: { e1 }
+Observed keyboard report at 186ms: { e1 }
+Expected keyboard report at 186ms: { 1f e1 }
+Observed keyboard report at 186ms: { 1f e1 }
+Expected keyboard report at 187ms: { e1 }
+Observed keyboard report at 187ms: { e1 }
+Expected keyboard report at 187ms: { }
+Observed keyboard report at 187ms: { }
+Expected keyboard report at 188ms: { e1 }
+Observed keyboard report at 188ms: { e1 }
+Expected keyboard report at 188ms: { 20 e1 }
+Observed keyboard report at 188ms: { 20 e1 }
+Expected keyboard report at 189ms: { e1 }
+Observed keyboard report at 189ms: { e1 }
+Expected keyboard report at 189ms: { }
+Observed keyboard report at 189ms: { }
+Expected keyboard report at 202ms: { 1e }
+Observed keyboard report at 202ms: { 1e }
+Expected keyboard report at 202ms: { }
+Observed keyboard report at 202ms: { }
+Expected keyboard report at 202ms: { 1f }
+Observed keyboard report at 202ms: { 1f }
+Expected keyboard report at 202ms: { }
+Observed keyboard report at 202ms: { }
+Expected keyboard report at 202ms: { 20 }
+Observed keyboard report at 202ms: { 20 }
+Expected keyboard report at 202ms: { }
+Observed keyboard report at 202ms: { }
+Expected keyboard report at 202ms: { e1 }
+Observed keyboard report at 202ms: { e1 }
+Expected keyboard report at 202ms: { 1e e1 }
+Observed keyboard report at 202ms: { 1e e1 }
+Expected keyboard report at 202ms: { e1 }
+Observed keyboard report at 202ms: { e1 }
+Expected keyboard report at 202ms: { }
+Observed keyboard report at 202ms: { }
+Expected keyboard report at 202ms: { e1 }
+Observed keyboard report at 202ms: { e1 }
+Expected keyboard report at 202ms: { 1f e1 }
+Observed keyboard report at 202ms: { 1f e1 }
+Expected keyboard report at 202ms: { e1 }
+Observed keyboard report at 202ms: { e1 }
+Expected keyboard report at 202ms: { }
+Observed keyboard report at 202ms: { }
+Expected keyboard report at 202ms: { e1 }
+Observed keyboard report at 202ms: { e1 }
+Expected keyboard report at 202ms: { 20 e1 }
+Observed keyboard report at 202ms: { 20 e1 }
+Expected keyboard report at 202ms: { e1 }
+Observed keyboard report at 202ms: { e1 }
+Expected keyboard report at 202ms: { }
+Observed keyboard report at 202ms: { }
+Expected keyboard report at 267ms: { e1 }
+Observed keyboard report at 267ms: { e1 }
+Expected keyboard report at 267ms: { 1e e1 }
+Observed keyboard report at 267ms: { 1e e1 }
+Expected keyboard report at 268ms: { e1 }
+Observed keyboard report at 268ms: { e1 }
+Expected keyboard report at 268ms: { }
+Observed keyboard report at 268ms: { }
+Expected keyboard report at 275ms: { e1 }
+Observed keyboard report at 275ms: { e1 }
+Expected keyboard report at 275ms: { 1e e1 }
+Observed keyboard report at 275ms: { 1e e1 }
+Expected keyboard report at 276ms: { e1 }
+Observed keyboard report at 276ms: { e1 }
+Expected keyboard report at 276ms: { }
+Observed keyboard report at 276ms: { }
+Expected keyboard report at 277ms: { e1 }
+Observed keyboard report at 277ms: { e1 }
+Expected keyboard report at 277ms: { 1f e1 }
+Observed keyboard report at 277ms: { 1f e1 }
+Expected keyboard report at 278ms: { e1 }
+Observed keyboard report at 278ms: { e1 }
+Expected keyboard report at 278ms: { }
+Observed keyboard report at 278ms: { }
+Expected keyboard report at 279ms: { e1 }
+Observed keyboard report at 279ms: { e1 }
+Expected keyboard report at 279ms: { 20 e1 }
+Observed keyboard report at 279ms: { 20 e1 }
+Expected keyboard report at 280ms: { e1 }
+Observed keyboard report at 280ms: { e1 }
+Expected keyboard report at 280ms: { }
+Observed keyboard report at 280ms: { }
+Expected keyboard report at 285ms: { 1e }
+Observed keyboard report at 285ms: { 1e }
+Expected keyboard report at 286ms: { }
+Observed keyboard report at 286ms: { }
+Expected keyboard report at 287ms: { 1f }
+Observed keyboard report at 287ms: { 1f }
+Expected keyboard report at 288ms: { }
+Observed keyboard report at 288ms: { }
+Expected keyboard report at 289ms: { 20 }
+Observed keyboard report at 289ms: { 20 }
+Expected keyboard report at 290ms: { }
+Observed keyboard report at 290ms: { }
+Expected keyboard report at 303ms: { e1 }
+Observed keyboard report at 303ms: { e1 }
+Expected keyboard report at 303ms: { 1e e1 }
+Observed keyboard report at 303ms: { 1e e1 }
+Expected keyboard report at 303ms: { e1 }
+Observed keyboard report at 303ms: { e1 }
+Expected keyboard report at 303ms: { }
+Observed keyboard report at 303ms: { }
+Expected keyboard report at 303ms: { e1 }
+Observed keyboard report at 303ms: { e1 }
+Expected keyboard report at 303ms: { 1f e1 }
+Observed keyboard report at 303ms: { 1f e1 }
+Expected keyboard report at 303ms: { e1 }
+Observed keyboard report at 303ms: { e1 }
+Expected keyboard report at 303ms: { }
+Observed keyboard report at 303ms: { }
+Expected keyboard report at 303ms: { e1 }
+Observed keyboard report at 303ms: { e1 }
+Expected keyboard report at 303ms: { 20 e1 }
+Observed keyboard report at 303ms: { 20 e1 }
+Expected keyboard report at 303ms: { e1 }
+Observed keyboard report at 303ms: { e1 }
+Expected keyboard report at 303ms: { }
+Observed keyboard report at 303ms: { }
+Expected keyboard report at 303ms: { 1e }
+Observed keyboard report at 303ms: { 1e }
+Expected keyboard report at 303ms: { }
+Observed keyboard report at 303ms: { }
+Expected keyboard report at 303ms: { 1f }
+Observed keyboard report at 303ms: { 1f }
+Expected keyboard report at 303ms: { }
+Observed keyboard report at 303ms: { }
+Expected keyboard report at 303ms: { 20 }
+Observed keyboard report at 303ms: { 20 }
+Expected keyboard report at 303ms: { }
+Observed keyboard report at 303ms: { }
 [       OK ] PersonalConfig.2_MacroRecordTopsy (6 ms)
 [ RUN      ] PersonalConfig.3_MacroRecordOneShot
 [ INFO     ] Printing Macro: A
@@ -7885,132 +4138,132 @@ Observed keyboard report at 199ms: { }
 	TAP_CODE_SEQUENCE 4 4 225 0 |,
 [ INFO     ] Printing Macro: A
 	TAPCODE 4,TAPCODE 4,KEYCODEDOWN 225,TAPCODE 4,KEYCODEUP 225,
-Expected keyboard report at 218ms: { e1 }
-Observed keyboard report at 218ms: { e1 }
-Expected keyboard report at 220ms: { 4 e1 }
-Observed keyboard report at 220ms: { 4 e1 }
-Expected keyboard report at 220ms: { e1 }
-Observed keyboard report at 220ms: { 4 }
-Expected keyboard report at 221ms: { e1 }
-Observed keyboard report at 221ms: { }
-Expected keyboard report at 222ms: { 4 e1 }
-Observed keyboard report at 222ms: { 4 }
-Expected keyboard report at 223ms: { e1 }
-Observed keyboard report at 223ms: { }
-Expected keyboard report at 232ms: { e1 }
-Observed keyboard report at 232ms: { e1 }
-Expected keyboard report at 232ms: { 4 e1 }
-Observed keyboard report at 232ms: { 4 e1 }
-Expected keyboard report at 232ms: { 4 }
-Observed keyboard report at 232ms: { 4 }
-Expected keyboard report at 232ms: { }
-Observed keyboard report at 232ms: { }
-Expected keyboard report at 232ms: { 4 }
-Observed keyboard report at 232ms: { 4 }
-Expected keyboard report at 232ms: { }
-Observed keyboard report at 232ms: { }
-Expected keyboard report at 239ms: { e1 }
-Observed keyboard report at 239ms: { e1 }
-Expected keyboard report at 241ms: { }
-Observed keyboard report at 241ms: { }
-Expected keyboard report at 247ms: { 4 }
-Observed keyboard report at 247ms: { 4 }
-Expected keyboard report at 248ms: { }
-Observed keyboard report at 248ms: { }
-Expected keyboard report at 249ms: { 4 }
-Observed keyboard report at 249ms: { 4 }
-Expected keyboard report at 250ms: { }
-Observed keyboard report at 250ms: { }
-Expected keyboard report at 259ms: { 4 }
-Observed keyboard report at 259ms: { 4 }
-Expected keyboard report at 259ms: { }
-Observed keyboard report at 259ms: { }
-Expected keyboard report at 259ms: { 4 }
-Observed keyboard report at 259ms: { 4 }
-Expected keyboard report at 259ms: { }
-Observed keyboard report at 259ms: { }
-Expected keyboard report at 269ms: { 4 }
-Observed keyboard report at 269ms: { 4 }
-Expected keyboard report at 270ms: { }
-Observed keyboard report at 270ms: { }
-Expected keyboard report at 271ms: { 4 }
-Observed keyboard report at 271ms: { 4 }
-Expected keyboard report at 272ms: { }
-Observed keyboard report at 272ms: { }
-Expected keyboard report at 273ms: { e1 }
-Observed keyboard report at 273ms: { e1 }
-Expected keyboard report at 275ms: { }
-Observed keyboard report at 275ms: { }
-Expected keyboard report at 283ms: { 4 }
-Observed keyboard report at 283ms: { 4 }
-Expected keyboard report at 283ms: { }
-Observed keyboard report at 283ms: { }
-Expected keyboard report at 283ms: { 4 }
-Observed keyboard report at 283ms: { 4 }
-Expected keyboard report at 283ms: { }
-Observed keyboard report at 283ms: { }
-Expected keyboard report at 283ms: { e1 }
-Observed keyboard report at 283ms: { e1 }
-Expected keyboard report at 283ms: { }
-Observed keyboard report at 283ms: { }
-Expected keyboard report at 295ms: { 4 }
-Observed keyboard report at 295ms: { 4 }
-Expected keyboard report at 296ms: { }
-Observed keyboard report at 296ms: { }
-Expected keyboard report at 297ms: { 4 }
-Observed keyboard report at 297ms: { 4 }
-Expected keyboard report at 298ms: { }
-Observed keyboard report at 298ms: { }
-Expected keyboard report at 299ms: { e1 }
-Observed keyboard report at 299ms: { e1 }
-Expected keyboard report at 300ms: { 4 e1 }
-Observed keyboard report at 300ms: { 4 e1 }
-Expected keyboard report at 301ms: { e1 }
-Observed keyboard report at 301ms: { e1 }
-Expected keyboard report at 302ms: { }
-Observed keyboard report at 302ms: { }
-Expected keyboard report at 311ms: { 4 }
-Observed keyboard report at 311ms: { 4 }
-Expected keyboard report at 311ms: { }
-Observed keyboard report at 311ms: { }
-Expected keyboard report at 311ms: { 4 }
-Observed keyboard report at 311ms: { 4 }
-Expected keyboard report at 311ms: { }
-Observed keyboard report at 311ms: { }
-Expected keyboard report at 311ms: { e1 }
-Observed keyboard report at 311ms: { e1 }
-Expected keyboard report at 311ms: { 4 e1 }
-Observed keyboard report at 311ms: { 4 e1 }
-Expected keyboard report at 311ms: { e1 }
-Observed keyboard report at 311ms: { e1 }
-Expected keyboard report at 311ms: { }
-Observed keyboard report at 311ms: { }
+Expected keyboard report at 366ms: { e1 }
+Observed keyboard report at 366ms: { e1 }
+Expected keyboard report at 368ms: { 4 e1 }
+Observed keyboard report at 368ms: { 4 e1 }
+Expected keyboard report at 368ms: { 4 }
+Observed keyboard report at 368ms: { 4 }
+Expected keyboard report at 369ms: { }
+Observed keyboard report at 369ms: { }
+Expected keyboard report at 370ms: { 4 }
+Observed keyboard report at 370ms: { 4 }
+Expected keyboard report at 371ms: { }
+Observed keyboard report at 371ms: { }
+Expected keyboard report at 380ms: { e1 }
+Observed keyboard report at 380ms: { e1 }
+Expected keyboard report at 380ms: { 4 e1 }
+Observed keyboard report at 380ms: { 4 e1 }
+Expected keyboard report at 380ms: { 4 }
+Observed keyboard report at 380ms: { 4 }
+Expected keyboard report at 380ms: { }
+Observed keyboard report at 380ms: { }
+Expected keyboard report at 380ms: { 4 }
+Observed keyboard report at 380ms: { 4 }
+Expected keyboard report at 380ms: { }
+Observed keyboard report at 380ms: { }
+Expected keyboard report at 407ms: { e1 }
+Observed keyboard report at 407ms: { e1 }
+Expected keyboard report at 409ms: { }
+Observed keyboard report at 409ms: { }
+Expected keyboard report at 415ms: { 4 }
+Observed keyboard report at 415ms: { 4 }
+Expected keyboard report at 416ms: { }
+Observed keyboard report at 416ms: { }
+Expected keyboard report at 417ms: { 4 }
+Observed keyboard report at 417ms: { 4 }
+Expected keyboard report at 418ms: { }
+Observed keyboard report at 418ms: { }
+Expected keyboard report at 427ms: { 4 }
+Observed keyboard report at 427ms: { 4 }
+Expected keyboard report at 427ms: { }
+Observed keyboard report at 427ms: { }
+Expected keyboard report at 427ms: { 4 }
+Observed keyboard report at 427ms: { 4 }
+Expected keyboard report at 427ms: { }
+Observed keyboard report at 427ms: { }
+Expected keyboard report at 445ms: { 4 }
+Observed keyboard report at 445ms: { 4 }
+Expected keyboard report at 446ms: { }
+Observed keyboard report at 446ms: { }
+Expected keyboard report at 447ms: { 4 }
+Observed keyboard report at 447ms: { 4 }
+Expected keyboard report at 448ms: { }
+Observed keyboard report at 448ms: { }
+Expected keyboard report at 449ms: { e1 }
+Observed keyboard report at 449ms: { e1 }
+Expected keyboard report at 451ms: { }
+Observed keyboard report at 451ms: { }
+Expected keyboard report at 459ms: { 4 }
+Observed keyboard report at 459ms: { 4 }
+Expected keyboard report at 459ms: { }
+Observed keyboard report at 459ms: { }
+Expected keyboard report at 459ms: { 4 }
+Observed keyboard report at 459ms: { 4 }
+Expected keyboard report at 459ms: { }
+Observed keyboard report at 459ms: { }
+Expected keyboard report at 459ms: { e1 }
+Observed keyboard report at 459ms: { e1 }
+Expected keyboard report at 459ms: { }
+Observed keyboard report at 459ms: { }
+Expected keyboard report at 487ms: { 4 }
+Observed keyboard report at 487ms: { 4 }
+Expected keyboard report at 488ms: { }
+Observed keyboard report at 488ms: { }
+Expected keyboard report at 489ms: { 4 }
+Observed keyboard report at 489ms: { 4 }
+Expected keyboard report at 490ms: { }
+Observed keyboard report at 490ms: { }
+Expected keyboard report at 491ms: { e1 }
+Observed keyboard report at 491ms: { e1 }
+Expected keyboard report at 492ms: { 4 e1 }
+Observed keyboard report at 492ms: { 4 e1 }
+Expected keyboard report at 493ms: { e1 }
+Observed keyboard report at 493ms: { e1 }
+Expected keyboard report at 494ms: { }
+Observed keyboard report at 494ms: { }
+Expected keyboard report at 503ms: { 4 }
+Observed keyboard report at 503ms: { 4 }
+Expected keyboard report at 503ms: { }
+Observed keyboard report at 503ms: { }
+Expected keyboard report at 503ms: { 4 }
+Observed keyboard report at 503ms: { 4 }
+Expected keyboard report at 503ms: { }
+Observed keyboard report at 503ms: { }
+Expected keyboard report at 503ms: { e1 }
+Observed keyboard report at 503ms: { e1 }
+Expected keyboard report at 503ms: { 4 e1 }
+Observed keyboard report at 503ms: { 4 e1 }
+Expected keyboard report at 503ms: { e1 }
+Observed keyboard report at 503ms: { e1 }
+Expected keyboard report at 503ms: { }
+Observed keyboard report at 503ms: { }
 [       OK ] PersonalConfig.3_MacroRecordOneShot (3 ms)
 [ RUN      ] PersonalConfig.4_MacroRecordSpecialShift
 [ INFO     ] Printing Macro: U
-	TAPCODE 76,
+	END
 [ INFO     ] Printing Macro: U
-	TAPCODE 76,
-Expected keyboard report at 325ms: { 4c }
-Observed keyboard report at 325ms: { 4c }
-Expected keyboard report at 326ms: { }
-Observed keyboard report at 326ms: { }
-Expected keyboard report at 336ms: { 4c }
-Observed keyboard report at 336ms: { 4c }
-Expected keyboard report at 336ms: { }
-Observed keyboard report at 336ms: { }
-Expected keyboard report at 346ms: { 4c }
-Observed keyboard report at 346ms: { 4c }
-Expected keyboard report at 347ms: { }
-Observed keyboard report at 347ms: { }
-Expected keyboard report at 357ms: { 4c }
-Observed keyboard report at 357ms: { 4c }
-Expected keyboard report at 357ms: { }
-Observed keyboard report at 357ms: { }
-Expected keyboard report at 360ms: { 2d }
-Observed keyboard report at 360ms: { 2d }
-Expected keyboard report at 361ms: { }
-Observed keyboard report at 361ms: { }
+	END
+Expected keyboard report at 537ms: { 4c }
+Observed keyboard report at 537ms: { 4c }
+Expected keyboard report at 538ms: { }
+Observed keyboard report at 538ms: { }
+Expected keyboard report at 548ms: { 4c }
+Observed keyboard report at 548ms: { 4c }
+Expected keyboard report at 548ms: { }
+Observed keyboard report at 548ms: { }
+Expected keyboard report at 562ms: { 4c }
+Observed keyboard report at 562ms: { 4c }
+Expected keyboard report at 563ms: { }
+Observed keyboard report at 563ms: { }
+Expected keyboard report at 573ms: { 4c }
+Observed keyboard report at 573ms: { 4c }
+Expected keyboard report at 573ms: { }
+Observed keyboard report at 573ms: { }
+Expected keyboard report at 580ms: { 2d }
+Observed keyboard report at 580ms: { 2d }
+Expected keyboard report at 581ms: { }
+Observed keyboard report at 581ms: { }
 [       OK ] PersonalConfig.4_MacroRecordSpecialShift (1 ms)
 [ RUN      ] PersonalConfig.5_MacroRecordSpecialShift
 [       OK ] PersonalConfig.5_MacroRecordSpecialShift (0 ms)
@@ -8019,193 +4272,356 @@ Observed keyboard report at 361ms: { }
 	TAPCODE 30,TAPCODE 31,TAP 209 197,TAPCODE 4,KEYDOWN 208 75,KEYCODEUP 30,KEYCODEDOWN 229,KEYDOWN 208 75,KEYCODEUP 30,KEYCODEUP 229,
 [ INFO     ] Printing Macro: O
 	KEYCODEDOWN 229,KEYDOWN 208 77,KEYCODEUP 229,KEYCODEUP 32,
-Expected keyboard report at 368ms: { 1e }
-Observed keyboard report at 368ms: { 1e }
-Expected keyboard report at 369ms: { }
-Observed keyboard report at 369ms: { }
-Expected keyboard report at 370ms: { 1f }
-Observed keyboard report at 370ms: { 1f }
-Expected keyboard report at 371ms: { }
-Observed keyboard report at 371ms: { }
-Expected keyboard report at 376ms: { 4 }
-Observed keyboard report at 376ms: { 4 }
-Expected keyboard report at 377ms: { }
-Observed keyboard report at 377ms: { }
-Expected keyboard report at 378ms: { e1 }
-Observed keyboard report at 378ms: { e1 }
-Expected keyboard report at 378ms: { 1e e1 }
-Observed keyboard report at 378ms: { 1e e1 }
-Expected keyboard report at 379ms: { e1 }
-Observed keyboard report at 379ms: { e1 }
-Expected keyboard report at 379ms: { }
-Observed keyboard report at 379ms: { }
-Expected keyboard report at 380ms: { e5 }
-Observed keyboard report at 380ms: { e5 }
-Expected keyboard report at 381ms: { }
-Observed keyboard report at 381ms: { }
-Expected keyboard report at 381ms: { 1e }
-Observed keyboard report at 381ms: { 1e }
-Expected keyboard report at 382ms: { }
-Observed keyboard report at 382ms: { }
-Expected keyboard report at 382ms: { e5 }
-Observed keyboard report at 382ms: { e5 }
-Expected keyboard report at 383ms: { }
-Observed keyboard report at 383ms: { }
-Expected keyboard report at 396ms: { 1e }
-Observed keyboard report at 396ms: { 1e }
-Expected keyboard report at 396ms: { }
-Observed keyboard report at 396ms: { }
-Expected keyboard report at 396ms: { 1f }
-Observed keyboard report at 396ms: { 1f }
-Expected keyboard report at 396ms: { }
-Observed keyboard report at 396ms: { }
-Expected keyboard report at 396ms: { 4 }
-Observed keyboard report at 396ms: { 4 }
-Expected keyboard report at 396ms: { }
-Observed keyboard report at 396ms: { }
-Expected keyboard report at 396ms: { e1 }
-Observed keyboard report at 396ms: { e1 }
-Expected keyboard report at 396ms: { 1e e1 }
-Observed keyboard report at 396ms: { 1e e1 }
-Expected keyboard report at 396ms: { e1 }
-Observed keyboard report at 396ms: { e1 }
-Expected keyboard report at 396ms: { }
-Observed keyboard report at 396ms: { }
-Expected keyboard report at 396ms: { e5 }
-Observed keyboard report at 396ms: { e5 }
-Expected keyboard report at 396ms: { }
-Observed keyboard report at 396ms: { }
-Expected keyboard report at 396ms: { 1e }
-Observed keyboard report at 396ms: { 1e }
-Expected keyboard report at 396ms: { }
-Observed keyboard report at 396ms: { }
-Expected keyboard report at 396ms: { e5 }
-Observed keyboard report at 396ms: { e5 }
-Expected keyboard report at 396ms: { }
-Observed keyboard report at 396ms: { }
-Expected keyboard report at 422ms: { e5 }
-Observed keyboard report at 422ms: { e5 }
-Expected keyboard report at 424ms: { }
-Observed keyboard report at 424ms: { }
-Expected keyboard report at 424ms: { 20 }
-Observed keyboard report at 424ms: { 20 }
-Expected keyboard report at 424ms: { 20 e1 }
-Observed keyboard report at 424ms: { 20 e1 }
-Expected keyboard report at 425ms: { e1 }
-Observed keyboard report at 425ms: { e1 }
-Expected keyboard report at 425ms: { }
-Observed keyboard report at 425ms: { }
-Expected keyboard report at 434ms: { e5 }
-Observed keyboard report at 434ms: { e5 }
-Expected keyboard report at 434ms: { }
-Observed keyboard report at 434ms: { }
-Expected keyboard report at 434ms: { 20 }
-Observed keyboard report at 434ms: { 20 }
-Expected keyboard report at 434ms: { 20 e1 }
-Observed keyboard report at 434ms: { 20 e1 }
-Expected keyboard report at 434ms: { e1 }
-Observed keyboard report at 434ms: { e1 }
-Expected keyboard report at 434ms: { }
-Observed keyboard report at 434ms: { }
-[       OK ] PersonalConfig.6_MacroRecordTopsyOneShot (3 ms)
+Expected keyboard report at 588ms: { 1e }
+Observed keyboard report at 588ms: { 1e }
+Expected keyboard report at 589ms: { }
+Observed keyboard report at 589ms: { }
+Expected keyboard report at 590ms: { 1f }
+Observed keyboard report at 590ms: { 1f }
+Expected keyboard report at 591ms: { }
+Observed keyboard report at 591ms: { }
+Expected keyboard report at 596ms: { 4 }
+Observed keyboard report at 596ms: { 4 }
+Expected keyboard report at 597ms: { }
+Observed keyboard report at 597ms: { }
+Expected keyboard report at 598ms: { e1 }
+Observed keyboard report at 598ms: { e1 }
+Expected keyboard report at 598ms: { 1e e1 }
+Observed keyboard report at 598ms: { 1e e1 }
+Expected keyboard report at 599ms: { e1 }
+Observed keyboard report at 599ms: { e1 }
+Expected keyboard report at 599ms: { }
+Observed keyboard report at 599ms: { }
+Expected keyboard report at 600ms: { e5 }
+Observed keyboard report at 600ms: { e5 }
+Expected keyboard report at 601ms: { }
+Observed keyboard report at 601ms: { }
+Expected keyboard report at 601ms: { 1e }
+Observed keyboard report at 601ms: { 1e }
+Expected keyboard report at 602ms: { }
+Observed keyboard report at 602ms: { }
+Expected keyboard report at 602ms: { e5 }
+Observed keyboard report at 602ms: { e5 }
+Expected keyboard report at 603ms: { }
+Observed keyboard report at 603ms: { }
+Expected keyboard report at 616ms: { 1e }
+Observed keyboard report at 616ms: { 1e }
+Expected keyboard report at 616ms: { }
+Observed keyboard report at 616ms: { }
+Expected keyboard report at 616ms: { 1f }
+Observed keyboard report at 616ms: { 1f }
+Expected keyboard report at 616ms: { }
+Observed keyboard report at 616ms: { }
+Expected keyboard report at 616ms: { 4 }
+Observed keyboard report at 616ms: { 4 }
+Expected keyboard report at 616ms: { }
+Observed keyboard report at 616ms: { }
+Expected keyboard report at 616ms: { e1 }
+Observed keyboard report at 616ms: { e1 }
+Expected keyboard report at 616ms: { 1e e1 }
+Observed keyboard report at 616ms: { 1e e1 }
+Expected keyboard report at 616ms: { e1 }
+Observed keyboard report at 616ms: { e1 }
+Expected keyboard report at 616ms: { }
+Observed keyboard report at 616ms: { }
+Expected keyboard report at 616ms: { e5 }
+Observed keyboard report at 616ms: { e5 }
+Expected keyboard report at 616ms: { }
+Observed keyboard report at 616ms: { }
+Expected keyboard report at 616ms: { 1e }
+Observed keyboard report at 616ms: { 1e }
+Expected keyboard report at 616ms: { }
+Observed keyboard report at 616ms: { }
+Expected keyboard report at 616ms: { e5 }
+Observed keyboard report at 616ms: { e5 }
+Expected keyboard report at 616ms: { }
+Observed keyboard report at 616ms: { }
+Expected keyboard report at 682ms: { e5 }
+Observed keyboard report at 682ms: { e5 }
+Expected keyboard report at 684ms: { }
+Observed keyboard report at 684ms: { }
+Expected keyboard report at 684ms: { 20 }
+Observed keyboard report at 684ms: { 20 }
+Expected keyboard report at 684ms: { 20 e1 }
+Observed keyboard report at 684ms: { 20 e1 }
+Expected keyboard report at 685ms: { e1 }
+Observed keyboard report at 685ms: { e1 }
+Expected keyboard report at 685ms: { }
+Observed keyboard report at 685ms: { }
+Expected keyboard report at 694ms: { e5 }
+Observed keyboard report at 694ms: { e5 }
+Expected keyboard report at 694ms: { }
+Observed keyboard report at 694ms: { }
+Expected keyboard report at 694ms: { 20 }
+Observed keyboard report at 694ms: { 20 }
+Expected keyboard report at 694ms: { 20 e1 }
+Observed keyboard report at 694ms: { 20 e1 }
+Expected keyboard report at 694ms: { e1 }
+Observed keyboard report at 694ms: { e1 }
+Expected keyboard report at 694ms: { }
+Observed keyboard report at 694ms: { }
+[       OK ] PersonalConfig.6_MacroRecordTopsyOneShot (2 ms)
 [ RUN      ] PersonalConfig.7_SpecialShiftDoubleRelease
-Expected keyboard report at 445ms: { 35 }
-Observed keyboard report at 445ms: { 35 }
-Expected keyboard report at 446ms: { }
-Observed keyboard report at 446ms: { }
-Expected keyboard report at 448ms: { 35 }
-Observed keyboard report at 448ms: { 35 }
-Expected keyboard report at 449ms: { }
-Observed keyboard report at 449ms: { }
-Expected keyboard report at 451ms: { 35 }
-Observed keyboard report at 451ms: { 35 }
-Expected keyboard report at 452ms: { }
-Observed keyboard report at 452ms: { }
-Expected keyboard report at 454ms: { a }
-Observed keyboard report at 454ms: { a }
-Expected keyboard report at 455ms: { }
-Observed keyboard report at 455ms: { }
-Expected keyboard report at 457ms: { 35 }
-Observed keyboard report at 457ms: { 35 }
-Expected keyboard report at 458ms: { }
-Observed keyboard report at 458ms: { }
-Expected keyboard report at 460ms: { 35 }
-Observed keyboard report at 460ms: { 35 }
-Expected keyboard report at 461ms: { }
-Observed keyboard report at 461ms: { }
-Expected keyboard report at 463ms: { 35 }
-Observed keyboard report at 463ms: { 35 }
-Expected keyboard report at 464ms: { }
-Observed keyboard report at 464ms: { }
-Expected keyboard report at 466ms: { a }
-Observed keyboard report at 466ms: { a }
-Expected keyboard report at 467ms: { }
-Observed keyboard report at 467ms: { }
+Expected keyboard report at 721ms: { 35 }
+Observed keyboard report at 721ms: { 35 }
+Expected keyboard report at 722ms: { }
+Observed keyboard report at 722ms: { }
+Expected keyboard report at 724ms: { 35 }
+Observed keyboard report at 724ms: { 35 }
+Expected keyboard report at 725ms: { }
+Observed keyboard report at 725ms: { }
+Expected keyboard report at 727ms: { 35 }
+Observed keyboard report at 727ms: { 35 }
+Expected keyboard report at 728ms: { }
+Observed keyboard report at 728ms: { }
+Expected keyboard report at 730ms: { a }
+Observed keyboard report at 730ms: { a }
+Expected keyboard report at 731ms: { }
+Observed keyboard report at 731ms: { }
+Expected keyboard report at 733ms: { 35 }
+Observed keyboard report at 733ms: { 35 }
+Expected keyboard report at 734ms: { }
+Observed keyboard report at 734ms: { }
+Expected keyboard report at 736ms: { 35 }
+Observed keyboard report at 736ms: { 35 }
+Expected keyboard report at 737ms: { }
+Observed keyboard report at 737ms: { }
+Expected keyboard report at 739ms: { 35 }
+Observed keyboard report at 739ms: { 35 }
+Expected keyboard report at 740ms: { }
+Observed keyboard report at 740ms: { }
+Expected keyboard report at 742ms: { a }
+Observed keyboard report at 742ms: { a }
+Expected keyboard report at 743ms: { }
+Observed keyboard report at 743ms: { }
 [       OK ] PersonalConfig.7_SpecialShiftDoubleRelease (1 ms)
 [ RUN      ] PersonalConfig.8_MacroRecordIntoWrongSlot
-Expected keyboard report at 474ms: { 4 }
-Observed keyboard report at 474ms: { 4 }
-Expected keyboard report at 475ms: { }
-Observed keyboard report at 475ms: { }
-Expected keyboard report at 476ms: { 5 }
-Observed keyboard report at 476ms: { 5 }
-Expected keyboard report at 477ms: { }
-Observed keyboard report at 477ms: { }
-Expected keyboard report at 478ms: { 6 }
-Observed keyboard report at 478ms: { 6 }
-Expected keyboard report at 479ms: { }
-Observed keyboard report at 479ms: { }
+Expected keyboard report at 750ms: { 4 }
+Observed keyboard report at 750ms: { 4 }
+Expected keyboard report at 751ms: { }
+Observed keyboard report at 751ms: { }
+Expected keyboard report at 752ms: { 5 }
+Observed keyboard report at 752ms: { 5 }
+Expected keyboard report at 753ms: { }
+Observed keyboard report at 753ms: { }
+Expected keyboard report at 754ms: { 6 }
+Observed keyboard report at 754ms: { 6 }
+Expected keyboard report at 755ms: { }
+Observed keyboard report at 755ms: { }
 [       OK ] PersonalConfig.8_MacroRecordIntoWrongSlot (0 ms)
 [ RUN      ] PersonalConfig.9_MacroReplayPLAYPLAY
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:164: Failure
-Expected equality of these values:
-  observed_keyboard_report_count
-    Which is: 16
-  expected_keyboard_report_count
-    Which is: 12
-Expected keyboard report at 492ms: { 4 }
-Observed keyboard report at 492ms: { 4 }
-Expected keyboard report at 493ms: { }
-Observed keyboard report at 493ms: { }
-Expected keyboard report at 494ms: { 5 }
-Observed keyboard report at 494ms: { 5 }
-Expected keyboard report at 495ms: { }
-Observed keyboard report at 495ms: { }
-Expected keyboard report at 504ms: { 4 }
-Observed keyboard report at 504ms: { 4 }
-Expected keyboard report at 504ms: { }
-Observed keyboard report at 504ms: { }
-Expected keyboard report at 504ms: { 5 }
-Observed keyboard report at 504ms: { 5 }
-Expected keyboard report at 504ms: { }
-Observed keyboard report at 504ms: { }
-Expected keyboard report at 511ms: { 4 }
-Observed keyboard report at 511ms: { 4 }
-Expected keyboard report at 511ms: { }
-Observed keyboard report at 511ms: { }
-Expected keyboard report at 511ms: { 5 }
-Observed keyboard report at 511ms: { 5 }
-Expected keyboard report at 511ms: { }
-Observed keyboard report at 511ms: { }
-Observed keyboard report at 521ms: { 4 }
-Observed keyboard report at 521ms: { }
-Observed keyboard report at 521ms: { 5 }
-Observed keyboard report at 521ms: { }
-[  FAILED  ] PersonalConfig.9_MacroReplayPLAYPLAY (1 ms)
-[----------] 10 tests from PersonalConfig (20 ms total)
+Expected keyboard report at 768ms: { 4 }
+Observed keyboard report at 768ms: { 4 }
+Expected keyboard report at 769ms: { }
+Observed keyboard report at 769ms: { }
+Expected keyboard report at 770ms: { 5 }
+Observed keyboard report at 770ms: { 5 }
+Expected keyboard report at 771ms: { }
+Observed keyboard report at 771ms: { }
+Expected keyboard report at 780ms: { 4 }
+Observed keyboard report at 780ms: { 4 }
+Expected keyboard report at 780ms: { }
+Observed keyboard report at 780ms: { }
+Expected keyboard report at 780ms: { 5 }
+Observed keyboard report at 780ms: { 5 }
+Expected keyboard report at 780ms: { }
+Observed keyboard report at 780ms: { }
+Expected keyboard report at 795ms: { 4 }
+Observed keyboard report at 795ms: { 4 }
+Expected keyboard report at 795ms: { }
+Observed keyboard report at 795ms: { }
+Expected keyboard report at 795ms: { 5 }
+Observed keyboard report at 795ms: { 5 }
+Expected keyboard report at 795ms: { }
+Observed keyboard report at 795ms: { }
+Expected keyboard report at 813ms: { 4 }
+Observed keyboard report at 813ms: { 4 }
+Expected keyboard report at 813ms: { }
+Observed keyboard report at 813ms: { }
+Expected keyboard report at 813ms: { 5 }
+Observed keyboard report at 813ms: { 5 }
+Expected keyboard report at 813ms: { }
+Observed keyboard report at 813ms: { }
+Expected keyboard report at 825ms: { 35 }
+Observed keyboard report at 825ms: { 35 }
+Expected keyboard report at 826ms: { }
+Observed keyboard report at 826ms: { }
+Expected keyboard report at 828ms: { a }
+Observed keyboard report at 828ms: { a }
+Expected keyboard report at 829ms: { }
+Observed keyboard report at 829ms: { }
+[       OK ] PersonalConfig.9_MacroReplayPLAYPLAY (1 ms)
+[ RUN      ] PersonalConfig.10_ObservedMacroPLAYBug
+[ INFO     ] Printing Macro: A
+	TAP_CODE_SEQUENCE 30 31 32 0 |,TAP 209 197,KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,TAP 209 197,TAP_CODE_SEQUENCE 30 31 32 0 |,TAP 209 197,KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,TAP 209 197,
+Expected keyboard report at 836ms: { 1e }
+Observed keyboard report at 836ms: { 1e }
+Expected keyboard report at 837ms: { }
+Observed keyboard report at 837ms: { }
+Expected keyboard report at 838ms: { 1f }
+Observed keyboard report at 838ms: { 1f }
+Expected keyboard report at 839ms: { }
+Observed keyboard report at 839ms: { }
+Expected keyboard report at 840ms: { 20 }
+Observed keyboard report at 840ms: { 20 }
+Expected keyboard report at 841ms: { }
+Observed keyboard report at 841ms: { }
+Expected keyboard report at 846ms: { e1 }
+Observed keyboard report at 846ms: { e1 }
+Expected keyboard report at 846ms: { 1e e1 }
+Observed keyboard report at 846ms: { 1e e1 }
+Expected keyboard report at 847ms: { e1 }
+Observed keyboard report at 847ms: { e1 }
+Expected keyboard report at 847ms: { }
+Observed keyboard report at 847ms: { }
+Expected keyboard report at 848ms: { e1 }
+Observed keyboard report at 848ms: { e1 }
+Expected keyboard report at 848ms: { 1f e1 }
+Observed keyboard report at 848ms: { 1f e1 }
+Expected keyboard report at 849ms: { e1 }
+Observed keyboard report at 849ms: { e1 }
+Expected keyboard report at 849ms: { }
+Observed keyboard report at 849ms: { }
+Expected keyboard report at 850ms: { e1 }
+Observed keyboard report at 850ms: { e1 }
+Expected keyboard report at 850ms: { 20 e1 }
+Observed keyboard report at 850ms: { 20 e1 }
+Expected keyboard report at 851ms: { e1 }
+Observed keyboard report at 851ms: { e1 }
+Expected keyboard report at 851ms: { }
+Observed keyboard report at 851ms: { }
+Expected keyboard report at 856ms: { 1e }
+Observed keyboard report at 856ms: { 1e }
+Expected keyboard report at 857ms: { }
+Observed keyboard report at 857ms: { }
+Expected keyboard report at 858ms: { 1f }
+Observed keyboard report at 858ms: { 1f }
+Expected keyboard report at 859ms: { }
+Observed keyboard report at 859ms: { }
+Expected keyboard report at 860ms: { 20 }
+Observed keyboard report at 860ms: { 20 }
+Expected keyboard report at 861ms: { }
+Observed keyboard report at 861ms: { }
+Expected keyboard report at 866ms: { e1 }
+Observed keyboard report at 866ms: { e1 }
+Expected keyboard report at 866ms: { 1e e1 }
+Observed keyboard report at 866ms: { 1e e1 }
+Expected keyboard report at 867ms: { e1 }
+Observed keyboard report at 867ms: { e1 }
+Expected keyboard report at 867ms: { }
+Observed keyboard report at 867ms: { }
+Expected keyboard report at 868ms: { e1 }
+Observed keyboard report at 868ms: { e1 }
+Expected keyboard report at 868ms: { 1f e1 }
+Observed keyboard report at 868ms: { 1f e1 }
+Expected keyboard report at 869ms: { e1 }
+Observed keyboard report at 869ms: { e1 }
+Expected keyboard report at 869ms: { }
+Observed keyboard report at 869ms: { }
+Expected keyboard report at 870ms: { e1 }
+Observed keyboard report at 870ms: { e1 }
+Expected keyboard report at 870ms: { 20 e1 }
+Observed keyboard report at 870ms: { 20 e1 }
+Expected keyboard report at 871ms: { e1 }
+Observed keyboard report at 871ms: { e1 }
+Expected keyboard report at 871ms: { }
+Observed keyboard report at 871ms: { }
+Expected keyboard report at 884ms: { 1e }
+Observed keyboard report at 884ms: { 1e }
+Expected keyboard report at 884ms: { }
+Observed keyboard report at 884ms: { }
+Expected keyboard report at 884ms: { 1f }
+Observed keyboard report at 884ms: { 1f }
+Expected keyboard report at 884ms: { }
+Observed keyboard report at 884ms: { }
+Expected keyboard report at 884ms: { 20 }
+Observed keyboard report at 884ms: { 20 }
+Expected keyboard report at 884ms: { }
+Observed keyboard report at 884ms: { }
+Expected keyboard report at 884ms: { e1 }
+Observed keyboard report at 884ms: { e1 }
+Expected keyboard report at 884ms: { 1e e1 }
+Observed keyboard report at 884ms: { 1e e1 }
+Expected keyboard report at 884ms: { e1 }
+Observed keyboard report at 884ms: { e1 }
+Expected keyboard report at 884ms: { }
+Observed keyboard report at 884ms: { }
+Expected keyboard report at 884ms: { e1 }
+Observed keyboard report at 884ms: { e1 }
+Expected keyboard report at 884ms: { 1f e1 }
+Observed keyboard report at 884ms: { 1f e1 }
+Expected keyboard report at 884ms: { e1 }
+Observed keyboard report at 884ms: { e1 }
+Expected keyboard report at 884ms: { }
+Observed keyboard report at 884ms: { }
+Expected keyboard report at 884ms: { e1 }
+Observed keyboard report at 884ms: { e1 }
+Expected keyboard report at 884ms: { 20 e1 }
+Observed keyboard report at 884ms: { 20 e1 }
+Expected keyboard report at 884ms: { e1 }
+Observed keyboard report at 884ms: { e1 }
+Expected keyboard report at 884ms: { }
+Observed keyboard report at 884ms: { }
+Expected keyboard report at 884ms: { 1e }
+Observed keyboard report at 884ms: { 1e }
+Expected keyboard report at 884ms: { }
+Observed keyboard report at 884ms: { }
+Expected keyboard report at 884ms: { 1f }
+Observed keyboard report at 884ms: { 1f }
+Expected keyboard report at 884ms: { }
+Observed keyboard report at 884ms: { }
+Expected keyboard report at 884ms: { 20 }
+Observed keyboard report at 884ms: { 20 }
+Expected keyboard report at 884ms: { }
+Observed keyboard report at 884ms: { }
+Expected keyboard report at 884ms: { e1 }
+Observed keyboard report at 884ms: { e1 }
+Expected keyboard report at 884ms: { 1e e1 }
+Observed keyboard report at 884ms: { 1e e1 }
+Expected keyboard report at 884ms: { e1 }
+Observed keyboard report at 884ms: { e1 }
+Expected keyboard report at 884ms: { }
+Observed keyboard report at 884ms: { }
+Expected keyboard report at 884ms: { e1 }
+Observed keyboard report at 884ms: { e1 }
+Expected keyboard report at 884ms: { 1f e1 }
+Observed keyboard report at 884ms: { 1f e1 }
+Expected keyboard report at 884ms: { e1 }
+Observed keyboard report at 884ms: { e1 }
+Expected keyboard report at 884ms: { }
+Observed keyboard report at 884ms: { }
+Expected keyboard report at 884ms: { e1 }
+Observed keyboard report at 884ms: { e1 }
+Expected keyboard report at 884ms: { 20 e1 }
+Observed keyboard report at 884ms: { 20 e1 }
+Expected keyboard report at 884ms: { e1 }
+Observed keyboard report at 884ms: { e1 }
+Expected keyboard report at 884ms: { }
+Observed keyboard report at 884ms: { }
+Expected keyboard report at 1006ms: { 1e }
+Observed keyboard report at 1006ms: { 1e }
+Expected keyboard report at 1007ms: { }
+Observed keyboard report at 1007ms: { }
+Expected keyboard report at 1008ms: { 1f }
+Observed keyboard report at 1008ms: { 1f }
+Expected keyboard report at 1009ms: { }
+Observed keyboard report at 1009ms: { }
+Expected keyboard report at 1010ms: { e0 }
+Observed keyboard report at 1010ms: { e0 }
+Expected keyboard report at 1011ms: { 4 e0 }
+Observed keyboard report at 1011ms: { 4 e0 }
+Expected keyboard report at 1012ms: { e0 }
+Observed keyboard report at 1012ms: { e0 }
+Expected keyboard report at 1013ms: { }
+Observed keyboard report at 1013ms: { }
+[       OK ] PersonalConfig.10_ObservedMacroPLAYBug (3 ms)
+[----------] 11 tests from PersonalConfig (23 ms total)
 
 [----------] Global test environment tear-down
-[==========] 10 tests from 1 test suite ran. (20 ms total)
-[  PASSED  ] 9 tests.
-[  FAILED  ] 1 test, listed below:
-[  FAILED  ] PersonalConfig.9_MacroReplayPLAYPLAY
-
- 1 FAILED TEST
-make[2]: *** [/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/makefiles/testcase.mk:74: run] Error 1
-make[1]: *** [Makefile:96: personal-config] Error 2
+[==========] 11 tests from 1 test suite ran. (23 ms total)
+[  PASSED  ] 11 tests.
 make[1]: Leaving directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
-make: *** [Makefile:82: simulator-tests] Error 2
-Kaleidoscope [15:24:15] $ 
+Kaleidoscope [09:54:47] $ 
 vshcmd: > make simulator-tests
 Building in quiet mode. For a lot more information, add 'VERBOSE=1' to the beginning of your call to make
 make -C tests all
@@ -16740,11 +13156,6 @@ make -C /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googlete
 [ 50%] Built target gmock
 [ 75%] Built target gmock_main
 [100%] Built target gtest_main
-In file included from test/manual-tests.cpp:5:
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
-  142 | class FocusLEDCommand : public Plugin {
-      |       ^~~~~~~~~~~~~~~
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -16780,9 +13191,9 @@ In file included from test/manual-tests.cpp:5:
 
 
 Running test personal-config
-[==========] Running 10 tests from 1 test suite.
+[==========] Running 11 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 10 tests from PersonalConfig
+[----------] 11 tests from PersonalConfig
 [ RUN      ] PersonalConfig.0_test
 [ INFO     ] test: tests/personal-config/test/manual-tests.cpp
 [       OK ] PersonalConfig.0_test (0 ms)
@@ -16803,2733 +13214,650 @@ Expected keyboard report at 19ms: { 1b }
 Observed keyboard report at 19ms: { 1b }
 Expected keyboard report at 19ms: { }
 Observed keyboard report at 19ms: { }
-[       OK ] PersonalConfig.1_MacroRecordBasic (1 ms)
+[       OK ] PersonalConfig.1_MacroRecordBasic (0 ms)
 [ RUN      ] PersonalConfig.2_MacroRecordTopsy
 [ INFO     ] Printing Macro: A
-	TAPCODE 27,TAPCODE 27,KEYDOWN 209 199,
+	TAP_CODE_SEQUENCE 30 31 32 0 |,TAP 209 197,TAPCODE 4,
 [ INFO     ] Printing Macro: A
-	TAPCODE 27,TAPCODE 27,KEYDOWN 209 199,
+	TAP_CODE_SEQUENCE 30 31 32 0 |,TAP 209 197,KEYDOWN 208 75,KEYCODEUP 30,
 [ INFO     ] Printing Macro: A
-	TAPCODE 27,TAPCODE 27,KEYDOWN 209 199,
+	TAP_CODE_SEQUENCE 30 31 32 0 |,TAP 209 197,KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,
 [ INFO     ] Printing Macro: A
-	TAPCODE 27,TAPCODE 27,KEYDOWN 209 199,
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:164: Failure
-Expected equality of these values:
-  observed_keyboard_report_count
-    Which is: 60
-  expected_keyboard_report_count
-    Which is: 112
-Expected keyboard report at 30ms: { 1e }
-Observed keyboard report at 30ms: { 3a }
-Expected keyboard report at 31ms: { }
-Observed keyboard report at 31ms: { }
-Expected keyboard report at 32ms: { 1f }
-Observed keyboard report at 32ms: { 3b }
-Expected keyboard report at 33ms: { }
-Observed keyboard report at 33ms: { }
-Expected keyboard report at 34ms: { 20 }
-Observed keyboard report at 34ms: { 3c }
-Expected keyboard report at 35ms: { }
-Observed keyboard report at 35ms: { }
-Expected keyboard report at 40ms: { 4 }
-Observed keyboard report at 40ms: { 4a }
-Expected keyboard report at 41ms: { }
-Observed keyboard report at 41ms: { }
-Expected keyboard report at 54ms: { 1e }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 66
-  expected_report.Timestamp()
-    Which is: 54
-Report timestamps don't match (i=8)
-Observed keyboard report at 66ms: { e1 }
-Expected keyboard report at 54ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 66
-  expected_report.Timestamp()
-    Which is: 54
-Report timestamps don't match (i=9)
-Observed keyboard report at 66ms: { 1e e1 }
-Expected keyboard report at 54ms: { 1f }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 67
-  expected_report.Timestamp()
-    Which is: 54
-Report timestamps don't match (i=10)
-Observed keyboard report at 67ms: { e1 }
-Expected keyboard report at 54ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 67
-  expected_report.Timestamp()
-    Which is: 54
-Report timestamps don't match (i=11)
-Observed keyboard report at 67ms: { }
-Expected keyboard report at 54ms: { 20 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 68
-  expected_report.Timestamp()
-    Which is: 54
-Report timestamps don't match (i=12)
-Observed keyboard report at 68ms: { e1 }
-Expected keyboard report at 54ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 68
-  expected_report.Timestamp()
-    Which is: 54
-Report timestamps don't match (i=13)
-Observed keyboard report at 68ms: { 1f e1 }
-Expected keyboard report at 54ms: { 4 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 69
-  expected_report.Timestamp()
-    Which is: 54
-Report timestamps don't match (i=14)
-Observed keyboard report at 69ms: { e1 }
-Expected keyboard report at 54ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 69
-  expected_report.Timestamp()
-    Which is: 54
-Report timestamps don't match (i=15)
-Observed keyboard report at 69ms: { }
-Expected keyboard report at 66ms: { 1e }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 70
-  expected_report.Timestamp()
-    Which is: 66
-Report timestamps don't match (i=16)
-Observed keyboard report at 70ms: { e1 }
-Expected keyboard report at 67ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 70
-  expected_report.Timestamp()
-    Which is: 67
-Report timestamps don't match (i=17)
-Observed keyboard report at 70ms: { 20 e1 }
-Expected keyboard report at 68ms: { 1f }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 71
-  expected_report.Timestamp()
-    Which is: 68
-Report timestamps don't match (i=18)
-Observed keyboard report at 71ms: { e1 }
-Expected keyboard report at 69ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 71
-  expected_report.Timestamp()
-    Which is: 69
-Report timestamps don't match (i=19)
-Observed keyboard report at 71ms: { }
-Expected keyboard report at 70ms: { 20 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 76
-  expected_report.Timestamp()
-    Which is: 70
-Report timestamps don't match (i=20)
-Observed keyboard report at 76ms: { 3a }
-Expected keyboard report at 71ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 77
-  expected_report.Timestamp()
-    Which is: 71
-Report timestamps don't match (i=21)
-Observed keyboard report at 77ms: { }
-Expected keyboard report at 76ms: { e1 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 102
-  expected_report.Timestamp()
-    Which is: 76
-Report timestamps don't match (i=22)
-Observed keyboard report at 102ms: { 3a }
-Expected keyboard report at 76ms: { 1e e1 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 103
-  expected_report.Timestamp()
-    Which is: 76
-Report timestamps don't match (i=23)
-Observed keyboard report at 103ms: { }
-Expected keyboard report at 77ms: { e1 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 104
-  expected_report.Timestamp()
-    Which is: 77
-Report timestamps don't match (i=24)
-Observed keyboard report at 104ms: { 3b }
-Expected keyboard report at 77ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 105
-  expected_report.Timestamp()
-    Which is: 77
-Report timestamps don't match (i=25)
-Observed keyboard report at 105ms: { }
-Expected keyboard report at 90ms: { 1e }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 106
-  expected_report.Timestamp()
-    Which is: 90
-Report timestamps don't match (i=26)
-Observed keyboard report at 106ms: { 3c }
-Expected keyboard report at 90ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 107
-  expected_report.Timestamp()
-    Which is: 90
-Report timestamps don't match (i=27)
-Observed keyboard report at 107ms: { }
-Expected keyboard report at 90ms: { 1f }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 112
-  expected_report.Timestamp()
-    Which is: 90
-Report timestamps don't match (i=28)
-Observed keyboard report at 112ms: { e1 }
-Expected keyboard report at 90ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 112
-  expected_report.Timestamp()
-    Which is: 90
-Report timestamps don't match (i=29)
-Observed keyboard report at 112ms: { 1e e1 }
-Expected keyboard report at 90ms: { 20 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 113
-  expected_report.Timestamp()
-    Which is: 90
-Report timestamps don't match (i=30)
-Observed keyboard report at 113ms: { e1 }
-Expected keyboard report at 90ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 113
-  expected_report.Timestamp()
-    Which is: 90
-Report timestamps don't match (i=31)
-Observed keyboard report at 113ms: { }
-Expected keyboard report at 90ms: { e1 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 114
-  expected_report.Timestamp()
-    Which is: 90
-Report timestamps don't match (i=32)
-Observed keyboard report at 114ms: { e1 }
-Expected keyboard report at 90ms: { 1e e1 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 114
-  expected_report.Timestamp()
-    Which is: 90
-Report timestamps don't match (i=33)
-Observed keyboard report at 114ms: { 1f e1 }
-Expected keyboard report at 90ms: { e1 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 115
-  expected_report.Timestamp()
-    Which is: 90
-Report timestamps don't match (i=34)
-Observed keyboard report at 115ms: { e1 }
-Expected keyboard report at 90ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 115
-  expected_report.Timestamp()
-    Which is: 90
-Report timestamps don't match (i=35)
-Observed keyboard report at 115ms: { }
-Expected keyboard report at 102ms: { 1e }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 116
-  expected_report.Timestamp()
-    Which is: 102
-Report timestamps don't match (i=36)
-Observed keyboard report at 116ms: { e1 }
-Expected keyboard report at 103ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 116
-  expected_report.Timestamp()
-    Which is: 103
-Report timestamps don't match (i=37)
-Observed keyboard report at 116ms: { 20 e1 }
-Expected keyboard report at 104ms: { 1f }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 117
-  expected_report.Timestamp()
-    Which is: 104
-Report timestamps don't match (i=38)
-Observed keyboard report at 117ms: { e1 }
-Expected keyboard report at 105ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 117
-  expected_report.Timestamp()
-    Which is: 105
-Report timestamps don't match (i=39)
-Observed keyboard report at 117ms: { }
-Expected keyboard report at 106ms: { 20 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 140
-  expected_report.Timestamp()
-    Which is: 106
-Report timestamps don't match (i=40)
-Observed keyboard report at 140ms: { 3a }
-Expected keyboard report at 107ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 141
-  expected_report.Timestamp()
-    Which is: 107
-Report timestamps don't match (i=41)
-Observed keyboard report at 141ms: { }
-Expected keyboard report at 112ms: { e1 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 148
-  expected_report.Timestamp()
-    Which is: 112
-Report timestamps don't match (i=42)
-Observed keyboard report at 148ms: { 3a }
-Expected keyboard report at 112ms: { 1e e1 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 149
-  expected_report.Timestamp()
-    Which is: 112
-Report timestamps don't match (i=43)
-Observed keyboard report at 149ms: { }
+	KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,TAP 209 197,TAP_CODE_SEQUENCE 30 31 32 0 |,
+Expected keyboard report at 37ms: { 1e }
+Observed keyboard report at 37ms: { 1e }
+Expected keyboard report at 38ms: { }
+Observed keyboard report at 38ms: { }
+Expected keyboard report at 39ms: { 1f }
+Observed keyboard report at 39ms: { 1f }
+Expected keyboard report at 40ms: { }
+Observed keyboard report at 40ms: { }
+Expected keyboard report at 41ms: { 20 }
+Observed keyboard report at 41ms: { 20 }
+Expected keyboard report at 42ms: { }
+Observed keyboard report at 42ms: { }
+Expected keyboard report at 47ms: { 4 }
+Observed keyboard report at 47ms: { 4 }
+Expected keyboard report at 48ms: { }
+Observed keyboard report at 48ms: { }
+Expected keyboard report at 61ms: { 1e }
+Observed keyboard report at 61ms: { 1e }
+Expected keyboard report at 61ms: { }
+Observed keyboard report at 61ms: { }
+Expected keyboard report at 61ms: { 1f }
+Observed keyboard report at 61ms: { 1f }
+Expected keyboard report at 61ms: { }
+Observed keyboard report at 61ms: { }
+Expected keyboard report at 61ms: { 20 }
+Observed keyboard report at 61ms: { 20 }
+Expected keyboard report at 61ms: { }
+Observed keyboard report at 61ms: { }
+Expected keyboard report at 61ms: { 4 }
+Observed keyboard report at 61ms: { 4 }
+Expected keyboard report at 61ms: { }
+Observed keyboard report at 61ms: { }
+Expected keyboard report at 103ms: { 1e }
+Observed keyboard report at 103ms: { 1e }
+Expected keyboard report at 104ms: { }
+Observed keyboard report at 104ms: { }
+Expected keyboard report at 105ms: { 1f }
+Observed keyboard report at 105ms: { 1f }
+Expected keyboard report at 106ms: { }
+Observed keyboard report at 106ms: { }
+Expected keyboard report at 107ms: { 20 }
+Observed keyboard report at 107ms: { 20 }
+Expected keyboard report at 108ms: { }
+Observed keyboard report at 108ms: { }
 Expected keyboard report at 113ms: { e1 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 150
-  expected_report.Timestamp()
-    Which is: 113
-Report timestamps don't match (i=44)
-Observed keyboard report at 150ms: { 3b }
-Expected keyboard report at 113ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 151
-  expected_report.Timestamp()
-    Which is: 113
-Report timestamps don't match (i=45)
-Observed keyboard report at 151ms: { }
+Observed keyboard report at 113ms: { e1 }
+Expected keyboard report at 113ms: { 1e e1 }
+Observed keyboard report at 113ms: { 1e e1 }
 Expected keyboard report at 114ms: { e1 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 152
-  expected_report.Timestamp()
-    Which is: 114
-Report timestamps don't match (i=46)
-Observed keyboard report at 152ms: { 3c }
-Expected keyboard report at 114ms: { 1f e1 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 153
-  expected_report.Timestamp()
-    Which is: 114
-Report timestamps don't match (i=47)
-Observed keyboard report at 153ms: { }
-Expected keyboard report at 115ms: { e1 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 158
-  expected_report.Timestamp()
-    Which is: 115
-Report timestamps don't match (i=48)
-Observed keyboard report at 158ms: { e1 }
-Expected keyboard report at 115ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 158
-  expected_report.Timestamp()
-    Which is: 115
-Report timestamps don't match (i=49)
-Observed keyboard report at 158ms: { 1e e1 }
-Expected keyboard report at 116ms: { e1 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 159
-  expected_report.Timestamp()
-    Which is: 116
-Report timestamps don't match (i=50)
-Observed keyboard report at 159ms: { e1 }
-Expected keyboard report at 116ms: { 20 e1 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 159
-  expected_report.Timestamp()
-    Which is: 116
-Report timestamps don't match (i=51)
-Observed keyboard report at 159ms: { }
-Expected keyboard report at 117ms: { e1 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 160
-  expected_report.Timestamp()
-    Which is: 117
-Report timestamps don't match (i=52)
-Observed keyboard report at 160ms: { e1 }
-Expected keyboard report at 117ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 160
-  expected_report.Timestamp()
-    Which is: 117
-Report timestamps don't match (i=53)
-Observed keyboard report at 160ms: { 1f e1 }
-Expected keyboard report at 130ms: { 1e }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 161
-  expected_report.Timestamp()
-    Which is: 130
-Report timestamps don't match (i=54)
-Observed keyboard report at 161ms: { e1 }
-Expected keyboard report at 130ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 161
-  expected_report.Timestamp()
-    Which is: 130
-Report timestamps don't match (i=55)
-Observed keyboard report at 161ms: { }
-Expected keyboard report at 130ms: { 1f }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 162
-  expected_report.Timestamp()
-    Which is: 130
-Report timestamps don't match (i=56)
-Observed keyboard report at 162ms: { e1 }
-Expected keyboard report at 130ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 162
-  expected_report.Timestamp()
-    Which is: 130
-Report timestamps don't match (i=57)
-Observed keyboard report at 162ms: { 20 e1 }
-Expected keyboard report at 130ms: { 20 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 163
-  expected_report.Timestamp()
-    Which is: 130
-Report timestamps don't match (i=58)
-Observed keyboard report at 163ms: { e1 }
-Expected keyboard report at 130ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 163
-  expected_report.Timestamp()
-    Which is: 130
-Report timestamps don't match (i=59)
-Observed keyboard report at 163ms: { }
-Missing expected keyboard report at 130ms: { e1 }
-Missing expected keyboard report at 130ms: { 1e e1 }
-Missing expected keyboard report at 130ms: { e1 }
-Missing expected keyboard report at 130ms: { }
-Missing expected keyboard report at 130ms: { e1 }
-Missing expected keyboard report at 130ms: { 1f e1 }
-Missing expected keyboard report at 130ms: { e1 }
-Missing expected keyboard report at 130ms: { }
-Missing expected keyboard report at 130ms: { e1 }
-Missing expected keyboard report at 130ms: { 20 e1 }
-Missing expected keyboard report at 130ms: { e1 }
-Missing expected keyboard report at 130ms: { }
-Missing expected keyboard report at 140ms: { e1 }
-Missing expected keyboard report at 140ms: { 1e e1 }
-Missing expected keyboard report at 141ms: { e1 }
-Missing expected keyboard report at 141ms: { }
-Missing expected keyboard report at 148ms: { e1 }
-Missing expected keyboard report at 148ms: { 1e e1 }
-Missing expected keyboard report at 149ms: { e1 }
-Missing expected keyboard report at 149ms: { }
-Missing expected keyboard report at 150ms: { e1 }
-Missing expected keyboard report at 150ms: { 1f e1 }
-Missing expected keyboard report at 151ms: { e1 }
-Missing expected keyboard report at 151ms: { }
-Missing expected keyboard report at 152ms: { e1 }
-Missing expected keyboard report at 152ms: { 20 e1 }
-Missing expected keyboard report at 153ms: { e1 }
-Missing expected keyboard report at 153ms: { }
-Missing expected keyboard report at 158ms: { 1e }
-Missing expected keyboard report at 159ms: { }
-Missing expected keyboard report at 160ms: { 1f }
-Missing expected keyboard report at 161ms: { }
-Missing expected keyboard report at 162ms: { 20 }
-Missing expected keyboard report at 163ms: { }
-Missing expected keyboard report at 176ms: { e1 }
-Missing expected keyboard report at 176ms: { 1e e1 }
-Missing expected keyboard report at 176ms: { e1 }
-Missing expected keyboard report at 176ms: { }
-Missing expected keyboard report at 176ms: { e1 }
-Missing expected keyboard report at 176ms: { 1f e1 }
-Missing expected keyboard report at 176ms: { e1 }
-Missing expected keyboard report at 176ms: { }
-Missing expected keyboard report at 176ms: { e1 }
-Missing expected keyboard report at 176ms: { 20 e1 }
-Missing expected keyboard report at 176ms: { e1 }
-Missing expected keyboard report at 176ms: { }
-Missing expected keyboard report at 176ms: { 1e }
-Missing expected keyboard report at 176ms: { }
-Missing expected keyboard report at 176ms: { 1f }
-Missing expected keyboard report at 176ms: { }
-Missing expected keyboard report at 176ms: { 20 }
-Missing expected keyboard report at 176ms: { }
-[  FAILED  ] PersonalConfig.2_MacroRecordTopsy (7 ms)
-[ RUN      ] PersonalConfig.3_MacroRecordOneShot
-[ INFO     ] Printing Macro: A
-	TAPCODE 27,TAPCODE 27,KEYDOWN 209 199,
-[ INFO     ] Printing Macro: A
-	TAPCODE 27,TAPCODE 27,KEYDOWN 209 199,
-[ INFO     ] Printing Macro: A
-	TAPCODE 27,TAPCODE 27,KEYDOWN 209 199,
-[ INFO     ] Printing Macro: A
-	TAPCODE 27,TAPCODE 27,KEYDOWN 209 199,
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:164: Failure
-Expected equality of these values:
-  observed_keyboard_report_count
-    Which is: 26
-  expected_keyboard_report_count
-    Which is: 50
+Observed keyboard report at 114ms: { e1 }
+Expected keyboard report at 114ms: { }
+Observed keyboard report at 114ms: { }
+Expected keyboard report at 127ms: { 1e }
+Observed keyboard report at 127ms: { 1e }
+Expected keyboard report at 127ms: { }
+Observed keyboard report at 127ms: { }
+Expected keyboard report at 127ms: { 1f }
+Observed keyboard report at 127ms: { 1f }
+Expected keyboard report at 127ms: { }
+Observed keyboard report at 127ms: { }
+Expected keyboard report at 127ms: { 20 }
+Observed keyboard report at 127ms: { 20 }
+Expected keyboard report at 127ms: { }
+Observed keyboard report at 127ms: { }
+Expected keyboard report at 127ms: { e1 }
+Observed keyboard report at 127ms: { e1 }
+Expected keyboard report at 127ms: { 1e e1 }
+Observed keyboard report at 127ms: { 1e e1 }
+Expected keyboard report at 127ms: { e1 }
+Observed keyboard report at 127ms: { e1 }
+Expected keyboard report at 127ms: { }
+Observed keyboard report at 127ms: { }
+Expected keyboard report at 174ms: { 1e }
+Observed keyboard report at 174ms: { 1e }
+Expected keyboard report at 175ms: { }
+Observed keyboard report at 175ms: { }
+Expected keyboard report at 176ms: { 1f }
+Observed keyboard report at 176ms: { 1f }
+Expected keyboard report at 177ms: { }
+Observed keyboard report at 177ms: { }
+Expected keyboard report at 178ms: { 20 }
+Observed keyboard report at 178ms: { 20 }
+Expected keyboard report at 179ms: { }
+Observed keyboard report at 179ms: { }
 Expected keyboard report at 184ms: { e1 }
 Observed keyboard report at 184ms: { e1 }
-Expected keyboard report at 186ms: { 4 e1 }
-Observed keyboard report at 186ms: { 4a e1 }
+Expected keyboard report at 184ms: { 1e e1 }
+Observed keyboard report at 184ms: { 1e e1 }
+Expected keyboard report at 185ms: { e1 }
+Observed keyboard report at 185ms: { e1 }
+Expected keyboard report at 185ms: { }
+Observed keyboard report at 185ms: { }
 Expected keyboard report at 186ms: { e1 }
-Observed keyboard report at 186ms: { 4a }
+Observed keyboard report at 186ms: { e1 }
+Expected keyboard report at 186ms: { 1f e1 }
+Observed keyboard report at 186ms: { 1f e1 }
 Expected keyboard report at 187ms: { e1 }
+Observed keyboard report at 187ms: { e1 }
+Expected keyboard report at 187ms: { }
 Observed keyboard report at 187ms: { }
-Expected keyboard report at 188ms: { 4 e1 }
-Observed keyboard report at 188ms: { 4a }
+Expected keyboard report at 188ms: { e1 }
+Observed keyboard report at 188ms: { e1 }
+Expected keyboard report at 188ms: { 20 e1 }
+Observed keyboard report at 188ms: { 20 e1 }
 Expected keyboard report at 189ms: { e1 }
+Observed keyboard report at 189ms: { e1 }
+Expected keyboard report at 189ms: { }
 Observed keyboard report at 189ms: { }
-Expected keyboard report at 198ms: { e1 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 200
-  expected_report.Timestamp()
-    Which is: 198
-Report timestamps don't match (i=6)
-Observed keyboard report at 200ms: { e1 }
-Expected keyboard report at 198ms: { 4 e1 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 202
-  expected_report.Timestamp()
-    Which is: 198
-Report timestamps don't match (i=7)
-Observed keyboard report at 202ms: { }
-Expected keyboard report at 198ms: { 4 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 208
-  expected_report.Timestamp()
-    Which is: 198
-Report timestamps don't match (i=8)
-Observed keyboard report at 208ms: { 4a }
-Expected keyboard report at 198ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 209
-  expected_report.Timestamp()
-    Which is: 198
-Report timestamps don't match (i=9)
-Observed keyboard report at 209ms: { }
-Expected keyboard report at 198ms: { 4 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 210
-  expected_report.Timestamp()
-    Which is: 198
-Report timestamps don't match (i=10)
-Observed keyboard report at 210ms: { 4a }
-Expected keyboard report at 198ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 211
-  expected_report.Timestamp()
-    Which is: 198
-Report timestamps don't match (i=11)
-Observed keyboard report at 211ms: { }
-Expected keyboard report at 200ms: { e1 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 228
-  expected_report.Timestamp()
-    Which is: 200
-Report timestamps don't match (i=12)
-Observed keyboard report at 228ms: { 4a }
+Expected keyboard report at 202ms: { 1e }
+Observed keyboard report at 202ms: { 1e }
 Expected keyboard report at 202ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 229
-  expected_report.Timestamp()
-    Which is: 202
-Report timestamps don't match (i=13)
-Observed keyboard report at 229ms: { }
-Expected keyboard report at 208ms: { 4 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 230
-  expected_report.Timestamp()
-    Which is: 208
-Report timestamps don't match (i=14)
-Observed keyboard report at 230ms: { 4a }
-Expected keyboard report at 209ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 231
-  expected_report.Timestamp()
-    Which is: 209
-Report timestamps don't match (i=15)
-Observed keyboard report at 231ms: { }
-Expected keyboard report at 210ms: { 4 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 232
-  expected_report.Timestamp()
-    Which is: 210
-Report timestamps don't match (i=16)
-Observed keyboard report at 232ms: { e1 }
-Expected keyboard report at 211ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 234
-  expected_report.Timestamp()
-    Which is: 211
-Report timestamps don't match (i=17)
-Observed keyboard report at 234ms: { }
-Expected keyboard report at 220ms: { 4 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 250
-  expected_report.Timestamp()
-    Which is: 220
-Report timestamps don't match (i=18)
-Observed keyboard report at 250ms: { 4a }
-Expected keyboard report at 220ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 251
-  expected_report.Timestamp()
-    Which is: 220
-Report timestamps don't match (i=19)
-Observed keyboard report at 251ms: { }
-Expected keyboard report at 220ms: { 4 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 252
-  expected_report.Timestamp()
-    Which is: 220
-Report timestamps don't match (i=20)
-Observed keyboard report at 252ms: { 4a }
-Expected keyboard report at 220ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 253
-  expected_report.Timestamp()
-    Which is: 220
-Report timestamps don't match (i=21)
-Observed keyboard report at 253ms: { }
-Expected keyboard report at 228ms: { 4 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 254
-  expected_report.Timestamp()
-    Which is: 228
-Report timestamps don't match (i=22)
-Observed keyboard report at 254ms: { e1 }
-Expected keyboard report at 229ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 255
-  expected_report.Timestamp()
-    Which is: 229
-Report timestamps don't match (i=23)
-Observed keyboard report at 255ms: { 4a e1 }
-Expected keyboard report at 230ms: { 4 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 256
-  expected_report.Timestamp()
-    Which is: 230
-Report timestamps don't match (i=24)
-Observed keyboard report at 256ms: { e1 }
-Expected keyboard report at 231ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 257
-  expected_report.Timestamp()
-    Which is: 231
-Report timestamps don't match (i=25)
-Observed keyboard report at 257ms: { }
-Missing expected keyboard report at 232ms: { e1 }
-Missing expected keyboard report at 234ms: { }
-Missing expected keyboard report at 242ms: { 4 }
-Missing expected keyboard report at 242ms: { }
-Missing expected keyboard report at 242ms: { 4 }
-Missing expected keyboard report at 242ms: { }
-Missing expected keyboard report at 242ms: { e1 }
-Missing expected keyboard report at 242ms: { }
-Missing expected keyboard report at 250ms: { 4 }
-Missing expected keyboard report at 251ms: { }
-Missing expected keyboard report at 252ms: { 4 }
-Missing expected keyboard report at 253ms: { }
-Missing expected keyboard report at 254ms: { e1 }
-Missing expected keyboard report at 255ms: { 4 e1 }
-Missing expected keyboard report at 256ms: { e1 }
-Missing expected keyboard report at 257ms: { }
-Missing expected keyboard report at 266ms: { 4 }
-Missing expected keyboard report at 266ms: { }
-Missing expected keyboard report at 266ms: { 4 }
-Missing expected keyboard report at 266ms: { }
-Missing expected keyboard report at 266ms: { e1 }
-Missing expected keyboard report at 266ms: { 4 e1 }
-Missing expected keyboard report at 266ms: { e1 }
-Missing expected keyboard report at 266ms: { }
-[  FAILED  ] PersonalConfig.3_MacroRecordOneShot (3 ms)
-[ RUN      ] PersonalConfig.4_MacroRecordSpecialShift
-[ INFO     ] Printing Macro: U
-	
-[ INFO     ] Printing Macro: U
-	
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:164: Failure
-Expected equality of these values:
-  observed_keyboard_report_count
-    Which is: 6
-  expected_keyboard_report_count
-    Which is: 10
-Expected keyboard report at 275ms: { 4c }
-Observed keyboard report at 275ms: { 4c }
+Observed keyboard report at 202ms: { }
+Expected keyboard report at 202ms: { 1f }
+Observed keyboard report at 202ms: { 1f }
+Expected keyboard report at 202ms: { }
+Observed keyboard report at 202ms: { }
+Expected keyboard report at 202ms: { 20 }
+Observed keyboard report at 202ms: { 20 }
+Expected keyboard report at 202ms: { }
+Observed keyboard report at 202ms: { }
+Expected keyboard report at 202ms: { e1 }
+Observed keyboard report at 202ms: { e1 }
+Expected keyboard report at 202ms: { 1e e1 }
+Observed keyboard report at 202ms: { 1e e1 }
+Expected keyboard report at 202ms: { e1 }
+Observed keyboard report at 202ms: { e1 }
+Expected keyboard report at 202ms: { }
+Observed keyboard report at 202ms: { }
+Expected keyboard report at 202ms: { e1 }
+Observed keyboard report at 202ms: { e1 }
+Expected keyboard report at 202ms: { 1f e1 }
+Observed keyboard report at 202ms: { 1f e1 }
+Expected keyboard report at 202ms: { e1 }
+Observed keyboard report at 202ms: { e1 }
+Expected keyboard report at 202ms: { }
+Observed keyboard report at 202ms: { }
+Expected keyboard report at 202ms: { e1 }
+Observed keyboard report at 202ms: { e1 }
+Expected keyboard report at 202ms: { 20 e1 }
+Observed keyboard report at 202ms: { 20 e1 }
+Expected keyboard report at 202ms: { e1 }
+Observed keyboard report at 202ms: { e1 }
+Expected keyboard report at 202ms: { }
+Observed keyboard report at 202ms: { }
+Expected keyboard report at 267ms: { e1 }
+Observed keyboard report at 267ms: { e1 }
+Expected keyboard report at 267ms: { 1e e1 }
+Observed keyboard report at 267ms: { 1e e1 }
+Expected keyboard report at 268ms: { e1 }
+Observed keyboard report at 268ms: { e1 }
+Expected keyboard report at 268ms: { }
+Observed keyboard report at 268ms: { }
+Expected keyboard report at 275ms: { e1 }
+Observed keyboard report at 275ms: { e1 }
+Expected keyboard report at 275ms: { 1e e1 }
+Observed keyboard report at 275ms: { 1e e1 }
+Expected keyboard report at 276ms: { e1 }
+Observed keyboard report at 276ms: { e1 }
 Expected keyboard report at 276ms: { }
 Observed keyboard report at 276ms: { }
-Expected keyboard report at 286ms: { 4c }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 295
-  expected_report.Timestamp()
-    Which is: 286
-Report timestamps don't match (i=2)
-Observed keyboard report at 295ms: { 4c }
+Expected keyboard report at 277ms: { e1 }
+Observed keyboard report at 277ms: { e1 }
+Expected keyboard report at 277ms: { 1f e1 }
+Observed keyboard report at 277ms: { 1f e1 }
+Expected keyboard report at 278ms: { e1 }
+Observed keyboard report at 278ms: { e1 }
+Expected keyboard report at 278ms: { }
+Observed keyboard report at 278ms: { }
+Expected keyboard report at 279ms: { e1 }
+Observed keyboard report at 279ms: { e1 }
+Expected keyboard report at 279ms: { 20 e1 }
+Observed keyboard report at 279ms: { 20 e1 }
+Expected keyboard report at 280ms: { e1 }
+Observed keyboard report at 280ms: { e1 }
+Expected keyboard report at 280ms: { }
+Observed keyboard report at 280ms: { }
+Expected keyboard report at 285ms: { 1e }
+Observed keyboard report at 285ms: { 1e }
 Expected keyboard report at 286ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 296
-  expected_report.Timestamp()
-    Which is: 286
-Report timestamps don't match (i=3)
-Observed keyboard report at 296ms: { }
-Expected keyboard report at 295ms: { 4c }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 308
-  expected_report.Timestamp()
-    Which is: 295
-Report timestamps don't match (i=4)
-Observed keyboard report at 308ms: { 2a }
-Expected keyboard report at 296ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 309
-  expected_report.Timestamp()
-    Which is: 296
-Report timestamps don't match (i=5)
-Observed keyboard report at 309ms: { }
-Missing expected keyboard report at 306ms: { 4c }
-Missing expected keyboard report at 306ms: { }
-Missing expected keyboard report at 308ms: { 2d }
-Missing expected keyboard report at 309ms: { }
-[  FAILED  ] PersonalConfig.4_MacroRecordSpecialShift (1 ms)
+Observed keyboard report at 286ms: { }
+Expected keyboard report at 287ms: { 1f }
+Observed keyboard report at 287ms: { 1f }
+Expected keyboard report at 288ms: { }
+Observed keyboard report at 288ms: { }
+Expected keyboard report at 289ms: { 20 }
+Observed keyboard report at 289ms: { 20 }
+Expected keyboard report at 290ms: { }
+Observed keyboard report at 290ms: { }
+Expected keyboard report at 303ms: { e1 }
+Observed keyboard report at 303ms: { e1 }
+Expected keyboard report at 303ms: { 1e e1 }
+Observed keyboard report at 303ms: { 1e e1 }
+Expected keyboard report at 303ms: { e1 }
+Observed keyboard report at 303ms: { e1 }
+Expected keyboard report at 303ms: { }
+Observed keyboard report at 303ms: { }
+Expected keyboard report at 303ms: { e1 }
+Observed keyboard report at 303ms: { e1 }
+Expected keyboard report at 303ms: { 1f e1 }
+Observed keyboard report at 303ms: { 1f e1 }
+Expected keyboard report at 303ms: { e1 }
+Observed keyboard report at 303ms: { e1 }
+Expected keyboard report at 303ms: { }
+Observed keyboard report at 303ms: { }
+Expected keyboard report at 303ms: { e1 }
+Observed keyboard report at 303ms: { e1 }
+Expected keyboard report at 303ms: { 20 e1 }
+Observed keyboard report at 303ms: { 20 e1 }
+Expected keyboard report at 303ms: { e1 }
+Observed keyboard report at 303ms: { e1 }
+Expected keyboard report at 303ms: { }
+Observed keyboard report at 303ms: { }
+Expected keyboard report at 303ms: { 1e }
+Observed keyboard report at 303ms: { 1e }
+Expected keyboard report at 303ms: { }
+Observed keyboard report at 303ms: { }
+Expected keyboard report at 303ms: { 1f }
+Observed keyboard report at 303ms: { 1f }
+Expected keyboard report at 303ms: { }
+Observed keyboard report at 303ms: { }
+Expected keyboard report at 303ms: { 20 }
+Observed keyboard report at 303ms: { 20 }
+Expected keyboard report at 303ms: { }
+Observed keyboard report at 303ms: { }
+[       OK ] PersonalConfig.2_MacroRecordTopsy (7 ms)
+[ RUN      ] PersonalConfig.3_MacroRecordOneShot
+[ INFO     ] Printing Macro: A
+	KEYCODEDOWN 225,KEYCODEDOWN 4,KEYCODEUP 225,KEYCODEUP 4,TAPCODE 4,
+[ INFO     ] Printing Macro: A
+	TAPCODE 4,TAPCODE 4,
+[ INFO     ] Printing Macro: A
+	TAP_CODE_SEQUENCE 4 4 225 0 |,
+[ INFO     ] Printing Macro: A
+	TAPCODE 4,TAPCODE 4,KEYCODEDOWN 225,TAPCODE 4,KEYCODEUP 225,
+Expected keyboard report at 366ms: { e1 }
+Observed keyboard report at 366ms: { e1 }
+Expected keyboard report at 368ms: { 4 e1 }
+Observed keyboard report at 368ms: { 4 e1 }
+Expected keyboard report at 368ms: { 4 }
+Observed keyboard report at 368ms: { 4 }
+Expected keyboard report at 369ms: { }
+Observed keyboard report at 369ms: { }
+Expected keyboard report at 370ms: { 4 }
+Observed keyboard report at 370ms: { 4 }
+Expected keyboard report at 371ms: { }
+Observed keyboard report at 371ms: { }
+Expected keyboard report at 380ms: { e1 }
+Observed keyboard report at 380ms: { e1 }
+Expected keyboard report at 380ms: { 4 e1 }
+Observed keyboard report at 380ms: { 4 e1 }
+Expected keyboard report at 380ms: { 4 }
+Observed keyboard report at 380ms: { 4 }
+Expected keyboard report at 380ms: { }
+Observed keyboard report at 380ms: { }
+Expected keyboard report at 380ms: { 4 }
+Observed keyboard report at 380ms: { 4 }
+Expected keyboard report at 380ms: { }
+Observed keyboard report at 380ms: { }
+Expected keyboard report at 407ms: { e1 }
+Observed keyboard report at 407ms: { e1 }
+Expected keyboard report at 409ms: { }
+Observed keyboard report at 409ms: { }
+Expected keyboard report at 415ms: { 4 }
+Observed keyboard report at 415ms: { 4 }
+Expected keyboard report at 416ms: { }
+Observed keyboard report at 416ms: { }
+Expected keyboard report at 417ms: { 4 }
+Observed keyboard report at 417ms: { 4 }
+Expected keyboard report at 418ms: { }
+Observed keyboard report at 418ms: { }
+Expected keyboard report at 427ms: { 4 }
+Observed keyboard report at 427ms: { 4 }
+Expected keyboard report at 427ms: { }
+Observed keyboard report at 427ms: { }
+Expected keyboard report at 427ms: { 4 }
+Observed keyboard report at 427ms: { 4 }
+Expected keyboard report at 427ms: { }
+Observed keyboard report at 427ms: { }
+Expected keyboard report at 445ms: { 4 }
+Observed keyboard report at 445ms: { 4 }
+Expected keyboard report at 446ms: { }
+Observed keyboard report at 446ms: { }
+Expected keyboard report at 447ms: { 4 }
+Observed keyboard report at 447ms: { 4 }
+Expected keyboard report at 448ms: { }
+Observed keyboard report at 448ms: { }
+Expected keyboard report at 449ms: { e1 }
+Observed keyboard report at 449ms: { e1 }
+Expected keyboard report at 451ms: { }
+Observed keyboard report at 451ms: { }
+Expected keyboard report at 459ms: { 4 }
+Observed keyboard report at 459ms: { 4 }
+Expected keyboard report at 459ms: { }
+Observed keyboard report at 459ms: { }
+Expected keyboard report at 459ms: { 4 }
+Observed keyboard report at 459ms: { 4 }
+Expected keyboard report at 459ms: { }
+Observed keyboard report at 459ms: { }
+Expected keyboard report at 459ms: { e1 }
+Observed keyboard report at 459ms: { e1 }
+Expected keyboard report at 459ms: { }
+Observed keyboard report at 459ms: { }
+Expected keyboard report at 487ms: { 4 }
+Observed keyboard report at 487ms: { 4 }
+Expected keyboard report at 488ms: { }
+Observed keyboard report at 488ms: { }
+Expected keyboard report at 489ms: { 4 }
+Observed keyboard report at 489ms: { 4 }
+Expected keyboard report at 490ms: { }
+Observed keyboard report at 490ms: { }
+Expected keyboard report at 491ms: { e1 }
+Observed keyboard report at 491ms: { e1 }
+Expected keyboard report at 492ms: { 4 e1 }
+Observed keyboard report at 492ms: { 4 e1 }
+Expected keyboard report at 493ms: { e1 }
+Observed keyboard report at 493ms: { e1 }
+Expected keyboard report at 494ms: { }
+Observed keyboard report at 494ms: { }
+Expected keyboard report at 503ms: { 4 }
+Observed keyboard report at 503ms: { 4 }
+Expected keyboard report at 503ms: { }
+Observed keyboard report at 503ms: { }
+Expected keyboard report at 503ms: { 4 }
+Observed keyboard report at 503ms: { 4 }
+Expected keyboard report at 503ms: { }
+Observed keyboard report at 503ms: { }
+Expected keyboard report at 503ms: { e1 }
+Observed keyboard report at 503ms: { e1 }
+Expected keyboard report at 503ms: { 4 e1 }
+Observed keyboard report at 503ms: { 4 e1 }
+Expected keyboard report at 503ms: { e1 }
+Observed keyboard report at 503ms: { e1 }
+Expected keyboard report at 503ms: { }
+Observed keyboard report at 503ms: { }
+[       OK ] PersonalConfig.3_MacroRecordOneShot (3 ms)
+[ RUN      ] PersonalConfig.4_MacroRecordSpecialShift
+[ INFO     ] Printing Macro: U
+	END
+[ INFO     ] Printing Macro: U
+	END
+Expected keyboard report at 537ms: { 4c }
+Observed keyboard report at 537ms: { 4c }
+Expected keyboard report at 538ms: { }
+Observed keyboard report at 538ms: { }
+Expected keyboard report at 548ms: { 4c }
+Observed keyboard report at 548ms: { 4c }
+Expected keyboard report at 548ms: { }
+Observed keyboard report at 548ms: { }
+Expected keyboard report at 562ms: { 4c }
+Observed keyboard report at 562ms: { 4c }
+Expected keyboard report at 563ms: { }
+Observed keyboard report at 563ms: { }
+Expected keyboard report at 573ms: { 4c }
+Observed keyboard report at 573ms: { 4c }
+Expected keyboard report at 573ms: { }
+Observed keyboard report at 573ms: { }
+Expected keyboard report at 580ms: { 2d }
+Observed keyboard report at 580ms: { 2d }
+Expected keyboard report at 581ms: { }
+Observed keyboard report at 581ms: { }
+[       OK ] PersonalConfig.4_MacroRecordSpecialShift (0 ms)
 [ RUN      ] PersonalConfig.5_MacroRecordSpecialShift
 [       OK ] PersonalConfig.5_MacroRecordSpecialShift (0 ms)
 [ RUN      ] PersonalConfig.6_MacroRecordTopsyOneShot
 [ INFO     ] Printing Macro: A
-	TAPCODE 27,TAPCODE 27,KEYDOWN 209 199,
+	TAPCODE 30,TAPCODE 31,TAP 209 197,TAPCODE 4,KEYDOWN 208 75,KEYCODEUP 30,KEYCODEDOWN 229,KEYDOWN 208 75,KEYCODEUP 30,KEYCODEUP 229,
 [ INFO     ] Printing Macro: O
-	
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:164: Failure
-Expected equality of these values:
-  observed_keyboard_report_count
-    Which is: 20
-  expected_keyboard_report_count
-    Which is: 44
-Expected keyboard report at 316ms: { 1e }
-Observed keyboard report at 316ms: { 3a }
-Expected keyboard report at 317ms: { }
-Observed keyboard report at 317ms: { }
-Expected keyboard report at 318ms: { 1f }
-Observed keyboard report at 318ms: { 3b }
-Expected keyboard report at 319ms: { }
-Observed keyboard report at 319ms: { }
-Expected keyboard report at 324ms: { 4 }
-Observed keyboard report at 324ms: { 4a }
-Expected keyboard report at 325ms: { }
-Observed keyboard report at 325ms: { }
-Expected keyboard report at 326ms: { e1 }
-Observed keyboard report at 326ms: { e1 }
-Expected keyboard report at 326ms: { 1e e1 }
-Observed keyboard report at 326ms: { 1e e1 }
-Expected keyboard report at 327ms: { e1 }
-Observed keyboard report at 327ms: { e1 }
-Expected keyboard report at 327ms: { }
-Observed keyboard report at 327ms: { }
-Expected keyboard report at 328ms: { e5 }
-Observed keyboard report at 328ms: { e5 }
-Expected keyboard report at 329ms: { }
-Observed keyboard report at 329ms: { }
-Expected keyboard report at 329ms: { 1e }
-Observed keyboard report at 329ms: { 1e }
-Expected keyboard report at 330ms: { }
-Observed keyboard report at 330ms: { }
-Expected keyboard report at 330ms: { e5 }
-Observed keyboard report at 330ms: { e5 }
-Expected keyboard report at 331ms: { }
-Observed keyboard report at 331ms: { }
-Expected keyboard report at 344ms: { 1e }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 360
-  expected_report.Timestamp()
-    Which is: 344
-Report timestamps don't match (i=16)
-Observed keyboard report at 360ms: { e5 }
-Expected keyboard report at 344ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 362
-  expected_report.Timestamp()
-    Which is: 344
-Report timestamps don't match (i=17)
-Observed keyboard report at 362ms: { 3c e5 }
-Expected keyboard report at 344ms: { 1f }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 362
-  expected_report.Timestamp()
-    Which is: 344
-Report timestamps don't match (i=18)
-Observed keyboard report at 362ms: { 3c }
-Expected keyboard report at 344ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 363
-  expected_report.Timestamp()
-    Which is: 344
-Report timestamps don't match (i=19)
-Observed keyboard report at 363ms: { }
-Missing expected keyboard report at 344ms: { 4 }
-Missing expected keyboard report at 344ms: { }
-Missing expected keyboard report at 344ms: { e1 }
-Missing expected keyboard report at 344ms: { 1e e1 }
-Missing expected keyboard report at 344ms: { e1 }
-Missing expected keyboard report at 344ms: { }
-Missing expected keyboard report at 344ms: { e5 }
-Missing expected keyboard report at 344ms: { }
-Missing expected keyboard report at 344ms: { 1e }
-Missing expected keyboard report at 344ms: { }
-Missing expected keyboard report at 344ms: { e5 }
-Missing expected keyboard report at 344ms: { }
-Missing expected keyboard report at 360ms: { e5 }
-Missing expected keyboard report at 362ms: { }
-Missing expected keyboard report at 362ms: { 20 }
-Missing expected keyboard report at 362ms: { 20 e1 }
-Missing expected keyboard report at 363ms: { e1 }
-Missing expected keyboard report at 363ms: { }
-Missing expected keyboard report at 372ms: { e5 }
-Missing expected keyboard report at 372ms: { }
-Missing expected keyboard report at 372ms: { 20 }
-Missing expected keyboard report at 372ms: { 20 e1 }
-Missing expected keyboard report at 372ms: { e1 }
-Missing expected keyboard report at 372ms: { }
-[  FAILED  ] PersonalConfig.6_MacroRecordTopsyOneShot (2 ms)
-[ RUN      ] PersonalConfig.7_SpecialShiftDoubleRelease
-Expected keyboard report at 379ms: { 35 }
-Observed keyboard report at 379ms: { 35 }
-Expected keyboard report at 380ms: { }
-Observed keyboard report at 380ms: { }
-Expected keyboard report at 382ms: { 35 }
-Observed keyboard report at 382ms: { 35 }
-Expected keyboard report at 383ms: { }
-Observed keyboard report at 383ms: { }
-Expected keyboard report at 385ms: { 35 }
-Observed keyboard report at 385ms: { 35 }
-Expected keyboard report at 386ms: { }
-Observed keyboard report at 386ms: { }
-Expected keyboard report at 388ms: { a }
-Observed keyboard report at 388ms: { 35 }
-Expected keyboard report at 389ms: { }
-Observed keyboard report at 389ms: { }
-Expected keyboard report at 391ms: { 35 }
-Observed keyboard report at 391ms: { 35 }
-Expected keyboard report at 392ms: { }
-Observed keyboard report at 392ms: { }
-Expected keyboard report at 394ms: { 35 }
-Observed keyboard report at 394ms: { 35 }
-Expected keyboard report at 395ms: { }
-Observed keyboard report at 395ms: { }
-Expected keyboard report at 397ms: { 35 }
-Observed keyboard report at 397ms: { 35 }
-Expected keyboard report at 398ms: { }
-Observed keyboard report at 398ms: { }
-Expected keyboard report at 400ms: { a }
-Observed keyboard report at 400ms: { 35 }
-Expected keyboard report at 401ms: { }
-Observed keyboard report at 401ms: { }
-[       OK ] PersonalConfig.7_SpecialShiftDoubleRelease (1 ms)
-[ RUN      ] PersonalConfig.8_MacroRecordIntoWrongSlot
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:164: Failure
-Expected equality of these values:
-  observed_keyboard_report_count
-    Which is: 4
-  expected_keyboard_report_count
-    Which is: 6
-Expected keyboard report at 408ms: { 4 }
-Observed keyboard report at 408ms: { 4a }
-Expected keyboard report at 409ms: { }
-Observed keyboard report at 409ms: { }
-Expected keyboard report at 410ms: { 5 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 412
-  expected_report.Timestamp()
-    Which is: 410
-Report timestamps don't match (i=2)
-Observed keyboard report at 412ms: { 2a }
-Expected keyboard report at 411ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 413
-  expected_report.Timestamp()
-    Which is: 411
-Report timestamps don't match (i=3)
-Observed keyboard report at 413ms: { }
-Missing expected keyboard report at 412ms: { 6 }
-Missing expected keyboard report at 413ms: { }
-[  FAILED  ] PersonalConfig.8_MacroRecordIntoWrongSlot (0 ms)
-[ RUN      ] PersonalConfig.9_MacroReplayPLAYPLAY
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:164: Failure
-Expected equality of these values:
-  observed_keyboard_report_count
-    Which is: 6
-  expected_keyboard_report_count
-    Which is: 12
-Expected keyboard report at 426ms: { 4 }
-Observed keyboard report at 426ms: { 4a }
-Expected keyboard report at 427ms: { }
-Observed keyboard report at 427ms: { }
-Expected keyboard report at 428ms: { 5 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 443
-  expected_report.Timestamp()
-    Which is: 428
-Report timestamps don't match (i=2)
-Observed keyboard report at 443ms: { 1b }
-Expected keyboard report at 429ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 443
-  expected_report.Timestamp()
-    Which is: 429
-Report timestamps don't match (i=3)
-Observed keyboard report at 443ms: { }
-Expected keyboard report at 438ms: { 4 }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 443
-  expected_report.Timestamp()
-    Which is: 438
-Report timestamps don't match (i=4)
-Observed keyboard report at 443ms: { 1b }
-Expected keyboard report at 438ms: { }
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:187: Failure
-Expected equality of these values:
-  observed_report.Timestamp()
-    Which is: 443
-  expected_report.Timestamp()
-    Which is: 438
-Report timestamps don't match (i=5)
-Observed keyboard report at 443ms: { }
-Missing expected keyboard report at 438ms: { 5 }
-Missing expected keyboard report at 438ms: { }
-Missing expected keyboard report at 443ms: { 4 }
-Missing expected keyboard report at 443ms: { }
-Missing expected keyboard report at 443ms: { 5 }
-Missing expected keyboard report at 443ms: { }
-[  FAILED  ] PersonalConfig.9_MacroReplayPLAYPLAY (1 ms)
-[----------] 10 tests from PersonalConfig (21 ms total)
-
-[----------] Global test environment tear-down
-[==========] 10 tests from 1 test suite ran. (21 ms total)
-[  PASSED  ] 4 tests.
-[  FAILED  ] 6 tests, listed below:
-[  FAILED  ] PersonalConfig.2_MacroRecordTopsy
-[  FAILED  ] PersonalConfig.3_MacroRecordOneShot
-[  FAILED  ] PersonalConfig.4_MacroRecordSpecialShift
-[  FAILED  ] PersonalConfig.6_MacroRecordTopsyOneShot
-[  FAILED  ] PersonalConfig.8_MacroRecordIntoWrongSlot
-[  FAILED  ] PersonalConfig.9_MacroReplayPLAYPLAY
-
- 6 FAILED TESTS
-make[2]: *** [/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/makefiles/testcase.mk:74: run] Error 1
-make[1]: *** [Makefile:96: personal-config] Error 2
-make[1]: Leaving directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
-make: *** [Makefile:82: simulator-tests] Error 2
-Kaleidoscope [15:11:01] $ 
-vshcmd: > make simulator-tests TEST_PATH=plugins/MacrosOnTheFly/EdgeCases
-Building in quiet mode. For a lot more information, add 'VERBOSE=1' to the beginning of your call to make
-make -C tests all
-make[1]: Entering directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
-make -C /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build
-[ 25%] Built target gtest
-[ 50%] Built target gmock
-[ 75%] Built target gmock_main
-[100%] Built target gtest_main
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-MacrosOnTheFly[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly[0m                          
-[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
-[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/MacrosOnTheFly/EdgeCases
-[==========] Running 19 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 19 tests from ManualTests
-[ RUN      ] ManualTests.0_test
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/test/manual-testcases.cpp
-[       OK ] ManualTests.0_test (0 ms)
-[ RUN      ] ManualTests.1_MacrosOnTheFlyTestHelpers
-Expected keyboard report at 11ms: { 4 }
-Observed keyboard report at 11ms: { 4 }
-Expected keyboard report at 12ms: { }
-Observed keyboard report at 12ms: { }
-Expected keyboard report at 13ms: { 4 }
-Observed keyboard report at 13ms: { 4 }
-Expected keyboard report at 14ms: { 4 d }
-Observed keyboard report at 14ms: { 4 d }
-Expected keyboard report at 15ms: { 4 }
-Observed keyboard report at 15ms: { 4 }
-Expected keyboard report at 16ms: { }
-Observed keyboard report at 16ms: { }
-[       OK ] ManualTests.1_MacrosOnTheFlyTestHelpers (0 ms)
-[ RUN      ] ManualTests.2_ReplayRepeat
-Expected keyboard report at 21ms: { 5 }
-Observed keyboard report at 21ms: { 5 }
-Expected keyboard report at 22ms: { }
-Observed keyboard report at 22ms: { }
-Expected keyboard report at 23ms: { d }
-Observed keyboard report at 23ms: { d }
-Expected keyboard report at 24ms: { }
-Observed keyboard report at 24ms: { }
-Expected keyboard report at 31ms: { 4 }
-Observed keyboard report at 31ms: { 4 }
-Expected keyboard report at 32ms: { }
-Observed keyboard report at 32ms: { }
-Expected keyboard report at 33ms: { 4 }
-Observed keyboard report at 33ms: { 4 }
-Expected keyboard report at 34ms: { }
-Observed keyboard report at 34ms: { }
-Expected keyboard report at 43ms: { 4 }
-Observed keyboard report at 43ms: { 4 }
-Expected keyboard report at 43ms: { }
-Observed keyboard report at 43ms: { }
-Expected keyboard report at 43ms: { 4 }
-Observed keyboard report at 43ms: { 4 }
-Expected keyboard report at 43ms: { }
-Observed keyboard report at 43ms: { }
-Expected keyboard report at 49ms: { 4 }
-Observed keyboard report at 49ms: { 4 }
-Expected keyboard report at 49ms: { }
-Observed keyboard report at 49ms: { }
-Expected keyboard report at 49ms: { 4 }
-Observed keyboard report at 49ms: { 4 }
-Expected keyboard report at 49ms: { }
-Observed keyboard report at 49ms: { }
-Expected keyboard report at 57ms: { 4 }
-Observed keyboard report at 57ms: { 4 }
-Expected keyboard report at 58ms: { }
-Observed keyboard report at 58ms: { }
-Expected keyboard report at 59ms: { 4 }
-Observed keyboard report at 59ms: { 4 }
-Expected keyboard report at 60ms: { }
-Observed keyboard report at 60ms: { }
-Expected keyboard report at 61ms: { 4 }
-Observed keyboard report at 61ms: { 4 }
-Expected keyboard report at 62ms: { }
-Observed keyboard report at 62ms: { }
-Expected keyboard report at 63ms: { 5 }
-Observed keyboard report at 63ms: { 5 }
-Expected keyboard report at 64ms: { }
-Observed keyboard report at 64ms: { }
-Expected keyboard report at 65ms: { d }
-Observed keyboard report at 65ms: { d }
-Expected keyboard report at 66ms: { }
-Observed keyboard report at 66ms: { }
-Expected keyboard report at 71ms: { 4 }
-Observed keyboard report at 71ms: { 4 }
-Expected keyboard report at 71ms: { }
-Observed keyboard report at 71ms: { }
-Expected keyboard report at 71ms: { 4 }
-Observed keyboard report at 71ms: { 4 }
-Expected keyboard report at 71ms: { }
-Observed keyboard report at 71ms: { }
-Expected keyboard report at 71ms: { 4 }
-Observed keyboard report at 71ms: { 4 }
-Expected keyboard report at 71ms: { }
-Observed keyboard report at 71ms: { }
-Expected keyboard report at 71ms: { 5 }
-Observed keyboard report at 71ms: { 5 }
-Expected keyboard report at 71ms: { }
-Observed keyboard report at 71ms: { }
-Expected keyboard report at 71ms: { d }
-Observed keyboard report at 71ms: { d }
-Expected keyboard report at 71ms: { }
-Observed keyboard report at 71ms: { }
-[       OK ] ManualTests.2_ReplayRepeat (1 ms)
-[ RUN      ] ManualTests.3_MacrosOnTheFlyNoHeldOverPlay
-Expected keyboard report at 93ms: { 5 }
-Observed keyboard report at 93ms: { 5 }
-Expected keyboard report at 94ms: { }
-Observed keyboard report at 94ms: { }
-Expected keyboard report at 95ms: { d }
-Observed keyboard report at 95ms: { d }
-Expected keyboard report at 96ms: { }
-Observed keyboard report at 96ms: { }
-Expected keyboard report at 103ms: { 4 }
-Observed keyboard report at 103ms: { 4 }
-Expected keyboard report at 104ms: { }
-Observed keyboard report at 104ms: { }
-Expected keyboard report at 105ms: { 4 }
-Observed keyboard report at 105ms: { 4 }
-Expected keyboard report at 106ms: { }
-Observed keyboard report at 106ms: { }
-Expected keyboard report at 109ms: { d }
-Observed keyboard report at 109ms: { d }
-Expected keyboard report at 114ms: { }
-Observed keyboard report at 114ms: { }
-[       OK ] ManualTests.3_MacrosOnTheFlyNoHeldOverPlay (0 ms)
-[ RUN      ] ManualTests.4_MacrosOnTheFlyRecursiveReplay
-Expected keyboard report at 129ms: { 5 }
-Observed keyboard report at 129ms: { 5 }
-Expected keyboard report at 130ms: { }
-Observed keyboard report at 130ms: { }
-Expected keyboard report at 131ms: { d }
-Observed keyboard report at 131ms: { d }
-Expected keyboard report at 132ms: { }
-Observed keyboard report at 132ms: { }
-Expected keyboard report at 139ms: { 4 }
-Observed keyboard report at 139ms: { 4 }
-Expected keyboard report at 140ms: { }
-Observed keyboard report at 140ms: { }
-Expected keyboard report at 141ms: { 4 }
-Observed keyboard report at 141ms: { 4 }
-Expected keyboard report at 142ms: { }
-Observed keyboard report at 142ms: { }
-Expected keyboard report at 147ms: { 4 }
-Observed keyboard report at 147ms: { 4 }
-Expected keyboard report at 147ms: { }
-Observed keyboard report at 147ms: { }
-Expected keyboard report at 147ms: { 4 }
-Observed keyboard report at 147ms: { 4 }
-Expected keyboard report at 147ms: { }
-Observed keyboard report at 147ms: { }
-Expected keyboard report at 155ms: { d }
-Observed keyboard report at 155ms: { d }
-Expected keyboard report at 156ms: { }
-Observed keyboard report at 156ms: { }
-Expected keyboard report at 159ms: { 4 }
-Observed keyboard report at 159ms: { 4 }
-Expected keyboard report at 159ms: { }
-Observed keyboard report at 159ms: { }
-Expected keyboard report at 159ms: { 4 }
-Observed keyboard report at 159ms: { 4 }
-Expected keyboard report at 159ms: { }
-Observed keyboard report at 159ms: { }
-Expected keyboard report at 163ms: { d }
-Observed keyboard report at 163ms: { d }
-Expected keyboard report at 164ms: { }
-Observed keyboard report at 164ms: { }
-Expected keyboard report at 169ms: { d }
-Observed keyboard report at 169ms: { d }
-Expected keyboard report at 169ms: { }
-Observed keyboard report at 169ms: { }
-Expected keyboard report at 169ms: { 4 }
-Observed keyboard report at 169ms: { 4 }
-Expected keyboard report at 169ms: { }
-Observed keyboard report at 169ms: { }
-Expected keyboard report at 169ms: { 4 }
-Observed keyboard report at 169ms: { 4 }
-Expected keyboard report at 169ms: { }
-Observed keyboard report at 169ms: { }
-Expected keyboard report at 169ms: { d }
-Observed keyboard report at 169ms: { d }
-Expected keyboard report at 169ms: { }
-Observed keyboard report at 169ms: { }
-[       OK ] ManualTests.4_MacrosOnTheFlyRecursiveReplay (1 ms)
-[ RUN      ] ManualTests.5_MacrosOnTheFlyRecursiveAvoidance
-Expected keyboard report at 191ms: { 5 }
-Observed keyboard report at 191ms: { 5 }
-Expected keyboard report at 192ms: { }
-Observed keyboard report at 192ms: { }
-Expected keyboard report at 193ms: { d }
-Observed keyboard report at 193ms: { d }
-Expected keyboard report at 194ms: { }
-Observed keyboard report at 194ms: { }
-Expected keyboard report at 201ms: { 4 }
-Observed keyboard report at 201ms: { 4 }
-Expected keyboard report at 202ms: { }
-Observed keyboard report at 202ms: { }
-Expected keyboard report at 203ms: { 4 }
-Observed keyboard report at 203ms: { 4 }
-Expected keyboard report at 204ms: { }
-Observed keyboard report at 204ms: { }
-Expected keyboard report at 211ms: { d }
-Observed keyboard report at 211ms: { d }
-Expected keyboard report at 212ms: { }
-Observed keyboard report at 212ms: { }
-Expected keyboard report at 215ms: { 4 }
-Observed keyboard report at 215ms: { 4 }
-Expected keyboard report at 215ms: { }
-Observed keyboard report at 215ms: { }
-Expected keyboard report at 215ms: { 4 }
-Observed keyboard report at 215ms: { 4 }
-Expected keyboard report at 215ms: { }
-Observed keyboard report at 215ms: { }
-Expected keyboard report at 225ms: { 4 }
-Observed keyboard report at 225ms: { 4 }
-Expected keyboard report at 226ms: { }
-Observed keyboard report at 226ms: { }
-Expected keyboard report at 229ms: { d }
-Observed keyboard report at 229ms: { d }
-Expected keyboard report at 229ms: { }
-Observed keyboard report at 229ms: { }
-Expected keyboard report at 229ms: { 4 }
-Observed keyboard report at 229ms: { 4 }
-Expected keyboard report at 229ms: { }
-Observed keyboard report at 229ms: { }
-Expected keyboard report at 237ms: { 4 }
-Observed keyboard report at 237ms: { 4 }
-Expected keyboard report at 238ms: { }
-Observed keyboard report at 238ms: { }
-Expected keyboard report at 243ms: { d }
-Observed keyboard report at 243ms: { d }
-Expected keyboard report at 243ms: { }
-Observed keyboard report at 243ms: { }
-[       OK ] ManualTests.5_MacrosOnTheFlyRecursiveAvoidance (1 ms)
-[ RUN      ] ManualTests.5_MacrosOnTheFlyAvoidKeyUp
-Expected keyboard report at 265ms: { d }
-Observed keyboard report at 265ms: { d }
-Expected keyboard report at 266ms: { }
-Observed keyboard report at 266ms: { }
-Expected keyboard report at 272ms: { d }
-Observed keyboard report at 272ms: { d }
-Expected keyboard report at 272ms: { }
-Observed keyboard report at 272ms: { }
-[       OK ] ManualTests.5_MacrosOnTheFlyAvoidKeyUp (0 ms)
-[ RUN      ] ManualTests.6_MacrosOnTheFlyBailOut
-[       OK ] ManualTests.6_MacrosOnTheFlyBailOut (0 ms)
-[ RUN      ] ManualTests.7_CompressionChecks
-[ INFO     ] Printing Macro: A
-	TAPCODE 4,TAPCODE 13,
-[ INFO     ] Printing Macro: A
-	TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 225,TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,KEYCODEUP 225,
-Expected keyboard report at 343ms: { 4 }
-Observed keyboard report at 343ms: { 4 }
-Expected keyboard report at 344ms: { }
-Observed keyboard report at 344ms: { }
-Expected keyboard report at 345ms: { d }
-Observed keyboard report at 345ms: { d }
-Expected keyboard report at 346ms: { }
-Observed keyboard report at 346ms: { }
-Expected keyboard report at 351ms: { 4 }
-Observed keyboard report at 351ms: { 4 }
-Expected keyboard report at 351ms: { }
-Observed keyboard report at 351ms: { }
-Expected keyboard report at 351ms: { d }
-Observed keyboard report at 351ms: { d }
-Expected keyboard report at 351ms: { }
-Observed keyboard report at 351ms: { }
-Expected keyboard report at 359ms: { 4 }
-Observed keyboard report at 359ms: { 4 }
-Expected keyboard report at 360ms: { }
-Observed keyboard report at 360ms: { }
-Expected keyboard report at 361ms: { d }
-Observed keyboard report at 361ms: { d }
-Expected keyboard report at 362ms: { }
-Observed keyboard report at 362ms: { }
-Expected keyboard report at 363ms: { 4 }
-Observed keyboard report at 363ms: { 4 }
-Expected keyboard report at 364ms: { }
-Observed keyboard report at 364ms: { }
-Expected keyboard report at 365ms: { d }
-Observed keyboard report at 365ms: { d }
-Expected keyboard report at 366ms: { }
-Observed keyboard report at 366ms: { }
-Expected keyboard report at 367ms: { 4 }
-Observed keyboard report at 367ms: { 4 }
-Expected keyboard report at 368ms: { }
-Observed keyboard report at 368ms: { }
-Expected keyboard report at 369ms: { d }
-Observed keyboard report at 369ms: { d }
-Expected keyboard report at 370ms: { }
-Observed keyboard report at 370ms: { }
-Expected keyboard report at 375ms: { 4 }
-Observed keyboard report at 375ms: { 4 }
-Expected keyboard report at 375ms: { }
-Observed keyboard report at 375ms: { }
-Expected keyboard report at 375ms: { d }
-Observed keyboard report at 375ms: { d }
-Expected keyboard report at 375ms: { }
-Observed keyboard report at 375ms: { }
-Expected keyboard report at 375ms: { 4 }
-Observed keyboard report at 375ms: { 4 }
-Expected keyboard report at 375ms: { }
-Observed keyboard report at 375ms: { }
-Expected keyboard report at 375ms: { d }
-Observed keyboard report at 375ms: { d }
-Expected keyboard report at 375ms: { }
-Observed keyboard report at 375ms: { }
-Expected keyboard report at 375ms: { 4 }
-Observed keyboard report at 375ms: { 4 }
-Expected keyboard report at 375ms: { }
-Observed keyboard report at 375ms: { }
-Expected keyboard report at 375ms: { d }
-Observed keyboard report at 375ms: { d }
-Expected keyboard report at 375ms: { }
-Observed keyboard report at 375ms: { }
-Expected keyboard report at 388ms: { e1 }
-Observed keyboard report at 388ms: { e1 }
-Expected keyboard report at 389ms: { 4 e1 }
-Observed keyboard report at 389ms: { 4 e1 }
-Expected keyboard report at 390ms: { e1 }
-Observed keyboard report at 390ms: { e1 }
-Expected keyboard report at 391ms: { d e1 }
-Observed keyboard report at 391ms: { d e1 }
-Expected keyboard report at 392ms: { e1 }
-Observed keyboard report at 392ms: { e1 }
-Expected keyboard report at 393ms: { 4 e1 }
-Observed keyboard report at 393ms: { 4 e1 }
-Expected keyboard report at 394ms: { e1 }
-Observed keyboard report at 394ms: { e1 }
-Expected keyboard report at 395ms: { d e1 }
-Observed keyboard report at 395ms: { d e1 }
-Expected keyboard report at 396ms: { e1 }
-Observed keyboard report at 396ms: { e1 }
-Expected keyboard report at 397ms: { 4 e1 }
-Observed keyboard report at 397ms: { 4 e1 }
-Expected keyboard report at 398ms: { e1 }
-Observed keyboard report at 398ms: { e1 }
-Expected keyboard report at 399ms: { d e1 }
-Observed keyboard report at 399ms: { d e1 }
-Expected keyboard report at 400ms: { e1 }
-Observed keyboard report at 400ms: { e1 }
-Expected keyboard report at 401ms: { }
-Observed keyboard report at 401ms: { }
-Expected keyboard report at 406ms: { e1 }
-Observed keyboard report at 406ms: { e1 }
-Expected keyboard report at 406ms: { 4 e1 }
-Observed keyboard report at 406ms: { 4 e1 }
-Expected keyboard report at 406ms: { e1 }
-Observed keyboard report at 406ms: { e1 }
-Expected keyboard report at 406ms: { d e1 }
-Observed keyboard report at 406ms: { d e1 }
-Expected keyboard report at 406ms: { e1 }
-Observed keyboard report at 406ms: { e1 }
-Expected keyboard report at 406ms: { 4 e1 }
-Observed keyboard report at 406ms: { 4 e1 }
-Expected keyboard report at 406ms: { e1 }
-Observed keyboard report at 406ms: { e1 }
-Expected keyboard report at 406ms: { d e1 }
-Observed keyboard report at 406ms: { d e1 }
-Expected keyboard report at 406ms: { e1 }
-Observed keyboard report at 406ms: { e1 }
-Expected keyboard report at 406ms: { 4 e1 }
-Observed keyboard report at 406ms: { 4 e1 }
-Expected keyboard report at 406ms: { e1 }
-Observed keyboard report at 406ms: { e1 }
-Expected keyboard report at 406ms: { d e1 }
-Observed keyboard report at 406ms: { d e1 }
-Expected keyboard report at 406ms: { e1 }
-Observed keyboard report at 406ms: { e1 }
-Expected keyboard report at 406ms: { }
-Observed keyboard report at 406ms: { }
-[       OK ] ManualTests.7_CompressionChecks (2 ms)
-[ RUN      ] ManualTests.8_FlagsCompression
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 224,TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,KEYCODEUP 224,
-Expected keyboard report at 421ms: { e0 }
-Observed keyboard report at 421ms: { e0 }
-Expected keyboard report at 422ms: { 4 e0 }
-Observed keyboard report at 422ms: { 4 e0 }
-Expected keyboard report at 423ms: { e0 }
-Observed keyboard report at 423ms: { e0 }
-Expected keyboard report at 424ms: { d e0 }
-Observed keyboard report at 424ms: { d e0 }
-Expected keyboard report at 425ms: { e0 }
-Observed keyboard report at 425ms: { e0 }
-Expected keyboard report at 426ms: { 4 e0 }
-Observed keyboard report at 426ms: { 4 e0 }
-Expected keyboard report at 427ms: { e0 }
-Observed keyboard report at 427ms: { e0 }
-Expected keyboard report at 428ms: { d e0 }
-Observed keyboard report at 428ms: { d e0 }
-Expected keyboard report at 429ms: { e0 }
-Observed keyboard report at 429ms: { e0 }
-Expected keyboard report at 430ms: { 4 e0 }
-Observed keyboard report at 430ms: { 4 e0 }
-Expected keyboard report at 431ms: { e0 }
-Observed keyboard report at 431ms: { e0 }
-Expected keyboard report at 432ms: { d e0 }
-Observed keyboard report at 432ms: { d e0 }
-Expected keyboard report at 433ms: { e0 }
-Observed keyboard report at 433ms: { e0 }
-Expected keyboard report at 434ms: { }
-Observed keyboard report at 434ms: { }
-Expected keyboard report at 439ms: { e0 }
-Observed keyboard report at 439ms: { e0 }
-Expected keyboard report at 439ms: { 4 e0 }
-Observed keyboard report at 439ms: { 4 e0 }
-Expected keyboard report at 439ms: { e0 }
-Observed keyboard report at 439ms: { e0 }
-Expected keyboard report at 439ms: { d e0 }
-Observed keyboard report at 439ms: { d e0 }
-Expected keyboard report at 439ms: { e0 }
-Observed keyboard report at 439ms: { e0 }
-Expected keyboard report at 439ms: { 4 e0 }
-Observed keyboard report at 439ms: { 4 e0 }
-Expected keyboard report at 439ms: { e0 }
-Observed keyboard report at 439ms: { e0 }
-Expected keyboard report at 439ms: { d e0 }
-Observed keyboard report at 439ms: { d e0 }
-Expected keyboard report at 439ms: { e0 }
-Observed keyboard report at 439ms: { e0 }
-Expected keyboard report at 439ms: { 4 e0 }
-Observed keyboard report at 439ms: { 4 e0 }
-Expected keyboard report at 439ms: { e0 }
-Observed keyboard report at 439ms: { e0 }
-Expected keyboard report at 439ms: { d e0 }
-Observed keyboard report at 439ms: { d e0 }
-Expected keyboard report at 439ms: { e0 }
-Observed keyboard report at 439ms: { e0 }
-Expected keyboard report at 439ms: { }
-Observed keyboard report at 439ms: { }
-[       OK ] ManualTests.8_FlagsCompression (1 ms)
-[ RUN      ] ManualTests.8_FlagsCompression3
-[ INFO     ] Printing Macro: A
-	TAP 1 4,
-Expected keyboard report at 454ms: { e0 }
-Observed keyboard report at 454ms: { e0 }
-Expected keyboard report at 454ms: { 4 e0 }
-Observed keyboard report at 454ms: { 4 e0 }
-Expected keyboard report at 455ms: { e0 }
-Observed keyboard report at 455ms: { e0 }
-Expected keyboard report at 455ms: { }
-Observed keyboard report at 455ms: { }
-Expected keyboard report at 460ms: { e0 }
-Observed keyboard report at 460ms: { e0 }
-Expected keyboard report at 460ms: { 4 e0 }
-Observed keyboard report at 460ms: { 4 e0 }
-Expected keyboard report at 460ms: { e0 }
-Observed keyboard report at 460ms: { e0 }
-Expected keyboard report at 460ms: { }
-Observed keyboard report at 460ms: { }
-[       OK ] ManualTests.8_FlagsCompression3 (0 ms)
-[ RUN      ] ManualTests.8_FlagsCompression4
-[ INFO     ] Printing Macro: A
-	TAP_SEQUENCE 1 4 1 4 1 4 1 4 0 0 |,
-Expected keyboard report at 467ms: { e0 }
-Observed keyboard report at 467ms: { e0 }
-Expected keyboard report at 467ms: { 4 e0 }
-Observed keyboard report at 467ms: { 4 e0 }
-Expected keyboard report at 468ms: { e0 }
-Observed keyboard report at 468ms: { e0 }
-Expected keyboard report at 468ms: { }
-Observed keyboard report at 468ms: { }
-Expected keyboard report at 469ms: { e0 }
-Observed keyboard report at 469ms: { e0 }
-Expected keyboard report at 469ms: { 4 e0 }
-Observed keyboard report at 469ms: { 4 e0 }
-Expected keyboard report at 470ms: { e0 }
-Observed keyboard report at 470ms: { e0 }
-Expected keyboard report at 470ms: { }
-Observed keyboard report at 470ms: { }
-Expected keyboard report at 471ms: { e0 }
-Observed keyboard report at 471ms: { e0 }
-Expected keyboard report at 471ms: { 4 e0 }
-Observed keyboard report at 471ms: { 4 e0 }
-Expected keyboard report at 472ms: { e0 }
-Observed keyboard report at 472ms: { e0 }
-Expected keyboard report at 472ms: { }
-Observed keyboard report at 472ms: { }
-Expected keyboard report at 473ms: { e0 }
-Observed keyboard report at 473ms: { e0 }
-Expected keyboard report at 473ms: { 4 e0 }
-Observed keyboard report at 473ms: { 4 e0 }
-Expected keyboard report at 474ms: { e0 }
-Observed keyboard report at 474ms: { e0 }
-Expected keyboard report at 474ms: { }
-Observed keyboard report at 474ms: { }
-Expected keyboard report at 479ms: { e0 }
-Observed keyboard report at 479ms: { e0 }
-Expected keyboard report at 479ms: { 4 e0 }
-Observed keyboard report at 479ms: { 4 e0 }
-Expected keyboard report at 479ms: { e0 }
-Observed keyboard report at 479ms: { e0 }
-Expected keyboard report at 479ms: { }
-Observed keyboard report at 479ms: { }
-Expected keyboard report at 479ms: { e0 }
-Observed keyboard report at 479ms: { e0 }
-Expected keyboard report at 479ms: { 4 e0 }
-Observed keyboard report at 479ms: { 4 e0 }
-Expected keyboard report at 479ms: { e0 }
-Observed keyboard report at 479ms: { e0 }
-Expected keyboard report at 479ms: { }
-Observed keyboard report at 479ms: { }
-Expected keyboard report at 479ms: { e0 }
-Observed keyboard report at 479ms: { e0 }
-Expected keyboard report at 479ms: { 4 e0 }
-Observed keyboard report at 479ms: { 4 e0 }
-Expected keyboard report at 479ms: { e0 }
-Observed keyboard report at 479ms: { e0 }
-Expected keyboard report at 479ms: { }
-Observed keyboard report at 479ms: { }
-Expected keyboard report at 479ms: { e0 }
-Observed keyboard report at 479ms: { e0 }
-Expected keyboard report at 479ms: { 4 e0 }
-Observed keyboard report at 479ms: { 4 e0 }
-Expected keyboard report at 479ms: { e0 }
-Observed keyboard report at 479ms: { e0 }
-Expected keyboard report at 479ms: { }
-Observed keyboard report at 479ms: { }
-[       OK ] ManualTests.8_FlagsCompression4 (1 ms)
-[ RUN      ] ManualTests.8_FlagsCompression2
-[ INFO     ] Printing Macro: A
-	KEYDOWN 1 4,TAPCODE 4,KEYUP 1 4,
-Expected keyboard report at 490ms: { e0 }
-Observed keyboard report at 490ms: { e0 }
-Expected keyboard report at 490ms: { 4 e0 }
-Observed keyboard report at 490ms: { 4 e0 }
-Expected keyboard report at 491ms: { e0 }
-Observed keyboard report at 491ms: { e0 }
-Expected keyboard report at 491ms: { }
-Observed keyboard report at 491ms: { }
-Expected keyboard report at 491ms: { 4 }
-Observed keyboard report at 491ms: { 4 }
-Expected keyboard report at 493ms: { }
-Observed keyboard report at 493ms: { }
-Expected keyboard report at 498ms: { e0 }
-Observed keyboard report at 498ms: { e0 }
-Expected keyboard report at 498ms: { 4 e0 }
-Observed keyboard report at 498ms: { 4 e0 }
-Expected keyboard report at 498ms: { e0 }
-Observed keyboard report at 498ms: { e0 }
-Expected keyboard report at 498ms: { }
-Observed keyboard report at 498ms: { }
-Expected keyboard report at 498ms: { 4 }
-Observed keyboard report at 498ms: { 4 }
-Expected keyboard report at 498ms: { }
-Observed keyboard report at 498ms: { }
-[       OK ] ManualTests.8_FlagsCompression2 (0 ms)
-[ RUN      ] ManualTests.8_FlagsCompression5
-[ INFO     ] Printing Macro: A
-	KEYDOWN 1 4,TAPCODE 13,KEYUP 1 4,
-Expected keyboard report at 507ms: { e0 }
-Observed keyboard report at 507ms: { e0 }
-Expected keyboard report at 507ms: { 4 e0 }
-Observed keyboard report at 507ms: { 4 e0 }
-Expected keyboard report at 508ms: { 4 }
-Observed keyboard report at 508ms: { 4 }
-Expected keyboard report at 508ms: { 4 d }
-Observed keyboard report at 508ms: { 4 d }
-Expected keyboard report at 509ms: { 4 }
-Observed keyboard report at 509ms: { 4 }
-Expected keyboard report at 510ms: { }
-Observed keyboard report at 510ms: { }
-Expected keyboard report at 515ms: { e0 }
-Observed keyboard report at 515ms: { e0 }
-Expected keyboard report at 515ms: { 4 e0 }
-Observed keyboard report at 515ms: { 4 e0 }
-Expected keyboard report at 515ms: { 4 }
-Observed keyboard report at 515ms: { 4 }
-Expected keyboard report at 515ms: { 4 d }
-Observed keyboard report at 515ms: { 4 d }
-Expected keyboard report at 515ms: { 4 }
-Observed keyboard report at 515ms: { 4 }
-Expected keyboard report at 515ms: { }
-Observed keyboard report at 515ms: { }
-[       OK ] ManualTests.8_FlagsCompression5 (0 ms)
-[ RUN      ] ManualTests.9_ShiftCheck
-Expected keyboard report at 524ms: { e1 }
-Observed keyboard report at 524ms: { e1 }
-Expected keyboard report at 525ms: { 4 e1 }
-Observed keyboard report at 525ms: { 4 e1 }
-Expected keyboard report at 526ms: { e1 }
-Observed keyboard report at 526ms: { e1 }
-Expected keyboard report at 527ms: { d e1 }
-Observed keyboard report at 527ms: { d e1 }
-Expected keyboard report at 528ms: { e1 }
-Observed keyboard report at 528ms: { e1 }
-Expected keyboard report at 529ms: { }
-Observed keyboard report at 529ms: { }
-Expected keyboard report at 534ms: { e1 }
-Observed keyboard report at 534ms: { e1 }
-Expected keyboard report at 534ms: { 4 e1 }
-Observed keyboard report at 534ms: { 4 e1 }
-Expected keyboard report at 534ms: { e1 }
-Observed keyboard report at 534ms: { e1 }
-Expected keyboard report at 534ms: { d e1 }
-Observed keyboard report at 534ms: { d e1 }
-Expected keyboard report at 534ms: { e1 }
-Observed keyboard report at 534ms: { e1 }
-Expected keyboard report at 534ms: { }
-Observed keyboard report at 534ms: { }
-[       OK ] ManualTests.9_ShiftCheck (0 ms)
-[ RUN      ] ManualTests.10_CompressSeqInMiddle
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 225,TAPCODE 4,TAPCODE 13,KEYCODEUP 225,TAP_CODE_SEQUENCE 4 4 4 4 4 0 |,
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 225,TAPCODE 4,TAPCODE 13,KEYCODEUP 225,TAP_CODE_SEQUENCE 4 4 4 4 4 13 0 |,KEYCODEDOWN 4,TAPCODE 13,KEYCODEUP 4,
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 225,TAPCODE 4,TAPCODE 13,KEYCODEUP 225,TAP_CODE_SEQUENCE 4 4 4 4 4 13 0 |,KEYCODEDOWN 4,TAPCODE 13,KEYCODEUP 4,TAP_CODE_SEQUENCE 13 4 13 4 13 0 |,
-Expected keyboard report at 544ms: { e1 }
-Observed keyboard report at 544ms: { e1 }
-Expected keyboard report at 545ms: { 4 e1 }
-Observed keyboard report at 545ms: { 4 e1 }
-Expected keyboard report at 546ms: { e1 }
-Observed keyboard report at 546ms: { e1 }
-Expected keyboard report at 547ms: { d e1 }
-Observed keyboard report at 547ms: { d e1 }
-Expected keyboard report at 548ms: { e1 }
-Observed keyboard report at 548ms: { e1 }
-Expected keyboard report at 549ms: { }
-Observed keyboard report at 549ms: { }
-Expected keyboard report at 550ms: { 4 }
-Observed keyboard report at 550ms: { 4 }
-Expected keyboard report at 551ms: { }
-Observed keyboard report at 551ms: { }
-Expected keyboard report at 552ms: { 4 }
-Observed keyboard report at 552ms: { 4 }
-Expected keyboard report at 553ms: { }
-Observed keyboard report at 553ms: { }
-Expected keyboard report at 554ms: { 4 }
-Observed keyboard report at 554ms: { 4 }
-Expected keyboard report at 555ms: { }
-Observed keyboard report at 555ms: { }
-Expected keyboard report at 556ms: { 4 }
-Observed keyboard report at 556ms: { 4 }
-Expected keyboard report at 557ms: { }
-Observed keyboard report at 557ms: { }
-Expected keyboard report at 558ms: { 4 }
-Observed keyboard report at 558ms: { 4 }
-Expected keyboard report at 559ms: { }
-Observed keyboard report at 559ms: { }
-Expected keyboard report at 564ms: { e1 }
-Observed keyboard report at 564ms: { e1 }
-Expected keyboard report at 564ms: { 4 e1 }
-Observed keyboard report at 564ms: { 4 e1 }
-Expected keyboard report at 564ms: { e1 }
-Observed keyboard report at 564ms: { e1 }
-Expected keyboard report at 564ms: { d e1 }
-Observed keyboard report at 564ms: { d e1 }
-Expected keyboard report at 564ms: { e1 }
-Observed keyboard report at 564ms: { e1 }
-Expected keyboard report at 564ms: { }
-Observed keyboard report at 564ms: { }
-Expected keyboard report at 564ms: { 4 }
-Observed keyboard report at 564ms: { 4 }
-Expected keyboard report at 564ms: { }
-Observed keyboard report at 564ms: { }
-Expected keyboard report at 564ms: { 4 }
-Observed keyboard report at 564ms: { 4 }
-Expected keyboard report at 564ms: { }
-Observed keyboard report at 564ms: { }
-Expected keyboard report at 564ms: { 4 }
-Observed keyboard report at 564ms: { 4 }
-Expected keyboard report at 564ms: { }
-Observed keyboard report at 564ms: { }
-Expected keyboard report at 564ms: { 4 }
-Observed keyboard report at 564ms: { 4 }
-Expected keyboard report at 564ms: { }
-Observed keyboard report at 564ms: { }
-Expected keyboard report at 564ms: { 4 }
-Observed keyboard report at 564ms: { 4 }
-Expected keyboard report at 564ms: { }
-Observed keyboard report at 564ms: { }
-Expected keyboard report at 580ms: { e1 }
-Observed keyboard report at 580ms: { e1 }
-Expected keyboard report at 581ms: { 4 e1 }
-Observed keyboard report at 581ms: { 4 e1 }
-Expected keyboard report at 582ms: { e1 }
-Observed keyboard report at 582ms: { e1 }
-Expected keyboard report at 583ms: { d e1 }
-Observed keyboard report at 583ms: { d e1 }
-Expected keyboard report at 584ms: { e1 }
-Observed keyboard report at 584ms: { e1 }
-Expected keyboard report at 585ms: { }
-Observed keyboard report at 585ms: { }
-Expected keyboard report at 586ms: { 4 }
-Observed keyboard report at 586ms: { 4 }
-Expected keyboard report at 587ms: { }
-Observed keyboard report at 587ms: { }
-Expected keyboard report at 588ms: { 4 }
-Observed keyboard report at 588ms: { 4 }
+	KEYCODEDOWN 229,KEYDOWN 208 77,KEYCODEUP 229,KEYCODEUP 32,
+Expected keyboard report at 588ms: { 1e }
+Observed keyboard report at 588ms: { 1e }
 Expected keyboard report at 589ms: { }
 Observed keyboard report at 589ms: { }
-Expected keyboard report at 590ms: { 4 }
-Observed keyboard report at 590ms: { 4 }
+Expected keyboard report at 590ms: { 1f }
+Observed keyboard report at 590ms: { 1f }
 Expected keyboard report at 591ms: { }
 Observed keyboard report at 591ms: { }
-Expected keyboard report at 592ms: { 4 }
-Observed keyboard report at 592ms: { 4 }
-Expected keyboard report at 593ms: { }
-Observed keyboard report at 593ms: { }
-Expected keyboard report at 594ms: { 4 }
-Observed keyboard report at 594ms: { 4 }
-Expected keyboard report at 595ms: { }
-Observed keyboard report at 595ms: { }
-Expected keyboard report at 596ms: { d }
-Observed keyboard report at 596ms: { d }
+Expected keyboard report at 596ms: { 4 }
+Observed keyboard report at 596ms: { 4 }
 Expected keyboard report at 597ms: { }
 Observed keyboard report at 597ms: { }
-Expected keyboard report at 598ms: { 4 }
-Observed keyboard report at 598ms: { 4 }
-Expected keyboard report at 599ms: { 4 d }
-Observed keyboard report at 599ms: { 4 d }
-Expected keyboard report at 600ms: { 4 }
-Observed keyboard report at 600ms: { 4 }
+Expected keyboard report at 598ms: { e1 }
+Observed keyboard report at 598ms: { e1 }
+Expected keyboard report at 598ms: { 1e e1 }
+Observed keyboard report at 598ms: { 1e e1 }
+Expected keyboard report at 599ms: { e1 }
+Observed keyboard report at 599ms: { e1 }
+Expected keyboard report at 599ms: { }
+Observed keyboard report at 599ms: { }
+Expected keyboard report at 600ms: { e5 }
+Observed keyboard report at 600ms: { e5 }
 Expected keyboard report at 601ms: { }
 Observed keyboard report at 601ms: { }
-Expected keyboard report at 606ms: { e1 }
-Observed keyboard report at 606ms: { e1 }
-Expected keyboard report at 606ms: { 4 e1 }
-Observed keyboard report at 606ms: { 4 e1 }
-Expected keyboard report at 606ms: { e1 }
-Observed keyboard report at 606ms: { e1 }
-Expected keyboard report at 606ms: { d e1 }
-Observed keyboard report at 606ms: { d e1 }
-Expected keyboard report at 606ms: { e1 }
-Observed keyboard report at 606ms: { e1 }
-Expected keyboard report at 606ms: { }
-Observed keyboard report at 606ms: { }
-Expected keyboard report at 606ms: { 4 }
-Observed keyboard report at 606ms: { 4 }
-Expected keyboard report at 606ms: { }
-Observed keyboard report at 606ms: { }
-Expected keyboard report at 606ms: { 4 }
-Observed keyboard report at 606ms: { 4 }
-Expected keyboard report at 606ms: { }
-Observed keyboard report at 606ms: { }
-Expected keyboard report at 606ms: { 4 }
-Observed keyboard report at 606ms: { 4 }
-Expected keyboard report at 606ms: { }
-Observed keyboard report at 606ms: { }
-Expected keyboard report at 606ms: { 4 }
-Observed keyboard report at 606ms: { 4 }
-Expected keyboard report at 606ms: { }
-Observed keyboard report at 606ms: { }
-Expected keyboard report at 606ms: { 4 }
-Observed keyboard report at 606ms: { 4 }
-Expected keyboard report at 606ms: { }
-Observed keyboard report at 606ms: { }
-Expected keyboard report at 606ms: { d }
-Observed keyboard report at 606ms: { d }
-Expected keyboard report at 606ms: { }
-Observed keyboard report at 606ms: { }
-Expected keyboard report at 606ms: { 4 }
-Observed keyboard report at 606ms: { 4 }
-Expected keyboard report at 606ms: { 4 d }
-Observed keyboard report at 606ms: { 4 d }
-Expected keyboard report at 606ms: { 4 }
-Observed keyboard report at 606ms: { 4 }
-Expected keyboard report at 606ms: { }
-Observed keyboard report at 606ms: { }
-Expected keyboard report at 626ms: { e1 }
-Observed keyboard report at 626ms: { e1 }
-Expected keyboard report at 627ms: { 4 e1 }
-Observed keyboard report at 627ms: { 4 e1 }
-Expected keyboard report at 628ms: { e1 }
-Observed keyboard report at 628ms: { e1 }
-Expected keyboard report at 629ms: { d e1 }
-Observed keyboard report at 629ms: { d e1 }
-Expected keyboard report at 630ms: { e1 }
-Observed keyboard report at 630ms: { e1 }
-Expected keyboard report at 631ms: { }
-Observed keyboard report at 631ms: { }
-Expected keyboard report at 632ms: { 4 }
-Observed keyboard report at 632ms: { 4 }
-Expected keyboard report at 633ms: { }
-Observed keyboard report at 633ms: { }
-Expected keyboard report at 634ms: { 4 }
-Observed keyboard report at 634ms: { 4 }
-Expected keyboard report at 635ms: { }
-Observed keyboard report at 635ms: { }
-Expected keyboard report at 636ms: { 4 }
-Observed keyboard report at 636ms: { 4 }
-Expected keyboard report at 637ms: { }
-Observed keyboard report at 637ms: { }
-Expected keyboard report at 638ms: { 4 }
-Observed keyboard report at 638ms: { 4 }
-Expected keyboard report at 639ms: { }
-Observed keyboard report at 639ms: { }
-Expected keyboard report at 640ms: { 4 }
-Observed keyboard report at 640ms: { 4 }
-Expected keyboard report at 641ms: { }
-Observed keyboard report at 641ms: { }
-Expected keyboard report at 642ms: { d }
-Observed keyboard report at 642ms: { d }
-Expected keyboard report at 643ms: { }
-Observed keyboard report at 643ms: { }
-Expected keyboard report at 644ms: { 4 }
-Observed keyboard report at 644ms: { 4 }
-Expected keyboard report at 645ms: { 4 d }
-Observed keyboard report at 645ms: { 4 d }
-Expected keyboard report at 646ms: { 4 }
-Observed keyboard report at 646ms: { 4 }
-Expected keyboard report at 647ms: { }
-Observed keyboard report at 647ms: { }
-Expected keyboard report at 648ms: { d }
-Observed keyboard report at 648ms: { d }
-Expected keyboard report at 649ms: { }
-Observed keyboard report at 649ms: { }
-Expected keyboard report at 650ms: { 4 }
-Observed keyboard report at 650ms: { 4 }
-Expected keyboard report at 651ms: { }
-Observed keyboard report at 651ms: { }
-Expected keyboard report at 652ms: { d }
-Observed keyboard report at 652ms: { d }
-Expected keyboard report at 653ms: { }
-Observed keyboard report at 653ms: { }
-Expected keyboard report at 654ms: { 4 }
-Observed keyboard report at 654ms: { 4 }
-Expected keyboard report at 655ms: { }
-Observed keyboard report at 655ms: { }
-Expected keyboard report at 656ms: { d }
-Observed keyboard report at 656ms: { d }
-Expected keyboard report at 657ms: { }
-Observed keyboard report at 657ms: { }
-Expected keyboard report at 662ms: { e1 }
-Observed keyboard report at 662ms: { e1 }
-Expected keyboard report at 662ms: { 4 e1 }
-Observed keyboard report at 662ms: { 4 e1 }
-Expected keyboard report at 662ms: { e1 }
-Observed keyboard report at 662ms: { e1 }
-Expected keyboard report at 662ms: { d e1 }
-Observed keyboard report at 662ms: { d e1 }
-Expected keyboard report at 662ms: { e1 }
-Observed keyboard report at 662ms: { e1 }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { 4 }
-Observed keyboard report at 662ms: { 4 }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { 4 }
-Observed keyboard report at 662ms: { 4 }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { 4 }
-Observed keyboard report at 662ms: { 4 }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { 4 }
-Observed keyboard report at 662ms: { 4 }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { 4 }
-Observed keyboard report at 662ms: { 4 }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { d }
-Observed keyboard report at 662ms: { d }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { 4 }
-Observed keyboard report at 662ms: { 4 }
-Expected keyboard report at 662ms: { 4 d }
-Observed keyboard report at 662ms: { 4 d }
-Expected keyboard report at 662ms: { 4 }
-Observed keyboard report at 662ms: { 4 }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { d }
-Observed keyboard report at 662ms: { d }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { 4 }
-Observed keyboard report at 662ms: { 4 }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { d }
-Observed keyboard report at 662ms: { d }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { 4 }
-Observed keyboard report at 662ms: { 4 }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-Expected keyboard report at 662ms: { d }
-Observed keyboard report at 662ms: { d }
-Expected keyboard report at 662ms: { }
-Observed keyboard report at 662ms: { }
-[       OK ] ManualTests.10_CompressSeqInMiddle (5 ms)
-[ RUN      ] ManualTests.11_LayerBasics
-[ INFO     ] Printing Macro: A
-	TAPCODE 27,TAP 68 1,TAPCODE 5,TAP 68 1,TAPCODE 27,TAP 68 1,TAPCODE 5,
-[ INFO     ] Printing Macro: A
-	TAPCODE 27,TAP 68 1,TAPCODE 5,TAP 68 1,TAPCODE 27,TAP 68 1,TAPCODE 5,TAP 68 1,
-[ INFO     ] Printing Macro: A
-	KEYDOWN 68 43,TAPCODE 27,KEYUP 68 43,TAPCODE 5,KEYDOWN 68 43,TAPCODE 27,
-Expected keyboard report at 690ms: { 1b }
-Observed keyboard report at 690ms: { 1b }
-Expected keyboard report at 691ms: { }
-Observed keyboard report at 691ms: { }
-Expected keyboard report at 694ms: { 5 }
-Observed keyboard report at 694ms: { 5 }
-Expected keyboard report at 695ms: { }
-Observed keyboard report at 695ms: { }
-Expected keyboard report at 698ms: { 1b }
-Observed keyboard report at 698ms: { 1b }
-Expected keyboard report at 699ms: { }
-Observed keyboard report at 699ms: { }
-Expected keyboard report at 702ms: { 5 }
-Observed keyboard report at 702ms: { 5 }
-Expected keyboard report at 703ms: { }
-Observed keyboard report at 703ms: { }
-Expected keyboard report at 708ms: { 1b }
-Observed keyboard report at 708ms: { 1b }
-Expected keyboard report at 708ms: { }
-Observed keyboard report at 708ms: { }
-Expected keyboard report at 708ms: { 5 }
-Observed keyboard report at 708ms: { 5 }
-Expected keyboard report at 708ms: { }
-Observed keyboard report at 708ms: { }
-Expected keyboard report at 708ms: { 1b }
-Observed keyboard report at 708ms: { 1b }
-Expected keyboard report at 708ms: { }
-Observed keyboard report at 708ms: { }
-Expected keyboard report at 708ms: { 5 }
-Observed keyboard report at 708ms: { 5 }
-Expected keyboard report at 708ms: { }
-Observed keyboard report at 708ms: { }
-Expected keyboard report at 725ms: { 1b }
-Observed keyboard report at 725ms: { 1b }
-Expected keyboard report at 726ms: { }
-Observed keyboard report at 726ms: { }
-Expected keyboard report at 729ms: { 5 }
-Observed keyboard report at 729ms: { 5 }
-Expected keyboard report at 730ms: { }
-Observed keyboard report at 730ms: { }
-Expected keyboard report at 733ms: { 1b }
-Observed keyboard report at 733ms: { 1b }
+Expected keyboard report at 601ms: { 1e }
+Observed keyboard report at 601ms: { 1e }
+Expected keyboard report at 602ms: { }
+Observed keyboard report at 602ms: { }
+Expected keyboard report at 602ms: { e5 }
+Observed keyboard report at 602ms: { e5 }
+Expected keyboard report at 603ms: { }
+Observed keyboard report at 603ms: { }
+Expected keyboard report at 616ms: { 1e }
+Observed keyboard report at 616ms: { 1e }
+Expected keyboard report at 616ms: { }
+Observed keyboard report at 616ms: { }
+Expected keyboard report at 616ms: { 1f }
+Observed keyboard report at 616ms: { 1f }
+Expected keyboard report at 616ms: { }
+Observed keyboard report at 616ms: { }
+Expected keyboard report at 616ms: { 4 }
+Observed keyboard report at 616ms: { 4 }
+Expected keyboard report at 616ms: { }
+Observed keyboard report at 616ms: { }
+Expected keyboard report at 616ms: { e1 }
+Observed keyboard report at 616ms: { e1 }
+Expected keyboard report at 616ms: { 1e e1 }
+Observed keyboard report at 616ms: { 1e e1 }
+Expected keyboard report at 616ms: { e1 }
+Observed keyboard report at 616ms: { e1 }
+Expected keyboard report at 616ms: { }
+Observed keyboard report at 616ms: { }
+Expected keyboard report at 616ms: { e5 }
+Observed keyboard report at 616ms: { e5 }
+Expected keyboard report at 616ms: { }
+Observed keyboard report at 616ms: { }
+Expected keyboard report at 616ms: { 1e }
+Observed keyboard report at 616ms: { 1e }
+Expected keyboard report at 616ms: { }
+Observed keyboard report at 616ms: { }
+Expected keyboard report at 616ms: { e5 }
+Observed keyboard report at 616ms: { e5 }
+Expected keyboard report at 616ms: { }
+Observed keyboard report at 616ms: { }
+Expected keyboard report at 682ms: { e5 }
+Observed keyboard report at 682ms: { e5 }
+Expected keyboard report at 684ms: { }
+Observed keyboard report at 684ms: { }
+Expected keyboard report at 684ms: { 20 }
+Observed keyboard report at 684ms: { 20 }
+Expected keyboard report at 684ms: { 20 e1 }
+Observed keyboard report at 684ms: { 20 e1 }
+Expected keyboard report at 685ms: { e1 }
+Observed keyboard report at 685ms: { e1 }
+Expected keyboard report at 685ms: { }
+Observed keyboard report at 685ms: { }
+Expected keyboard report at 694ms: { e5 }
+Observed keyboard report at 694ms: { e5 }
+Expected keyboard report at 694ms: { }
+Observed keyboard report at 694ms: { }
+Expected keyboard report at 694ms: { 20 }
+Observed keyboard report at 694ms: { 20 }
+Expected keyboard report at 694ms: { 20 e1 }
+Observed keyboard report at 694ms: { 20 e1 }
+Expected keyboard report at 694ms: { e1 }
+Observed keyboard report at 694ms: { e1 }
+Expected keyboard report at 694ms: { }
+Observed keyboard report at 694ms: { }
+[       OK ] PersonalConfig.6_MacroRecordTopsyOneShot (2 ms)
+[ RUN      ] PersonalConfig.7_SpecialShiftDoubleRelease
+Expected keyboard report at 721ms: { 35 }
+Observed keyboard report at 721ms: { 35 }
+Expected keyboard report at 722ms: { }
+Observed keyboard report at 722ms: { }
+Expected keyboard report at 724ms: { 35 }
+Observed keyboard report at 724ms: { 35 }
+Expected keyboard report at 725ms: { }
+Observed keyboard report at 725ms: { }
+Expected keyboard report at 727ms: { 35 }
+Observed keyboard report at 727ms: { 35 }
+Expected keyboard report at 728ms: { }
+Observed keyboard report at 728ms: { }
+Expected keyboard report at 730ms: { a }
+Observed keyboard report at 730ms: { a }
+Expected keyboard report at 731ms: { }
+Observed keyboard report at 731ms: { }
+Expected keyboard report at 733ms: { 35 }
+Observed keyboard report at 733ms: { 35 }
 Expected keyboard report at 734ms: { }
 Observed keyboard report at 734ms: { }
-Expected keyboard report at 737ms: { 5 }
-Observed keyboard report at 737ms: { 5 }
-Expected keyboard report at 738ms: { }
-Observed keyboard report at 738ms: { }
-Expected keyboard report at 743ms: { 1b }
-Observed keyboard report at 743ms: { 1b }
-Expected keyboard report at 744ms: { }
-Observed keyboard report at 744ms: { }
-Expected keyboard report at 749ms: { 1b }
-Observed keyboard report at 749ms: { 1b }
-Expected keyboard report at 749ms: { }
-Observed keyboard report at 749ms: { }
-Expected keyboard report at 749ms: { 5 }
-Observed keyboard report at 749ms: { 5 }
-Expected keyboard report at 749ms: { }
-Observed keyboard report at 749ms: { }
-Expected keyboard report at 749ms: { 1b }
-Observed keyboard report at 749ms: { 1b }
-Expected keyboard report at 749ms: { }
-Observed keyboard report at 749ms: { }
-Expected keyboard report at 749ms: { 5 }
-Observed keyboard report at 749ms: { 5 }
-Expected keyboard report at 749ms: { }
-Observed keyboard report at 749ms: { }
-Expected keyboard report at 759ms: { 5 }
-Observed keyboard report at 759ms: { 5 }
-Expected keyboard report at 760ms: { }
-Observed keyboard report at 760ms: { }
-Expected keyboard report at 766ms: { 1b }
-Observed keyboard report at 766ms: { 1b }
-Expected keyboard report at 767ms: { }
-Observed keyboard report at 767ms: { }
-Expected keyboard report at 769ms: { 5 }
-Observed keyboard report at 769ms: { 5 }
-Expected keyboard report at 770ms: { }
-Observed keyboard report at 770ms: { }
-Expected keyboard report at 772ms: { 1b }
-Observed keyboard report at 772ms: { 1b }
-Expected keyboard report at 773ms: { }
-Observed keyboard report at 773ms: { }
-Expected keyboard report at 776ms: { 1b }
-Observed keyboard report at 776ms: { 1b }
-Expected keyboard report at 777ms: { }
-Observed keyboard report at 777ms: { }
-Expected keyboard report at 781ms: { 1b }
-Observed keyboard report at 781ms: { 1b }
-Expected keyboard report at 781ms: { }
-Observed keyboard report at 781ms: { }
-Expected keyboard report at 781ms: { 5 }
-Observed keyboard report at 781ms: { 5 }
-Expected keyboard report at 781ms: { }
-Observed keyboard report at 781ms: { }
-Expected keyboard report at 781ms: { 1b }
-Observed keyboard report at 781ms: { 1b }
-Expected keyboard report at 781ms: { }
-Observed keyboard report at 781ms: { }
-Expected keyboard report at 789ms: { 5 }
-Observed keyboard report at 789ms: { 5 }
-Expected keyboard report at 790ms: { }
-Observed keyboard report at 790ms: { }
+Expected keyboard report at 736ms: { 35 }
+Observed keyboard report at 736ms: { 35 }
+Expected keyboard report at 737ms: { }
+Observed keyboard report at 737ms: { }
+Expected keyboard report at 739ms: { 35 }
+Observed keyboard report at 739ms: { 35 }
+Expected keyboard report at 740ms: { }
+Observed keyboard report at 740ms: { }
+Expected keyboard report at 742ms: { a }
+Observed keyboard report at 742ms: { a }
+Expected keyboard report at 743ms: { }
+Observed keyboard report at 743ms: { }
+[       OK ] PersonalConfig.7_SpecialShiftDoubleRelease (0 ms)
+[ RUN      ] PersonalConfig.8_MacroRecordIntoWrongSlot
+Expected keyboard report at 750ms: { 4 }
+Observed keyboard report at 750ms: { 4 }
+Expected keyboard report at 751ms: { }
+Observed keyboard report at 751ms: { }
+Expected keyboard report at 752ms: { 5 }
+Observed keyboard report at 752ms: { 5 }
+Expected keyboard report at 753ms: { }
+Observed keyboard report at 753ms: { }
+Expected keyboard report at 754ms: { 6 }
+Observed keyboard report at 754ms: { 6 }
+Expected keyboard report at 755ms: { }
+Observed keyboard report at 755ms: { }
+[       OK ] PersonalConfig.8_MacroRecordIntoWrongSlot (0 ms)
+[ RUN      ] PersonalConfig.9_MacroReplayPLAYPLAY
+Expected keyboard report at 768ms: { 4 }
+Observed keyboard report at 768ms: { 4 }
+Expected keyboard report at 769ms: { }
+Observed keyboard report at 769ms: { }
+Expected keyboard report at 770ms: { 5 }
+Observed keyboard report at 770ms: { 5 }
+Expected keyboard report at 771ms: { }
+Observed keyboard report at 771ms: { }
+Expected keyboard report at 780ms: { 4 }
+Observed keyboard report at 780ms: { 4 }
+Expected keyboard report at 780ms: { }
+Observed keyboard report at 780ms: { }
+Expected keyboard report at 780ms: { 5 }
+Observed keyboard report at 780ms: { 5 }
+Expected keyboard report at 780ms: { }
+Observed keyboard report at 780ms: { }
+Expected keyboard report at 795ms: { 4 }
+Observed keyboard report at 795ms: { 4 }
+Expected keyboard report at 795ms: { }
+Observed keyboard report at 795ms: { }
 Expected keyboard report at 795ms: { 5 }
 Observed keyboard report at 795ms: { 5 }
-Expected keyboard report at 796ms: { }
-Observed keyboard report at 796ms: { }
-Expected keyboard report at 797ms: { d }
-Observed keyboard report at 797ms: { d }
-Expected keyboard report at 798ms: { }
-Observed keyboard report at 798ms: { }
-Expected keyboard report at 805ms: { 4 }
-Observed keyboard report at 805ms: { 4 }
-Expected keyboard report at 806ms: { }
-Observed keyboard report at 806ms: { }
-Expected keyboard report at 807ms: { 4 }
-Observed keyboard report at 807ms: { 4 }
-Expected keyboard report at 808ms: { }
-Observed keyboard report at 808ms: { }
-Expected keyboard report at 816ms: { 1b }
-Observed keyboard report at 816ms: { 1b }
-Expected keyboard report at 817ms: { }
-Observed keyboard report at 817ms: { }
-Expected keyboard report at 823ms: { 4 }
-Observed keyboard report at 823ms: { 4 }
-Expected keyboard report at 823ms: { }
-Observed keyboard report at 823ms: { }
-Expected keyboard report at 823ms: { 4 }
-Observed keyboard report at 823ms: { 4 }
-Expected keyboard report at 823ms: { }
-Observed keyboard report at 823ms: { }
-Expected keyboard report at 833ms: { 5 }
-Observed keyboard report at 833ms: { 5 }
-Expected keyboard report at 834ms: { }
-Observed keyboard report at 834ms: { }
-Expected keyboard report at 839ms: { 5 }
-Observed keyboard report at 839ms: { 5 }
-Expected keyboard report at 839ms: { }
-Observed keyboard report at 839ms: { }
-[       OK ] ManualTests.11_LayerBasics (3 ms)
-[ RUN      ] ManualTests.12_Delays
-[ INFO     ] Printing Macro: B
-	TAP_CODE_SEQUENCE 5 5 5 0 |,
-[ INFO     ] Printing Macro: B
-	TAPCODE 5,TAPCODE 5,INTERVAL 0,TAPCODE 5,
-[ INFO     ] Printing Macro: B
-	KEYCODEDOWN 5,INTERVAL 0,KEYCODEUP 5,TAPCODE 4,
-[ INFO     ] Printing Macro: B
-	TAPCODE 5,TAPCODE 4,KEYCODEDOWN 5,INTERVAL 0,KEYCODEUP 5,TAPCODE 4,TAPCODE 5,
+Expected keyboard report at 795ms: { }
+Observed keyboard report at 795ms: { }
+Expected keyboard report at 813ms: { 4 }
+Observed keyboard report at 813ms: { 4 }
+Expected keyboard report at 813ms: { }
+Observed keyboard report at 813ms: { }
+Expected keyboard report at 813ms: { 5 }
+Observed keyboard report at 813ms: { 5 }
+Expected keyboard report at 813ms: { }
+Observed keyboard report at 813ms: { }
+Expected keyboard report at 825ms: { 35 }
+Observed keyboard report at 825ms: { 35 }
+Expected keyboard report at 826ms: { }
+Observed keyboard report at 826ms: { }
+Expected keyboard report at 828ms: { a }
+Observed keyboard report at 828ms: { a }
+Expected keyboard report at 829ms: { }
+Observed keyboard report at 829ms: { }
+[       OK ] PersonalConfig.9_MacroReplayPLAYPLAY (1 ms)
+[ RUN      ] PersonalConfig.10_ObservedMacroPLAYBug
 [ INFO     ] Printing Macro: A
-	TAPCODE 5,TAPCODE 4,KEYCODEDOWN 5,INTERVAL 2,KEYCODEUP 5,TAPCODE 4,TAPCODE 5,
-Expected keyboard report at 856ms: { 5 }
-Observed keyboard report at 856ms: { 5 }
-Expected keyboard report at 857ms: { }
-Observed keyboard report at 857ms: { }
-Expected keyboard report at 858ms: { 5 }
-Observed keyboard report at 858ms: { 5 }
-Expected keyboard report at 859ms: { }
-Observed keyboard report at 859ms: { }
-Expected keyboard report at 860ms: { 5 }
-Observed keyboard report at 860ms: { 5 }
-Expected keyboard report at 861ms: { }
-Observed keyboard report at 861ms: { }
-Expected keyboard report at 866ms: { 5 }
-Observed keyboard report at 866ms: { 5 }
-Expected keyboard report at 866ms: { }
-Observed keyboard report at 866ms: { }
-Expected keyboard report at 866ms: { 5 }
-Observed keyboard report at 866ms: { 5 }
-Expected keyboard report at 866ms: { }
-Observed keyboard report at 866ms: { }
-Expected keyboard report at 866ms: { 5 }
-Observed keyboard report at 866ms: { 5 }
-Expected keyboard report at 866ms: { }
-Observed keyboard report at 866ms: { }
-Expected keyboard report at 960ms: { 5 }
-Observed keyboard report at 960ms: { 5 }
-Expected keyboard report at 961ms: { }
-Observed keyboard report at 961ms: { }
-Expected keyboard report at 962ms: { 5 }
-Observed keyboard report at 962ms: { 5 }
-Expected keyboard report at 963ms: { }
-Observed keyboard report at 963ms: { }
-Expected keyboard report at 966ms: { 5 }
-Observed keyboard report at 966ms: { 5 }
-Expected keyboard report at 967ms: { }
-Observed keyboard report at 967ms: { }
-Expected keyboard report at 972ms: { 5 }
-Observed keyboard report at 972ms: { 5 }
-Expected keyboard report at 972ms: { }
-Observed keyboard report at 972ms: { }
-Expected keyboard report at 972ms: { 5 }
-Observed keyboard report at 972ms: { 5 }
-Expected keyboard report at 972ms: { }
-Observed keyboard report at 972ms: { }
-Expected keyboard report at 972ms: { 5 }
-Observed keyboard report at 972ms: { 5 }
-Expected keyboard report at 972ms: { }
-Observed keyboard report at 972ms: { }
-Expected keyboard report at 984ms: { 5 }
-Observed keyboard report at 984ms: { 5 }
-Expected keyboard report at 987ms: { }
-Observed keyboard report at 987ms: { }
-Expected keyboard report at 988ms: { 4 }
-Observed keyboard report at 988ms: { 4 }
-Expected keyboard report at 989ms: { }
-Observed keyboard report at 989ms: { }
-Expected keyboard report at 994ms: { 5 }
-Observed keyboard report at 994ms: { 5 }
-Expected keyboard report at 994ms: { }
-Observed keyboard report at 994ms: { }
-Expected keyboard report at 994ms: { 4 }
-Observed keyboard report at 994ms: { 4 }
-Expected keyboard report at 994ms: { }
-Observed keyboard report at 994ms: { }
-Expected keyboard report at 1006ms: { 5 }
-Observed keyboard report at 1006ms: { 5 }
-Expected keyboard report at 1007ms: { }
-Observed keyboard report at 1007ms: { }
-Expected keyboard report at 1008ms: { 4 }
-Observed keyboard report at 1008ms: { 4 }
-Expected keyboard report at 1009ms: { }
-Observed keyboard report at 1009ms: { }
-Expected keyboard report at 1010ms: { 5 }
-Observed keyboard report at 1010ms: { 5 }
-Expected keyboard report at 1013ms: { }
-Observed keyboard report at 1013ms: { }
-Expected keyboard report at 1014ms: { 4 }
-Observed keyboard report at 1014ms: { 4 }
-Expected keyboard report at 1015ms: { }
-Observed keyboard report at 1015ms: { }
-Expected keyboard report at 1016ms: { 5 }
-Observed keyboard report at 1016ms: { 5 }
-Expected keyboard report at 1017ms: { }
-Observed keyboard report at 1017ms: { }
-Expected keyboard report at 1022ms: { 5 }
-Observed keyboard report at 1022ms: { 5 }
-Expected keyboard report at 1022ms: { }
-Observed keyboard report at 1022ms: { }
-Expected keyboard report at 1022ms: { 4 }
-Observed keyboard report at 1022ms: { 4 }
-Expected keyboard report at 1022ms: { }
-Observed keyboard report at 1022ms: { }
-Expected keyboard report at 1022ms: { 5 }
-Observed keyboard report at 1022ms: { 5 }
-Expected keyboard report at 1022ms: { }
-Observed keyboard report at 1022ms: { }
-Expected keyboard report at 1022ms: { 4 }
-Observed keyboard report at 1022ms: { 4 }
-Expected keyboard report at 1022ms: { }
-Observed keyboard report at 1022ms: { }
-Expected keyboard report at 1022ms: { 5 }
-Observed keyboard report at 1022ms: { 5 }
-Expected keyboard report at 1022ms: { }
-Observed keyboard report at 1022ms: { }
-Expected keyboard report at 1037ms: { 5 }
-Observed keyboard report at 1037ms: { 5 }
-Expected keyboard report at 1038ms: { }
-Observed keyboard report at 1038ms: { }
-Expected keyboard report at 1039ms: { 4 }
-Observed keyboard report at 1039ms: { 4 }
-Expected keyboard report at 1040ms: { }
-Observed keyboard report at 1040ms: { }
-Expected keyboard report at 1041ms: { 5 }
-Observed keyboard report at 1041ms: { 5 }
-Expected keyboard report at 1048ms: { }
-Observed keyboard report at 1048ms: { }
-Expected keyboard report at 1049ms: { 4 }
-Observed keyboard report at 1049ms: { 4 }
-Expected keyboard report at 1050ms: { }
-Observed keyboard report at 1050ms: { }
-Expected keyboard report at 1051ms: { 5 }
-Observed keyboard report at 1051ms: { 5 }
-Expected keyboard report at 1052ms: { }
-Observed keyboard report at 1052ms: { }
-Expected keyboard report at 1057ms: { 5 }
-Observed keyboard report at 1057ms: { 5 }
-Expected keyboard report at 1057ms: { }
-Observed keyboard report at 1057ms: { }
-Expected keyboard report at 1057ms: { 4 }
-Observed keyboard report at 1057ms: { 4 }
-Expected keyboard report at 1057ms: { }
-Observed keyboard report at 1057ms: { }
-Expected keyboard report at 1057ms: { 5 }
-Observed keyboard report at 1057ms: { 5 }
-Expected keyboard report at 1057ms: { }
-Observed keyboard report at 1057ms: { }
-Expected keyboard report at 1057ms: { 4 }
-Observed keyboard report at 1057ms: { 4 }
-Expected keyboard report at 1057ms: { }
-Observed keyboard report at 1057ms: { }
-Expected keyboard report at 1057ms: { 5 }
-Observed keyboard report at 1057ms: { 5 }
-Expected keyboard report at 1057ms: { }
-Observed keyboard report at 1057ms: { }
-[       OK ] ManualTests.12_Delays (3 ms)
-[ RUN      ] ManualTests.13_OutOfMemory
-Expected keyboard report at 1350ms: { 4 }
-Observed keyboard report at 1350ms: { 4 }
-Expected keyboard report at 1351ms: { }
-Observed keyboard report at 1351ms: { }
-Expected keyboard report at 1352ms: { 4 }
-Observed keyboard report at 1352ms: { 4 }
-Expected keyboard report at 1353ms: { }
-Observed keyboard report at 1353ms: { }
-Expected keyboard report at 1354ms: { 4 }
-Observed keyboard report at 1354ms: { 4 }
-Expected keyboard report at 1355ms: { }
-Observed keyboard report at 1355ms: { }
-Expected keyboard report at 1356ms: { 4 }
-Observed keyboard report at 1356ms: { 4 }
-Expected keyboard report at 1357ms: { }
-Observed keyboard report at 1357ms: { }
-Expected keyboard report at 1358ms: { 4 }
-Observed keyboard report at 1358ms: { 4 }
-Expected keyboard report at 1359ms: { }
-Observed keyboard report at 1359ms: { }
-Expected keyboard report at 1360ms: { 4 }
-Observed keyboard report at 1360ms: { 4 }
-Expected keyboard report at 1361ms: { }
-Observed keyboard report at 1361ms: { }
-Expected keyboard report at 1362ms: { 4 }
-Observed keyboard report at 1362ms: { 4 }
-Expected keyboard report at 1363ms: { }
-Observed keyboard report at 1363ms: { }
-Expected keyboard report at 1364ms: { 4 }
-Observed keyboard report at 1364ms: { 4 }
-Expected keyboard report at 1365ms: { }
-Observed keyboard report at 1365ms: { }
-Expected keyboard report at 1366ms: { 4 }
-Observed keyboard report at 1366ms: { 4 }
-Expected keyboard report at 1367ms: { }
-Observed keyboard report at 1367ms: { }
-Expected keyboard report at 1368ms: { 4 }
-Observed keyboard report at 1368ms: { 4 }
-Expected keyboard report at 1369ms: { }
-Observed keyboard report at 1369ms: { }
-Expected keyboard report at 1370ms: { 4 }
-Observed keyboard report at 1370ms: { 4 }
-Expected keyboard report at 1371ms: { }
-Observed keyboard report at 1371ms: { }
-Expected keyboard report at 1372ms: { 4 }
-Observed keyboard report at 1372ms: { 4 }
-Expected keyboard report at 1373ms: { }
-Observed keyboard report at 1373ms: { }
-Expected keyboard report at 1374ms: { 4 }
-Observed keyboard report at 1374ms: { 4 }
-Expected keyboard report at 1375ms: { }
-Observed keyboard report at 1375ms: { }
-Expected keyboard report at 1376ms: { 4 }
-Observed keyboard report at 1376ms: { 4 }
-Expected keyboard report at 1377ms: { }
-Observed keyboard report at 1377ms: { }
-Expected keyboard report at 1378ms: { 4 }
-Observed keyboard report at 1378ms: { 4 }
-Expected keyboard report at 1379ms: { }
-Observed keyboard report at 1379ms: { }
-Expected keyboard report at 1380ms: { 4 }
-Observed keyboard report at 1380ms: { 4 }
-Expected keyboard report at 1381ms: { }
-Observed keyboard report at 1381ms: { }
-Expected keyboard report at 1382ms: { 4 }
-Observed keyboard report at 1382ms: { 4 }
-Expected keyboard report at 1383ms: { }
-Observed keyboard report at 1383ms: { }
-Expected keyboard report at 1384ms: { 4 }
-Observed keyboard report at 1384ms: { 4 }
-Expected keyboard report at 1385ms: { }
-Observed keyboard report at 1385ms: { }
-Expected keyboard report at 1386ms: { 4 }
-Observed keyboard report at 1386ms: { 4 }
-Expected keyboard report at 1387ms: { }
-Observed keyboard report at 1387ms: { }
-Expected keyboard report at 1388ms: { 4 }
-Observed keyboard report at 1388ms: { 4 }
-Expected keyboard report at 1389ms: { }
-Observed keyboard report at 1389ms: { }
-Expected keyboard report at 1390ms: { 4 }
-Observed keyboard report at 1390ms: { 4 }
-Expected keyboard report at 1391ms: { }
-Observed keyboard report at 1391ms: { }
-Expected keyboard report at 1392ms: { 4 }
-Observed keyboard report at 1392ms: { 4 }
-Expected keyboard report at 1393ms: { }
-Observed keyboard report at 1393ms: { }
-Expected keyboard report at 1394ms: { 4 }
-Observed keyboard report at 1394ms: { 4 }
-Expected keyboard report at 1395ms: { }
-Observed keyboard report at 1395ms: { }
-Expected keyboard report at 1396ms: { 4 }
-Observed keyboard report at 1396ms: { 4 }
-Expected keyboard report at 1397ms: { }
-Observed keyboard report at 1397ms: { }
-Expected keyboard report at 1398ms: { 4 }
-Observed keyboard report at 1398ms: { 4 }
-Expected keyboard report at 1399ms: { }
-Observed keyboard report at 1399ms: { }
-Expected keyboard report at 1400ms: { 4 }
-Observed keyboard report at 1400ms: { 4 }
-Expected keyboard report at 1401ms: { }
-Observed keyboard report at 1401ms: { }
-Expected keyboard report at 1402ms: { 4 }
-Observed keyboard report at 1402ms: { 4 }
-Expected keyboard report at 1403ms: { }
-Observed keyboard report at 1403ms: { }
-Expected keyboard report at 1404ms: { 4 }
-Observed keyboard report at 1404ms: { 4 }
-Expected keyboard report at 1405ms: { }
-Observed keyboard report at 1405ms: { }
-Expected keyboard report at 1406ms: { 4 }
-Observed keyboard report at 1406ms: { 4 }
-Expected keyboard report at 1407ms: { }
-Observed keyboard report at 1407ms: { }
-Expected keyboard report at 1408ms: { 4 }
-Observed keyboard report at 1408ms: { 4 }
-Expected keyboard report at 1409ms: { }
-Observed keyboard report at 1409ms: { }
-Expected keyboard report at 1410ms: { 4 }
-Observed keyboard report at 1410ms: { 4 }
-Expected keyboard report at 1411ms: { }
-Observed keyboard report at 1411ms: { }
-Expected keyboard report at 1412ms: { 4 }
-Observed keyboard report at 1412ms: { 4 }
-Expected keyboard report at 1413ms: { }
-Observed keyboard report at 1413ms: { }
-Expected keyboard report at 1414ms: { 4 }
-Observed keyboard report at 1414ms: { 4 }
-Expected keyboard report at 1415ms: { }
-Observed keyboard report at 1415ms: { }
-Expected keyboard report at 1416ms: { 4 }
-Observed keyboard report at 1416ms: { 4 }
-Expected keyboard report at 1417ms: { }
-Observed keyboard report at 1417ms: { }
-Expected keyboard report at 1418ms: { 4 }
-Observed keyboard report at 1418ms: { 4 }
-Expected keyboard report at 1419ms: { }
-Observed keyboard report at 1419ms: { }
-Expected keyboard report at 1420ms: { 4 }
-Observed keyboard report at 1420ms: { 4 }
-Expected keyboard report at 1421ms: { }
-Observed keyboard report at 1421ms: { }
-Expected keyboard report at 1422ms: { 4 }
-Observed keyboard report at 1422ms: { 4 }
-Expected keyboard report at 1423ms: { }
-Observed keyboard report at 1423ms: { }
-Expected keyboard report at 1424ms: { 4 }
-Observed keyboard report at 1424ms: { 4 }
-Expected keyboard report at 1425ms: { }
-Observed keyboard report at 1425ms: { }
-Expected keyboard report at 1426ms: { 4 }
-Observed keyboard report at 1426ms: { 4 }
-Expected keyboard report at 1427ms: { }
-Observed keyboard report at 1427ms: { }
-Expected keyboard report at 1428ms: { 4 }
-Observed keyboard report at 1428ms: { 4 }
-Expected keyboard report at 1429ms: { }
-Observed keyboard report at 1429ms: { }
-Expected keyboard report at 1430ms: { 4 }
-Observed keyboard report at 1430ms: { 4 }
-Expected keyboard report at 1431ms: { }
-Observed keyboard report at 1431ms: { }
-Expected keyboard report at 1432ms: { 4 }
-Observed keyboard report at 1432ms: { 4 }
-Expected keyboard report at 1433ms: { }
-Observed keyboard report at 1433ms: { }
-Expected keyboard report at 1434ms: { 4 }
-Observed keyboard report at 1434ms: { 4 }
-Expected keyboard report at 1435ms: { }
-Observed keyboard report at 1435ms: { }
-Expected keyboard report at 1436ms: { 4 }
-Observed keyboard report at 1436ms: { 4 }
-Expected keyboard report at 1437ms: { }
-Observed keyboard report at 1437ms: { }
-Expected keyboard report at 1438ms: { 4 }
-Observed keyboard report at 1438ms: { 4 }
-Expected keyboard report at 1439ms: { }
-Observed keyboard report at 1439ms: { }
-Expected keyboard report at 1440ms: { 4 }
-Observed keyboard report at 1440ms: { 4 }
-Expected keyboard report at 1441ms: { }
-Observed keyboard report at 1441ms: { }
-Expected keyboard report at 1442ms: { 4 }
-Observed keyboard report at 1442ms: { 4 }
-Expected keyboard report at 1443ms: { }
-Observed keyboard report at 1443ms: { }
-Expected keyboard report at 1444ms: { 4 }
-Observed keyboard report at 1444ms: { 4 }
-Expected keyboard report at 1445ms: { }
-Observed keyboard report at 1445ms: { }
-Expected keyboard report at 1446ms: { 4 }
-Observed keyboard report at 1446ms: { 4 }
-Expected keyboard report at 1447ms: { }
-Observed keyboard report at 1447ms: { }
-Expected keyboard report at 1448ms: { 4 }
-Observed keyboard report at 1448ms: { 4 }
-Expected keyboard report at 1449ms: { }
-Observed keyboard report at 1449ms: { }
-Expected keyboard report at 1458ms: { 4 }
-Observed keyboard report at 1458ms: { 4 }
-Expected keyboard report at 1459ms: { }
-Observed keyboard report at 1459ms: { }
-Expected keyboard report at 1460ms: { 4 }
-Observed keyboard report at 1460ms: { 4 }
-Expected keyboard report at 1461ms: { }
-Observed keyboard report at 1461ms: { }
-Expected keyboard report at 1462ms: { 4 }
-Observed keyboard report at 1462ms: { 4 }
-Expected keyboard report at 1463ms: { }
-Observed keyboard report at 1463ms: { }
-Expected keyboard report at 1464ms: { 4 }
-Observed keyboard report at 1464ms: { 4 }
-Expected keyboard report at 1465ms: { }
-Observed keyboard report at 1465ms: { }
-Expected keyboard report at 1466ms: { 4 }
-Observed keyboard report at 1466ms: { 4 }
-Expected keyboard report at 1467ms: { }
-Observed keyboard report at 1467ms: { }
-Expected keyboard report at 1468ms: { 4 }
-Observed keyboard report at 1468ms: { 4 }
-Expected keyboard report at 1469ms: { }
-Observed keyboard report at 1469ms: { }
-Expected keyboard report at 1470ms: { 4 }
-Observed keyboard report at 1470ms: { 4 }
-Expected keyboard report at 1471ms: { }
-Observed keyboard report at 1471ms: { }
-Expected keyboard report at 1472ms: { 4 }
-Observed keyboard report at 1472ms: { 4 }
-Expected keyboard report at 1473ms: { }
-Observed keyboard report at 1473ms: { }
-Expected keyboard report at 1474ms: { 4 }
-Observed keyboard report at 1474ms: { 4 }
-Expected keyboard report at 1475ms: { }
-Observed keyboard report at 1475ms: { }
-Expected keyboard report at 1476ms: { 4 }
-Observed keyboard report at 1476ms: { 4 }
-Expected keyboard report at 1477ms: { }
-Observed keyboard report at 1477ms: { }
-Expected keyboard report at 1478ms: { 4 }
-Observed keyboard report at 1478ms: { 4 }
-Expected keyboard report at 1479ms: { }
-Observed keyboard report at 1479ms: { }
-Expected keyboard report at 1480ms: { 4 }
-Observed keyboard report at 1480ms: { 4 }
-Expected keyboard report at 1481ms: { }
-Observed keyboard report at 1481ms: { }
-Expected keyboard report at 1482ms: { 4 }
-Observed keyboard report at 1482ms: { 4 }
-Expected keyboard report at 1483ms: { }
-Observed keyboard report at 1483ms: { }
-Expected keyboard report at 1484ms: { 4 }
-Observed keyboard report at 1484ms: { 4 }
-Expected keyboard report at 1485ms: { }
-Observed keyboard report at 1485ms: { }
-Expected keyboard report at 1486ms: { 4 }
-Observed keyboard report at 1486ms: { 4 }
-Expected keyboard report at 1487ms: { }
-Observed keyboard report at 1487ms: { }
-Expected keyboard report at 1488ms: { 4 }
-Observed keyboard report at 1488ms: { 4 }
-Expected keyboard report at 1489ms: { }
-Observed keyboard report at 1489ms: { }
-Expected keyboard report at 1490ms: { 4 }
-Observed keyboard report at 1490ms: { 4 }
-Expected keyboard report at 1491ms: { }
-Observed keyboard report at 1491ms: { }
-Expected keyboard report at 1492ms: { 4 }
-Observed keyboard report at 1492ms: { 4 }
-Expected keyboard report at 1493ms: { }
-Observed keyboard report at 1493ms: { }
-Expected keyboard report at 1494ms: { 4 }
-Observed keyboard report at 1494ms: { 4 }
-Expected keyboard report at 1495ms: { }
-Observed keyboard report at 1495ms: { }
-Expected keyboard report at 1496ms: { 4 }
-Observed keyboard report at 1496ms: { 4 }
-Expected keyboard report at 1497ms: { }
-Observed keyboard report at 1497ms: { }
-Expected keyboard report at 1498ms: { 4 }
-Observed keyboard report at 1498ms: { 4 }
-Expected keyboard report at 1499ms: { }
-Observed keyboard report at 1499ms: { }
-Expected keyboard report at 1500ms: { 4 }
-Observed keyboard report at 1500ms: { 4 }
-Expected keyboard report at 1501ms: { }
-Observed keyboard report at 1501ms: { }
-Expected keyboard report at 1502ms: { 4 }
-Observed keyboard report at 1502ms: { 4 }
-Expected keyboard report at 1503ms: { }
-Observed keyboard report at 1503ms: { }
-Expected keyboard report at 1504ms: { 4 }
-Observed keyboard report at 1504ms: { 4 }
-Expected keyboard report at 1505ms: { }
-Observed keyboard report at 1505ms: { }
-Expected keyboard report at 1506ms: { 4 }
-Observed keyboard report at 1506ms: { 4 }
-Expected keyboard report at 1507ms: { }
-Observed keyboard report at 1507ms: { }
-Expected keyboard report at 1508ms: { 4 }
-Observed keyboard report at 1508ms: { 4 }
-Expected keyboard report at 1509ms: { }
-Observed keyboard report at 1509ms: { }
-Expected keyboard report at 1510ms: { 4 }
-Observed keyboard report at 1510ms: { 4 }
-Expected keyboard report at 1511ms: { }
-Observed keyboard report at 1511ms: { }
-Expected keyboard report at 1512ms: { 4 }
-Observed keyboard report at 1512ms: { 4 }
-Expected keyboard report at 1513ms: { }
-Observed keyboard report at 1513ms: { }
-Expected keyboard report at 1514ms: { 4 }
-Observed keyboard report at 1514ms: { 4 }
-Expected keyboard report at 1515ms: { }
-Observed keyboard report at 1515ms: { }
-Expected keyboard report at 1516ms: { 4 }
-Observed keyboard report at 1516ms: { 4 }
-Expected keyboard report at 1517ms: { }
-Observed keyboard report at 1517ms: { }
-Expected keyboard report at 1518ms: { 4 }
-Observed keyboard report at 1518ms: { 4 }
-Expected keyboard report at 1519ms: { }
-Observed keyboard report at 1519ms: { }
-Expected keyboard report at 1520ms: { 4 }
-Observed keyboard report at 1520ms: { 4 }
-Expected keyboard report at 1521ms: { }
-Observed keyboard report at 1521ms: { }
-Expected keyboard report at 1522ms: { 4 }
-Observed keyboard report at 1522ms: { 4 }
-Expected keyboard report at 1523ms: { }
-Observed keyboard report at 1523ms: { }
-Expected keyboard report at 1524ms: { 4 }
-Observed keyboard report at 1524ms: { 4 }
-Expected keyboard report at 1525ms: { }
-Observed keyboard report at 1525ms: { }
-Expected keyboard report at 1526ms: { 4 }
-Observed keyboard report at 1526ms: { 4 }
-Expected keyboard report at 1527ms: { }
-Observed keyboard report at 1527ms: { }
-Expected keyboard report at 1528ms: { 4 }
-Observed keyboard report at 1528ms: { 4 }
-Expected keyboard report at 1529ms: { }
-Observed keyboard report at 1529ms: { }
-Expected keyboard report at 1530ms: { 4 }
-Observed keyboard report at 1530ms: { 4 }
-Expected keyboard report at 1531ms: { }
-Observed keyboard report at 1531ms: { }
-Expected keyboard report at 1532ms: { 4 }
-Observed keyboard report at 1532ms: { 4 }
-Expected keyboard report at 1533ms: { }
-Observed keyboard report at 1533ms: { }
-Expected keyboard report at 1534ms: { 4 }
-Observed keyboard report at 1534ms: { 4 }
-Expected keyboard report at 1535ms: { }
-Observed keyboard report at 1535ms: { }
-Expected keyboard report at 1536ms: { 4 }
-Observed keyboard report at 1536ms: { 4 }
-Expected keyboard report at 1537ms: { }
-Observed keyboard report at 1537ms: { }
-Expected keyboard report at 1538ms: { 4 }
-Observed keyboard report at 1538ms: { 4 }
-Expected keyboard report at 1539ms: { }
-Observed keyboard report at 1539ms: { }
-Expected keyboard report at 1540ms: { 4 }
-Observed keyboard report at 1540ms: { 4 }
-Expected keyboard report at 1541ms: { }
-Observed keyboard report at 1541ms: { }
-Expected keyboard report at 1542ms: { 4 }
-Observed keyboard report at 1542ms: { 4 }
-Expected keyboard report at 1543ms: { }
-Observed keyboard report at 1543ms: { }
-Expected keyboard report at 1544ms: { 4 }
-Observed keyboard report at 1544ms: { 4 }
-Expected keyboard report at 1545ms: { }
-Observed keyboard report at 1545ms: { }
-Expected keyboard report at 1546ms: { 4 }
-Observed keyboard report at 1546ms: { 4 }
-Expected keyboard report at 1547ms: { }
-Observed keyboard report at 1547ms: { }
-Expected keyboard report at 1548ms: { 4 }
-Observed keyboard report at 1548ms: { 4 }
-Expected keyboard report at 1549ms: { }
-Observed keyboard report at 1549ms: { }
-Expected keyboard report at 1550ms: { 4 }
-Observed keyboard report at 1550ms: { 4 }
-Expected keyboard report at 1551ms: { }
-Observed keyboard report at 1551ms: { }
-Expected keyboard report at 1552ms: { 4 }
-Observed keyboard report at 1552ms: { 4 }
-Expected keyboard report at 1553ms: { }
-Observed keyboard report at 1553ms: { }
-Expected keyboard report at 1554ms: { 4 }
-Observed keyboard report at 1554ms: { 4 }
-Expected keyboard report at 1555ms: { }
-Observed keyboard report at 1555ms: { }
-Expected keyboard report at 1556ms: { 4 }
-Observed keyboard report at 1556ms: { 4 }
-Expected keyboard report at 1557ms: { }
-Observed keyboard report at 1557ms: { }
-[       OK ] ManualTests.13_OutOfMemory (6 ms)
-[----------] 19 tests from ManualTests (32 ms total)
+	TAP 209 197,KEYDOWN 208 75,KEYDOWN 208 76,KEYDOWN 208 77,KEYCODEUP 32,TAP 209 197,
+Expected keyboard report at 840ms: { e1 }
+Observed keyboard report at 840ms: { e1 }
+Expected keyboard report at 840ms: { 1e e1 }
+Observed keyboard report at 840ms: { 1e e1 }
+Expected keyboard report at 841ms: { 1f e1 }
+Observed keyboard report at 841ms: { 1f e1 }
+Expected keyboard report at 843ms: { 20 e1 }
+Observed keyboard report at 843ms: { 20 e1 }
+Expected keyboard report at 845ms: { e1 }
+Observed keyboard report at 845ms: { e1 }
+Expected keyboard report at 845ms: { }
+Observed keyboard report at 845ms: { }
+Expected keyboard report at 858ms: { e1 }
+Observed keyboard report at 858ms: { e1 }
+Expected keyboard report at 858ms: { 1e e1 }
+Observed keyboard report at 858ms: { 1e e1 }
+Expected keyboard report at 858ms: { 1f e1 }
+Observed keyboard report at 858ms: { 1f e1 }
+Expected keyboard report at 858ms: { 20 e1 }
+Observed keyboard report at 858ms: { 20 e1 }
+Expected keyboard report at 858ms: { e1 }
+Observed keyboard report at 858ms: { e1 }
+Expected keyboard report at 858ms: { }
+Observed keyboard report at 858ms: { }
+Expected keyboard report at 890ms: { 1e }
+Observed keyboard report at 890ms: { 1e }
+Expected keyboard report at 891ms: { }
+Observed keyboard report at 891ms: { }
+Expected keyboard report at 892ms: { 1f }
+Observed keyboard report at 892ms: { 1f }
+Expected keyboard report at 893ms: { }
+Observed keyboard report at 893ms: { }
+Expected keyboard report at 894ms: { e0 }
+Observed keyboard report at 894ms: { e0 }
+Expected keyboard report at 895ms: { 4 e0 }
+Observed keyboard report at 895ms: { 4 e0 }
+Expected keyboard report at 896ms: { e0 }
+Observed keyboard report at 896ms: { e0 }
+Expected keyboard report at 897ms: { }
+Observed keyboard report at 897ms: { }
+[       OK ] PersonalConfig.10_ObservedMacroPLAYBug (2 ms)
+[----------] 11 tests from PersonalConfig (20 ms total)
 
 [----------] Global test environment tear-down
-[==========] 19 tests from 1 test suite ran. (32 ms total)
-[  PASSED  ] 19 tests.
+[==========] 11 tests from 1 test suite ran. (20 ms total)
+[  PASSED  ] 11 tests.
 make[1]: Leaving directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
-Kaleidoscope [14:55:43] $ 
+Kaleidoscope [12:28:46] $ 
+vshcmd: > make simulator-tests TEST_PATH=plugins/MacrosOnTheFly/EdgeCases
 vshcmd: > # X
-Observed keyboard report at 315ms: { e5 }
-Observed keyboard report at 317ms: { }
-Observed keyboard report at 317ms: { 20 }
-Observed keyboard report at 317ms: { 20 e1 }
-Observed keyboard report at 318ms: { e1 }
-Observed keyboard report at 318ms: { }
-Observed keyboard report at 327ms: { e5 }
-Observed keyboard report at 327ms: { }
-Observed keyboard report at 327ms: { 20 }
-Observed keyboard report at 327ms: { 20 e1 }
-Observed keyboard report at 327ms: { e1 }
-Observed keyboard report at 327ms: { }
-------------------------------
-Expected keyboard report at 315ms: { e5 }
-Expected keyboard report at 317ms: { }
-Expected keyboard report at 317ms: { 20 }
-Expected keyboard report at 318ms: { 20 }
-Expected keyboard report at 318ms: { }
-Expected keyboard report at 327ms: { e5 }
-Expected keyboard report at 327ms: { 20 e5 }
-Expected keyboard report at 327ms: { 20 }
-Expected keyboard report at 327ms: { }
+Observed keyboard report at 840ms: { e1 }
+Observed keyboard report at 840ms: { 1e e1 }
+Observed keyboard report at 841ms: { 1f e1 }
+Observed keyboard report at 843ms: { 20 e1 }
+Observed keyboard report at 845ms: { e1 }
+Observed keyboard report at 845ms: { }
+Observed keyboard report at 858ms: { e1 }
+Observed keyboard report at 858ms: { 1e e1 }
+Observed keyboard report at 858ms: { 1f e1 }
+Observed keyboard report at 858ms: { 20 e1 }
+Observed keyboard report at 858ms: { e1 }
+Observed keyboard report at 858ms: { }
+Observed keyboard report at 892ms: { 1f }
+Observed keyboard report at 893ms: { }
+Observed keyboard report at 894ms: { e0 }
+Observed keyboard report at 895ms: { 4 e0 }
+Observed keyboard report at 896ms: { e0 }
+Observed keyboard report at 897ms: { }
+[  FAILED  ] PersonalConfig.10_ObservedMacroPLAYBug (1 ms)
+Expected keyboard report at 840ms: { e1 }
+Expected keyboard report at 840ms: { 1e e1 }
+Expected keyboard report at 841ms: { 1f e1 }
+Expected keyboard report at 843ms: { 20 e1 }
+Expected keyboard report at 845ms: { e1 }
+Expected keyboard report at 845ms: { }
+Expected keyboard report at 858ms: { e1 }
+Expected keyboard report at 858ms: { 1e e1 }
+Expected keyboard report at 858ms: { 1f e1 }
+Expected keyboard report at 858ms: { 20 e1 }
+Expected keyboard report at 858ms: { e1 }
+Expected keyboard report at 858ms: { }
+Expected keyboard report at 890ms: { 1e }
+Expected keyboard report at 891ms: { }
+Expected keyboard report at 892ms: { 1f }
+Expected keyboard report at 893ms: { }
+Expected keyboard report at 894ms: { e0 }
+Expected keyboard report at 895ms: { 4 e0 }
