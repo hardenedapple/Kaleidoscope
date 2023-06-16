@@ -207,6 +207,8 @@ void VirtualKeyScanner::readMatrix() {
           }
         }
       } else {
+	log_error("Unrecognized command: %s\n", token.c_str());
+	continue;
         // TODO(anyone): Is there a device independent
         //       way to determine KeyAddr from key names?
         //         key_addr = getRCfromPhysicalKey(token);
