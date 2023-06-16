@@ -38,10 +38,10 @@
 // In that case the layer lookup through keymaps_linear is completely
 // disabled but the weak versions must be there to make the linker happy.
 //
-__attribute__((weak))
-uint8_t layer_count = 0;
+// __attribute__((weak))
+// uint8_t layer_count = 0;
 
-__attribute__((weak)) extern constexpr Key keymaps_linear[][kaleidoscope_internal::device.matrix_rows * kaleidoscope_internal::device.matrix_columns] = {};
+// extern constexpr Key keymaps_linear[][kaleidoscope_internal::device.matrix_rows * kaleidoscope_internal::device.matrix_columns] = {};
 
 namespace kaleidoscope {
 uint8_t Layer_::active_layer_count_ = 1;

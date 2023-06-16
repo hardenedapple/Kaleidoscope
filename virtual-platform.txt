@@ -18,19 +18,19 @@ compiler.warning_flags.all=-Wall -Wextra
 
 compiler.wrapper.cmd=
 compiler.path=
-compiler.c.cmd=afl-gcc
+compiler.c.cmd=gcc
 compiler.c.cmd.macosx=gcc-11
-compiler.c.flags=-c -g {compiler.warning_flags.all} -std=gnu11 -ffunction-sections -fdata-sections -MMD -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1
+compiler.c.flags=-c -g {compiler.warning_flags.all} -std=gnu11 -fsanitize=undefined -ffunction-sections -fdata-sections -MMD -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1
 compiler.c.elf.flags={compiler.warning_flags.all}
 compiler.c.elf.flags_join_archives=rcT
 compiler.c.elf.flags_join_archives.macosx=-static -o
-compiler.c.elf.cmd=afl-g++
+compiler.c.elf.cmd=g++
 compiler.c.elf.cmd.macosx=g++-11
 compiler.S.flags=-c -g -x assembler-with-cpp
-compiler.cpp.cmd=afl-g++
+compiler.cpp.cmd=g++
 compiler.cpp.cmd.macosx=g++-11
 
-compiler.cpp.flags=-c -g {compiler.warning_flags.all} -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -MMD -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I{runtime.platform.path}/libraries/Kaleidoscope/testing/googletest/googletest/include -I{runtime.platform.path}/libraries/Kaleidoscope/testing/googletest/googlemock/include -I{runtime.platform.path}/libraries/Kaleidoscope/fake-gtest/src
+compiler.cpp.flags=-c -g {compiler.warning_flags.all} -std=c++14 -fsanitize=undefined -ffunction-sections -fdata-sections -fno-threadsafe-statics -MMD -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I{runtime.platform.path}/libraries/Kaleidoscope/testing/googletest/googletest/include -I{runtime.platform.path}/libraries/Kaleidoscope/testing/googletest/googlemock/include -I{runtime.platform.path}/libraries/Kaleidoscope/fake-gtest/src
 compiler.ar.cmd=ar
 compiler.ar.flags=rcs
 compiler.libtool.cmd.macosx=libtool
@@ -41,7 +41,7 @@ compiler.elf2hex.cmd=objcopy
 # Until Arduino learns to adhere to ldflags defined in library.properties, we have to define extra link flags for Kaleidoscope-Simulator here
 #
 compiler.ldflags=
-compiler.ldflags.linux=-lXtst -lX11 -lpthread -L{runtime.platform.path}/libraries/Kaleidoscope/testing/googletest/lib -lgtest -lgmock
+compiler.ldflags.linux=-lXtst -lX11 -lpthread -L{runtime.platform.path}/libraries/Kaleidoscope/testing/googletest/lib -fsanitize=undefined -lgtest -lgmock
 compiler.ldflags.macosx=-lXtst -lX11 -lpthread -L{runtime.platform.path}/libraries/Kaleidoscope/testing/googletest/lib -lgtest -lgmock
 compiler.size.cmd=echo >/dev/null
 
