@@ -508,7 +508,7 @@ class PersonalConfig : public VirtualDeviceTest {
     }
   }
 
-  std::pair<uint8_t, ::kaleidoscope::plugin::MacroPirate::Slot>
+  std::pair<uint16_t, ::kaleidoscope::plugin::MacroPirate::Slot>
     getMacroSlot(const std::string id) {
     const auto [ keyId, mapValue ] = *keyTypes.find(id);
     const auto [ addr,   event ] = mapValue;
@@ -516,7 +516,7 @@ class PersonalConfig : public VirtualDeviceTest {
     uint8_t slotId = ::MacroPirate.sFindSlot(event);
     assert(slotId != ::kaleidoscope::plugin::MacroPirate::NUM_MACROS);
     ::kaleidoscope::plugin::MacroPirate::Slot slot = ::MacroPirate.slotRecord[slotId];
-    uint8_t bufferIdx = ::MacroPirate.mIndexFrom_s(slotId);
+    uint16_t bufferIdx = ::MacroPirate.mIndexFrom_s(slotId);
     return { bufferIdx, slot };
   }
 
