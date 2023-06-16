@@ -1,8 +1,11 @@
 vshcmd: > export KALEIDOSCOPE_DIR=/home/matmal01/Documents/not-work/keyboard/Kaleidoscope
 groups: cannot find name for group ID 38659
 groups: cannot find name for group ID 61021
+Kaleidoscope [08:50:51] $ 
+groups: cannot find name for group ID 38659
+groups: cannot find name for group ID 61021
 Kaleidoscope [17:32:22] $ 
-vshcmd: > make clean && make simulator-tests TEST_PATH=plugins/MacrosOnTheFly/EdgeCases
+vshcmd: > make clean && make simulator-tests TEST_PATH=plugins/MacroPirate/EdgeCases
 
 vshcmd: > g++ test.cpp -o testbin
 vshcmd: > ./testbin
@@ -15,165 +18,10 @@ SPECIALSHIFT1|
 MACROREC1
 SPECIALSHIFT1^
 Kaleidoscope [12:31:14] $ 
-vshcmd: > make simulator-tests TEST_PATH=plugins/MacrosOnTheFly/BasicRepeat VERBOSE=1
+vshcmd: > make simulator-tests TEST_PATH=plugins/MacroPirate/BasicRepeat VERBOSE=1
 vshcmd: > rm -rf /tmp/kaleidoscope-matmal01/build/*
 Kaleidoscope [12:31:06] $ 
-vshcmd: > make clean && make simulator-tests TEST_PATH=plugins/MacrosOnTheFly/EdgeCases
-Building in quiet mode. For a lot more information, add 'VERBOSE=1' to the beginning of your call to make
-make -C tests clean
-make[1]: Entering directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
-rm -rf "/home/matmal01/Documents/not-work/keyboard/Kaleidoscope"/testing/googletest/build/*
-rm -rf "/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build"/*
-make[1]: Leaving directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
-rm -rf -- "testing/googletest/build/*"
-rm -rf -- "_build/*"
-Building in quiet mode. For a lot more information, add 'VERBOSE=1' to the beginning of your call to make
-make -C tests all
-make[1]: Entering directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
-compile /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/obj/AbsoluteMouseReport.o
-compile /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/obj/ConsumerControlReport.o
-compile /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/obj/ExpectedKeyboardReport.o
-compile /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/obj/ExpectedMouseReport.o
-compile /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/obj/HIDState.o
-compile /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/obj/KeyboardReport.o
-compile /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/obj/MouseReport.o
-compile /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/obj/SimHarness.o
-compile /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/obj/State.o
-compile /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/obj/SystemControlReport.o
-compile /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/obj/VirtualDeviceTest.o
-googletest Makefile is being remade
-# This can fail if we're running in parallel, but that'd be harmless
-install -d /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build
--- The C compiler identification is GNU 11.3.0
--- The CXX compiler identification is GNU 11.3.0
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: /usr/bin/gcc - skipped
--- Detecting C compile features
--- Detecting C compile features - done
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: /usr/bin/g++ - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- Found Python: /usr/bin/python3.10 (found version "3.10.6") found components: Interpreter 
--- Looking for pthread.h
--- Looking for pthread.h - found
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
--- Found Threads: TRUE  
--- Configuring done
--- Generating done
--- Build files have been written to: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build
-make -C /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build
-[ 12%] [32mBuilding CXX object googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o[0m
-[ 25%] [32m[1mLinking CXX static library ../lib/libgtest.a[0m
-[ 25%] Built target gtest
-[ 37%] [32mBuilding CXX object googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o[0m
-[ 50%] [32m[1mLinking CXX static library ../lib/libgmock.a[0m
-[ 50%] Built target gmock
-[ 62%] [32mBuilding CXX object googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o[0m
-[ 75%] [32m[1mLinking CXX static library ../lib/libgmock_main.a[0m
-[ 75%] Built target gmock_main
-[ 87%] [32mBuilding CXX object googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o[0m
-[100%] [32m[1mLinking CXX static library ../lib/libgtest_main.a[0m
-[100%] Built target gtest_main
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-MacrosOnTheFly[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly[0m                          
-[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
-[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/MacrosOnTheFly/EdgeCases
-[==========] Running 17 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 17 tests from ManualTests
-[ RUN      ] ManualTests.0_test
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/test/manual-testcases.cpp
-[       OK ] ManualTests.0_test (0 ms)
-[ RUN      ] ManualTests.1_MacrosOnTheFlyTestHelpers
-[       OK ] ManualTests.1_MacrosOnTheFlyTestHelpers (0 ms)
-[ RUN      ] ManualTests.2_ReplayRepeat
-[       OK ] ManualTests.2_ReplayRepeat (0 ms)
-[ RUN      ] ManualTests.3_MacrosOnTheFlyNoHeldOverPlay
-[       OK ] ManualTests.3_MacrosOnTheFlyNoHeldOverPlay (0 ms)
-[ RUN      ] ManualTests.4_MacrosOnTheFlyRecursiveReplay
-[       OK ] ManualTests.4_MacrosOnTheFlyRecursiveReplay (0 ms)
-[ RUN      ] ManualTests.5_MacrosOnTheFlyRecursiveAvoidance
-[       OK ] ManualTests.5_MacrosOnTheFlyRecursiveAvoidance (0 ms)
-[ RUN      ] ManualTests.5_MacrosOnTheFlyAvoidKeyUp
-[       OK ] ManualTests.5_MacrosOnTheFlyAvoidKeyUp (0 ms)
-[ RUN      ] ManualTests.6_MacrosOnTheFlyBailOut
-[       OK ] ManualTests.6_MacrosOnTheFlyBailOut (0 ms)
-[ RUN      ] ManualTests.7_CompressionChecks
-[ INFO     ] Printing Macro: A
-	TAPCODE 4,TAPCODE 13,
-[ INFO     ] Printing Macro: A
-	TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 225,TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,KEYCODEUP 225,
-[       OK ] ManualTests.7_CompressionChecks (0 ms)
-[ RUN      ] ManualTests.8_FlagsCompression
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 224,TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,KEYCODEUP 224,
-[       OK ] ManualTests.8_FlagsCompression (0 ms)
-[ RUN      ] ManualTests.8_FlagsCompression3
-[ INFO     ] Printing Macro: A
-	TAP 1 4,
-[       OK ] ManualTests.8_FlagsCompression3 (0 ms)
-[ RUN      ] ManualTests.8_FlagsCompression4
-[ INFO     ] Printing Macro: A
-	TAP_SEQUENCE 1 4 1 4 1 4 1 4 0 0 |,
-[       OK ] ManualTests.8_FlagsCompression4 (0 ms)
-[ RUN      ] ManualTests.9_ShiftCheck
-[       OK ] ManualTests.9_ShiftCheck (0 ms)
-[ RUN      ] ManualTests.10_CompressSeqInMiddle
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 225,TAPCODE 4,TAPCODE 13,KEYCODEUP 225,TAP_CODE_SEQUENCE 4 4 4 4 4 0 |,
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 225,TAPCODE 4,TAPCODE 13,KEYCODEUP 225,TAP_CODE_SEQUENCE 4 4 4 4 4 13 0 |,KEYCODEDOWN 4,TAPCODE 13,KEYCODEUP 4,
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 225,TAPCODE 4,TAPCODE 13,KEYCODEUP 225,TAP_CODE_SEQUENCE 4 4 4 4 4 13 0 |,KEYCODEDOWN 4,TAPCODE 13,KEYCODEUP 4,TAP_CODE_SEQUENCE 13 4 13 4 13 0 |,
-[       OK ] ManualTests.10_CompressSeqInMiddle (1 ms)
-[ RUN      ] ManualTests.11_LayerBasics
-[ INFO     ] Printing Macro: A
-	TAPCODE 27,TAP 68 1,TAPCODE 5,TAP 68 1,TAPCODE 27,TAP 68 1,TAPCODE 5,
-[ INFO     ] Printing Macro: A
-	TAPCODE 27,TAP 68 1,TAPCODE 5,TAP 68 1,TAPCODE 27,TAP 68 1,TAPCODE 5,TAP 68 1,
-[ INFO     ] Printing Macro: A
-	KEYDOWN 68 43,TAPCODE 27,KEYUP 68 43,TAPCODE 5,KEYDOWN 68 43,TAPCODE 27,
-[       OK ] ManualTests.11_LayerBasics (1 ms)
-[ RUN      ] ManualTests.12_Delays
-[ INFO     ] Printing Macro: B
-	TAP_CODE_SEQUENCE 5 5 5 0 |,
-[ INFO     ] Printing Macro: B
-	TAPCODE 5,TAPCODE 5,INTERVAL 0,TAPCODE 5,
-[ INFO     ] Printing Macro: B
-	KEYCODEDOWN 5,INTERVAL 0,KEYCODEUP 5,TAPCODE 4,
-[ INFO     ] Printing Macro: B
-	TAPCODE 5,TAPCODE 4,KEYCODEDOWN 5,INTERVAL 0,KEYCODEUP 5,TAPCODE 4,TAPCODE 5,
-[ INFO     ] Printing Macro: A
-	TAPCODE 5,TAPCODE 4,KEYCODEDOWN 5,INTERVAL 2,KEYCODEUP 5,TAPCODE 4,TAPCODE 5,
-[       OK ] ManualTests.12_Delays (1 ms)
-[ RUN      ] ManualTests.13_OutOfMemory
-[       OK ] ManualTests.13_OutOfMemory (2 ms)
-[----------] 17 tests from ManualTests (12 ms total)
-
-[----------] Global test environment tear-down
-[==========] 17 tests from 1 test suite ran. (12 ms total)
-[  PASSED  ] 17 tests.
-make[1]: Leaving directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
-Kaleidoscope [06:58:16] $ 
+vshcmd: > make clean && make simulator-tests TEST_PATH=plugins/MacroPirate/EdgeCases
 vshcmd: > make clean && make simulator-tests TEST_PATH=personal-config
 Building in quiet mode. For a lot more information, add 'VERBOSE=1' to the beginning of your call to make
 make -C tests clean
@@ -239,6 +87,8 @@ In file included from test/manual-tests.cpp:5:
   142 | class FocusLEDCommand : public Plugin {
       |       ^~~~~~~~~~~~~~~
 /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+ar: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/personal-config.ino.a: No such file or directory
+
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -265,602 +115,445 @@ In file included from test/manual-tests.cpp:5:
 [93mKaleidoscope-LayerNames[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LayerNames[0m                              
 [93mKaleidoscope-TopsyTurvy[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy[0m                              
 [93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
-[93mKaleidoscope-MacrosOnTheFly[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly[0m                          
+[93mKaleidoscope-MacroPirate[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                             
 [93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
 [93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
 
 [92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
 [93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
 
-
-Running test personal-config
-[==========] Running 10 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 10 tests from PersonalConfig
-[ RUN      ] PersonalConfig.0_test
-[ INFO     ] test: tests/personal-config/test/manual-tests.cpp
-[       OK ] PersonalConfig.0_test (0 ms)
-[ RUN      ] PersonalConfig.1_MacroRecordBasic
-Expected keyboard report at 7ms: { 1b }
-Observed keyboard report at 7ms: { 1b }
-Expected keyboard report at 8ms: { }
-Observed keyboard report at 8ms: { }
-Expected keyboard report at 9ms: { 1b }
-Observed keyboard report at 9ms: { 1b }
-Expected keyboard report at 10ms: { }
-Observed keyboard report at 10ms: { }
-Expected keyboard report at 19ms: { 1b }
-Observed keyboard report at 19ms: { 1b }
-Expected keyboard report at 19ms: { }
-Observed keyboard report at 19ms: { }
-Expected keyboard report at 19ms: { 1b }
-Observed keyboard report at 19ms: { 1b }
-Expected keyboard report at 19ms: { }
-Observed keyboard report at 19ms: { }
-[       OK ] PersonalConfig.1_MacroRecordBasic (0 ms)
-[ RUN      ] PersonalConfig.2_MacroRecordTopsy
-[ INFO     ] Printing Macro: A
-	TAP_CODE_SEQUENCE 30 31 32 0 |,TAP 209 197,TAPCODE 4,
-[ INFO     ] Printing Macro: A
-	TAP_CODE_SEQUENCE 30 31 32 0 |,TAP 209 197,KEYDOWN 208 75,KEYCODEUP 30,
-[ INFO     ] Printing Macro: A
-	TAP_CODE_SEQUENCE 30 31 32 0 |,TAP 209 197,KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,
-[ INFO     ] Printing Macro: A
-	KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,TAP 209 197,TAP_CODE_SEQUENCE 30 31 32 0 |,
-Expected keyboard report at 29ms: { 1e }
-Observed keyboard report at 29ms: { 1e }
-Expected keyboard report at 30ms: { }
-Observed keyboard report at 30ms: { }
-Expected keyboard report at 31ms: { 1f }
-Observed keyboard report at 31ms: { 1f }
-Expected keyboard report at 32ms: { }
-Observed keyboard report at 32ms: { }
-Expected keyboard report at 33ms: { 20 }
-Observed keyboard report at 33ms: { 20 }
-Expected keyboard report at 34ms: { }
-Observed keyboard report at 34ms: { }
-Expected keyboard report at 39ms: { 4 }
-Observed keyboard report at 39ms: { 4 }
-Expected keyboard report at 40ms: { }
-Observed keyboard report at 40ms: { }
-Expected keyboard report at 53ms: { 1e }
-Observed keyboard report at 53ms: { 1e }
-Expected keyboard report at 53ms: { }
-Observed keyboard report at 53ms: { }
-Expected keyboard report at 53ms: { 1f }
-Observed keyboard report at 53ms: { 1f }
-Expected keyboard report at 53ms: { }
-Observed keyboard report at 53ms: { }
-Expected keyboard report at 53ms: { 20 }
-Observed keyboard report at 53ms: { 20 }
-Expected keyboard report at 53ms: { }
-Observed keyboard report at 53ms: { }
-Expected keyboard report at 53ms: { 4 }
-Observed keyboard report at 53ms: { 4 }
-Expected keyboard report at 53ms: { }
-Observed keyboard report at 53ms: { }
-Expected keyboard report at 71ms: { 1e }
-Observed keyboard report at 71ms: { 1e }
-Expected keyboard report at 72ms: { }
-Observed keyboard report at 72ms: { }
-Expected keyboard report at 73ms: { 1f }
-Observed keyboard report at 73ms: { 1f }
-Expected keyboard report at 74ms: { }
-Observed keyboard report at 74ms: { }
-Expected keyboard report at 75ms: { 20 }
-Observed keyboard report at 75ms: { 20 }
-Expected keyboard report at 76ms: { }
-Observed keyboard report at 76ms: { }
-Expected keyboard report at 81ms: { e1 }
-Observed keyboard report at 81ms: { e1 }
-Expected keyboard report at 81ms: { 1e e1 }
-Observed keyboard report at 81ms: { 1e e1 }
-Expected keyboard report at 82ms: { e1 }
-Observed keyboard report at 82ms: { e1 }
-Expected keyboard report at 82ms: { }
-Observed keyboard report at 82ms: { }
-Expected keyboard report at 95ms: { 1e }
-Observed keyboard report at 95ms: { 1e }
-Expected keyboard report at 95ms: { }
-Observed keyboard report at 95ms: { }
-Expected keyboard report at 95ms: { 1f }
-Observed keyboard report at 95ms: { 1f }
-Expected keyboard report at 95ms: { }
-Observed keyboard report at 95ms: { }
-Expected keyboard report at 95ms: { 20 }
-Observed keyboard report at 95ms: { 20 }
-Expected keyboard report at 95ms: { }
-Observed keyboard report at 95ms: { }
-Expected keyboard report at 95ms: { e1 }
-Observed keyboard report at 95ms: { e1 }
-Expected keyboard report at 95ms: { 1e e1 }
-Observed keyboard report at 95ms: { 1e e1 }
-Expected keyboard report at 95ms: { e1 }
-Observed keyboard report at 95ms: { e1 }
-Expected keyboard report at 95ms: { }
-Observed keyboard report at 95ms: { }
-Expected keyboard report at 114ms: { 1e }
-Observed keyboard report at 114ms: { 1e }
-Expected keyboard report at 115ms: { }
-Observed keyboard report at 115ms: { }
-Expected keyboard report at 116ms: { 1f }
-Observed keyboard report at 116ms: { 1f }
-Expected keyboard report at 117ms: { }
-Observed keyboard report at 117ms: { }
-Expected keyboard report at 118ms: { 20 }
-Observed keyboard report at 118ms: { 20 }
-Expected keyboard report at 119ms: { }
-Observed keyboard report at 119ms: { }
-Expected keyboard report at 124ms: { e1 }
-Observed keyboard report at 124ms: { e1 }
-Expected keyboard report at 124ms: { 1e e1 }
-Observed keyboard report at 124ms: { 1e e1 }
-Expected keyboard report at 125ms: { e1 }
-Observed keyboard report at 125ms: { e1 }
-Expected keyboard report at 125ms: { }
-Observed keyboard report at 125ms: { }
-Expected keyboard report at 126ms: { e1 }
-Observed keyboard report at 126ms: { e1 }
-Expected keyboard report at 126ms: { 1f e1 }
-Observed keyboard report at 126ms: { 1f e1 }
-Expected keyboard report at 127ms: { e1 }
-Observed keyboard report at 127ms: { e1 }
-Expected keyboard report at 127ms: { }
-Observed keyboard report at 127ms: { }
-Expected keyboard report at 128ms: { e1 }
-Observed keyboard report at 128ms: { e1 }
-Expected keyboard report at 128ms: { 20 e1 }
-Observed keyboard report at 128ms: { 20 e1 }
-Expected keyboard report at 129ms: { e1 }
-Observed keyboard report at 129ms: { e1 }
-Expected keyboard report at 129ms: { }
-Observed keyboard report at 129ms: { }
-Expected keyboard report at 142ms: { 1e }
-Observed keyboard report at 142ms: { 1e }
-Expected keyboard report at 142ms: { }
-Observed keyboard report at 142ms: { }
-Expected keyboard report at 142ms: { 1f }
-Observed keyboard report at 142ms: { 1f }
-Expected keyboard report at 142ms: { }
-Observed keyboard report at 142ms: { }
-Expected keyboard report at 142ms: { 20 }
-Observed keyboard report at 142ms: { 20 }
-Expected keyboard report at 142ms: { }
-Observed keyboard report at 142ms: { }
-Expected keyboard report at 142ms: { e1 }
-Observed keyboard report at 142ms: { e1 }
-Expected keyboard report at 142ms: { 1e e1 }
-Observed keyboard report at 142ms: { 1e e1 }
-Expected keyboard report at 142ms: { e1 }
-Observed keyboard report at 142ms: { e1 }
-Expected keyboard report at 142ms: { }
-Observed keyboard report at 142ms: { }
-Expected keyboard report at 142ms: { e1 }
-Observed keyboard report at 142ms: { e1 }
-Expected keyboard report at 142ms: { 1f e1 }
-Observed keyboard report at 142ms: { 1f e1 }
-Expected keyboard report at 142ms: { e1 }
-Observed keyboard report at 142ms: { e1 }
-Expected keyboard report at 142ms: { }
-Observed keyboard report at 142ms: { }
-Expected keyboard report at 142ms: { e1 }
-Observed keyboard report at 142ms: { e1 }
-Expected keyboard report at 142ms: { 20 e1 }
-Observed keyboard report at 142ms: { 20 e1 }
-Expected keyboard report at 142ms: { e1 }
-Observed keyboard report at 142ms: { e1 }
-Expected keyboard report at 142ms: { }
-Observed keyboard report at 142ms: { }
-Expected keyboard report at 163ms: { e1 }
-Observed keyboard report at 163ms: { e1 }
-Expected keyboard report at 163ms: { 1e e1 }
-Observed keyboard report at 163ms: { 1e e1 }
-Expected keyboard report at 164ms: { e1 }
-Observed keyboard report at 164ms: { e1 }
-Expected keyboard report at 164ms: { }
-Observed keyboard report at 164ms: { }
-Expected keyboard report at 171ms: { e1 }
-Observed keyboard report at 171ms: { e1 }
-Expected keyboard report at 171ms: { 1e e1 }
-Observed keyboard report at 171ms: { 1e e1 }
-Expected keyboard report at 172ms: { e1 }
-Observed keyboard report at 172ms: { e1 }
-Expected keyboard report at 172ms: { }
-Observed keyboard report at 172ms: { }
-Expected keyboard report at 173ms: { e1 }
-Observed keyboard report at 173ms: { e1 }
-Expected keyboard report at 173ms: { 1f e1 }
-Observed keyboard report at 173ms: { 1f e1 }
-Expected keyboard report at 174ms: { e1 }
-Observed keyboard report at 174ms: { e1 }
-Expected keyboard report at 174ms: { }
-Observed keyboard report at 174ms: { }
-Expected keyboard report at 175ms: { e1 }
-Observed keyboard report at 175ms: { e1 }
-Expected keyboard report at 175ms: { 20 e1 }
-Observed keyboard report at 175ms: { 20 e1 }
-Expected keyboard report at 176ms: { e1 }
-Observed keyboard report at 176ms: { e1 }
-Expected keyboard report at 176ms: { }
-Observed keyboard report at 176ms: { }
-Expected keyboard report at 181ms: { 1e }
-Observed keyboard report at 181ms: { 1e }
-Expected keyboard report at 182ms: { }
-Observed keyboard report at 182ms: { }
-Expected keyboard report at 183ms: { 1f }
-Observed keyboard report at 183ms: { 1f }
-Expected keyboard report at 184ms: { }
-Observed keyboard report at 184ms: { }
-Expected keyboard report at 185ms: { 20 }
-Observed keyboard report at 185ms: { 20 }
-Expected keyboard report at 186ms: { }
-Observed keyboard report at 186ms: { }
-Expected keyboard report at 199ms: { e1 }
-Observed keyboard report at 199ms: { e1 }
-Expected keyboard report at 199ms: { 1e e1 }
-Observed keyboard report at 199ms: { 1e e1 }
-Expected keyboard report at 199ms: { e1 }
-Observed keyboard report at 199ms: { e1 }
-Expected keyboard report at 199ms: { }
-Observed keyboard report at 199ms: { }
-Expected keyboard report at 199ms: { e1 }
-Observed keyboard report at 199ms: { e1 }
-Expected keyboard report at 199ms: { 1f e1 }
-Observed keyboard report at 199ms: { 1f e1 }
-Expected keyboard report at 199ms: { e1 }
-Observed keyboard report at 199ms: { e1 }
-Expected keyboard report at 199ms: { }
-Observed keyboard report at 199ms: { }
-Expected keyboard report at 199ms: { e1 }
-Observed keyboard report at 199ms: { e1 }
-Expected keyboard report at 199ms: { 20 e1 }
-Observed keyboard report at 199ms: { 20 e1 }
-Expected keyboard report at 199ms: { e1 }
-Observed keyboard report at 199ms: { e1 }
-Expected keyboard report at 199ms: { }
-Observed keyboard report at 199ms: { }
-Expected keyboard report at 199ms: { 1e }
-Observed keyboard report at 199ms: { 1e }
-Expected keyboard report at 199ms: { }
-Observed keyboard report at 199ms: { }
-Expected keyboard report at 199ms: { 1f }
-Observed keyboard report at 199ms: { 1f }
-Expected keyboard report at 199ms: { }
-Observed keyboard report at 199ms: { }
-Expected keyboard report at 199ms: { 20 }
-Observed keyboard report at 199ms: { 20 }
-Expected keyboard report at 199ms: { }
-Observed keyboard report at 199ms: { }
-[       OK ] PersonalConfig.2_MacroRecordTopsy (5 ms)
-[ RUN      ] PersonalConfig.3_MacroRecordOneShot
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 225,KEYCODEDOWN 4,KEYCODEUP 225,KEYCODEUP 4,TAPCODE 4,
-[ INFO     ] Printing Macro: A
-	TAPCODE 4,TAPCODE 4,
-[ INFO     ] Printing Macro: A
-	TAP_CODE_SEQUENCE 4 4 225 0 |,
-[ INFO     ] Printing Macro: A
-	TAPCODE 4,TAPCODE 4,KEYCODEDOWN 225,TAPCODE 4,KEYCODEUP 225,
-Expected keyboard report at 218ms: { e1 }
-Observed keyboard report at 218ms: { e1 }
-Expected keyboard report at 220ms: { 4 e1 }
-Observed keyboard report at 220ms: { 4 e1 }
-Expected keyboard report at 220ms: { e1 }
-Observed keyboard report at 220ms: { 4 }
-Expected keyboard report at 221ms: { e1 }
-Observed keyboard report at 221ms: { }
-Expected keyboard report at 222ms: { 4 e1 }
-Observed keyboard report at 222ms: { 4 }
-Expected keyboard report at 223ms: { e1 }
-Observed keyboard report at 223ms: { }
-Expected keyboard report at 232ms: { e1 }
-Observed keyboard report at 232ms: { e1 }
-Expected keyboard report at 232ms: { 4 e1 }
-Observed keyboard report at 232ms: { 4 e1 }
-Expected keyboard report at 232ms: { 4 }
-Observed keyboard report at 232ms: { 4 }
-Expected keyboard report at 232ms: { }
-Observed keyboard report at 232ms: { }
-Expected keyboard report at 232ms: { 4 }
-Observed keyboard report at 232ms: { 4 }
-Expected keyboard report at 232ms: { }
-Observed keyboard report at 232ms: { }
-Expected keyboard report at 239ms: { e1 }
-Observed keyboard report at 239ms: { e1 }
-Expected keyboard report at 241ms: { }
-Observed keyboard report at 241ms: { }
-Expected keyboard report at 247ms: { 4 }
-Observed keyboard report at 247ms: { 4 }
-Expected keyboard report at 248ms: { }
-Observed keyboard report at 248ms: { }
-Expected keyboard report at 249ms: { 4 }
-Observed keyboard report at 249ms: { 4 }
-Expected keyboard report at 250ms: { }
-Observed keyboard report at 250ms: { }
-Expected keyboard report at 259ms: { 4 }
-Observed keyboard report at 259ms: { 4 }
-Expected keyboard report at 259ms: { }
-Observed keyboard report at 259ms: { }
-Expected keyboard report at 259ms: { 4 }
-Observed keyboard report at 259ms: { 4 }
-Expected keyboard report at 259ms: { }
-Observed keyboard report at 259ms: { }
-Expected keyboard report at 269ms: { 4 }
-Observed keyboard report at 269ms: { 4 }
-Expected keyboard report at 270ms: { }
-Observed keyboard report at 270ms: { }
-Expected keyboard report at 271ms: { 4 }
-Observed keyboard report at 271ms: { 4 }
-Expected keyboard report at 272ms: { }
-Observed keyboard report at 272ms: { }
-Expected keyboard report at 273ms: { e1 }
-Observed keyboard report at 273ms: { e1 }
-Expected keyboard report at 275ms: { }
-Observed keyboard report at 275ms: { }
-Expected keyboard report at 283ms: { 4 }
-Observed keyboard report at 283ms: { 4 }
-Expected keyboard report at 283ms: { }
-Observed keyboard report at 283ms: { }
-Expected keyboard report at 283ms: { 4 }
-Observed keyboard report at 283ms: { 4 }
-Expected keyboard report at 283ms: { }
-Observed keyboard report at 283ms: { }
-Expected keyboard report at 283ms: { e1 }
-Observed keyboard report at 283ms: { e1 }
-Expected keyboard report at 283ms: { }
-Observed keyboard report at 283ms: { }
-Expected keyboard report at 295ms: { 4 }
-Observed keyboard report at 295ms: { 4 }
-Expected keyboard report at 296ms: { }
-Observed keyboard report at 296ms: { }
-Expected keyboard report at 297ms: { 4 }
-Observed keyboard report at 297ms: { 4 }
-Expected keyboard report at 298ms: { }
-Observed keyboard report at 298ms: { }
-Expected keyboard report at 299ms: { e1 }
-Observed keyboard report at 299ms: { e1 }
-Expected keyboard report at 300ms: { 4 e1 }
-Observed keyboard report at 300ms: { 4 e1 }
-Expected keyboard report at 301ms: { e1 }
-Observed keyboard report at 301ms: { e1 }
-Expected keyboard report at 302ms: { }
-Observed keyboard report at 302ms: { }
-Expected keyboard report at 311ms: { 4 }
-Observed keyboard report at 311ms: { 4 }
-Expected keyboard report at 311ms: { }
-Observed keyboard report at 311ms: { }
-Expected keyboard report at 311ms: { 4 }
-Observed keyboard report at 311ms: { 4 }
-Expected keyboard report at 311ms: { }
-Observed keyboard report at 311ms: { }
-Expected keyboard report at 311ms: { e1 }
-Observed keyboard report at 311ms: { e1 }
-Expected keyboard report at 311ms: { 4 e1 }
-Observed keyboard report at 311ms: { 4 e1 }
-Expected keyboard report at 311ms: { e1 }
-Observed keyboard report at 311ms: { e1 }
-Expected keyboard report at 311ms: { }
-Observed keyboard report at 311ms: { }
-[       OK ] PersonalConfig.3_MacroRecordOneShot (3 ms)
-[ RUN      ] PersonalConfig.4_MacroRecordSpecialShift
-[ INFO     ] Printing Macro: U
-	TAPCODE 76,
-[ INFO     ] Printing Macro: U
-	TAPCODE 76,
-Expected keyboard report at 325ms: { 4c }
-Observed keyboard report at 325ms: { 4c }
-Expected keyboard report at 326ms: { }
-Observed keyboard report at 326ms: { }
-Expected keyboard report at 336ms: { 4c }
-Observed keyboard report at 336ms: { 4c }
-Expected keyboard report at 336ms: { }
-Observed keyboard report at 336ms: { }
-Expected keyboard report at 346ms: { 4c }
-Observed keyboard report at 346ms: { 4c }
-Expected keyboard report at 347ms: { }
-Observed keyboard report at 347ms: { }
-Expected keyboard report at 357ms: { 4c }
-Observed keyboard report at 357ms: { 4c }
-Expected keyboard report at 357ms: { }
-Observed keyboard report at 357ms: { }
-Expected keyboard report at 360ms: { 2d }
-Observed keyboard report at 360ms: { 2d }
-Expected keyboard report at 361ms: { }
-Observed keyboard report at 361ms: { }
-[       OK ] PersonalConfig.4_MacroRecordSpecialShift (1 ms)
-[ RUN      ] PersonalConfig.5_MacroRecordSpecialShift
-[       OK ] PersonalConfig.5_MacroRecordSpecialShift (0 ms)
-[ RUN      ] PersonalConfig.6_MacroRecordTopsyOneShot
-[ INFO     ] Printing Macro: A
-	TAPCODE 30,TAPCODE 31,TAP 209 197,TAPCODE 4,KEYDOWN 208 75,KEYCODEUP 30,KEYCODEDOWN 229,KEYDOWN 208 75,KEYCODEUP 30,KEYCODEUP 229,
-[ INFO     ] Printing Macro: O
-	KEYCODEDOWN 229,KEYDOWN 208 77,KEYCODEUP 229,KEYCODEUP 32,
-Expected keyboard report at 368ms: { 1e }
-Observed keyboard report at 368ms: { 1e }
-Expected keyboard report at 369ms: { }
-Observed keyboard report at 369ms: { }
-Expected keyboard report at 370ms: { 1f }
-Observed keyboard report at 370ms: { 1f }
-Expected keyboard report at 371ms: { }
-Observed keyboard report at 371ms: { }
-Expected keyboard report at 376ms: { 4 }
-Observed keyboard report at 376ms: { 4 }
-Expected keyboard report at 377ms: { }
-Observed keyboard report at 377ms: { }
-Expected keyboard report at 378ms: { e1 }
-Observed keyboard report at 378ms: { e1 }
-Expected keyboard report at 378ms: { 1e e1 }
-Observed keyboard report at 378ms: { 1e e1 }
-Expected keyboard report at 379ms: { e1 }
-Observed keyboard report at 379ms: { e1 }
-Expected keyboard report at 379ms: { }
-Observed keyboard report at 379ms: { }
-Expected keyboard report at 380ms: { e5 }
-Observed keyboard report at 380ms: { e5 }
-Expected keyboard report at 381ms: { }
-Observed keyboard report at 381ms: { }
-Expected keyboard report at 381ms: { 1e }
-Observed keyboard report at 381ms: { 1e }
-Expected keyboard report at 382ms: { }
-Observed keyboard report at 382ms: { }
-Expected keyboard report at 382ms: { e5 }
-Observed keyboard report at 382ms: { e5 }
-Expected keyboard report at 383ms: { }
-Observed keyboard report at 383ms: { }
-Expected keyboard report at 396ms: { 1e }
-Observed keyboard report at 396ms: { 1e }
-Expected keyboard report at 396ms: { }
-Observed keyboard report at 396ms: { }
-Expected keyboard report at 396ms: { 1f }
-Observed keyboard report at 396ms: { 1f }
-Expected keyboard report at 396ms: { }
-Observed keyboard report at 396ms: { }
-Expected keyboard report at 396ms: { 4 }
-Observed keyboard report at 396ms: { 4 }
-Expected keyboard report at 396ms: { }
-Observed keyboard report at 396ms: { }
-Expected keyboard report at 396ms: { e1 }
-Observed keyboard report at 396ms: { e1 }
-Expected keyboard report at 396ms: { 1e e1 }
-Observed keyboard report at 396ms: { 1e e1 }
-Expected keyboard report at 396ms: { e1 }
-Observed keyboard report at 396ms: { e1 }
-Expected keyboard report at 396ms: { }
-Observed keyboard report at 396ms: { }
-Expected keyboard report at 396ms: { e5 }
-Observed keyboard report at 396ms: { e5 }
-Expected keyboard report at 396ms: { }
-Observed keyboard report at 396ms: { }
-Expected keyboard report at 396ms: { 1e }
-Observed keyboard report at 396ms: { 1e }
-Expected keyboard report at 396ms: { }
-Observed keyboard report at 396ms: { }
-Expected keyboard report at 396ms: { e5 }
-Observed keyboard report at 396ms: { e5 }
-Expected keyboard report at 396ms: { }
-Observed keyboard report at 396ms: { }
-Expected keyboard report at 422ms: { e5 }
-Observed keyboard report at 422ms: { e5 }
-Expected keyboard report at 424ms: { }
-Observed keyboard report at 424ms: { }
-Expected keyboard report at 424ms: { 20 }
-Observed keyboard report at 424ms: { 20 }
-Expected keyboard report at 424ms: { 20 e1 }
-Observed keyboard report at 424ms: { 20 e1 }
-Expected keyboard report at 425ms: { e1 }
-Observed keyboard report at 425ms: { e1 }
-Expected keyboard report at 425ms: { }
-Observed keyboard report at 425ms: { }
-Expected keyboard report at 434ms: { e5 }
-Observed keyboard report at 434ms: { e5 }
-Expected keyboard report at 434ms: { }
-Observed keyboard report at 434ms: { }
-Expected keyboard report at 434ms: { 20 }
-Observed keyboard report at 434ms: { 20 }
-Expected keyboard report at 434ms: { 20 e1 }
-Observed keyboard report at 434ms: { 20 e1 }
-Expected keyboard report at 434ms: { e1 }
-Observed keyboard report at 434ms: { e1 }
-Expected keyboard report at 434ms: { }
-Observed keyboard report at 434ms: { }
-[       OK ] PersonalConfig.6_MacroRecordTopsyOneShot (2 ms)
-[ RUN      ] PersonalConfig.7_SpecialShiftDoubleRelease
-Expected keyboard report at 445ms: { 35 }
-Observed keyboard report at 445ms: { 35 }
-Expected keyboard report at 446ms: { }
-Observed keyboard report at 446ms: { }
-Expected keyboard report at 448ms: { 35 }
-Observed keyboard report at 448ms: { 35 }
-Expected keyboard report at 449ms: { }
-Observed keyboard report at 449ms: { }
-Expected keyboard report at 451ms: { 35 }
-Observed keyboard report at 451ms: { 35 }
-Expected keyboard report at 452ms: { }
-Observed keyboard report at 452ms: { }
-Expected keyboard report at 454ms: { a }
-Observed keyboard report at 454ms: { a }
-Expected keyboard report at 455ms: { }
-Observed keyboard report at 455ms: { }
-Expected keyboard report at 457ms: { 35 }
-Observed keyboard report at 457ms: { 35 }
-Expected keyboard report at 458ms: { }
-Observed keyboard report at 458ms: { }
-Expected keyboard report at 460ms: { 35 }
-Observed keyboard report at 460ms: { 35 }
-Expected keyboard report at 461ms: { }
-Observed keyboard report at 461ms: { }
-Expected keyboard report at 463ms: { 35 }
-Observed keyboard report at 463ms: { 35 }
-Expected keyboard report at 464ms: { }
-Observed keyboard report at 464ms: { }
-Expected keyboard report at 466ms: { a }
-Observed keyboard report at 466ms: { a }
-Expected keyboard report at 467ms: { }
-Observed keyboard report at 467ms: { }
-[       OK ] PersonalConfig.7_SpecialShiftDoubleRelease (1 ms)
-[ RUN      ] PersonalConfig.8_MacroRecordIntoWrongSlot
-Expected keyboard report at 474ms: { 4 }
-Observed keyboard report at 474ms: { 4 }
-Expected keyboard report at 475ms: { }
-Observed keyboard report at 475ms: { }
-Expected keyboard report at 476ms: { 5 }
-Observed keyboard report at 476ms: { 5 }
-Expected keyboard report at 477ms: { }
-Observed keyboard report at 477ms: { }
-Expected keyboard report at 478ms: { 6 }
-Observed keyboard report at 478ms: { 6 }
-Expected keyboard report at 479ms: { }
-Observed keyboard report at 479ms: { }
-[       OK ] PersonalConfig.8_MacroRecordIntoWrongSlot (0 ms)
-[ RUN      ] PersonalConfig.9_MacroReplayPLAYPLAY
-Expected keyboard report at 492ms: { 4 }
-Observed keyboard report at 492ms: { 4 }
-Expected keyboard report at 493ms: { }
-Observed keyboard report at 493ms: { }
-Expected keyboard report at 494ms: { 5 }
-Observed keyboard report at 494ms: { 5 }
-Expected keyboard report at 495ms: { }
-Observed keyboard report at 495ms: { }
-Expected keyboard report at 504ms: { 4 }
-Observed keyboard report at 504ms: { 4 }
-Expected keyboard report at 504ms: { }
-Observed keyboard report at 504ms: { }
-Expected keyboard report at 504ms: { 5 }
-Observed keyboard report at 504ms: { 5 }
-Expected keyboard report at 504ms: { }
-Observed keyboard report at 504ms: { }
-Expected keyboard report at 511ms: { 4 }
-Observed keyboard report at 511ms: { 4 }
-Expected keyboard report at 511ms: { }
-Observed keyboard report at 511ms: { }
-Expected keyboard report at 511ms: { 5 }
-Observed keyboard report at 511ms: { 5 }
-Expected keyboard report at 511ms: { }
-Observed keyboard report at 511ms: { }
-Expected keyboard report at 521ms: { 4 }
-Observed keyboard report at 521ms: { 4 }
-Expected keyboard report at 521ms: { }
-Observed keyboard report at 521ms: { }
-Expected keyboard report at 521ms: { 5 }
-Observed keyboard report at 521ms: { 5 }
-Expected keyboard report at 521ms: { }
-Observed keyboard report at 521ms: { }
-Expected keyboard report at 525ms: { 35 }
-Observed keyboard report at 525ms: { 35 }
-Expected keyboard report at 526ms: { }
-Observed keyboard report at 526ms: { }
-Expected keyboard report at 528ms: { a }
-Observed keyboard report at 528ms: { a }
-Expected keyboard report at 529ms: { }
-Observed keyboard report at 529ms: { }
-[       OK ] PersonalConfig.9_MacroReplayPLAYPLAY (1 ms)
-[----------] 10 tests from PersonalConfig (19 ms total)
-
-[----------] Global test environment tear-down
-[==========] 10 tests from 1 test suite ran. (19 ms total)
-[  PASSED  ] 10 tests.
+Error during build: exit status 1
+make[3]: *** [/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/etc/makefiles/sketch.mk:168: compile] Error 1
+make[2]: *** [/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/makefiles/testcase.mk:82: compile-sketch] Error 2
+make[1]: *** [Makefile:96: personal-config] Error 2
 make[1]: Leaving directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
-Kaleidoscope [15:54:50] $ 
+make: *** [Makefile:82: simulator-tests] Error 2
+Kaleidoscope [08:51:26] $ 
+vshcmd: > make simulator-tests TEST_PATH=personal-config VERBOSE=1
+Using ardino-cli from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/bin/arduino-cli
+make -C tests all
+make[1]: Entering directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
+Using ardino-cli from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/bin/arduino-cli
+make[1]: Leaving directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
+make[1]: Entering directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
+make -C /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build
+/usr/bin/cmake -S/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest -B/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build/CMakeFiles /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build//CMakeFiles/progress.marks
+make  -f CMakeFiles/Makefile2 all
+make  -f googletest/CMakeFiles/gtest.dir/build.make googletest/CMakeFiles/gtest.dir/depend
+cd /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/googletest /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build/googletest /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build/googletest/CMakeFiles/gtest.dir/DependInfo.cmake --color=
+Dependencies file "googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o.d" is newer than depends file "/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build/googletest/CMakeFiles/gtest.dir/compiler_depend.internal".
+[35m[1mConsolidate compiler generated dependencies of target gtest[0m
+make  -f googletest/CMakeFiles/gtest.dir/build.make googletest/CMakeFiles/gtest.dir/build
+make[4]: Nothing to be done for 'googletest/CMakeFiles/gtest.dir/build'.
+[ 25%] Built target gtest
+make  -f googlemock/CMakeFiles/gmock.dir/build.make googlemock/CMakeFiles/gmock.dir/depend
+cd /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/googlemock /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build/googlemock /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake --color=
+Dependencies file "googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o.d" is newer than depends file "/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build/googlemock/CMakeFiles/gmock.dir/compiler_depend.internal".
+[35m[1mConsolidate compiler generated dependencies of target gmock[0m
+make  -f googlemock/CMakeFiles/gmock.dir/build.make googlemock/CMakeFiles/gmock.dir/build
+make[4]: Nothing to be done for 'googlemock/CMakeFiles/gmock.dir/build'.
+[ 50%] Built target gmock
+make  -f googlemock/CMakeFiles/gmock_main.dir/build.make googlemock/CMakeFiles/gmock_main.dir/depend
+cd /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/googlemock /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build/googlemock /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake --color=
+Dependencies file "googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o.d" is newer than depends file "/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build/googlemock/CMakeFiles/gmock_main.dir/compiler_depend.internal".
+[35m[1mConsolidate compiler generated dependencies of target gmock_main[0m
+make  -f googlemock/CMakeFiles/gmock_main.dir/build.make googlemock/CMakeFiles/gmock_main.dir/build
+make[4]: Nothing to be done for 'googlemock/CMakeFiles/gmock_main.dir/build'.
+[ 75%] Built target gmock_main
+make  -f googletest/CMakeFiles/gtest_main.dir/build.make googletest/CMakeFiles/gtest_main.dir/depend
+cd /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/googletest /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build/googletest /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake --color=
+Dependencies file "googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.d" is newer than depends file "/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build/googletest/CMakeFiles/gtest_main.dir/compiler_depend.internal".
+[35m[1mConsolidate compiler generated dependencies of target gtest_main[0m
+make  -f googletest/CMakeFiles/gtest_main.dir/build.make googletest/CMakeFiles/gtest_main.dir/build
+make[4]: Nothing to be done for 'googletest/CMakeFiles/gtest_main.dir/build'.
+[100%] Built target gtest_main
+/usr/bin/cmake -E cmake_progress_start /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build/CMakeFiles 0
+make -f /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/makefiles/testcase.mk -C personal-config testcase=personal-config build run
+Using ardino-cli from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/bin/arduino-cli
+env LIBONLY=yes VERBOSE=1  \
+	OUTPUT_PATH="/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/personal-config/lib" \
+	_ARDUINO_CLI_COMPILE_CUSTOM_FLAGS='--build-property upload.maximum_size=""' \
+	make -f /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/etc/makefiles/sketch.mk compile
+Using ardino-cli from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/bin/arduino-cli
+Build artifacts can be found in /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino
+install -d "/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/personal-config/lib"
+ARDUINO_DIRECTORIES_USER=/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user ARDUINO_DIRECTORIES_DATA=/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/data /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/bin/arduino-cli compile --fqbn "keyboardio:virtual:model01" --verbose   \
+   --build-property upload.maximum_size="" \
+  --library "/home/matmal01/Documents/not-work/keyboard/Kaleidoscope" \
+  --libraries "/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/" \
+  --build-path "/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino" \
+  --output-dir "/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/personal-config/lib" \
+  --build-cache-path "/tmp/kaleidoscope-matmal01/arduino-cores" \
+  "/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino"
+Using board 'model01' from platform in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual
+Using core 'arduino' from platform in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual
+Detecting libraries used...
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope.h: [Kaleidoscope@0.0.0]
+ResolveLibrary(Kaleidoscope.h)
+  -> candidates: [Kaleidoscope@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-Hardware-Model01.h: [Kaleidoscope-Hardware-Model01@0.0.0]
+ResolveLibrary(Kaleidoscope-Hardware-Model01.h)
+  -> candidates: [Kaleidoscope-Hardware-Model01@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-Hardware-Keyboardio-Model01.h: [Kaleidoscope-Hardware-Keyboardio-Model01@0.0.0]
+ResolveLibrary(Kaleidoscope-Hardware-Keyboardio-Model01.h)
+  -> candidates: [Kaleidoscope-Hardware-Keyboardio-Model01@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for KeyboardioHID.h: [KeyboardioHID@0.0.1]
+ResolveLibrary(KeyboardioHID.h)
+  -> candidates: [KeyboardioHID@0.0.1]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-EEPROM-Settings.h: [Kaleidoscope-EEPROM-Settings@0.0.0]
+ResolveLibrary(Kaleidoscope-EEPROM-Settings.h)
+  -> candidates: [Kaleidoscope-EEPROM-Settings@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-EEPROM-Keymap.h: [Kaleidoscope-EEPROM-Keymap@0.0.0]
+ResolveLibrary(Kaleidoscope-EEPROM-Keymap.h)
+  -> candidates: [Kaleidoscope-EEPROM-Keymap@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-FocusSerial.h: [Kaleidoscope-FocusSerial@0.0.0]
+ResolveLibrary(Kaleidoscope-FocusSerial.h)
+  -> candidates: [Kaleidoscope-FocusSerial@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-FirmwareVersion.h: [Kaleidoscope-FirmwareVersion@0.0.0]
+ResolveLibrary(Kaleidoscope-FirmwareVersion.h)
+  -> candidates: [Kaleidoscope-FirmwareVersion@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-LEDEffect-BootGreeting.h: [Kaleidoscope-LEDEffect-BootGreeting@0.0.0]
+ResolveLibrary(Kaleidoscope-LEDEffect-BootGreeting.h)
+  -> candidates: [Kaleidoscope-LEDEffect-BootGreeting@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-LEDEffect-Breathe.h: [Kaleidoscope-LEDEffect-Breathe@0.0.0]
+ResolveLibrary(Kaleidoscope-LEDEffect-Breathe.h)
+  -> candidates: [Kaleidoscope-LEDEffect-Breathe@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-LEDEffect-Chase.h: [Kaleidoscope-LEDEffect-Chase@0.0.0]
+ResolveLibrary(Kaleidoscope-LEDEffect-Chase.h)
+  -> candidates: [Kaleidoscope-LEDEffect-Chase@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-LEDEffect-Rainbow.h: [Kaleidoscope-LEDEffect-Rainbow@0.0.0]
+ResolveLibrary(Kaleidoscope-LEDEffect-Rainbow.h)
+  -> candidates: [Kaleidoscope-LEDEffect-Rainbow@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-LED-Palette-Theme.h: [Kaleidoscope-LED-Palette-Theme@0.0.0]
+ResolveLibrary(Kaleidoscope-LED-Palette-Theme.h)
+  -> candidates: [Kaleidoscope-LED-Palette-Theme@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-IdleLEDs.h: [Kaleidoscope-IdleLEDs@0.0.0]
+ResolveLibrary(Kaleidoscope-IdleLEDs.h)
+  -> candidates: [Kaleidoscope-IdleLEDs@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-DefaultLEDModeConfig.h: [Kaleidoscope-DefaultLEDModeConfig@0.0.0]
+ResolveLibrary(Kaleidoscope-DefaultLEDModeConfig.h)
+  -> candidates: [Kaleidoscope-DefaultLEDModeConfig@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-DefaultLEDModeConfig/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-HardwareTestMode.h: [Kaleidoscope-HardwareTestMode@0.0.0]
+ResolveLibrary(Kaleidoscope-HardwareTestMode.h)
+  -> candidates: [Kaleidoscope-HardwareTestMode@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-DefaultLEDModeConfig/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HardwareTestMode/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-HostPowerManagement.h: [Kaleidoscope-HostPowerManagement@0.0.0]
+ResolveLibrary(Kaleidoscope-HostPowerManagement.h)
+  -> candidates: [Kaleidoscope-HostPowerManagement@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-DefaultLEDModeConfig/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HardwareTestMode/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HostPowerManagement/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-MagicCombo.h: [Kaleidoscope-MagicCombo@0.0.0]
+ResolveLibrary(Kaleidoscope-MagicCombo.h)
+  -> candidates: [Kaleidoscope-MagicCombo@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-DefaultLEDModeConfig/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HardwareTestMode/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HostPowerManagement/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MagicCombo/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-USB-Quirks.h: [Kaleidoscope-USB-Quirks@0.0.0]
+ResolveLibrary(Kaleidoscope-USB-Quirks.h)
+  -> candidates: [Kaleidoscope-USB-Quirks@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-DefaultLEDModeConfig/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HardwareTestMode/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HostPowerManagement/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MagicCombo/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-USB-Quirks/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-SpaceCadet.h: [Kaleidoscope-SpaceCadet@0.0.0]
+ResolveLibrary(Kaleidoscope-SpaceCadet.h)
+  -> candidates: [Kaleidoscope-SpaceCadet@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-DefaultLEDModeConfig/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HardwareTestMode/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HostPowerManagement/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MagicCombo/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-USB-Quirks/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-SpaceCadet/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-Ranges.h: [Kaleidoscope-Ranges@0.0.0]
+ResolveLibrary(Kaleidoscope-Ranges.h)
+  -> candidates: [Kaleidoscope-Ranges@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-DefaultLEDModeConfig/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HardwareTestMode/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HostPowerManagement/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MagicCombo/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-USB-Quirks/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-SpaceCadet/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-LayerNames.h: [Kaleidoscope-LayerNames@0.0.0]
+ResolveLibrary(Kaleidoscope-LayerNames.h)
+  -> candidates: [Kaleidoscope-LayerNames@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-DefaultLEDModeConfig/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HardwareTestMode/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HostPowerManagement/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MagicCombo/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-USB-Quirks/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-SpaceCadet/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LayerNames/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-TopsyTurvy.h: [Kaleidoscope-TopsyTurvy@0.0.0]
+ResolveLibrary(Kaleidoscope-TopsyTurvy.h)
+  -> candidates: [Kaleidoscope-TopsyTurvy@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-DefaultLEDModeConfig/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HardwareTestMode/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HostPowerManagement/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MagicCombo/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-USB-Quirks/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-SpaceCadet/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LayerNames/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-OneShot.h: [Kaleidoscope-OneShot@0.0.0]
+ResolveLibrary(Kaleidoscope-OneShot.h)
+  -> candidates: [Kaleidoscope-OneShot@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-DefaultLEDModeConfig/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HardwareTestMode/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HostPowerManagement/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MagicCombo/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-USB-Quirks/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-SpaceCadet/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LayerNames/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-MacroPirate.h: [Kaleidoscope-MacroPirate@0.0.0]
+ResolveLibrary(Kaleidoscope-MacroPirate.h)
+  -> candidates: [Kaleidoscope-MacroPirate@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-DefaultLEDModeConfig/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HardwareTestMode/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HostPowerManagement/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MagicCombo/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-USB-Quirks/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-SpaceCadet/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LayerNames/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-Macros.h: [Kaleidoscope-Macros@0.0.0]
+ResolveLibrary(Kaleidoscope-Macros.h)
+  -> candidates: [Kaleidoscope-Macros@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-DefaultLEDModeConfig/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HardwareTestMode/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HostPowerManagement/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MagicCombo/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-USB-Quirks/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-SpaceCadet/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LayerNames/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Alternatives for Kaleidoscope-MacroSupport.h: [Kaleidoscope-MacroSupport@0.0.0]
+ResolveLibrary(Kaleidoscope-MacroSupport.h)
+  -> candidates: [Kaleidoscope-MacroSupport@0.0.0]
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-DefaultLEDModeConfig/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HardwareTestMode/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HostPowerManagement/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MagicCombo/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-USB-Quirks/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-SpaceCadet/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LayerNames/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /dev/null
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/KeyEvent.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/LiveKeys.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/bitfields.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/DefaultHIDReportConsumer.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Logging.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/VirtualHID.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/bootloader/avr/FLIP.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/hooks.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/layers.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LEDUtils.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope_internal/LEDModeManager.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope_internal/device.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope_internal/sketch_exploration/sketch_exploration.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src/kaleidoscope/device/keyboardio/Model01.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src/kaleidoscope/device/keyboardio/twi.c
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src/kaleidoscope/driver/keyboardio/Model01Side.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src/BootKeyboard/BootKeyboard.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src/HID.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src/HIDReportObserver.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src/MultiReport/AbsoluteMouse.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src/MultiReport/ConsumerControl.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src/MultiReport/Gamepad.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src/MultiReport/Keyboard.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src/MultiReport/Mouse.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src/MultiReport/SystemControl.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src/SingleReport/SingleAbsoluteMouse.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src/arch/avr.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src/arch/gd32.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src/arch/samd.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src/kaleidoscope/plugin/EEPROM-Settings/crc.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src/kaleidoscope/plugin/EEPROM-Settings.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src/kaleidoscope/plugin/EEPROM-Keymap.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src/kaleidoscope/plugin/FocusSerial.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src/kaleidoscope/plugin/LEDEffect-BootGreeting.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe/src/kaleidoscope/plugin/LEDEffect-Breathe.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase/src/kaleidoscope/plugin/LEDEffect-Chase.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow/src/kaleidoscope/plugin/LEDEffect-Rainbow.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme/src/kaleidoscope/plugin/LED-Palette-Theme.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs/src/kaleidoscope/plugin/IdleLEDs.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-DefaultLEDModeConfig/src/kaleidoscope/plugin/DefaultLEDModeConfig.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HardwareTestMode/src/kaleidoscope/plugin/HardwareTestMode.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HostPowerManagement/src/kaleidoscope/plugin/HostPowerManagement.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MagicCombo/src/kaleidoscope/plugin/MagicCombo.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-USB-Quirks/src/kaleidoscope/plugin/USB-Quirks.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-SpaceCadet/src/kaleidoscope/plugin/SpaceCadet.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-SpaceCadet/src/kaleidoscope/plugin/SpaceCadetConfig.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LayerNames/src/kaleidoscope/plugin/LayerNames.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src/kaleidoscope/plugin/TopsyTurvy.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot/src/kaleidoscope/plugin/OneShot.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot/src/kaleidoscope/plugin/OneShotConfig.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros/src/kaleidoscope/plugin/Macros.cpp
+Using cached library dependencies for file: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src/kaleidoscope/plugin/MacroSupport.cpp
+Generating function prototypes...
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -w -x c++ -E -CC -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-DefaultLEDModeConfig/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HardwareTestMode/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HostPowerManagement/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MagicCombo/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-USB-Quirks/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-SpaceCadet/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LayerNames/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/preproc/ctags_target_for_gcc_minus_e.cpp
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/data/packages/builtin/tools/ctags/5.8-arduino11/ctags -u --language-force=c++ -f - --c++-kinds=svpf --fields=KSTtzns --line-directives /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/preproc/ctags_target_for_gcc_minus_e.cpp
+Compiling sketch...
+g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-statics -MMD -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-qualifiers -DKALEIDOSCOPE_VIRTUAL_BUILD=1 -DKEYBOARDIOHID_BUILD_WITHOUT_HID=1 -DUSBCON=dummy -DARDUINO_ARCH_AVR=1 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googletest/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/testing/googletest/googlemock/include -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/Kaleidoscope/fake-gtest/src -DARDUINO=10607 -DARDUINO_AVR_MODEL01 -DARDUINO_ARCH_VIRTUAL -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" -Woverloaded-virtual -Wno-unused-parameter -Wno-unused-variable -Wno-type-limits -DUSB_VID=0x1209 -DUSB_PID=0x2301 "-DUSB_MANUFACTURER=\"Keyboardio\"" "-DUSB_PRODUCT=\"Model 01\"" "-DKALEIDOSCOPE_HARDWARE_H=\"Kaleidoscope-Hardware-Model01.h\"" -DTWI_BUFFER_LENGTH=32 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/variants/model01 -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/libraries/KeyboardioHID/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-DefaultLEDModeConfig/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HardwareTestMode/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HostPowerManagement/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MagicCombo/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-USB-Quirks/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-SpaceCadet/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LayerNames/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros/src -I/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp -o /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp.o
+Compiling libraries...
+Compiling library "Kaleidoscope"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope/kaleidoscope/bitfields.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope/kaleidoscope/LiveKeys.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope/kaleidoscope/device/virtual/DefaultHIDReportConsumer.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope/kaleidoscope/device/virtual/Logging.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope/kaleidoscope/device/virtual/VirtualHID.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope/kaleidoscope/device/virtual/Virtual.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope/kaleidoscope/driver/bootloader/avr/FLIP.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope/kaleidoscope/plugin/LEDControl/LEDUtils.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope/kaleidoscope/layers.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope/kaleidoscope/hooks.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope/kaleidoscope/KeyEvent.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope/kaleidoscope/plugin/LEDControl/LED-Off.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope/kaleidoscope/Runtime.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope/kaleidoscope_internal/sketch_exploration/sketch_exploration.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope/kaleidoscope_internal/device.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope/kaleidoscope/plugin/LEDControl.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope/kaleidoscope_internal/LEDModeManager.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope/kaleidoscope/plugin/LEDModeInterface.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope/Kaleidoscope.a
+Compiling library "Kaleidoscope-Hardware-Model01"
+Compiling library "Kaleidoscope-Hardware-Keyboardio-Model01"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-Hardware-Keyboardio-Model01/kaleidoscope/device/keyboardio/twi.c.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-Hardware-Keyboardio-Model01/kaleidoscope/driver/keyboardio/Model01Side.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-Hardware-Keyboardio-Model01/kaleidoscope/device/keyboardio/Model01.cpp.o
+Compiling library "KeyboardioHID"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/KeyboardioHID/HIDReportObserver.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/KeyboardioHID/HID.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/KeyboardioHID/BootKeyboard/BootKeyboard.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/KeyboardioHID/MultiReport/Mouse.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/KeyboardioHID/MultiReport/Gamepad.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/KeyboardioHID/MultiReport/ConsumerControl.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/KeyboardioHID/MultiReport/AbsoluteMouse.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/KeyboardioHID/MultiReport/SystemControl.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/KeyboardioHID/arch/avr.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/KeyboardioHID/MultiReport/Keyboard.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/KeyboardioHID/arch/gd32.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/KeyboardioHID/SingleReport/SingleAbsoluteMouse.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/KeyboardioHID/arch/samd.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/KeyboardioHID/KeyboardioHID.a
+Compiling library "Kaleidoscope-EEPROM-Settings"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-EEPROM-Settings/kaleidoscope/plugin/EEPROM-Settings/crc.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-EEPROM-Settings/kaleidoscope/plugin/EEPROM-Settings.cpp.o
+Compiling library "Kaleidoscope-EEPROM-Keymap"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-EEPROM-Keymap/kaleidoscope/plugin/EEPROM-Keymap.cpp.o
+Compiling library "Kaleidoscope-FocusSerial"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-FocusSerial/kaleidoscope/plugin/FocusSerial.cpp.o
+Compiling library "Kaleidoscope-FirmwareVersion"
+Compiling library "Kaleidoscope-LEDEffect-BootGreeting"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-LEDEffect-BootGreeting/kaleidoscope/plugin/LEDEffect-BootGreeting.cpp.o
+Compiling library "Kaleidoscope-LEDEffect-Breathe"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-LEDEffect-Breathe/kaleidoscope/plugin/LEDEffect-Breathe.cpp.o
+Compiling library "Kaleidoscope-LEDEffect-Chase"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-LEDEffect-Chase/kaleidoscope/plugin/LEDEffect-Chase.cpp.o
+Compiling library "Kaleidoscope-LEDEffect-Rainbow"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-LEDEffect-Rainbow/kaleidoscope/plugin/LEDEffect-Rainbow.cpp.o
+Compiling library "Kaleidoscope-LED-Palette-Theme"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-LED-Palette-Theme/kaleidoscope/plugin/LED-Palette-Theme.cpp.o
+Compiling library "Kaleidoscope-IdleLEDs"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-IdleLEDs/kaleidoscope/plugin/IdleLEDs.cpp.o
+Compiling library "Kaleidoscope-DefaultLEDModeConfig"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-DefaultLEDModeConfig/kaleidoscope/plugin/DefaultLEDModeConfig.cpp.o
+Compiling library "Kaleidoscope-HardwareTestMode"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-HardwareTestMode/kaleidoscope/plugin/HardwareTestMode.cpp.o
+Compiling library "Kaleidoscope-HostPowerManagement"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-HostPowerManagement/kaleidoscope/plugin/HostPowerManagement.cpp.o
+Compiling library "Kaleidoscope-MagicCombo"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-MagicCombo/kaleidoscope/plugin/MagicCombo.cpp.o
+Compiling library "Kaleidoscope-USB-Quirks"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-USB-Quirks/kaleidoscope/plugin/USB-Quirks.cpp.o
+Compiling library "Kaleidoscope-SpaceCadet"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-SpaceCadet/kaleidoscope/plugin/SpaceCadet.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-SpaceCadet/kaleidoscope/plugin/SpaceCadetConfig.cpp.o
+Compiling library "Kaleidoscope-Ranges"
+Compiling library "Kaleidoscope-LayerNames"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-LayerNames/kaleidoscope/plugin/LayerNames.cpp.o
+Compiling library "Kaleidoscope-TopsyTurvy"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-TopsyTurvy/kaleidoscope/plugin/TopsyTurvy.cpp.o
+Compiling library "Kaleidoscope-OneShot"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-OneShot/kaleidoscope/plugin/OneShot.cpp.o
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-OneShot/kaleidoscope/plugin/OneShotConfig.cpp.o
+Compiling library "Kaleidoscope-MacroPirate"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-MacroPirate/kaleidoscope/plugin/MacroPirate.cpp.o
+Compiling library "Kaleidoscope-Macros"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-Macros/kaleidoscope/plugin/Macros.cpp.o
+Compiling library "Kaleidoscope-MacroSupport"
+Using previously compiled file: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-MacroSupport/kaleidoscope/plugin/MacroSupport.cpp.o
+Compiling core...
+Using precompiled core: /tmp/kaleidoscope-matmal01/arduino-cores/core/core_keyboardio_virtual_model01_df9adc9ace6acb3308b342da2564a467.a
+Linking everything together...
+ar rcT
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/personal-config.ino.a
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/sketch/personal-config.ino.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope/Kaleidoscope.a
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-Hardware-Keyboardio-Model01/kaleidoscope/device/keyboardio/Model01.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-Hardware-Keyboardio-Model01/kaleidoscope/device/keyboardio/twi.c.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-Hardware-Keyboardio-Model01/kaleidoscope/driver/keyboardio/Model01Side.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/KeyboardioHID/KeyboardioHID.a
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-EEPROM-Settings/kaleidoscope/plugin/EEPROM-Settings.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-EEPROM-Settings/kaleidoscope/plugin/EEPROM-Settings/crc.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-EEPROM-Keymap/kaleidoscope/plugin/EEPROM-Keymap.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-FocusSerial/kaleidoscope/plugin/FocusSerial.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-LEDEffect-BootGreeting/kaleidoscope/plugin/LEDEffect-BootGreeting.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-LEDEffect-Breathe/kaleidoscope/plugin/LEDEffect-Breathe.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-LEDEffect-Chase/kaleidoscope/plugin/LEDEffect-Chase.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-LEDEffect-Rainbow/kaleidoscope/plugin/LEDEffect-Rainbow.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-LED-Palette-Theme/kaleidoscope/plugin/LED-Palette-Theme.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-IdleLEDs/kaleidoscope/plugin/IdleLEDs.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-DefaultLEDModeConfig/kaleidoscope/plugin/DefaultLEDModeConfig.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-HardwareTestMode/kaleidoscope/plugin/HardwareTestMode.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-HostPowerManagement/kaleidoscope/plugin/HostPowerManagement.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-MagicCombo/kaleidoscope/plugin/MagicCombo.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-USB-Quirks/kaleidoscope/plugin/USB-Quirks.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-SpaceCadet/kaleidoscope/plugin/SpaceCadet.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-SpaceCadet/kaleidoscope/plugin/SpaceCadetConfig.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-LayerNames/kaleidoscope/plugin/LayerNames.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-TopsyTurvy/kaleidoscope/plugin/TopsyTurvy.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-OneShot/kaleidoscope/plugin/OneShot.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-OneShot/kaleidoscope/plugin/OneShotConfig.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-MacroPirate/kaleidoscope/plugin/MacroPirate.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-Macros/kaleidoscope/plugin/Macros.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/libraries/Kaleidoscope-MacroSupport/kaleidoscope/plugin/MacroSupport.cpp.o
+/tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/../../arduino-cores/core/core_keyboardio_virtual_model01_df9adc9ace6acb3308b342da2564a467.a
+ar: /tmp/kaleidoscope-matmal01/build/3312643-personal-config.ino/personal-config.ino.a: No such file or directory
+
+Using library Kaleidoscope at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope 
+Using library Kaleidoscope-Hardware-Model01 at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01 
+Using library Kaleidoscope-Hardware-Keyboardio-Model01 at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01 
+Using library KeyboardioHID at version 0.0.1 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID 
+Using library Kaleidoscope-EEPROM-Settings at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings 
+Using library Kaleidoscope-EEPROM-Keymap at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap 
+Using library Kaleidoscope-FocusSerial at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial 
+Using library Kaleidoscope-FirmwareVersion at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion 
+Using library Kaleidoscope-LEDEffect-BootGreeting at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting 
+Using library Kaleidoscope-LEDEffect-Breathe at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe 
+Using library Kaleidoscope-LEDEffect-Chase at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase 
+Using library Kaleidoscope-LEDEffect-Rainbow at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow 
+Using library Kaleidoscope-LED-Palette-Theme at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme 
+Using library Kaleidoscope-IdleLEDs at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs 
+Using library Kaleidoscope-DefaultLEDModeConfig at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-DefaultLEDModeConfig 
+Using library Kaleidoscope-HardwareTestMode at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HardwareTestMode 
+Using library Kaleidoscope-HostPowerManagement at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HostPowerManagement 
+Using library Kaleidoscope-MagicCombo at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MagicCombo 
+Using library Kaleidoscope-USB-Quirks at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-USB-Quirks 
+Using library Kaleidoscope-SpaceCadet at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-SpaceCadet 
+Using library Kaleidoscope-Ranges at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges 
+Using library Kaleidoscope-LayerNames at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LayerNames 
+Using library Kaleidoscope-TopsyTurvy at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy 
+Using library Kaleidoscope-OneShot at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot 
+Using library Kaleidoscope-MacroPirate at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate 
+Using library Kaleidoscope-Macros at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros 
+Using library Kaleidoscope-MacroSupport at version 0.0.0 in folder: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport 
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
+[93mKaleidoscope-EEPROM-Keymap[0m               0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap[0m                           
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+[93mKaleidoscope-FirmwareVersion[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion[0m                         
+[93mKaleidoscope-LEDEffect-BootGreeting[0m      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting[0m                  
+[93mKaleidoscope-LEDEffect-Breathe[0m           0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe[0m                       
+[93mKaleidoscope-LEDEffect-Chase[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase[0m                         
+[93mKaleidoscope-LEDEffect-Rainbow[0m           0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow[0m                       
+[93mKaleidoscope-LED-Palette-Theme[0m           0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme[0m                       
+[93mKaleidoscope-IdleLEDs[0m                    0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs[0m                                
+[93mKaleidoscope-DefaultLEDModeConfig[0m        0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-DefaultLEDModeConfig[0m                    
+[93mKaleidoscope-HardwareTestMode[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HardwareTestMode[0m                        
+[93mKaleidoscope-HostPowerManagement[0m         0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HostPowerManagement[0m                     
+[93mKaleidoscope-MagicCombo[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MagicCombo[0m                              
+[93mKaleidoscope-USB-Quirks[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-USB-Quirks[0m                              
+[93mKaleidoscope-SpaceCadet[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-SpaceCadet[0m                              
+[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
+[93mKaleidoscope-LayerNames[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LayerNames[0m                              
+[93mKaleidoscope-TopsyTurvy[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy[0m                              
+[93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
+[93mKaleidoscope-MacroPirate[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                             
+[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
+[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+Error during build: exit status 1
+make[3]: *** [/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/etc/makefiles/sketch.mk:168: compile] Error 1
+make[2]: *** [/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/makefiles/testcase.mk:82: compile-sketch] Error 2
+make[1]: *** [Makefile:96: personal-config] Error 2
+make[1]: Leaving directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
+make: *** [Makefile:82: simulator-tests] Error 2
+Kaleidoscope [08:52:12] $ 
 vshcmd: > make clean && make simulator-tests
 vshcmd: > make simulator-tests
 Building in quiet mode. For a lot more information, add 'VERBOSE=1' to the beginning of your call to make
@@ -1566,7 +1259,7 @@ Running test issues/1061
 [93mKaleidoscope-LayerNames[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LayerNames[0m                              
 [93mKaleidoscope-TopsyTurvy[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy[0m                              
 [93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
-[93mKaleidoscope-MacrosOnTheFly[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly[0m                          
+[93mKaleidoscope-MacroPirate[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                          
 [93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
 [93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
 
@@ -2166,7 +1859,7 @@ Running test plugins/WinKeyToggle/basic
 [93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
 [93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
 [93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-MacrosOnTheFly[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly[0m                          
+[93mKaleidoscope-MacroPirate[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                          
 [93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
 [93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
 [93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
@@ -2176,25 +1869,25 @@ Running test plugins/WinKeyToggle/basic
 [93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
 
 
-Running test plugins/MacrosOnTheFly/BasicRepeat
+Running test plugins/MacroPirate/BasicRepeat
 [==========] Running 7 tests from 1 test suite.
 [----------] Global test environment set-up.
 [----------] 7 tests from GeneratedKTest
 [ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/BasicRepeat/test.ktest
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/BasicRepeat/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_MacrosOnTheFlyNothingRecorded
-[       OK ] GeneratedKTest.1_MacrosOnTheFlyNothingRecorded (0 ms)
-[ RUN      ] GeneratedKTest.2_MacrosOnTheFlySimpleRecording
-[       OK ] GeneratedKTest.2_MacrosOnTheFlySimpleRecording (0 ms)
-[ RUN      ] GeneratedKTest.3_MacrosOnTheFlyHeldDuringREC
-[       OK ] GeneratedKTest.3_MacrosOnTheFlyHeldDuringREC (0 ms)
-[ RUN      ] GeneratedKTest.4_MacrosOnTheFlyMultiPressDuringRecord
-[       OK ] GeneratedKTest.4_MacrosOnTheFlyMultiPressDuringRecord (0 ms)
-[ RUN      ] GeneratedKTest.5_MacrosOnTheFlyHeldAfterExiting
-[       OK ] GeneratedKTest.5_MacrosOnTheFlyHeldAfterExiting (0 ms)
-[ RUN      ] GeneratedKTest.6_MacrosOnTheFlyKeyHeldDownForLongTime
-[       OK ] GeneratedKTest.6_MacrosOnTheFlyKeyHeldDownForLongTime (5 ms)
+[ RUN      ] GeneratedKTest.1_MacroPirateNothingRecorded
+[       OK ] GeneratedKTest.1_MacroPirateNothingRecorded (0 ms)
+[ RUN      ] GeneratedKTest.2_MacroPirateSimpleRecording
+[       OK ] GeneratedKTest.2_MacroPirateSimpleRecording (0 ms)
+[ RUN      ] GeneratedKTest.3_MacroPirateHeldDuringREC
+[       OK ] GeneratedKTest.3_MacroPirateHeldDuringREC (0 ms)
+[ RUN      ] GeneratedKTest.4_MacroPirateMultiPressDuringRecord
+[       OK ] GeneratedKTest.4_MacroPirateMultiPressDuringRecord (0 ms)
+[ RUN      ] GeneratedKTest.5_MacroPirateHeldAfterExiting
+[       OK ] GeneratedKTest.5_MacroPirateHeldAfterExiting (0 ms)
+[ RUN      ] GeneratedKTest.6_MacroPirateKeyHeldDownForLongTime
+[       OK ] GeneratedKTest.6_MacroPirateKeyHeldDownForLongTime (5 ms)
 [----------] 7 tests from GeneratedKTest (6 ms total)
 
 [----------] Global test environment tear-down
@@ -2206,7 +1899,7 @@ Running test plugins/MacrosOnTheFly/BasicRepeat
 [93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
 [93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
 [93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-MacrosOnTheFly[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly[0m                          
+[93mKaleidoscope-MacroPirate[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                          
 [93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
 [93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
 [93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
@@ -2216,27 +1909,27 @@ Running test plugins/MacrosOnTheFly/BasicRepeat
 [93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
 
 
-Running test plugins/MacrosOnTheFly/EdgeCases
+Running test plugins/MacroPirate/EdgeCases
 [==========] Running 19 tests from 1 test suite.
 [----------] Global test environment set-up.
 [----------] 19 tests from ManualTests
 [ RUN      ] ManualTests.0_test
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/test/manual-testcases.cpp
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/test/manual-testcases.cpp
 [       OK ] ManualTests.0_test (0 ms)
-[ RUN      ] ManualTests.1_MacrosOnTheFlyTestHelpers
-[       OK ] ManualTests.1_MacrosOnTheFlyTestHelpers (0 ms)
+[ RUN      ] ManualTests.1_MacroPirateTestHelpers
+[       OK ] ManualTests.1_MacroPirateTestHelpers (0 ms)
 [ RUN      ] ManualTests.2_ReplayRepeat
 [       OK ] ManualTests.2_ReplayRepeat (1 ms)
-[ RUN      ] ManualTests.3_MacrosOnTheFlyNoHeldOverPlay
-[       OK ] ManualTests.3_MacrosOnTheFlyNoHeldOverPlay (0 ms)
-[ RUN      ] ManualTests.4_MacrosOnTheFlyRecursiveReplay
-[       OK ] ManualTests.4_MacrosOnTheFlyRecursiveReplay (0 ms)
-[ RUN      ] ManualTests.5_MacrosOnTheFlyRecursiveAvoidance
-[       OK ] ManualTests.5_MacrosOnTheFlyRecursiveAvoidance (1 ms)
-[ RUN      ] ManualTests.5_MacrosOnTheFlyAvoidKeyUp
-[       OK ] ManualTests.5_MacrosOnTheFlyAvoidKeyUp (0 ms)
-[ RUN      ] ManualTests.6_MacrosOnTheFlyBailOut
-[       OK ] ManualTests.6_MacrosOnTheFlyBailOut (0 ms)
+[ RUN      ] ManualTests.3_MacroPirateNoHeldOverPlay
+[       OK ] ManualTests.3_MacroPirateNoHeldOverPlay (0 ms)
+[ RUN      ] ManualTests.4_MacroPirateRecursiveReplay
+[       OK ] ManualTests.4_MacroPirateRecursiveReplay (0 ms)
+[ RUN      ] ManualTests.5_MacroPirateRecursiveAvoidance
+[       OK ] ManualTests.5_MacroPirateRecursiveAvoidance (1 ms)
+[ RUN      ] ManualTests.5_MacroPirateAvoidKeyUp
+[       OK ] ManualTests.5_MacroPirateAvoidKeyUp (0 ms)
+[ RUN      ] ManualTests.6_MacroPirateBailOut
+[       OK ] ManualTests.6_MacroPirateBailOut (0 ms)
 [ RUN      ] ManualTests.7_CompressionChecks
 [ INFO     ] Printing Macro: A
 	TAPCODE 4,TAPCODE 13,
@@ -3674,7 +3367,7 @@ In file included from test/manual-tests.cpp:5:
 [93mKaleidoscope-LayerNames[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LayerNames[0m                              
 [93mKaleidoscope-TopsyTurvy[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy[0m                              
 [93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
-[93mKaleidoscope-MacrosOnTheFly[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly[0m                          
+[93mKaleidoscope-MacroPirate[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                          
 [93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
 [93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
 
@@ -3858,7 +3551,7 @@ In file included from test/manual-tests.cpp:5:
 [93mKaleidoscope-LayerNames[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LayerNames[0m                              
 [93mKaleidoscope-TopsyTurvy[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy[0m                              
 [93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
-[93mKaleidoscope-MacrosOnTheFly[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly[0m                          
+[93mKaleidoscope-MacroPirate[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                          
 [93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
 [93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
 
@@ -5714,7 +5407,7 @@ Observed keyboard report at 405ms: { }
 [93mKaleidoscope-LayerNames[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LayerNames[0m                              
 [93mKaleidoscope-TopsyTurvy[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy[0m                              
 [93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
-[93mKaleidoscope-MacrosOnTheFly[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly[0m                          
+[93mKaleidoscope-MacroPirate[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                          
 [93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
 [93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
 
@@ -7424,7 +7117,7 @@ Observed keyboard report at 75ms: { }
 [93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
 [93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
 [93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-MacrosOnTheFly[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly[0m                          
+[93mKaleidoscope-MacroPirate[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                          
 [93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
 [93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
 [93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
@@ -7434,14 +7127,14 @@ Observed keyboard report at 75ms: { }
 [93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
 
 
-Running test plugins/MacrosOnTheFly/BasicRepeat
+Running test plugins/MacroPirate/BasicRepeat
 [==========] Running 7 tests from 1 test suite.
 [----------] Global test environment set-up.
 [----------] 7 tests from GeneratedKTest
 [ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/BasicRepeat/test.ktest
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/BasicRepeat/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_MacrosOnTheFlyNothingRecorded
+[ RUN      ] GeneratedKTest.1_MacroPirateNothingRecorded
 Expected keyboard report at 11ms: { 4 }
 Observed keyboard report at 11ms: { 4 }
 Expected keyboard report at 13ms: { }
@@ -7454,8 +7147,8 @@ Expected keyboard report at 29ms: { d }
 Observed keyboard report at 29ms: { d }
 Expected keyboard report at 31ms: { }
 Observed keyboard report at 31ms: { }
-[       OK ] GeneratedKTest.1_MacrosOnTheFlyNothingRecorded (0 ms)
-[ RUN      ] GeneratedKTest.2_MacrosOnTheFlySimpleRecording
+[       OK ] GeneratedKTest.1_MacroPirateNothingRecorded (0 ms)
+[ RUN      ] GeneratedKTest.2_MacroPirateSimpleRecording
 Expected keyboard report at 48ms: { d }
 Observed keyboard report at 48ms: { d }
 Expected keyboard report at 49ms: { }
@@ -7476,14 +7169,14 @@ Expected keyboard report at 83ms: { d }
 Observed keyboard report at 83ms: { d }
 Expected keyboard report at 83ms: { }
 Observed keyboard report at 83ms: { }
-[       OK ] GeneratedKTest.2_MacrosOnTheFlySimpleRecording (0 ms)
-[ RUN      ] GeneratedKTest.3_MacrosOnTheFlyHeldDuringREC
+[       OK ] GeneratedKTest.2_MacroPirateSimpleRecording (0 ms)
+[ RUN      ] GeneratedKTest.3_MacroPirateHeldDuringREC
 Expected keyboard report at 101ms: { d }
 Observed keyboard report at 101ms: { d }
 Expected keyboard report at 102ms: { }
 Observed keyboard report at 102ms: { }
-[       OK ] GeneratedKTest.3_MacrosOnTheFlyHeldDuringREC (0 ms)
-[ RUN      ] GeneratedKTest.4_MacrosOnTheFlyMultiPressDuringRecord
+[       OK ] GeneratedKTest.3_MacroPirateHeldDuringREC (0 ms)
+[ RUN      ] GeneratedKTest.4_MacroPirateMultiPressDuringRecord
 Expected keyboard report at 112ms: { e1 }
 Observed keyboard report at 112ms: { e1 }
 Expected keyboard report at 113ms: { d e1 }
@@ -7536,8 +7229,8 @@ Expected keyboard report at 164ms: { e1 }
 Observed keyboard report at 164ms: { e1 }
 Expected keyboard report at 164ms: { }
 Observed keyboard report at 164ms: { }
-[       OK ] GeneratedKTest.4_MacrosOnTheFlyMultiPressDuringRecord (1 ms)
-[ RUN      ] GeneratedKTest.5_MacrosOnTheFlyHeldAfterExiting
+[       OK ] GeneratedKTest.4_MacroPirateMultiPressDuringRecord (1 ms)
+[ RUN      ] GeneratedKTest.5_MacroPirateHeldAfterExiting
 Expected keyboard report at 174ms: { d }
 Observed keyboard report at 174ms: { d }
 Expected keyboard report at 177ms: { }
@@ -7546,8 +7239,8 @@ Expected keyboard report at 182ms: { d }
 Observed keyboard report at 182ms: { d }
 Expected keyboard report at 182ms: { }
 Observed keyboard report at 182ms: { }
-[       OK ] GeneratedKTest.5_MacrosOnTheFlyHeldAfterExiting (0 ms)
-[ RUN      ] GeneratedKTest.6_MacrosOnTheFlyKeyHeldDownForLongTime
+[       OK ] GeneratedKTest.5_MacroPirateHeldAfterExiting (0 ms)
+[ RUN      ] GeneratedKTest.6_MacroPirateKeyHeldDownForLongTime
 Expected keyboard report at 187ms: { 4 }
 Observed keyboard report at 187ms: { 4 }
 Expected keyboard report at 2188ms: { }
@@ -7560,7 +7253,7 @@ Expected keyboard report at 4202ms: { 4 }
 Observed keyboard report at 4202ms: { 4 }
 Expected keyboard report at 4202ms: { }
 Observed keyboard report at 4202ms: { }
-[       OK ] GeneratedKTest.6_MacrosOnTheFlyKeyHeldDownForLongTime (5 ms)
+[       OK ] GeneratedKTest.6_MacroPirateKeyHeldDownForLongTime (5 ms)
 [----------] 7 tests from GeneratedKTest (7 ms total)
 
 [----------] Global test environment tear-down
@@ -7572,7 +7265,7 @@ Observed keyboard report at 4202ms: { }
 [93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
 [93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
 [93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-MacrosOnTheFly[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly[0m                          
+[93mKaleidoscope-MacroPirate[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                          
 [93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
 [93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
 [93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
@@ -7582,14 +7275,14 @@ Observed keyboard report at 4202ms: { }
 [93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
 
 
-Running test plugins/MacrosOnTheFly/EdgeCases
+Running test plugins/MacroPirate/EdgeCases
 [==========] Running 19 tests from 1 test suite.
 [----------] Global test environment set-up.
 [----------] 19 tests from ManualTests
 [ RUN      ] ManualTests.0_test
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/test/manual-testcases.cpp
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/test/manual-testcases.cpp
 [       OK ] ManualTests.0_test (0 ms)
-[ RUN      ] ManualTests.1_MacrosOnTheFlyTestHelpers
+[ RUN      ] ManualTests.1_MacroPirateTestHelpers
 Expected keyboard report at 11ms: { 4 }
 Observed keyboard report at 11ms: { 4 }
 Expected keyboard report at 12ms: { }
@@ -7602,7 +7295,7 @@ Expected keyboard report at 15ms: { 4 }
 Observed keyboard report at 15ms: { 4 }
 Expected keyboard report at 16ms: { }
 Observed keyboard report at 16ms: { }
-[       OK ] ManualTests.1_MacrosOnTheFlyTestHelpers (0 ms)
+[       OK ] ManualTests.1_MacroPirateTestHelpers (0 ms)
 [ RUN      ] ManualTests.2_ReplayRepeat
 Expected keyboard report at 21ms: { 5 }
 Observed keyboard report at 21ms: { 5 }
@@ -7677,7 +7370,7 @@ Observed keyboard report at 71ms: { d }
 Expected keyboard report at 71ms: { }
 Observed keyboard report at 71ms: { }
 [       OK ] ManualTests.2_ReplayRepeat (1 ms)
-[ RUN      ] ManualTests.3_MacrosOnTheFlyNoHeldOverPlay
+[ RUN      ] ManualTests.3_MacroPirateNoHeldOverPlay
 Expected keyboard report at 93ms: { 5 }
 Observed keyboard report at 93ms: { 5 }
 Expected keyboard report at 94ms: { }
@@ -7698,8 +7391,8 @@ Expected keyboard report at 109ms: { d }
 Observed keyboard report at 109ms: { d }
 Expected keyboard report at 114ms: { }
 Observed keyboard report at 114ms: { }
-[       OK ] ManualTests.3_MacrosOnTheFlyNoHeldOverPlay (0 ms)
-[ RUN      ] ManualTests.4_MacrosOnTheFlyRecursiveReplay
+[       OK ] ManualTests.3_MacroPirateNoHeldOverPlay (0 ms)
+[ RUN      ] ManualTests.4_MacroPirateRecursiveReplay
 Expected keyboard report at 129ms: { 5 }
 Observed keyboard report at 129ms: { 5 }
 Expected keyboard report at 130ms: { }
@@ -7756,8 +7449,8 @@ Expected keyboard report at 169ms: { d }
 Observed keyboard report at 169ms: { d }
 Expected keyboard report at 169ms: { }
 Observed keyboard report at 169ms: { }
-[       OK ] ManualTests.4_MacrosOnTheFlyRecursiveReplay (1 ms)
-[ RUN      ] ManualTests.5_MacrosOnTheFlyRecursiveAvoidance
+[       OK ] ManualTests.4_MacroPirateRecursiveReplay (1 ms)
+[ RUN      ] ManualTests.5_MacroPirateRecursiveAvoidance
 Expected keyboard report at 191ms: { 5 }
 Observed keyboard report at 191ms: { 5 }
 Expected keyboard report at 192ms: { }
@@ -7806,8 +7499,8 @@ Expected keyboard report at 243ms: { d }
 Observed keyboard report at 243ms: { d }
 Expected keyboard report at 243ms: { }
 Observed keyboard report at 243ms: { }
-[       OK ] ManualTests.5_MacrosOnTheFlyRecursiveAvoidance (1 ms)
-[ RUN      ] ManualTests.5_MacrosOnTheFlyAvoidKeyUp
+[       OK ] ManualTests.5_MacroPirateRecursiveAvoidance (1 ms)
+[ RUN      ] ManualTests.5_MacroPirateAvoidKeyUp
 Expected keyboard report at 265ms: { d }
 Observed keyboard report at 265ms: { d }
 Expected keyboard report at 266ms: { }
@@ -7816,9 +7509,9 @@ Expected keyboard report at 272ms: { d }
 Observed keyboard report at 272ms: { d }
 Expected keyboard report at 272ms: { }
 Observed keyboard report at 272ms: { }
-[       OK ] ManualTests.5_MacrosOnTheFlyAvoidKeyUp (0 ms)
-[ RUN      ] ManualTests.6_MacrosOnTheFlyBailOut
-[       OK ] ManualTests.6_MacrosOnTheFlyBailOut (0 ms)
+[       OK ] ManualTests.5_MacroPirateAvoidKeyUp (0 ms)
+[ RUN      ] ManualTests.6_MacroPirateBailOut
+[       OK ] ManualTests.6_MacroPirateBailOut (0 ms)
 [ RUN      ] ManualTests.7_CompressionChecks
 [ INFO     ] Printing Macro: A
 	TAPCODE 4,TAPCODE 13,
@@ -10468,7 +10161,7 @@ In file included from test/manual-tests.cpp:5:
 [93mKaleidoscope-LayerNames[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LayerNames[0m                              
 [93mKaleidoscope-TopsyTurvy[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy[0m                              
 [93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
-[93mKaleidoscope-MacrosOnTheFly[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly[0m                          
+[93mKaleidoscope-MacroPirate[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                          
 [93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
 [93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
 
@@ -11778,7 +11471,7 @@ In file included from test/manual-tests.cpp:5:
 [93mKaleidoscope-LayerNames[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LayerNames[0m                              
 [93mKaleidoscope-TopsyTurvy[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy[0m                              
 [93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
-[93mKaleidoscope-MacrosOnTheFly[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly[0m                          
+[93mKaleidoscope-MacroPirate[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                          
 [93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
 [93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
 
@@ -12344,7 +12037,7 @@ Running test plugins/WinKeyToggle/basic
 [93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
 [93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
 [93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-MacrosOnTheFly[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly[0m                          
+[93mKaleidoscope-MacroPirate[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                          
 [93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
 [93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
 [93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
@@ -12354,25 +12047,25 @@ Running test plugins/WinKeyToggle/basic
 [93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
 
 
-Running test plugins/MacrosOnTheFly/BasicRepeat
+Running test plugins/MacroPirate/BasicRepeat
 [==========] Running 7 tests from 1 test suite.
 [----------] Global test environment set-up.
 [----------] 7 tests from GeneratedKTest
 [ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/BasicRepeat/test.ktest
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/BasicRepeat/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_MacrosOnTheFlyNothingRecorded
-[       OK ] GeneratedKTest.1_MacrosOnTheFlyNothingRecorded (0 ms)
-[ RUN      ] GeneratedKTest.2_MacrosOnTheFlySimpleRecording
-[       OK ] GeneratedKTest.2_MacrosOnTheFlySimpleRecording (0 ms)
-[ RUN      ] GeneratedKTest.3_MacrosOnTheFlyHeldDuringREC
-[       OK ] GeneratedKTest.3_MacrosOnTheFlyHeldDuringREC (0 ms)
-[ RUN      ] GeneratedKTest.4_MacrosOnTheFlyMultiPressDuringRecord
-[       OK ] GeneratedKTest.4_MacrosOnTheFlyMultiPressDuringRecord (0 ms)
-[ RUN      ] GeneratedKTest.5_MacrosOnTheFlyHeldAfterExiting
-[       OK ] GeneratedKTest.5_MacrosOnTheFlyHeldAfterExiting (0 ms)
-[ RUN      ] GeneratedKTest.6_MacrosOnTheFlyKeyHeldDownForLongTime
-[       OK ] GeneratedKTest.6_MacrosOnTheFlyKeyHeldDownForLongTime (5 ms)
+[ RUN      ] GeneratedKTest.1_MacroPirateNothingRecorded
+[       OK ] GeneratedKTest.1_MacroPirateNothingRecorded (0 ms)
+[ RUN      ] GeneratedKTest.2_MacroPirateSimpleRecording
+[       OK ] GeneratedKTest.2_MacroPirateSimpleRecording (0 ms)
+[ RUN      ] GeneratedKTest.3_MacroPirateHeldDuringREC
+[       OK ] GeneratedKTest.3_MacroPirateHeldDuringREC (0 ms)
+[ RUN      ] GeneratedKTest.4_MacroPirateMultiPressDuringRecord
+[       OK ] GeneratedKTest.4_MacroPirateMultiPressDuringRecord (0 ms)
+[ RUN      ] GeneratedKTest.5_MacroPirateHeldAfterExiting
+[       OK ] GeneratedKTest.5_MacroPirateHeldAfterExiting (0 ms)
+[ RUN      ] GeneratedKTest.6_MacroPirateKeyHeldDownForLongTime
+[       OK ] GeneratedKTest.6_MacroPirateKeyHeldDownForLongTime (5 ms)
 [----------] 7 tests from GeneratedKTest (7 ms total)
 
 [----------] Global test environment tear-down
@@ -12384,7 +12077,7 @@ Running test plugins/MacrosOnTheFly/BasicRepeat
 [93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
 [93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
 [93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-MacrosOnTheFly[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly[0m                          
+[93mKaleidoscope-MacroPirate[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                          
 [93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
 [93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
 [93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
@@ -12394,27 +12087,27 @@ Running test plugins/MacrosOnTheFly/BasicRepeat
 [93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
 
 
-Running test plugins/MacrosOnTheFly/EdgeCases
+Running test plugins/MacroPirate/EdgeCases
 [==========] Running 17 tests from 1 test suite.
 [----------] Global test environment set-up.
 [----------] 17 tests from ManualTests
 [ RUN      ] ManualTests.0_test
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/test/manual-testcases.cpp
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/test/manual-testcases.cpp
 [       OK ] ManualTests.0_test (0 ms)
-[ RUN      ] ManualTests.1_MacrosOnTheFlyTestHelpers
-[       OK ] ManualTests.1_MacrosOnTheFlyTestHelpers (0 ms)
+[ RUN      ] ManualTests.1_MacroPirateTestHelpers
+[       OK ] ManualTests.1_MacroPirateTestHelpers (0 ms)
 [ RUN      ] ManualTests.2_ReplayRepeat
 [       OK ] ManualTests.2_ReplayRepeat (0 ms)
-[ RUN      ] ManualTests.3_MacrosOnTheFlyNoHeldOverPlay
-[       OK ] ManualTests.3_MacrosOnTheFlyNoHeldOverPlay (0 ms)
-[ RUN      ] ManualTests.4_MacrosOnTheFlyRecursiveReplay
-[       OK ] ManualTests.4_MacrosOnTheFlyRecursiveReplay (0 ms)
-[ RUN      ] ManualTests.5_MacrosOnTheFlyRecursiveAvoidance
-[       OK ] ManualTests.5_MacrosOnTheFlyRecursiveAvoidance (0 ms)
-[ RUN      ] ManualTests.5_MacrosOnTheFlyAvoidKeyUp
-[       OK ] ManualTests.5_MacrosOnTheFlyAvoidKeyUp (0 ms)
-[ RUN      ] ManualTests.6_MacrosOnTheFlyBailOut
-[       OK ] ManualTests.6_MacrosOnTheFlyBailOut (0 ms)
+[ RUN      ] ManualTests.3_MacroPirateNoHeldOverPlay
+[       OK ] ManualTests.3_MacroPirateNoHeldOverPlay (0 ms)
+[ RUN      ] ManualTests.4_MacroPirateRecursiveReplay
+[       OK ] ManualTests.4_MacroPirateRecursiveReplay (0 ms)
+[ RUN      ] ManualTests.5_MacroPirateRecursiveAvoidance
+[       OK ] ManualTests.5_MacroPirateRecursiveAvoidance (0 ms)
+[ RUN      ] ManualTests.5_MacroPirateAvoidKeyUp
+[       OK ] ManualTests.5_MacroPirateAvoidKeyUp (0 ms)
+[ RUN      ] ManualTests.6_MacroPirateBailOut
+[       OK ] ManualTests.6_MacroPirateBailOut (0 ms)
 [ RUN      ] ManualTests.7_CompressionChecks
 [ INFO     ] Printing Macro: A
 	TAPCODE 4,TAPCODE 13,
@@ -13132,7 +12825,7 @@ Running test issues/1113
 [  PASSED  ] 3 tests.
 make[1]: Leaving directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
 Kaleidoscope [06:47:02] $ 
-vshcmd: > make simulator-tests TEST_PATH=plugins/MacrosOnTheFly/
+vshcmd: > make simulator-tests TEST_PATH=plugins/MacroPirate/
 Building in quiet mode. For a lot more information, add 'VERBOSE=1' to the beginning of your call to make
 make -C tests all
 make[1]: Entering directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
@@ -13143,7 +12836,7 @@ make -C /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googlete
 [100%] Built target gtest_main
 make[3]: *** [/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/etc/makefiles/sketch.mk:168: compile] Interrupt
 make[2]: *** [/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/makefiles/testcase.mk:82: compile-sketch] Interrupt
-make[1]: *** [Makefile:96: plugins/MacrosOnTheFly/BasicRepeat] Interrupt
+make[1]: *** [Makefile:96: plugins/MacroPirate/BasicRepeat] Interrupt
 make: *** [Makefile:82: simulator-tests] Interrupt
 
 Kaleidoscope [18:22:29] $ 
@@ -13182,7 +12875,7 @@ make -C /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googlete
 [93mKaleidoscope-LayerNames[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LayerNames[0m                              
 [93mKaleidoscope-TopsyTurvy[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy[0m                              
 [93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
-[93mKaleidoscope-MacrosOnTheFly[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly[0m                          
+[93mKaleidoscope-MacroPirate[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                          
 [93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
 [93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
 
@@ -13822,7 +13515,7 @@ Observed keyboard report at 897ms: { }
 [  PASSED  ] 11 tests.
 make[1]: Leaving directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
 Kaleidoscope [12:28:46] $ 
-vshcmd: > make simulator-tests TEST_PATH=plugins/MacrosOnTheFly/EdgeCases
+vshcmd: > make simulator-tests TEST_PATH=plugins/MacroPirate/EdgeCases
 vshcmd: > # X
 Observed keyboard report at 840ms: { e1 }
 Observed keyboard report at 840ms: { 1e e1 }

@@ -1,8 +1,8 @@
-#include "kaleidoscope/plugin/MacrosOnTheFly.h"
+#include "kaleidoscope/plugin/MacroPirate.h"
 #include <Kaleidoscope-Ranges.h>
 #include "kaleidoscope/Runtime.h"               // for Runtime, Runtime_
 // This is a special exception to the rule of only including a plugin's
-// top-level header file, because MacrosOnTheFly doesn't depend on the Macros
+// top-level header file, because MacroPirate doesn't depend on the Macros
 // plugin itself; it's just using the same macro step definitions.
 #include "kaleidoscope/plugin/Macros/MacroSteps.h"  // for MACRO_ACTION_END, MACRO_ACTION_STEP_E...
 
@@ -32,7 +32,7 @@ static KeyAddr findThisKey(Key key) {
 }
 
 namespace plugin {
-  void MacrosOnTheFly::initialise(Key names[NUM_MACROS], Key layerShift) {
+  void MacroPirate::initialise(Key names[NUM_MACROS], Key layerShift) {
     /* TODO Would like to assert that we do not have anything problematic here.
      *      Since these keys should be hard-coded in the setup code, I think we
      *      could use some compile-time checking.  Would like to look into
@@ -57,17 +57,17 @@ constexpr uint8_t release_state = WAS_PRESSED | INJECTED;
 // -----------------------------------------------------------------------------
 // Public helper functions
 
-void MacrosOnTheFly::press(Key key) {
+void MacroPirate::press(Key key) {
   // This key may remain active for several subsequent events, so we need to
   // store it somewhere the runtime will pick it up.
   Runtime.handleKeyEvent(KeyEvent{findEmptyAddr(), press_state, key});
 }
 
-void MacrosOnTheFly::release(Key key) {
+void MacroPirate::release(Key key) {
   Runtime.handleKeyEvent(KeyEvent{findThisKey(key), release_state, key});
 }
 
-void MacrosOnTheFly::clear() {
+void MacroPirate::clear() {
   // Clear the active macro keys array.
   for (KeyAddr key_addr : KeyAddr::all()) {
     Key macro_key = live_keys[key_addr];
@@ -83,7 +83,7 @@ void MacrosOnTheFly::clear() {
   }
 }
 
-void MacrosOnTheFly::tap(Key key) {
+void MacroPirate::tap(Key key) {
   // No need to call `press()` & `release()`, because we're immediately
   // releasing the key after pressing it. It is possible for some other plugin
   // to insert an event in between, but very unlikely.
@@ -105,7 +105,7 @@ void MacrosOnTheFly::tap(Key key) {
     return false; \
   } while (0)
 
-  bool MacrosOnTheFly::recordKeystroke(KeyEvent &event) {
+  bool MacroPirate::recordKeystroke(KeyEvent &event) {
     /* Things we want to guarantee:
      *    No matter what keys we see, after having put a
      *    MACRO_ACTION_STEP_INTERVAL into our buffer the next thing we'd put
@@ -306,7 +306,7 @@ void MacrosOnTheFly::tap(Key key) {
 #undef CHECK_REMAINING_SPACE
 #undef numRemainingKeystrokes
 
-  bool MacrosOnTheFly::play(const uint8_t sIndex) {
+  bool MacroPirate::play(const uint8_t sIndex) {
     /* Avoid recursive macro playing (macro a plays macro b plays macro a and
      * similar).  */
     if (replaying & (1 << sIndex)) return false;
@@ -434,7 +434,7 @@ exit:
     }                                                                     \
   } while (false)
 
-  EventHandlerResult MacrosOnTheFly::doNewPlay(KeyEvent &event) {
+  EventHandlerResult MacroPirate::doNewPlay(KeyEvent &event) {
     bool success = false;
     uint8_t sIndex = IS_MACROPLAY(event) ? sLastPlayedSlot : sFindSlot (event.key);
     success = (sIndex != NUM_MACROS) && play(sIndex);
@@ -457,7 +457,7 @@ exit:
     return maskKeyAndRet (event);
   }
 
-  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+  EventHandlerResult MacroPirate::onKeyEvent(KeyEvent &event) {
     /*
      * 1) You can not record one macro while recording another macro.
      * 2) You can not store a macro under the MACROREC key.
@@ -634,22 +634,22 @@ exit:
     return doNewPlay (event);
   }
 
-  MacrosOnTheFly::State MacrosOnTheFly::currentState   = IDLE;
-  MacrosOnTheFly::Slot MacrosOnTheFly::slotRecord[NUM_MACROS]   = {0};
-  byte MacrosOnTheFly::macroStorage[MacrosOnTheFly::STORAGE_SIZE_IN_BYTES] = {0};
-  Key MacrosOnTheFly::userLayerShiftKey     = Key_NoKey;
-  uint8_t MacrosOnTheFly::sRecordingSlot    = NUM_MACROS;
-  uint8_t MacrosOnTheFly::sLastPlayedSlot   = NUM_MACROS;
-  uint8_t MacrosOnTheFly::delayInterval     = 0;
-  uint8_t MacrosOnTheFly::replaying         = 0;
-  uint8_t MacrosOnTheFly::leadingTapSeq     = MACRO_SIZE;
-  uint8_t MacrosOnTheFly::leadingTap        = MACRO_SIZE;
-  uint8_t MacrosOnTheFly::leadingTapCode    = MACRO_SIZE;
-  uint8_t MacrosOnTheFly::leadingTapCodeSeq = MACRO_SIZE;
-  uint8_t MacrosOnTheFly::latestKeyCodeDown = MACRO_SIZE;
-  uint8_t MacrosOnTheFly::latestKeyDown     = MACRO_SIZE;
+  MacroPirate::State MacroPirate::currentState   = IDLE;
+  MacroPirate::Slot MacroPirate::slotRecord[NUM_MACROS]   = {0};
+  byte MacroPirate::macroStorage[MacroPirate::STORAGE_SIZE_IN_BYTES] = {0};
+  Key MacroPirate::userLayerShiftKey     = Key_NoKey;
+  uint8_t MacroPirate::sRecordingSlot    = NUM_MACROS;
+  uint8_t MacroPirate::sLastPlayedSlot   = NUM_MACROS;
+  uint8_t MacroPirate::delayInterval     = 0;
+  uint8_t MacroPirate::replaying         = 0;
+  uint8_t MacroPirate::leadingTapSeq     = MACRO_SIZE;
+  uint8_t MacroPirate::leadingTap        = MACRO_SIZE;
+  uint8_t MacroPirate::leadingTapCode    = MACRO_SIZE;
+  uint8_t MacroPirate::leadingTapCodeSeq = MACRO_SIZE;
+  uint8_t MacroPirate::latestKeyCodeDown = MACRO_SIZE;
+  uint8_t MacroPirate::latestKeyDown     = MACRO_SIZE;
 
 }  // namespace plugin
 }  // namespace kaleidoscope
 
-kaleidoscope::plugin::MacrosOnTheFly MacrosOnTheFly;
+kaleidoscope::plugin::MacroPirate MacroPirate;

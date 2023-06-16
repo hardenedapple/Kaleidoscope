@@ -6,7 +6,7 @@
 #include "Kaleidoscope-Ranges/src/Kaleidoscope-Ranges.h"
 
 #define IN_TESTSUITE
-#include "Kaleidoscope-MacrosOnTheFly/src/Kaleidoscope-MacrosOnTheFly.h"
+#include "Kaleidoscope-MacroPirate/src/Kaleidoscope-MacroPirate.h"
 #undef IN_TESTSUITE
 
 SETUP_GOOGLETEST();
@@ -488,46 +488,46 @@ class PersonalConfig : public VirtualDeviceTest {
   template<typename Func>
   void forEachState(Func f) {
     std::vector<std::pair<std::string,
-			  ::kaleidoscope::plugin::MacrosOnTheFly::State_> >
+			  ::kaleidoscope::plugin::MacroPirate::State_> >
     stateEnteringCodes = {
-      { "", ::kaleidoscope::plugin::MacrosOnTheFly::State_::IDLE },
-      { "REC", ::kaleidoscope::plugin::MacrosOnTheFly::State_::PICKING_SLOT_FOR_REC },
-      { "PLAY", ::kaleidoscope::plugin::MacrosOnTheFly::State_::PICKING_SLOT_FOR_PLAY },
-      { "DELAY", ::kaleidoscope::plugin::MacrosOnTheFly::State_::SETTING_DELAY },
-      { "REC A", ::kaleidoscope::plugin::MacrosOnTheFly::State_::IDLE_AND_RECORDING },
-      { "REC A PLAY", ::kaleidoscope::plugin::MacrosOnTheFly::State_::PICKING_SLOT_FOR_PLAY_AND_RECORDING },
-      { "REC A DELAY", ::kaleidoscope::plugin::MacrosOnTheFly::State_::SETTING_DELAY_AND_RECORDING },
+      { "", ::kaleidoscope::plugin::MacroPirate::State_::IDLE },
+      { "REC", ::kaleidoscope::plugin::MacroPirate::State_::PICKING_SLOT_FOR_REC },
+      { "PLAY", ::kaleidoscope::plugin::MacroPirate::State_::PICKING_SLOT_FOR_PLAY },
+      { "DELAY", ::kaleidoscope::plugin::MacroPirate::State_::SETTING_DELAY },
+      { "REC A", ::kaleidoscope::plugin::MacroPirate::State_::IDLE_AND_RECORDING },
+      { "REC A PLAY", ::kaleidoscope::plugin::MacroPirate::State_::PICKING_SLOT_FOR_PLAY_AND_RECORDING },
+      { "REC A DELAY", ::kaleidoscope::plugin::MacroPirate::State_::SETTING_DELAY_AND_RECORDING },
     };
     for (auto stateSequence : stateEnteringCodes) {
       ClearState();
       runAction(stateSequence.first);
       /* Just to ensure this test is running as expected and actually setting
        * the relevant state as required.  */
-      ASSERT_EQ(::MacrosOnTheFly.currentState, stateSequence.second);
+      ASSERT_EQ(::MacroPirate.currentState, stateSequence.second);
       f();
     }
   }
 
-  std::pair<uint8_t, ::kaleidoscope::plugin::MacrosOnTheFly::Slot>
+  std::pair<uint8_t, ::kaleidoscope::plugin::MacroPirate::Slot>
     getMacroSlot(const std::string id) {
     const auto [ keyId, mapValue ] = *keyTypes.find(id);
     const auto [ addr,   event ] = mapValue;
 
-    uint8_t slotId = ::MacrosOnTheFly.sFindSlot(event);
-    assert(slotId != ::kaleidoscope::plugin::MacrosOnTheFly::NUM_MACROS);
-    ::kaleidoscope::plugin::MacrosOnTheFly::Slot slot = ::MacrosOnTheFly.slotRecord[slotId];
-    uint8_t bufferIdx = ::MacrosOnTheFly.mIndexFrom_s(slotId);
+    uint8_t slotId = ::MacroPirate.sFindSlot(event);
+    assert(slotId != ::kaleidoscope::plugin::MacroPirate::NUM_MACROS);
+    ::kaleidoscope::plugin::MacroPirate::Slot slot = ::MacroPirate.slotRecord[slotId];
+    uint8_t bufferIdx = ::MacroPirate.mIndexFrom_s(slotId);
     return { bufferIdx, slot };
   }
 
   void runOutOfMacroMemory (const std::string slot) {
     std::stringstream keysequence;
     keysequence << "REC ~" << slot;
-    for (int i = 0; i < ::kaleidoscope::plugin::MacrosOnTheFly::MACRO_SIZE; i++) {
+    for (int i = 0; i < ::kaleidoscope::plugin::MacroPirate::MACRO_SIZE; i++) {
       keysequence << " A";
     }
     runAction(keysequence.str());
-    ASSERT_EQ(::MacrosOnTheFly.currentState, ::kaleidoscope::plugin::MacrosOnTheFly::State_::IDLE);
+    ASSERT_EQ(::MacroPirate.currentState, ::kaleidoscope::plugin::MacroPirate::State_::IDLE);
     storeMacro(slot, "");
     /* Clear sequence.  */
     keysequence.str("");
@@ -566,7 +566,7 @@ class PersonalConfig : public VirtualDeviceTest {
     auto [ mIndex, slot ] = getMacroSlot(id);
     Key key;
     for (uint8_t i = 0; i < slot.numUsedKeystrokes; ) {
-      switch (::MacrosOnTheFly.macroStorage[mIndex + i++]) {
+      switch (::MacroPirate.macroStorage[mIndex + i++]) {
 	// Macro code claims these are not useful.
 	case MACRO_ACTION_STEP_EXPLICIT_REPORT:
 	case MACRO_ACTION_STEP_IMPLICIT_REPORT:
@@ -580,44 +580,44 @@ class PersonalConfig : public VirtualDeviceTest {
 	  break;
 	case MACRO_ACTION_STEP_INTERVAL:
 	  std::cout << "INTERVAL ";
-	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++];
+	  std::cout << +::MacroPirate.macroStorage[mIndex + i++];
 	  break;
 
 	case MACRO_ACTION_STEP_KEYDOWN:
 	  std::cout << "KEYDOWN ";
-	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++] << " ";
-	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++];
+	  std::cout << +::MacroPirate.macroStorage[mIndex + i++] << " ";
+	  std::cout << +::MacroPirate.macroStorage[mIndex + i++];
 	  break;
 	case MACRO_ACTION_STEP_KEYUP:
 	  std::cout << "KEYUP " ;
-	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++] << " ";
-	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++];
+	  std::cout << +::MacroPirate.macroStorage[mIndex + i++] << " ";
+	  std::cout << +::MacroPirate.macroStorage[mIndex + i++];
 	  break;
 	case MACRO_ACTION_STEP_TAP:
 	  std::cout << "TAP ";
-	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++] << " ";
-	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++];
+	  std::cout << +::MacroPirate.macroStorage[mIndex + i++] << " ";
+	  std::cout << +::MacroPirate.macroStorage[mIndex + i++];
 	  break;
 
 	case MACRO_ACTION_STEP_KEYCODEDOWN:
 	  std::cout << "KEYCODEDOWN ";
-	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++];
+	  std::cout << +::MacroPirate.macroStorage[mIndex + i++];
 	  break;
 	case MACRO_ACTION_STEP_KEYCODEUP:
 	  std::cout << "KEYCODEUP ";
-	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++];
+	  std::cout << +::MacroPirate.macroStorage[mIndex + i++];
 	  break;
 	case MACRO_ACTION_STEP_TAPCODE:
 	  std::cout << "TAPCODE ";
-	  std::cout << +::MacrosOnTheFly.macroStorage[mIndex + i++];
+	  std::cout << +::MacroPirate.macroStorage[mIndex + i++];
 	  break;
 
 	case MACRO_ACTION_STEP_TAP_SEQUENCE:
 	  {
 	    std::cout << "TAP_SEQUENCE ";
 	    while (i < slot.numUsedKeystrokes) {
-	      key.setFlags(::MacrosOnTheFly.macroStorage[mIndex + i++]);
-	      key.setKeyCode(::MacrosOnTheFly.macroStorage[mIndex + i++]);
+	      key.setFlags(::MacroPirate.macroStorage[mIndex + i++]);
+	      key.setKeyCode(::MacroPirate.macroStorage[mIndex + i++]);
 	      std::cout << +key.getFlags() << " ";
 	      std::cout << +key.getKeyCode() << " ";
 	      if (key == Key_NoKey) {
@@ -632,7 +632,7 @@ class PersonalConfig : public VirtualDeviceTest {
 	    std::cout << "TAP_CODE_SEQUENCE ";
 	    while (i < slot.numUsedKeystrokes) {
 	      key.setFlags(0);
-	      key.setKeyCode(::MacrosOnTheFly.macroStorage[mIndex + i++]);
+	      key.setKeyCode(::MacroPirate.macroStorage[mIndex + i++]);
 	      std::cout << +key.getKeyCode() << " ";
 	      if (key.getKeyCode() == 0) {
 		std::cout << "|";
@@ -834,7 +834,7 @@ TEST_F(PersonalConfig, 5_MacroRecordSpecialShift) {
   /* MAYBE TODO
    * Test that we record SpecialShift presses.
    * This should happen because the SpecialShift plugin is after the
-   * MacrosOnTheFly plugin in the initialisation order.
+   * MacroPirate plugin in the initialisation order.
    *
    * I'm not sure it really matters.
    * Recording these keys being sent shouldn't do anything except do unecessary
@@ -937,7 +937,7 @@ TEST_F(PersonalConfig, 8_MacroRecordIntoWrongSlot) {
    * Should not stay in macro record state.  */
   runAction("REC2 ~J A B C");
   storeMacro("J", "");
-  ASSERT_EQ(::MacrosOnTheFly.currentState, ::kaleidoscope::plugin::MacrosOnTheFly::State_::IDLE);
+  ASSERT_EQ(::MacroPirate.currentState, ::kaleidoscope::plugin::MacroPirate::State_::IDLE);
   runAction("PLAY1 %J");
 
   LoadState();
@@ -1059,6 +1059,16 @@ TEST_F(PersonalConfig, 10_ObservedMacroPLAYBug) {
 
   runAction("1 2 LeftControl| A LeftControl^");
 
+  LoadState();
+  CheckReports();
+}
+
+TEST_F(PersonalConfig, 11_MacroRecordLastSlot) {
+  ClearState();
+  runAction("REC2 ~S H E L L O W O R L D T H I S I S A T E S T REC1");
+  storeMacro("S", "H E L L O W O R L D T H I S I S A T E S T");
+  printMacro("S");
+  runAction("PLAY1 %S");
   LoadState();
   CheckReports();
 }

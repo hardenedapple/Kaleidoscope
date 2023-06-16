@@ -2,7 +2,7 @@ vshcmd: > sudo su
 vshcmd: > echo 0 > /proc/sys/kernel/perf_event_paranoid
 root@e124762:/home/matmal01/Documents/not-work/keyboard/Kaleidoscope# exit
 Kaleidoscope [13:42:46] $ 
-vshcmd: > rr /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/MacrosOnTheFly/EdgeCases/bin/EdgeCases -t -q
+vshcmd: > rr /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/MacroPirate/EdgeCases/bin/EdgeCases -t -q
 vshcmd: > rr /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/personal-config/bin/personal-config -t -q
 rr: Saving execution to trace directory `/home/matmal01/.local/share/rr/personal-config-18'.
 [==========] Running 11 tests from 1 test suite.
@@ -709,7 +709,7 @@ vshcmd: > rr replay -- -q
 vshcmd: > python
 vshcmd: > do_autoimport('kaleidoscope')
 vshcmd: > end
-vshcmd: > break 'kaleidoscope::plugin::MacrosOnTheFly::doNewPlay' if $_any_caller_matches(".*10_Observed*", 999)
+vshcmd: > break 'kaleidoscope::plugin::MacroPirate::doNewPlay' if $_any_caller_matches(".*10_Observed*", 999)
 vshcmd: > cont
 Reading symbols from /home/matmal01/.local/share/rr/personal-config-18/mmap_hardlink_4_personal-config...
 Really redefine built-in command "restart"? (y or n) [answered Y; input not from terminal]
@@ -718,7 +718,7 @@ Reading symbols from /lib64/ld-linux-x86-64.so.2...
 (No debugging symbols found in /lib64/ld-linux-x86-64.so.2)
 BFD: warning: system-supplied DSO at 0x6fffd000 has a section extending past end of file
 0x00007fadb371c2b0 in ?? () from /lib64/ld-linux-x86-64.so.2
-(rr) >>(rr) Breakpoint 1 at 0x562201e3bb8a: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp, line 437.
+(rr) >>(rr) Breakpoint 1 at 0x562201e3bb8a: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp, line 437.
 (rr) Continuing.
 [==========] Running 11 tests from 1 test suite.
 [----------] Global test environment set-up.
@@ -1304,7 +1304,7 @@ Observed keyboard report at 829ms: { }
 [ INFO     ] Printing Macro: A
 	TAP 209 197,KEYDOWN 208 75,KEYDOWN 208 76,KEYDOWN 208 77,KEYCODEUP 32,TAP 209 197,
 
-Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:437
+Breakpoint 1, kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:437
 437	    bool success = false;
 (rr) 
 vshcmd: > cont
@@ -1313,21 +1313,21 @@ vshcmd: > print $_event_state_name(event.state)
 vshcmd: > print event.state
 Continuing.
 
-Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x5585b0188812 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:457
-457	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+Breakpoint 1, kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x5585b0188812 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:457
+457	  EventHandlerResult MacroPirate::onKeyEvent(KeyEvent &event) {
 (rr) $12 = {keyCode_ = 193 '\301', flags_ = 209 '\321', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
 (rr) $13 = "IS_PRESSED"
 (rr) $14 = 2 '\002'
 (rr) 
 vshcmd: > print currentState
-$15 = kaleidoscope::plugin::MacrosOnTheFly::PICKING_SLOT_FOR_PLAY
+$15 = kaleidoscope::plugin::MacroPirate::PICKING_SLOT_FOR_PLAY
 (rr) 
 vshcmd: > next
 kaleidoscope::Runtime_::handleKeyEvent (this=0x5585b0187b0c <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:139
 139	  if (result == EventHandlerResult::ABORT)
 (rr) 
 vshcmd: > next
-kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x5585b0188812 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:632
+kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x5585b0188812 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:632
 632	  }
 (rr) 
 vshcmd: > reverse-next
@@ -1335,8 +1335,8 @@ vshcmd: > reverse-next
 (rr) 
 
 vshcmd: > finish
-Run till exit from #0  kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:437
-kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x562201efde54 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:558
+Run till exit from #0  kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:437
+kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x562201efde54 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:558
 558	      return doNewPlay (event);
 Value returned is $1 = kaleidoscope::EventHandlerResult::ABORT
 (rr) 
@@ -1351,14 +1351,14 @@ vshcmd: >       | show print *$cur
 1 	$3 = {keyCode_ = 0 '\000', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
 33 	$4 = {keyCode_ = 0 '\000', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
 (rr) 
-vshcmd: > break kaleidoscope::plugin::MacrosOnTheFly::clear
-Breakpoint 2 at 0x562201e3a830: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp, line 70.
+vshcmd: > break kaleidoscope::plugin::MacroPirate::clear
+Breakpoint 2 at 0x562201e3a830: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp, line 70.
 (rr) 
 vshcmd: > reverse-cont
 Continuing.
 
-Breakpoint 2, kaleidoscope::plugin::MacrosOnTheFly::clear () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:70
-70	void MacrosOnTheFly::clear() {
+Breakpoint 2, kaleidoscope::plugin::MacroPirate::clear () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:70
+70	void MacroPirate::clear() {
 (rr) 
 vshcmd: > set variable $counter = -1
 vshcmd: > gdb-pipe array &live_keys.key_map_.values_[0]; 64 \
@@ -1428,7 +1428,7 @@ vshcmd: > next
 557	      return doNewPlay (event);
 (rr) 
 vshcmd: > step
-kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:436
+kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:436
 436	    bool success = false;
 (rr) 
 vshcmd: > next
@@ -1855,8 +1855,8 @@ All functions matching regular expression "onKeyEvent":
 File /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs/src/kaleidoscope/plugin/IdleLEDs.cpp:
 60:	kaleidoscope::EventHandlerResult kaleidoscope::plugin::IdleLEDs::onKeyEvent(kaleidoscope::KeyEvent&);
 
-File /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:
-457:	kaleidoscope::EventHandlerResult kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent(kaleidoscope::KeyEvent&);
+File /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:
+457:	kaleidoscope::EventHandlerResult kaleidoscope::plugin::MacroPirate::onKeyEvent(kaleidoscope::KeyEvent&);
 
 File /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot/src/kaleidoscope/plugin/OneShot.cpp:
 191:	kaleidoscope::EventHandlerResult kaleidoscope::plugin::OneShot::onKeyEvent(kaleidoscope::KeyEvent&);
@@ -1889,7 +1889,7 @@ File /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-conf
 381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::LEDPaletteTheme, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::LEDPaletteTheme&, kaleidoscope::KeyEvent&);
 381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::LEDRainbowEffect, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::LEDRainbowEffect&, kaleidoscope::KeyEvent&);
 381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::LEDRainbowWaveEffect, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::LEDRainbowWaveEffect&, kaleidoscope::KeyEvent&);
-381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::MacrosOnTheFly&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::MacroPirate&, kaleidoscope::KeyEvent&);
 381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MagicCombo, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::MagicCombo&, kaleidoscope::KeyEvent&);
 381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::OneShot, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::OneShot&, kaleidoscope::KeyEvent&);
 381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::PersistentIdleLEDs, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::PersistentIdleLEDs&, kaleidoscope::KeyEvent&);
@@ -1917,7 +1917,7 @@ File /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-conf
 381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<false, kaleidoscope::plugin::USBQuirks, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::USBQuirks&, kaleidoscope::KeyEvent&);
 381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::IdleLEDs, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::IdleLEDs&, kaleidoscope::KeyEvent&);
 381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::LEDControl, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::LEDControl&, kaleidoscope::KeyEvent&);
-381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::MacrosOnTheFly&, kaleidoscope::KeyEvent&);
+381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::MacroPirate&, kaleidoscope::KeyEvent&);
 381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::OneShot, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::OneShot&, kaleidoscope::KeyEvent&);
 381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::PersistentIdleLEDs, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::PersistentIdleLEDs&, kaleidoscope::KeyEvent&);
 381:	kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::SpecialShift, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::SpecialShift&, kaleidoscope::KeyEvent&);
@@ -2014,8 +2014,8 @@ vshcmd: > cont
 vshcmd: > print event.key
 Continuing.
 
-Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x561b619a2592 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:403
-403	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+Breakpoint 1, kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x561b619a2592 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:403
+403	  EventHandlerResult MacroPirate::onKeyEvent(KeyEvent &event) {
 (rr) $10 = {keyCode_ = 75 'K', flags_ = 208 '\320', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
 (rr) 
 vshcmd: > break 'kaleidoscope::plugin::TopsyTurvy::onKeyEvent'
@@ -2069,10 +2069,10 @@ Detaching from program: /home/matmal01/.local/share/rr/personal-config-6/mmap_ha
 [Inferior 1 (process 2547231) detached]
 Kaleidoscope [16:46:44] $ 
 vshcmd: > bt
-#0  kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:46
-#1  0x00005582eef8846b in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x5582ef0447d2 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:547
-#2  0x00005582eef73dd1 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
-#3  0x00005582eef70c5b in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
+#0  kaleidoscope::plugin::MacroPirate::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:46
+#1  0x00005582eef8846b in kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x5582ef0447d2 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:547
+#2  0x00005582eef73dd1 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
+#3  0x00005582eef70c5b in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
 #4  0x00005582eef6bff0 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
 #5  0x00005582eef69dae in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:381
 #6  0x00005582eef75c39 in kaleidoscope::Runtime_::handleKeyEvent (this=0x5582ef043adc <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
@@ -2106,8 +2106,8 @@ vshcmd: > frame 0
 444		  doRelease;
 (rr) [ INFO     ] Printing Macro: A
 	TAP_CODE_SEQUENCE 30 31 32 0 |,KEYDOWN 208 75,
-(rr) #0  kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:46
-46	  bool MacrosOnTheFly::recordKeystroke(KeyEvent &event) {
+(rr) #0  kaleidoscope::plugin::MacroPirate::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:46
+46	  bool MacroPirate::recordKeystroke(KeyEvent &event) {
 (rr) 
 vshcmd: > print event.key
 $1 = {keyCode_ = 30 '\036', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
@@ -2152,7 +2152,7 @@ $3 = (kaleidoscope::Key &) @0x5582ef0444e2: {keyCode_ = 30 '\036', flags_ = 0 '\
 (rr) 
 vshcmd: > info break
 Num     Type           Disp Enb Address            What
-1       breakpoint     keep y   0x00005582eef86883 in kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke(kaleidoscope::KeyEvent&) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:46
+1       breakpoint     keep y   0x00005582eef86883 in kaleidoscope::plugin::MacroPirate::recordKeystroke(kaleidoscope::KeyEvent&) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:46
 	stop only if event.key.getKeyCode() == 30 && event.state == 1 (host evals)
 	breakpoint already hit 2 times
 2       hw watchpoint  keep y                      -location event.key.keyCode_
@@ -2630,22 +2630,22 @@ BFD: warning: system-supplied DSO at 0x6fffd000 has a section extending past end
 [----------] Global test environment set-up.
 [----------] 17 tests from ManualTests
 [ RUN      ] ManualTests.0_test
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/test/manual-testcases.cpp
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/test/manual-testcases.cpp
 [       OK ] ManualTests.0_test (0 ms)
-[ RUN      ] ManualTests.1_MacrosOnTheFlyTestHelpers
-[       OK ] ManualTests.1_MacrosOnTheFlyTestHelpers (0 ms)
+[ RUN      ] ManualTests.1_MacroPirateTestHelpers
+[       OK ] ManualTests.1_MacroPirateTestHelpers (0 ms)
 [ RUN      ] ManualTests.2_ReplayRepeat
 [       OK ] ManualTests.2_ReplayRepeat (1 ms)
-[ RUN      ] ManualTests.3_MacrosOnTheFlyNoHeldOverPlay
-[       OK ] ManualTests.3_MacrosOnTheFlyNoHeldOverPlay (0 ms)
-[ RUN      ] ManualTests.4_MacrosOnTheFlyRecursiveReplay
-[       OK ] ManualTests.4_MacrosOnTheFlyRecursiveReplay (0 ms)
-[ RUN      ] ManualTests.5_MacrosOnTheFlyRecursiveAvoidance
-[       OK ] ManualTests.5_MacrosOnTheFlyRecursiveAvoidance (0 ms)
-[ RUN      ] ManualTests.5_MacrosOnTheFlyAvoidKeyUp
-[       OK ] ManualTests.5_MacrosOnTheFlyAvoidKeyUp (0 ms)
-[ RUN      ] ManualTests.6_MacrosOnTheFlyBailOut
-[       OK ] ManualTests.6_MacrosOnTheFlyBailOut (0 ms)
+[ RUN      ] ManualTests.3_MacroPirateNoHeldOverPlay
+[       OK ] ManualTests.3_MacroPirateNoHeldOverPlay (0 ms)
+[ RUN      ] ManualTests.4_MacroPirateRecursiveReplay
+[       OK ] ManualTests.4_MacroPirateRecursiveReplay (0 ms)
+[ RUN      ] ManualTests.5_MacroPirateRecursiveAvoidance
+[       OK ] ManualTests.5_MacroPirateRecursiveAvoidance (0 ms)
+[ RUN      ] ManualTests.5_MacroPirateAvoidKeyUp
+[       OK ] ManualTests.5_MacroPirateAvoidKeyUp (0 ms)
+[ RUN      ] ManualTests.6_MacroPirateBailOut
+[       OK ] ManualTests.6_MacroPirateBailOut (0 ms)
 [ RUN      ] ManualTests.7_CompressionChecks
 [ INFO     ] Printing Macro: A
 	TAPCODE 4,TAPCODE 13,
@@ -2701,7 +2701,7 @@ BFD: warning: system-supplied DSO at 0x6fffd000 has a section extending past end
 Breakpoint 1, kaleidoscope::testing::(anonymous namespace)::ManualTests::runOutOfMacroMemory (this=0x55a7c6ede470, slot=...) at test/manual-testcases.cpp:243
 243	  void runOutOfMacroMemory (const std::string slot) {
 (rr) 
-vshcmd: > print ::kaleidoscope::plugin::MacrosOnTheFly::MACRO_SIZE
+vshcmd: > print ::kaleidoscope::plugin::MacroPirate::MACRO_SIZE
 $1 = 50 '2'
 (rr) 
 vshcmd: > until
@@ -2728,23 +2728,23 @@ Run till exit from #0  kaleidoscope::testing::(anonymous namespace)::ManualTests
 0x000055a7c596e882 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runOutOfMacroMemory (this=0x55a7c6ede470, slot=...) at test/manual-testcases.cpp:249
 249	    runAction(keysequence.str());
 (rr) 
-vshcmd: > break 'kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent'
+vshcmd: > break 'kaleidoscope::plugin::MacroPirate::onKeyEvent'
 vshcmd: > reverse-cont
-Breakpoint 2 at 0x55a7c59db821: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp, line 403.
+Breakpoint 2 at 0x55a7c59db821: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp, line 403.
 (rr) Continuing.
 
-Breakpoint 2, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x55a7c5a984f2 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:403
-403	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+Breakpoint 2, kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x55a7c5a984f2 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:403
+403	  EventHandlerResult MacroPirate::onKeyEvent(KeyEvent &event) {
 (rr) 
 vshcmd: > print currentState
-$5 = kaleidoscope::plugin::MacrosOnTheFly::IDLE_AND_RECORDING
+$5 = kaleidoscope::plugin::MacroPirate::IDLE_AND_RECORDING
 (rr) 
 vshcmd: > next
 547	      if (!recordKeystroke (event)) {
 (rr) 
 vshcmd: > step
-kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:46
-46	  bool MacrosOnTheFly::recordKeystroke(KeyEvent &event) {
+kaleidoscope::plugin::MacroPirate::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:46
+46	  bool MacroPirate::recordKeystroke(KeyEvent &event) {
 (rr) 
 vshcmd: > next
 64	    if (keyToggledOff(event.state) && cur->numUsedKeystrokes == 0)
@@ -2774,7 +2774,7 @@ Hardware watchpoint 3: -location cur->numUsedKeystrokes
 
 Old value = 53 '5'
 New value = 52 '4'
-0x000055a7c59dac35 in kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:161
+0x000055a7c59dac35 in kaleidoscope::plugin::MacroPirate::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:161
 161		  cur->numUsedKeystrokes = latestKeyCodeDown + 1;
 (rr) quit
 A debugging session is active.
@@ -2793,7 +2793,7 @@ Hardware watchpoint 3: -location cur->numUsedKeystrokes
 
 Old value = 49 '1'
 New value = 48 '0'
-0x000055a7c59dac35 in kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:161
+0x000055a7c59dac35 in kaleidoscope::plugin::MacroPirate::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:161
 161		  cur->numUsedKeystrokes = latestKeyCodeDown + 1;
 (rr) 
 vshcmd: > next
@@ -2802,27 +2802,27 @@ vshcmd: > next
 vshcmd: > next
 491	    if (currentState == PICKING_SLOT_FOR_PLAY) {
 (rr) 
-vshcmd: > break 'kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent' if $_any_caller_matches(".*ManualTests_12", 999)
+vshcmd: > break 'kaleidoscope::plugin::MacroPirate::onKeyEvent' if $_any_caller_matches(".*ManualTests_12", 999)
 vshcmd: > cont
 Continuing.
 [==========] Running 16 tests from 1 test suite.
 [----------] Global test environment set-up.
 [----------] 16 tests from ManualTests
 [ RUN      ] ManualTests.0_test
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/test/manual-testcases.cpp
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/test/manual-testcases.cpp
 [       OK ] ManualTests.0_test (0 ms)
-[ RUN      ] ManualTests.1_MacrosOnTheFlyTestHelpers
-[       OK ] ManualTests.1_MacrosOnTheFlyTestHelpers (0 ms)
-[ RUN      ] ManualTests.2_MacrosOnTheFlyNoHeldOverPlay
-[       OK ] ManualTests.2_MacrosOnTheFlyNoHeldOverPlay (0 ms)
-[ RUN      ] ManualTests.3_MacrosOnTheFlyRecursiveReplay
-[       OK ] ManualTests.3_MacrosOnTheFlyRecursiveReplay (0 ms)
-[ RUN      ] ManualTests.4_MacrosOnTheFlyRecursiveAvoidance
-[       OK ] ManualTests.4_MacrosOnTheFlyRecursiveAvoidance (0 ms)
-[ RUN      ] ManualTests.4_MacrosOnTheFlyAvoidKeyUp
-[       OK ] ManualTests.4_MacrosOnTheFlyAvoidKeyUp (0 ms)
-[ RUN      ] ManualTests.5_MacrosOnTheFlyBailOut
-[       OK ] ManualTests.5_MacrosOnTheFlyBailOut (0 ms)
+[ RUN      ] ManualTests.1_MacroPirateTestHelpers
+[       OK ] ManualTests.1_MacroPirateTestHelpers (0 ms)
+[ RUN      ] ManualTests.2_MacroPirateNoHeldOverPlay
+[       OK ] ManualTests.2_MacroPirateNoHeldOverPlay (0 ms)
+[ RUN      ] ManualTests.3_MacroPirateRecursiveReplay
+[       OK ] ManualTests.3_MacroPirateRecursiveReplay (0 ms)
+[ RUN      ] ManualTests.4_MacroPirateRecursiveAvoidance
+[       OK ] ManualTests.4_MacroPirateRecursiveAvoidance (0 ms)
+[ RUN      ] ManualTests.4_MacroPirateAvoidKeyUp
+[       OK ] ManualTests.4_MacroPirateAvoidKeyUp (0 ms)
+[ RUN      ] ManualTests.5_MacroPirateBailOut
+[       OK ] ManualTests.5_MacroPirateBailOut (0 ms)
 [ RUN      ] ManualTests.6_CompressionChecks
 [ INFO     ] Printing Macro: A
 	TAPCODE 4,TAPCODE 13,
@@ -2867,8 +2867,8 @@ Continuing.
 [ INFO     ] Printing Macro: B
 	TAPCODE 5,TAPCODE 5,INTERVAL 0,TAPCODE 5,
 
-Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x5644721ce732 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:403
-403	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+Breakpoint 1, kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x5644721ce732 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:403
+403	  EventHandlerResult MacroPirate::onKeyEvent(KeyEvent &event) {
 (rr) 
 vshcmd: > print sLastPlayedSlot
 $2 = 1 '\001'
@@ -2891,7 +2891,7 @@ Hardware watchpoint 3: -location sLastPlayedSlot
 
 Old value = 1 '\001'
 New value = 0 '\000'
-0x000056447211626d in kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:384
+0x000056447211626d in kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:384
 384	    if (success) sLastPlayedSlot = sIndex;
 (rr) 
 vshcmd: > cont
@@ -2899,8 +2899,8 @@ Continuing.
 [       OK ] ManualTests.11_Delays (3 ms)
 [ RUN      ] ManualTests.12_ReplayRepeat
 
-Breakpoint 2, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x5644721ce732 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:403
-403	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+Breakpoint 2, kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x5644721ce732 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:403
+403	  EventHandlerResult MacroPirate::onKeyEvent(KeyEvent &event) {
 (rr) 
 vshcmd: > delete 2
 (rr) 
@@ -2968,8 +2968,8 @@ vshcmd: > frame 0
 173		  doPress;
 (rr) [ INFO     ] Printing Macro: B
 	KEYCODEDOWN 5,INTERVAL 0,KEYCODEUP 5,
-(rr) #0  kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:46
-46	  bool MacrosOnTheFly::recordKeystroke(KeyEvent &event) {
+(rr) #0  kaleidoscope::plugin::MacroPirate::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:46
+46	  bool MacroPirate::recordKeystroke(KeyEvent &event) {
 (rr) 
 vshcmd: > next
 243	    return true;
@@ -2981,19 +2981,19 @@ vshcmd: > frame 0
 173		  doPress;
 (rr) [ INFO     ] Printing Macro: B
 	KEYCODEDOWN 5,INTERVAL 0,KEYCODEUP 5,END
-(rr) #0  kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:243
+(rr) #0  kaleidoscope::plugin::MacroPirate::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:243
 243	    return true;
 (rr) 
 vshcmd: > gdb-pipe array macroBuffer; cur->numUsedKeystrokes | show x/bx $cur
-0x55e0b5a58552 <_ZN12kaleidoscope6plugin14MacrosOnTheFly12macroStorageE+50>:	0x06
-0x55e0b5a58553 <_ZN12kaleidoscope6plugin14MacrosOnTheFly12macroStorageE+51>:	0x05
-0x55e0b5a58554 <_ZN12kaleidoscope6plugin14MacrosOnTheFly12macroStorageE+52>:	0x01
-0x55e0b5a58555 <_ZN12kaleidoscope6plugin14MacrosOnTheFly12macroStorageE+53>:	0x00
-0x55e0b5a58556 <_ZN12kaleidoscope6plugin14MacrosOnTheFly12macroStorageE+54>:	0x07
-0x55e0b5a58557 <_ZN12kaleidoscope6plugin14MacrosOnTheFly12macroStorageE+55>:	0x05
-0x55e0b5a58558 <_ZN12kaleidoscope6plugin14MacrosOnTheFly12macroStorageE+56>:	0x00
-0x55e0b5a58559 <_ZN12kaleidoscope6plugin14MacrosOnTheFly12macroStorageE+57>:	0x06
-0x55e0b5a5855a <_ZN12kaleidoscope6plugin14MacrosOnTheFly12macroStorageE+58>:	0x04
+0x55e0b5a58552 <_ZN12kaleidoscope6plugin14MacroPirate12macroStorageE+50>:	0x06
+0x55e0b5a58553 <_ZN12kaleidoscope6plugin14MacroPirate12macroStorageE+51>:	0x05
+0x55e0b5a58554 <_ZN12kaleidoscope6plugin14MacroPirate12macroStorageE+52>:	0x01
+0x55e0b5a58555 <_ZN12kaleidoscope6plugin14MacroPirate12macroStorageE+53>:	0x00
+0x55e0b5a58556 <_ZN12kaleidoscope6plugin14MacroPirate12macroStorageE+54>:	0x07
+0x55e0b5a58557 <_ZN12kaleidoscope6plugin14MacroPirate12macroStorageE+55>:	0x05
+0x55e0b5a58558 <_ZN12kaleidoscope6plugin14MacroPirate12macroStorageE+56>:	0x00
+0x55e0b5a58559 <_ZN12kaleidoscope6plugin14MacroPirate12macroStorageE+57>:	0x06
+0x55e0b5a5855a <_ZN12kaleidoscope6plugin14MacroPirate12macroStorageE+58>:	0x04
 (rr) 
 vshcmd: > print cur->numUsedKeystrokes
 $1 = 9 '\t'
@@ -3012,11 +3012,11 @@ Hardware watchpoint 2: -location cur->numUsedKeystrokes
 
 Old value = 7 '\a'
 New value = 6 '\006'
-0x000055e0b59a4d77 in kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:88
+0x000055e0b59a4d77 in kaleidoscope::plugin::MacroPirate::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:88
 88	      macroBuffer[cur->numUsedKeystrokes++] = delayInterval;
 (rr) 
 vshcmd: > print currentState
-$4 = kaleidoscope::plugin::MacrosOnTheFly::SETTING_DELAY_AND_RECORDING
+$4 = kaleidoscope::plugin::MacroPirate::SETTING_DELAY_AND_RECORDING
 (rr) quit
 A debugging session is active.
 
@@ -3031,12 +3031,12 @@ vshcmd: > print event.key
 $3 = {keyCode_ = 4 '\004', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
 (rr) 
 vshcmd: > bt
-#0  0x000055e0b59a4d77 in kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:88
-#1  0x000055e0b59a6359 in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x55e0b5a586b4 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:539
-#2  0x000055e0b599afd7 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:42
-#3  0x000055e0b599adcd in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:42
-#4  0x000055e0b599aa10 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:42
-#5  0x000055e0b599a62a in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:42
+#0  0x000055e0b59a4d77 in kaleidoscope::plugin::MacroPirate::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:88
+#1  0x000055e0b59a6359 in kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x55e0b5a586b4 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:539
+#2  0x000055e0b599afd7 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:42
+#3  0x000055e0b599adcd in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:42
+#4  0x000055e0b599aa10 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:42
+#5  0x000055e0b599a62a in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:42
 #6  0x000055e0b599bb15 in kaleidoscope::Runtime_::handleKeyEvent (this=0x55e0b5a57a30 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #7  0x000055e0b599ba49 in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x55e0b5a57a30 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
 #8  0x000055e0b59a46f4 in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
@@ -3063,18 +3063,18 @@ vshcmd: > bt
 (rr) 
 vshcmd: > display/i $pc
 1: x/i $pc
-=> 0x5595c681f89c <_ZN12kaleidoscope6plugin14MacrosOnTheFly15recordKeystrokeERNS_8KeyEventE+384>:	mov    -0x18(%rbp),%rax
+=> 0x5595c681f89c <_ZN12kaleidoscope6plugin14MacroPirate15recordKeystrokeERNS_8KeyEventE+384>:	mov    -0x18(%rbp),%rax
 (rr) 
 vshcmd: > nexti
 0x00005595c681f8a0	76		macroBuffer[cur->numUsedKeystrokes++] = MACRO_ACTION_STEP_INTERVAL;
 1: x/i $pc
-=> 0x5595c681f8a0 <_ZN12kaleidoscope6plugin14MacrosOnTheFly15recordKeystrokeERNS_8KeyEventE+388>:	movzbl 0x2(%rax),%eax
+=> 0x5595c681f8a0 <_ZN12kaleidoscope6plugin14MacroPirate15recordKeystrokeERNS_8KeyEventE+388>:	movzbl 0x2(%rax),%eax
 (rr) 
 vshcmd: > print macroBuffer
-$11 = (byte *) 0x5595c68d5312 <kaleidoscope::plugin::MacrosOnTheFly::macroStorage+50> "\b\005\b\005"
+$11 = (byte *) 0x5595c68d5312 <kaleidoscope::plugin::MacroPirate::macroStorage+50> "\b\005\b\005"
 (rr) 
 vshcmd: > print macroBuffer + cur->numUsedKeystrokes
-$8 = (byte *) 0x5595c68d5316 <kaleidoscope::plugin::MacrosOnTheFly::macroStorage+54> ""
+$8 = (byte *) 0x5595c68d5316 <kaleidoscope::plugin::MacroPirate::macroStorage+54> ""
 (rr) 
 vshcmd: > print $rax
 $10 = 50
@@ -3094,17 +3094,17 @@ vshcmd: > nexti
 vshcmd: > gdb-pipe array macroBuffer; 10 | show x/1bx $cur
 77		delayInterval = 0;
 1: x/i $pc
-=> 0x5595c681f8bb <_ZN12kaleidoscope6plugin14MacrosOnTheFly15recordKeystrokeERNS_8KeyEventE+415>:	movb   $0x0,0xb5bb0(%rip)        # 0x5595c68d5472 <_ZN12kaleidoscope6plugin14MacrosOnTheFly13delayIntervalE>
-(rr) 0x5595c68d5312 <_ZN12kaleidoscope6plugin14MacrosOnTheFly12macroStorageE+50>:	0x08
-0x5595c68d5313 <_ZN12kaleidoscope6plugin14MacrosOnTheFly12macroStorageE+51>:	0x05
-0x5595c68d5314 <_ZN12kaleidoscope6plugin14MacrosOnTheFly12macroStorageE+52>:	0x08
-0x5595c68d5315 <_ZN12kaleidoscope6plugin14MacrosOnTheFly12macroStorageE+53>:	0x05
-0x5595c68d5316 <_ZN12kaleidoscope6plugin14MacrosOnTheFly12macroStorageE+54>:	0x01
-0x5595c68d5317 <_ZN12kaleidoscope6plugin14MacrosOnTheFly12macroStorageE+55>:	0x00
-0x5595c68d5318 <_ZN12kaleidoscope6plugin14MacrosOnTheFly12macroStorageE+56>:	0x00
-0x5595c68d5319 <_ZN12kaleidoscope6plugin14MacrosOnTheFly12macroStorageE+57>:	0x00
-0x5595c68d531a <_ZN12kaleidoscope6plugin14MacrosOnTheFly12macroStorageE+58>:	0x00
-0x5595c68d531b <_ZN12kaleidoscope6plugin14MacrosOnTheFly12macroStorageE+59>:	0x00
+=> 0x5595c681f8bb <_ZN12kaleidoscope6plugin14MacroPirate15recordKeystrokeERNS_8KeyEventE+415>:	movb   $0x0,0xb5bb0(%rip)        # 0x5595c68d5472 <_ZN12kaleidoscope6plugin14MacroPirate13delayIntervalE>
+(rr) 0x5595c68d5312 <_ZN12kaleidoscope6plugin14MacroPirate12macroStorageE+50>:	0x08
+0x5595c68d5313 <_ZN12kaleidoscope6plugin14MacroPirate12macroStorageE+51>:	0x05
+0x5595c68d5314 <_ZN12kaleidoscope6plugin14MacroPirate12macroStorageE+52>:	0x08
+0x5595c68d5315 <_ZN12kaleidoscope6plugin14MacroPirate12macroStorageE+53>:	0x05
+0x5595c68d5316 <_ZN12kaleidoscope6plugin14MacroPirate12macroStorageE+54>:	0x01
+0x5595c68d5317 <_ZN12kaleidoscope6plugin14MacroPirate12macroStorageE+55>:	0x00
+0x5595c68d5318 <_ZN12kaleidoscope6plugin14MacroPirate12macroStorageE+56>:	0x00
+0x5595c68d5319 <_ZN12kaleidoscope6plugin14MacroPirate12macroStorageE+57>:	0x00
+0x5595c68d531a <_ZN12kaleidoscope6plugin14MacroPirate12macroStorageE+58>:	0x00
+0x5595c68d531b <_ZN12kaleidoscope6plugin14MacroPirate12macroStorageE+59>:	0x00
 (rr) 
 vshcmd: > frame 15
 vshcmd: > call 'kaleidoscope::testing::(anonymous namespace)::ManualTests::printMacro'(this, (char)66)
@@ -3113,7 +3113,7 @@ vshcmd: > frame 0
 173		  doPress;
 (rr) [ INFO     ] Printing Macro: B
 	TAPCODE 5,TAPCODE 5,END
-(rr) #0  kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:77
+(rr) #0  kaleidoscope::plugin::MacroPirate::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:77
 77		delayInterval = 0;
 (rr) quit
 A debugging session is active.
@@ -3143,7 +3143,7 @@ r12            0x5595c71f4bd0      94101779205072
 r13            0x0                 0
 r14            0x21                33
 r15            0x0                 0
-rip            0x5595c681f8a0      0x5595c681f8a0 <kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke(kaleidoscope::KeyEvent&)+388>
+rip            0x5595c681f8a0      0x5595c681f8a0 <kaleidoscope::plugin::MacroPirate::recordKeystroke(kaleidoscope::KeyEvent&)+388>
 eflags         0x293               [ CF AF SF IF ]
 cs             0x33                51
 ss             0x2b                43
@@ -3217,12 +3217,12 @@ A debugging session is active.
 
 Quit anyway? (y or n) 
 vshcmd: > bt
-#0  kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:63
-#1  0x00005601f11b2071 in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x5601f12674b4 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:527
-#2  0x00005601f11ab38b in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#3  0x00005601f11ab181 in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#4  0x00005601f11aadc4 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#5  0x00005601f11aa9de in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+#0  kaleidoscope::plugin::MacroPirate::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:63
+#1  0x00005601f11b2071 in kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x5601f12674b4 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:527
+#2  0x00005601f11ab38b in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#3  0x00005601f11ab181 in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#4  0x00005601f11aadc4 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#5  0x00005601f11aa9de in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 #6  0x00005601f11abf03 in kaleidoscope::Runtime_::handleKeyEvent (this=0x5601f1266a70 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #7  0x00005601f11abe37 in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x5601f1266a70 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
 #8  0x00005601f11af012 in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
@@ -3264,7 +3264,7 @@ vshcmd: > frame 0
 123		  doRelease;
 (rr) [ INFO     ] Printing Macro: A
 	TAP_CODE_SEQUENCE 4 13 4 0 ,KEYUP50,
-(rr) #0  kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:164
+(rr) #0  kaleidoscope::plugin::MacroPirate::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:164
 164		  uint8_t i;
 (rr) 
 vshcmd: > print i
@@ -3299,16 +3299,16 @@ Hardware watchpoint 3: -location leadingTapCode
 
 Old value = 2 '\002'
 New value = 0 '\000'
-0x000055d683b5e493 in kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:155
+0x000055d683b5e493 in kaleidoscope::plugin::MacroPirate::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:155
 155		  if (leadingTapCode == 0) { leadingTapCode = latestKeyCodeDown; }
 (rr) 
 vshcmd: > bt
-#0  0x000055d683b5e493 in kaleidoscope::plugin::MacrosOnTheFly::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:155
-#1  0x000055d683b5f6a5 in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x55d683c106fa <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:521
-#2  0x000055d683b542cf in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#3  0x000055d683b540c5 in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#4  0x000055d683b53d08 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#5  0x000055d683b53922 in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+#0  0x000055d683b5e493 in kaleidoscope::plugin::MacroPirate::recordKeystroke (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:155
+#1  0x000055d683b5f6a5 in kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x55d683c106fa <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:521
+#2  0x000055d683b542cf in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#3  0x000055d683b540c5 in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#4  0x000055d683b53d08 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#5  0x000055d683b53922 in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 #6  0x000055d683b54e47 in kaleidoscope::Runtime_::handleKeyEvent (this=0x55d683c0fa70 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #7  0x000055d683b54d7b in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x55d683c0fa70 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
 #8  0x000055d683b5da26 in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=1 '\001') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
@@ -3360,7 +3360,7 @@ vshcmd: > y
 Detaching from program: /home/matmal01/.local/share/rr/EdgeCases-8/mmap_hardlink_4_EdgeCases, process 192273
 [Inferior 1 (process 192273) detached]
 Kaleidoscope [16:31:07] $ 
-vshcmd: > break runAction if $_any_caller_matches(".*ManualTests_4_MacrosOnTheFly", 99)
+vshcmd: > break runAction if $_any_caller_matches(".*ManualTests_4_MacroPirate", 99)
 vshcmd: > cont
 GNU gdb (GDB) 13.1.90.20230317-git
 Copyright (C) 2023 Free Software Foundation, Inc.
@@ -3390,15 +3390,15 @@ BFD: warning: system-supplied DSO at 0x6fffd000 has a section extending past end
 [----------] Global test environment set-up.
 [----------] 5 tests from ManualTests
 [ RUN      ] ManualTests.0_test
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/test/manual-testcases.cpp
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/test/manual-testcases.cpp
 [       OK ] ManualTests.0_test (0 ms)
-[ RUN      ] ManualTests.1_MacrosOnTheFlyTestHelpers
-[       OK ] ManualTests.1_MacrosOnTheFlyTestHelpers (0 ms)
-[ RUN      ] ManualTests.2_MacrosOnTheFlyNoHeldOverPlay
-[       OK ] ManualTests.2_MacrosOnTheFlyNoHeldOverPlay (0 ms)
-[ RUN      ] ManualTests.3_MacrosOnTheFlyRecursiveReplay
-[       OK ] ManualTests.3_MacrosOnTheFlyRecursiveReplay (1 ms)
-[ RUN      ] ManualTests.4_MacrosOnTheFlyRecursiveAvoidance
+[ RUN      ] ManualTests.1_MacroPirateTestHelpers
+[       OK ] ManualTests.1_MacroPirateTestHelpers (0 ms)
+[ RUN      ] ManualTests.2_MacroPirateNoHeldOverPlay
+[       OK ] ManualTests.2_MacroPirateNoHeldOverPlay (0 ms)
+[ RUN      ] ManualTests.3_MacroPirateRecursiveReplay
+[       OK ] ManualTests.3_MacroPirateRecursiveReplay (1 ms)
+[ RUN      ] ManualTests.4_MacroPirateRecursiveAvoidance
 
 Breakpoint 1, kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x561c042f4fb0, str=..., replaying=false) at test/manual-testcases.cpp:101
 101	  void runAction(const std::string str, bool replaying = false) {
@@ -3427,7 +3427,7 @@ $1 = {static npos = 18446744073709551615,
 vshcmd: > bt
 #0  kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x561c042f4fb0, str=..., replaying=true) at test/manual-testcases.cpp:101
 #1  0x0000561c0247d05b in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x561c042f4fb0, str=..., replaying=false) at test/manual-testcases.cpp:115
-#2  0x0000561c0247e184 in kaleidoscope::testing::(anonymous namespace)::ManualTests_4_MacrosOnTheFlyRecursiveAvoidance_Test::TestBody (this=0x561c042f4fb0) at test/manual-testcases.cpp:222
+#2  0x0000561c0247e184 in kaleidoscope::testing::(anonymous namespace)::ManualTests_4_MacroPirateRecursiveAvoidance_Test::TestBody (this=0x561c042f4fb0) at test/manual-testcases.cpp:222
 #3  0x0000561c0251a76d in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #4  0x0000561c02512ca9 in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #5  0x0000561c024e6db4 in testing::Test::Run() ()
@@ -3475,7 +3475,7 @@ $1 = (std::tuple_element<2,
 (rr) 
 vshcmd: >
 vshcmd: > watch -l ::MacroSupport.active_macro_keys_[0]
-vshcmd: > break MacrosOnTheFly::onKeyEvent
+vshcmd: > break MacroPirate::onKeyEvent
 vshcmd: > command
 vshcmd: >   silent
 vshcmd: >   print event.key
@@ -3507,7 +3507,7 @@ Reading symbols from /lib64/ld-linux-x86-64.so.2...
 BFD: warning: system-supplied DSO at 0x6fffd000 has a section extending past end of file
 0x00007f1cacdaa2b0 in ?? () from /lib64/ld-linux-x86-64.so.2
 (rr) Hardware watchpoint 1: -location ::MacroSupport.active_macro_keys_[0]
-(rr) Breakpoint 2 at 0x564a2e4e0aa0: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp, line 287.
+(rr) Breakpoint 2 at 0x564a2e4e0aa0: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp, line 287.
 (rr) Type commands for breakpoint(s) 2, one per line.
 End with a line saying just "end".
 >>>>>(rr) (rr) Continuing.
@@ -3515,13 +3515,13 @@ End with a line saying just "end".
 [----------] Global test environment set-up.
 [----------] 5 tests from ManualTests
 [ RUN      ] ManualTests.0_test
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/test/manual-testcases.cpp
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/test/manual-testcases.cpp
 [       OK ] ManualTests.0_test (0 ms)
-[ RUN      ] ManualTests.1_MacrosOnTheFlyTestHelpers
-[       OK ] ManualTests.1_MacrosOnTheFlyTestHelpers (0 ms)
-[ RUN      ] ManualTests.2_MacrosOnTheFlyNoHeldOverPlay
-[       OK ] ManualTests.2_MacrosOnTheFlyNoHeldOverPlay (0 ms)
-[ RUN      ] ManualTests.3_MacrosOnTheFlyRecursiveReplay
+[ RUN      ] ManualTests.1_MacroPirateTestHelpers
+[       OK ] ManualTests.1_MacroPirateTestHelpers (0 ms)
+[ RUN      ] ManualTests.2_MacroPirateNoHeldOverPlay
+[       OK ] ManualTests.2_MacroPirateNoHeldOverPlay (0 ms)
+[ RUN      ] ManualTests.3_MacroPirateRecursiveReplay
 
 Hardware watchpoint 1: -location ::MacroSupport.active_macro_keys_[0]
 
@@ -3559,24 +3559,24 @@ kaleidoscope::plugin::MacroSupport::press (this=0x564a2e5934a0 <MacroSupport>, k
 (rr) 
 vshcmd: > bt
 #0  0x0000564a2e4e1520 in kaleidoscope::plugin::MacroSupport::press (this=0x564a2e5934a0 <MacroSupport>, key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src/kaleidoscope/plugin/MacroSupport.cpp:48
-#1  0x0000564a2e4dfd98 in kaleidoscope::plugin::MacrosOnTheFly::press (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.h:118
-#2  0x0000564a2e4e0729 in kaleidoscope::plugin::MacrosOnTheFly::play (sIndex=1 '\001') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:190
-#3  0x0000564a2e4e09fa in kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:272
-#4  0x0000564a2e4e0f27 in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x564a2e593494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:389
-#5  0x0000564a2e4dab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#6  0x0000564a2e4da93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#7  0x0000564a2e4da582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#8  0x0000564a2e4da19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+#1  0x0000564a2e4dfd98 in kaleidoscope::plugin::MacroPirate::press (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.h:118
+#2  0x0000564a2e4e0729 in kaleidoscope::plugin::MacroPirate::play (sIndex=1 '\001') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:190
+#3  0x0000564a2e4e09fa in kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:272
+#4  0x0000564a2e4e0f27 in kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x564a2e593494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:389
+#5  0x0000564a2e4dab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#6  0x0000564a2e4da93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#7  0x0000564a2e4da582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#8  0x0000564a2e4da19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 #9  0x0000564a2e4db6f7 in kaleidoscope::Runtime_::handleKeyEvent (this=0x564a2e592a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #10 0x0000564a2e4e14c5 in kaleidoscope::plugin::MacroSupport::press (this=0x564a2e5934a0 <MacroSupport>, key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src/kaleidoscope/plugin/MacroSupport.cpp:43
-#11 0x0000564a2e4dfd98 in kaleidoscope::plugin::MacrosOnTheFly::press (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.h:118
-#12 0x0000564a2e4e0729 in kaleidoscope::plugin::MacrosOnTheFly::play (sIndex=0 '\000') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:190
-#13 0x0000564a2e4e09fa in kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:272
-#14 0x0000564a2e4e0f27 in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x564a2e593494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:389
-#15 0x0000564a2e4dab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#16 0x0000564a2e4da93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#17 0x0000564a2e4da582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#18 0x0000564a2e4da19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+#11 0x0000564a2e4dfd98 in kaleidoscope::plugin::MacroPirate::press (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.h:118
+#12 0x0000564a2e4e0729 in kaleidoscope::plugin::MacroPirate::play (sIndex=0 '\000') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:190
+#13 0x0000564a2e4e09fa in kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:272
+#14 0x0000564a2e4e0f27 in kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x564a2e593494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:389
+#15 0x0000564a2e4dab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#16 0x0000564a2e4da93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#17 0x0000564a2e4da582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#18 0x0000564a2e4da19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 #19 0x0000564a2e4db6f7 in kaleidoscope::Runtime_::handleKeyEvent (this=0x564a2e592a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #20 0x0000564a2e4db62b in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x564a2e592a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
 #21 0x0000564a2e4de84a in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
@@ -3587,7 +3587,7 @@ vshcmd: > bt
 #26 0x0000564a2e4c38db in kaleidoscope::testing::SimHarness::RunCycle() ()
 #27 0x0000564a2e4c390c in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
 #28 0x0000564a2e485e69 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x564a303cbfb0, str=..., replaying=false) at test/manual-testcases.cpp:116
-#29 0x0000564a2e486cd2 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacrosOnTheFlyRecursiveReplay_Test::TestBody (this=0x564a303cbfb0) at test/manual-testcases.cpp:184
+#29 0x0000564a2e486cd2 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacroPirateRecursiveReplay_Test::TestBody (this=0x564a303cbfb0) at test/manual-testcases.cpp:184
 #30 0x0000564a2e5232c7 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #31 0x0000564a2e51b803 in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #32 0x0000564a2e4ef90e in testing::Test::Run() ()
@@ -3613,24 +3613,24 @@ kaleidoscope::plugin::MacroSupport::release (this=0x564a2e5934a0 <MacroSupport>,
 (rr) 
 vshcmd: > bt
 #0  kaleidoscope::plugin::MacroSupport::release (this=0x564a2e5934a0 <MacroSupport>, key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src/kaleidoscope/plugin/MacroSupport.cpp:57
-#1  0x0000564a2e4dfdc0 in kaleidoscope::plugin::MacrosOnTheFly::release (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.h:125
-#2  0x0000564a2e4e077b in kaleidoscope::plugin::MacrosOnTheFly::play (sIndex=1 '\001') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:195
-#3  0x0000564a2e4e09fa in kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:272
-#4  0x0000564a2e4e0f27 in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x564a2e593494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:389
-#5  0x0000564a2e4dab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#6  0x0000564a2e4da93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#7  0x0000564a2e4da582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#8  0x0000564a2e4da19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+#1  0x0000564a2e4dfdc0 in kaleidoscope::plugin::MacroPirate::release (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.h:125
+#2  0x0000564a2e4e077b in kaleidoscope::plugin::MacroPirate::play (sIndex=1 '\001') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:195
+#3  0x0000564a2e4e09fa in kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:272
+#4  0x0000564a2e4e0f27 in kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x564a2e593494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:389
+#5  0x0000564a2e4dab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#6  0x0000564a2e4da93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#7  0x0000564a2e4da582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#8  0x0000564a2e4da19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 #9  0x0000564a2e4db6f7 in kaleidoscope::Runtime_::handleKeyEvent (this=0x564a2e592a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #10 0x0000564a2e4e14c5 in kaleidoscope::plugin::MacroSupport::press (this=0x564a2e5934a0 <MacroSupport>, key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src/kaleidoscope/plugin/MacroSupport.cpp:43
-#11 0x0000564a2e4dfd98 in kaleidoscope::plugin::MacrosOnTheFly::press (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.h:118
-#12 0x0000564a2e4e0729 in kaleidoscope::plugin::MacrosOnTheFly::play (sIndex=0 '\000') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:190
-#13 0x0000564a2e4e09fa in kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:272
-#14 0x0000564a2e4e0f27 in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x564a2e593494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:389
-#15 0x0000564a2e4dab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#16 0x0000564a2e4da93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#17 0x0000564a2e4da582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#18 0x0000564a2e4da19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+#11 0x0000564a2e4dfd98 in kaleidoscope::plugin::MacroPirate::press (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.h:118
+#12 0x0000564a2e4e0729 in kaleidoscope::plugin::MacroPirate::play (sIndex=0 '\000') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:190
+#13 0x0000564a2e4e09fa in kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:272
+#14 0x0000564a2e4e0f27 in kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x564a2e593494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:389
+#15 0x0000564a2e4dab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#16 0x0000564a2e4da93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#17 0x0000564a2e4da582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#18 0x0000564a2e4da19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 #19 0x0000564a2e4db6f7 in kaleidoscope::Runtime_::handleKeyEvent (this=0x564a2e592a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #20 0x0000564a2e4db62b in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x564a2e592a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
 #21 0x0000564a2e4de84a in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
@@ -3641,7 +3641,7 @@ vshcmd: > bt
 #26 0x0000564a2e4c38db in kaleidoscope::testing::SimHarness::RunCycle() ()
 #27 0x0000564a2e4c390c in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
 #28 0x0000564a2e485e69 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x564a303cbfb0, str=..., replaying=false) at test/manual-testcases.cpp:116
-#29 0x0000564a2e486cd2 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacrosOnTheFlyRecursiveReplay_Test::TestBody (this=0x564a303cbfb0) at test/manual-testcases.cpp:184
+#29 0x0000564a2e486cd2 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacroPirateRecursiveReplay_Test::TestBody (this=0x564a303cbfb0) at test/manual-testcases.cpp:184
 #30 0x0000564a2e5232c7 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #31 0x0000564a2e51b803 in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #32 0x0000564a2e4ef90e in testing::Test::Run() ()
@@ -3716,8 +3716,8 @@ Expected: is empty
   Actual: { '\x5' (5) }, which has 1 element
 autogen (i=27)
 Unexpected keyboard report at 103ms: { }
-[  FAILED  ] ManualTests.3_MacrosOnTheFlyRecursiveReplay (1 ms)
-[ RUN      ] ManualTests.4_MacrosOnTheFlyRecursiveAvoidance
+[  FAILED  ] ManualTests.3_MacroPirateRecursiveReplay (1 ms)
+[ RUN      ] ManualTests.4_MacroPirateRecursiveAvoidance
 $21 = {keyCode_ = 192 '\300', flags_ = 209 '\321', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
 $22 = 2 '\002'
 $23 = {keyCode_ = 192 '\300', flags_ = 209 '\321', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
@@ -3774,14 +3774,14 @@ $73 = {keyCode_ = 192 '\300', flags_ = 209 '\321', static hid_type_mask_ = 48 '0
 $74 = 2 '\002'
 $75 = {keyCode_ = 192 '\300', flags_ = 209 '\321', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
 $76 = 1 '\001'
-[       OK ] ManualTests.4_MacrosOnTheFlyRecursiveAvoidance (0 ms)
+[       OK ] ManualTests.4_MacroPirateRecursiveAvoidance (0 ms)
 [----------] 5 tests from ManualTests (3 ms total)
 
 [----------] Global test environment tear-down
 [==========] 5 tests from 1 test suite ran. (4 ms total)
 [  PASSED  ] 4 tests.
 [  FAILED  ] 1 test, listed below:
-[  FAILED  ] ManualTests.3_MacrosOnTheFlyRecursiveReplay
+[  FAILED  ] ManualTests.3_MacroPirateRecursiveReplay
 
  1 FAILED TEST
 
@@ -3798,12 +3798,12 @@ Detaching from program: /home/matmal01/.local/share/rr/EdgeCases-5/mmap_hardlink
 [Inferior 1 (process 3509115) detached]
 Kaleidoscope [22:37:27] $ 
 vshcmd: > cont
-vshcmd: > break MacrosOnTheFly::onKeyEvent
+vshcmd: > break MacroPirate::onKeyEvent
 vshcmd: > reverse-cont
 Continuing.
 
-Breakpoint 3, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x564a2e593494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:287
-287	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+Breakpoint 3, kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x564a2e593494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:287
+287	  EventHandlerResult MacroPirate::onKeyEvent(KeyEvent &event) {
 (rr) 
 vshcmd: > print event.key
 vshcmd: > print event.state
@@ -3821,8 +3821,8 @@ kaleidoscope::plugin::MacroSupport::press (this=0x564a2e5934a0 <MacroSupport>, k
 (rr) 
 vshcmd: > reverse-next
 
-Breakpoint 3, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x564a2e593494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:287
-287	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+Breakpoint 3, kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x564a2e593494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:287
+287	  EventHandlerResult MacroPirate::onKeyEvent(KeyEvent &event) {
 (rr) 
 vshcmd: > print event.state
 vshcmd: > print event.key
@@ -3836,28 +3836,28 @@ kaleidoscope::plugin::MacroSupport::release (this=0x564a2e5934a0 <MacroSupport>,
 62	  Runtime.handleKeyEvent(KeyEvent{KeyAddr::none(), release_state, key});
 (rr) 
 vshcmd: > whereami
-kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent(kaleidoscope::KeyEvent&)+2e /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:287
+kaleidoscope::plugin::MacroPirate::onKeyEvent(kaleidoscope::KeyEvent&)+2e /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:287
 (rr) 
 vshcmd: > bt
 #0  kaleidoscope::plugin::MacroSupport::release (this=0x564a2e5934a0 <MacroSupport>, key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src/kaleidoscope/plugin/MacroSupport.cpp:62
-#1  0x0000564a2e4dfdc0 in kaleidoscope::plugin::MacrosOnTheFly::release (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.h:125
-#2  0x0000564a2e4e077b in kaleidoscope::plugin::MacrosOnTheFly::play (sIndex=1 '\001') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:195
-#3  0x0000564a2e4e09fa in kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:272
-#4  0x0000564a2e4e0f27 in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x564a2e593494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:389
-#5  0x0000564a2e4dab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#6  0x0000564a2e4da93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#7  0x0000564a2e4da582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#8  0x0000564a2e4da19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+#1  0x0000564a2e4dfdc0 in kaleidoscope::plugin::MacroPirate::release (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.h:125
+#2  0x0000564a2e4e077b in kaleidoscope::plugin::MacroPirate::play (sIndex=1 '\001') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:195
+#3  0x0000564a2e4e09fa in kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:272
+#4  0x0000564a2e4e0f27 in kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x564a2e593494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:389
+#5  0x0000564a2e4dab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#6  0x0000564a2e4da93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#7  0x0000564a2e4da582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#8  0x0000564a2e4da19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 #9  0x0000564a2e4db6f7 in kaleidoscope::Runtime_::handleKeyEvent (this=0x564a2e592a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #10 0x0000564a2e4e14c5 in kaleidoscope::plugin::MacroSupport::press (this=0x564a2e5934a0 <MacroSupport>, key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src/kaleidoscope/plugin/MacroSupport.cpp:43
-#11 0x0000564a2e4dfd98 in kaleidoscope::plugin::MacrosOnTheFly::press (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.h:118
-#12 0x0000564a2e4e0729 in kaleidoscope::plugin::MacrosOnTheFly::play (sIndex=0 '\000') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:190
-#13 0x0000564a2e4e09fa in kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:272
-#14 0x0000564a2e4e0f27 in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x564a2e593494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:389
-#15 0x0000564a2e4dab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#16 0x0000564a2e4da93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#17 0x0000564a2e4da582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#18 0x0000564a2e4da19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+#11 0x0000564a2e4dfd98 in kaleidoscope::plugin::MacroPirate::press (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.h:118
+#12 0x0000564a2e4e0729 in kaleidoscope::plugin::MacroPirate::play (sIndex=0 '\000') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:190
+#13 0x0000564a2e4e09fa in kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:272
+#14 0x0000564a2e4e0f27 in kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x564a2e593494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:389
+#15 0x0000564a2e4dab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#16 0x0000564a2e4da93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#17 0x0000564a2e4da582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#18 0x0000564a2e4da19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 #19 0x0000564a2e4db6f7 in kaleidoscope::Runtime_::handleKeyEvent (this=0x564a2e592a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #20 0x0000564a2e4db62b in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x564a2e592a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
 #21 0x0000564a2e4de84a in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
@@ -3868,7 +3868,7 @@ vshcmd: > bt
 #26 0x0000564a2e4c38db in kaleidoscope::testing::SimHarness::RunCycle() ()
 #27 0x0000564a2e4c390c in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
 #28 0x0000564a2e485e69 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x564a303cbfb0, str=..., replaying=false) at test/manual-testcases.cpp:116
-#29 0x0000564a2e486cd2 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacrosOnTheFlyRecursiveReplay_Test::TestBody (this=0x564a303cbfb0) at test/manual-testcases.cpp:184
+#29 0x0000564a2e486cd2 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacroPirateRecursiveReplay_Test::TestBody (this=0x564a303cbfb0) at test/manual-testcases.cpp:184
 #30 0x0000564a2e5232c7 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #31 0x0000564a2e51b803 in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #32 0x0000564a2e4ef90e in testing::Test::Run() ()
@@ -3905,14 +3905,14 @@ vshcmd: > list
 (rr) 
 vshcmd: > bt
 #0  kaleidoscope::plugin::MacroSupport::press (this=0x564a2e5934a0 <MacroSupport>, key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src/kaleidoscope/plugin/MacroSupport.cpp:49
-#1  0x0000564a2e4dfd98 in kaleidoscope::plugin::MacrosOnTheFly::press (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.h:118
-#2  0x0000564a2e4e0729 in kaleidoscope::plugin::MacrosOnTheFly::play (sIndex=0 '\000') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:190
-#3  0x0000564a2e4e09fa in kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:272
-#4  0x0000564a2e4e0f27 in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x564a2e593494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:389
-#5  0x0000564a2e4dab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#6  0x0000564a2e4da93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#7  0x0000564a2e4da582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#8  0x0000564a2e4da19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+#1  0x0000564a2e4dfd98 in kaleidoscope::plugin::MacroPirate::press (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.h:118
+#2  0x0000564a2e4e0729 in kaleidoscope::plugin::MacroPirate::play (sIndex=0 '\000') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:190
+#3  0x0000564a2e4e09fa in kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:272
+#4  0x0000564a2e4e0f27 in kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x564a2e593494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:389
+#5  0x0000564a2e4dab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#6  0x0000564a2e4da93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#7  0x0000564a2e4da582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#8  0x0000564a2e4da19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 #9  0x0000564a2e4db6f7 in kaleidoscope::Runtime_::handleKeyEvent (this=0x564a2e592a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #10 0x0000564a2e4db62b in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x564a2e592a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
 #11 0x0000564a2e4de84a in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
@@ -3923,7 +3923,7 @@ vshcmd: > bt
 #16 0x0000564a2e4c38db in kaleidoscope::testing::SimHarness::RunCycle() ()
 #17 0x0000564a2e4c390c in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
 #18 0x0000564a2e485e69 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x564a303cbfb0, str=..., replaying=false) at test/manual-testcases.cpp:116
-#19 0x0000564a2e486cd2 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacrosOnTheFlyRecursiveReplay_Test::TestBody (this=0x564a303cbfb0) at test/manual-testcases.cpp:184
+#19 0x0000564a2e486cd2 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacroPirateRecursiveReplay_Test::TestBody (this=0x564a303cbfb0) at test/manual-testcases.cpp:184
 #20 0x0000564a2e5232c7 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #21 0x0000564a2e51b803 in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #22 0x0000564a2e4ef90e in testing::Test::Run() ()
@@ -3956,8 +3956,8 @@ vshcmd: > y
 Detaching from program: /home/matmal01/.local/share/rr/EdgeCases-4/mmap_hardlink_4_EdgeCases, process 3383717
 [Inferior 1 (process 3383717) detached]
 Kaleidoscope [22:22:32] $ 
-vshcmd: > break MacrosOnTheFly::onKeyEvent
-Breakpoint 4 at 0x55ce5b8651a2: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp, line 287.
+vshcmd: > break MacroPirate::onKeyEvent
+Breakpoint 4 at 0x55ce5b8651a2: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp, line 287.
 (rr) 
 vshcmd: > cont
 vshcmd: > print event.key
@@ -3978,11 +3978,11 @@ kaleidoscope::plugin::MacroSupport::press (this=0x55ce5b9136e0 <MacroSupport>, k
 vshcmd: > reverse-cont
 Continuing.
 
-Breakpoint 4, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x55ce5b9136d4 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:287
-287	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+Breakpoint 4, kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x55ce5b9136d4 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:287
+287	  EventHandlerResult MacroPirate::onKeyEvent(KeyEvent &event) {
 (rr) 
 vshcmd: > print currentState
-$4 = kaleidoscope::plugin::MacrosOnTheFly::IDLE
+$4 = kaleidoscope::plugin::MacroPirate::IDLE
 (rr) 
 vshcmd: > next
 156	      switch (macro = macroStorage[mIndex + off++]) {
@@ -3991,36 +3991,36 @@ vshcmd: > info break
 Num     Type           Disp Enb Address            What
 2       hw watchpoint  keep n                      -location ::MacroSupport.active_macro_keys_[0]
 	breakpoint already hit 20 times
-4       breakpoint     keep n   0x000055ce5b8651a2 in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent(kaleidoscope::KeyEvent&) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:287
+4       breakpoint     keep n   0x000055ce5b8651a2 in kaleidoscope::plugin::MacroPirate::onKeyEvent(kaleidoscope::KeyEvent&) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:287
 	breakpoint already hit 2 times
 (rr) 
 vshcmd: > disable 
 (rr) 
 vshcmd: > reverse-finish
 vshcmd: > bt
-Run back to call of #0  0x000055ce5b85a197 in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+Run back to call of #0  0x000055ce5b85a197 in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 0x000055ce5b85b6f2 in kaleidoscope::Runtime_::handleKeyEvent (this=0x55ce5b912a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 138	  auto result = Hooks::onKeyEvent(event);
 (rr) #0  0x000055ce5b85b6f2 in kaleidoscope::Runtime_::handleKeyEvent (this=0x55ce5b912a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #1  0x000055ce5b865d50 in kaleidoscope::plugin::MacroSupport::release (this=0x55ce5b9136e0 <MacroSupport>, key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src/kaleidoscope/plugin/MacroSupport.cpp:61
-#2  0x000055ce5b8644c2 in kaleidoscope::plugin::MacrosOnTheFly::release (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.h:125
-#3  0x000055ce5b864e7d in kaleidoscope::plugin::MacrosOnTheFly::play (sIndex=1 '\001') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:195
-#4  0x000055ce5b8650fc in kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:272
-#5  0x000055ce5b865629 in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x55ce5b9136d4 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:389
-#6  0x000055ce5b85ab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#7  0x000055ce5b85a93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#8  0x000055ce5b85a582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#9  0x000055ce5b85a19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+#2  0x000055ce5b8644c2 in kaleidoscope::plugin::MacroPirate::release (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.h:125
+#3  0x000055ce5b864e7d in kaleidoscope::plugin::MacroPirate::play (sIndex=1 '\001') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:195
+#4  0x000055ce5b8650fc in kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:272
+#5  0x000055ce5b865629 in kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x55ce5b9136d4 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:389
+#6  0x000055ce5b85ab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#7  0x000055ce5b85a93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#8  0x000055ce5b85a582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#9  0x000055ce5b85a19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 #10 0x000055ce5b85b6f7 in kaleidoscope::Runtime_::handleKeyEvent (this=0x55ce5b912a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #11 0x000055ce5b865bc7 in kaleidoscope::plugin::MacroSupport::press (this=0x55ce5b9136e0 <MacroSupport>, key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src/kaleidoscope/plugin/MacroSupport.cpp:42
-#12 0x000055ce5b86449a in kaleidoscope::plugin::MacrosOnTheFly::press (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.h:118
-#13 0x000055ce5b864e2b in kaleidoscope::plugin::MacrosOnTheFly::play (sIndex=0 '\000') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:190
-#14 0x000055ce5b8650fc in kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:272
-#15 0x000055ce5b865629 in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x55ce5b9136d4 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:389
-#16 0x000055ce5b85ab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#17 0x000055ce5b85a93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#18 0x000055ce5b85a582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#19 0x000055ce5b85a19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+#12 0x000055ce5b86449a in kaleidoscope::plugin::MacroPirate::press (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.h:118
+#13 0x000055ce5b864e2b in kaleidoscope::plugin::MacroPirate::play (sIndex=0 '\000') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:190
+#14 0x000055ce5b8650fc in kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:272
+#15 0x000055ce5b865629 in kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x55ce5b9136d4 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:389
+#16 0x000055ce5b85ab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#17 0x000055ce5b85a93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#18 0x000055ce5b85a582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#19 0x000055ce5b85a19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 #20 0x000055ce5b85b6f7 in kaleidoscope::Runtime_::handleKeyEvent (this=0x55ce5b912a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #21 0x000055ce5b85b62b in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x55ce5b912a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
 #22 0x000055ce5b86431a in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
@@ -4031,7 +4031,7 @@ Run back to call of #0  0x000055ce5b85a197 in kaleidoscope::Hooks::onKeyEvent (e
 #27 0x000055ce5b8438db in kaleidoscope::testing::SimHarness::RunCycle() ()
 #28 0x000055ce5b84390c in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
 #29 0x000055ce5b805e69 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x55ce5d670fb0, str=..., replaying=false) at test/manual-testcases.cpp:116
-#30 0x000055ce5b806cd2 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacrosOnTheFlyRecursiveReplay_Test::TestBody (this=0x55ce5d670fb0) at test/manual-testcases.cpp:184
+#30 0x000055ce5b806cd2 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacroPirateRecursiveReplay_Test::TestBody (this=0x55ce5d670fb0) at test/manual-testcases.cpp:184
 #31 0x000055ce5b8a32c7 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #32 0x000055ce5b89b803 in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #33 0x000055ce5b86f90e in testing::Test::Run() ()
@@ -4073,8 +4073,8 @@ vshcmd: > enable 1
 vshcmd: > cont
 Continuing.
 
-Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x55ce5b9136d4 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:287
-287	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+Breakpoint 1, kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x55ce5b9136d4 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:287
+287	  EventHandlerResult MacroPirate::onKeyEvent(KeyEvent &event) {
 (rr) Command 'cont' not found, did you mean:
   command 'font' from deb libxgks-dev (2.6.1+dfsg.2-12)
   command 'cnt' from deb open-infrastructure-container-tools (20211231-1build1)
@@ -4116,11 +4116,11 @@ BFD: warning: system-supplied DSO at 0x6fffd000 has a section extending past end
 [----------] Global test environment set-up.
 [----------] 5 tests from ManualTests
 [ RUN      ] ManualTests.0_test
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/test/manual-testcases.cpp
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/test/manual-testcases.cpp
 [       OK ] ManualTests.0_test (0 ms)
-[ RUN      ] ManualTests.1_MacrosOnTheFlyTestHelpers
-[       OK ] ManualTests.1_MacrosOnTheFlyTestHelpers (0 ms)
-[ RUN      ] ManualTests.2_MacrosOnTheFlyNoHeldOverPlay
+[ RUN      ] ManualTests.1_MacroPirateTestHelpers
+[       OK ] ManualTests.1_MacroPirateTestHelpers (0 ms)
+[ RUN      ] ManualTests.2_MacroPirateNoHeldOverPlay
 
 Breakpoint 1, kaleidoscope::LiveKeys::mask (this=0x55ce5b913440 <kaleidoscope::live_keys>, key_addr=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/LiveKeys.h:80
 80	  void mask(KeyAddr key_addr) {
@@ -4128,11 +4128,11 @@ Breakpoint 1, kaleidoscope::LiveKeys::mask (this=0x55ce5b913440 <kaleidoscope::l
 (rr) $2 = (kaleidoscope::Key &) @0x55ce5b913440: {keyCode_ = 255 '\377', flags_ = 255 '\377', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
 (rr) Hardware watchpoint 2: -location key_map_[key_addr].keyCode_
 (rr) #0  kaleidoscope::LiveKeys::mask (this=0x55ce5b913440 <kaleidoscope::live_keys>, key_addr=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/LiveKeys.h:80
-#1  0x000055ce5b86540b in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x55ce5b9136d4 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:374
-#2  0x000055ce5b85ab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#3  0x000055ce5b85a93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#4  0x000055ce5b85a582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#5  0x000055ce5b85a19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+#1  0x000055ce5b86540b in kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x55ce5b9136d4 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:374
+#2  0x000055ce5b85ab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#3  0x000055ce5b85a93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#4  0x000055ce5b85a582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#5  0x000055ce5b85a19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 #6  0x000055ce5b85b6f7 in kaleidoscope::Runtime_::handleKeyEvent (this=0x55ce5b912a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #7  0x000055ce5b85b62b in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x55ce5b912a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
 #8  0x000055ce5b86431a in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
@@ -4154,13 +4154,13 @@ vshcmd: > print event.key
 
 vshcmd: > bt
 #0  kaleidoscope::plugin::MacroSupport::clear (this=0x55ce5b9136e0 <MacroSupport>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src/kaleidoscope/plugin/MacroSupport.cpp:74
-#1  0x000055ce5b8644dc in kaleidoscope::plugin::MacrosOnTheFly::clear () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.h:131
-#2  0x000055ce5b865124 in kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:278
-#3  0x000055ce5b865629 in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x55ce5b9136d4 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:389
-#4  0x000055ce5b85ab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#5  0x000055ce5b85a93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#6  0x000055ce5b85a582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#7  0x000055ce5b85a19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+#1  0x000055ce5b8644dc in kaleidoscope::plugin::MacroPirate::clear () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.h:131
+#2  0x000055ce5b865124 in kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:278
+#3  0x000055ce5b865629 in kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x55ce5b9136d4 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:389
+#4  0x000055ce5b85ab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#5  0x000055ce5b85a93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#6  0x000055ce5b85a582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#7  0x000055ce5b85a19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 #8  0x000055ce5b85b6f7 in kaleidoscope::Runtime_::handleKeyEvent (this=0x55ce5b912a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #9  0x000055ce5b85b62b in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x55ce5b912a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
 #10 0x000055ce5b86431a in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
@@ -4171,7 +4171,7 @@ vshcmd: > bt
 #15 0x000055ce5b8438db in kaleidoscope::testing::SimHarness::RunCycle() ()
 #16 0x000055ce5b84390c in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
 #17 0x000055ce5b805e69 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x55ce5d670fb0, str=..., replaying=false) at test/manual-testcases.cpp:116
-#18 0x000055ce5b806cd2 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacrosOnTheFlyRecursiveReplay_Test::TestBody (this=0x55ce5d670fb0) at test/manual-testcases.cpp:184
+#18 0x000055ce5b806cd2 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacroPirateRecursiveReplay_Test::TestBody (this=0x55ce5d670fb0) at test/manual-testcases.cpp:184
 #19 0x000055ce5b8a32c7 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #20 0x000055ce5b89b803 in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #21 0x000055ce5b86f90e in testing::Test::Run() ()
@@ -4190,8 +4190,8 @@ vshcmd: > print event.key
 vshcmd: > print event.state
 Continuing.
 
-Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x55e5d6f5e494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:287
-287	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+Breakpoint 1, kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x55e5d6f5e494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:287
+287	  EventHandlerResult MacroPirate::onKeyEvent(KeyEvent &event) {
 (rr) $5 = {keyCode_ = 192 '\300', flags_ = 209 '\321', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
 (rr) $6 = 1 '\001'
 (rr) 
@@ -4200,8 +4200,8 @@ vshcmd: > print event.key
 vshcmd: > print event.state
 Continuing.
 
-Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x55e5d6f5e494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:287
-287	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+Breakpoint 1, kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x55e5d6f5e494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:287
+287	  EventHandlerResult MacroPirate::onKeyEvent(KeyEvent &event) {
 (rr) $7 = {keyCode_ = 193 '\301', flags_ = 209 '\321', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
 (rr) $8 = 2 '\002'
 (rr) 
@@ -4242,14 +4242,14 @@ vshcmd: > print event.key
 vshcmd: > print event.state
 Continuing.
 
-Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x55e5d6f5e494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:287
-287	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+Breakpoint 1, kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x55e5d6f5e494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:287
+287	  EventHandlerResult MacroPirate::onKeyEvent(KeyEvent &event) {
 (rr) $11 = {keyCode_ = 192 '\300', flags_ = 209 '\321', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
 (rr) $12 = 2 '\002'
 (rr) 
 vshcmd: > rr replay
 vshcmd: > watch -l ::MacroSupport.active_macro_keys_[0]
-vshcmd: > break MacrosOnTheFly::onKeyEvent
+vshcmd: > break MacroPirate::onKeyEvent
 vshcmd: > command
 vshcmd: >   silent
 vshcmd: >   print event.key
@@ -4258,7 +4258,7 @@ vshcmd: >   cont
 vshcmd: > end
 vshcmd: > disable 1
 vshcmd: > disable 2
-vshcmd: > break MacrosOnTheFly::play if sIndex == 0
+vshcmd: > break MacroPirate::play if sIndex == 0
 vshcmd: > cont
 GNU gdb (GDB) 13.1.90.20230317-git
 Copyright (C) 2023 Free Software Foundation, Inc.
@@ -4283,25 +4283,25 @@ Reading symbols from /lib64/ld-linux-x86-64.so.2...
 BFD: warning: system-supplied DSO at 0x6fffd000 has a section extending past end of file
 0x00007f1cacdaa2b0 in ?? () from /lib64/ld-linux-x86-64.so.2
 (rr) Hardware watchpoint 1: -location ::MacroSupport.active_macro_keys_[0]
-(rr) Breakpoint 2 at 0x564a2e4e0aa0: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp, line 287.
+(rr) Breakpoint 2 at 0x564a2e4e0aa0: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp, line 287.
 (rr) Type commands for breakpoint(s) 2, one per line.
 End with a line saying just "end".
->>>>>(rr) (rr) (rr) Breakpoint 3 at 0x564a2e4e045d: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp, line 136.
+>>>>>(rr) (rr) (rr) Breakpoint 3 at 0x564a2e4e045d: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp, line 136.
 (rr) Continuing.
 [==========] Running 5 tests from 1 test suite.
 [----------] Global test environment set-up.
 [----------] 5 tests from ManualTests
 [ RUN      ] ManualTests.0_test
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/test/manual-testcases.cpp
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/test/manual-testcases.cpp
 [       OK ] ManualTests.0_test (0 ms)
-[ RUN      ] ManualTests.1_MacrosOnTheFlyTestHelpers
-[       OK ] ManualTests.1_MacrosOnTheFlyTestHelpers (0 ms)
-[ RUN      ] ManualTests.2_MacrosOnTheFlyNoHeldOverPlay
-[       OK ] ManualTests.2_MacrosOnTheFlyNoHeldOverPlay (0 ms)
-[ RUN      ] ManualTests.3_MacrosOnTheFlyRecursiveReplay
+[ RUN      ] ManualTests.1_MacroPirateTestHelpers
+[       OK ] ManualTests.1_MacroPirateTestHelpers (0 ms)
+[ RUN      ] ManualTests.2_MacroPirateNoHeldOverPlay
+[       OK ] ManualTests.2_MacroPirateNoHeldOverPlay (0 ms)
+[ RUN      ] ManualTests.3_MacroPirateRecursiveReplay
 
-Breakpoint 3, kaleidoscope::plugin::MacrosOnTheFly::play (sIndex=0 '\000') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:136
-136	  bool MacrosOnTheFly::play(const uint8_t sIndex) {
+Breakpoint 3, kaleidoscope::plugin::MacroPirate::play (sIndex=0 '\000') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:136
+136	  bool MacroPirate::play(const uint8_t sIndex) {
 (rr) 
 vshcmd: > enable 1
 vshcmd: > enable 2
@@ -4415,8 +4415,8 @@ $17 = {keyCode_ = 4 '\004', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', s
 $18 = 129 '\201'
 (rr) 
 vshcmd: > finish
-Run till exit from #0  0x0000564a2e4e09fa in kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:272
-kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x564a2e593494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:389
+Run till exit from #0  0x0000564a2e4e09fa in kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:272
+kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x564a2e593494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:389
 389	      return doNewPlay (event);
 Value returned is $25 = kaleidoscope::EventHandlerResult::EVENT_CONSUMED
 (rr) 
@@ -4425,21 +4425,21 @@ vshcmd: > print event.key
 $26 = {keyCode_ = 0 '\000', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
 (rr) 
 vshcmd: > bt
-#0  kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x564a2e593494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:389
-#1  0x0000564a2e4dab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#2  0x0000564a2e4da93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#3  0x0000564a2e4da582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#4  0x0000564a2e4da19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+#0  kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x564a2e593494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:389
+#1  0x0000564a2e4dab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#2  0x0000564a2e4da93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#3  0x0000564a2e4da582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#4  0x0000564a2e4da19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 #5  0x0000564a2e4db6f7 in kaleidoscope::Runtime_::handleKeyEvent (this=0x564a2e592a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #6  0x0000564a2e4e14c5 in kaleidoscope::plugin::MacroSupport::press (this=0x564a2e5934a0 <MacroSupport>, key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src/kaleidoscope/plugin/MacroSupport.cpp:43
-#7  0x0000564a2e4dfd98 in kaleidoscope::plugin::MacrosOnTheFly::press (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.h:118
-#8  0x0000564a2e4e0729 in kaleidoscope::plugin::MacrosOnTheFly::play (sIndex=0 '\000') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:190
-#9  0x0000564a2e4e09fa in kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:272
-#10 0x0000564a2e4e0f27 in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x564a2e593494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:389
-#11 0x0000564a2e4dab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#12 0x0000564a2e4da93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#13 0x0000564a2e4da582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#14 0x0000564a2e4da19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+#7  0x0000564a2e4dfd98 in kaleidoscope::plugin::MacroPirate::press (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.h:118
+#8  0x0000564a2e4e0729 in kaleidoscope::plugin::MacroPirate::play (sIndex=0 '\000') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:190
+#9  0x0000564a2e4e09fa in kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:272
+#10 0x0000564a2e4e0f27 in kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x564a2e593494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:389
+#11 0x0000564a2e4dab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#12 0x0000564a2e4da93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#13 0x0000564a2e4da582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#14 0x0000564a2e4da19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 #15 0x0000564a2e4db6f7 in kaleidoscope::Runtime_::handleKeyEvent (this=0x564a2e592a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #16 0x0000564a2e4db62b in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x564a2e592a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
 #17 0x0000564a2e4de84a in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
@@ -4450,7 +4450,7 @@ vshcmd: > bt
 #22 0x0000564a2e4c38db in kaleidoscope::testing::SimHarness::RunCycle() ()
 #23 0x0000564a2e4c390c in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
 #24 0x0000564a2e485e69 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x564a303cbfb0, str=..., replaying=false) at test/manual-testcases.cpp:116
-#25 0x0000564a2e486cd2 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacrosOnTheFlyRecursiveReplay_Test::TestBody (this=0x564a303cbfb0) at test/manual-testcases.cpp:184
+#25 0x0000564a2e486cd2 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacroPirateRecursiveReplay_Test::TestBody (this=0x564a303cbfb0) at test/manual-testcases.cpp:184
 #26 0x0000564a2e5232c7 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #27 0x0000564a2e51b803 in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #28 0x0000564a2e4ef90e in testing::Test::Run() ()
@@ -4465,7 +4465,7 @@ vshcmd: > bt
 #37 0x0000564a2e4e314c in main (argc=3, argv=0x7ffd4db582c8) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56
 (rr) 
 vshcmd: > finish
-Run till exit from #0  0x0000564a2e4da19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+Run till exit from #0  0x0000564a2e4da19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 0x0000564a2e4db6f7 in kaleidoscope::Runtime_::handleKeyEvent (this=0x564a2e592a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 138	  auto result = Hooks::onKeyEvent(event);
 Value returned is $31 = kaleidoscope::EventHandlerResult::EVENT_CONSUMED
@@ -4473,14 +4473,14 @@ Value returned is $31 = kaleidoscope::EventHandlerResult::EVENT_CONSUMED
 vshcmd: > bt
 #0  0x0000564a2e4db6f7 in kaleidoscope::Runtime_::handleKeyEvent (this=0x564a2e592a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #1  0x0000564a2e4e14c5 in kaleidoscope::plugin::MacroSupport::press (this=0x564a2e5934a0 <MacroSupport>, key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src/kaleidoscope/plugin/MacroSupport.cpp:43
-#2  0x0000564a2e4dfd98 in kaleidoscope::plugin::MacrosOnTheFly::press (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.h:118
-#3  0x0000564a2e4e0729 in kaleidoscope::plugin::MacrosOnTheFly::play (sIndex=0 '\000') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:190
-#4  0x0000564a2e4e09fa in kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:272
-#5  0x0000564a2e4e0f27 in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x564a2e593494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:389
-#6  0x0000564a2e4dab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#7  0x0000564a2e4da93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#8  0x0000564a2e4da582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#9  0x0000564a2e4da19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+#2  0x0000564a2e4dfd98 in kaleidoscope::plugin::MacroPirate::press (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.h:118
+#3  0x0000564a2e4e0729 in kaleidoscope::plugin::MacroPirate::play (sIndex=0 '\000') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:190
+#4  0x0000564a2e4e09fa in kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:272
+#5  0x0000564a2e4e0f27 in kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x564a2e593494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:389
+#6  0x0000564a2e4dab49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#7  0x0000564a2e4da93f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#8  0x0000564a2e4da582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#9  0x0000564a2e4da19c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 #10 0x0000564a2e4db6f7 in kaleidoscope::Runtime_::handleKeyEvent (this=0x564a2e592a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #11 0x0000564a2e4db62b in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x564a2e592a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
 #12 0x0000564a2e4de84a in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
@@ -4491,7 +4491,7 @@ vshcmd: > bt
 #17 0x0000564a2e4c38db in kaleidoscope::testing::SimHarness::RunCycle() ()
 #18 0x0000564a2e4c390c in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
 #19 0x0000564a2e485e69 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x564a303cbfb0, str=..., replaying=false) at test/manual-testcases.cpp:116
-#20 0x0000564a2e486cd2 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacrosOnTheFlyRecursiveReplay_Test::TestBody (this=0x564a303cbfb0) at test/manual-testcases.cpp:184
+#20 0x0000564a2e486cd2 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacroPirateRecursiveReplay_Test::TestBody (this=0x564a303cbfb0) at test/manual-testcases.cpp:184
 #21 0x0000564a2e5232c7 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #22 0x0000564a2e51b803 in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #23 0x0000564a2e4ef90e in testing::Test::Run() ()
@@ -4552,8 +4552,8 @@ vshcmd: >       | show print *$cur
 (rr) 
 vshcmd: > info break
 Num     Type           Disp Enb Address            What
-1       breakpoint     keep y   0x000055e5d6eabaac in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent(kaleidoscope::KeyEvent&) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:287
-	stop only if $_any_caller_matches(".*MacrosOnTheFlyRecursiveReplay", 99) 
+1       breakpoint     keep y   0x000055e5d6eabaac in kaleidoscope::plugin::MacroPirate::onKeyEvent(kaleidoscope::KeyEvent&) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:287
+	stop only if $_any_caller_matches(".*MacroPirateRecursiveReplay", 99) 
    		     && !$_any_caller_matches(".*initialiseMacros", 99) 
    		     && event.key.keyCode_ > 190 (host evals)
 	breakpoint already hit 7 times
@@ -4563,8 +4563,8 @@ vshcmd: > print event.key
 vshcmd: > print event.state
 Continuing.
 
-Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x55e5d6f5e494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:287
-287	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+Breakpoint 1, kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x55e5d6f5e494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:287
+287	  EventHandlerResult MacroPirate::onKeyEvent(KeyEvent &event) {
 (rr) $29 = {keyCode_ = 5 '\005', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
 (rr) $30 = 130 '\202'
 (rr) 
@@ -4582,15 +4582,15 @@ Detaching from program: /home/matmal01/.local/share/rr/EdgeCases-4/mmap_hardlink
 Kaleidoscope [19:10:05] $ 
 vshcmd: > step
 
-Breakpoint 2, kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:268
-268	  EventHandlerResult MacrosOnTheFly::doNewPlay(KeyEvent &event) {
+Breakpoint 2, kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:268
+268	  EventHandlerResult MacroPirate::doNewPlay(KeyEvent &event) {
 (rr) 
 vshcmd: > disable 1
 vshcmd: > reverse-cont
 Continuing.
 
-Breakpoint 2, kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:268
-268	  EventHandlerResult MacrosOnTheFly::doNewPlay(KeyEvent &event) {
+Breakpoint 2, kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:268
+268	  EventHandlerResult MacroPirate::doNewPlay(KeyEvent &event) {
 (rr) 
 vshcmd: > next
 284	    return kaleidoscope::EventHandlerResult::EVENT_CONSUMED;
@@ -4609,8 +4609,8 @@ vshcmd: > break Runtime_::sendKeyboardReport
 vshcmd: > cont
 Continuing.
 
-Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x55e5d6f5e494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:287
-287	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+Breakpoint 1, kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x55e5d6f5e494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:287
+287	  EventHandlerResult MacroPirate::onKeyEvent(KeyEvent &event) {
 (rr) 
 vshcmd: > gdb-pipe array &live_keys.key_map_.values_[0]; 64 \
 vshcmd: >       | if $cur->keyCode_ != 255 \
@@ -4637,14 +4637,14 @@ New value = {keyCode_ = 0 '\000', flags_ = 0 '\000', static hid_type_mask_ = 48 
 (rr) 
 vshcmd: > bt
 #0  0x000055e5d6eac52c in kaleidoscope::plugin::MacroSupport::press (this=0x55e5d6f5e4a0 <MacroSupport>, key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport/src/kaleidoscope/plugin/MacroSupport.cpp:47
-#1  0x000055e5d6eaad98 in kaleidoscope::plugin::MacrosOnTheFly::press (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.h:118
-#2  0x000055e5d6eab729 in kaleidoscope::plugin::MacrosOnTheFly::play (sIndex=0 '\000') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:190
-#3  0x000055e5d6eab9fa in kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:272
-#4  0x000055e5d6eabf33 in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x55e5d6f5e494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:389
-#5  0x000055e5d6ea5b49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#6  0x000055e5d6ea593f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#7  0x000055e5d6ea5582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#8  0x000055e5d6ea519c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+#1  0x000055e5d6eaad98 in kaleidoscope::plugin::MacroPirate::press (key=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.h:118
+#2  0x000055e5d6eab729 in kaleidoscope::plugin::MacroPirate::play (sIndex=0 '\000') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:190
+#3  0x000055e5d6eab9fa in kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:272
+#4  0x000055e5d6eabf33 in kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x55e5d6f5e494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:389
+#5  0x000055e5d6ea5b49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#6  0x000055e5d6ea593f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#7  0x000055e5d6ea5582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#8  0x000055e5d6ea519c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 #9  0x000055e5d6ea66f7 in kaleidoscope::Runtime_::handleKeyEvent (this=0x55e5d6f5da50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #10 0x000055e5d6ea662b in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x55e5d6f5da50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
 #11 0x000055e5d6ea984a in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
@@ -4655,7 +4655,7 @@ vshcmd: > bt
 #16 0x000055e5d6e8e8db in kaleidoscope::testing::SimHarness::RunCycle() ()
 #17 0x000055e5d6e8e90c in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
 #18 0x000055e5d6e50e69 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x55e5d8d87fb0, str=..., replaying=false) at test/manual-testcases.cpp:116
-#19 0x000055e5d6e51cd2 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacrosOnTheFlyRecursiveReplay_Test::TestBody (this=0x55e5d8d87fb0) at test/manual-testcases.cpp:184
+#19 0x000055e5d6e51cd2 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacroPirateRecursiveReplay_Test::TestBody (this=0x55e5d8d87fb0) at test/manual-testcases.cpp:184
 #20 0x000055e5d6eee2d3 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #21 0x000055e5d6ee680f in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #22 0x000055e5d6eba91a in testing::Test::Run() ()
@@ -4690,8 +4690,8 @@ $44 = 255 '\377'
 vshcmd: > cont
 Continuing.
 
-Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x55e5d6f5e494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:287
-287	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+Breakpoint 1, kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x55e5d6f5e494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:287
+287	  EventHandlerResult MacroPirate::onKeyEvent(KeyEvent &event) {
 (rr) 
 vshcmd: > watch -l live_keys.key_map_.values_[1].keyCode_
 Hardware watchpoint 4: -location live_keys.key_map_.values_[1].keyCode_
@@ -4699,33 +4699,33 @@ Hardware watchpoint 4: -location live_keys.key_map_.values_[1].keyCode_
 vshcmd: >
 vshcmd: > next
 
-Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x55e5d6f5e494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:287
-287	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+Breakpoint 1, kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x55e5d6f5e494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:287
+287	  EventHandlerResult MacroPirate::onKeyEvent(KeyEvent &event) {
 (rr) 
 vshcmd: > break doNewPlay
-Breakpoint 2 at 0x55e5d6eab988: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp, line 268.
+Breakpoint 2 at 0x55e5d6eab988: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp, line 268.
 (rr) 
 vshcmd: > condition 1
 vshcmd: > cont
 Continuing.
 
-Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x55e5d6f5e494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:287
-287	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+Breakpoint 1, kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x55e5d6f5e494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:287
+287	  EventHandlerResult MacroPirate::onKeyEvent(KeyEvent &event) {
 (rr) 
 vshcmd: > step
 
-Breakpoint 2, kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:268
-268	  EventHandlerResult MacrosOnTheFly::doNewPlay(KeyEvent &event) {
+Breakpoint 2, kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:268
+268	  EventHandlerResult MacroPirate::doNewPlay(KeyEvent &event) {
 (rr) 
 vshcmd: > next
 389	      return doNewPlay (event);
 (rr) 
 vshcmd: > bt
-#0  kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x55e5d6f5e494 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:287
-#1  0x000055e5d6ea5b49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#2  0x000055e5d6ea593f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#3  0x000055e5d6ea5582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#4  0x000055e5d6ea519c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+#0  kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x55e5d6f5e494 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:287
+#1  0x000055e5d6ea5b49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#2  0x000055e5d6ea593f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#3  0x000055e5d6ea5582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#4  0x000055e5d6ea519c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 #5  0x000055e5d6ea66f7 in kaleidoscope::Runtime_::handleKeyEvent (this=0x55e5d6f5da50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #6  0x000055e5d6ea662b in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x55e5d6f5da50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
 #7  0x000055e5d6ea984a in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=1 '\001') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
@@ -4736,7 +4736,7 @@ vshcmd: > bt
 #12 0x000055e5d6e8e8db in kaleidoscope::testing::SimHarness::RunCycle() ()
 #13 0x000055e5d6e8e90c in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
 #14 0x000055e5d6e510a9 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x55e5d8d87fb0, str=..., replaying=false) at test/manual-testcases.cpp:117
-#15 0x000055e5d6e51b93 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacrosOnTheFlyRecursiveReplay_Test::TestBody (this=0x55e5d8d87fb0) at test/manual-testcases.cpp:177
+#15 0x000055e5d6e51b93 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacroPirateRecursiveReplay_Test::TestBody (this=0x55e5d8d87fb0) at test/manual-testcases.cpp:177
 #16 0x000055e5d6eee2d3 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #17 0x000055e5d6ee680f in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #18 0x000055e5d6eba91a in testing::Test::Run() ()
@@ -4763,13 +4763,13 @@ vshcmd: > cont
 vshcmd: > bt
 Continuing.
 
-Breakpoint 2, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x5633e9e796d4 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:287
-287	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
-(rr) #0  kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x5633e9e796d4 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:287
-#1  0x00005633e9dc0b49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#2  0x00005633e9dc093f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#3  0x00005633e9dc0582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#4  0x00005633e9dc019c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+Breakpoint 2, kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x5633e9e796d4 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:287
+287	  EventHandlerResult MacroPirate::onKeyEvent(KeyEvent &event) {
+(rr) #0  kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x5633e9e796d4 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:287
+#1  0x00005633e9dc0b49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#2  0x00005633e9dc093f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#3  0x00005633e9dc0582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#4  0x00005633e9dc019c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 #5  0x00005633e9dc16f7 in kaleidoscope::Runtime_::handleKeyEvent (this=0x5633e9e78a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #6  0x00005633e9dc162b in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x5633e9e78a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
 #7  0x00005633e9dca31a in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
@@ -4780,7 +4780,7 @@ Breakpoint 2, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x5633e9e79
 #12 0x00005633e9da98db in kaleidoscope::testing::SimHarness::RunCycle() ()
 #13 0x00005633e9da990c in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
 #14 0x00005633e9d6be69 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x5633eb1f1fb0, str=..., replaying=false) at test/manual-testcases.cpp:116
-#15 0x00005633e9d6cbe9 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacrosOnTheFlyRecursiveReplay_Test::TestBody (this=0x5633eb1f1fb0) at test/manual-testcases.cpp:180
+#15 0x00005633e9d6cbe9 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacroPirateRecursiveReplay_Test::TestBody (this=0x5633eb1f1fb0) at test/manual-testcases.cpp:180
 #16 0x00005633e9e092d3 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #17 0x00005633e9e0180f in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #18 0x00005633e9dd591a in testing::Test::Run() ()
@@ -4795,13 +4795,13 @@ Breakpoint 2, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x5633e9e79
 #27 0x00005633e9dc6b02 in main (argc=3, argv=0x7ffcde90c3a8) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56
 (rr) 
 vshcmd: > finish
-Run till exit from #0  kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x5633e9e796d4 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:287
-0x00005633e9dc0b49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-25	KALEIDOSCOPE_INIT_PLUGINS(MacrosOnTheFly);
+Run till exit from #0  kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x5633e9e796d4 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:287
+0x00005633e9dc0b49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+25	KALEIDOSCOPE_INIT_PLUGINS(MacroPirate);
 Value returned is $2 = kaleidoscope::EventHandlerResult::EVENT_CONSUMED
 (rr) 
 vshcmd: > reverse-step
-kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x5633e9e796d4 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:459
+kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x5633e9e796d4 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:459
 459	  }
 (rr) 
 vshcmd: > gdb-pipe array &slotRecord[0]; 8 | if $cur->numUsedKeystrokes != 0 \
@@ -4833,7 +4833,7 @@ $3 = 2 '\002'
 (rr) $4 = {keyCode_ = 193 '\301', flags_ = 209 '\321', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
 (rr) 
 vshcmd: > print currentState
-$7 = kaleidoscope::plugin::MacrosOnTheFly::IDLE_AND_RECORDING
+$7 = kaleidoscope::plugin::MacroPirate::IDLE_AND_RECORDING
 (rr) quit
 A debugging session is active.
 
@@ -4852,11 +4852,11 @@ vshcmd: > reverse-next
 441	      if (IS_MACRODELAY(event)) {
 (rr) 
 vshcmd: > bt
-#0  kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x5633e9e796d4 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:459
-#1  0x00005633e9dc0b49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#2  0x00005633e9dc093f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#3  0x00005633e9dc0582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#4  0x00005633e9dc019c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+#0  kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x5633e9e796d4 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:459
+#1  0x00005633e9dc0b49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#2  0x00005633e9dc093f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#3  0x00005633e9dc0582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#4  0x00005633e9dc019c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 #5  0x00005633e9dc16f7 in kaleidoscope::Runtime_::handleKeyEvent (this=0x5633e9e78a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #6  0x00005633e9dc162b in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x5633e9e78a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
 #7  0x00005633e9dca31a in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
@@ -4867,7 +4867,7 @@ vshcmd: > bt
 #12 0x00005633e9da98db in kaleidoscope::testing::SimHarness::RunCycle() ()
 #13 0x00005633e9da990c in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
 #14 0x00005633e9d6be69 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x5633eb1f1fb0, str=..., replaying=false) at test/manual-testcases.cpp:116
-#15 0x00005633e9d6cbe9 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacrosOnTheFlyRecursiveReplay_Test::TestBody (this=0x5633eb1f1fb0) at test/manual-testcases.cpp:180
+#15 0x00005633e9d6cbe9 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacroPirateRecursiveReplay_Test::TestBody (this=0x5633eb1f1fb0) at test/manual-testcases.cpp:180
 #16 0x00005633e9e092d3 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #17 0x00005633e9e0180f in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #18 0x00005633e9dd591a in testing::Test::Run() ()
@@ -4883,7 +4883,7 @@ vshcmd: > bt
 (rr) 
 vshcmd: > print 
 vshcmd: > print
-vshcmd: > break MacrosOnTheFly::onKeyEvent if $_any_caller_matches(".*MacrosOnTheFlyRecursiveReplay", 99)
+vshcmd: > break MacroPirate::onKeyEvent if $_any_caller_matches(".*MacroPirateRecursiveReplay", 99)
 vshcmd: > command
 vshcmd: >   silent
 vshcmd: >   outputnl "Another onKeyEvent"
@@ -4914,22 +4914,22 @@ Reading symbols from /lib64/ld-linux-x86-64.so.2...
 (No debugging symbols found in /lib64/ld-linux-x86-64.so.2)
 BFD: warning: system-supplied DSO at 0x6fffd000 has a section extending past end of file
 0x00007f130120a2b0 in ?? () from /lib64/ld-linux-x86-64.so.2
-(rr) Breakpoint 1 at 0x5633e9dcb08a: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp, line 268.
+(rr) Breakpoint 1 at 0x5633e9dcb08a: file /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp, line 268.
 (rr) Continuing.
 [==========] Running 5 tests from 1 test suite.
 [----------] Global test environment set-up.
 [----------] 5 tests from ManualTests
 [ RUN      ] ManualTests.0_test
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/test/manual-testcases.cpp
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/test/manual-testcases.cpp
 [       OK ] ManualTests.0_test (0 ms)
-[ RUN      ] ManualTests.1_MacrosOnTheFlyTestHelpers
-[       OK ] ManualTests.1_MacrosOnTheFlyTestHelpers (0 ms)
-[ RUN      ] ManualTests.2_MacrosOnTheFlyNoHeldOverPlay
-[       OK ] ManualTests.2_MacrosOnTheFlyNoHeldOverPlay (0 ms)
-[ RUN      ] ManualTests.3_MacrosOnTheFlyRecursiveReplay
+[ RUN      ] ManualTests.1_MacroPirateTestHelpers
+[       OK ] ManualTests.1_MacroPirateTestHelpers (0 ms)
+[ RUN      ] ManualTests.2_MacroPirateNoHeldOverPlay
+[       OK ] ManualTests.2_MacroPirateNoHeldOverPlay (0 ms)
+[ RUN      ] ManualTests.3_MacroPirateRecursiveReplay
 
-Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:268
-268	  EventHandlerResult MacrosOnTheFly::doNewPlay(KeyEvent &event) {
+Breakpoint 1, kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:268
+268	  EventHandlerResult MacroPirate::doNewPlay(KeyEvent &event) {
 (rr) 
 vshcmd: > watch -l live_keys.key_map_.values_[1].keyCode_
 Hardware watchpoint 2: -location live_keys.key_map_.values_[1].keyCode_
@@ -4949,12 +4949,12 @@ kaleidoscope::LiveKeys::mask (this=0x5633e9e79440 <kaleidoscope::live_keys>, key
 (rr) 
 vshcmd: > bt
 #0  kaleidoscope::LiveKeys::mask (this=0x5633e9e79440 <kaleidoscope::live_keys>, key_addr=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/LiveKeys.h:83
-#1  0x00005633e9dcb15c in kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:282
-#2  0x00005633e9dcb635 in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x5633e9e796d4 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:389
-#3  0x00005633e9dc0b49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#4  0x00005633e9dc093f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#5  0x00005633e9dc0582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
-#6  0x00005633e9dc019c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/EdgeCases.ino:25
+#1  0x00005633e9dcb15c in kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:282
+#2  0x00005633e9dcb635 in kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x5633e9e796d4 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:389
+#3  0x00005633e9dc0b49 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#4  0x00005633e9dc093f in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#5  0x00005633e9dc0582 in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
+#6  0x00005633e9dc019c in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/EdgeCases.ino:25
 #7  0x00005633e9dc16f7 in kaleidoscope::Runtime_::handleKeyEvent (this=0x5633e9e78a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #8  0x00005633e9dc162b in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x5633e9e78a50 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
 #9  0x00005633e9dca31a in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
@@ -4965,7 +4965,7 @@ vshcmd: > bt
 #14 0x00005633e9da98db in kaleidoscope::testing::SimHarness::RunCycle() ()
 #15 0x00005633e9da990c in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
 #16 0x00005633e9d6be69 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x5633eb1f1fb0, str=..., replaying=false) at test/manual-testcases.cpp:116
-#17 0x00005633e9d6cb93 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacrosOnTheFlyRecursiveReplay_Test::TestBody (this=0x5633eb1f1fb0) at test/manual-testcases.cpp:177
+#17 0x00005633e9d6cb93 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacroPirateRecursiveReplay_Test::TestBody (this=0x5633eb1f1fb0) at test/manual-testcases.cpp:177
 #18 0x00005633e9e092d3 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #19 0x00005633e9e0180f in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #20 0x00005633e9dd591a in testing::Test::Run() ()
@@ -4999,7 +4999,7 @@ kaleidoscope::LiveKeys::clear (this=0x5633e9e79440 <kaleidoscope::live_keys>, ke
 #7  0x00005633e9da98db in kaleidoscope::testing::SimHarness::RunCycle() ()
 #8  0x00005633e9da990c in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
 #9  0x00005633e9d6c0a9 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x5633eb1f1fb0, str=..., replaying=false) at test/manual-testcases.cpp:117
-#10 0x00005633e9d6cb93 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacrosOnTheFlyRecursiveReplay_Test::TestBody (this=0x5633eb1f1fb0) at test/manual-testcases.cpp:177
+#10 0x00005633e9d6cb93 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacroPirateRecursiveReplay_Test::TestBody (this=0x5633eb1f1fb0) at test/manual-testcases.cpp:177
 #11 0x00005633e9e092d3 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #12 0x00005633e9e0180f in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #13 0x00005633e9dd591a in testing::Test::Run() ()
@@ -5033,8 +5033,8 @@ Expected: is empty
   Actual: { '\x5' (5) }, which has 1 element
 autogen (i=27)
 Unexpected keyboard report at 103ms: { }
-[  FAILED  ] ManualTests.3_MacrosOnTheFlyRecursiveReplay (1 ms)
-[ RUN      ] ManualTests.4_MacrosOnTheFlyRecursiveAvoidance
+[  FAILED  ] ManualTests.3_MacroPirateRecursiveReplay (1 ms)
+[ RUN      ] ManualTests.4_MacroPirateRecursiveAvoidance
 
 Hardware watchpoint 2: -location live_keys.key_map_.values_[1].keyCode_
 
@@ -5054,7 +5054,7 @@ kaleidoscope::LiveKeys::activate (this=0x5633e9e79440 <kaleidoscope::live_keys>,
 #9  0x00005633e9da990c in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
 #10 0x00005633e9d6be69 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x5633eb1f1fb0, str=..., replaying=false) at test/manual-testcases.cpp:116
 #11 0x00005633e9d6c516 in kaleidoscope::testing::(anonymous namespace)::ManualTests::initialiseMacros (this=0x5633eb1f1fb0) at test/manual-testcases.cpp:137
-#12 0x00005633e9d6ce8b in kaleidoscope::testing::(anonymous namespace)::ManualTests_4_MacrosOnTheFlyRecursiveAvoidance_Test::TestBody (this=0x5633eb1f1fb0) at test/manual-testcases.cpp:194
+#12 0x00005633e9d6ce8b in kaleidoscope::testing::(anonymous namespace)::ManualTests_4_MacroPirateRecursiveAvoidance_Test::TestBody (this=0x5633eb1f1fb0) at test/manual-testcases.cpp:194
 #13 0x00005633e9e092d3 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #14 0x00005633e9e0180f in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #15 0x00005633e9dd591a in testing::Test::Run() ()
@@ -5087,8 +5087,8 @@ vshcmd: >       | if $cur->keyCode_ != 255 \
 vshcmd: >       | show print *$cur
 (rr) 
 vshcmd: > finish
-Run till exit from #0  kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:268
-kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x556dee44b6d4 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:458
+Run till exit from #0  kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:268
+kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x556dee44b6d4 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:458
 458	    return doNewPlay (event);
 Value returned is $3 = kaleidoscope::EventHandlerResult::EVENT_CONSUMED
 (rr) 
@@ -5112,8 +5112,8 @@ kaleidoscope::LiveKeys::clear (this=0x556dee44b440 <kaleidoscope::live_keys>, ke
 (rr) 
 vshcmd: > cont
 Continuing.
-[       OK ] ManualTests.3_MacrosOnTheFlyRecursiveReplay (0 ms)
-[ RUN      ] ManualTests.4_MacrosOnTheFlyRecursiveAvoidance
+[       OK ] ManualTests.3_MacroPirateRecursiveReplay (0 ms)
+[ RUN      ] ManualTests.4_MacroPirateRecursiveAvoidance
 
 Hardware watchpoint 2: -location live_keys.key_map_.values_[1].keyCode_
 
@@ -5142,7 +5142,7 @@ vshcmd: > bt
 #7  0x0000556dee37b851 in kaleidoscope::testing::SimHarness::RunCycle() ()
 #8  0x0000556dee37b882 in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
 #9  0x0000556dee33e0a9 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x556def43efb0, str=..., replaying=false) at test/manual-testcases.cpp:117
-#10 0x0000556dee33eb93 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacrosOnTheFlyRecursiveReplay_Test::TestBody (this=0x556def43efb0) at test/manual-testcases.cpp:180
+#10 0x0000556dee33eb93 in kaleidoscope::testing::(anonymous namespace)::ManualTests_3_MacroPirateRecursiveReplay_Test::TestBody (this=0x556def43efb0) at test/manual-testcases.cpp:180
 #11 0x0000556dee3db249 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #12 0x0000556dee3d3785 in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #13 0x0000556dee3a7890 in testing::Test::Run() ()
@@ -5198,7 +5198,7 @@ vshcmd: > bt
 #7  0x000055ce092254c3 in kaleidoscope::Runtime_::loop (this=0x55ce092c3520 <kaleidoscope::Runtime>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:77
 #8  0x000055ce0920d121 in kaleidoscope::testing::SimHarness::RunCycle() ()
 #9  0x000055ce0920d152 in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
-#10 0x000055ce0920756f in kaleidoscope::testing::(anonymous namespace)::GeneratedKTest_4_MacrosOnTheFlyMultiPressDuringRecord_Test::TestBody (this=0x55ce09ddde20) at test/generated-testcase.cpp:497
+#10 0x000055ce0920756f in kaleidoscope::testing::(anonymous namespace)::GeneratedKTest_4_MacroPirateMultiPressDuringRecord_Test::TestBody (this=0x55ce09ddde20) at test/generated-testcase.cpp:497
 #11 0x000055ce0926dea5 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #12 0x000055ce09265e4d in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #13 0x000055ce0923986e in testing::Test::Run() ()
@@ -5224,11 +5224,11 @@ New value = 255 '\377'
 (rr) 
 vshcmd: > bt
 #0  0x000055ce09227ba7 in kaleidoscope::LiveKeys::mask (this=0x55ce092c3f20 <kaleidoscope::live_keys>, key_addr=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/LiveKeys.h:82
-#1  0x000055ce0922f35c in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x55ce092c41b4 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:368
-#2  0x000055ce09224b23 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/BasicRepeat/BasicRepeat.ino:25
-#3  0x000055ce09224919 in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/BasicRepeat/BasicRepeat.ino:25
-#4  0x000055ce0922455c in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/BasicRepeat/BasicRepeat.ino:25
-#5  0x000055ce09224176 in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/BasicRepeat/BasicRepeat.ino:25
+#1  0x000055ce0922f35c in kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x55ce092c41b4 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:368
+#2  0x000055ce09224b23 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/BasicRepeat/BasicRepeat.ino:25
+#3  0x000055ce09224919 in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/BasicRepeat/BasicRepeat.ino:25
+#4  0x000055ce0922455c in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/BasicRepeat/BasicRepeat.ino:25
+#5  0x000055ce09224176 in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/BasicRepeat/BasicRepeat.ino:25
 #6  0x000055ce09225745 in kaleidoscope::Runtime_::handleKeyEvent (this=0x55ce092c3520 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #7  0x000055ce09225679 in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x55ce092c3520 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
 #8  0x000055ce0922e3a6 in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
@@ -5238,7 +5238,7 @@ vshcmd: > bt
 #12 0x000055ce092254c3 in kaleidoscope::Runtime_::loop (this=0x55ce092c3520 <kaleidoscope::Runtime>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:77
 #13 0x000055ce0920d121 in kaleidoscope::testing::SimHarness::RunCycle() ()
 #14 0x000055ce0920d152 in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
-#15 0x000055ce0920756f in kaleidoscope::testing::(anonymous namespace)::GeneratedKTest_4_MacrosOnTheFlyMultiPressDuringRecord_Test::TestBody (this=0x55ce09ddde20) at test/generated-testcase.cpp:497
+#15 0x000055ce0920756f in kaleidoscope::testing::(anonymous namespace)::GeneratedKTest_4_MacroPirateMultiPressDuringRecord_Test::TestBody (this=0x55ce09ddde20) at test/generated-testcase.cpp:497
 #16 0x000055ce0926dea5 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #17 0x000055ce09265e4d in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #18 0x000055ce0923986e in testing::Test::Run() ()
@@ -5253,16 +5253,16 @@ vshcmd: > bt
 #27 0x000055ce0922ab7c in main (argc=3, argv=0x7ffd7cbae698) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56
 (rr) 
 vshcmd: > finish
-Run till exit from #0  0x000055ce0922455c in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/BasicRepeat/BasicRepeat.ino:25
-0x000055ce09224176 in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/BasicRepeat/BasicRepeat.ino:25
-25	KALEIDOSCOPE_INIT_PLUGINS(MacrosOnTheFly);
+Run till exit from #0  0x000055ce0922455c in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/BasicRepeat/BasicRepeat.ino:25
+0x000055ce09224176 in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/BasicRepeat/BasicRepeat.ino:25
+25	KALEIDOSCOPE_INIT_PLUGINS(MacroPirate);
 Value returned is $20 = kaleidoscope::EventHandlerResult::EVENT_CONSUMED
 (rr) 
 vshcmd: > whereami
-kaleidoscope::Hooks::onKeyEvent(kaleidoscope::KeyEvent&)+28 /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/BasicRepeat/BasicRepeat.ino:25
+kaleidoscope::Hooks::onKeyEvent(kaleidoscope::KeyEvent&)+28 /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/BasicRepeat/BasicRepeat.ino:25
 (rr) 
 vshcmd: > bt
-#0  0x000055ce09224176 in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/BasicRepeat/BasicRepeat.ino:25
+#0  0x000055ce09224176 in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/BasicRepeat/BasicRepeat.ino:25
 #1  0x000055ce09225745 in kaleidoscope::Runtime_::handleKeyEvent (this=0x55ce092c3520 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #2  0x000055ce09225679 in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x55ce092c3520 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
 #3  0x000055ce0922e3a6 in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
@@ -5272,7 +5272,7 @@ vshcmd: > bt
 #7  0x000055ce092254c3 in kaleidoscope::Runtime_::loop (this=0x55ce092c3520 <kaleidoscope::Runtime>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:77
 #8  0x000055ce0920d121 in kaleidoscope::testing::SimHarness::RunCycle() ()
 #9  0x000055ce0920d152 in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
-#10 0x000055ce0920756f in kaleidoscope::testing::(anonymous namespace)::GeneratedKTest_4_MacrosOnTheFlyMultiPressDuringRecord_Test::TestBody (this=0x55ce09ddde20) at test/generated-testcase.cpp:497
+#10 0x000055ce0920756f in kaleidoscope::testing::(anonymous namespace)::GeneratedKTest_4_MacroPirateMultiPressDuringRecord_Test::TestBody (this=0x55ce09ddde20) at test/generated-testcase.cpp:497
 #11 0x000055ce0926dea5 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #12 0x000055ce09265e4d in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #13 0x000055ce0923986e in testing::Test::Run() ()
@@ -5325,9 +5325,9 @@ Continuing.
 [----------] Global test environment set-up.
 [----------] 6 tests from GeneratedKTest
 [ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/BasicRepeat/test.ktest
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/BasicRepeat/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_MacrosOnTheFlyNothingRecorded
+[ RUN      ] GeneratedKTest.1_MacroPirateNothingRecorded
 
 Breakpoint 1, kaleidoscope::LiveKeys::mask (this=0x55ce092c3f20 <kaleidoscope::live_keys>, key_addr=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/LiveKeys.h:80
 80	  void mask(KeyAddr key_addr) {
@@ -5341,12 +5341,12 @@ $1 = (kaleidoscope::Key &) @0x55ce092c3f4e: {keyCode_ = 255 '\377', flags_ = 255
 vshcmd: > watch -l key_map_[key_addr].keyCode_
 vshcmd: > bt
 #0  kaleidoscope::LiveKeys::mask (this=0x55ce092c3f20 <kaleidoscope::live_keys>, key_addr=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/LiveKeys.h:80
-#1  0x000055ce0922f1d9 in kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:284
-#2  0x000055ce0922f5d1 in kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (this=0x55ce092c41b4 <MacrosOnTheFly>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:389
-#3  0x000055ce09224b23 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/BasicRepeat/BasicRepeat.ino:25
-#4  0x000055ce09224919 in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacrosOnTheFly, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/BasicRepeat/BasicRepeat.ino:25
-#5  0x000055ce0922455c in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/BasicRepeat/BasicRepeat.ino:25
-#6  0x000055ce09224176 in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/BasicRepeat/BasicRepeat.ino:25
+#1  0x000055ce0922f1d9 in kaleidoscope::plugin::MacroPirate::doNewPlay (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:284
+#2  0x000055ce0922f5d1 in kaleidoscope::plugin::MacroPirate::onKeyEvent (this=0x55ce092c41b4 <MacroPirate>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:389
+#3  0x000055ce09224b23 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&>::call (plugin=..., hook_args#0=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/BasicRepeat/BasicRepeat.ino:25
+#4  0x000055ce09224919 in kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::MacroPirate, kaleidoscope::KeyEvent&> (plugin=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/BasicRepeat/BasicRepeat.ino:25
+#5  0x000055ce0922455c in kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&> () at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/BasicRepeat/BasicRepeat.ino:25
+#6  0x000055ce09224176 in kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/BasicRepeat/BasicRepeat.ino:25
 #7  0x000055ce09225745 in kaleidoscope::Runtime_::handleKeyEvent (this=0x55ce092c3520 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:138
 #8  0x000055ce09225679 in kaleidoscope::Runtime_::handleKeyswitchEvent (this=0x55ce092c3520 <kaleidoscope::Runtime>, event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:122
 #9  0x000055ce0922e3a6 in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent (key=..., key_addr=..., key_state=2 '\002') at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
@@ -5356,7 +5356,7 @@ vshcmd: > bt
 #13 0x000055ce092254c3 in kaleidoscope::Runtime_::loop (this=0x55ce092c3520 <kaleidoscope::Runtime>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:77
 #14 0x000055ce0920d121 in kaleidoscope::testing::SimHarness::RunCycle() ()
 #15 0x000055ce0920d152 in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
-#16 0x000055ce09205925 in kaleidoscope::testing::(anonymous namespace)::GeneratedKTest_1_MacrosOnTheFlyNothingRecorded_Test::TestBody (this=0x55ce09ddde20) at test/generated-testcase.cpp:110
+#16 0x000055ce09205925 in kaleidoscope::testing::(anonymous namespace)::GeneratedKTest_1_MacroPirateNothingRecorded_Test::TestBody (this=0x55ce09ddde20) at test/generated-testcase.cpp:110
 #17 0x000055ce0926dea5 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #18 0x000055ce09265e4d in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #19 0x000055ce0923986e in testing::Test::Run() ()
@@ -5401,7 +5401,7 @@ vshcmd: > bt
 #7  0x000055ce092254c3 in kaleidoscope::Runtime_::loop (this=0x55ce092c3520 <kaleidoscope::Runtime>) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:77
 #8  0x000055ce0920d121 in kaleidoscope::testing::SimHarness::RunCycle() ()
 #9  0x000055ce0920d152 in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) ()
-#10 0x000055ce09205925 in kaleidoscope::testing::(anonymous namespace)::GeneratedKTest_1_MacrosOnTheFlyNothingRecorded_Test::TestBody (this=0x55ce09ddde20) at test/generated-testcase.cpp:110
+#10 0x000055ce09205925 in kaleidoscope::testing::(anonymous namespace)::GeneratedKTest_1_MacroPirateNothingRecorded_Test::TestBody (this=0x55ce09ddde20) at test/generated-testcase.cpp:110
 #11 0x000055ce0926dea5 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #12 0x000055ce09265e4d in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #13 0x000055ce0923986e in testing::Test::Run() ()
@@ -5438,8 +5438,8 @@ vshcmd: >       | if $cur->keyCode_ != 255 \
 vshcmd: >       | show print *$cur
 Continuing.
 
-Breakpoint 1.1, kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/BasicRepeat/BasicRepeat.ino:25
-25	KALEIDOSCOPE_INIT_PLUGINS(MacrosOnTheFly);
+Breakpoint 1.1, kaleidoscope::Hooks::onKeyEvent (event=...) at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/BasicRepeat/BasicRepeat.ino:25
+25	KALEIDOSCOPE_INIT_PLUGINS(MacroPirate);
 (gdb) $3 = {keyCode_ = 4 '\004', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
 $4 = {keyCode_ = 5 '\005', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', static system_control_mask_ = 207 '\317', static consumer_control_mask_ = 200 '\310'}
 (gdb) 
@@ -5481,7 +5481,7 @@ A syntax error in expression, near `0, 0)'.
 vshcmd: > quit
 vshcmd: > y
 Kaleidoscope [17:08:34] $ 
-vshcmd: > break kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent if $_any_caller_matches(".*MacrosOnTheFlyRecursiveAvoidance", 99) && !$_any_caller_matches(".*initialiseMacros", 99)
+vshcmd: > break kaleidoscope::plugin::MacroPirate::onKeyEvent if $_any_caller_matches(".*MacroPirateRecursiveAvoidance", 99) && !$_any_caller_matches(".*initialiseMacros", 99)
 
 vshcmd: > print event.key
 $1 = {keyCode_ = 4 '\004', flags_ = 0 '\000', static hid_type_mask_ = 48 '0', 
@@ -5491,8 +5491,8 @@ $1 = {keyCode_ = 4 '\004', flags_ = 0 '\000', static hid_type_mask_ = 48 '0',
 vshcmd: > cont
 Continuing.
 
-Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::doNewPlay (event=...)
-    at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:264
+Breakpoint 1, kaleidoscope::plugin::MacroPirate::doNewPlay (event=...)
+    at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:264
 264	    RET_IF_NON_TRANSITION (event);
 (gdb) 
 vshcmd: > print event.key
@@ -5528,10 +5528,10 @@ vshcmd: > print event.key.keyCode_
 vshcmd: > print event.state
 Continuing.
 
-Breakpoint 1, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (
-    this=0x555555670494 <MacrosOnTheFly>, event=...)
-    at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:283
-283	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+Breakpoint 1, kaleidoscope::plugin::MacroPirate::onKeyEvent (
+    this=0x555555670494 <MacroPirate>, event=...)
+    at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:283
+283	  EventHandlerResult MacroPirate::onKeyEvent(KeyEvent &event) {
 (gdb) $16 = 5 '\005'
 (gdb) $17 = 1 '\001'
 (gdb) quit
@@ -5546,26 +5546,26 @@ vshcmd: > next
 458	  }
 (gdb) 
 vshcmd: > print currentState
-$15 = kaleidoscope::plugin::MacrosOnTheFly::IDLE_AND_RECORDING
+$15 = kaleidoscope::plugin::MacroPirate::IDLE_AND_RECORDING
 (gdb) 
 vshcmd: > y
 Kaleidoscope [15:24:44] $ 
-vshcmd: > break ExpectKeyboardReport if $_any_caller_matches(".*MacrosOnTheFlyRecursiveReplay", 99) && !$_any_caller_matches(".*initialiseMacros", 99)
+vshcmd: > break ExpectKeyboardReport if $_any_caller_matches(".*MacroPirateRecursiveReplay", 99) && !$_any_caller_matches(".*initialiseMacros", 99)
 vshcmd: > run
-Reading symbols from ./_build/plugins/MacrosOnTheFly/EdgeCases/bin/EdgeCases...
+Reading symbols from ./_build/plugins/MacroPirate/EdgeCases/bin/EdgeCases...
 (gdb) Breakpoint 1 at 0x4c1b2 (4 locations)
-(gdb) Starting program: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/MacrosOnTheFly/EdgeCases/bin/EdgeCases -t -q
+(gdb) Starting program: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/MacroPirate/EdgeCases/bin/EdgeCases -t -q
 [Thread debugging using libthread_db enabled]
 Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
 [==========] Running 3 tests from 1 test suite.
 [----------] Global test environment set-up.
 [----------] 3 tests from ManualTests
 [ RUN      ] ManualTests.0_test
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacrosOnTheFly/EdgeCases/test/manual-testcases.cpp
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/test/manual-testcases.cpp
 [       OK ] ManualTests.0_test (0 ms)
-[ RUN      ] ManualTests.1_MacrosOnTheFlyTestHelpers
-[       OK ] ManualTests.1_MacrosOnTheFlyTestHelpers (178 ms)
-[ RUN      ] ManualTests.2_MacrosOnTheFlyRecursiveReplay
+[ RUN      ] ManualTests.1_MacroPirateTestHelpers
+[       OK ] ManualTests.1_MacroPirateTestHelpers (178 ms)
+[ RUN      ] ManualTests.2_MacroPirateRecursiveReplay
 
 Breakpoint 1.3, 0x00005555555a05b2 in kaleidoscope::testing::VirtualDeviceTest::ExpectKeyboardReport(kaleidoscope::testing::AddKeycodes, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) ()
 (gdb) 
@@ -5586,7 +5586,7 @@ vshcmd: > bt
     report=kaleidoscope::testing::(anonymous namespace)::ReportIds::triggerMacro, event=..., keyId=...) at test/manual-testcases.cpp:82
 #5  0x0000555555562f35 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x555555682c10, str=...)
     at test/manual-testcases.cpp:103
-#6  0x000055555556387a in kaleidoscope::testing::(anonymous namespace)::ManualTests_2_MacrosOnTheFlyRecursiveReplay_Test::TestBody (this=0x555555682c10)
+#6  0x000055555556387a in kaleidoscope::testing::(anonymous namespace)::ManualTests_2_MacroPirateRecursiveReplay_Test::TestBody (this=0x555555682c10)
     at test/manual-testcases.cpp:155
 #7  0x00005555555ff3b3 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #8  0x00005555555f78ef in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
@@ -5604,14 +5604,14 @@ vshcmd: > bt
 #18 0x00005555555bce98 in main (argc=3, argv=0x7fffffffdfd8)
     at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56
 (gdb) 
-vshcmd: > break kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent
+vshcmd: > break kaleidoscope::plugin::MacroPirate::onKeyEvent
 vshcmd: > cont
 Continuing.
 
-Breakpoint 2, kaleidoscope::plugin::MacrosOnTheFly::onKeyEvent (
-    this=0x55555566e6d4 <MacrosOnTheFly>, event=...)
-    at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacrosOnTheFly/src/kaleidoscope/plugin/MacrosOnTheFly.cpp:283
-283	  EventHandlerResult MacrosOnTheFly::onKeyEvent(KeyEvent &event) {
+Breakpoint 2, kaleidoscope::plugin::MacroPirate::onKeyEvent (
+    this=0x55555566e6d4 <MacroPirate>, event=...)
+    at /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate/src/kaleidoscope/plugin/MacroPirate.cpp:283
+283	  EventHandlerResult MacroPirate::onKeyEvent(KeyEvent &event) {
 (gdb) 
 vshcmd: > # Macro looks as we expected it to look.
 vshcmd: > gdb-pipe array &slotRecord[0]; 8 | if $cur->numUsedKeystrokes != 0 \
@@ -5684,7 +5684,7 @@ vshcmd: > bt
     report=kaleidoscope::testing::(anonymous namespace)::ReportIds::triggerMacro, event=..., keyId=...) at test/manual-testcases.cpp:82
 #12 0x0000555555562f35 in kaleidoscope::testing::(anonymous namespace)::ManualTests::runAction (this=0x555555682c10, str=...)
     at test/manual-testcases.cpp:103
-#13 0x000055555556387a in kaleidoscope::testing::(anonymous namespace)::ManualTests_2_MacrosOnTheFlyRecursiveReplay_Test::TestBody (this=0x555555682c10)
+#13 0x000055555556387a in kaleidoscope::testing::(anonymous namespace)::ManualTests_2_MacroPirateRecursiveReplay_Test::TestBody (this=0x555555682c10)
     at test/manual-testcases.cpp:155
 #14 0x00005555555ff3b3 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()
 #15 0x00005555555f78ef in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) ()

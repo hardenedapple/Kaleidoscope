@@ -1,16 +1,15 @@
 #pragma once
 
 /*
- * Re-implementation of MacrosOnTheFly.
- * Original work is here, and all credit due to Craig Disselkoen.
+ * Partial re-implementation of MacrosOnTheFly (less features, different design
+ * decisions).
+ * Original work is linked below, and all credit due to Owners and contributors
+ * of that repository.
  * https://github.com/cdisselkoen/Kaleidoscope-MacrosOnTheFly
  *
  * Re-implementing largely so that I understand what's going on with the idea
  * that I can then make informed decisions about what should happen for my
  * use-case.  It also means that I get to learn about writing keyboard plugins.
- *
- * I also think I'd like it to use the basic Macros recording mechanism, and
- * hence to replay things in the same way.
  */
 
 #ifndef IN_TESTSUITE
@@ -36,7 +35,7 @@
 
 namespace kaleidoscope {
 namespace plugin {
-class MacrosOnTheFly : public kaleidoscope::Plugin {
+class MacroPirate : public kaleidoscope::Plugin {
   public:
     typedef struct Slot_ {
       /* "mapped" key, not a physical key.  */
@@ -188,4 +187,4 @@ class MacrosOnTheFly : public kaleidoscope::Plugin {
 }  // namespace plugin
 }  // namespace kaleidoscope
 
-extern kaleidoscope::plugin::MacrosOnTheFly MacrosOnTheFly;
+extern kaleidoscope::plugin::MacroPirate MacroPirate;
