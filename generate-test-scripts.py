@@ -3,6 +3,7 @@
 import itertools as itt
 import random
 import math
+import sys
 def key_addr_name(left, right):
   return '({},{})'.format(left, right)
 
@@ -23,7 +24,13 @@ def make_random_line(length):
 make_random_line(rand_line_length())
 num_lines = random.randint(0, 50)
 
-# Make 50 files.
-for i in range(50):
-    with open('fuzzing-corpus-initial/{}'.format(i), 'w') as outfile:
-        outfile.writelines([make_random_line(rand_line_length()) for _ in range(num_lines)])
+if len(sys.argv) > 1 and sys.argv[1] == 'token':
+    print('Making tokens')
+    with open('fuzzing.dict', 'w') as outfile:
+        outfile.writelines(['"{}"\n'.format(token) for token in all_tokens])
+else:
+    print('Making files')
+    # Make 50 files.
+    for i in range(50):
+        with open('fuzzing-corpus-initial/{}'.format(i), 'w') as outfile:
+            outfile.writelines([make_random_line(rand_line_length()) for _ in range(num_lines)])
