@@ -1,3 +1,6 @@
+vshcmd: > ./generate-test-scripts.py token
+Making tokens
+Kaleidoscope [13:43:28] $ 
 vshcmd: > sudo su
 groups: cannot find name for group ID 38659
 groups: cannot find name for group ID 61021
@@ -51,9 +54,43 @@ root@e124762:/home/matmal01/Documents/not-work/keyboard/Kaleidoscope# exit
 Kaleidoscope [12:55:28] $ 
 vshcmd: > # Should run this on the standard terminal rather than in VSH
 vshcmd: > # (It makes pretty pictures).
-vshcmd: > AFL_SKIP_CPUFREQ=1 afl-fuzz -i fuzzing-corpus-minimised/ -o fuzzing-outputs/ -- /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/personal-config/bin/personal-config @@
+vshcmd: > AFL_NO_UI=1 AFL_SKIP_CPUFREQ=1 afl-fuzz -x fuzzing.dict -i fuzzing-corpus-minimised/ -o fuzzing-outputs/ -- /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/personal-config/bin/personal-config @@
 ...
 
+vshcmd: > for i in fuzzing-outputs-personal/default/crashes/*; do
+vshcmd: > output="$(/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/personal-config/bin/personal-config $i 2>&1)"
+vshcmd: > if [ $? -ne 0 ]; then
+vshcmd: >   echo -e '\n\n\n'
+vshcmd: >   echo "$output"
+vshcmd: > fi
+vshcmd: > done
+> > > > > > Kaleidoscope [17:12:52] $ 
+vshcmd: > for i in fuzzing-outputs-basic/default/crashes/*; do
+vshcmd: > output="$(/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/MacroPirate/BasicRepeat/bin/BasicRepeat $i 2>&1)"
+vshcmd: > if [ $? -ne 0 ]; then
+vshcmd: >   echo -e '\n\n\n'
+vshcmd: >   echo "$output"
+vshcmd: > fi
+vshcmd: > done
+vshcmd: > for i in fuzzing-outputs-basic/default/crashes/*; do
+vshcmd: > /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/MacroPirate/BasicRepeat/bin/BasicRepeat $i 2>/dev/null 1>&2 && echo "PASSED" || echo "FAILED"
+vshcmd: > done
+> > PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+PASSED
+Kaleidoscope [17:07:37] $ 
+vshcmd: > ls /tmp/kaleidoscope-matmal01/build
+3312643-personal-config.ino
+Kaleidoscope [17:05:47] $ 
 vshcmd: > rr /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/personal-config/bin/personal-config -t -q
 rr: Saving execution to trace directory `/home/matmal01/.local/share/rr/personal-config-20'.
 [==========] Running 11 tests from 1 test suite.
