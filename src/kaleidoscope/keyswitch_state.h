@@ -18,7 +18,7 @@
 // switch debouncing and status
 
 #define INJECTED    0b10000000
-#define MACRO_RECORD 0b01000000  /* Overrides INJECTED for MacrosOnTheFly */
+#define MACRO_RECORD 0b01000000  /* Overrides INJECTED for MacroPirate */
 #define IS_PRESSED  0b00000010
 #define WAS_PRESSED 0b00000001
 

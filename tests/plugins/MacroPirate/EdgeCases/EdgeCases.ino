@@ -1,5 +1,5 @@
 #include <Kaleidoscope.h>
-#include <Kaleidoscope-MacrosOnTheFly.h>
+#include <Kaleidoscope-MacroPirate.h>
 
 // *INDENT-OFF*
 KEYMAPS(
@@ -39,14 +39,14 @@ KEYMAPS(
 )
 // *INDENT-ON*
 
-KALEIDOSCOPE_INIT_PLUGINS(MacrosOnTheFly);
+KALEIDOSCOPE_INIT_PLUGINS(MacroPirate);
 
 void setup() {
   Kaleidoscope.setup();
-  Key macroKeys[MacrosOnTheFly.NUM_MACROS] = {
+  Key macroKeys[MacroPirate.NUM_MACROS] = {
     Key_A, Key_B, Key_C, Key_D, Key_E, Key_F, Key_G, Key_H
   };
-  MacrosOnTheFly.initialise(macroKeys);
+  MacroPirate.initialise(macroKeys);
 }
 
 void loop() {

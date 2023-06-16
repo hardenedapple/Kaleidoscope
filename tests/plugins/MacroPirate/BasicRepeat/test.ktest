@@ -9,12 +9,12 @@ KEYSWITCH MACROPLAY  1 7
 KEYSWITCH MACRODELAY 2 7
 
 # ==============================================================================
-# MacrosOnTheFly can record and replay something.
+# MacroPirate can record and replay something.
 # Note:  in discussions below the notation "X" means press X down and up.
 #        notation "X|" means press X down.
 #        notation "X^" means release X.
 
-NAME MacrosOnTheFly Nothing Recorded
+NAME MacroPirate Nothing Recorded
 # .........................................................................
 # Should not affect standard typing (it did very early on). {{{
 # Press of  "A B J"  emits those keypresses.
@@ -77,7 +77,7 @@ EXPECT no keyboard-report
 
 # ......................................................................... }}}
 
-NAME MacrosOnTheFly Simple Recording
+NAME MacroPirate Simple Recording
 # Basic record of single characters. {{{
 # Pressing   "REC A J REC"   reports "J".
 # Pressing   "REC B B REC"   reports "B".
@@ -251,7 +251,7 @@ EXPECT no keyboard-report
 
 # ......................................................................... }}}
 
-NAME MacrosOnTheFly Held During REC
+NAME MacroPirate Held During REC
 # Any key held down when attempting to start the macro recording means that the {{{
 # macro recording is not started.
 # Do not need to release MACROREC before pressing the macro recording key.
@@ -295,7 +295,7 @@ EXPECT no keyboard-report
 
 # ......................................................................... }}}
 
-NAME MacrosOnTheFly Multi Press During Record
+NAME MacroPirate Multi Press During Record
 # Does recording multiple keys at once work? {{{
 # Starting with does recording a Shift+J work correctly and does it send the
 # same thing.
@@ -500,7 +500,7 @@ EXPECT no keyboard-report
 
 # ......................................................................... }}}
 
-NAME MacrosOnTheFly Held After Exiting
+NAME MacroPirate Held After Exiting
 # Holding a key down while exiting macro state does not mess up recording.  {{{
 
 # {{{ Record J into macro slot A -- keep held down when finishing the recording.
@@ -559,7 +559,7 @@ RUN 1 ms
 
 # ......................................................................... }}}
 
-NAME MacrosOnTheFly Key held down for long time
+NAME MacroPirate Key held down for long time
 # Holding down a key for a long time (until automatic repeat). {{{
 
 # {{{ Holding down a key for a long time outside of macro record.
