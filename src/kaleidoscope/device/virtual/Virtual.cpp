@@ -197,9 +197,15 @@ void VirtualKeyScanner::readMatrix() {
           log_error("Bad (r,c) pair: %s\n", token.c_str());
           continue;
         } else {
+	  try {
           key_addr = KeyAddr(
             (uint8_t)std::stoi(token.substr(1, commapos - 1)),
             (uint8_t)std::stoi(token.substr(commapos + 1, token.length() - commapos - 1)));
+	  } catch (...) {
+	    /* Is here so AFL doesn't get super excited about finding crashes.  */
+	    log_error("Bad coordinate format");
+	    exit(0);
+	  }
 
           if (!key_addr.isValid()) {
             log_error("Bad coordinates: %s\n", token.c_str());
