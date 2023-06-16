@@ -315,7 +315,6 @@ void MacroPirate::tap(Key key) {
     /* Taken from Macros.cpp but adjusted to read from a different place. */
     uint16_t mIndex = mIndexFrom_s(sIndex);
     uint8_t off = 0;
-    uint8_t wait = 0;
     macro_t macro = MACRO_ACTION_END;
     Key key;
     uint8_t off_max = slotRecord[sIndex].numUsedKeystrokes;
@@ -635,8 +634,8 @@ exit:
   }
 
   MacroPirate::State MacroPirate::currentState   = IDLE;
-  MacroPirate::Slot MacroPirate::slotRecord[NUM_MACROS]   = {0};
-  byte MacroPirate::macroStorage[MacroPirate::STORAGE_SIZE_IN_BYTES] = {0};
+  MacroPirate::Slot MacroPirate::slotRecord[NUM_MACROS]   = {};
+  byte MacroPirate::macroStorage[MacroPirate::STORAGE_SIZE_IN_BYTES] = {};
   Key MacroPirate::userLayerShiftKey     = Key_NoKey;
   uint8_t MacroPirate::sRecordingSlot    = NUM_MACROS;
   uint8_t MacroPirate::sLastPlayedSlot   = NUM_MACROS;
