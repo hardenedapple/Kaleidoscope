@@ -217,7 +217,11 @@ class SpecialShift : public kaleidoscope::Plugin {
 	  ::Layer.activate(target_layer);
 	counter += 1;
       } else if (keyToggledOff(event.state)) {
-	counter -= 1;
+	/* This condition should always be true if all events are directly
+	 * triggered by keypresses, but plugins can trigger or mask any event
+	 * and my fuzzing can send strange events too.  */
+	if (counter > 0)
+	  counter -= 1;
 	if (counter == 0)
 	  ::Layer.deactivate(target_layer);
       }
