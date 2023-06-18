@@ -1,4 +1,7 @@
 vshcmd: > ./generate-test-scripts.py token
+groups: cannot find name for group ID 38659
+groups: cannot find name for group ID 61021
+Kaleidoscope [17:19:38] $ 
 Making tokens
 Kaleidoscope [13:43:28] $ 
 vshcmd: > sudo su
@@ -57,21 +60,34 @@ vshcmd: > # (It makes pretty pictures).
 vshcmd: > AFL_NO_UI=1 AFL_SKIP_CPUFREQ=1 afl-fuzz -x fuzzing.dict -i fuzzing-corpus-minimised/ -o fuzzing-outputs/ -- /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/personal-config/bin/personal-config @@
 ...
 
-vshcmd: > for i in fuzzing-outputs-personal/default/crashes/*; do
-vshcmd: > output="$(/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/personal-config/bin/personal-config $i 2>&1)"
+vshcmd: > /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/issues/423/bin/423 -t -q 2>&1 | grep -q 'runtime errorx'
+vshcmd: > echo $?
+Kaleidoscope [17:44:49] $ 1
+Kaleidoscope [17:44:49] $ 
+vshcmd: > for i in fuzzing-outputs-personal/default/queue/*; do
+vshcmd: > /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/personal-config/bin/personal-config $i 2>&1 | grep -q 'runtime error'
+vshcmd: > if [ $? -eq 0 ]; then
+vshcmd: >   echo -e '$i'
+vshcmd: > fi
+vshcmd: > done
+> > > > > > Kaleidoscope [17:41:38] $ 
+vshcmd: > for i in fuzzing-outputs-edgecases/default/queue/*; do
+vshcmd: > output="$(/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/MacroPirate/EdgeCases/bin/EdgeCases $i 2>&1)"
 vshcmd: > if [ $? -ne 0 ]; then
 vshcmd: >   echo -e '\n\n\n'
 vshcmd: >   echo "$output"
 vshcmd: > fi
 vshcmd: > done
-> > > > > > Kaleidoscope [17:12:52] $ 
-vshcmd: > for i in fuzzing-outputs-basic/default/crashes/*; do
+> > > > > > 
+Kaleidoscope [17:42:10] $ 
+vshcmd: > for i in fuzzing-outputs-basic/default/queue/*; do
 vshcmd: > output="$(/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/MacroPirate/BasicRepeat/bin/BasicRepeat $i 2>&1)"
 vshcmd: > if [ $? -ne 0 ]; then
 vshcmd: >   echo -e '\n\n\n'
 vshcmd: >   echo "$output"
 vshcmd: > fi
 vshcmd: > done
+
 vshcmd: > for i in fuzzing-outputs-basic/default/crashes/*; do
 vshcmd: > /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/MacroPirate/BasicRepeat/bin/BasicRepeat $i 2>/dev/null 1>&2 && echo "PASSED" || echo "FAILED"
 vshcmd: > done

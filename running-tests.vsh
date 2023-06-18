@@ -1,12 +1,130 @@
 vshcmd: > export KALEIDOSCOPE_DIR=/home/matmal01/Documents/not-work/keyboard/Kaleidoscope
 groups: cannot find name for group ID 38659
 groups: cannot find name for group ID 61021
+Kaleidoscope [17:19:43] $ 
+groups: cannot find name for group ID 38659
+groups: cannot find name for group ID 61021
 Kaleidoscope [08:50:51] $ 
 groups: cannot find name for group ID 38659
 groups: cannot find name for group ID 61021
 Kaleidoscope [17:32:22] $ 
-vshcmd: > make clean && make simulator-tests TEST_PATH=plugins/MacroPirate/EdgeCases
+vshcmd: > make simulator-tests TEST_PATH=personal-config
+Building in quiet mode. For a lot more information, add 'VERBOSE=1' to the beginning of your call to make
+make -C tests all
+make[1]: Entering directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
+make -C /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build
+[ 25%] Built target gtest
+[ 50%] Built target gmock
+[ 75%] Built target gmock_main
+[100%] Built target gtest_main
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/Kaleidoscope-LEDControl.h:20,
+                 from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:24:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
+[93mKaleidoscope-EEPROM-Keymap[0m               0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap[0m                           
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+[93mKaleidoscope-FirmwareVersion[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion[0m                         
+[93mKaleidoscope-LEDEffect-BootGreeting[0m      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting[0m                  
+[93mKaleidoscope-LEDEffect-Breathe[0m           0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe[0m                       
+[93mKaleidoscope-LEDEffect-Chase[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase[0m                         
+[93mKaleidoscope-LEDEffect-Rainbow[0m           0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow[0m                       
+[93mKaleidoscope-LED-Palette-Theme[0m           0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme[0m                       
+[93mKaleidoscope-IdleLEDs[0m                    0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs[0m                                
+[93mKaleidoscope-DefaultLEDModeConfig[0m        0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-DefaultLEDModeConfig[0m                    
+[93mKaleidoscope-HardwareTestMode[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HardwareTestMode[0m                        
+[93mKaleidoscope-HostPowerManagement[0m         0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HostPowerManagement[0m                     
+[93mKaleidoscope-MagicCombo[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MagicCombo[0m                              
+[93mKaleidoscope-USB-Quirks[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-USB-Quirks[0m                              
+[93mKaleidoscope-SpaceCadet[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-SpaceCadet[0m                              
+[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
+[93mKaleidoscope-LayerNames[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LayerNames[0m                              
+[93mKaleidoscope-TopsyTurvy[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy[0m                              
+[93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
+[93mKaleidoscope-MacroPirate[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                             
+[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
+[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test personal-config
+[==========] Running 12 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 12 tests from PersonalConfig
+[ RUN      ] PersonalConfig.0_test
+[ INFO     ] test: tests/personal-config/test/manual-tests.cpp
+[       OK ] PersonalConfig.0_test (0 ms)
+[ RUN      ] PersonalConfig.1_MacroRecordBasic
+[       OK ] PersonalConfig.1_MacroRecordBasic (2 ms)
+[ RUN      ] PersonalConfig.2_MacroRecordTopsy
+[ INFO     ] Printing Macro: A
+	TAP_CODE_SEQUENCE 30 31 32 0 |,TAP 209 197,TAPCODE 4,
+[ INFO     ] Printing Macro: A
+	TAP_CODE_SEQUENCE 30 31 32 0 |,TAP 209 197,KEYDOWN 208 75,KEYCODEUP 30,
+[ INFO     ] Printing Macro: A
+	TAP_CODE_SEQUENCE 30 31 32 0 |,TAP 209 197,KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,
+[ INFO     ] Printing Macro: A
+	KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,TAP 209 197,TAP_CODE_SEQUENCE 30 31 32 0 |,
+[       OK ] PersonalConfig.2_MacroRecordTopsy (9 ms)
+[ RUN      ] PersonalConfig.3_MacroRecordOneShot
+[ INFO     ] Printing Macro: A
+	KEYCODEDOWN 225,KEYCODEDOWN 4,KEYCODEUP 225,KEYCODEUP 4,TAPCODE 4,
+[ INFO     ] Printing Macro: A
+	TAPCODE 4,TAPCODE 4,
+[ INFO     ] Printing Macro: A
+	TAP_CODE_SEQUENCE 4 4 225 0 |,
+[ INFO     ] Printing Macro: A
+	TAPCODE 4,TAPCODE 4,KEYCODEDOWN 225,TAPCODE 4,KEYCODEUP 225,
+[       OK ] PersonalConfig.3_MacroRecordOneShot (5 ms)
+[ RUN      ] PersonalConfig.4_MacroRecordSpecialShift
+[ INFO     ] Printing Macro: U
+	TAPCODE 76,
+[ INFO     ] Printing Macro: U
+	TAPCODE 76,
+[       OK ] PersonalConfig.4_MacroRecordSpecialShift (2 ms)
+[ RUN      ] PersonalConfig.5_MacroRecordSpecialShift
+[       OK ] PersonalConfig.5_MacroRecordSpecialShift (0 ms)
+[ RUN      ] PersonalConfig.6_MacroRecordTopsyOneShot
+[ INFO     ] Printing Macro: A
+	TAPCODE 30,TAPCODE 31,TAP 209 197,TAPCODE 4,KEYDOWN 208 75,KEYCODEUP 30,KEYCODEDOWN 229,KEYDOWN 208 75,KEYCODEUP 30,KEYCODEUP 229,
+[ INFO     ] Printing Macro: O
+	KEYCODEDOWN 229,KEYDOWN 208 77,KEYCODEUP 229,KEYCODEUP 32,
+[       OK ] PersonalConfig.6_MacroRecordTopsyOneShot (4 ms)
+[ RUN      ] PersonalConfig.7_SpecialShiftDoubleRelease
+[       OK ] PersonalConfig.7_SpecialShiftDoubleRelease (2 ms)
+[ RUN      ] PersonalConfig.8_MacroRecordIntoWrongSlot
+[       OK ] PersonalConfig.8_MacroRecordIntoWrongSlot (1 ms)
+[ RUN      ] PersonalConfig.9_MacroReplayPLAYPLAY
+[       OK ] PersonalConfig.9_MacroReplayPLAYPLAY (3 ms)
+[ RUN      ] PersonalConfig.10_ObservedMacroPLAYBug
+[ INFO     ] Printing Macro: A
+	TAP 209 197,KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,TAP 209 197,
+[ INFO     ] Printing Macro: A
+	TAP 209 197,KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,TAP 209 197,
+[ INFO     ] Printing Macro: A
+	TAP 209 197,KEYDOWN 208 75,KEYDOWN 208 76,KEYDOWN 208 77,KEYCODEUP 32,TAP 209 197,
+[       OK ] PersonalConfig.10_ObservedMacroPLAYBug (7 ms)
+[ RUN      ] PersonalConfig.11_MacroRecordLastSlot
+[ INFO     ] Printing Macro: S
+	TAP_CODE_SEQUENCE 11 8 15 15 18 26 18 21 15 7 23 11 12 22 12 22 4 23 8 22 23 0 |,
+[       OK ] PersonalConfig.11_MacroRecordLastSlot (4 ms)
+[----------] 12 tests from PersonalConfig (44 ms total)
+
+[----------] Global test environment tear-down
+[==========] 12 tests from 1 test suite ran. (44 ms total)
+[  PASSED  ] 12 tests.
+make[1]: Leaving directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
+Kaleidoscope [18:11:10] $ 
 vshcmd: > g++ test.cpp -o testbin
 vshcmd: > ./testbin
 Kaleidoscope [12:31:14] $ --------
@@ -93,2061 +211,7 @@ g++ -c -g -w -std=c++14 -ffunction-sections -fdata-sections -fno-threadsafe-stat
 vshcmd: > find /tmp
 vshcmd: > make clean && make simulator-tests
 vshcmd: > make simulator-tests
-Building in quiet mode. For a lot more information, add 'VERBOSE=1' to the beginning of your call to make
-make -C tests all
-make[1]: Entering directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
-make -C /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googletest/build
-[35m[1mConsolidate compiler generated dependencies of target gtest[0m
-[ 25%] Built target gtest
-[35m[1mConsolidate compiler generated dependencies of target gmock[0m
-[ 50%] Built target gmock
-[35m[1mConsolidate compiler generated dependencies of target gmock_main[0m
-[ 75%] Built target gmock_main
-[35m[1mConsolidate compiler generated dependencies of target gtest_main[0m
-[100%] Built target gtest_main
 
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test examples/basic-keypress
-[==========] Running 2 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 2 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/examples/basic-keypress/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_KeysActiveWhenPressed
-[       OK ] GeneratedKTest.1_KeysActiveWhenPressed (0 ms)
-[----------] 2 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 2 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-Qukeys[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Qukeys[0m                                  
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test issues/1057
-[==========] Running 4 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 4 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/1057/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_Chrysalis566And605
-[       OK ] GeneratedKTest.1_Chrysalis566And605 (0 ms)
-[ RUN      ] GeneratedKTest.2_Chrysalis688
-[       OK ] GeneratedKTest.2_Chrysalis688 (0 ms)
-[ RUN      ] GeneratedKTest.3_Chrysalis427Workaround
-[       OK ] GeneratedKTest.3_Chrysalis427Workaround (0 ms)
-[----------] 4 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 4 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 4 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test issues/896
-[==========] Running 3 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 3 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/896/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_OneShotNextKey
-[       OK ] GeneratedKTest.1_OneShotNextKey (0 ms)
-[ RUN      ] GeneratedKTest.2_OneShotDoubleTapLayer896
-[       OK ] GeneratedKTest.2_OneShotDoubleTapLayer896 (0 ms)
-[----------] 3 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 3 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 3 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-Escape-OneShot[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Escape-OneShot[0m                          
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test issues/984
-[==========] Running 3 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 3 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/984/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_EscapeOneShotModifier
-[       OK ] GeneratedKTest.1_EscapeOneShotModifier (0 ms)
-[ RUN      ] GeneratedKTest.2_EscapeStickyOneShotModifier
-[       OK ] GeneratedKTest.2_EscapeStickyOneShotModifier (7 ms)
-[----------] 3 tests from GeneratedKTest (7 ms total)
-
-[----------] Global test environment tear-down
-[==========] 3 tests from 1 test suite ran. (7 ms total)
-[  PASSED  ] 3 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-Leader[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Leader[0m                                  
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
-[93mKaleidoscope-Devel-ArduinoTrace[0m          0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Devel-ArduinoTrace[0m                      
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test issues/1042
-[==========] Running 2 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 2 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/1042/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_LeaderPrefixSequence
-[       OK ] GeneratedKTest.1_LeaderPrefixSequence (0 ms)
-[----------] 2 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 2 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test issues/941
-[==========] Running 3 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 3 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/941/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_Issue941OneKeypressPerCycle
-[       OK ] GeneratedKTest.1_Issue941OneKeypressPerCycle (0 ms)
-[ RUN      ] GeneratedKTest.2_Issue941SimultaneousKeypresses
-[       OK ] GeneratedKTest.2_Issue941SimultaneousKeypresses (0 ms)
-[----------] 3 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 3 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 3 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test issues/978
-[==========] Running 2 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 2 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/978/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_IdleKeyDetector
-[       OK ] GeneratedKTest.1_IdleKeyDetector (0 ms)
-[----------] 2 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 2 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-Qukeys[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Qukeys[0m                                  
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test issues/1107/Qukeys
-[==========] Running 1 test from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 1 test from QukeysIssue1107
-[ RUN      ] QukeysIssue1107.DelayedTimeoutRelease
-[       OK ] QukeysIssue1107.DelayedTimeoutRelease (0 ms)
-[----------] 1 test from QukeysIssue1107 (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (0 ms total)
-[  PASSED  ] 1 test.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test issues/1107/QueueLeaker
-[==========] Running 1 test from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 1 test from KeyAddrEventQueueLeak
-[ RUN      ] KeyAddrEventQueueLeak.TimeIsConsistent
-[       OK ] KeyAddrEventQueueLeak.TimeIsConsistent (0 ms)
-[----------] 1 test from KeyAddrEventQueueLeak (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (0 ms total)
-[  PASSED  ] 1 test.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-Qukeys[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Qukeys[0m                                  
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
-[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test issues/970
-[==========] Running 2 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 2 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/970/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_Issue970QukeysMinPriorIntervalOverflow
-[       OK ] GeneratedKTest.1_Issue970QukeysMinPriorIntervalOverflow (78 ms)
-[----------] 2 tests from GeneratedKTest (78 ms total)
-
-[----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (78 ms total)
-[  PASSED  ] 2 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
-[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-MouseKeys[0m                   0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MouseKeys[0m                               
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test issues/1113
-[==========] Running 3 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 3 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/1113/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_MouseButtonKeyTapInMacros
-[       OK ] GeneratedKTest.1_MouseButtonKeyTapInMacros (0 ms)
-[ RUN      ] GeneratedKTest.2_MouseScrollKeyTapInMacros
-[       OK ] GeneratedKTest.2_MouseScrollKeyTapInMacros (0 ms)
-[----------] 3 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 3 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 3 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-Syster[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Syster[0m                                  
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test issues/1032
-[==========] Running 3 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 3 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/1032/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_SysterSequenceWithoutZero
-[       OK ] GeneratedKTest.1_SysterSequenceWithoutZero (0 ms)
-[ RUN      ] GeneratedKTest.2_SysterSequenceWithZero
-[       OK ] GeneratedKTest.2_SysterSequenceWithZero (0 ms)
-[----------] 3 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 3 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 3 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
-[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
-[93mKaleidoscope-TapDance[0m                    0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance[0m                                
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test issues/423
-[==========] Running 4 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 4 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/423/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_BackAndForth
-[       OK ] GeneratedKTest.1_BackAndForth (0 ms)
-[ RUN      ] GeneratedKTest.2_SingleRollover
-[       OK ] GeneratedKTest.2_SingleRollover (0 ms)
-[ RUN      ] GeneratedKTest.3_OSMAppliesToWholeMacro
-[       OK ] GeneratedKTest.3_OSMAppliesToWholeMacro (0 ms)
-[----------] 4 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 4 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 4 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-TapDance[0m                    0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance[0m                                
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test issues/980
-[==========] Running 3 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 3 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/980/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_TapDanceIssue980NoOverlap
-[       OK ] GeneratedKTest.1_TapDanceIssue980NoOverlap (0 ms)
-[ RUN      ] GeneratedKTest.2_TapDanceIssue980Rollover
-[       OK ] GeneratedKTest.2_TapDanceIssue980Rollover (0 ms)
-[----------] 3 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 3 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 3 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-AutoShift[0m                   0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-AutoShift[0m                               
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test issues/1074
-[==========] Running 2 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 2 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/1074/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_AutoShiftOverflow
-[       OK ] GeneratedKTest.1_AutoShiftOverflow (0 ms)
-[----------] 2 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 2 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test issues/840
-[==========] Running 1 test from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 1 test from Issue840
-[ RUN      ] Issue840.HasNotRegressed
-[       OK ] Issue840.HasNotRegressed (0 ms)
-[----------] 1 test from Issue840 (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (0 ms total)
-[  PASSED  ] 1 test.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test issues/1010
-[==========] Running 1 test from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 1 test from Issue1010
-[ RUN      ] Issue1010.RangesHaveNotChanged
-[       OK ] Issue1010.RangesHaveNotChanged (0 ms)
-[----------] 1 test from Issue1010 (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (0 ms total)
-[  PASSED  ] 1 test.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test issues/951
-[==========] Running 1 test from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 1 test from Issue951
-[ RUN      ] Issue951.InitialLayerState
-[       OK ] Issue951.InitialLayerState (0 ms)
-[----------] 1 test from Issue951 (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (0 ms total)
-[  PASSED  ] 1 test.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-TapDance[0m                    0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance[0m                                
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test issues/571
-[==========] Running 2 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 2 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/571/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_Issue571
-[       OK ] GeneratedKTest.1_Issue571 (0 ms)
-[----------] 2 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 2 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test issues/673
-[==========] Running 2 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 2 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/673/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_Issue673
-[       OK ] GeneratedKTest.1_Issue673 (0 ms)
-[----------] 2 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 2 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-TapDance[0m                    0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance[0m                                
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test issues/806
-[==========] Running 2 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 2 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/806/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_TapDanceHoldPastTimeout
-[       OK ] GeneratedKTest.1_TapDanceHoldPastTimeout (0 ms)
-[----------] 2 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 2 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-TapDance[0m                    0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance[0m                                
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test issues/922
-[==========] Running 4 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 4 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/922/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_TapDanceToTapDanceRolloverLeftToRight
-[       OK ] GeneratedKTest.1_TapDanceToTapDanceRolloverLeftToRight (0 ms)
-[ RUN      ] GeneratedKTest.2_TapDanceToTapDanceRolloverRightToLeft
-[       OK ] GeneratedKTest.2_TapDanceToTapDanceRolloverRightToLeft (0 ms)
-[ RUN      ] GeneratedKTest.3_TapDanceToTapDanceRolloverBackAndForth
-[       OK ] GeneratedKTest.3_TapDanceToTapDanceRolloverBackAndForth (0 ms)
-[----------] 4 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 4 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 4 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test issues/1061
-[==========] Running 6 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 6 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/1061/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_OneShotInsertTimeout
-[       OK ] GeneratedKTest.1_OneShotInsertTimeout (0 ms)
-[ RUN      ] GeneratedKTest.2_OneShotInsertInterrupt
-[       OK ] GeneratedKTest.2_OneShotInsertInterrupt (0 ms)
-[ RUN      ] GeneratedKTest.3_OneShotInsertSticky
-[       OK ] GeneratedKTest.3_OneShotInsertSticky (0 ms)
-[ RUN      ] GeneratedKTest.4_OneShotLeftAltNotSticky
-[       OK ] GeneratedKTest.4_OneShotLeftAltNotSticky (0 ms)
-[ RUN      ] GeneratedKTest.5_OneShotRightAltSticky
-[       OK ] GeneratedKTest.5_OneShotRightAltSticky (0 ms)
-[----------] 6 tests from GeneratedKTest (1 ms total)
-
-[----------] Global test environment tear-down
-[==========] 6 tests from 1 test suite ran. (1 ms total)
-[  PASSED  ] 6 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
-[93mKaleidoscope-EEPROM-Keymap[0m               0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Keymap[0m                           
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-[93mKaleidoscope-FirmwareVersion[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FirmwareVersion[0m                         
-[93mKaleidoscope-LEDEffect-BootGreeting[0m      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting[0m                  
-[93mKaleidoscope-LEDEffect-Breathe[0m           0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe[0m                       
-[93mKaleidoscope-LEDEffect-Chase[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase[0m                         
-[93mKaleidoscope-LEDEffect-Rainbow[0m           0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow[0m                       
-[93mKaleidoscope-LED-Palette-Theme[0m           0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme[0m                       
-[93mKaleidoscope-IdleLEDs[0m                    0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs[0m                                
-[93mKaleidoscope-DefaultLEDModeConfig[0m        0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-DefaultLEDModeConfig[0m                    
-[93mKaleidoscope-HardwareTestMode[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HardwareTestMode[0m                        
-[93mKaleidoscope-HostPowerManagement[0m         0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HostPowerManagement[0m                     
-[93mKaleidoscope-MagicCombo[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MagicCombo[0m                              
-[93mKaleidoscope-USB-Quirks[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-USB-Quirks[0m                              
-[93mKaleidoscope-SpaceCadet[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-SpaceCadet[0m                              
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-LayerNames[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LayerNames[0m                              
-[93mKaleidoscope-TopsyTurvy[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy[0m                              
-[93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
-[93mKaleidoscope-MacroPirate[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                          
-[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
-[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test personal-config
-[==========] Running 10 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 10 tests from PersonalConfig
-[ RUN      ] PersonalConfig.0_test
-[ INFO     ] test: tests/personal-config/test/manual-tests.cpp
-[       OK ] PersonalConfig.0_test (0 ms)
-[ RUN      ] PersonalConfig.1_MacroRecordBasic
-[       OK ] PersonalConfig.1_MacroRecordBasic (0 ms)
-[ RUN      ] PersonalConfig.2_MacroRecordTopsy
-[ INFO     ] Printing Macro: A
-	TAP_CODE_SEQUENCE 30 31 32 0 |,TAP 209 197,TAPCODE 4,
-[ INFO     ] Printing Macro: A
-	TAP_CODE_SEQUENCE 30 31 32 0 |,TAP 209 197,KEYDOWN 208 75,KEYCODEUP 30,
-[ INFO     ] Printing Macro: A
-	TAP_CODE_SEQUENCE 30 31 32 0 |,TAP 209 197,KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,
-[ INFO     ] Printing Macro: A
-	KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,TAP 209 197,TAP_CODE_SEQUENCE 30 31 32 0 |,
-[       OK ] PersonalConfig.2_MacroRecordTopsy (4 ms)
-[ RUN      ] PersonalConfig.3_MacroRecordOneShot
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 225,KEYCODEDOWN 4,KEYCODEUP 225,KEYCODEUP 4,TAPCODE 4,
-[ INFO     ] Printing Macro: A
-	TAPCODE 4,TAPCODE 4,
-[ INFO     ] Printing Macro: A
-	TAP_CODE_SEQUENCE 4 4 225 0 |,
-[ INFO     ] Printing Macro: A
-	TAPCODE 4,TAPCODE 4,KEYCODEDOWN 225,TAPCODE 4,KEYCODEUP 225,
-[       OK ] PersonalConfig.3_MacroRecordOneShot (2 ms)
-[ RUN      ] PersonalConfig.4_MacroRecordSpecialShift
-[ INFO     ] Printing Macro: U
-	END
-[ INFO     ] Printing Macro: U
-	END
-[       OK ] PersonalConfig.4_MacroRecordSpecialShift (1 ms)
-[ RUN      ] PersonalConfig.5_MacroRecordSpecialShift
-[       OK ] PersonalConfig.5_MacroRecordSpecialShift (0 ms)
-[ RUN      ] PersonalConfig.6_MacroRecordTopsyOneShot
-[ INFO     ] Printing Macro: A
-	TAPCODE 30,TAPCODE 31,TAP 209 197,TAPCODE 4,KEYDOWN 208 75,KEYCODEUP 30,KEYCODEDOWN 229,KEYDOWN 208 75,KEYCODEUP 30,KEYCODEUP 229,
-[ INFO     ] Printing Macro: O
-	KEYCODEDOWN 229,KEYDOWN 208 77,KEYCODEUP 229,KEYCODEUP 32,
-[       OK ] PersonalConfig.6_MacroRecordTopsyOneShot (1 ms)
-[ RUN      ] PersonalConfig.7_SpecialShiftDoubleRelease
-[       OK ] PersonalConfig.7_SpecialShiftDoubleRelease (0 ms)
-[ RUN      ] PersonalConfig.8_MacroRecordIntoWrongSlot
-[       OK ] PersonalConfig.8_MacroRecordIntoWrongSlot (0 ms)
-[ RUN      ] PersonalConfig.9_MacroReplayPLAYPLAY
-[       OK ] PersonalConfig.9_MacroReplayPLAYPLAY (1 ms)
-[----------] 10 tests from PersonalConfig (14 ms total)
-
-[----------] Global test environment tear-down
-[==========] 10 tests from 1 test suite ran. (14 ms total)
-[  PASSED  ] 10 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test hid/hid-v1.2-consumer-keys
-[==========] Running 1 test from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 1 test from KeyboardReports
-[ RUN      ] KeyboardReports.HIDUsageTablev12KeycodesAdded
-[       OK ] KeyboardReports.HIDUsageTablev12KeycodesAdded (0 ms)
-[----------] 1 test from KeyboardReports (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (0 ms total)
-[  PASSED  ] 1 test.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-Turbo[0m                       0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Turbo[0m                                   
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/Turbo/sticky
-[==========] Running 4 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 4 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/Turbo/sticky/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_TurboNoRegression
-[       OK ] GeneratedKTest.1_TurboNoRegression (0 ms)
-[ RUN      ] GeneratedKTest.2_TurboSecond
-[       OK ] GeneratedKTest.2_TurboSecond (0 ms)
-[ RUN      ] GeneratedKTest.3_TurboFirst
-[       OK ] GeneratedKTest.3_TurboFirst (0 ms)
-[----------] 4 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 4 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 4 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-Turbo[0m                       0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Turbo[0m                                   
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/Turbo/basic
-[==========] Running 4 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 4 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/Turbo/basic/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_TurboNoRegression
-[       OK ] GeneratedKTest.1_TurboNoRegression (0 ms)
-[ RUN      ] GeneratedKTest.2_TurboSecond
-[       OK ] GeneratedKTest.2_TurboSecond (0 ms)
-[ RUN      ] GeneratedKTest.3_TurboFirst
-[       OK ] GeneratedKTest.3_TurboFirst (0 ms)
-[----------] 4 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 4 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 4 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-ShapeShifter[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-ShapeShifter[0m                            
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/ShapeShifter/basic
-[==========] Running 3 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 3 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/ShapeShifter/basic/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_ShapeShifterWithoutShift
-[       OK ] GeneratedKTest.1_ShapeShifterWithoutShift (0 ms)
-[ RUN      ] GeneratedKTest.2_ShapeShifterFullOverlap
-[       OK ] GeneratedKTest.2_ShapeShifterFullOverlap (0 ms)
-[----------] 3 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 3 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 3 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-TapDance[0m                    0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance[0m                                
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/TapDance/basic
-[==========] Running 5 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 5 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/TapDance/basic/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_TapdanceInterrupt
-[       OK ] GeneratedKTest.1_TapdanceInterrupt (0 ms)
-[ RUN      ] GeneratedKTest.2_TapdanceTimeout
-[       OK ] GeneratedKTest.2_TapdanceTimeout (0 ms)
-[ RUN      ] GeneratedKTest.3_TapdanceInterruptWithRollover
-[       OK ] GeneratedKTest.3_TapdanceInterruptWithRollover (0 ms)
-[ RUN      ] GeneratedKTest.4_TapdanceTimeoutWhileHeld
-[       OK ] GeneratedKTest.4_TapdanceTimeoutWhileHeld (0 ms)
-[----------] 5 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 5 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 5 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-OneShotMetaKeys[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShotMetaKeys[0m                         
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/OneShot/meta-keys
-[==========] Running 8 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 8 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/OneShot/meta-keys/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_OneShotMetaSticky
-[       OK ] GeneratedKTest.1_OneShotMetaSticky (0 ms)
-[ RUN      ] GeneratedKTest.2_OneShotMetaStickyRollover
-[       OK ] GeneratedKTest.2_OneShotMetaStickyRollover (0 ms)
-[ RUN      ] GeneratedKTest.3_OneShotMetaStickyOverlap
-[       OK ] GeneratedKTest.3_OneShotMetaStickyOverlap (0 ms)
-[ RUN      ] GeneratedKTest.4_OneShotMetaStickyOverlapToRollover
-[       OK ] GeneratedKTest.4_OneShotMetaStickyOverlapToRollover (0 ms)
-[ RUN      ] GeneratedKTest.5_OneShotMetaStickySticky
-[       OK ] GeneratedKTest.5_OneShotMetaStickySticky (0 ms)
-[ RUN      ] GeneratedKTest.6_OneShotActiveSticky
-[       OK ] GeneratedKTest.6_OneShotActiveSticky (0 ms)
-[ RUN      ] GeneratedKTest.7_OneShotActiveStickyTwoKeys
-[       OK ] GeneratedKTest.7_OneShotActiveStickyTwoKeys (0 ms)
-[----------] 8 tests from GeneratedKTest (1 ms total)
-
-[----------] Global test environment tear-down
-[==========] 8 tests from 1 test suite ran. (1 ms total)
-[  PASSED  ] 8 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/OneShot/basic
-[==========] Running 7 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 7 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/OneShot/basic/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_OneShotTimeout
-[       OK ] GeneratedKTest.1_OneShotTimeout (0 ms)
-[ RUN      ] GeneratedKTest.2_OneShotNextKey
-[       OK ] GeneratedKTest.2_OneShotNextKey (0 ms)
-[ RUN      ] GeneratedKTest.3_OneShotDoubleTap
-[       OK ] GeneratedKTest.3_OneShotDoubleTap (0 ms)
-[ RUN      ] GeneratedKTest.4_OneShotDoubleTapTimeout
-[       OK ] GeneratedKTest.4_OneShotDoubleTapTimeout (0 ms)
-[ RUN      ] GeneratedKTest.5_OneShotHoldTimeout
-[       OK ] GeneratedKTest.5_OneShotHoldTimeout (0 ms)
-[ RUN      ] GeneratedKTest.6_OneShotRollover
-[       OK ] GeneratedKTest.6_OneShotRollover (0 ms)
-[----------] 7 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 7 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 7 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-Qukeys[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Qukeys[0m                                  
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/Qukeys/TapRepeat
-[==========] Running 4 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 4 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/Qukeys/TapRepeat/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_TapRepeatGenericQukey
-[       OK ] GeneratedKTest.1_TapRepeatGenericQukey (0 ms)
-[ RUN      ] GeneratedKTest.2_TapRepeatDualUseQukey
-[       OK ] GeneratedKTest.2_TapRepeatDualUseQukey (0 ms)
-[ RUN      ] GeneratedKTest.3_TapRepeatSpaceCadetQukey
-[       OK ] GeneratedKTest.3_TapRepeatSpaceCadetQukey (0 ms)
-[----------] 4 tests from GeneratedKTest (1 ms total)
-
-[----------] Global test environment tear-down
-[==========] 4 tests from 1 test suite ran. (1 ms total)
-[  PASSED  ] 4 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-Qukeys[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Qukeys[0m                                  
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
-[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/Qukeys/basic
-[==========] Running 4 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 4 tests from QukeysBasic
-[ RUN      ] QukeysBasic.TapQukeyAlone
-[       OK ] QukeysBasic.TapQukeyAlone (0 ms)
-[ RUN      ] QukeysBasic.HoldQukeyAlone
-[       OK ] QukeysBasic.HoldQukeyAlone (0 ms)
-[ RUN      ] QukeysBasic.FullOverlap
-[       OK ] QukeysBasic.FullOverlap (0 ms)
-[ RUN      ] QukeysBasic.RolloverPrimary
-[       OK ] QukeysBasic.RolloverPrimary (0 ms)
-[----------] 4 tests from QukeysBasic (1 ms total)
-
-[----------] Global test environment tear-down
-[==========] 4 tests from 1 test suite ran. (1 ms total)
-[  PASSED  ] 4 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-AutoShift[0m                   0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-AutoShift[0m                               
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/AutoShift/basic
-[==========] Running 3 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 3 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/AutoShift/basic/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_AutoShiftTap
-[       OK ] GeneratedKTest.1_AutoShiftTap (0 ms)
-[ RUN      ] GeneratedKTest.2_AutoShiftLongPress
-[       OK ] GeneratedKTest.2_AutoShiftLongPress (0 ms)
-[----------] 3 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 3 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 3 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-Redial[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Redial[0m                                  
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/Redial/basic
-[==========] Running 6 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 6 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/Redial/basic/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_RedialWithNoPriorKeypress
-[       OK ] GeneratedKTest.1_RedialWithNoPriorKeypress (0 ms)
-[ RUN      ] GeneratedKTest.2_RedialFirstKey
-[       OK ] GeneratedKTest.2_RedialFirstKey (0 ms)
-[ RUN      ] GeneratedKTest.3_RedialNextKey
-[       OK ] GeneratedKTest.3_RedialNextKey (0 ms)
-[ RUN      ] GeneratedKTest.4_RedialRollover
-[       OK ] GeneratedKTest.4_RedialRollover (0 ms)
-[ RUN      ] GeneratedKTest.5_RedialRolloverRightToLeft
-[       OK ] GeneratedKTest.5_RedialRolloverRightToLeft (0 ms)
-[----------] 6 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 6 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 6 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-SpaceCadet[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-SpaceCadet[0m                              
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/SpaceCadet/no-delay
-[==========] Running 7 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 7 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/SpaceCadet/no-delay/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_SpaceCadetTap
-[       OK ] GeneratedKTest.1_SpaceCadetTap (0 ms)
-[ RUN      ] GeneratedKTest.2_SpaceCadetHold
-[       OK ] GeneratedKTest.2_SpaceCadetHold (0 ms)
-[ RUN      ] GeneratedKTest.3_SpaceCadetHoldWithGlobalTimeout
-[       OK ] GeneratedKTest.3_SpaceCadetHoldWithGlobalTimeout (0 ms)
-[ RUN      ] GeneratedKTest.4_SpaceCadetInterrupt
-[       OK ] GeneratedKTest.4_SpaceCadetInterrupt (0 ms)
-[ RUN      ] GeneratedKTest.5_SpaceCadetInterruptSpaceCadetWithTap
-[       OK ] GeneratedKTest.5_SpaceCadetInterruptSpaceCadetWithTap (0 ms)
-[ RUN      ] GeneratedKTest.6_SpaceCadetInterruptSpaceCadetWithHold
-[       OK ] GeneratedKTest.6_SpaceCadetInterruptSpaceCadetWithHold (0 ms)
-[----------] 7 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 7 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 7 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-SpaceCadet[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-SpaceCadet[0m                              
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/SpaceCadet/basic
-[==========] Running 8 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 8 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/SpaceCadet/basic/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_SpaceCadetTap
-[       OK ] GeneratedKTest.1_SpaceCadetTap (0 ms)
-[ RUN      ] GeneratedKTest.2_SpaceCadetHold
-[       OK ] GeneratedKTest.2_SpaceCadetHold (0 ms)
-[ RUN      ] GeneratedKTest.3_SpaceCadetHoldWithGlobalTimeout
-[       OK ] GeneratedKTest.3_SpaceCadetHoldWithGlobalTimeout (0 ms)
-[ RUN      ] GeneratedKTest.4_SpaceCadetInterrupt
-[       OK ] GeneratedKTest.4_SpaceCadetInterrupt (0 ms)
-[ RUN      ] GeneratedKTest.5_SpaceCadetInterruptSpaceCadetWithTap
-[       OK ] GeneratedKTest.5_SpaceCadetInterruptSpaceCadetWithTap (0 ms)
-[ RUN      ] GeneratedKTest.6_SpaceCadetInterruptSpaceCadetWithHold
-[       OK ] GeneratedKTest.6_SpaceCadetInterruptSpaceCadetWithHold (0 ms)
-[ RUN      ] GeneratedKTest.7_SpaceCadetInterruptWithModifier
-[       OK ] GeneratedKTest.7_SpaceCadetInterruptWithModifier (0 ms)
-[----------] 8 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 8 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 8 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-TopsyTurvy[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy[0m                              
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/TopsyTurvy/basic
-[==========] Running 15 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 15 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/TopsyTurvy/basic/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_TopsyTurvyWithoutShift
-[       OK ] GeneratedKTest.1_TopsyTurvyWithoutShift (0 ms)
-[ RUN      ] GeneratedKTest.2_TopsyTurvyWithShift
-[       OK ] GeneratedKTest.2_TopsyTurvyWithShift (0 ms)
-[ RUN      ] GeneratedKTest.3_TopsyTurvyRolloverFromShift
-[       OK ] GeneratedKTest.3_TopsyTurvyRolloverFromShift (0 ms)
-[ RUN      ] GeneratedKTest.4_TopsyTurvyRolloverToShift
-[       OK ] GeneratedKTest.4_TopsyTurvyRolloverToShift (0 ms)
-[ RUN      ] GeneratedKTest.5_TopsyTurvyEncompassingShift
-[       OK ] GeneratedKTest.5_TopsyTurvyEncompassingShift (0 ms)
-[ RUN      ] GeneratedKTest.6_TopsyTurvyRolloverFromOther
-[       OK ] GeneratedKTest.6_TopsyTurvyRolloverFromOther (0 ms)
-[ RUN      ] GeneratedKTest.7_TopsyTurvyRolloverToOther
-[       OK ] GeneratedKTest.7_TopsyTurvyRolloverToOther (0 ms)
-[ RUN      ] GeneratedKTest.8_TopsyTurvyEncompassingOther
-[       OK ] GeneratedKTest.8_TopsyTurvyEncompassingOther (0 ms)
-[ RUN      ] GeneratedKTest.9_TopsyTurvyEncompassedByOther
-[       OK ] GeneratedKTest.9_TopsyTurvyEncompassedByOther (0 ms)
-[ RUN      ] GeneratedKTest.10_TopsyTurvyRolloverFromOtherWithShift
-[       OK ] GeneratedKTest.10_TopsyTurvyRolloverFromOtherWithShift (0 ms)
-[ RUN      ] GeneratedKTest.11_TopsyTurvyRolloverToOtherWithShift
-[       OK ] GeneratedKTest.11_TopsyTurvyRolloverToOtherWithShift (0 ms)
-[ RUN      ] GeneratedKTest.12_TopsyTurvyRolloverToTopsyTurvy
-[       OK ] GeneratedKTest.12_TopsyTurvyRolloverToTopsyTurvy (0 ms)
-[ RUN      ] GeneratedKTest.13_TopsyTurvyRolloverFromOtherModifier
-[       OK ] GeneratedKTest.13_TopsyTurvyRolloverFromOtherModifier (0 ms)
-[ RUN      ] GeneratedKTest.14_TopsyTurvyWithOtherModifier
-[       OK ] GeneratedKTest.14_TopsyTurvyWithOtherModifier (0 ms)
-[----------] 15 tests from GeneratedKTest (2 ms total)
-
-[----------] Global test environment tear-down
-[==========] 15 tests from 1 test suite ran. (2 ms total)
-[  PASSED  ] 15 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-WinKeyToggle[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-WinKeyToggle[0m                            
-[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
-[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/WinKeyToggle/basic
-[==========] Running 5 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 5 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/WinKeyToggle/basic/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_WinKeyEnabledOnStart
-[       OK ] GeneratedKTest.1_WinKeyEnabledOnStart (0 ms)
-[ RUN      ] GeneratedKTest.2_WinKeyDisabledAfterToggle
-[       OK ] GeneratedKTest.2_WinKeyDisabledAfterToggle (0 ms)
-[ RUN      ] GeneratedKTest.3_WinKeyToggleOtherKeysNotDisabled
-[       OK ] GeneratedKTest.3_WinKeyToggleOtherKeysNotDisabled (0 ms)
-[ RUN      ] GeneratedKTest.4_WinKeyToggleTurnsBackOn
-[       OK ] GeneratedKTest.4_WinKeyToggleTurnsBackOn (0 ms)
-[----------] 5 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 5 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 5 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-MacroPirate[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                          
-[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
-[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/MacroPirate/BasicRepeat
-[==========] Running 7 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 7 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/BasicRepeat/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_MacroPirateNothingRecorded
-[       OK ] GeneratedKTest.1_MacroPirateNothingRecorded (0 ms)
-[ RUN      ] GeneratedKTest.2_MacroPirateSimpleRecording
-[       OK ] GeneratedKTest.2_MacroPirateSimpleRecording (0 ms)
-[ RUN      ] GeneratedKTest.3_MacroPirateHeldDuringREC
-[       OK ] GeneratedKTest.3_MacroPirateHeldDuringREC (0 ms)
-[ RUN      ] GeneratedKTest.4_MacroPirateMultiPressDuringRecord
-[       OK ] GeneratedKTest.4_MacroPirateMultiPressDuringRecord (0 ms)
-[ RUN      ] GeneratedKTest.5_MacroPirateHeldAfterExiting
-[       OK ] GeneratedKTest.5_MacroPirateHeldAfterExiting (0 ms)
-[ RUN      ] GeneratedKTest.6_MacroPirateKeyHeldDownForLongTime
-[       OK ] GeneratedKTest.6_MacroPirateKeyHeldDownForLongTime (5 ms)
-[----------] 7 tests from GeneratedKTest (6 ms total)
-
-[----------] Global test environment tear-down
-[==========] 7 tests from 1 test suite ran. (6 ms total)
-[  PASSED  ] 7 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-MacroPirate[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                          
-[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
-[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/MacroPirate/EdgeCases
-[==========] Running 19 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 19 tests from ManualTests
-[ RUN      ] ManualTests.0_test
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/test/manual-testcases.cpp
-[       OK ] ManualTests.0_test (0 ms)
-[ RUN      ] ManualTests.1_MacroPirateTestHelpers
-[       OK ] ManualTests.1_MacroPirateTestHelpers (0 ms)
-[ RUN      ] ManualTests.2_ReplayRepeat
-[       OK ] ManualTests.2_ReplayRepeat (1 ms)
-[ RUN      ] ManualTests.3_MacroPirateNoHeldOverPlay
-[       OK ] ManualTests.3_MacroPirateNoHeldOverPlay (0 ms)
-[ RUN      ] ManualTests.4_MacroPirateRecursiveReplay
-[       OK ] ManualTests.4_MacroPirateRecursiveReplay (0 ms)
-[ RUN      ] ManualTests.5_MacroPirateRecursiveAvoidance
-[       OK ] ManualTests.5_MacroPirateRecursiveAvoidance (1 ms)
-[ RUN      ] ManualTests.5_MacroPirateAvoidKeyUp
-[       OK ] ManualTests.5_MacroPirateAvoidKeyUp (0 ms)
-[ RUN      ] ManualTests.6_MacroPirateBailOut
-[       OK ] ManualTests.6_MacroPirateBailOut (0 ms)
-[ RUN      ] ManualTests.7_CompressionChecks
-[ INFO     ] Printing Macro: A
-	TAPCODE 4,TAPCODE 13,
-[ INFO     ] Printing Macro: A
-	TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 225,TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,KEYCODEUP 225,
-[       OK ] ManualTests.7_CompressionChecks (1 ms)
-[ RUN      ] ManualTests.8_FlagsCompression
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 224,TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,KEYCODEUP 224,
-[       OK ] ManualTests.8_FlagsCompression (0 ms)
-[ RUN      ] ManualTests.8_FlagsCompression3
-[ INFO     ] Printing Macro: A
-	TAP 1 4,
-[       OK ] ManualTests.8_FlagsCompression3 (0 ms)
-[ RUN      ] ManualTests.8_FlagsCompression4
-[ INFO     ] Printing Macro: A
-	TAP_SEQUENCE 1 4 1 4 1 4 1 4 0 0 |,
-[       OK ] ManualTests.8_FlagsCompression4 (0 ms)
-[ RUN      ] ManualTests.8_FlagsCompression2
-[ INFO     ] Printing Macro: A
-	KEYDOWN 1 4,TAPCODE 4,KEYUP 1 4,
-[       OK ] ManualTests.8_FlagsCompression2 (0 ms)
-[ RUN      ] ManualTests.8_FlagsCompression5
-[ INFO     ] Printing Macro: A
-	KEYDOWN 1 4,TAPCODE 13,KEYUP 1 4,
-[       OK ] ManualTests.8_FlagsCompression5 (0 ms)
-[ RUN      ] ManualTests.9_ShiftCheck
-[       OK ] ManualTests.9_ShiftCheck (0 ms)
-[ RUN      ] ManualTests.10_CompressSeqInMiddle
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 225,TAPCODE 4,TAPCODE 13,KEYCODEUP 225,TAP_CODE_SEQUENCE 4 4 4 4 4 0 |,
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 225,TAPCODE 4,TAPCODE 13,KEYCODEUP 225,TAP_CODE_SEQUENCE 4 4 4 4 4 13 0 |,KEYCODEDOWN 4,TAPCODE 13,KEYCODEUP 4,
-[ INFO     ] Printing Macro: A
-	KEYCODEDOWN 225,TAPCODE 4,TAPCODE 13,KEYCODEUP 225,TAP_CODE_SEQUENCE 4 4 4 4 4 13 0 |,KEYCODEDOWN 4,TAPCODE 13,KEYCODEUP 4,TAP_CODE_SEQUENCE 13 4 13 4 13 0 |,
-[       OK ] ManualTests.10_CompressSeqInMiddle (2 ms)
-[ RUN      ] ManualTests.11_LayerBasics
-[ INFO     ] Printing Macro: A
-	TAPCODE 27,TAP 68 1,TAPCODE 5,TAP 68 1,TAPCODE 27,TAP 68 1,TAPCODE 5,
-[ INFO     ] Printing Macro: A
-	TAPCODE 27,TAP 68 1,TAPCODE 5,TAP 68 1,TAPCODE 27,TAP 68 1,TAPCODE 5,TAP 68 1,
-[ INFO     ] Printing Macro: A
-	KEYDOWN 68 43,TAPCODE 27,KEYUP 68 43,TAPCODE 5,KEYDOWN 68 43,TAPCODE 27,
-[       OK ] ManualTests.11_LayerBasics (2 ms)
-[ RUN      ] ManualTests.12_Delays
-[ INFO     ] Printing Macro: B
-	TAP_CODE_SEQUENCE 5 5 5 0 |,
-[ INFO     ] Printing Macro: B
-	TAPCODE 5,TAPCODE 5,INTERVAL 0,TAPCODE 5,
-[ INFO     ] Printing Macro: B
-	KEYCODEDOWN 5,INTERVAL 0,KEYCODEUP 5,TAPCODE 4,
-[ INFO     ] Printing Macro: B
-	TAPCODE 5,TAPCODE 4,KEYCODEDOWN 5,INTERVAL 0,KEYCODEUP 5,TAPCODE 4,TAPCODE 5,
-[ INFO     ] Printing Macro: A
-	TAPCODE 5,TAPCODE 4,KEYCODEDOWN 5,INTERVAL 2,KEYCODEUP 5,TAPCODE 4,TAPCODE 5,
-[       OK ] ManualTests.12_Delays (1 ms)
-[ RUN      ] ManualTests.13_OutOfMemory
-[       OK ] ManualTests.13_OutOfMemory (14 ms)
-[----------] 19 tests from ManualTests (31 ms total)
-
-[----------] Global test environment tear-down
-[==========] 19 tests from 1 test suite ran. (31 ms total)
-[  PASSED  ] 19 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
-[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/Macros/shift-blocker
-[==========] Running 3 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 3 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/Macros/shift-blocker/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_MacroWithoutShift
-[       OK ] GeneratedKTest.1_MacroWithoutShift (0 ms)
-[ RUN      ] GeneratedKTest.2_MacroWithShift
-[       OK ] GeneratedKTest.2_MacroWithShift (0 ms)
-[----------] 3 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 3 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 3 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
-[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/Macros/basic
-[==========] Running 7 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 7 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/Macros/basic/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_MacroIndex0
-[       OK ] GeneratedKTest.1_MacroIndex0 (0 ms)
-[ RUN      ] GeneratedKTest.2_MacroIndex1
-[       OK ] GeneratedKTest.2_MacroIndex1 (0 ms)
-[ RUN      ] GeneratedKTest.3_MacroIndex2
-[       OK ] GeneratedKTest.3_MacroIndex2 (0 ms)
-[ RUN      ] GeneratedKTest.4_MacroIndex3
-[       OK ] GeneratedKTest.4_MacroIndex3 (0 ms)
-[ RUN      ] GeneratedKTest.5_MacroIndex255
-[       OK ] GeneratedKTest.5_MacroIndex255 (0 ms)
-[ RUN      ] GeneratedKTest.6_MacrosOtherKey
-[       OK ] GeneratedKTest.6_MacrosOtherKey (0 ms)
-[----------] 7 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 7 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 7 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-CharShift[0m                   0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-CharShift[0m                               
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/CharShift/basic
-[==========] Running 7 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 7 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/CharShift/basic/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_CharShiftLowerLower
-[       OK ] GeneratedKTest.1_CharShiftLowerLower (0 ms)
-[ RUN      ] GeneratedKTest.2_CharShiftLowerUpper
-[       OK ] GeneratedKTest.2_CharShiftLowerUpper (0 ms)
-[ RUN      ] GeneratedKTest.3_CharShiftUpperLower
-[       OK ] GeneratedKTest.3_CharShiftUpperLower (0 ms)
-[ RUN      ] GeneratedKTest.4_CharShiftUpperUpper
-[       OK ] GeneratedKTest.4_CharShiftUpperUpper (0 ms)
-[ RUN      ] GeneratedKTest.5_RolloverFromNormalToCharShiftUpper
-[       OK ] GeneratedKTest.5_RolloverFromNormalToCharShiftUpper (0 ms)
-[ RUN      ] GeneratedKTest.6_RolloverFromShiftedToCharShiftLower
-[       OK ] GeneratedKTest.6_RolloverFromShiftedToCharShiftLower (0 ms)
-[----------] 7 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 7 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 7 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-Escape-OneShot[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Escape-OneShot[0m                          
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/Escape-OneShot/basic
-[==========] Running 3 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 3 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/Escape-OneShot/basic/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_EscapeOneShotCancelTemporary
-[       OK ] GeneratedKTest.1_EscapeOneShotCancelTemporary (0 ms)
-[ RUN      ] GeneratedKTest.2_EscapeOneShotCancelSticky
-[       OK ] GeneratedKTest.2_EscapeOneShotCancelSticky (0 ms)
-[----------] 3 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 3 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 3 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-MouseKeys[0m                   0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MouseKeys[0m                               
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/MouseKeys/basic
-[==========] Running 4 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 4 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MouseKeys/basic/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_MouseKeysMoveUp
-[       OK ] GeneratedKTest.1_MouseKeysMoveUp (0 ms)
-[ RUN      ] GeneratedKTest.2_MouseKeysButtonLeft
-[       OK ] GeneratedKTest.2_MouseKeysButtonLeft (0 ms)
-[ RUN      ] GeneratedKTest.3_MouseKeysScrollDown
-[       OK ] GeneratedKTest.3_MouseKeysScrollDown (0 ms)
-[----------] 4 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 4 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 4 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-PrefixLayer[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-PrefixLayer[0m                             
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/PrefixLayer/basic
-[==========] Running 9 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 9 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/PrefixLayer/basic/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_PrefixLayerPassthrough
-[       OK ] GeneratedKTest.1_PrefixLayerPassthrough (0 ms)
-[ RUN      ] GeneratedKTest.2_PrefixLayerExplicit
-[       OK ] GeneratedKTest.2_PrefixLayerExplicit (0 ms)
-[ RUN      ] GeneratedKTest.3_PrefixLayerMasked
-[       OK ] GeneratedKTest.3_PrefixLayerMasked (0 ms)
-[ RUN      ] GeneratedKTest.4_PrefixLayerSameModifierFirst
-[       OK ] GeneratedKTest.4_PrefixLayerSameModifierFirst (0 ms)
-[ RUN      ] GeneratedKTest.5_PrefixLayerSameModifierSecond
-[       OK ] GeneratedKTest.5_PrefixLayerSameModifierSecond (0 ms)
-[ RUN      ] GeneratedKTest.6_PrefixLayerDifferentModifierFirst
-[       OK ] GeneratedKTest.6_PrefixLayerDifferentModifierFirst (0 ms)
-[ RUN      ] GeneratedKTest.7_PrefixLayerDifferentModifierSecond
-[       OK ] GeneratedKTest.7_PrefixLayerDifferentModifierSecond (0 ms)
-[ RUN      ] GeneratedKTest.8_PrefixLayerRolloverFromLetter
-[       OK ] GeneratedKTest.8_PrefixLayerRolloverFromLetter (0 ms)
-[----------] 9 tests from GeneratedKTest (1 ms total)
-
-[----------] Global test environment tear-down
-[==========] 9 tests from 1 test suite ran. (1 ms total)
-[  PASSED  ] 9 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-MagicCombo[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MagicCombo[0m                              
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/MagicCombo/basic
-[==========] Running 2 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 2 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MagicCombo/basic/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_MagicComboKeyA
-[       OK ] GeneratedKTest.1_MagicComboKeyA (0 ms)
-[----------] 2 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 2 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-Leader[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Leader[0m                                  
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
-[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test plugins/Leader/basic
-[==========] Running 12 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 12 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/Leader/basic/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_LeaderSequenceAbort
-[       OK ] GeneratedKTest.1_LeaderSequenceAbort (0 ms)
-[ RUN      ] GeneratedKTest.2_LeaderSequenceAB
-[       OK ] GeneratedKTest.2_LeaderSequenceAB (0 ms)
-[ RUN      ] GeneratedKTest.3_LeaderSequenceAC
-[       OK ] GeneratedKTest.3_LeaderSequenceAC (0 ms)
-[ RUN      ] GeneratedKTest.4_LeaderSequenceBA
-[       OK ] GeneratedKTest.4_LeaderSequenceBA (0 ms)
-[ RUN      ] GeneratedKTest.5_LeaderSequenceBC
-[       OK ] GeneratedKTest.5_LeaderSequenceBC (0 ms)
-[ RUN      ] GeneratedKTest.6_LeaderSequenceC
-[       OK ] GeneratedKTest.6_LeaderSequenceC (0 ms)
-[ RUN      ] GeneratedKTest.7_LeaderSequenceBARollover
-[       OK ] GeneratedKTest.7_LeaderSequenceBARollover (0 ms)
-[ RUN      ] GeneratedKTest.8_LeaderSequenceCRollover
-[       OK ] GeneratedKTest.8_LeaderSequenceCRollover (0 ms)
-[ RUN      ] GeneratedKTest.9_LeaderSequenceC2Rollover
-[       OK ] GeneratedKTest.9_LeaderSequenceC2Rollover (0 ms)
-[ RUN      ] GeneratedKTest.10_LeaderSequenceABDRollover
-[       OK ] GeneratedKTest.10_LeaderSequenceABDRollover (0 ms)
-[ RUN      ] GeneratedKTest.11_LeaderSequenceTimeout
-[       OK ] GeneratedKTest.11_LeaderSequenceTimeout (0 ms)
-[----------] 12 tests from GeneratedKTest (1 ms total)
-
-[----------] Global test environment tear-down
-[==========] 12 tests from 1 test suite ran. (1 ms total)
-[  PASSED  ] 12 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test simulator/timestamps
-[==========] Running 1 test from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 1 test from ReportTimestamps
-[ RUN      ] ReportTimestamps.Keyboard
-[       OK ] ReportTimestamps.Keyboard (0 ms)
-[----------] 1 test from ReportTimestamps (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (0 ms total)
-[  PASSED  ] 1 test.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test simulator/timing
-[==========] Running 6 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 6 tests from SimulatorTiming
-[ RUN      ] SimulatorTiming.SimulatorStart
-[       OK ] SimulatorTiming.SimulatorStart (0 ms)
-[ RUN      ] SimulatorTiming.TimeElapses
-[       OK ] SimulatorTiming.TimeElapses (0 ms)
-[ RUN      ] SimulatorTiming.ZeroTimeElapses
-[       OK ] SimulatorTiming.ZeroTimeElapses (0 ms)
-[ RUN      ] SimulatorTiming.LongTimeElapses
-[       OK ] SimulatorTiming.LongTimeElapses (116 ms)
-[ RUN      ] SimulatorTiming.3msPerCycleTestRunCycles
-[       OK ] SimulatorTiming.3msPerCycleTestRunCycles (0 ms)
-[ RUN      ] SimulatorTiming.4msPerCycleTestRunForMillis
-[       OK ] SimulatorTiming.4msPerCycleTestRunForMillis (0 ms)
-[----------] 6 tests from SimulatorTiming (117 ms total)
-
-[----------] Global test environment tear-down
-[==========] 6 tests from 1 test suite ran. (117 ms total)
-[  PASSED  ] 6 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
-[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test features/events/keyboard-state/macros
-[==========] Running 2 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 2 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/features/events/keyboard-state/macros/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_KeyboardStateArrayCleared
-[       OK ] GeneratedKTest.1_KeyboardStateArrayCleared (0 ms)
-[----------] 2 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 2 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test features/events/keyboard-state/release-cleared
-[==========] Running 2 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 2 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/features/events/keyboard-state/release-cleared/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_KeyboardStateCleared
-[       OK ] GeneratedKTest.1_KeyboardStateCleared (0 ms)
-[----------] 2 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 2 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-Qukeys[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Qukeys[0m                                  
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test features/layers/mod-layer
-[==========] Running 3 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 3 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/features/layers/mod-layer/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_Foo
-[       OK ] GeneratedKTest.1_Foo (0 ms)
-[ RUN      ] GeneratedKTest.2_QukeysModLayer
-[       OK ] GeneratedKTest.2_QukeysModLayer (0 ms)
-[----------] 3 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 3 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 3 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test features/layers/floating-base
-[==========] Running 5 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 5 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/features/layers/floating-base/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_BaseLayerStaysActive
-[       OK ] GeneratedKTest.1_BaseLayerStaysActive (0 ms)
-[ RUN      ] GeneratedKTest.2_LockLayer1
-[       OK ] GeneratedKTest.2_LockLayer1 (0 ms)
-[ RUN      ] GeneratedKTest.3_StackLayer0OnTopOfLayer1
-[       OK ] GeneratedKTest.3_StackLayer0OnTopOfLayer1 (0 ms)
-[ RUN      ] GeneratedKTest.4_DefaultToLayer0
-[       OK ] GeneratedKTest.4_DefaultToLayer0 (0 ms)
-[----------] 5 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 5 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 5 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test features/layers/use-cases
-[==========] Running 17 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 17 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/features/layers/use-cases/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_StartupLayerState
-[       OK ] GeneratedKTest.1_StartupLayerState (0 ms)
-[ RUN      ] GeneratedKTest.2_LayerShift1
-[       OK ] GeneratedKTest.2_LayerShift1 (0 ms)
-[ RUN      ] GeneratedKTest.3_LayerLock1
-[       OK ] GeneratedKTest.3_LayerLock1 (0 ms)
-[ RUN      ] GeneratedKTest.4_ResetFromLayerShift
-[       OK ] GeneratedKTest.4_ResetFromLayerShift (0 ms)
-[ RUN      ] GeneratedKTest.5_LayerMoves
-[       OK ] GeneratedKTest.5_LayerMoves (0 ms)
-[ RUN      ] GeneratedKTest.6_LayerLockPromotion
-[       OK ] GeneratedKTest.6_LayerLockPromotion (0 ms)
-[ RUN      ] GeneratedKTest.7_LayerLockPromoteBaseLayer
-[       OK ] GeneratedKTest.7_LayerLockPromoteBaseLayer (0 ms)
-[ RUN      ] GeneratedKTest.8_ScenarioA
-[       OK ] GeneratedKTest.8_ScenarioA (0 ms)
-[ RUN      ] GeneratedKTest.9_ScenarioB
-[       OK ] GeneratedKTest.9_ScenarioB (0 ms)
-[ RUN      ] GeneratedKTest.10_ScenarioC
-[       OK ] GeneratedKTest.10_ScenarioC (0 ms)
-[ RUN      ] GeneratedKTest.11_ScenarioD
-[       OK ] GeneratedKTest.11_ScenarioD (0 ms)
-[ RUN      ] GeneratedKTest.12_ScenarioE
-[       OK ] GeneratedKTest.12_ScenarioE (0 ms)
-[ RUN      ] GeneratedKTest.13_ScenarioF
-[       OK ] GeneratedKTest.13_ScenarioF (0 ms)
-[ RUN      ] GeneratedKTest.14_ScenarioG
-[       OK ] GeneratedKTest.14_ScenarioG (0 ms)
-[ RUN      ] GeneratedKTest.15_layerShiftNext
-[       OK ] GeneratedKTest.15_layerShiftNext (0 ms)
-[ RUN      ] GeneratedKTest.16_layerShiftPrevious
-[       OK ] GeneratedKTest.16_layerShiftPrevious (0 ms)
-[----------] 17 tests from GeneratedKTest (3 ms total)
-
-[----------] Global test environment tear-down
-[==========] 17 tests from 1 test suite ran. (3 ms total)
-[  PASSED  ] 17 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
-[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
-[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test features/layers/activation-order
-[==========] Running 6 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 6 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/features/layers/activation-order/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_LayerActivationOrderBaseLayerHasNotRegressed
-[       OK ] GeneratedKTest.1_LayerActivationOrderBaseLayerHasNotRegressed (0 ms)
-[ RUN      ] GeneratedKTest.2_LayerActivationOrderShiftToLayer1
-[       OK ] GeneratedKTest.2_LayerActivationOrderShiftToLayer1 (0 ms)
-[ RUN      ] GeneratedKTest.3_LayerActivationOrderShiftingWithCaching
-[       OK ] GeneratedKTest.3_LayerActivationOrderShiftingWithCaching (0 ms)
-[ RUN      ] GeneratedKTest.4_LayerActivationOrderOrdering
-[       OK ] GeneratedKTest.4_LayerActivationOrderOrdering (0 ms)
-[ RUN      ] GeneratedKTest.5_LayerActivationOrderLayer0Fallback
-[       OK ] GeneratedKTest.5_LayerActivationOrderLayer0Fallback (0 ms)
-[----------] 6 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 6 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 6 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test features/rollover
-[==========] Running 4 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 4 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/features/rollover/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_KeyWithModifierFlagAlone
-[       OK ] GeneratedKTest.1_KeyWithModifierFlagAlone (0 ms)
-[ RUN      ] GeneratedKTest.2_KeyWithMultipleModifierFlagsAlone
-[       OK ] GeneratedKTest.2_KeyWithMultipleModifierFlagsAlone (0 ms)
-[ RUN      ] GeneratedKTest.3_NoModFlagsToModFlags
-[       OK ] GeneratedKTest.3_NoModFlagsToModFlags (0 ms)
-[----------] 4 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 4 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 4 tests.
-
-[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
-[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
-[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
-[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
-[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
-[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
-
-[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
-[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
-
-
-Running test features/keycodes
-[==========] Running 3 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 3 tests from GeneratedKTest
-[ RUN      ] GeneratedKTest.0_KtestSourceFilename
-[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/features/keycodes/test.ktest
-[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
-[ RUN      ] GeneratedKTest.1_KeyboardNonModifier
-[       OK ] GeneratedKTest.1_KeyboardNonModifier (0 ms)
-[ RUN      ] GeneratedKTest.2_KeyboardModifier
-[       OK ] GeneratedKTest.2_KeyboardModifier (0 ms)
-[----------] 3 tests from GeneratedKTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 3 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 3 tests.
-make[1]: Leaving directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
-Kaleidoscope [17:36:47] $ 
 vshcmd: > make clean && make simulator-tests
 Building in quiet mode. For a lot more information, add 'VERBOSE=1' to the beginning of your call to make
 make -C tests clean
@@ -2208,6 +272,21 @@ make -C /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/googlete
 [ 87%] [32mBuilding CXX object googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o[0m
 [100%] [32m[1mLinking CXX static library ../lib/libgtest_main.a[0m
 [100%] Built target gtest_main
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2234,6 +313,21 @@ Running test examples/basic-keypress
 [----------] Global test environment tear-down
 [==========] 2 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 2 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2263,11 +357,26 @@ Running test issues/1057
 [       OK ] GeneratedKTest.2_Chrysalis688 (0 ms)
 [ RUN      ] GeneratedKTest.3_Chrysalis427Workaround
 [       OK ] GeneratedKTest.3_Chrysalis427Workaround (0 ms)
-[----------] 4 tests from GeneratedKTest (0 ms total)
+[----------] 4 tests from GeneratedKTest (1 ms total)
 
 [----------] Global test environment tear-down
-[==========] 4 tests from 1 test suite ran. (0 ms total)
+[==========] 4 tests from 1 test suite ran. (1 ms total)
 [  PASSED  ] 4 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2294,11 +403,26 @@ Running test issues/896
 [       OK ] GeneratedKTest.1_OneShotNextKey (0 ms)
 [ RUN      ] GeneratedKTest.2_OneShotDoubleTapLayer896
 [       OK ] GeneratedKTest.2_OneShotDoubleTapLayer896 (0 ms)
-[----------] 3 tests from GeneratedKTest (0 ms total)
+[----------] 3 tests from GeneratedKTest (1 ms total)
 
 [----------] Global test environment tear-down
-[==========] 3 tests from 1 test suite ran. (0 ms total)
+[==========] 3 tests from 1 test suite ran. (1 ms total)
 [  PASSED  ] 3 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2325,12 +449,27 @@ Running test issues/984
 [ RUN      ] GeneratedKTest.1_EscapeOneShotModifier
 [       OK ] GeneratedKTest.1_EscapeOneShotModifier (0 ms)
 [ RUN      ] GeneratedKTest.2_EscapeStickyOneShotModifier
-[       OK ] GeneratedKTest.2_EscapeStickyOneShotModifier (7 ms)
-[----------] 3 tests from GeneratedKTest (7 ms total)
+[       OK ] GeneratedKTest.2_EscapeStickyOneShotModifier (15 ms)
+[----------] 3 tests from GeneratedKTest (16 ms total)
 
 [----------] Global test environment tear-down
-[==========] 3 tests from 1 test suite ran. (7 ms total)
+[==========] 3 tests from 1 test suite ran. (16 ms total)
 [  PASSED  ] 3 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2355,12 +494,27 @@ Running test issues/1042
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/1042/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_LeaderPrefixSequence
-[       OK ] GeneratedKTest.1_LeaderPrefixSequence (0 ms)
-[----------] 2 tests from GeneratedKTest (0 ms total)
+[       OK ] GeneratedKTest.1_LeaderPrefixSequence (1 ms)
+[----------] 2 tests from GeneratedKTest (1 ms total)
 
 [----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (0 ms total)
+[==========] 2 tests from 1 test suite ran. (1 ms total)
 [  PASSED  ] 2 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2384,11 +538,26 @@ Running test issues/941
 [       OK ] GeneratedKTest.1_Issue941OneKeypressPerCycle (0 ms)
 [ RUN      ] GeneratedKTest.2_Issue941SimultaneousKeypresses
 [       OK ] GeneratedKTest.2_Issue941SimultaneousKeypresses (0 ms)
-[----------] 3 tests from GeneratedKTest (0 ms total)
+[----------] 3 tests from GeneratedKTest (1 ms total)
 
 [----------] Global test environment tear-down
-[==========] 3 tests from 1 test suite ran. (0 ms total)
+[==========] 3 tests from 1 test suite ran. (1 ms total)
 [  PASSED  ] 3 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2415,6 +584,21 @@ Running test issues/978
 [----------] Global test environment tear-down
 [==========] 2 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 2 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2440,6 +624,21 @@ Running test issues/1107/Qukeys
 [----------] Global test environment tear-down
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2457,12 +656,27 @@ Running test issues/1107/QueueLeaker
 [----------] Global test environment set-up.
 [----------] 1 test from KeyAddrEventQueueLeak
 [ RUN      ] KeyAddrEventQueueLeak.TimeIsConsistent
-[       OK ] KeyAddrEventQueueLeak.TimeIsConsistent (0 ms)
-[----------] 1 test from KeyAddrEventQueueLeak (0 ms total)
+[       OK ] KeyAddrEventQueueLeak.TimeIsConsistent (2 ms)
+[----------] 1 test from KeyAddrEventQueueLeak (2 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (0 ms total)
+[==========] 1 test from 1 test suite ran. (2 ms total)
 [  PASSED  ] 1 test.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2487,12 +701,27 @@ Running test issues/970
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/970/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_Issue970QukeysMinPriorIntervalOverflow
-[       OK ] GeneratedKTest.1_Issue970QukeysMinPriorIntervalOverflow (86 ms)
-[----------] 2 tests from GeneratedKTest (86 ms total)
+[       OK ] GeneratedKTest.1_Issue970QukeysMinPriorIntervalOverflow (236 ms)
+[----------] 2 tests from GeneratedKTest (236 ms total)
 
 [----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (86 ms total)
+[==========] 2 tests from 1 test suite ran. (236 ms total)
 [  PASSED  ] 2 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2526,6 +755,21 @@ Running test issues/1113
 [----------] Global test environment tear-down
 [==========] 3 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 3 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2551,11 +795,51 @@ Running test issues/1032
 [       OK ] GeneratedKTest.1_SysterSequenceWithoutZero (0 ms)
 [ RUN      ] GeneratedKTest.2_SysterSequenceWithZero
 [       OK ] GeneratedKTest.2_SysterSequenceWithZero (0 ms)
-[----------] 3 tests from GeneratedKTest (0 ms total)
+[----------] 3 tests from GeneratedKTest (1 ms total)
 
 [----------] Global test environment tear-down
-[==========] 3 tests from 1 test suite ran. (0 ms total)
+[==========] 3 tests from 1 test suite ran. (1 ms total)
 [  PASSED  ] 3 tests.
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/423/423.ino: In function ‘void setup()’:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/423/423.ino:73:12: warning: ‘kaleidoscope::plugin::TapDance::time_out’ is deprecated: \n------------------------------------------------------------------------\nThe `TapDance.time_out` variable is deprecated. Please use the\n`TapDance.setTimeout()` function instead.\nThis variable will be removed after 2022-09-01.\n------------------------------------------------------------------------\n [-Wdeprecated-declarations]
+   73 |   TapDance.time_out = 25;
+      |            ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/Kaleidoscope-TapDance.h:20,
+                 from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/423/423.ino:20:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/kaleidoscope/plugin/TapDance.h:67:19: note: declared here
+   67 |   static uint16_t time_out;
+      |                   ^~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/423/423.ino:73:12: warning: ‘kaleidoscope::plugin::TapDance::time_out’ is deprecated: \n------------------------------------------------------------------------\nThe `TapDance.time_out` variable is deprecated. Please use the\n`TapDance.setTimeout()` function instead.\nThis variable will be removed after 2022-09-01.\n------------------------------------------------------------------------\n [-Wdeprecated-declarations]
+   73 |   TapDance.time_out = 25;
+      |            ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/Kaleidoscope-TapDance.h:20,
+                 from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/423/423.ino:20:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/kaleidoscope/plugin/TapDance.h:67:19: note: declared here
+   67 |   static uint16_t time_out;
+      |                   ^~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/423/423.ino:73:12: warning: ‘kaleidoscope::plugin::TapDance::time_out’ is deprecated: \n------------------------------------------------------------------------\nThe `TapDance.time_out` variable is deprecated. Please use the\n`TapDance.setTimeout()` function instead.\nThis variable will be removed after 2022-09-01.\n------------------------------------------------------------------------\n [-Wdeprecated-declarations]
+   73 |   TapDance.time_out = 25;
+      |            ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/Kaleidoscope-TapDance.h:20,
+                 from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/423/423.ino:20:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/kaleidoscope/plugin/TapDance.h:67:19: note: declared here
+   67 |   static uint16_t time_out;
+      |                   ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2582,16 +866,56 @@ Running test issues/423
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/423/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_BackAndForth
-[       OK ] GeneratedKTest.1_BackAndForth (0 ms)
+[       OK ] GeneratedKTest.1_BackAndForth (1 ms)
 [ RUN      ] GeneratedKTest.2_SingleRollover
-[       OK ] GeneratedKTest.2_SingleRollover (0 ms)
+[       OK ] GeneratedKTest.2_SingleRollover (1 ms)
 [ RUN      ] GeneratedKTest.3_OSMAppliesToWholeMacro
-[       OK ] GeneratedKTest.3_OSMAppliesToWholeMacro (0 ms)
-[----------] 4 tests from GeneratedKTest (0 ms total)
+[       OK ] GeneratedKTest.3_OSMAppliesToWholeMacro (1 ms)
+[----------] 4 tests from GeneratedKTest (4 ms total)
 
 [----------] Global test environment tear-down
-[==========] 4 tests from 1 test suite ran. (0 ms total)
+[==========] 4 tests from 1 test suite ran. (4 ms total)
 [  PASSED  ] 4 tests.
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/980/980.ino: In function ‘void setup()’:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/980/980.ino:76:12: warning: ‘kaleidoscope::plugin::TapDance::time_out’ is deprecated: \n------------------------------------------------------------------------\nThe `TapDance.time_out` variable is deprecated. Please use the\n`TapDance.setTimeout()` function instead.\nThis variable will be removed after 2022-09-01.\n------------------------------------------------------------------------\n [-Wdeprecated-declarations]
+   76 |   TapDance.time_out = 25;
+      |            ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/Kaleidoscope-TapDance.h:20,
+                 from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/980/980.ino:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/kaleidoscope/plugin/TapDance.h:67:19: note: declared here
+   67 |   static uint16_t time_out;
+      |                   ^~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/980/980.ino:76:12: warning: ‘kaleidoscope::plugin::TapDance::time_out’ is deprecated: \n------------------------------------------------------------------------\nThe `TapDance.time_out` variable is deprecated. Please use the\n`TapDance.setTimeout()` function instead.\nThis variable will be removed after 2022-09-01.\n------------------------------------------------------------------------\n [-Wdeprecated-declarations]
+   76 |   TapDance.time_out = 25;
+      |            ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/Kaleidoscope-TapDance.h:20,
+                 from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/980/980.ino:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/kaleidoscope/plugin/TapDance.h:67:19: note: declared here
+   67 |   static uint16_t time_out;
+      |                   ^~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/980/980.ino:76:12: warning: ‘kaleidoscope::plugin::TapDance::time_out’ is deprecated: \n------------------------------------------------------------------------\nThe `TapDance.time_out` variable is deprecated. Please use the\n`TapDance.setTimeout()` function instead.\nThis variable will be removed after 2022-09-01.\n------------------------------------------------------------------------\n [-Wdeprecated-declarations]
+   76 |   TapDance.time_out = 25;
+      |            ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/Kaleidoscope-TapDance.h:20,
+                 from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/980/980.ino:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/kaleidoscope/plugin/TapDance.h:67:19: note: declared here
+   67 |   static uint16_t time_out;
+      |                   ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2617,11 +941,26 @@ Running test issues/980
 [       OK ] GeneratedKTest.1_TapDanceIssue980NoOverlap (0 ms)
 [ RUN      ] GeneratedKTest.2_TapDanceIssue980Rollover
 [       OK ] GeneratedKTest.2_TapDanceIssue980Rollover (0 ms)
-[----------] 3 tests from GeneratedKTest (0 ms total)
+[----------] 3 tests from GeneratedKTest (1 ms total)
 
 [----------] Global test environment tear-down
-[==========] 3 tests from 1 test suite ran. (0 ms total)
+[==========] 3 tests from 1 test suite ran. (1 ms total)
 [  PASSED  ] 3 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2645,11 +984,26 @@ Running test issues/1074
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_AutoShiftOverflow
 [       OK ] GeneratedKTest.1_AutoShiftOverflow (0 ms)
-[----------] 2 tests from GeneratedKTest (0 ms total)
+[----------] 2 tests from GeneratedKTest (1 ms total)
 
 [----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (0 ms total)
+[==========] 2 tests from 1 test suite ran. (1 ms total)
 [  PASSED  ] 2 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2673,6 +1027,21 @@ Running test issues/840
 [----------] Global test environment tear-down
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2696,6 +1065,21 @@ Running test issues/1010
 [----------] Global test environment tear-down
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2719,6 +1103,46 @@ Running test issues/951
 [----------] Global test environment tear-down
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/571/571.ino: In function ‘void setup()’:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/571/571.ino:61:12: warning: ‘kaleidoscope::plugin::TapDance::time_out’ is deprecated: \n------------------------------------------------------------------------\nThe `TapDance.time_out` variable is deprecated. Please use the\n`TapDance.setTimeout()` function instead.\nThis variable will be removed after 2022-09-01.\n------------------------------------------------------------------------\n [-Wdeprecated-declarations]
+   61 |   TapDance.time_out = 25;
+      |            ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/Kaleidoscope-TapDance.h:20,
+                 from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/571/571.ino:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/kaleidoscope/plugin/TapDance.h:67:19: note: declared here
+   67 |   static uint16_t time_out;
+      |                   ^~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/571/571.ino:61:12: warning: ‘kaleidoscope::plugin::TapDance::time_out’ is deprecated: \n------------------------------------------------------------------------\nThe `TapDance.time_out` variable is deprecated. Please use the\n`TapDance.setTimeout()` function instead.\nThis variable will be removed after 2022-09-01.\n------------------------------------------------------------------------\n [-Wdeprecated-declarations]
+   61 |   TapDance.time_out = 25;
+      |            ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/Kaleidoscope-TapDance.h:20,
+                 from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/571/571.ino:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/kaleidoscope/plugin/TapDance.h:67:19: note: declared here
+   67 |   static uint16_t time_out;
+      |                   ^~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/571/571.ino:61:12: warning: ‘kaleidoscope::plugin::TapDance::time_out’ is deprecated: \n------------------------------------------------------------------------\nThe `TapDance.time_out` variable is deprecated. Please use the\n`TapDance.setTimeout()` function instead.\nThis variable will be removed after 2022-09-01.\n------------------------------------------------------------------------\n [-Wdeprecated-declarations]
+   61 |   TapDance.time_out = 25;
+      |            ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/Kaleidoscope-TapDance.h:20,
+                 from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/571/571.ino:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/kaleidoscope/plugin/TapDance.h:67:19: note: declared here
+   67 |   static uint16_t time_out;
+      |                   ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2747,6 +1171,21 @@ Running test issues/571
 [----------] Global test environment tear-down
 [==========] 2 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 2 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2770,12 +1209,52 @@ Running test issues/673
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/673/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_Issue673
-[       OK ] GeneratedKTest.1_Issue673 (0 ms)
-[----------] 2 tests from GeneratedKTest (0 ms total)
+[       OK ] GeneratedKTest.1_Issue673 (1 ms)
+[----------] 2 tests from GeneratedKTest (1 ms total)
 
 [----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (0 ms total)
+[==========] 2 tests from 1 test suite ran. (2 ms total)
 [  PASSED  ] 2 tests.
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/806/806.ino: In function ‘void setup()’:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/806/806.ino:76:12: warning: ‘kaleidoscope::plugin::TapDance::time_out’ is deprecated: \n------------------------------------------------------------------------\nThe `TapDance.time_out` variable is deprecated. Please use the\n`TapDance.setTimeout()` function instead.\nThis variable will be removed after 2022-09-01.\n------------------------------------------------------------------------\n [-Wdeprecated-declarations]
+   76 |   TapDance.time_out = 25;
+      |            ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/Kaleidoscope-TapDance.h:20,
+                 from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/806/806.ino:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/kaleidoscope/plugin/TapDance.h:67:19: note: declared here
+   67 |   static uint16_t time_out;
+      |                   ^~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/806/806.ino:76:12: warning: ‘kaleidoscope::plugin::TapDance::time_out’ is deprecated: \n------------------------------------------------------------------------\nThe `TapDance.time_out` variable is deprecated. Please use the\n`TapDance.setTimeout()` function instead.\nThis variable will be removed after 2022-09-01.\n------------------------------------------------------------------------\n [-Wdeprecated-declarations]
+   76 |   TapDance.time_out = 25;
+      |            ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/Kaleidoscope-TapDance.h:20,
+                 from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/806/806.ino:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/kaleidoscope/plugin/TapDance.h:67:19: note: declared here
+   67 |   static uint16_t time_out;
+      |                   ^~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/806/806.ino:76:12: warning: ‘kaleidoscope::plugin::TapDance::time_out’ is deprecated: \n------------------------------------------------------------------------\nThe `TapDance.time_out` variable is deprecated. Please use the\n`TapDance.setTimeout()` function instead.\nThis variable will be removed after 2022-09-01.\n------------------------------------------------------------------------\n [-Wdeprecated-declarations]
+   76 |   TapDance.time_out = 25;
+      |            ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/Kaleidoscope-TapDance.h:20,
+                 from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/806/806.ino:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/kaleidoscope/plugin/TapDance.h:67:19: note: declared here
+   67 |   static uint16_t time_out;
+      |                   ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2804,6 +1283,46 @@ Running test issues/806
 [----------] Global test environment tear-down
 [==========] 2 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 2 tests.
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/922/922.ino: In function ‘void setup()’:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/922/922.ino:63:12: warning: ‘kaleidoscope::plugin::TapDance::time_out’ is deprecated: \n------------------------------------------------------------------------\nThe `TapDance.time_out` variable is deprecated. Please use the\n`TapDance.setTimeout()` function instead.\nThis variable will be removed after 2022-09-01.\n------------------------------------------------------------------------\n [-Wdeprecated-declarations]
+   63 |   TapDance.time_out = 25;
+      |            ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/Kaleidoscope-TapDance.h:20,
+                 from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/922/922.ino:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/kaleidoscope/plugin/TapDance.h:67:19: note: declared here
+   67 |   static uint16_t time_out;
+      |                   ^~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/922/922.ino:63:12: warning: ‘kaleidoscope::plugin::TapDance::time_out’ is deprecated: \n------------------------------------------------------------------------\nThe `TapDance.time_out` variable is deprecated. Please use the\n`TapDance.setTimeout()` function instead.\nThis variable will be removed after 2022-09-01.\n------------------------------------------------------------------------\n [-Wdeprecated-declarations]
+   63 |   TapDance.time_out = 25;
+      |            ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/Kaleidoscope-TapDance.h:20,
+                 from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/922/922.ino:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/kaleidoscope/plugin/TapDance.h:67:19: note: declared here
+   67 |   static uint16_t time_out;
+      |                   ^~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/922/922.ino:63:12: warning: ‘kaleidoscope::plugin::TapDance::time_out’ is deprecated: \n------------------------------------------------------------------------\nThe `TapDance.time_out` variable is deprecated. Please use the\n`TapDance.setTimeout()` function instead.\nThis variable will be removed after 2022-09-01.\n------------------------------------------------------------------------\n [-Wdeprecated-declarations]
+   63 |   TapDance.time_out = 25;
+      |            ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/Kaleidoscope-TapDance.h:20,
+                 from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/922/922.ino:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/kaleidoscope/plugin/TapDance.h:67:19: note: declared here
+   67 |   static uint16_t time_out;
+      |                   ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2826,16 +1345,31 @@ Running test issues/922
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/922/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_TapDanceToTapDanceRolloverLeftToRight
-[       OK ] GeneratedKTest.1_TapDanceToTapDanceRolloverLeftToRight (0 ms)
+[       OK ] GeneratedKTest.1_TapDanceToTapDanceRolloverLeftToRight (1 ms)
 [ RUN      ] GeneratedKTest.2_TapDanceToTapDanceRolloverRightToLeft
 [       OK ] GeneratedKTest.2_TapDanceToTapDanceRolloverRightToLeft (0 ms)
 [ RUN      ] GeneratedKTest.3_TapDanceToTapDanceRolloverBackAndForth
 [       OK ] GeneratedKTest.3_TapDanceToTapDanceRolloverBackAndForth (0 ms)
-[----------] 4 tests from GeneratedKTest (0 ms total)
+[----------] 4 tests from GeneratedKTest (3 ms total)
 
 [----------] Global test environment tear-down
-[==========] 4 tests from 1 test suite ran. (0 ms total)
+[==========] 4 tests from 1 test suite ran. (3 ms total)
 [  PASSED  ] 4 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
 [92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
 [93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
@@ -2859,21 +1393,82 @@ Running test issues/1061
 [ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/issues/1061/test.ktest
 [       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
 [ RUN      ] GeneratedKTest.1_OneShotInsertTimeout
-[       OK ] GeneratedKTest.1_OneShotInsertTimeout (0 ms)
+[       OK ] GeneratedKTest.1_OneShotInsertTimeout (1 ms)
 [ RUN      ] GeneratedKTest.2_OneShotInsertInterrupt
 [       OK ] GeneratedKTest.2_OneShotInsertInterrupt (0 ms)
 [ RUN      ] GeneratedKTest.3_OneShotInsertSticky
-[       OK ] GeneratedKTest.3_OneShotInsertSticky (0 ms)
+[       OK ] GeneratedKTest.3_OneShotInsertSticky (1 ms)
 [ RUN      ] GeneratedKTest.4_OneShotLeftAltNotSticky
 [       OK ] GeneratedKTest.4_OneShotLeftAltNotSticky (0 ms)
 [ RUN      ] GeneratedKTest.5_OneShotRightAltSticky
-[       OK ] GeneratedKTest.5_OneShotRightAltSticky (0 ms)
-[----------] 6 tests from GeneratedKTest (1 ms total)
+[       OK ] GeneratedKTest.5_OneShotRightAltSticky (1 ms)
+[----------] 6 tests from GeneratedKTest (5 ms total)
 
 [----------] Global test environment tear-down
-[==========] 6 tests from 1 test suite ran. (1 ms total)
+[==========] 6 tests from 1 test suite ran. (5 ms total)
 [  PASSED  ] 6 tests.
 In file included from test/manual-tests.cpp:5:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/Kaleidoscope-LEDControl.h:20,
+                 from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/personal-config/personal-config.ino:24:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-BootGreeting/src/kaleidoscope/plugin/LEDEffect-BootGreeting.cpp:28:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Breathe/src/kaleidoscope/plugin/LEDEffect-Breathe.cpp:23:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Chase/src/kaleidoscope/plugin/LEDEffect-Chase.cpp:23:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LEDEffect-Rainbow/src/kaleidoscope/plugin/LEDEffect-Rainbow.cpp:24:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LED-Palette-Theme/src/kaleidoscope/plugin/LED-Palette-Theme.cpp:29:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-IdleLEDs/src/kaleidoscope/plugin/IdleLEDs.cpp:30:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-DefaultLEDModeConfig/src/kaleidoscope/plugin/DefaultLEDModeConfig.cpp:28:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-HardwareTestMode/src/kaleidoscope/plugin/HardwareTestMode.cpp:25:
 /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
   142 | class FocusLEDCommand : public Plugin {
       |       ^~~~~~~~~~~~~~~
@@ -2904,7 +1499,7 @@ In file included from test/manual-tests.cpp:5:
 [93mKaleidoscope-LayerNames[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-LayerNames[0m                              
 [93mKaleidoscope-TopsyTurvy[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy[0m                              
 [93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
-[93mKaleidoscope-MacroPirate[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                          
+[93mKaleidoscope-MacroPirate[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                             
 [93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
 [93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
 
@@ -2913,14 +1508,14 @@ In file included from test/manual-tests.cpp:5:
 
 
 Running test personal-config
-[==========] Running 10 tests from 1 test suite.
+[==========] Running 12 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 10 tests from PersonalConfig
+[----------] 12 tests from PersonalConfig
 [ RUN      ] PersonalConfig.0_test
 [ INFO     ] test: tests/personal-config/test/manual-tests.cpp
 [       OK ] PersonalConfig.0_test (0 ms)
 [ RUN      ] PersonalConfig.1_MacroRecordBasic
-[       OK ] PersonalConfig.1_MacroRecordBasic (0 ms)
+[       OK ] PersonalConfig.1_MacroRecordBasic (1 ms)
 [ RUN      ] PersonalConfig.2_MacroRecordTopsy
 [ INFO     ] Printing Macro: A
 	TAP_CODE_SEQUENCE 30 31 32 0 |,TAP 209 197,TAPCODE 4,
@@ -2930,7 +1525,7 @@ Running test personal-config
 	TAP_CODE_SEQUENCE 30 31 32 0 |,TAP 209 197,KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,
 [ INFO     ] Printing Macro: A
 	KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,TAP 209 197,TAP_CODE_SEQUENCE 30 31 32 0 |,
-[       OK ] PersonalConfig.2_MacroRecordTopsy (4 ms)
+[       OK ] PersonalConfig.2_MacroRecordTopsy (9 ms)
 [ RUN      ] PersonalConfig.3_MacroRecordOneShot
 [ INFO     ] Printing Macro: A
 	KEYCODEDOWN 225,KEYCODEDOWN 4,KEYCODEUP 225,KEYCODEUP 4,TAPCODE 4,
@@ -2940,35 +1535,13 @@ Running test personal-config
 	TAP_CODE_SEQUENCE 4 4 225 0 |,
 [ INFO     ] Printing Macro: A
 	TAPCODE 4,TAPCODE 4,KEYCODEDOWN 225,TAPCODE 4,KEYCODEUP 225,
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
-Value of: observed_keycodes
-Expected: has 1 element that is equal to '\xE1' (225)
-  Actual: { '\x4' (4) }, whose element #0 doesn't match
-Removing OneShot modifier (i=2)
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
-Value of: observed_keycodes
-Expected: has 1 element that is equal to '\xE1' (225)
-  Actual: {}
-autogen (i=3)
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
-Value of: observed_keycodes
-Expected: has 2 elements where
-element #0 is equal to '\x4' (4),
-element #1 is equal to '\xE1' (225)
-  Actual: { '\x4' (4) }, which has 1 element
-autogen (i=4)
-/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/VirtualDeviceTest.cpp:177: Failure
-Value of: observed_keycodes
-Expected: has 1 element that is equal to '\xE1' (225)
-  Actual: {}
-autogen (i=5)
-[  FAILED  ] PersonalConfig.3_MacroRecordOneShot (2 ms)
+[       OK ] PersonalConfig.3_MacroRecordOneShot (5 ms)
 [ RUN      ] PersonalConfig.4_MacroRecordSpecialShift
 [ INFO     ] Printing Macro: U
 	TAPCODE 76,
 [ INFO     ] Printing Macro: U
 	TAPCODE 76,
-[       OK ] PersonalConfig.4_MacroRecordSpecialShift (1 ms)
+[       OK ] PersonalConfig.4_MacroRecordSpecialShift (2 ms)
 [ RUN      ] PersonalConfig.5_MacroRecordSpecialShift
 [       OK ] PersonalConfig.5_MacroRecordSpecialShift (0 ms)
 [ RUN      ] PersonalConfig.6_MacroRecordTopsyOneShot
@@ -2976,27 +1549,1357 @@ autogen (i=5)
 	TAPCODE 30,TAPCODE 31,TAP 209 197,TAPCODE 4,KEYDOWN 208 75,KEYCODEUP 30,KEYCODEDOWN 229,KEYDOWN 208 75,KEYCODEUP 30,KEYCODEUP 229,
 [ INFO     ] Printing Macro: O
 	KEYCODEDOWN 229,KEYDOWN 208 77,KEYCODEUP 229,KEYCODEUP 32,
-[       OK ] PersonalConfig.6_MacroRecordTopsyOneShot (2 ms)
+[       OK ] PersonalConfig.6_MacroRecordTopsyOneShot (4 ms)
 [ RUN      ] PersonalConfig.7_SpecialShiftDoubleRelease
-[       OK ] PersonalConfig.7_SpecialShiftDoubleRelease (0 ms)
+[       OK ] PersonalConfig.7_SpecialShiftDoubleRelease (1 ms)
 [ RUN      ] PersonalConfig.8_MacroRecordIntoWrongSlot
-[       OK ] PersonalConfig.8_MacroRecordIntoWrongSlot (0 ms)
+[       OK ] PersonalConfig.8_MacroRecordIntoWrongSlot (1 ms)
 [ RUN      ] PersonalConfig.9_MacroReplayPLAYPLAY
-[       OK ] PersonalConfig.9_MacroReplayPLAYPLAY (1 ms)
-[----------] 10 tests from PersonalConfig (15 ms total)
+[       OK ] PersonalConfig.9_MacroReplayPLAYPLAY (2 ms)
+[ RUN      ] PersonalConfig.10_ObservedMacroPLAYBug
+[ INFO     ] Printing Macro: A
+	TAP 209 197,KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,TAP 209 197,
+[ INFO     ] Printing Macro: A
+	TAP 209 197,KEYDOWN 208 75,KEYCODEUP 30,KEYDOWN 208 76,KEYCODEUP 31,KEYDOWN 208 77,KEYCODEUP 32,TAP 209 197,
+[ INFO     ] Printing Macro: A
+	TAP 209 197,KEYDOWN 208 75,KEYDOWN 208 76,KEYDOWN 208 77,KEYCODEUP 32,TAP 209 197,
+[       OK ] PersonalConfig.10_ObservedMacroPLAYBug (6 ms)
+[ RUN      ] PersonalConfig.11_MacroRecordLastSlot
+[ INFO     ] Printing Macro: S
+	TAP_CODE_SEQUENCE 11 8 15 15 18 26 18 21 15 7 23 11 12 22 12 22 4 23 8 22 23 0 |,
+[       OK ] PersonalConfig.11_MacroRecordLastSlot (4 ms)
+[----------] 12 tests from PersonalConfig (41 ms total)
 
 [----------] Global test environment tear-down
-[==========] 10 tests from 1 test suite ran. (15 ms total)
-[  PASSED  ] 9 tests.
-[  FAILED  ] 1 test, listed below:
-[  FAILED  ] PersonalConfig.3_MacroRecordOneShot
+[==========] 12 tests from 1 test suite ran. (41 ms total)
+[  PASSED  ] 12 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
 
- 1 FAILED TEST
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test hid/hid-v1.2-consumer-keys
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from KeyboardReports
+[ RUN      ] KeyboardReports.HIDUsageTablev12KeycodesAdded
+[       OK ] KeyboardReports.HIDUsageTablev12KeycodesAdded (0 ms)
+[----------] 1 test from KeyboardReports (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Turbo/src/kaleidoscope/plugin/Turbo.cpp:35:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-Turbo[0m                       0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Turbo[0m                                   
+[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test plugins/Turbo/sticky
+[==========] Running 4 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 4 tests from GeneratedKTest
+[ RUN      ] GeneratedKTest.0_KtestSourceFilename
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/Turbo/sticky/test.ktest
+[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
+[ RUN      ] GeneratedKTest.1_TurboNoRegression
+[       OK ] GeneratedKTest.1_TurboNoRegression (0 ms)
+[ RUN      ] GeneratedKTest.2_TurboSecond
+[       OK ] GeneratedKTest.2_TurboSecond (1 ms)
+[ RUN      ] GeneratedKTest.3_TurboFirst
+[       OK ] GeneratedKTest.3_TurboFirst (0 ms)
+[----------] 4 tests from GeneratedKTest (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test suite ran. (2 ms total)
+[  PASSED  ] 4 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Turbo/src/kaleidoscope/plugin/Turbo.cpp:35:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-Turbo[0m                       0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Turbo[0m                                   
+[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test plugins/Turbo/basic
+[==========] Running 4 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 4 tests from GeneratedKTest
+[ RUN      ] GeneratedKTest.0_KtestSourceFilename
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/Turbo/basic/test.ktest
+[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
+[ RUN      ] GeneratedKTest.1_TurboNoRegression
+[       OK ] GeneratedKTest.1_TurboNoRegression (0 ms)
+[ RUN      ] GeneratedKTest.2_TurboSecond
+[       OK ] GeneratedKTest.2_TurboSecond (1 ms)
+[ RUN      ] GeneratedKTest.3_TurboFirst
+[       OK ] GeneratedKTest.3_TurboFirst (0 ms)
+[----------] 4 tests from GeneratedKTest (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test suite ran. (2 ms total)
+[  PASSED  ] 4 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-ShapeShifter[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-ShapeShifter[0m                            
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test plugins/ShapeShifter/basic
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from GeneratedKTest
+[ RUN      ] GeneratedKTest.0_KtestSourceFilename
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/ShapeShifter/basic/test.ktest
+[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
+[ RUN      ] GeneratedKTest.1_ShapeShifterWithoutShift
+[       OK ] GeneratedKTest.1_ShapeShifterWithoutShift (0 ms)
+[ RUN      ] GeneratedKTest.2_ShapeShifterFullOverlap
+[       OK ] GeneratedKTest.2_ShapeShifterFullOverlap (0 ms)
+[----------] 3 tests from GeneratedKTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 3 tests.
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/TapDance/basic/basic.ino: In function ‘void setup()’:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/TapDance/basic/basic.ino:65:12: warning: ‘kaleidoscope::plugin::TapDance::time_out’ is deprecated: \n------------------------------------------------------------------------\nThe `TapDance.time_out` variable is deprecated. Please use the\n`TapDance.setTimeout()` function instead.\nThis variable will be removed after 2022-09-01.\n------------------------------------------------------------------------\n [-Wdeprecated-declarations]
+   65 |   TapDance.time_out = 25;
+      |            ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/Kaleidoscope-TapDance.h:20,
+                 from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/TapDance/basic/basic.ino:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/kaleidoscope/plugin/TapDance.h:67:19: note: declared here
+   67 |   static uint16_t time_out;
+      |                   ^~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/TapDance/basic/basic.ino:65:12: warning: ‘kaleidoscope::plugin::TapDance::time_out’ is deprecated: \n------------------------------------------------------------------------\nThe `TapDance.time_out` variable is deprecated. Please use the\n`TapDance.setTimeout()` function instead.\nThis variable will be removed after 2022-09-01.\n------------------------------------------------------------------------\n [-Wdeprecated-declarations]
+   65 |   TapDance.time_out = 25;
+      |            ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/Kaleidoscope-TapDance.h:20,
+                 from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/TapDance/basic/basic.ino:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/kaleidoscope/plugin/TapDance.h:67:19: note: declared here
+   67 |   static uint16_t time_out;
+      |                   ^~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/TapDance/basic/basic.ino:65:12: warning: ‘kaleidoscope::plugin::TapDance::time_out’ is deprecated: \n------------------------------------------------------------------------\nThe `TapDance.time_out` variable is deprecated. Please use the\n`TapDance.setTimeout()` function instead.\nThis variable will be removed after 2022-09-01.\n------------------------------------------------------------------------\n [-Wdeprecated-declarations]
+   65 |   TapDance.time_out = 25;
+      |            ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/Kaleidoscope-TapDance.h:20,
+                 from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/TapDance/basic/basic.ino:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance/src/kaleidoscope/plugin/TapDance.h:67:19: note: declared here
+   67 |   static uint16_t time_out;
+      |                   ^~~~~~~~
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-TapDance[0m                    0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TapDance[0m                                
+[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test plugins/TapDance/basic
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from GeneratedKTest
+[ RUN      ] GeneratedKTest.0_KtestSourceFilename
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/TapDance/basic/test.ktest
+[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
+[ RUN      ] GeneratedKTest.1_TapdanceInterrupt
+[       OK ] GeneratedKTest.1_TapdanceInterrupt (0 ms)
+[ RUN      ] GeneratedKTest.2_TapdanceTimeout
+[       OK ] GeneratedKTest.2_TapdanceTimeout (0 ms)
+[ RUN      ] GeneratedKTest.3_TapdanceInterruptWithRollover
+[       OK ] GeneratedKTest.3_TapdanceInterruptWithRollover (0 ms)
+[ RUN      ] GeneratedKTest.4_TapdanceTimeoutWhileHeld
+[       OK ] GeneratedKTest.4_TapdanceTimeoutWhileHeld (0 ms)
+[----------] 5 tests from GeneratedKTest (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (2 ms total)
+[  PASSED  ] 5 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-MacroPirate[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                             
+[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
+[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
+[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test plugins/MacroPirate/BasicRepeat
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from GeneratedKTest
+[ RUN      ] GeneratedKTest.0_KtestSourceFilename
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/BasicRepeat/test.ktest
+[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
+[ RUN      ] GeneratedKTest.1_MacroPirateNothingRecorded
+[       OK ] GeneratedKTest.1_MacroPirateNothingRecorded (0 ms)
+[ RUN      ] GeneratedKTest.2_MacroPirateSimpleRecording
+[       OK ] GeneratedKTest.2_MacroPirateSimpleRecording (1 ms)
+[ RUN      ] GeneratedKTest.3_MacroPirateHeldDuringREC
+[       OK ] GeneratedKTest.3_MacroPirateHeldDuringREC (0 ms)
+[ RUN      ] GeneratedKTest.4_MacroPirateMultiPressDuringRecord
+[       OK ] GeneratedKTest.4_MacroPirateMultiPressDuringRecord (2 ms)
+[ RUN      ] GeneratedKTest.5_MacroPirateHeldAfterExiting
+[       OK ] GeneratedKTest.5_MacroPirateHeldAfterExiting (0 ms)
+[ RUN      ] GeneratedKTest.6_MacroPirateKeyHeldDownForLongTime
+[       OK ] GeneratedKTest.6_MacroPirateKeyHeldDownForLongTime (13 ms)
+[----------] 7 tests from GeneratedKTest (18 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (19 ms total)
+[  PASSED  ] 7 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-MacroPirate[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroPirate[0m                             
+[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
+[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
+[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test plugins/MacroPirate/EdgeCases
+[==========] Running 19 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 19 tests from ManualTests
+[ RUN      ] ManualTests.0_test
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MacroPirate/EdgeCases/test/manual-testcases.cpp
+[       OK ] ManualTests.0_test (0 ms)
+[ RUN      ] ManualTests.1_MacroPirateTestHelpers
+[       OK ] ManualTests.1_MacroPirateTestHelpers (0 ms)
+[ RUN      ] ManualTests.2_ReplayRepeat
+[       OK ] ManualTests.2_ReplayRepeat (3 ms)
+[ RUN      ] ManualTests.3_MacroPirateNoHeldOverPlay
+[       OK ] ManualTests.3_MacroPirateNoHeldOverPlay (1 ms)
+[ RUN      ] ManualTests.4_MacroPirateRecursiveReplay
+[       OK ] ManualTests.4_MacroPirateRecursiveReplay (2 ms)
+[ RUN      ] ManualTests.5_MacroPirateRecursiveAvoidance
+[       OK ] ManualTests.5_MacroPirateRecursiveAvoidance (2 ms)
+[ RUN      ] ManualTests.5_MacroPirateAvoidKeyUp
+[       OK ] ManualTests.5_MacroPirateAvoidKeyUp (0 ms)
+[ RUN      ] ManualTests.6_MacroPirateBailOut
+[       OK ] ManualTests.6_MacroPirateBailOut (1 ms)
+[ RUN      ] ManualTests.7_CompressionChecks
+[ INFO     ] Printing Macro: A
+	TAPCODE 4,TAPCODE 13,
+[ INFO     ] Printing Macro: A
+	TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,
+[ INFO     ] Printing Macro: A
+	KEYCODEDOWN 225,TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,KEYCODEUP 225,
+[       OK ] ManualTests.7_CompressionChecks (3 ms)
+[ RUN      ] ManualTests.8_FlagsCompression
+[ INFO     ] Printing Macro: A
+	KEYCODEDOWN 224,TAP_CODE_SEQUENCE 4 13 4 13 4 13 0 |,KEYCODEUP 224,
+[       OK ] ManualTests.8_FlagsCompression (1 ms)
+[ RUN      ] ManualTests.8_FlagsCompression3
+[ INFO     ] Printing Macro: A
+	TAP 1 4,
+[       OK ] ManualTests.8_FlagsCompression3 (0 ms)
+[ RUN      ] ManualTests.8_FlagsCompression4
+[ INFO     ] Printing Macro: A
+	TAP_SEQUENCE 1 4 1 4 1 4 1 4 0 0 |,
+[       OK ] ManualTests.8_FlagsCompression4 (1 ms)
+[ RUN      ] ManualTests.8_FlagsCompression2
+[ INFO     ] Printing Macro: A
+	KEYDOWN 1 4,TAPCODE 4,KEYUP 1 4,
+[       OK ] ManualTests.8_FlagsCompression2 (0 ms)
+[ RUN      ] ManualTests.8_FlagsCompression5
+[ INFO     ] Printing Macro: A
+	KEYDOWN 1 4,TAPCODE 13,KEYUP 1 4,
+[       OK ] ManualTests.8_FlagsCompression5 (0 ms)
+[ RUN      ] ManualTests.9_ShiftCheck
+[       OK ] ManualTests.9_ShiftCheck (0 ms)
+[ RUN      ] ManualTests.10_CompressSeqInMiddle
+[ INFO     ] Printing Macro: A
+	KEYCODEDOWN 225,TAPCODE 4,TAPCODE 13,KEYCODEUP 225,TAP_CODE_SEQUENCE 4 4 4 4 4 0 |,
+[ INFO     ] Printing Macro: A
+	KEYCODEDOWN 225,TAPCODE 4,TAPCODE 13,KEYCODEUP 225,TAP_CODE_SEQUENCE 4 4 4 4 4 13 0 |,KEYCODEDOWN 4,TAPCODE 13,KEYCODEUP 4,
+[ INFO     ] Printing Macro: A
+	KEYCODEDOWN 225,TAPCODE 4,TAPCODE 13,KEYCODEUP 225,TAP_CODE_SEQUENCE 4 4 4 4 4 13 0 |,KEYCODEDOWN 4,TAPCODE 13,KEYCODEUP 4,TAP_CODE_SEQUENCE 13 4 13 4 13 0 |,
+[       OK ] ManualTests.10_CompressSeqInMiddle (6 ms)
+[ RUN      ] ManualTests.11_LayerBasics
+[ INFO     ] Printing Macro: A
+	TAPCODE 27,TAP 68 1,TAPCODE 5,TAP 68 1,TAPCODE 27,TAP 68 1,TAPCODE 5,
+[ INFO     ] Printing Macro: A
+	TAPCODE 27,TAP 68 1,TAPCODE 5,TAP 68 1,TAPCODE 27,TAP 68 1,TAPCODE 5,TAP 68 1,
+[ INFO     ] Printing Macro: A
+	KEYDOWN 68 43,TAPCODE 27,KEYUP 68 43,TAPCODE 5,KEYDOWN 68 43,TAPCODE 27,
+[       OK ] ManualTests.11_LayerBasics (6 ms)
+[ RUN      ] ManualTests.12_Delays
+[ INFO     ] Printing Macro: B
+	TAP_CODE_SEQUENCE 5 5 5 0 |,
+[ INFO     ] Printing Macro: B
+	TAPCODE 5,TAPCODE 5,INTERVAL 0,TAPCODE 5,
+[ INFO     ] Printing Macro: B
+	KEYCODEDOWN 5,INTERVAL 0,KEYCODEUP 5,TAPCODE 4,
+[ INFO     ] Printing Macro: B
+	TAPCODE 5,TAPCODE 4,KEYCODEDOWN 5,INTERVAL 0,KEYCODEUP 5,TAPCODE 4,TAPCODE 5,
+[ INFO     ] Printing Macro: A
+	TAPCODE 5,TAPCODE 4,KEYCODEDOWN 5,INTERVAL 2,KEYCODEUP 5,TAPCODE 4,TAPCODE 5,
+[       OK ] ManualTests.12_Delays (4 ms)
+[ RUN      ] ManualTests.13_OutOfMemory
+[       OK ] ManualTests.13_OutOfMemory (27 ms)
+[----------] 19 tests from ManualTests (66 ms total)
+
+[----------] Global test environment tear-down
+[==========] 19 tests from 1 test suite ran. (67 ms total)
+[  PASSED  ] 19 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
+[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
+[93mKaleidoscope-OneShotMetaKeys[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShotMetaKeys[0m                         
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test plugins/OneShot/meta-keys
+[==========] Running 8 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 8 tests from GeneratedKTest
+[ RUN      ] GeneratedKTest.0_KtestSourceFilename
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/OneShot/meta-keys/test.ktest
+[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
+[ RUN      ] GeneratedKTest.1_OneShotMetaSticky
+[       OK ] GeneratedKTest.1_OneShotMetaSticky (0 ms)
+[ RUN      ] GeneratedKTest.2_OneShotMetaStickyRollover
+[       OK ] GeneratedKTest.2_OneShotMetaStickyRollover (0 ms)
+[ RUN      ] GeneratedKTest.3_OneShotMetaStickyOverlap
+[       OK ] GeneratedKTest.3_OneShotMetaStickyOverlap (0 ms)
+[ RUN      ] GeneratedKTest.4_OneShotMetaStickyOverlapToRollover
+[       OK ] GeneratedKTest.4_OneShotMetaStickyOverlapToRollover (0 ms)
+[ RUN      ] GeneratedKTest.5_OneShotMetaStickySticky
+[       OK ] GeneratedKTest.5_OneShotMetaStickySticky (1 ms)
+[ RUN      ] GeneratedKTest.6_OneShotActiveSticky
+[       OK ] GeneratedKTest.6_OneShotActiveSticky (0 ms)
+[ RUN      ] GeneratedKTest.7_OneShotActiveStickyTwoKeys
+[       OK ] GeneratedKTest.7_OneShotActiveStickyTwoKeys (0 ms)
+[----------] 8 tests from GeneratedKTest (5 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 1 test suite ran. (5 ms total)
+[  PASSED  ] 8 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
+[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test plugins/OneShot/basic
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from GeneratedKTest
+[ RUN      ] GeneratedKTest.0_KtestSourceFilename
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/OneShot/basic/test.ktest
+[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
+[ RUN      ] GeneratedKTest.1_OneShotTimeout
+[       OK ] GeneratedKTest.1_OneShotTimeout (0 ms)
+[ RUN      ] GeneratedKTest.2_OneShotNextKey
+[       OK ] GeneratedKTest.2_OneShotNextKey (0 ms)
+[ RUN      ] GeneratedKTest.3_OneShotDoubleTap
+[       OK ] GeneratedKTest.3_OneShotDoubleTap (0 ms)
+[ RUN      ] GeneratedKTest.4_OneShotDoubleTapTimeout
+[       OK ] GeneratedKTest.4_OneShotDoubleTapTimeout (0 ms)
+[ RUN      ] GeneratedKTest.5_OneShotHoldTimeout
+[       OK ] GeneratedKTest.5_OneShotHoldTimeout (0 ms)
+[ RUN      ] GeneratedKTest.6_OneShotRollover
+[       OK ] GeneratedKTest.6_OneShotRollover (0 ms)
+[----------] 7 tests from GeneratedKTest (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (3 ms total)
+[  PASSED  ] 7 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-Qukeys[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Qukeys[0m                                  
+[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test plugins/Qukeys/TapRepeat
+[==========] Running 4 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 4 tests from GeneratedKTest
+[ RUN      ] GeneratedKTest.0_KtestSourceFilename
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/Qukeys/TapRepeat/test.ktest
+[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
+[ RUN      ] GeneratedKTest.1_TapRepeatGenericQukey
+[       OK ] GeneratedKTest.1_TapRepeatGenericQukey (1 ms)
+[ RUN      ] GeneratedKTest.2_TapRepeatDualUseQukey
+[       OK ] GeneratedKTest.2_TapRepeatDualUseQukey (0 ms)
+[ RUN      ] GeneratedKTest.3_TapRepeatSpaceCadetQukey
+[       OK ] GeneratedKTest.3_TapRepeatSpaceCadetQukey (0 ms)
+[----------] 4 tests from GeneratedKTest (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test suite ran. (3 ms total)
+[  PASSED  ] 4 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-Qukeys[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Qukeys[0m                                  
+[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
+[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
+[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test plugins/Qukeys/basic
+[==========] Running 4 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 4 tests from QukeysBasic
+[ RUN      ] QukeysBasic.TapQukeyAlone
+[       OK ] QukeysBasic.TapQukeyAlone (0 ms)
+[ RUN      ] QukeysBasic.HoldQukeyAlone
+[       OK ] QukeysBasic.HoldQukeyAlone (1 ms)
+[ RUN      ] QukeysBasic.FullOverlap
+[       OK ] QukeysBasic.FullOverlap (0 ms)
+[ RUN      ] QukeysBasic.RolloverPrimary
+[       OK ] QukeysBasic.RolloverPrimary (0 ms)
+[----------] 4 tests from QukeysBasic (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test suite ran. (3 ms total)
+[  PASSED  ] 4 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-AutoShift[0m                   0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-AutoShift[0m                               
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test plugins/AutoShift/basic
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from GeneratedKTest
+[ RUN      ] GeneratedKTest.0_KtestSourceFilename
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/AutoShift/basic/test.ktest
+[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
+[ RUN      ] GeneratedKTest.1_AutoShiftTap
+[       OK ] GeneratedKTest.1_AutoShiftTap (0 ms)
+[ RUN      ] GeneratedKTest.2_AutoShiftLongPress
+[       OK ] GeneratedKTest.2_AutoShiftLongPress (0 ms)
+[----------] 3 tests from GeneratedKTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (1 ms total)
+[  PASSED  ] 3 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-Redial[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Redial[0m                                  
+[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test plugins/Redial/basic
+[==========] Running 6 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 6 tests from GeneratedKTest
+[ RUN      ] GeneratedKTest.0_KtestSourceFilename
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/Redial/basic/test.ktest
+[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
+[ RUN      ] GeneratedKTest.1_RedialWithNoPriorKeypress
+[       OK ] GeneratedKTest.1_RedialWithNoPriorKeypress (0 ms)
+[ RUN      ] GeneratedKTest.2_RedialFirstKey
+[       OK ] GeneratedKTest.2_RedialFirstKey (0 ms)
+[ RUN      ] GeneratedKTest.3_RedialNextKey
+[       OK ] GeneratedKTest.3_RedialNextKey (0 ms)
+[ RUN      ] GeneratedKTest.4_RedialRollover
+[       OK ] GeneratedKTest.4_RedialRollover (0 ms)
+[ RUN      ] GeneratedKTest.5_RedialRolloverRightToLeft
+[       OK ] GeneratedKTest.5_RedialRolloverRightToLeft (0 ms)
+[----------] 6 tests from GeneratedKTest (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 6 tests from 1 test suite ran. (2 ms total)
+[  PASSED  ] 6 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-SpaceCadet[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-SpaceCadet[0m                              
+[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test plugins/SpaceCadet/no-delay
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from GeneratedKTest
+[ RUN      ] GeneratedKTest.0_KtestSourceFilename
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/SpaceCadet/no-delay/test.ktest
+[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
+[ RUN      ] GeneratedKTest.1_SpaceCadetTap
+[       OK ] GeneratedKTest.1_SpaceCadetTap (0 ms)
+[ RUN      ] GeneratedKTest.2_SpaceCadetHold
+[       OK ] GeneratedKTest.2_SpaceCadetHold (0 ms)
+[ RUN      ] GeneratedKTest.3_SpaceCadetHoldWithGlobalTimeout
+[       OK ] GeneratedKTest.3_SpaceCadetHoldWithGlobalTimeout (0 ms)
+[ RUN      ] GeneratedKTest.4_SpaceCadetInterrupt
+[       OK ] GeneratedKTest.4_SpaceCadetInterrupt (0 ms)
+[ RUN      ] GeneratedKTest.5_SpaceCadetInterruptSpaceCadetWithTap
+[       OK ] GeneratedKTest.5_SpaceCadetInterruptSpaceCadetWithTap (0 ms)
+[ RUN      ] GeneratedKTest.6_SpaceCadetInterruptSpaceCadetWithHold
+[       OK ] GeneratedKTest.6_SpaceCadetInterruptSpaceCadetWithHold (0 ms)
+[----------] 7 tests from GeneratedKTest (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (2 ms total)
+[  PASSED  ] 7 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-SpaceCadet[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-SpaceCadet[0m                              
+[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test plugins/SpaceCadet/basic
+[==========] Running 8 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 8 tests from GeneratedKTest
+[ RUN      ] GeneratedKTest.0_KtestSourceFilename
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/SpaceCadet/basic/test.ktest
+[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
+[ RUN      ] GeneratedKTest.1_SpaceCadetTap
+[       OK ] GeneratedKTest.1_SpaceCadetTap (0 ms)
+[ RUN      ] GeneratedKTest.2_SpaceCadetHold
+[       OK ] GeneratedKTest.2_SpaceCadetHold (0 ms)
+[ RUN      ] GeneratedKTest.3_SpaceCadetHoldWithGlobalTimeout
+[       OK ] GeneratedKTest.3_SpaceCadetHoldWithGlobalTimeout (0 ms)
+[ RUN      ] GeneratedKTest.4_SpaceCadetInterrupt
+[       OK ] GeneratedKTest.4_SpaceCadetInterrupt (0 ms)
+[ RUN      ] GeneratedKTest.5_SpaceCadetInterruptSpaceCadetWithTap
+[       OK ] GeneratedKTest.5_SpaceCadetInterruptSpaceCadetWithTap (0 ms)
+[ RUN      ] GeneratedKTest.6_SpaceCadetInterruptSpaceCadetWithHold
+[       OK ] GeneratedKTest.6_SpaceCadetInterruptSpaceCadetWithHold (0 ms)
+[ RUN      ] GeneratedKTest.7_SpaceCadetInterruptWithModifier
+[       OK ] GeneratedKTest.7_SpaceCadetInterruptWithModifier (0 ms)
+[----------] 8 tests from GeneratedKTest (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 1 test suite ran. (3 ms total)
+[  PASSED  ] 8 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-TopsyTurvy[0m                  0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-TopsyTurvy[0m                              
+[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test plugins/TopsyTurvy/basic
+[==========] Running 15 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 15 tests from GeneratedKTest
+[ RUN      ] GeneratedKTest.0_KtestSourceFilename
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/TopsyTurvy/basic/test.ktest
+[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
+[ RUN      ] GeneratedKTest.1_TopsyTurvyWithoutShift
+[       OK ] GeneratedKTest.1_TopsyTurvyWithoutShift (0 ms)
+[ RUN      ] GeneratedKTest.2_TopsyTurvyWithShift
+[       OK ] GeneratedKTest.2_TopsyTurvyWithShift (0 ms)
+[ RUN      ] GeneratedKTest.3_TopsyTurvyRolloverFromShift
+[       OK ] GeneratedKTest.3_TopsyTurvyRolloverFromShift (0 ms)
+[ RUN      ] GeneratedKTest.4_TopsyTurvyRolloverToShift
+[       OK ] GeneratedKTest.4_TopsyTurvyRolloverToShift (0 ms)
+[ RUN      ] GeneratedKTest.5_TopsyTurvyEncompassingShift
+[       OK ] GeneratedKTest.5_TopsyTurvyEncompassingShift (0 ms)
+[ RUN      ] GeneratedKTest.6_TopsyTurvyRolloverFromOther
+[       OK ] GeneratedKTest.6_TopsyTurvyRolloverFromOther (0 ms)
+[ RUN      ] GeneratedKTest.7_TopsyTurvyRolloverToOther
+[       OK ] GeneratedKTest.7_TopsyTurvyRolloverToOther (0 ms)
+[ RUN      ] GeneratedKTest.8_TopsyTurvyEncompassingOther
+[       OK ] GeneratedKTest.8_TopsyTurvyEncompassingOther (0 ms)
+[ RUN      ] GeneratedKTest.9_TopsyTurvyEncompassedByOther
+[       OK ] GeneratedKTest.9_TopsyTurvyEncompassedByOther (0 ms)
+[ RUN      ] GeneratedKTest.10_TopsyTurvyRolloverFromOtherWithShift
+[       OK ] GeneratedKTest.10_TopsyTurvyRolloverFromOtherWithShift (0 ms)
+[ RUN      ] GeneratedKTest.11_TopsyTurvyRolloverToOtherWithShift
+[       OK ] GeneratedKTest.11_TopsyTurvyRolloverToOtherWithShift (0 ms)
+[ RUN      ] GeneratedKTest.12_TopsyTurvyRolloverToTopsyTurvy
+[       OK ] GeneratedKTest.12_TopsyTurvyRolloverToTopsyTurvy (0 ms)
+[ RUN      ] GeneratedKTest.13_TopsyTurvyRolloverFromOtherModifier
+[       OK ] GeneratedKTest.13_TopsyTurvyRolloverFromOtherModifier (0 ms)
+[ RUN      ] GeneratedKTest.14_TopsyTurvyWithOtherModifier
+[       OK ] GeneratedKTest.14_TopsyTurvyWithOtherModifier (0 ms)
+[----------] 15 tests from GeneratedKTest (8 ms total)
+
+[----------] Global test environment tear-down
+[==========] 15 tests from 1 test suite ran. (8 ms total)
+[  PASSED  ] 15 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-WinKeyToggle[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-WinKeyToggle[0m                            
+[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
+[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
+[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test plugins/WinKeyToggle/basic
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from GeneratedKTest
+[ RUN      ] GeneratedKTest.0_KtestSourceFilename
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/WinKeyToggle/basic/test.ktest
+[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
+[ RUN      ] GeneratedKTest.1_WinKeyEnabledOnStart
+[       OK ] GeneratedKTest.1_WinKeyEnabledOnStart (0 ms)
+[ RUN      ] GeneratedKTest.2_WinKeyDisabledAfterToggle
+[       OK ] GeneratedKTest.2_WinKeyDisabledAfterToggle (0 ms)
+[ RUN      ] GeneratedKTest.3_WinKeyToggleOtherKeysNotDisabled
+[       OK ] GeneratedKTest.3_WinKeyToggleOtherKeysNotDisabled (0 ms)
+[ RUN      ] GeneratedKTest.4_WinKeyToggleTurnsBackOn
+[       OK ] GeneratedKTest.4_WinKeyToggleTurnsBackOn (0 ms)
+[----------] 5 tests from GeneratedKTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (1 ms total)
+[  PASSED  ] 5 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
+[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
+[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test plugins/Macros/shift-blocker
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from GeneratedKTest
+[ RUN      ] GeneratedKTest.0_KtestSourceFilename
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/Macros/shift-blocker/test.ktest
+[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
+[ RUN      ] GeneratedKTest.1_MacroWithoutShift
+[       OK ] GeneratedKTest.1_MacroWithoutShift (0 ms)
+[ RUN      ] GeneratedKTest.2_MacroWithShift
+[       OK ] GeneratedKTest.2_MacroWithShift (0 ms)
+[----------] 3 tests from GeneratedKTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (1 ms total)
+[  PASSED  ] 3 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-Macros[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Macros[0m                                  
+[93mKaleidoscope-MacroSupport[0m                0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MacroSupport[0m                            
+[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test plugins/Macros/basic
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from GeneratedKTest
+[ RUN      ] GeneratedKTest.0_KtestSourceFilename
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/Macros/basic/test.ktest
+[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
+[ RUN      ] GeneratedKTest.1_MacroIndex0
+[       OK ] GeneratedKTest.1_MacroIndex0 (0 ms)
+[ RUN      ] GeneratedKTest.2_MacroIndex1
+[       OK ] GeneratedKTest.2_MacroIndex1 (0 ms)
+[ RUN      ] GeneratedKTest.3_MacroIndex2
+[       OK ] GeneratedKTest.3_MacroIndex2 (0 ms)
+[ RUN      ] GeneratedKTest.4_MacroIndex3
+[       OK ] GeneratedKTest.4_MacroIndex3 (0 ms)
+[ RUN      ] GeneratedKTest.5_MacroIndex255
+[       OK ] GeneratedKTest.5_MacroIndex255 (0 ms)
+[ RUN      ] GeneratedKTest.6_MacrosOtherKey
+[       OK ] GeneratedKTest.6_MacrosOtherKey (0 ms)
+[----------] 7 tests from GeneratedKTest (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (2 ms total)
+[  PASSED  ] 7 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-CharShift[0m                   0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-CharShift[0m                               
+[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test plugins/CharShift/basic
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from GeneratedKTest
+[ RUN      ] GeneratedKTest.0_KtestSourceFilename
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/CharShift/basic/test.ktest
+[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
+[ RUN      ] GeneratedKTest.1_CharShiftLowerLower
+[       OK ] GeneratedKTest.1_CharShiftLowerLower (0 ms)
+[ RUN      ] GeneratedKTest.2_CharShiftLowerUpper
+[       OK ] GeneratedKTest.2_CharShiftLowerUpper (0 ms)
+[ RUN      ] GeneratedKTest.3_CharShiftUpperLower
+[       OK ] GeneratedKTest.3_CharShiftUpperLower (0 ms)
+[ RUN      ] GeneratedKTest.4_CharShiftUpperUpper
+[       OK ] GeneratedKTest.4_CharShiftUpperUpper (0 ms)
+[ RUN      ] GeneratedKTest.5_RolloverFromNormalToCharShiftUpper
+[       OK ] GeneratedKTest.5_RolloverFromNormalToCharShiftUpper (0 ms)
+[ RUN      ] GeneratedKTest.6_RolloverFromShiftedToCharShiftLower
+[       OK ] GeneratedKTest.6_RolloverFromShiftedToCharShiftLower (0 ms)
+[----------] 7 tests from GeneratedKTest (4 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (4 ms total)
+[  PASSED  ] 7 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-OneShot[0m                     0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-OneShot[0m                                 
+[93mKaleidoscope-Ranges[0m                      0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Ranges[0m                                  
+[93mKaleidoscope-Escape-OneShot[0m              0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Escape-OneShot[0m                          
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test plugins/Escape-OneShot/basic
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from GeneratedKTest
+[ RUN      ] GeneratedKTest.0_KtestSourceFilename
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/Escape-OneShot/basic/test.ktest
+[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
+[ RUN      ] GeneratedKTest.1_EscapeOneShotCancelTemporary
+[       OK ] GeneratedKTest.1_EscapeOneShotCancelTemporary (0 ms)
+[ RUN      ] GeneratedKTest.2_EscapeOneShotCancelSticky
+[       OK ] GeneratedKTest.2_EscapeOneShotCancelSticky (0 ms)
+[----------] 3 tests from GeneratedKTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (1 ms total)
+[  PASSED  ] 3 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-MouseKeys[0m                   0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-MouseKeys[0m                               
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+[93mKaleidoscope-EEPROM-Settings[0m             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-EEPROM-Settings[0m                         
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test plugins/MouseKeys/basic
+[==========] Running 4 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 4 tests from GeneratedKTest
+[ RUN      ] GeneratedKTest.0_KtestSourceFilename
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/MouseKeys/basic/test.ktest
+[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
+[ RUN      ] GeneratedKTest.1_MouseKeysMoveUp
+[       OK ] GeneratedKTest.1_MouseKeysMoveUp (0 ms)
+[ RUN      ] GeneratedKTest.2_MouseKeysButtonLeft
+[       OK ] GeneratedKTest.2_MouseKeysButtonLeft (0 ms)
+[ RUN      ] GeneratedKTest.3_MouseKeysScrollDown
+[       OK ] GeneratedKTest.3_MouseKeysScrollDown (0 ms)
+[----------] 4 tests from GeneratedKTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test suite ran. (1 ms total)
+[  PASSED  ] 4 tests.
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl/LED-Off.cpp:19:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.cpp:17:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+In file included from /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDModeInterface.cpp:18:
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: warning: attribute ignored in declaration of ‘class kaleidoscope::plugin::FocusLEDCommand’ [-Wattributes]
+  142 | class FocusLEDCommand : public Plugin {
+      |       ^~~~~~~~~~~~~~~
+/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/plugin/LEDControl.h:142:7: note: attribute for ‘class kaleidoscope::plugin::FocusLEDCommand’ must follow the ‘class’ keyword
+
+[92mUsed library[0m                             [92mVersion[0m [90mPath[0m                                                                                                                 
+[93mKaleidoscope[0m                             0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope[0m                                                              
+[93mKaleidoscope-Hardware-Model01[0m            0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Model01[0m                        
+[93mKaleidoscope-Hardware-Keyboardio-Model01[0m 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-Hardware-Keyboardio-Model01[0m             
+[93mKeyboardioHID[0m                            0.0.1   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/avr/libraries/KeyboardioHID[0m
+[93mKaleidoscope-PrefixLayer[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-PrefixLayer[0m                             
+[93mKaleidoscope-FocusSerial[0m                 0.0.0   [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-FocusSerial[0m                             
+
+[92mUsed platform[0m      [92mVersion[0m [90mPath[0m                                                                                             
+[93mkeyboardio:virtual[0m 1.6.11  [90m/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual[0m
+
+
+Running test plugins/PrefixLayer/basic
+[==========] Running 9 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 9 tests from GeneratedKTest
+[ RUN      ] GeneratedKTest.0_KtestSourceFilename
+[ INFO     ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/PrefixLayer/basic/test.ktest
+[       OK ] GeneratedKTest.0_KtestSourceFilename (0 ms)
+[ RUN      ] GeneratedKTest.1_PrefixLayerPassthrough
+=================================================================
+[1m[31m==1671174==ERROR: AddressSanitizer: global-buffer-overflow on address 0x55666679e0e3 at pc 0x556666734f4a bp 0x7ffea1b7ee50 sp 0x7ffea1b7ee40
+[1m[0m[1m[34mREAD of size 1 at 0x55666679e0e3 thread T0[1m[0m
+    #0 0x556666734f49 in kaleidoscope::plugin::PrefixLayer::onKeyEvent(kaleidoscope::KeyEvent&) /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-PrefixLayer/src/kaleidoscope/plugin/PrefixLayer.cpp:47
+    #1 0x556666726a64 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::PrefixLayer, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::PrefixLayer&, kaleidoscope::KeyEvent&) /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/PrefixLayer/basic/basic.ino:58
+    #2 0x55666672685a in kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::PrefixLayer, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::PrefixLayer&, kaleidoscope::KeyEvent&) /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/PrefixLayer/basic/basic.ino:58
+    #3 0x55666672649d in kaleidoscope::EventHandlerResult kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&>(kaleidoscope::KeyEvent&) /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/PrefixLayer/basic/basic.ino:58
+    #4 0x556666725f19 in kaleidoscope::Hooks::onKeyEvent(kaleidoscope::KeyEvent&) /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/PrefixLayer/basic/basic.ino:58
+    #5 0x556666728a13 in kaleidoscope::Runtime_::handleKeyEvent(kaleidoscope::KeyEvent) (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x58a13)
+    #6 0x556666728727 in kaleidoscope::Runtime_::handleKeyswitchEvent(kaleidoscope::KeyEvent) (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x58727)
+    #7 0x55666673199f in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent(kaleidoscope::Key, kaleidoscope::MatrixAddr<(unsigned char)4, (unsigned char)16>, unsigned char) /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45
+    #8 0x55666672d89b in kaleidoscope::device::virt::VirtualKeyScanner::actOnMatrixScan() /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.cpp:272
+    #9 0x556666727393 in kaleidoscope::device::virt::VirtualKeyScanner::scanMatrix() (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x57393)
+    #10 0x55666672a4f3 in kaleidoscope::device::Base<kaleidoscope::device::virt::VirtualProps>::scanMatrix() (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x5a4f3)
+    #11 0x5566667281f8 in kaleidoscope::Runtime_::loop() /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:77
+    #12 0x55666670b529 in kaleidoscope::testing::SimHarness::RunCycle() (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x3b529)
+    #13 0x55666670b557 in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x3b557)
+    #14 0x556666701510 in TestBody test/generated-testcase.cpp:59
+    #15 0x55666677af54 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0xaaf54)
+    #16 0x556666772fa8 in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0xa2fa8)
+    #17 0x556666746a21 in testing::Test::Run() (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x76a21)
+    #18 0x5566667474af in testing::TestInfo::Run() (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x774af)
+    #19 0x556666747db6 in testing::TestSuite::Run() (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x77db6)
+    #20 0x556666757ce6 in testing::internal::UnitTestImpl::RunAllTests() (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x87ce6)
+    #21 0x55666677bfdb in bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0xabfdb)
+    #22 0x5566667741fa in bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0xa41fa)
+    #23 0x55666675644e in testing::UnitTest::Run() (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x8644e)
+    #24 0x5566667078fd in RUN_ALL_TESTS() (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x378fd)
+    #25 0x556666701369 in executeTestFunction() test/generated-testcase.cpp:13
+    #26 0x556666737403 in main /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56
+    #27 0x7f016bf41d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #28 0x7f016bf41e3f in __libc_start_main_impl ../csu/libc-start.c:392
+    #29 0x556666701244 in _start (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x31244)
+
+[1m[32m0x55666679e0e3 is located 0 bytes to the right of global variable 'prefix_layers' defined in '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/PrefixLayer/basic/basic.ino:54:55' (0x55666679e0e0) of size 3
+[1m[0mSUMMARY: AddressSanitizer: global-buffer-overflow /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-PrefixLayer/src/kaleidoscope/plugin/PrefixLayer.cpp:47 in kaleidoscope::plugin::PrefixLayer::onKeyEvent(kaleidoscope::KeyEvent&)
+Shadow bytes around the buggy address:
+  0x0aad4ccebbc0: [1m[0m01[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[0m01[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m
+  0x0aad4ccebbd0: [1m[0m01[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[0m01[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m
+  0x0aad4ccebbe0: [1m[0m01[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[0m01[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m
+  0x0aad4ccebbf0: [1m[0m01[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m
+  0x0aad4ccebc00: [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m
+=>0x0aad4ccebc10: [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m[[1m[0m03[1m[0m][1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m
+  0x0aad4ccebc20: [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m07[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m
+  0x0aad4ccebc30: [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[31mf9[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m
+  0x0aad4ccebc40: [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m
+  0x0aad4ccebc50: [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m
+  0x0aad4ccebc60: [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m [1m[0m00[1m[0m
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           [1m[0m00[1m[0m
+  Partially addressable: [1m[0m01[1m[0m [1m[0m02[1m[0m [1m[0m03[1m[0m [1m[0m04[1m[0m [1m[0m05[1m[0m [1m[0m06[1m[0m [1m[0m07[1m[0m 
+  Heap left redzone:       [1m[31mfa[1m[0m
+  Freed heap region:       [1m[35mfd[1m[0m
+  Stack left redzone:      [1m[31mf1[1m[0m
+  Stack mid redzone:       [1m[31mf2[1m[0m
+  Stack right redzone:     [1m[31mf3[1m[0m
+  Stack after return:      [1m[35mf5[1m[0m
+  Stack use after scope:   [1m[35mf8[1m[0m
+  Global redzone:          [1m[31mf9[1m[0m
+  Global init order:       [1m[36mf6[1m[0m
+  Poisoned by user:        [1m[34mf7[1m[0m
+  Container overflow:      [1m[34mfc[1m[0m
+  Array cookie:            [1m[31mac[1m[0m
+  Intra object redzone:    [1m[33mbb[1m[0m
+  ASan internal:           [1m[33mfe[1m[0m
+  Left alloca redzone:     [1m[34mca[1m[0m
+  Right alloca redzone:    [1m[34mcb[1m[0m
+  Shadow gap:              [1m[0mcc[1m[0m
+==1671174==ABORTING
 make[2]: *** [/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/testing/makefiles/testcase.mk:74: run] Error 1
-make[1]: *** [Makefile:96: personal-config] Error 2
+make[1]: *** [Makefile:96: plugins/PrefixLayer/basic] Error 2
 make[1]: Leaving directory '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests'
 make: *** [Makefile:82: simulator-tests] Error 2
-Kaleidoscope [15:50:55] $ 
+Kaleidoscope [17:57:00] $ 
+vshcmd: > output="$(./_build/plugins/PrefixLayer/basic/bin/basic -t -q 2>&1)"
+vshcmd: > if [ $? -ne 0 ]; then
+vshcmd: >   echo $output
+vshcmd: > fi
+Kaleidoscope [18:15:33] $ > > [==========] Running 9 tests from 1 test suite. [----------] Global test environment set-up. [----------] 9 tests from GeneratedKTest [ RUN ] GeneratedKTest.0_KtestSourceFilename [ INFO ] test: /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/PrefixLayer/basic/test.ktest [ OK ] GeneratedKTest.0_KtestSourceFilename (0 ms) [ RUN ] GeneratedKTest.1_PrefixLayerPassthrough ================================================================= ==1716499==ERROR: AddressSanitizer: global-buffer-overflow on address 0x55a962b3e0e3 at pc 0x55a962ad4f4a bp 0x7ffdcc55f240 sp 0x7ffdcc55f230 READ of size 1 at 0x55a962b3e0e3 thread T0 #0 0x55a962ad4f49 in kaleidoscope::plugin::PrefixLayer::onKeyEvent(kaleidoscope::KeyEvent&) /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-PrefixLayer/src/kaleidoscope/plugin/PrefixLayer.cpp:47 #1 0x55a962ac6a64 in kaleidoscope_internal::EventHandler_onKeyEvent_v1_caller<true, kaleidoscope::plugin::PrefixLayer, kaleidoscope::KeyEvent&>::call(kaleidoscope::plugin::PrefixLayer&, kaleidoscope::KeyEvent&) /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/PrefixLayer/basic/basic.ino:58 #2 0x55a962ac685a in kaleidoscope::EventHandlerResult kaleidoscope_internal::EventHandler_onKeyEvent_v1::call<kaleidoscope::plugin::PrefixLayer, kaleidoscope::KeyEvent&>(kaleidoscope::plugin::PrefixLayer&, kaleidoscope::KeyEvent&) /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/PrefixLayer/basic/basic.ino:58 #3 0x55a962ac649d in kaleidoscope::EventHandlerResult kaleidoscope_internal::EventDispatcher::apply<kaleidoscope_internal::EventHandler_onKeyEvent_v1, kaleidoscope::KeyEvent&>(kaleidoscope::KeyEvent&) /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/PrefixLayer/basic/basic.ino:58 #4 0x55a962ac5f19 in kaleidoscope::Hooks::onKeyEvent(kaleidoscope::KeyEvent&) /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/PrefixLayer/basic/basic.ino:58 #5 0x55a962ac8a13 in kaleidoscope::Runtime_::handleKeyEvent(kaleidoscope::KeyEvent) (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x58a13) #6 0x55a962ac8727 in kaleidoscope::Runtime_::handleKeyswitchEvent(kaleidoscope::KeyEvent) (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x58727) #7 0x55a962ad199f in kaleidoscope::driver::keyscanner::Base<kaleidoscope::device::keyboardio::Model01KeyScannerProps>::handleKeyswitchEvent(kaleidoscope::Key, kaleidoscope::MatrixAddr<(unsigned char)4, (unsigned char)16>, unsigned char) /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/driver/keyscanner/Base_Impl.h:45 #8 0x55a962acd89b in kaleidoscope::device::virt::VirtualKeyScanner::actOnMatrixScan() /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/device/virtual/Virtual.cpp:272 #9 0x55a962ac7393 in kaleidoscope::device::virt::VirtualKeyScanner::scanMatrix() (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x57393) #10 0x55a962aca4f3 in kaleidoscope::device::Base<kaleidoscope::device::virt::VirtualProps>::scanMatrix() (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x5a4f3) #11 0x55a962ac81f8 in kaleidoscope::Runtime_::loop() /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/src/kaleidoscope/Runtime.cpp:77 #12 0x55a962aab529 in kaleidoscope::testing::SimHarness::RunCycle() (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x3b529) #13 0x55a962aab557 in kaleidoscope::testing::SimHarness::RunCycles(unsigned long) (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x3b557) #14 0x55a962aa1510 in TestBody test/generated-testcase.cpp:59 #15 0x55a962b1af54 in void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0xaaf54) #16 0x55a962b12fa8 in void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0xa2fa8) #17 0x55a962ae6a21 in testing::Test::Run() (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x76a21) #18 0x55a962ae74af in testing::TestInfo::Run() (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x774af) #19 0x55a962ae7db6 in testing::TestSuite::Run() (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x77db6) #20 0x55a962af7ce6 in testing::internal::UnitTestImpl::RunAllTests() (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x87ce6) #21 0x55a962b1bfdb in bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0xabfdb) #22 0x55a962b141fa in bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0xa41fa) #23 0x55a962af644e in testing::UnitTest::Run() (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x8644e) #24 0x55a962aa78fd in RUN_ALL_TESTS() (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x378fd) #25 0x55a962aa1369 in executeTestFunction() test/generated-testcase.cpp:13 #26 0x55a962ad7403 in main /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/.arduino/user/hardware/keyboardio/virtual/cores/arduino/main.cpp:56 #27 0x7f90f434cd8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58 #28 0x7f90f434ce3f in __libc_start_main_impl ../csu/libc-start.c:392 #29 0x55a962aa1244 in _start (/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/_build/plugins/PrefixLayer/basic/bin/basic+0x31244) 0x55a962b3e0e3 is located 0 bytes to the right of global variable 'prefix_layers' defined in '/home/matmal01/Documents/not-work/keyboard/Kaleidoscope/tests/plugins/PrefixLayer/basic/basic.ino:54:55' (0x55a962b3e0e0) of size 3 SUMMARY: AddressSanitizer: global-buffer-overflow /home/matmal01/Documents/not-work/keyboard/Kaleidoscope/plugins/Kaleidoscope-PrefixLayer/src/kaleidoscope/plugin/PrefixLayer.cpp:47 in kaleidoscope::plugin::PrefixLayer::onKeyEvent(kaleidoscope::KeyEvent&) Shadow bytes around the buggy address: 0x0ab5ac55fbc0: 01 f9 f9 f9 f9 f9 f9 f9 01 f9 f9 f9 f9 f9 f9 f9 0x0ab5ac55fbd0: 01 f9 f9 f9 f9 f9 f9 f9 01 f9 f9 f9 f9 f9 f9 f9 0x0ab5ac55fbe0: 01 f9 f9 f9 f9 f9 f9 f9 01 f9 f9 f9 f9 f9 f9 f9 0x0ab5ac55fbf0: 01 f9 f9 f9 f9 f9 f9 f9 00 00 00 00 00 00 00 00 0x0ab5ac55fc00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 =>0x0ab5ac55fc10: 00 00 00 00 00 00 00 00 f9 f9 f9 f9[03]f9 f9 f9 0x0ab5ac55fc20: f9 f9 f9 f9 00 00 00 00 00 00 00 00 07 f9 f9 f9 0x0ab5ac55fc30: f9 f9 f9 f9 00 00 00 00 00 00 00 00 00 00 00 00 0x0ab5ac55fc40: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0x0ab5ac55fc50: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0x0ab5ac55fc60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 Shadow byte legend (one shadow byte represents 8 application bytes): Addressable: 00 Partially addressable: 01 02 03 04 05 06 07 Heap left redzone: fa Freed heap region: fd Stack left redzone: f1 Stack mid redzone: f2 Stack right redzone: f3 Stack after return: f5 Stack use after scope: f8 Global redzone: f9 Global init order: f6 Poisoned by user: f7 Container overflow: fc Array cookie: ac Intra object redzone: bb ASan internal: fe Left alloca redzone: ca Right alloca redzone: cb Shadow gap: cc ==1716499==ABORTING
+Kaleidoscope [18:15:33] $ 
 vshcmd: > make clean && make simulator-tests TEST_PATH=personal-config
 Building in quiet mode. For a lot more information, add 'VERBOSE=1' to the beginning of your call to make
 make -C tests clean
