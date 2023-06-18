@@ -88,7 +88,7 @@ compile-sketch: ${TEST_OBJS}
 		-L"${COMMON_LIB_DIR}" -lcommon \
 		"${LIB_DIR}/${LIB_FILE}" \
 		-L"${top_dir}/testing/googletest/build/lib" \
-		-lgtest -lgmock -lpthread -lm -fsanitize=undefined
+		-lgtest -lgmock -lpthread -lm -fsanitize=address
 
 
 # If we have a test.ktest file, it should be processed into a c++ testcase
