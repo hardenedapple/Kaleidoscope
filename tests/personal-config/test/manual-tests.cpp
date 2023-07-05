@@ -1,7 +1,7 @@
-#include "testing/setup-googletest.h"
-#include "Kaleidoscope.h"
 #include <regex>
 #include <unordered_map>
+#include "testing/setup-googletest.h"
+#include "Kaleidoscope.h"
 #include "kaleidoscope/plugin/LEDControl.h"
 #include "Kaleidoscope-Ranges/src/Kaleidoscope-Ranges.h"
 
