@@ -45,9 +45,6 @@
 // Support for setting and saving the default LED mode
 #include "Kaleidoscope-DefaultLEDModeConfig.h"
 
-// Support for changing the brightness of the LEDs
-#include "Kaleidoscope-LEDBrightnessConfig.h"
-
 // Support for Keyboardio's internal keyboard testing mode
 #include "Kaleidoscope-HardwareTestMode.h"
 
@@ -62,9 +59,6 @@
 
 // Support for SpaceCadet keys
 #include "Kaleidoscope-SpaceCadet.h"
-
-// Support for editable layer names
-#include "Kaleidoscope-LayerNames.h"
 
 // Support for switching shifts (i.e. symbols and numbers).
 #include "Kaleidoscope-TopsyTurvy.h"
@@ -385,9 +379,6 @@ USE_MAGIC_COMBOS({.action = toggleKeyboardProtocol,
 // The order can be important. For example, LED effects are
 // added in the order they're listed here.
 KALEIDOSCOPE_INIT_PLUGINS(
-  // ----------------------------------------------------------------------
-  // Chrysalis plugins
-
   // The EEPROMSettings & EEPROMKeymap plugins make it possible to have an
   // editable keymap in EEPROM.
   EEPROMSettings,
@@ -410,59 +401,17 @@ KALEIDOSCOPE_INIT_PLUGINS(
   // programmatically.
   FirmwareVersion,
 
-  // The LayerNames plugin allows Chrysalis to display - and edit - custom layer
-  // names, to be shown instead of the default indexes.
-  LayerNames,
-
   // Enables setting, saving (via Chrysalis), and restoring (on boot) the
   // default LED mode.
   DefaultLEDModeConfig,
 
-  // Enables controlling (and saving) the brightness of the LEDs via Focus.
-  LEDBrightnessConfig,
-
   // ----------------------------------------------------------------------
   // Keystroke-handling plugins
-
-  // The Qukeys plugin enables the "Secondary action" functionality in
-  // Chrysalis. Keys with secondary actions will have their primary action
-  // performed when tapped, but the secondary action when held.
-  Qukeys,
-
-  // SpaceCadet can turn your shifts into parens on tap, while keeping them as
-  // Shifts when held. SpaceCadetConfig lets Chrysalis configure some aspects of
-  // the plugin.
-  SpaceCadet,
-  SpaceCadetConfig,
-
-  // Enables the "Sticky" behavior for modifiers, and the "Layer shift when
-  // held" functionality for layer keys.
-  OneShot,
-  OneShotConfig,
-  EscapeOneShot,
-  EscapeOneShotConfig,
-
-  // The macros plugin adds support for macros
-  Macros,
-
-  // Enables dynamic, Chrysalis-editable macros.
-  DynamicMacros,
-
-  // The MouseKeys plugin lets you add keys to your keymap which move the mouse.
-  MouseKeys,
-  MouseKeysConfig,
 
   // The MagicCombo plugin lets you use key combinations to trigger custom
   // actions - a bit like Macros, but triggered by pressing multiple keys at the
   // same time.
   MagicCombo,
-
-  // Enables the GeminiPR Stenography protocol. Unused by default, but with the
-  // plugin enabled, it becomes configurable - and then usable - via Chrysalis.
-  GeminiPR,
-
-  // ----------------------------------------------------------------------
-  // LED mode plugins
 
   // The boot greeting effect pulses the LED button for 10 seconds after the
   // keyboard is first connected
@@ -579,11 +528,6 @@ void setup() {
   // If there's a default layer set in EEPROM, we should set that as the default
   // here.
   Layer.move(EEPROMSettings.default_layer());
-
-  // Editable layer names are stored in EEPROM too, and we reserve 16 bytes per
-  // layer for them. We need one extra byte per layer for bookkeeping, so we
-  // reserve 17 / layer in total.
-  LayerNames.reserve_storage(17 * 8);
 
   // Unless configured otherwise with Chrysalis, we want to make sure that the
   // firmware starts with LED effects off. This avoids over-taxing devices that
